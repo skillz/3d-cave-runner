@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0798953a927d05b4aa3ca53948f27a91
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - SpeedEffect: {fileID: 400000, guid: a3011801e9096d24c90dbeb4bd9e6ff7, type: 2}
+  - PuffEffect: {fileID: 400000, guid: c2cc82f00b712c14796c3f1ccc26d8ad, type: 2}
+  - TrailEffect: {fileID: 400000, guid: f283943e2fa4bb54994ea524537c1c2c, type: 2}
+  - CustomCursor: {fileID: 400002, guid: c6d7bd6ae1475a648b1b7b29f492baa0, type: 2}
+  - JumpSound: {fileID: 8300000, guid: 902a26d1a80e7b245ac149b4a85a14c6, type: 3}
+  - FallSound: {fileID: 8300000, guid: 114b4bd95531a3e4c9630d56c384605c, type: 3}
+  - StepSound: {fileID: 8300000, guid: b5225851a424d9e4b806c579d73e7fa5, type: 3}
+  - CrashSound: {fileID: 8300000, guid: d8ad3790a7872524a88db9514242ba27, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
