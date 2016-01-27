@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3463c35aa8bb8ba4db29a011d59e4701
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - StepSound: {fileID: 8300000, guid: b5225851a424d9e4b806c579d73e7fa5, type: 1}
+  - TrailEffect: {fileID: 400000, guid: f283943e2fa4bb54994ea524537c1c2c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}

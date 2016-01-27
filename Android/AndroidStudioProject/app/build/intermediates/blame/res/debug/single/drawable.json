@@ -1,0 +1,434 @@
+[
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_rounded_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_rounded_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_stream_play.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_stream_play.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.0/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_rounded_corners.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_rounded_corners.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_profile_banner_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_profile_banner_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/capture_checkbox_selector.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/capture_checkbox_selector.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/cell_list_item.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/cell_list_item.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/trophy_progress.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/trophy_progress.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/replay_button.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/replay_button.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/purchase_cell_border_selected.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/purchase_cell_border_selected.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_share.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_share.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_close.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_close.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/menu_div.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/menu_div.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/primary_button_with_disabled.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/primary_button_with_disabled.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_stream_deny.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_stream_deny.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_orange_continue.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_orange_continue.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_morematches.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_morematches.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/avatar_bg_leader_winners.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/avatar_bg_leader_winners.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/blue_progress_no_border.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/blue_progress_no_border.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/silver_button_small.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/silver_button_small.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ticketz_details_divider.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ticketz_details_divider.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/blue_progress.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/blue_progress.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ticketz_dk_gray_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ticketz_dk_gray_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.0/res/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/avatar_div.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/avatar_div.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/blue_button.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/blue_button.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/cell_menu_item.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/cell_menu_item.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/trophy_list_div_vertical.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/trophy_list_div_vertical.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_black_cancel.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_black_cancel.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ticketz_info_progress_bar_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ticketz_info_progress_bar_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_credit_card_checkbox.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_credit_card_checkbox.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ticketz_info_progress_top_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ticketz_info_progress_top_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/app_icon.png",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/src/main/res/drawable/app_icon.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_faq_black_border.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_faq_black_border.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/container_contact_us.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/container_contact_us.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/input_cursor.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/input_cursor.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_play_arcade.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_play_arcade.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.0/res/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/trophy_list_div.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/trophy_list_div.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/tournament_footer_tile.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/tournament_footer_tile.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_next.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_next.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_close_dialog.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_close_dialog.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_leader_winners_bg_gradient.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_leader_winners_bg_gradient.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.0/res/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ticketz_info_progress_bottom_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ticketz_info_progress_bottom_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_close_code.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_close_code.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/secondary_button_small.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/secondary_button_small.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_leaderboard_cograts_prize_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_leaderboard_cograts_prize_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_arrow.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_arrow.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_plow_bg_wide_stroke.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_plow_bg_wide_stroke.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/welcome_existing_sign_in_text_color.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/welcome_existing_sign_in_text_color.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/purchase_cell_border.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/purchase_cell_border.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/bg_container_profile_flat.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/bg_container_profile_flat.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/leaderboard_user_rank.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/leaderboard_user_rank.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/spinner_user_balance.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/spinner_user_balance.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/ic_medal.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/ic_medal.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/primary_button_with_states.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/primary_button_with_states.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_bg_confirm.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_bg_confirm.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ic_info_orange.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ic_info_orange.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_collapse.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_collapse.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/welcome_existing_sign_in_text_color_land.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/welcome_existing_sign_in_text_color_land.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/bg_deposit_grey.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/bg_deposit_grey.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/secondary_button.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/secondary_button.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/welcome_gradient_overlay.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/welcome_gradient_overlay.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_bg_cancel.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_bg_cancel.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ticketz_info_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ticketz_info_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_play_again.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_play_again.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_stream_replay.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_stream_replay.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/primary_button.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/primary_button.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/skz_ticketz_gray_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/skz_ticketz_gray_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/primary_button_small.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/primary_button_small.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_bg_ticketz_redeem.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_bg_ticketz_redeem.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/avatar_div_vertical.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/avatar_div_vertical.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/res/merged/debug/drawable/btn_stream_accept.xml",
+        "source": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/drawable/btn_stream_accept.xml"
+    }
+]

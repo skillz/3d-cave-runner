@@ -1,0 +1,203 @@
+[
+    {
+        "outputFile": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 69,
+                    "endOffset": 120
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 69,
+                        "endOffset": 120
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 125,
+                    "endColumn": 63,
+                    "endOffset": 184
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 125,
+                        "endColumn": 63,
+                        "endOffset": 184
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 189,
+                    "endColumn": 70,
+                    "endOffset": 255
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 189,
+                        "endColumn": 70,
+                        "endOffset": 255
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 260,
+                    "endColumn": 67,
+                    "endOffset": 323
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 260,
+                        "endColumn": 67,
+                        "endOffset": 323
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 328,
+                    "endColumn": 58,
+                    "endOffset": 382
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 58,
+                        "endOffset": 109
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 387,
+                    "endColumn": 61,
+                    "endOffset": 444
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 114,
+                        "endColumn": 61,
+                        "endOffset": 171
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 449,
+                    "endColumn": 49,
+                    "endOffset": 494
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 176,
+                        "endColumn": 49,
+                        "endOffset": 221
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 499,
+                    "endLine": 12,
+                    "endColumn": 12,
+                    "endOffset": 657
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 226,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 384
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 662,
+                    "endLine": 16,
+                    "endColumn": 12,
+                    "endOffset": 832
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 389,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 559
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 837,
+                    "endLine": 20,
+                    "endColumn": 12,
+                    "endOffset": 1011
+                },
+                "from": {
+                    "file": "/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.0.1/res/values-land/values-land.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 564,
+                        "endLine": 16,
+                        "endColumn": 12,
+                        "endOffset": 738
+                    }
+                }
+            }
+        ]
+    }
+]

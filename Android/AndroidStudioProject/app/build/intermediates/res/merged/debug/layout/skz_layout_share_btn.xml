@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_button"
+        android:clickable="true"
+        android:id="@+id/share"
+        >
+
+    <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_share_btn"
+            style="@style/Button.Blue"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/skz_share"
+            app:font="@string/skz_neue_black_cond"
+            />
+</FrameLayout>

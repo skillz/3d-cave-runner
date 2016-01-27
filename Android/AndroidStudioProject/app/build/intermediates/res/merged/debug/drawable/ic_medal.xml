@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_medal_1st_place" android:maxLevel="1" />
+    <item android:drawable="@drawable/ic_medal_2nd_place" android:maxLevel="2" />
+    <item android:drawable="@drawable/ic_medal_3rd_place" android:maxLevel="3" />
+    <item android:drawable="@drawable/skz_leader_blue" android:maxLevel="4" />
+</level-list>

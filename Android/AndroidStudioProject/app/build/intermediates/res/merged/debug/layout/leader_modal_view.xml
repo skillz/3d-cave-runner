@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/leader_modal_view"
+    android:orientation="horizontal"
+    android:background="#ddd"
+    >
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="#aaa"
+        android:id="@+id/modal_view_avatar"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        >
+        <com.skillz.widget.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222"
+            android:layout_marginBottom="-5dp"
+            android:id="@+id/modal_view_username"
+            app:font="@string/skz_neue_black_cond"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_flag_unknown"
+            android:id="@+id/modal_view_flag"
+            android:layout_gravity="left"
+            android:layout_margin="-2dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-5dp"
+            >
+            <ImageView
+                android:id="@+id/modal_view_medal_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/leaderboard_medal_color"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="3dp"
+                />
+            <com.skillz.widget.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/modal_view_medal_logo"
+                android:id="@+id/modal_view_medal_count"
+                android:textSize="22sp"
+                android:textColor="#222"
+                app:font="@string/skz_neue_black_cond"
+                />
+        </RelativeLayout>
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modal_view_match_info"
+            android:text="2015-05-08 15:00 AM"
+            android:textSize="11dp"
+            android:textColor="#222"
+            />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/replayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/btn_stream_replay"
+        android:layout_marginRight="5dp"
+        />
+
+</LinearLayout>

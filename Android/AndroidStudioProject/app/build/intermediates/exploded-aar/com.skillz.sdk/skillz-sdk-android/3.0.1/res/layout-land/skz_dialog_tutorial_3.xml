@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1.8"
+            android:background="@drawable/dialog_bg"
+            android:orientation="vertical">
+
+            <com.skillz.widget.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/skz_ticketz_tut3_header"
+                android:textColor="@color/skz_ticketz_tut_header"
+                android:textSize="23sp"
+                app:font="@string/skz_neue_black_cond"
+                />
+
+            <com.skillz.widget.FontTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/skz_ticketz_tut3_text"
+                android:textColor="@color/skz_ticketz_tut_text"
+                android:textSize="16sp"
+                app:font="@string/skz_neue_black_cond"
+                />
+
+            <com.skillz.widget.FontButton
+                android:id="@+id/skz_ticketz_tut3_start_btn"
+                style="@style/Button.Dialog.Next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/skz_start_now"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/skz_ticketz_tut3_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_anim_arrow_up"
+        />
+</RelativeLayout>

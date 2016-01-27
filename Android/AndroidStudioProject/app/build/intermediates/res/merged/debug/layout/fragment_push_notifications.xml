@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tutorial_new_dialog_bg">
+
+    <LinearLayout
+        android:id="@+id/password_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.skillz.widget.FontButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:text="@string/skz_push_notification_header"
+            android:textColor="#575757"
+            android:layout_gravity="center"
+            android:checked="false"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <com.skillz.widget.FontButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:text="@string/skz_push_notification_message"
+            android:textColor="#575757"
+            android:layout_gravity="center"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_group"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/cancel"
+            style="@style/Button.Dialog.Cancel"
+            android:text="@string/skz_not_now" />
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/update"
+            style="@style/Button.Dialog.Confirm"
+            android:text="@string/skz_give_access" />
+    </LinearLayout>
+</RelativeLayout>

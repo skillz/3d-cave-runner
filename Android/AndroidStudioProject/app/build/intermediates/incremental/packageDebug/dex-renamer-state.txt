@@ -1,0 +1,7 @@
+#Wed Nov 16 15:25:10 PST 2016
+base.0=/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_82a77189fdd871d3951d393b49a1b0e8fabe130f
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c0c135e765812b9a28476649232c1e0a27a463a2/classes.dex
+base.1=/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c0c135e765812b9a28476649232c1e0a27a463a2
+file.0=/Users/Gabriel/Desktop/3d-cave-runner/Android/AndroidStudioProject/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_82a77189fdd871d3951d393b49a1b0e8fabe130f/classes.dex

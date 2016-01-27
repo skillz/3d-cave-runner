@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout
+    android:id="@+id/place_group"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    >
+
+    <LinearLayout
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="105dp"
+        android:background="@drawable/dialog_bg_decor"
+        android:orientation="vertical"
+        android:paddingTop="50dp">
+
+        <com.skillz.widget.FontTextView
+            android:id="@+id/event_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/skz_winner_gets"
+            android:textColor="@color/cash_top"
+            android:textSize="18sp"
+            app:font="fonts/HelveticaNeue-CondensedBlack.otf"
+            />
+
+        <LinearLayout
+            android:id="@+id/winnings_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:weightSum="8"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <com.skillz.util.AutoResizeTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="end|center_vertical"
+                    android:paddingRight="5dp"
+                    android:maxLines="1"
+                    android:textSize="100sp"
+                    android:text="@string/skz_plow_result_event_last_entry"
+                    android:textColor="@android:color/white"
+                    app:font="fonts/HelveticaNeue-CondensedBlack.otf"/>
+
+                <com.skillz.util.AutoResizeTextView
+                    android:id="@+id/remaining_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical|start"
+                    android:paddingLeft="1dp"
+                    android:maxLines="1"
+                    android:textSize="100sp"
+                    android:text="100:00:00:00"
+                    android:textStyle="bold"
+                    app:font="fonts/HelveticaNeue-CondensedBlack.otf"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/place_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:src="@drawable/ic_medal_pending_lrg"/>
+</FrameLayout>

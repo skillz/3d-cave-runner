@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_app"
+        android:clipChildren="false"
+        android:id="@+id/skz_deposit_root">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:clipChildren="false"
+            >
+
+            <LinearLayout
+                android:id="@+id/top_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/skz_btn_cash_deposit_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_container_prizes_glare"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <com.skillz.widget.FontTextView
+                        android:id="@+id/skz_deposit_cash_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_centerVertical="true"
+                        app:font="@string/skz_neue_black_cond"
+                        tools:text="$10"
+                        android:textSize="64sp"
+                        android:gravity="center"
+                        app:gradientColors="@array/skz_cash_deposit_gradient"
+                        app:strokeColor="@color/skz_cash_deposit_stroke"
+                        app:strokeWidth="1px"
+                        />
+
+                    <com.skillz.widget.FontTextView
+                        android:id="@+id/skz_deposit_bonus_plus_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:layout_centerInParent="true"
+                        app:font="@string/skz_neue_black_cond"
+                        android:textSize="46sp"
+                        android:text="+"
+                        android:gravity="center"
+                        app:gradientColors="@array/skz_cash_deposit_gradient"
+                        app:strokeColor="@color/skz_cash_deposit_stroke"
+                        app:strokeWidth="1px"
+                        android:paddingRight="20dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/skz_deposit_bonus_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        >
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_deposit_bonus_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="$2"
+                            android:textColor="@color/cash_bottom"
+                            android:textSize="42sp"
+                            app:font="@string/skz_neue_black_cond"
+                            app:gradientColors="@array/skz_cash_bonus_gradient"
+                            app:strokeColor="@color/skz_cash_bonus_stroke"
+                            app:strokeWidth="1px"
+                            />
+
+                        <com.skillz.widget.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-3dp"
+                            android:text="@string/skz_bonus"
+                            android:textColor="@color/cash_bottom"
+                            android:textSize="20sp"
+                            app:font="@string/skz_neue_black_cond"
+                            app:gradientColors="@array/skz_cash_bonus_gradient"
+                            app:strokeColor="@color/skz_cash_bonus_stroke"
+                            app:strokeWidth="1px"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:clipChildren="false"
+                android:layout_below="@id/top_frame"
+                android:background="@drawable/bg_deposit_grey">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:clipToPadding="false"
+                    android:background="@drawable/cell_list">
+
+                    <FrameLayout
+                        android:id="@+id/skz_deposit_promo_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="-4dp"
+                        android:layout_marginRight="-4dp"
+                        android:padding="10dp"
+                        android:background="@drawable/btn_bg_store_small"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_gravity="top">
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_deposit_promo_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="13sp"
+                            style="@style/Button"
+                            tools:text="FRIEND PROMO BONUS:"/>
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_deposit_promo_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|right"
+                            android:textSize="15sp"
+                            style="@style/Button"
+                            tools:text="$5.00"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/skz_deposit_current_balance_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:padding="6dp"
+                        android:background="@drawable/entry_field">
+
+                        <com.skillz.widget.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:font="@string/skz_neue_roman"
+                            android:textSize="13sp"
+                            android:textColor="@color/skz_deposit_text"
+                            android:text="@string/skz_deposit_current_balance"/>
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_deposit_current_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|right"
+                            app:font="@string/skz_neue_black_cond"
+                            android:textSize="15sp"
+                            android:textColor="@color/skz_deposit_text"
+                            tools:text="$2.00"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/skz_deposit_deposit_amount_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:padding="6dp"
+                        android:background="@drawable/entry_field">
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_deposit_plus_bonus_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:font="@string/skz_neue_roman"
+                            android:textSize="13sp"
+                            android:textColor="@color/skz_deposit_text"
+                            android:text="@string/skz_desposit_plus_bonus"/>
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_deposit_deposit_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|right"
+                            app:font="@string/skz_neue_black_cond"
+                            android:textSize="15sp"
+                            android:textColor="@color/skz_deposit_text"
+                            tools:text="$65.00"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/skz_deposit_new_balance_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
+                        android:background="@drawable/entry_field">
+
+                        <com.skillz.widget.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:font="@string/skz_neue_black_cond"
+                            android:textSize="13sp"
+                            android:textColor="@color/skz_deposit_text"
+                            android:text="@string/skz_deposit_new_balance"/>
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_deposit_new_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|right"
+                            app:font="@string/skz_neue_black_cond"
+                            android:textSize="20sp"
+                            android:textColor="#368a3f"
+                            app:gradientColors="@array/skz_cash_bonus_gradient"
+                            tools:text="$72.00"/>
+                    </FrameLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/img_geotrust_logo_color"
+                        android:layout_marginTop="20dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:clipChildren="false"
+                    android:layout_gravity="bottom"
+                    android:measureWithLargestChild="false"
+                    android:paddingLeft="1dp"
+                    android:paddingRight="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/skz_deposit_type_buttons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <com.skillz.widget.FontButton
+                            android:id="@+id/skz_deposit_btn_credit_card"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="@string/skz_deposit_credit_card"
+                            style="@style/Button"
+                            android:textSize="20sp"
+                            android:textColor="@color/skz_bnt_credit_card_text"
+                            android:background="@drawable/silver_button_small"
+                            />
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="0dp"/>
+
+                        <ImageView
+                            android:id="@+id/skz_deposit_btn_paypal"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/img_paypal_logo"
+                            android:scaleType="centerInside"
+                            android:background="@drawable/silver_button_small"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/skz_credit_card_stored_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:background="@drawable/cell_list">
+
+                        <ImageView
+                            android:id="@+id/skz_credit_card_enter_new"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_payment_card"/>
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="6dp"
+                            android:padding="6dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/entry_field"
+                            >
+
+                            <ImageView
+                                android:id="@+id/skz_credit_card_stored_logo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                tools:src="@drawable/ic_visa_logo_card"
+                                />
+
+                            <com.skillz.widget.FontTextView
+                                android:id="@+id/skz_credit_card_stored_last4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|right"
+                                tools:text="************ 4242"
+                                android:textColor="@color/skz_deposit_text"
+                                android:textSize="15sp"
+                                app:font="@string/skz_neue_bold"
+                                />
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/submit_payment_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:background="@drawable/bottom_bar_account"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true">
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/skz_btn_deposit_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Button.Primary"
+            android:background="@drawable/primary_button_with_disabled"
+            android:text="@string/skz_deposit_submit_payment"
+            android:textColor="@color/skz_btn_deposit_submit"
+            android:textSize="21sp"
+            android:enabled="false"
+            />
+
+        <LinearLayout
+            android:id="@+id/skz_credit_card_input_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="7dp"
+            android:background="@color/skz_credit_card_entry_bg"
+            tools:visibility="gone"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/entry_field"
+                >
+
+                <ImageView
+                    android:id="@+id/skz_credit_card_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_centerVertical="true"
+                    tools:src="@drawable/ic_visa_logo_card"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    >
+                    <View
+                        android:id="@+id/skz_credit_card_spacer"
+                        android:layout_width="48dp"
+                        android:layout_height="0dp" />
+
+                    <com.skillz.widget.FontEditText
+                        android:id="@+id/skz_credit_card_input"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="@string/skz_credit_card_input_hint"
+                        android:inputType="number"
+                        android:maxLength="24"
+                        android:textSize="16sp"
+                        android:textColor="@color/input_text"
+                        android:textColorHint="@color/input_hint"
+                        tools:hint="4444"
+                        android:background="@android:color/transparent"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        />
+
+                    <com.skillz.widget.FontEditText
+                        android:id="@+id/skz_credit_card_expire_month"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:hint="MM"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="16sp"
+                        android:textColor="@color/input_text"
+                        android:textColorHint="@color/input_hint"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:background="@android:color/transparent"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        />
+
+                    <com.skillz.widget.FontTextView
+                        android:id="@+id/skz_credit_card_expire_separator"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="0.2"
+                        android:hint="/"
+                        android:textSize="16sp"
+                        android:textColorHint="@color/input_hint"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:background="@android:color/transparent"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        />
+
+                    <com.skillz.widget.FontEditText
+                        android:id="@+id/skz_credit_card_expire_year"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="YY"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textSize="16sp"
+                        android:textColor="@color/input_text"
+                        android:textColorHint="@color/input_hint"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:background="@android:color/transparent"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        />
+
+                    <com.skillz.widget.FontEditText
+                        android:id="@+id/skz_credit_card_cvv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="@string/skz_credit_card_cvv_hint"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:textSize="16sp"
+                        android:textColor="@color/input_text"
+                        android:textColorHint="@color/input_hint"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:background="@android:color/transparent"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        />
+
+                    <com.skillz.widget.FontEditText
+                        android:id="@+id/skz_credit_card_zip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="@string/skz_credit_card_zip_hint"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textSize="16sp"
+                        android:textColor="@color/input_text"
+                        android:textColorHint="@color/input_hint"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:background="@android:color/transparent"
+                        android:imeOptions="actionDone"
+                        android:textCursorDrawable="@drawable/input_cursor"
+                        />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <CheckBox
+                android:id="@+id/skz_credit_card_save_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/skz_deposit_save_card_info"
+                android:textSize="14sp"
+                android:textColor="@color/skz_credit_card_save_text"
+                android:button="@null"
+                android:drawableLeft="@drawable/skz_credit_card_checkbox"
+                android:drawablePadding="8dp"
+                android:checked="true"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/skz_credit_card_zip_llmenu"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#000000"
+        android:padding="0dp" >
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/skz_credit_card_zip_keyboard_numbers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/skz_credit_card_keyboard_numbers"
+            android:minHeight="0dp"/>
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/skz_credit_card_zip_keyboard_letters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/skz_credit_card_zip_keyboard_letters"
+            android:minHeight="0dp"/>
+    </LinearLayout>
+</LinearLayout>

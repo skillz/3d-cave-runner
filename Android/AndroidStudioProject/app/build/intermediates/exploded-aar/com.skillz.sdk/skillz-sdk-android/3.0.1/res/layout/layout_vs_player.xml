@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/avatar_frame"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:background="@drawable/avatar_bg">
+
+        <com.skillz.widget.AvatarImageView
+            android:id="@+id/skz_vs_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/avatar_unknown" />
+
+        <ImageView
+            android:id="@+id/skz_vs_avatar_you_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/avatar_tag_you"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_namebox"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.skillz.widget.FontTextView
+            android:id="@+id/skz_vs_player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="@string/skz_player_challenger" />
+
+        <ImageView
+            android:id="@+id/skz_vs_player_flag"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/ic_flag_unknown" />
+    </LinearLayout>
+
+</LinearLayout>

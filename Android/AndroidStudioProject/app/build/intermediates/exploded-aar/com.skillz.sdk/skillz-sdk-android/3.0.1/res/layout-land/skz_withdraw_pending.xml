@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F4660">
+
+    <ImageView
+        android:id="@+id/skz_withdrawal_pending_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/bg_unlocked"/>
+
+    <LinearLayout
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/dialog_bg"
+        android:orientation="vertical">
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="@string/skz_withdraw_pending_title"
+            android:textColor="@color/skz_withdraw_pending_title"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_bold" />
+
+        <TextView
+            style="@style/DialogTitle"
+            android:layout_marginBottom="5dp"
+            android:linksClickable="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/skz_withdraw_pending_description" />
+
+        <com.skillz.widget.FontTextView
+            style="@style/DialogTitle"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/skz_withdraw_pending_instructions"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_black_cond" />
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/skz_withdrawal_cancel_existing_withdrawal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/skz_withdraw_pending_button_cancel"
+            style="@style/Button.PlayAgainNewPLOW"
+            android:background="@drawable/primary_button_with_disabled"
+            />
+
+        <com.skillz.widget.FontTextView
+            style="@style/DialogTitle"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/skz_withdraw_pending_or"
+            android:textSize="20sp"
+            app:font="@string/skz_neue_black_cond" />
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/skz_withdrawal_return_to_store"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="@string/skz_withdraw_pending_button_return"
+            style="@style/Button.NextNewPLOW"
+            android:background="@drawable/secondary_button"
+            />
+
+    </LinearLayout>
+</FrameLayout>
