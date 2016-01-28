@@ -85,15 +85,15 @@ function CreatePlatform(Offset:int)
 	SectionCopy.transform.Rotate(Vector3.right * -90, Space.World); //Fix the section's orientation. This proved to be the solution to aproblem when importing meshes from 3DS max, since they where always laid on the side and had to be rotated back to stand up straight. If it gives you trouble, either comment it off or contact me for help
 	
 	//Set platform Width to a random value between the minimum and maximum of PlatformWidthRange ( localScale.x )
-	PlatformWidth = Random.Range(PlatformWidthRange.x,PlatformWidthRange.y);
-	if ( PlatformWidth < 0.4 )    PlatformWidth = 0.4; //Limit the width to be no less than 0.4 in scale. We don't want the platforms to be too thin at higher level
+	PlatformWidth = Skillz.Random.Range(PlatformWidthRange.x,PlatformWidthRange.y);
+	if ( PlatformWidth < 0.4 )	PlatformWidth = 0.4; //Limit the width to be no less than 0.4 in scale. We don't want the platforms to be too thin at higher level
 	SectionCopy.transform.localScale.x = PlatformWidth; //Set the localScale.x based on the value of PlatformWidth
 	
 	PlatformOldLength = PlatformLength; //Record the old length for later use
 	
 	//Set platform Length to a random value between the minimum and maximum of PlatformWidthRange ( number of sections in platform )
-	PlatformLength = Random.Range(PlatformLengthRange.x,PlatformLengthRange.y);
-	if ( PlatformLength < 5 )    PlatformWidth = 5; //Limit the length to be no less than 5 sections long. We don't want the platforms to be too short at higher level
+	PlatformLength = Skillz.Random.Range(PlatformLengthRange.x,PlatformLengthRange.y);
+	if ( PlatformLength < 5 )	PlatformWidth = 5; //Limit the length to be no less than 5 sections long. We don't want the platforms to be too short at higher level
 	(NewPlatformCopy.GetComponent("Platform") as Platform).PlatformLength = PlatformLength; //Set the length of the platform
 	
 	//Create the middle parts of the platform based on PlatformLength
@@ -128,23 +128,25 @@ function CreatePlatform(Offset:int)
 	//Here we set the paltform gap and shift, and create obstacles/gems, but only from the second platform and up
 	if ( PlatformOldLength > 0 ) //If this is the first platform, don't create a gap/shift or put obstacles/gems
 	{
-		PlatformGap = Random.Range(PlatformGapRange.x,PlatformGapRange.y); //Choose a random value within the minimum and maximum of PlatformGapRange
+		PlatformGap = Skillz.Random.Range(PlatformGapRange.x,PlatformGapRange.y); //Choose a random value within the minimum and maximum of PlatformGapRange
 		NewPlatformCopy.Translate(Vector3.forward * PlatformGap, Space.World); //Move the platform forward by the value of PlatformGap
 
 		//Thsi function creates obstacles and gems within horizontal limits
 		CreateGemOrObstacle(PlatformWidth * -5,PlatformWidth * 5);
 
 		//Shift the platform some distance either left or right
-		PlatformShift = Random.Range(PlatformShiftRange.x,PlatformShiftRange.y); //Choose a random value within the minimum and maximum of PlatformShiftRange
+		PlatformShift = Skillz.Random.Range(PlatformShiftRange.x,PlatformShiftRange.y); //Choose a random value within the minimum and maximum of PlatformShiftRange
 		NewPlatformCopy.Translate(Vector3.right * PlatformShift, Space.World); //Move the platform either left or right by the value of PlatformShift
 	}
 	
 	//Set platform Height
-	PlatformHeight = Random.Range(PlatformHeightRange.x,PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
+	PlatformHeight = Skillz.Random.Range(PlatformHeightRange.x,PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
+
 	NewPlatformCopy.Translate(Vector3.up * PlatformHeight, Space.World); //Move the platform either up or down by the value of PlatformHeight
 	
 	//rotate the platform
-	PlatformRotate = Random.Range(PlatformRotateRange.x,PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
+	PlatformRotate = Skillz.Random.Range(PlatformRotateRange.x,PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
+
 	NewPlatformCopy.Rotate(Vector3.up * PlatformRotate, Space.World); //Rotate the platform either left or right by the value of PlatformRotate
 	
 	NewPlatformCopy.Translate(Vector3.forward * Offset, Space.World); //Move the platform forward based on teh value of Offset. This is the value we set when we run the function, and its used to make the initial platforms created place correctly one after the other
@@ -156,10 +158,10 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 	//We go through all the platform section
 	for ( GemIndex = 1 ; GemIndex < PlatformLength * SectionLength; GemIndex += 2 )
 	{
-		if ( ObstacleRate > Random.value ) //Check the obstacle creation rate against a random value between 0 and 1. If the rate is larger, create an obstacle
+		if ( ObstacleRate > Skillz.Random.Value() ) //Check the obstacle creation rate against a random value between 0 and 1. If the rate is larger, create an obstacle
 		{
 			//Choose one of the obstacle types from an array, and place it at the position of NewPlatformCopy
-			var obstacleIndex = Random.Range(0,Obstacle.length);
+			var obstacleIndex = Skillz.Random.Range(0,Obstacle.length);
 			ObstacleCopy = collector.GetObstacle(obstacleIndex);
 			
 			
@@ -167,18 +169,19 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 			ObstacleCopy.transform.rotation = Quaternion.identity;
 			
 			ObstacleCopy.transform.Translate(Vector3.forward * GemIndex, Space.World); //move the obstacle forward based on GemIndex, so it is placed on the next section
-			ObstacleCopy.transform.Translate(Vector3.right * Random.Range(LeftLimit,RightLimit), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+			ObstacleCopy.transform.Translate(Vector3.right * Skillz.Random.Range(LeftLimit,RightLimit), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+
 			ObstacleCopy.transform.parent = NewPlatformCopy.transform; //Attach the obstacle to the platform
 		}
-		else if ( GemRate > Random.value ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
+		else if ( GemRate > Skillz.Random.Value() ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
 		{
 			//Choose one of the gem types from an array, and place it at the position of NewPlatformCopy
-			var gemIndex = Random.Range(0,Gem.length);
+			var gemIndex = Skillz.Random.Range(0,Gem.length);
+
 			GemCopy = collector.GetGem(gemIndex);
 			
-			
 			GemCopy.transform.position = NewPlatformCopy.transform.position;
-			GemCopy.transform.rotation = Random.rotation;
+			GemCopy.transform.rotation = Skillz.Random.Rotation();
 			GemCopy.transform.Translate(Vector3.forward * GemIndex, Space.World); //move the gem forward based on GemIndex, so it is placed on the next section
 			GemCopy.transform.Translate(Vector3.up * 0.7, Space.World); //Move the gem a bit up so it doesn't seem to be stuck unto the ground
 			
@@ -190,8 +193,8 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 			}
 			else
 			{
-				GemShift = Random.Range(LeftLimit,RightLimit); //Choose a random point for the gem trail, within the limits of LeftLimit/RightLimit
-				GemTrail = Random.Range(GemTrailRange.x,GemTrailRange.y); //Choose a random lenght of trail for the gems, within the limits of GemTrailRange
+				GemShift = Skillz.Random.Range(LeftLimit,RightLimit); //Choose a random point for the gem trail, within the limits of LeftLimit/RightLimit
+				GemTrail = Skillz.Random.Range(GemTrailRange.x,GemTrailRange.y); //Choose a random length of trail for the gems, within the limits of GemTrailRange
 			}
 			
 			GemCopy.transform.Translate(Vector3.right * GemShift, Space.World); //Move the gem left or right based on the value set in GemShift
@@ -213,7 +216,7 @@ function OnDrawGizmos()
 	
 	//The third edge of the triangle
 	Gizmos.color = Color.yellow;
-	Gizmos.DrawLine (Vector3(transform.position.x,transform.position.y,transform.position.z + 5), Vector3(transform.position.x - 5,transform.position.y,transform.position.z));	
+	Gizmos.DrawLine (Vector3(transform.position.x,transform.position.y,transform.position.z + 5), Vector3(transform.position.x - 5,transform.position.y,transform.position.z)); 
 }
 
 //Used for Tutorial
@@ -225,7 +228,7 @@ public function AddObstacle(platform:GameObject,obstacleIndex:int)
 	ObstacleCopy.transform.rotation = Quaternion.identity;
 		
 	ObstacleCopy.transform.Translate(Vector3.forward * 6, Space.World); //move the obstacle forward based on GemIndex, so it is placed on the next section
-	ObstacleCopy.transform.Translate(Vector3.right * Random.Range(PlatformWidth * -1,PlatformWidth * 1), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+	ObstacleCopy.transform.Translate(Vector3.right * Skillz.Random.Range(PlatformWidth * -1,PlatformWidth * 1), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
 	ObstacleCopy.transform.parent = platform.transform; //Attach the obstacle to the platform
 	
 	(platform.GetComponent("Platform")as Platform).setObstacleIndex(obstacleIndex);
