@@ -12,7 +12,7 @@
       <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
     </activity>
   </application>
-  <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="23" />
+  <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22" />
   <uses-feature android:glEsVersion="0x00020000" />
   <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
   <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
