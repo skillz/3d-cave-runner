@@ -153,6 +153,11 @@ function OnGUI()
 		GUI.Label (Rect(originalWidth  * 0.85,originalHeight * 0.055 ,0,0 ), TotalGems.ToString() + " Gems"); //Place the gems count on the top right of the screen
 		GUI.DrawTexture (Rect(originalWidth  * 0.945,originalHeight * 0.037 ,32 ,32 ), Gems); //Place the gem image beside the gems count on the top right of the screen
 		
+		//Skillz heartbeat
+		if (PlayerPrefs.GetInt("SkillzGame") == 1) {
+			Skillz.UpdatePlayersCurrentScore(TotalScore);
+		}
+				
 		//Animate the level up text by passing it from the right side of the screen to the left side
 		if ( LevelUp == false && LevelUpPosX > -originalWidth )
 		{
