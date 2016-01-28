@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CaveRun3D/Scripts/Menu.js">
+    <Files>
+      <File FileName="Assets/CaveRun3D/Scripts/Menu.js" Line="48" Column="9" />
+      <File FileName="Assets/CaveRun3D/Scripts/MenuItem_.js" Line="32" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
