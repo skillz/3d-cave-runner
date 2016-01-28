@@ -2,10 +2,11 @@
 
 // This method is called when a user starts a game from Skillz
 function SkillzMatchStarted () {
-	// implement me
+	PlayerPrefs.SetInt("SkillzGame",1);
+	Application.LoadLevel("game");
 }
 
 // This method is called when a user exits the Skillz experience (via Menu -> Exit)
 function SkillzExited () {
-	// implement me
+	Application.LoadLevel("start");
 }
