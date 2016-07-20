@@ -1,20 +1,17 @@
 package com.skillzgames.caverun;
 
-import com.unity3d.player.*;
 import android.app.NativeActivity;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
 import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.CrashlyticsCore;
-import com.crashlytics.android.ndk.CrashlyticsNdk;
+import com.unity3d.player.UnityPlayer;
 
+import io.fabric.sdk.android.Fabric;
 
 public class UnityPlayerNativeActivity extends NativeActivity
 {
@@ -25,12 +22,13 @@ public class UnityPlayerNativeActivity extends NativeActivity
 	{
 		if (!BuildConfig.DEBUG) {
 			// Set up Crashlytics, disabled for debug builds
+			/*
 			Crashlytics crashlyticsKit = new Crashlytics.Builder()
 					.core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
 					.build();
-
+			*/
 			// Initialize Fabric with the debug-disabled crashlytics.
-			Fabric.with(this, crashlyticsKit, new Crashlytics(), new CrashlyticsNdk());
+			Fabric.with(this, new Crashlytics());
 		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
