@@ -11,6 +11,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
+
+
 public class UnityPlayerNativeActivity extends NativeActivity
 {
 	protected UnityPlayer mUnityPlayer;		// don't change the name of this variable; referenced from native code
@@ -18,6 +23,15 @@ public class UnityPlayerNativeActivity extends NativeActivity
 	// Setup activity layout
 	@Override protected void onCreate (Bundle savedInstanceState)
 	{
+		if (!BuildConfig.DEBUG) {
+			// Set up Crashlytics, disabled for debug builds
+			Crashlytics crashlyticsKit = new Crashlytics.Builder()
+					.core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
+					.build();
+
+			// Initialize Fabric with the debug-disabled crashlytics.
+			Fabric.with(this, crashlyticsKit, new Crashlytics(), new CrashlyticsNdk());
+		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 
