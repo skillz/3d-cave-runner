@@ -38,6 +38,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt')//, 'proguard-rules.txt'
             signingConfig signingConfigs.config
+            ext.betaDistributionGroupAliases='sdk,qa-2,ts'
         }
         debug {
             minifyEnabled false
