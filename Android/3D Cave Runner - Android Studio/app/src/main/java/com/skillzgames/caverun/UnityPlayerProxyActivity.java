@@ -4,17 +4,19 @@ import com.unity3d.player.*;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 /**
- * @deprecated Use UnityPlayerNativeActivity instead.
+ * @deprecated Use UnityPlayerActivity instead.
  */
 public class UnityPlayerProxyActivity extends Activity
 {
-	protected void onCreate (Bundle savedInstanceState)
+	@Override protected void onCreate (Bundle savedInstanceState)
 	{
+		Log.w("Unity", "UnityPlayerNativeActivity has been deprecated, please update your AndroidManifest to use UnityPlayerActivity instead");
 		super.onCreate(savedInstanceState);
 
-		Intent intent = new Intent(this, com.skillzgames.caverun.UnityPlayerNativeActivity.class);
+		Intent intent = new Intent(this, com.skillzgames.caverun.UnityPlayerActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 		Bundle extras = getIntent().getExtras();
 		if (extras != null)
