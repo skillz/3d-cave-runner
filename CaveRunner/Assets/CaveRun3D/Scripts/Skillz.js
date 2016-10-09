@@ -29,7 +29,9 @@
 static class Skillz {
 
 	function Launch() {
-		SkillzClass.CallStatic("launch",currentActivity());
+		currentActivity().Call("runOnUiThread", new AndroidJavaRunnable(function() {
+			SkillzClass.CallStatic("launch", currentActivity());
+		}));
 	}
 	
 	function IsMatchInProgress() {

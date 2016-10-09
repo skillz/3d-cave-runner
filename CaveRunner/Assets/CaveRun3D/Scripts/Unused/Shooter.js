@@ -44,7 +44,7 @@ function Update ()
 			ShotObjectCopy.Translate(ShotOffset, Space.Self);
 			ShotObjectCopy.transform.LookAt(Player.transform.position);
 			//ShotObjectCopy.rigidbody.AddForce(transform.forward * ShotSpeed, ForceMode.Impulse);
-			ShotObjectCopy.rigidbody.AddForce(transform.forward * ShotSpeed, ForceMode.Impulse);
+			ShotObjectCopy.GetComponent.<Rigidbody>().AddForce(transform.forward * ShotSpeed, ForceMode.Impulse);
 		
 		}
 	}

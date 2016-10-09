@@ -89,12 +89,12 @@ function OnTriggerEnter(collision : Collider)
 	{
 		HitPlayer = true; //Set hit player to true, so we hit him only once per obstacle
 			
-		if ( StickToPlayer == false )    audio.PlayOneShot(HitSound); //If we don;t stick to the player, play the hit sound defined in the inspector
-		else    audio.Play(); //Otherwise, if we do stick to the player, play the sound that is currently in the obstacle's audio source. I do this because I want a sound loop to play from the obstacle while stuck
+		if ( StickToPlayer == false )    GetComponent.<AudioSource>().PlayOneShot(HitSound); //If we don;t stick to the player, play the hit sound defined in the inspector
+		else    GetComponent.<AudioSource>().Play(); //Otherwise, if we do stick to the player, play the sound that is currently in the obstacle's audio source. I do this because I want a sound loop to play from the obstacle while stuck
 		//to the player. A good example would be the bats obstacle which plays a bat sound loop while stuck to the player
 		
 		kPlayerControls.Speed *= SpeedChange; //Affect the player's speed
-		kPlayerControls.rigidbody.velocity = Bounce; //Bounce the player
+		kPlayerControls.GetComponent.<Rigidbody>().velocity = Bounce; //Bounce the player
 		kPlayerControls.TurnDamping *= TurnSpeedChange; //Affect the player's turning speed
 		kPlayerControls.HitAnimation = HitAnimation; //Set the player's hit animation
 		kPlayerControls.HitAnimationTime = HitAnimationTime; //Set the player's hit animation time
@@ -114,7 +114,7 @@ function OnTriggerEnter(collision : Collider)
 		
 		if ( AnimateObstacle == true )
 		{
-			transform.animation.Play(); //Play the obstacle animation
+			transform.GetComponent.<Animation>().Play(); //Play the obstacle animation
 		}
 	}
 }

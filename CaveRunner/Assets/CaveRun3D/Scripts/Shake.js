@@ -35,8 +35,8 @@ function Update ()
 		{
 			shaking = true; //Used to make this shake check happen just once
 			
-			if ( DebrisEffect )    DebrisEffect.particleEmitter.emit = true; //If there is a debris effect ( particleEmitter only ), play it
-			if ( RumbleSound )    audio.PlayOneShot(RumbleSound); //If there is a debris sound, play it
+			if ( DebrisEffect )    DebrisEffect.GetComponent.<ParticleEmitter>().emit = true; //If there is a debris effect ( particleEmitter only ), play it
+			if ( RumbleSound )    GetComponent.<AudioSource>().PlayOneShot(RumbleSound); //If there is a debris sound, play it
 		}
 	}
 	else //If the value of shake reaches 0, stop shaking
@@ -45,7 +45,7 @@ function Update ()
 		{
 			shaking = false; //Used to make this shake check happen just once
 			
-			if ( DebrisEffect )    DebrisEffect.particleEmitter.emit = false; //If there is a debris effect ( particleEmitter only ), stop it
+			if ( DebrisEffect )    DebrisEffect.GetComponent.<ParticleEmitter>().emit = false; //If there is a debris effect ( particleEmitter only ), stop it
 		}
 	}
 }

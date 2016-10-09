@@ -23,7 +23,7 @@ function OnTriggerEnter (other : Collider)
 	{
 		if ( StepState == false )
 		{
-			audio.PlayOneShot(StepSound); //Play a step sound
+			GetComponent.<AudioSource>().PlayOneShot(StepSound); //Play a step sound
 			
 			//If AbsolutePosition is true, create the TrailEffect at a pset position, otherwise create the effect at the collision point
 			if ( AbsolutePosition == true )   TrailEffectCopy = Instantiate(TrailEffect, EffectPosition, Quaternion.identity);

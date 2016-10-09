@@ -35,8 +35,8 @@ function Update ()
 		if ( ObjectCopy.GetComponent("Float") )    (ObjectCopy.GetComponent("Float") as Float).enabled = false;
 		
 		ObjectCopy.gameObject.AddComponent(Rigidbody); //Give the object a rigidbody, so we can affect it with physical forces 
-		ObjectCopy.rigidbody.useGravity = false; //Prevent it from falling naturally with gravity
-		ObjectCopy.rigidbody.velocity = FallSpeed; //Give it a velocity set by the value of FallSpeed, which can be set in the inspector
+		ObjectCopy.GetComponent.<Rigidbody>().useGravity = false; //Prevent it from falling naturally with gravity
+		ObjectCopy.GetComponent.<Rigidbody>().velocity = FallSpeed; //Give it a velocity set by the value of FallSpeed, which can be set in the inspector
 		
 		Destroy(ObjectCopy.gameObject, CurrentDestroyAfter); //Destroy the object after a feew seconds
 	}

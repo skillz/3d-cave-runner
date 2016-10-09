@@ -91,7 +91,7 @@ function Start()
 	
 	InitPos = transform.position; //Set the initial position of the player
 	
-	animation.CrossFade("Fall"); //Start playing the fall animation
+	GetComponent.<Animation>().CrossFade("Fall"); //Start playing the fall animation
 	
 	(Camera.main.GetComponent("Shake") as Shake).Shake = (GameController.GetComponent("GameController") as GameController).LevelUpRumble; //shake the camera
 	CalibrateAccelerometer();
@@ -102,7 +102,7 @@ function Update()
 	if (Time.timeScale>0)
 	{
 		//Make the camera follow the player
-		camera.main.transform.position.x -= (camera.main.transform.position.x - transform.position.x) * CameraFollowSpeed;
+		GetComponent.<Camera>().main.transform.position.x -= (GetComponent.<Camera>().main.transform.position.x - transform.position.x) * CameraFollowSpeed;
 		
 		if ( FellOff == false ) //If we haven't fallen off yet, keep running
 		{
@@ -130,16 +130,16 @@ function Update()
 			if ( Input.GetButtonDown("Jump") && JumpState == 0 ) //If we press the jump button, give the player a velocity up
 			{
 				JumpState = 1; //Set the jump state to 1, Jumping
-				rigidbody.velocity.y = JumpPower * JumpChange; //Give the player an up velocity
-				audio.PlayOneShot(JumpSound); //Play a jump sound
+				GetComponent.<Rigidbody>().velocity.y = JumpPower * JumpChange; //Give the player an up velocity
+				GetComponent.<AudioSource>().PlayOneShot(JumpSound); //Play a jump sound
 			}
-			else if ( Input.GetButtonUp("Jump") && rigidbody.velocity.y > 0 && JumpState == 1 ) //If we release the jump button while jumping, reduce the up velocity to third of its power, making the player fall quickly
+			else if ( Input.GetButtonUp("Jump") && GetComponent.<Rigidbody>().velocity.y > 0 && JumpState == 1 ) //If we release the jump button while jumping, reduce the up velocity to third of its power, making the player fall quickly
 			{
 				JumpState = 2; //fall after jump
-				rigidbody.velocity.y *= 0.3; //Reduce the up velocity to third its power
+				GetComponent.<Rigidbody>().velocity.y *= 0.3; //Reduce the up velocity to third its power
 			}
 			
-			if ( rigidbody.velocity.y < 0 && JumpState == 1 ) //If we've fallen after jumping, change the animation to falling 
+			if ( GetComponent.<Rigidbody>().velocity.y < 0 && JumpState == 1 ) //If we've fallen after jumping, change the animation to falling 
 			{
 				JumpState = 2; //fall after jump
 			}
@@ -147,16 +147,16 @@ function Update()
 			if ( Input.GetButtonDown("Jump") && JumpState == 2 ) //If we press the jump button while falling the first time, perform a double jump
 			{
 				JumpState = 3; //double jump
-				rigidbody.velocity.y = JumpPower * 0.7 * JumpChange; //Give the player an up velocity, which is a little weaker than the first jump
-				audio.PlayOneShot(JumpSound); //Play a jump sound
+				GetComponent.<Rigidbody>().velocity.y = JumpPower * 0.7 * JumpChange; //Give the player an up velocity, which is a little weaker than the first jump
+				GetComponent.<AudioSource>().PlayOneShot(JumpSound); //Play a jump sound
 			}
-			else if ( Input.GetButtonUp("Jump") && rigidbody.velocity.y > -1 && JumpState == 3 ) //If we release the jump button while double jumping, reduce the up velocity to third of its power, making the player fall quickly
+			else if ( Input.GetButtonUp("Jump") && GetComponent.<Rigidbody>().velocity.y > -1 && JumpState == 3 ) //If we release the jump button while double jumping, reduce the up velocity to third of its power, making the player fall quickly
 			{
-				rigidbody.velocity.y *= 0.3; //Reduce the up velocity to third its power
+				GetComponent.<Rigidbody>().velocity.y *= 0.3; //Reduce the up velocity to third its power
 				JumpState = 4; //fall after double jump
 			}
 			
-			if ( rigidbody.velocity.y < 0 && JumpState == 3 ) //If we've fallen after double jumping, change the animation to falling 
+			if ( GetComponent.<Rigidbody>().velocity.y < 0 && JumpState == 3 ) //If we've fallen after double jumping, change the animation to falling 
 			{
 				JumpState = 4; //fall after double jump
 			}
@@ -174,7 +174,7 @@ function Update()
 				Speed *= 0.9; //reduce the player's speed
 				if (!playedFallSound)
 				{
-					audio.PlayOneShot(FallSound);
+					GetComponent.<AudioSource>().PlayOneShot(FallSound);
 					playedFallSound = true;
 				}
 				
@@ -184,7 +184,7 @@ function Update()
 				Speed = 0; //set the speed to 0
 				(Camera.main.GetComponent("Shake") as Shake).Shake = 200; //shake the camera
 				
-				audio.PlayOneShot(CrashSound); //play a crash sound
+				GetComponent.<AudioSource>().PlayOneShot(CrashSound); //play a crash sound
 				isDead = true;
 				//gController.showScoreOnScreen = true;
 				EndGameRun();
@@ -200,17 +200,17 @@ function Update()
 		//High speed effect
 		if ( Speed > 22 )
 		{
-			SpeedEffect.particleEmitter.emit = true; //turn on the high speed effect
+			SpeedEffect.GetComponent.<ParticleEmitter>().emit = true; //turn on the high speed effect
 		}
 		else
 		{
-			SpeedEffect.particleEmitter.emit = false; //turn off the high speed effect
+			SpeedEffect.GetComponent.<ParticleEmitter>().emit = false; //turn off the high speed effect
 		}
 	
 		//Lava, walk, run, jump, and fall animations
 		if ( HitAnimation != "" && HitAnimationTime > 0 ) //If we have a hit animation set, play it
 		{
-			animation.CrossFade(HitAnimation); //play the hti animation
+			GetComponent.<Animation>().CrossFade(HitAnimation); //play the hti animation
 			
 			HitAnimationTime -= Time.deltaTime; //reduce from the hit animation time
 			
@@ -225,23 +225,23 @@ function Update()
 			{
 				if ( Speed > 22 ) //if speed is above 0.5, play the fast run animation 
 				{
-					animation.CrossFade("Run"); 
+					GetComponent.<Animation>().CrossFade("Run"); 
 					//animation["Run"].speed = Speed * 3; //set animation speed be based on the player's actual speed
 				}
 				else //otherwise, play the normal run animation
 				{
-					animation.CrossFade("Walk");
+					GetComponent.<Animation>().CrossFade("Walk");
 					//animation["Walk"].speed = Speed * 4; //set animation speed be based on the player's actual speed
 				}
 			}
 			else if ( JumpState == 1 || JumpState == 3 )
 			{
-				animation.CrossFade("Jump");
+				GetComponent.<Animation>().CrossFade("Jump");
 				//animation["Jump"].speed = Speed * 4; //set animation speed be based on the player's actual speed
 			}
 			else if ( JumpState == 2 || JumpState == 4 )
 			{
-				animation.CrossFade("Fall");
+				GetComponent.<Animation>().CrossFade("Fall");
 				//animation["Fall"].speed = Speed * 4; //set animation speed be based on the player's actual speed
 			}
 		}
@@ -306,7 +306,7 @@ function OnCollisionEnter(collision : Collision)
 		if (collision.gameObject.transform.parent.GetComponent("Platform") as Platform != null)
 			lastTouchedPlatform = collision.gameObject.transform.parent.gameObject;
 			
-		audio.PlayOneShot(StepSound); //play a step sound
+		GetComponent.<AudioSource>().PlayOneShot(StepSound); //play a step sound
 		
 		if ( PuffEffect )   
 			Instantiate(PuffEffect, transform.position, Quaternion.identity); //if there is a puff effect, create it at the player's feet

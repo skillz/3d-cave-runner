@@ -8,7 +8,7 @@ private var CurrentOffset:float = 0;
 
 function Update () 
 {
-	transform.renderer.material.mainTextureScale = Vector2 (CurrentOffset,CurrentOffset);
+	transform.GetComponent.<Renderer>().material.mainTextureScale = Vector2 (CurrentOffset,CurrentOffset);
 	//transform.renderer.material.mainTextureOffset = Vector2(0,CurrentOffset);
 	CurrentOffset += Offset;
 	

@@ -15,10 +15,10 @@ function Start()
 	for( var ObjectToDisperse:Transform in transform )
 	{
 		ObjectToDisperse.gameObject.AddComponent(Rigidbody); //Add a rigidbody to this object so it can be affected by forces
-		ObjectToDisperse.rigidbody.useGravity = ShouldUseGravity; //Change the useGravity setting. If it's on false the objects will not fall down with gravity. If it's on true , they will fall down with gravity
-		ObjectToDisperse.rigidbody.velocity.x = Random.Range(DisperseRangeX.x,DisperseRangeX.y); //Set the x velocity to a random value within DisperseRangeX
-		ObjectToDisperse.rigidbody.velocity.y = Random.Range(DisperseRangeY.x,DisperseRangeY.y); //Set the y velocity to a random value within DisperseRangeY
-		ObjectToDisperse.rigidbody.velocity.z = Random.Range(DisperseRangeZ.x,DisperseRangeZ.y); //Set the z velocity to a random value within DisperseRangeZ
+		ObjectToDisperse.GetComponent.<Rigidbody>().useGravity = ShouldUseGravity; //Change the useGravity setting. If it's on false the objects will not fall down with gravity. If it's on true , they will fall down with gravity
+		ObjectToDisperse.GetComponent.<Rigidbody>().velocity.x = Random.Range(DisperseRangeX.x,DisperseRangeX.y); //Set the x velocity to a random value within DisperseRangeX
+		ObjectToDisperse.GetComponent.<Rigidbody>().velocity.y = Random.Range(DisperseRangeY.x,DisperseRangeY.y); //Set the y velocity to a random value within DisperseRangeY
+		ObjectToDisperse.GetComponent.<Rigidbody>().velocity.z = Random.Range(DisperseRangeZ.x,DisperseRangeZ.y); //Set the z velocity to a random value within DisperseRangeZ
 	}
 	
 	Destroy(gameObject, RemoveAfter); //Destroy the gameobject after a few seconds
