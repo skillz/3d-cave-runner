@@ -22,9 +22,7 @@ public class UnityPlayerActivity extends Activity
 	@Override protected void onCreate (Bundle savedInstanceState)
 	{
 
-		if (!BuildConfig.DEBUG) {
-			Fabric.with(this, new Crashlytics());
-		}
+		Fabric.with(this, new Crashlytics());
 		
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
