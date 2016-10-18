@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp-firstpass.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CaveRun3D/Scripts/Skillz.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CaveRun3D/Scripts/TutorialController.js">
     <Files>
-      <File FileName="Assets/Standard Assets/GameSceneManager.cs" Line="14" Column="14" />
-      <File FileName="Assets/CaveRun3D/Scripts/Skillz.js" Line="42" Column="25" />
+      <File FileName="Assets/CaveRun3D/Scripts/Skillz.js" Line="1" Column="1" />
       <File FileName="Assets/CaveRun3D/Scripts/SkillzDelegate.js" Line="1" Column="1" />
-      <File FileName="Assets/CaveRun3D/Scripts/Menu.js" Line="36" Column="2" />
-      <File FileName="Assets/CaveRun3D/Scripts/MenuItem_.js" Line="12" Column="16" />
-      <File FileName="Assets/CaveRun3D/Scripts/Float.js" Line="15" Column="22" />
+      <File FileName="Assets/CaveRun3D/Scripts/Menu.js" Line="1" Column="1" />
+      <File FileName="Assets/CaveRun3D/Scripts/MenuItem_.js" Line="1" Column="1" />
+      <File FileName="Assets/CaveRun3D/Scripts/Float.js" Line="1" Column="1" />
       <File FileName="Assets/CaveRun3D/Scripts/Bat.js" Line="1" Column="1" />
+      <File FileName="Assets/CaveRun3D/Scripts/TutorialController.js" Line="140" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
