@@ -17,7 +17,7 @@ android {
         config {
             keyAlias 'CaveRunnerKeystore'
             keyPassword 'password'
-            storeFile file('/Users/tfallon/Downloads/android.jks')
+            storeFile file('/etc/android.jks')
             storePassword 'password'
         }
     }
