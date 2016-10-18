@@ -12,3 +12,15 @@ function SkillzExited () {
   Debug.Log('Loading Start - For Skillz Exit');
   SceneManager.LoadScene("start");
 }
+
+function Start () {
+  Debug.Log('Skillz Delegate - Started');
+}
+
+function OnDestroy () {
+  Debug.Log('Skillz Delegate - Destroyed');
+}
+
+function OnDisable () {
+  Debug.Log('Skillz Delegate - Disabled');
+}
