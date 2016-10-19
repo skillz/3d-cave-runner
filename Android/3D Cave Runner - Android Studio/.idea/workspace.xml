@@ -44,11 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="79" column="3" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="3" />
+            <state relative-caret-position="219">
+              <caret line="87" column="38" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -64,14 +64,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider editor-type-id="android-manifest">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+            <state relative-caret-position="90">
+              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -3115,7 +3115,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1115" y="-1057" width="1659" height="1057" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3524,8 +3524,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+        <state relative-caret-position="90">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -3540,8 +3540,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="79" column="3" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="3" />
+        <state relative-caret-position="219">
+          <caret line="87" column="38" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
           <folding />
         </state>
       </provider>

@@ -126,22 +126,18 @@ function WaitThenFinish() {
 
     var metrics = new Dictionary.<String,String>();
     metrics["score"] = TotalScore.ToString();
+    PlayerPrefs.SetInt("SkillzGame", 0);
+    
     Debug.Log('Loading Start - Load Menu');
     SceneManager.LoadScene("start");
-    WaitThenReportScore(metrics["score"]);
+
+    Debug.Log('Report Score');
+    Skillz.ReportScore(metrics["score"]);
 
   } else { //single player game: exit
     Debug.Log('Loading End - Wait Then Finish');
     SceneManager.LoadScene("end");
   }
-}
-
-function WaitThenReportScore(score) {
-  yield WaitForSeconds(1);
-
-  Debug.Log('Report Score');
-  Skillz.ReportScore(score);
-  PlayerPrefs.SetInt("SkillzGame", 0);
 }
 
 public var showScoreOnScreen : boolean = true;
