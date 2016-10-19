@@ -52,7 +52,6 @@ function Start()
 
 function Update ()
 {
-  Debug.Log('Update Game Controller');
   //If we haven't already leveled up and we passed the target distance for the next level, LEVEL UP!
   if (Time.timeScale>0)
   if ( LevelUp == false &&  TotalDistance >= DistanceToLevelUp * CurrentLevel + LastLevelDistance )
@@ -125,18 +124,25 @@ function WaitThenFinish() {
     Debug.Log("end Match Rules");
     */
 
-    Debug.Log('Loading Start - Load Menu');
-    SceneManager.LoadScene("start");
-
     var metrics = new Dictionary.<String,String>();
     metrics["score"] = TotalScore.ToString();
+    Debug.Log('Report Score');
     Skillz.ReportScore(metrics["score"]);
     PlayerPrefs.SetInt("SkillzGame", 0);
+
+    WaitThenDisplayMenu();
 
   } else { //single player game: exit
     Debug.Log('Loading End - Wait Then Finish');
     SceneManager.LoadScene("end");
   }
+}
+
+function WaitThenDisplayMenu() {
+  yield WaitForSeconds(1);
+
+  Debug.Log('Loading Start - Load Menu');
+  SceneManager.LoadScene("start");
 }
 
 public var showScoreOnScreen : boolean = true;
