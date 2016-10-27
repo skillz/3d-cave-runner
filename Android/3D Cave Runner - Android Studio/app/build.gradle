@@ -59,7 +59,7 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile files('libs/unity-classes.jar')
     //Skillz SDK
-    compile 'com.skillz.sdk:skillz-sdk-android:3.0-SNAPSHOT'
+    compile 'com.skillz.sdk:skillz-sdk-android:3.0.1-SNAPSHOT'
     //Skillz dependencies
     /*
                             compile 'com.squareup.retrofit:retrofit:1.9.0'
