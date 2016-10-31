@@ -15,6 +15,7 @@ buildscript {
 android {
     signingConfigs {
         config {
+            // make sure to update the .jks file pointing to your machine
             keyAlias 'CaveRunnerKeystore'
             keyPassword 'password'
             storeFile file('/etc/android.jks')
@@ -35,9 +36,10 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true // Set to True for Proguard
+            shrinkResources false
             signingConfig signingConfigs.config
-            proguardFiles getDefaultProguardFile('proguard-android.txt')//, 'proguard-rules.txt'
+            proguardFiles 'proguard-rules.pro'
             ext.betaDistributionGroupAliases = 'sdk,qa-2,ts'
         }
         debug {
