@@ -1,9 +1,11 @@
 apply plugin: 'com.android.application'
 
+
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
     }
+
 
     dependencies {
         // The Fabric Gradle plugin uses an open ended version to react
@@ -12,6 +14,7 @@ buildscript {
     }
 }
 
+
 android {
     signingConfigs {
         config {
@@ -19,6 +22,7 @@ android {
             keyPassword 'password'
             storeFile file('/etc/android.jks')
             storePassword 'password'
+            // make sure to update the .jks file pointing to your machine
         }
     }
     compileSdkVersion 24
@@ -35,9 +39,10 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true // Set to True for Proguard
+            shrinkResources false
             signingConfig signingConfigs.config
-            proguardFiles getDefaultProguardFile('proguard-android.txt')//, 'proguard-rules.txt'
+            proguardFiles 'proguard-rules.pro'
             ext.betaDistributionGroupAliases = 'sdk,qa-2,ts'
         }
         debug {
@@ -54,6 +59,7 @@ android {
     productFlavors {
     }
 }
+
 
 dependencies {
     compile 'com.android.support:multidex:1.0.1'
@@ -76,7 +82,9 @@ dependencies {
     }
 }
 
+
 apply plugin: 'io.fabric'
+
 
 repositories {
     flatDir {
