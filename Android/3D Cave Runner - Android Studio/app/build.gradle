@@ -25,8 +25,8 @@ android {
             // make sure to update the .jks file pointing to your machine
         }
     }
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.skillzgames.caverun"
         minSdkVersion 16
@@ -38,7 +38,7 @@ android {
     }
     buildTypes {
         release {
-         //   debuggable true
+            debuggable=project.debuggable
             minifyEnabled true
             shrinkResources false
 
@@ -68,9 +68,9 @@ dependencies {
 
     compile 'com.skillz.sdk:skillz-sdk-android:3.0.1-SNAPSHOT'
 
-    compile 'com.android.support:support-v4:24.2.1'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:recyclerview-v7:25.0.0'
     compile 'com.google.android.gms:play-services-gcm:9.6.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
