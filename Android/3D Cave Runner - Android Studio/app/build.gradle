@@ -35,6 +35,7 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
         versionName "3.0.0.${System.getenv('BUILD_NUMBER')}"
+        versionCode = System.getenv('BUILD_NUMBER')?  System.getenv('BUILD_NUMBER') : 1
     }
     buildTypes {
         release {
