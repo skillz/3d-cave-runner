@@ -14,14 +14,13 @@
 
         <meta-data
             android:name="skillz_game_id"
-            android:value="1688" />
+            android:value="1410" />
         <meta-data
             android:name="skillz_production"
             android:value="true" />
         <meta-data
             android:name="skillz_server_url"
             android:value="https://ts.skillz.com" />
-        
     <meta-data android:name="skillz_orientation" android:value="portrait" />
     <meta-data android:name="skillz_game_activity" android:value="" />
     <meta-data android:name="skillz_allow_exit" android:value="true" />
