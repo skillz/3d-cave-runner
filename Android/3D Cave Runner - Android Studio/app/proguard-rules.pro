@@ -105,7 +105,7 @@
 	}
 
 
-	-keep class com.mopub.** { *; }
+	-keep class com.skillz.mopub.** { *; }
 
 
 	# React Native
