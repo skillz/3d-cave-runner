@@ -23,6 +23,7 @@
     <meta-data android:name="skillz_game_activity" android:value="" />
     <meta-data android:name="skillz_allow_exit" android:value="true" />
     <meta-data android:name="skillz_is_unity" android:value="true" />
+    <meta-data android:name="skillz_gcm_sender_id" android:resource="@string/gcm_sender" />
     <meta-data
         android:name="io.fabric.ApiKey"
         android:value="267045208f4b1d9fdcbf019068b81096fe16475a"
