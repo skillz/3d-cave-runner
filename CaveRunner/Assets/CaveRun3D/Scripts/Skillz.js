@@ -20,7 +20,6 @@
 *  Skillz.IsMatchInProgress() => boolean
 *  Skillz.GetMatchRules() => Hashtable
 *  Skillz.AbortMatch()
-*  Skillz.StartMatch()
 *
 *  Skillz.Random => Random class to be used for fair RNG instead of Unity's Random.
 *   Contains comparable Unity Random methods: Value(), Range(min,max), Rotation(), InsideUnitSphere(), InsideUnitCircle(), OnUnitSphere()
@@ -37,10 +36,6 @@ static class Skillz {
 	function IsMatchInProgress() {
 		var isSkillzGame = SkillzClass.CallStatic.<boolean>("isMatchInProgress");
 		return isSkillzGame;
-	}
-	
-	function StartMatch() {
-		SkillzClass.CallStatic("startMatch", currentActivity());
 	}
 	
 	function GetMatchRules() {
