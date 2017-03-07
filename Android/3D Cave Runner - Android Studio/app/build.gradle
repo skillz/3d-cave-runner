@@ -50,7 +50,7 @@ android {
 
             signingConfig signingConfigs.config
             proguardFiles 'proguard-rules.pro'
-            ext.betaDistributionGroupAliases = 'sdk,qa-2,ts'
+            ext.betaDistributionGroupAliases = 'sdk,qa-2,ts,product'
         }
         debug {
             minifyEnabled false
