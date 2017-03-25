@@ -10,7 +10,7 @@
 }
 -dontwarn com.google.android.gms.**
 
-
+-keep class com.amazonaws.** { *; }
 -keep public class com.skillzgames.** { *; }
 -keep public class com.facebook.react.** { *; }
 -keep public class com.skillz.** { *; }
