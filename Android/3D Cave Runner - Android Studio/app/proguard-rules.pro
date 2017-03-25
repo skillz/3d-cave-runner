@@ -14,6 +14,7 @@
 -keep public class com.skillzgames.** { *; }
 -keep public class com.facebook.react.** { *; }
 -keep public class com.skillz.** { *; }
+-keep public class com.bitgo.** { *; }
 -keep public class com.skillz.Skillz {
     *;
 }
@@ -44,6 +45,18 @@
 -keep class com.skillz.api.UserApi$AcceptRematch { *; }
 -keep class com.skillz.api.UserApi$DummyRequest { *; }
 
+-keep class org.apache.commons.logging.**               { *; }
+-keep class com.amazonaws.services.sqs.QueueUrlHandler  { *; }
+-keep class com.amazonaws.javax.xml.transform.sax.*     { public *; }
+-keep class com.amazonaws.javax.xml.stream.**           { *; }
+-keep class com.amazonaws.services.**.model.*Exception* { *; }
+-keep class org.codehaus.**                             { *; }
+-keepattributes Signature,*Annotation*
+
+-dontwarn javax.xml.stream.events.**
+-dontwarn org.codehaus.jackson.**
+-dontwarn org.apache.commons.logging.impl.**
+-dontwarn org.apache.http.conn.scheme.**
 
 -keep class com.skillz.push.PushToken
 -keep class com.skillz.fragment.ReactHomeFragment$Tab
