@@ -72,7 +72,7 @@ dependencies {
     compile files('libs/unity-classes.jar')
     //Skillz SDK
 
-    compile 'com.skillz.sdk:skillz-sdk-android:3.2-SNAPSHOT'
+    compile 'com.skillz.sdk:skillz-sdk-android:3.1.4-SNAPSHOT'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }
