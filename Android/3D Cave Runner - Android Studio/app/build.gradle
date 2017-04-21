@@ -78,6 +78,7 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }
+    compile 'com.google.android.gms:play-services-gcm:10.2.1'
 }
 
 repositories {
