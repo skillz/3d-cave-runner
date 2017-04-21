@@ -9,6 +9,7 @@
     public *;
 }
 -dontwarn com.google.android.gms.**
+-dontoptimize
 
 -keep class com.amazonaws.** { *; }
 -keep public class com.skillzgames.** { *; }
@@ -63,9 +64,6 @@
 -keep class com.skillz.util.GameSetting
 -keep class com.skillz.api.OAuthApi$Grant
 -keep class com.skillz.util.Timber$Tree
-
-
-
 
 #-dontshrink
 
@@ -184,3 +182,6 @@
 	-dontwarn com.paypal.**
 	-keep class com.paypal.** { *; }
 	-keep interface com.paypal.** { *; }
+
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
