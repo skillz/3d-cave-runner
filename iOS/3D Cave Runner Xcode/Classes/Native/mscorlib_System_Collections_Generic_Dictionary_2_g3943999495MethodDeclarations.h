@@ -57,7 +57,7 @@
 // System.Int32 System.Collections.Generic.Dictionary`2<System.String,System.String>::get_Count()
 #define Dictionary_2_get_Count_m2390910555(__this, method) ((  int32_t (*) (Dictionary_2_t3943999495 *, const MethodInfo*))Dictionary_2_get_Count_m3636113691_gshared)(__this, method)
 // TValue System.Collections.Generic.Dictionary`2<System.String,System.String>::get_Item(TKey)
-#define Dictionary_2_get_Item_m4206766871(__this, ___key0, method) ((  String_t* (*) (Dictionary_2_t3943999495 *, String_t*, const MethodInfo*))Dictionary_2_get_Item_m2413909512_gshared)(__this, ___key0, method)
+#define Dictionary_2_get_Item_m2845507080(__this, ___key0, method) ((  String_t* (*) (Dictionary_2_t3943999495 *, String_t*, const MethodInfo*))Dictionary_2_get_Item_m2413909512_gshared)(__this, ___key0, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::set_Item(TKey,TValue)
 #define Dictionary_2_set_Item_m3594715710(__this, ___key0, ___value1, method) ((  void (*) (Dictionary_2_t3943999495 *, String_t*, String_t*, const MethodInfo*))Dictionary_2_set_Item_m458653679_gshared)(__this, ___key0, ___value1, method)
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::Init(System.Int32,System.Collections.Generic.IEqualityComparer`1<TKey>)

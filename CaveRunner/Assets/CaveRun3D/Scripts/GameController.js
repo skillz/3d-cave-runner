@@ -132,7 +132,12 @@ function WaitThenFinish() {
     SceneManager.LoadScene("start");
 
     Debug.Log('Report Score');
-    Skillz.ReportScore(metrics["score"]);
+#if UNITY_ANDROID
+   	Skillz.ReportScore(metrics["score"]);
+#elif UNITY_IOS
+	SkillzSDK.Api.FinishTournament(TotalScore);
+#endif
+ 
 
   } else { //single player game: exit
     Debug.Log('Loading End - Wait Then Finish');
@@ -162,7 +167,12 @@ function OnGUI()
 
     //Skillz heartbeat
     if (PlayerPrefs.GetInt("SkillzGame") == 1) {
-      Skillz.UpdatePlayersCurrentScore(TotalScore);
+	#if UNITY_IOS
+		SkillzSDK.Api.UpdatePlayerScore(TotalScore);
+	#elif UNITY_ANDROID
+		Skillz.UpdatePlayersCurrentScore(TotalScore);
+	#endif 
+      
     }
 
     //Animate the level up text by passing it from the right side of the screen to the left side
