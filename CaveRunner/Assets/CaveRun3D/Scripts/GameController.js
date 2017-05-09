@@ -109,7 +109,7 @@ function WaitThenFinish() {
 
   var TotalScore:int = TotalDistance * 10 + TotalGems * 100;
 
-  if (PlayerPrefs.GetInt("SkillzGame") == 1) { //Skillz game: report score to Skillz
+  if (PlayerPrefs.GetInt("SkillzGame") == 1 || SkillzSDK.Api.IsTournamentInProgress) { //Skillz game: report score to Skillz
 
     /*
     CaveRunner doesn't use any Match Rules. If it did, we might implement them here.
@@ -128,16 +128,14 @@ function WaitThenFinish() {
     metrics["score"] = TotalScore.ToString();
     PlayerPrefs.SetInt("SkillzGame", 0);
     
-    Debug.Log('Loading Start - Load Menu');
-    SceneManager.LoadScene("start");
+    Debug.Log('UNITY - Loading Start - Load Menu');
 
-    Debug.Log('Report Score');
+    Debug.Log('UNITY - Report Score');
 #if UNITY_ANDROID
    	Skillz.ReportScore(metrics["score"]);
 #elif UNITY_IOS
 	SkillzSDK.Api.FinishTournament(TotalScore);
 #endif
- 
 
   } else { //single player game: exit
     Debug.Log('Loading End - Wait Then Finish');
@@ -166,7 +164,7 @@ function OnGUI()
     GUI.DrawTexture (Rect(originalWidth  * 0.945,originalHeight * 0.037 ,32 ,32 ), Gems); //Place the gem image beside the gems count on the top right of the screen
 
     //Skillz heartbeat
-    if (PlayerPrefs.GetInt("SkillzGame") == 1) {
+    if (PlayerPrefs.GetInt("SkillzGame") == 1 || SkillzSDK.Api.IsTournamentInProgress) {
 	#if UNITY_IOS
 		SkillzSDK.Api.UpdatePlayerScore(TotalScore);
 	#elif UNITY_ANDROID
