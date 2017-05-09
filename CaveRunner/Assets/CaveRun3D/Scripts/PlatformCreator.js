@@ -54,7 +54,6 @@ var collector : Collector;
 
 function Start()
 {
-	Debug.Log("UNITY - START");
 	Player = GameObject.FindWithTag("Player"); //Find the player in the scene and put it in a variable, for later use
 	collector = GameObject.FindWithTag("Collector").GetComponent("Collector");
 	
@@ -89,9 +88,7 @@ function CreatePlatform(Offset:int)
 #if UNITY_ANDROID
 	PlatformWidth = Skillz.Random.Range(PlatformWidthRange.x,PlatformWidthRange.y);
 #elif UNITY_IOS
-	Debug.Log("UNITY - Platform Width");
 	PlatformWidth = SkillzSDK.Api.Random.Range(PlatformWidthRange.x,PlatformWidthRange.y);
-	Debug.Log("UNITY - Platform Width 2");
 #endif
 	
 	if ( PlatformWidth < 0.4 )	PlatformWidth = 0.4; //Limit the width to be no less than 0.4 in scale. We don't want the platforms to be too thin at higher level
@@ -103,7 +100,6 @@ function CreatePlatform(Offset:int)
 #if UNITY_ANDROID
 	PlatformLength = Skillz.Random.Range(PlatformLengthRange.x,PlatformLengthRange.y);
 #elif UNITY_IOS
-Debug.Log("UNITY - PlatformLength");
 	PlatformLength = SkillzSDK.Api.Random.Range(PlatformLengthRange.x,PlatformLengthRange.y);
 #endif
 	
@@ -145,7 +141,6 @@ Debug.Log("UNITY - PlatformLength");
 #if UNITY_ANDROID
 		PlatformGap = Skillz.Random.Range(PlatformGapRange.x,PlatformGapRange.y); //Choose a random value within the minimum and maximum of PlatformGapRange
 #elif UNITY_IOS
-Debug.Log("UNITY - PlatformGap");
 		PlatformGap = SkillzSDK.Api.Random.Range(PlatformGapRange.x,PlatformGapRange.y); //Choose a random value within the minimum and maximum of PlatformGapRange
 #endif
 		NewPlatformCopy.Translate(Vector3.forward * PlatformGap, Space.World); //Move the platform forward by the value of PlatformGap
@@ -157,7 +152,6 @@ Debug.Log("UNITY - PlatformGap");
 #if UNITY_ANDROID
 		PlatformShift = Skillz.Random.Range(PlatformShiftRange.x,PlatformShiftRange.y); //Choose a random value within the minimum and maximum of PlatformShiftRange
 #elif UNITY_IOS
-Debug.Log("UNITY -  PlatformShift");
 		PlatformShift = SkillzSDK.Api.Random.Range(PlatformShiftRange.x,PlatformShiftRange.y); //Choose a random value within the minimum and maximum of PlatformShiftRange
 #endif
 		NewPlatformCopy.Translate(Vector3.right * PlatformShift, Space.World); //Move the platform either left or right by the value of PlatformShift
@@ -167,7 +161,6 @@ Debug.Log("UNITY -  PlatformShift");
 #if UNITY_ANDROID
 		PlatformHeight = Skillz.Random.Range(PlatformHeightRange.x,PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
 #elif UNITY_IOS
-Debug.Log("UNITY -  PlatformHeight");
 		PlatformHeight = SkillzSDK.Api.Random.Range(PlatformHeightRange.x,PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
 #endif
 
@@ -177,7 +170,6 @@ Debug.Log("UNITY -  PlatformHeight");
 #if UNITY_ANDROID
 		PlatformRotate = Skillz.Random.Range(PlatformRotateRange.x,PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
 #elif UNITY_IOS
-Debug.Log("UNITY -  PlatformRotate");
 		PlatformRotate = SkillzSDK.Api.Random.Range(PlatformRotateRange.x,PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
 #endif
 
@@ -195,7 +187,6 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 #if UNITY_ANDROID
 		if ( ObstacleRate > Skillz.Random.Value() ) //Check the obstacle creation rate against a random value between 0 and 1. If the rate is larger, create an obstacle
 #elif UNITY_IOS
-Debug.Log("UNITY -  if statement");
 		if ( ObstacleRate > SkillzSDK.Api.Random.Value() ) //Check the obstacle creation rate against a random value between 0 and 1. If the rate is larger, create an obstacle
 #endif
 		{
@@ -203,7 +194,6 @@ Debug.Log("UNITY -  if statement");
 #if UNITY_ANDROID
 			var obstacleIndex = Skillz.Random.Range(0,Obstacle.length);
 #elif UNITY_IOS
-Debug.Log("UNITY -  obstacleIndex");
 			var obstacleIndex = SkillzSDK.Api.Random.Range(0,Obstacle.length);
 #endif
 			ObstacleCopy = collector.GetObstacle(obstacleIndex);
@@ -216,7 +206,6 @@ Debug.Log("UNITY -  obstacleIndex");
 #if UNITY_ANDROID
 			ObstacleCopy.transform.Translate(Vector3.right * Skillz.Random.Range(LeftLimit,RightLimit), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
 #elif UNITY_IOS
-Debug.Log("UNITY -  ObstacleCopy");
 			ObstacleCopy.transform.Translate(Vector3.right * SkillzSDK.Api.Random.Range(LeftLimit,RightLimit), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
 #endif
 
@@ -233,7 +222,6 @@ Debug.Log("UNITY -  ObstacleCopy");
 #if UNITY_ANDROID
 		var gemIndex = Skillz.Random.Range(0,Gem.length);
 #elif UNITY_IOS
-Debug.Log("UNITY -  gemIndex");
 		var gemIndex = SkillzSDK.Api.Random.Range(0,Gem.length);
 #endif
 
@@ -243,7 +231,6 @@ Debug.Log("UNITY -  gemIndex");
 #if UNITY_ANDROID
 		GemCopy.transform.rotation = Skillz.Random.Rotation();
 #elif UNITY_IOS
-Debug.Log("UNITY -  GemCopy");
 		GemCopy.transform.rotation = SkillzSDK.Api.Random.Rotation();
 #endif
 			
@@ -262,8 +249,6 @@ Debug.Log("UNITY -  GemCopy");
 		GemShift = Skillz.Random.Range(LeftLimit,RightLimit); //Choose a random point for the gem trail, within the limits of LeftLimit/RightLimit
 		GemTrail = Skillz.Random.Range(GemTrailRange.x,GemTrailRange.y); //Choose a random length of trail for the gems, within the limits of GemTrailRange
 #elif UNITY_IOS
-Debug.Log("UNITY -  GemShift");
-Debug.Log("UNITY -  GemTrail");
 		GemShift = SkillzSDK.Api.Random.Range(LeftLimit,RightLimit); //Choose a random point for the gem trail, within the limits of LeftLimit/RightLimit
 		GemTrail = SkillzSDK.Api.Random.Range(GemTrailRange.x,GemTrailRange.y); //Choose a random length of trail for the gems, within the limits of GemTrailRangeGemCopy.transform.rotation = SkillzSDK.Api.Random.Rotation();
 #endif
