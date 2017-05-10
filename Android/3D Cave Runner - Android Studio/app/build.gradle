@@ -45,7 +45,7 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
         versionName "3.2.1.${System.getenv('BUILD_NUMBER')}"
-        versionCode (versionMajor * 10000000) + (versionMinor * 100000) + (versionPatch * 1000) + (versionBuild)
+        versionCode versionMajor * 10000000 + versionMinor * 100000 + versionPatch * 1000 + versionBuild
 
         versionCode = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
     }
