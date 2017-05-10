@@ -1,7 +1,7 @@
 def versionMajor = 3
 def versionMinor = 2
 def versionPatch = 1
-def versionBuild = System.getenv('BUILD_NUMBER')
+def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.getenv('BUILD_NUMBER')) : 1
 
 buildscript {
     repositories {
@@ -44,10 +44,8 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        versionName "3.2.1.${System.getenv('BUILD_NUMBER')}"
         versionCode versionMajor * 10000000 + versionMinor * 100000 + versionPatch * 1000 + versionBuild
-
-        versionCode = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
     }
     buildTypes {
         release {
