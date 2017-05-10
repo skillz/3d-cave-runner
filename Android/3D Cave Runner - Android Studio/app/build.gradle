@@ -1,7 +1,7 @@
 def versionMajor = 3
 def versionMinor = 2
 def versionPatch = 1
-def versionBuild = ${System.getenv('BUILD_NUMBER')}
+def versionBuild = System.getenv('BUILD_NUMBER')
 
 buildscript {
     repositories {
