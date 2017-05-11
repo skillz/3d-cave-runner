@@ -108,10 +108,9 @@ function WaitThenFinish() {
   yield WaitForSeconds(2);
 
   var TotalScore:int = TotalDistance * 10 + TotalGems * 100;
-
-  if (PlayerPrefs.GetInt("SkillzGame") == 1) { //Skillz game: report score to Skillz
-
-    /*
+#if UNITY_ANDROID
+	if (PlayerPrefs.GetInt("SkillzGame") == 1) { //Skillz game: report score to Skillz
+	    /*
     CaveRunner doesn't use any Match Rules. If it did, we might implement them here.
 
     Here is a block that prints all the match rules to demonstrate how they work:
@@ -123,21 +122,34 @@ function WaitThenFinish() {
     }
     Debug.Log("end Match Rules");
     */
+		var metrics = new Dictionary.<String,String>();
+		metrics["score"] = TotalScore.ToString();
+		PlayerPrefs.SetInt("SkillzGame", 0);
 
-    var metrics = new Dictionary.<String,String>();
-    metrics["score"] = TotalScore.ToString();
-    PlayerPrefs.SetInt("SkillzGame", 0);
-    
-    Debug.Log('Loading Start - Load Menu');
-    SceneManager.LoadScene("start");
+		Debug.Log('UNITY - Loading Start - Load Menu');
 
-    Debug.Log('Report Score');
-    Skillz.ReportScore(metrics["score"]);
+		Debug.Log('UNITY - Report Score');
+		Skillz.ReportScore(metrics["score"]);
+	} else { //single player game: exit
+	    Debug.Log('Loading End - Wait Then Finish');
+	    SceneManager.LoadScene("end");
+  	}
+#elif UNITY_IOS
+	
+	if (SkillzSDK.Api.IsTournamentInProgress) { //Skillz game: report score to Skillz
+		var metrics = new Dictionary.<String,String>();
+		metrics["score"] = TotalScore.ToString();
+		PlayerPrefs.SetInt("SkillzGame", 0);
 
-  } else { //single player game: exit
-    Debug.Log('Loading End - Wait Then Finish');
-    SceneManager.LoadScene("end");
-  }
+		Debug.Log('UNITY - Loading Start - Load Menu');
+
+		Debug.Log('UNITY - Report Score');
+		SkillzSDK.Api.FinishTournament(TotalScore);
+	} else { //single player game: exit
+	    Debug.Log('Loading End - Wait Then Finish');
+	    SceneManager.LoadScene("end");
+  	}
+#endif
 }
 
 public var showScoreOnScreen : boolean = true;
@@ -161,9 +173,16 @@ function OnGUI()
     GUI.DrawTexture (Rect(originalWidth  * 0.945,originalHeight * 0.037 ,32 ,32 ), Gems); //Place the gem image beside the gems count on the top right of the screen
 
     //Skillz heartbeat
-    if (PlayerPrefs.GetInt("SkillzGame") == 1) {
-      Skillz.UpdatePlayersCurrentScore(TotalScore);
-    }
+	#if UNITY_IOS
+	if (SkillzSDK.Api.IsTournamentInProgress) {
+		SkillzSDK.Api.UpdatePlayerScore(TotalScore);
+	}
+	#elif UNITY_ANDROID
+	if (PlayerPrefs.GetInt("SkillzGame") == 1) {
+		Skillz.UpdatePlayersCurrentScore(TotalScore);
+	}
+	#endif 
+      
 
     //Animate the level up text by passing it from the right side of the screen to the left side
     if ( LevelUp == false && LevelUpPosX > -originalWidth )

@@ -85,14 +85,24 @@ function CreatePlatform(Offset:int)
 	SectionCopy.transform.Rotate(Vector3.right * -90, Space.World); //Fix the section's orientation. This proved to be the solution to aproblem when importing meshes from 3DS max, since they where always laid on the side and had to be rotated back to stand up straight. If it gives you trouble, either comment it off or contact me for help
 	
 	//Set platform Width to a random value between the minimum and maximum of PlatformWidthRange ( localScale.x )
+#if UNITY_ANDROID
 	PlatformWidth = Skillz.Random.Range(PlatformWidthRange.x,PlatformWidthRange.y);
+#elif UNITY_IOS
+	PlatformWidth = SkillzSDK.Api.Random.Range(PlatformWidthRange.x,PlatformWidthRange.y);
+#endif
+	
 	if ( PlatformWidth < 0.4 )	PlatformWidth = 0.4; //Limit the width to be no less than 0.4 in scale. We don't want the platforms to be too thin at higher level
 	SectionCopy.transform.localScale.x = PlatformWidth; //Set the localScale.x based on the value of PlatformWidth
 	
 	PlatformOldLength = PlatformLength; //Record the old length for later use
 	
 	//Set platform Length to a random value between the minimum and maximum of PlatformWidthRange ( number of sections in platform )
+#if UNITY_ANDROID
 	PlatformLength = Skillz.Random.Range(PlatformLengthRange.x,PlatformLengthRange.y);
+#elif UNITY_IOS
+	PlatformLength = SkillzSDK.Api.Random.Range(PlatformLengthRange.x,PlatformLengthRange.y);
+#endif
+	
 	if ( PlatformLength < 5 )	PlatformWidth = 5; //Limit the length to be no less than 5 sections long. We don't want the platforms to be too short at higher level
 	(NewPlatformCopy.GetComponent("Platform") as Platform).PlatformLength = PlatformLength; //Set the length of the platform
 	
@@ -128,24 +138,40 @@ function CreatePlatform(Offset:int)
 	//Here we set the paltform gap and shift, and create obstacles/gems, but only from the second platform and up
 	if ( PlatformOldLength > 0 ) //If this is the first platform, don't create a gap/shift or put obstacles/gems
 	{
+#if UNITY_ANDROID
 		PlatformGap = Skillz.Random.Range(PlatformGapRange.x,PlatformGapRange.y); //Choose a random value within the minimum and maximum of PlatformGapRange
+#elif UNITY_IOS
+		PlatformGap = SkillzSDK.Api.Random.Range(PlatformGapRange.x,PlatformGapRange.y); //Choose a random value within the minimum and maximum of PlatformGapRange
+#endif
 		NewPlatformCopy.Translate(Vector3.forward * PlatformGap, Space.World); //Move the platform forward by the value of PlatformGap
 
 		//Thsi function creates obstacles and gems within horizontal limits
 		CreateGemOrObstacle(PlatformWidth * -5,PlatformWidth * 5);
 
 		//Shift the platform some distance either left or right
+#if UNITY_ANDROID
 		PlatformShift = Skillz.Random.Range(PlatformShiftRange.x,PlatformShiftRange.y); //Choose a random value within the minimum and maximum of PlatformShiftRange
+#elif UNITY_IOS
+		PlatformShift = SkillzSDK.Api.Random.Range(PlatformShiftRange.x,PlatformShiftRange.y); //Choose a random value within the minimum and maximum of PlatformShiftRange
+#endif
 		NewPlatformCopy.Translate(Vector3.right * PlatformShift, Space.World); //Move the platform either left or right by the value of PlatformShift
 	}
 	
 	//Set platform Height
-	PlatformHeight = Skillz.Random.Range(PlatformHeightRange.x,PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
+#if UNITY_ANDROID
+		PlatformHeight = Skillz.Random.Range(PlatformHeightRange.x,PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
+#elif UNITY_IOS
+		PlatformHeight = SkillzSDK.Api.Random.Range(PlatformHeightRange.x,PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
+#endif
 
 	NewPlatformCopy.Translate(Vector3.up * PlatformHeight, Space.World); //Move the platform either up or down by the value of PlatformHeight
 	
 	//rotate the platform
-	PlatformRotate = Skillz.Random.Range(PlatformRotateRange.x,PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
+#if UNITY_ANDROID
+		PlatformRotate = Skillz.Random.Range(PlatformRotateRange.x,PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
+#elif UNITY_IOS
+		PlatformRotate = SkillzSDK.Api.Random.Range(PlatformRotateRange.x,PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
+#endif
 
 	NewPlatformCopy.Rotate(Vector3.up * PlatformRotate, Space.World); //Rotate the platform either left or right by the value of PlatformRotate
 	
@@ -158,10 +184,18 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 	//We go through all the platform section
 	for ( GemIndex = 1 ; GemIndex < PlatformLength * SectionLength; GemIndex += 2 )
 	{
+#if UNITY_ANDROID
 		if ( ObstacleRate > Skillz.Random.Value() ) //Check the obstacle creation rate against a random value between 0 and 1. If the rate is larger, create an obstacle
+#elif UNITY_IOS
+		if ( ObstacleRate > SkillzSDK.Api.Random.Value() ) //Check the obstacle creation rate against a random value between 0 and 1. If the rate is larger, create an obstacle
+#endif
 		{
 			//Choose one of the obstacle types from an array, and place it at the position of NewPlatformCopy
+#if UNITY_ANDROID
 			var obstacleIndex = Skillz.Random.Range(0,Obstacle.length);
+#elif UNITY_IOS
+			var obstacleIndex = SkillzSDK.Api.Random.Range(0,Obstacle.length);
+#endif
 			ObstacleCopy = collector.GetObstacle(obstacleIndex);
 			
 			
@@ -169,19 +203,37 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 			ObstacleCopy.transform.rotation = Quaternion.identity;
 			
 			ObstacleCopy.transform.Translate(Vector3.forward * GemIndex, Space.World); //move the obstacle forward based on GemIndex, so it is placed on the next section
+#if UNITY_ANDROID
 			ObstacleCopy.transform.Translate(Vector3.right * Skillz.Random.Range(LeftLimit,RightLimit), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+#elif UNITY_IOS
+			ObstacleCopy.transform.Translate(Vector3.right * SkillzSDK.Api.Random.Range(LeftLimit,RightLimit), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+#endif
 
 			ObstacleCopy.transform.parent = NewPlatformCopy.transform; //Attach the obstacle to the platform
 		}
-		else if ( GemRate > Skillz.Random.Value() ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
+//#if UNITY_ANDROID
+//		else if ( GemRate > Skillz.Random.Value() ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
+//#elif UNITY_IOS
+//Debug.Log("UNITY -  else if");
+		else if ( GemRate > SkillzSDK.Api.Random.Value() ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
+//#endif
 		{
 			//Choose one of the gem types from an array, and place it at the position of NewPlatformCopy
-			var gemIndex = Skillz.Random.Range(0,Gem.length);
+#if UNITY_ANDROID
+		var gemIndex = Skillz.Random.Range(0,Gem.length);
+#elif UNITY_IOS
+		var gemIndex = SkillzSDK.Api.Random.Range(0,Gem.length);
+#endif
 
 			GemCopy = collector.GetGem(gemIndex);
 			
 			GemCopy.transform.position = NewPlatformCopy.transform.position;
-			GemCopy.transform.rotation = Skillz.Random.Rotation();
+#if UNITY_ANDROID
+		GemCopy.transform.rotation = Skillz.Random.Rotation();
+#elif UNITY_IOS
+		GemCopy.transform.rotation = SkillzSDK.Api.Random.Rotation();
+#endif
+			
 			GemCopy.transform.Translate(Vector3.forward * GemIndex, Space.World); //move the gem forward based on GemIndex, so it is placed on the next section
 			GemCopy.transform.Translate(Vector3.up * 0.7, Space.World); //Move the gem a bit up so it doesn't seem to be stuck unto the ground
 			
@@ -193,8 +245,14 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 			}
 			else
 			{
-				GemShift = Skillz.Random.Range(LeftLimit,RightLimit); //Choose a random point for the gem trail, within the limits of LeftLimit/RightLimit
-				GemTrail = Skillz.Random.Range(GemTrailRange.x,GemTrailRange.y); //Choose a random length of trail for the gems, within the limits of GemTrailRange
+#if UNITY_ANDROID
+		GemShift = Skillz.Random.Range(LeftLimit,RightLimit); //Choose a random point for the gem trail, within the limits of LeftLimit/RightLimit
+		GemTrail = Skillz.Random.Range(GemTrailRange.x,GemTrailRange.y); //Choose a random length of trail for the gems, within the limits of GemTrailRange
+#elif UNITY_IOS
+		GemShift = SkillzSDK.Api.Random.Range(LeftLimit,RightLimit); //Choose a random point for the gem trail, within the limits of LeftLimit/RightLimit
+		GemTrail = SkillzSDK.Api.Random.Range(GemTrailRange.x,GemTrailRange.y); //Choose a random length of trail for the gems, within the limits of GemTrailRangeGemCopy.transform.rotation = SkillzSDK.Api.Random.Rotation();
+#endif
+				
 			}
 			
 			GemCopy.transform.Translate(Vector3.right * GemShift, Space.World); //Move the gem left or right based on the value set in GemShift
@@ -228,7 +286,11 @@ public function AddObstacle(platform:GameObject,obstacleIndex:int)
 	ObstacleCopy.transform.rotation = Quaternion.identity;
 		
 	ObstacleCopy.transform.Translate(Vector3.forward * 6, Space.World); //move the obstacle forward based on GemIndex, so it is placed on the next section
-	ObstacleCopy.transform.Translate(Vector3.right * Skillz.Random.Range(PlatformWidth * -1,PlatformWidth * 1), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+#if UNITY_ANDROID
+		ObstacleCopy.transform.Translate(Vector3.right * Skillz.Random.Range(PlatformWidth * -1,PlatformWidth * 1), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+#elif UNITY_IOS
+		ObstacleCopy.transform.Translate(Vector3.right * SkillzSDK.Api.Random.Range(PlatformWidth * -1,PlatformWidth * 1), Space.World); //Shift the obstacle left or right within the limits of LeftLimit/RightLimit
+#endif
 	ObstacleCopy.transform.parent = platform.transform; //Attach the obstacle to the platform
 	
 	(platform.GetComponent("Platform")as Platform).setObstacleIndex(obstacleIndex);
