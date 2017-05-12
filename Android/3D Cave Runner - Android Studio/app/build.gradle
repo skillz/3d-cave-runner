@@ -44,6 +44,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        multiDexEnabled true
         versionCode versionMajor * 10000000 + versionMinor * 100000 + versionPatch * 1000 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
     }
@@ -69,6 +70,26 @@ android {
         abortOnError false
     }
     productFlavors {
+        main {
+
+        }
+        VCOnly {
+            applicationIdSuffix ".vconly"
+        }
+    }
+    sourceSets {
+        VCOnly {
+            manifest.srcFile "src/vconly/AndroidManifest.xml"
+            assets.srcDir "src/main/assets"
+            res.srcDir "src/main/res"
+            jniLibs.srcDir "src/main/jniLibs"
+        }
+        main {
+            manifest.srcFile "src/main/AndroidManifest.xml"
+            assets.srcDir "src/main/assets"
+            res.srcDir "src/main/res"
+            jniLibs.srcDir "src/main/jniLibs"
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-package com.skillzgames.caverun;
+package com.skillzgames.caverun.vconly;
 
 import android.os.Bundle;
 import android.util.Log;
