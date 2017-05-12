@@ -73,12 +73,12 @@ android {
         main {
 
         }
-        VCOnly {
+        vconly {
             applicationIdSuffix ".vconly"
         }
     }
     sourceSets {
-        VCOnly {
+        vconly {
             manifest.srcFile "src/vconly/AndroidManifest.xml"
             assets.srcDir "src/main/assets"
             res.srcDir "src/main/res"
