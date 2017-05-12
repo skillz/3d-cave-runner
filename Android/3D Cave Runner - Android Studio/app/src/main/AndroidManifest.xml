@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.skillzgames.caverun" android:versionName="1.0.0" android:versionCode="1" android:installLocation="preferExternal">
+<manifest tools:replace="android:versionName,android:versionCode"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.skillzgames.caverun"
+  android:versionName="1.0.0"
+  android:versionCode="1"
+  android:installLocation="preferExternal"
+  xmlns:tools="http://schemas.android.com/tools">
     <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
     <application android:theme="@style/UnityThemeSelector" android:icon="@drawable/app_icon" android:label="@string/app_name" android:banner="@drawable/app_banner">
         <activity android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="singleTop" android:clearTaskOnLaunch="false" android:alwaysRetainTaskState="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:name="com.skillzgames.caverun.UnityPlayerActivity">
