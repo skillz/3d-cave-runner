@@ -211,12 +211,11 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 
 			ObstacleCopy.transform.parent = NewPlatformCopy.transform; //Attach the obstacle to the platform
 		}
-//#if UNITY_ANDROID
-//		else if ( GemRate > Skillz.Random.Value() ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
-//#elif UNITY_IOS
-//Debug.Log("UNITY -  else if");
+#if UNITY_ANDROID
+		else if ( GemRate > Skillz.Random.Value() ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
+#elif UNITY_IOS
 		else if ( GemRate > SkillzSDK.Api.Random.Value() ) //Check the gem creation rate against a random value between 0 and 1. If the rate is larger, create a gem
-//#endif
+#endif
 		{
 			//Choose one of the gem types from an array, and place it at the position of NewPlatformCopy
 #if UNITY_ANDROID
