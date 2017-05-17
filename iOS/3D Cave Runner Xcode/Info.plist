@@ -1,68 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <dict>
-    <key>CFBundleDevelopmentRegion</key>
-    <string>en</string>
-    <key>CFBundleDisplayName</key>
-    <string>3D Cave Runner</string>
-    <key>CFBundleExecutable</key>
-    <string>${EXECUTABLE_NAME}</string>
-    <key>CFBundleIconFiles</key>
-    <array>
-      <string>AppIcon57x57.png</string>
-      <string>AppIcon57x57@2x.png</string>
-      <string>AppIcon60x60@2x.png</string>
-      <string>AppIcon72x72@2x~ipad.png</string>
-      <string>AppIcon72x72~ipad.png</string>
-      <string>AppIcon76x76@2x~ipad.png</string>
-      <string>AppIcon76x76~ipad.png</string>
-    </array>
-    <key>CFBundleIdentifier</key>
-    <string>com.skillzgames.${PRODUCT_NAME}</string>
-    <key>CFBundleInfoDictionaryVersion</key>
-    <string>6.0</string>
-    <key>CFBundleName</key>
-    <string>${PRODUCT_NAME}</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.0.0</string>
-    <key>CFBundleVersion</key>
-    <string>0</string>
-    <key>LSRequiresIPhoneOS</key>
-    <true />
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true />
-    </dict>
-    <key>UIApplicationExitsOnSuspend</key>
-    <false />
-    <key>UILaunchStoryboardName~ipad</key>
-    <string>LaunchScreen-iPad</string>
-    <key>UILaunchStoryboardName~iphone</key>
-    <string>LaunchScreen-iPhone</string>
-    <key>UILaunchStoryboardName~ipod</key>
-    <string>LaunchScreen-iPhone</string>
-    <key>UIPrerenderedIcon</key>
-    <false />
-    <key>UIRequiredDeviceCapabilities</key>
-    <array>
-      <string>armv7</string>
-    </array>
-    <key>UIRequiresFullScreen</key>
-    <true />
-    <key>UIRequiresPersistentWiFi</key>
-    <false />
-    <key>UIStatusBarHidden</key>
-    <true />
-    <key>UIStatusBarStyle</key>
-    <string>UIStatusBarStyleDefault</string>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-    </array>
-    <key>Unity_LoadingActivityIndicatorStyle</key>
-    <integer>-1</integer>
-  </dict>
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>3D Cave Runner</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>AppIcon57x57.png</string>
+		<string>AppIcon57x57@2x.png</string>
+		<string>AppIcon60x60@2x.png</string>
+		<string>AppIcon72x72@2x~ipad.png</string>
+		<string>AppIcon72x72~ipad.png</string>
+		<string>AppIcon76x76@2x~ipad.png</string>
+		<string>AppIcon76x76~ipad.png</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>0</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>267045208f4b1d9fdcbf019068b81096fe16475a</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
+	<key>UILaunchStoryboardName~ipad</key>
+	<string>LaunchScreen-iPad</string>
+	<key>UILaunchStoryboardName~iphone</key>
+	<string>LaunchScreen-iPhone</string>
+	<key>UILaunchStoryboardName~ipod</key>
+	<string>LaunchScreen-iPhone</string>
+	<key>UIPrerenderedIcon</key>
+	<false/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UIRequiresPersistentWiFi</key>
+	<false/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>Unity_LoadingActivityIndicatorStyle</key>
+	<integer>-1</integer>
+</dict>
 </plist>
