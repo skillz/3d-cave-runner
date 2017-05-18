@@ -12,6 +12,8 @@
 #import <OpenGLES/EAGLDrawable.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 #include <mach/mach_time.h>
 
@@ -243,6 +245,7 @@ extern "C" void UnityRequestQuit()
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
 	::printf("-> applicationDidFinishLaunching()\n");
+    [Fabric with:@[[Crashlytics class]]];
 
 	// send notfications
 #if !UNITY_TVOS
