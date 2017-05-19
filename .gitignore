@@ -29,7 +29,7 @@ build/
 xcuserdata
 profile
 *.moved-aside
-DerivedData
+**/DerivedData/
 .idea/
 SkillzTestWorkspace.xcworkspace/xcshareddata/**
 *.swp
