@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_Contexts_ContextAt197102333.h"
+
 // System.Threading.Mutex
 struct Mutex_t297030111;
 // System.Threading.Thread
 struct Thread_t241561612;
 
-#include "mscorlib_System_Runtime_Remoting_Contexts_ContextAt197102333.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

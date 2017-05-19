@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_SymmetricAlg1108166522.h"
+
 // System.Byte[,]
 struct ByteU5BU2CU5D_t3397334014;
 
-#include "mscorlib_System_Security_Cryptography_SymmetricAlg1108166522.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

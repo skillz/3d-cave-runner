@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_GUILayoutGroup3975363388.h"
+
 // UnityEngine.GUIStyle
 struct GUIStyle_t1799908754;
 
-#include "UnityEngine_UnityEngine_GUILayoutGroup3975363388.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

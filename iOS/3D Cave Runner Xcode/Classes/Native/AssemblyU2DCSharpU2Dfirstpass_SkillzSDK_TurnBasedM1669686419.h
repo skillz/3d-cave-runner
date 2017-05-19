@@ -10,9 +10,6 @@
 
 #include <stdint.h>
 
-// System.Collections.Generic.List`1<SkillzSDK.TurnBasedRound>
-struct List_1_t363789400;
-
 #include "AssemblyU2DCSharpU2Dfirstpass_SkillzSDK_Match3198203703.h"
 #include "mscorlib_System_Nullable_1_gen412748336.h"
 #include "mscorlib_System_Nullable_1_gen2341081996.h"
@@ -20,6 +17,12 @@ struct List_1_t363789400;
 #include "mscorlib_System_Nullable_1_gen2088641033.h"
 #include "mscorlib_System_Nullable_1_gen334943763.h"
 #include "mscorlib_System_Nullable_1_gen2663366791.h"
+
+// System.Collections.Generic.List`1<SkillzSDK.TurnBasedRound>
+struct List_1_t363789400;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

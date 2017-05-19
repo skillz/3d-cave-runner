@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.Generic.Comparer`1<System.Guid>
 struct Comparer_1_t1423610712;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,8 +10,11 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_Experimental_Director_Play3667545548.h"
 
-#include "mscorlib_System_Object2689449295.h"
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -20,7 +23,7 @@
 #endif
 
 // UnityEngine.Experimental.Director.ScriptPlayable
-struct  ScriptPlayable_t4067966717  : public Il2CppObject
+struct  ScriptPlayable_t4067966717  : public Playable_t3667545548
 {
 public:
 

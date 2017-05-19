@@ -10,8 +10,11 @@
 
 #include <stdint.h>
 
-
 #include "UnityEngine_UnityEngine_ScriptableObject1975622470.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.SortedList/Slot[]
 struct SlotU5BU5D_t652449215;
 // System.Collections.IComparer
 struct IComparer_t3952557350;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

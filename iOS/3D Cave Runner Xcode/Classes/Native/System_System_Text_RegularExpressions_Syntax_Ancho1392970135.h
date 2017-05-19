@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "System_System_Text_RegularExpressions_Position3781184359.h"
+
 // System.Text.RegularExpressions.Syntax.Expression
 struct Expression_t368137076;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "System_System_Text_RegularExpressions_Position3781184359.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.IDictionary
 struct IDictionary_t596158605;
 // System.UInt16[]
@@ -17,7 +19,8 @@ struct UInt16U5BU5D_t2527266722;
 // System.String[]
 struct StringU5BU5D_t1642385972;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

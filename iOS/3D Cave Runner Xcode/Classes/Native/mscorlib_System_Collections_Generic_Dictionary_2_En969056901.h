@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_Collections_Generic_KeyValuePair_21701344717.h"
+
 // System.Collections.Generic.Dictionary`2<System.String,System.String>
 struct Dictionary_2_t3943999495;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_Collections_Generic_KeyValuePair_21701344717.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

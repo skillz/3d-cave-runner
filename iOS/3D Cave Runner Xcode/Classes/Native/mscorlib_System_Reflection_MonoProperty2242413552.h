@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
-// System.Reflection.MonoProperty/GetterAdapter
-struct GetterAdapter_t1423755509;
-
 #include "mscorlib_System_Reflection_PropertyInfo2253729065.h"
 #include "mscorlib_System_IntPtr2504060609.h"
 #include "mscorlib_System_Reflection_MonoPropertyInfo486106184.h"
 #include "mscorlib_System_Reflection_PInfo957350482.h"
+
+// System.Reflection.MonoProperty/GetterAdapter
+struct GetterAdapter_t1423755509;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

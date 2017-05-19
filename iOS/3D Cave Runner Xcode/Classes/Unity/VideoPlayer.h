@@ -17,7 +17,7 @@
 
 @interface VideoPlayer : NSObject
 {
-	id<VideoPlayerDelegate> delegate;
+    id<VideoPlayerDelegate> delegate;
 }
 @property (nonatomic, retain) id delegate;
 @property (nonatomic, readonly) AVPlayer* player;

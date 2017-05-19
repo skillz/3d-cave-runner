@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+#include "mscorlib_System_Collections_DictionaryEntry3048875398.h"
+#include "mscorlib_System_Int322071877448.h"
+
 // UnityEngine.GUILayoutUtility/LayoutCache
 struct LayoutCache_t3120781045;
 // System.IAsyncResult
@@ -19,9 +23,8 @@ struct AsyncCallback_t163412349;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
-#include "mscorlib_System_Collections_DictionaryEntry3048875398.h"
-#include "mscorlib_System_Int322071877448.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

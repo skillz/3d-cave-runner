@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Type1303803226.h"
+
 // System.MonoTypeInfo
 struct MonoTypeInfo_t1976057079;
 
-#include "mscorlib_System_Type1303803226.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

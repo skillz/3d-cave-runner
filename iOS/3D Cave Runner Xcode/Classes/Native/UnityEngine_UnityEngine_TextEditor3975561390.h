@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_Vector22243707579.h"
+#include "UnityEngine_UnityEngine_TextEditor_DblClickSnappin1119726228.h"
+
 // UnityEngine.TouchScreenKeyboard
 struct TouchScreenKeyboard_t601950206;
 // UnityEngine.GUIStyle
@@ -17,9 +21,8 @@ struct GUIStyle_t1799908754;
 // UnityEngine.GUIContent
 struct GUIContent_t4210063000;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_Vector22243707579.h"
-#include "UnityEngine_UnityEngine_TextEditor_DblClickSnappin1119726228.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

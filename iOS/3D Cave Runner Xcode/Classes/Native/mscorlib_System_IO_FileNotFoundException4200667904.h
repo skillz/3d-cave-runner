@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_IOException2458421087.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_IO_IOException2458421087.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

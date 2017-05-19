@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MemberAccessException2005094827.h"
+
 // System.String
 struct String_t;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_MemberAccessException2005094827.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

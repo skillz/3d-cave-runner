@@ -19,14 +19,14 @@ void Profiler_EndMSAAResolve();
 
 #else
 
-inline void Profiler_InitProfiler()								{}
-inline void Profiler_UninitProfiler()							{}
-inline void Profiler_FrameStart()								{}
-inline void Profiler_FrameEnd()									{}
-inline void Profiler_FramePresent(const struct UnityFrameStats*){}
+inline void Profiler_InitProfiler()                             {}
+inline void Profiler_UninitProfiler()                           {}
+inline void Profiler_FrameStart()                               {}
+inline void Profiler_FrameEnd()                                 {}
+inline void Profiler_FramePresent(const struct UnityFrameStats*) {}
 
-inline void Profiler_StartMSAAResolve()							{}
-inline void Profiler_EndMSAAResolve()							{}
+inline void Profiler_StartMSAAResolve()                         {}
+inline void Profiler_EndMSAAResolve()                           {}
 
 
 #endif // ENABLE_INTERNAL_PROFILER

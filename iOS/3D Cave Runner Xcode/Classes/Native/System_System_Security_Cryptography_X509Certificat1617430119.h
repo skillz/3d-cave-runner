@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "System_System_Security_Cryptography_X509Certificat1570828128.h"
+#include "System_System_Security_Cryptography_X509Certificat2370524385.h"
+
 // System.String
 struct String_t;
 // System.Security.Cryptography.X509Certificates.X509Certificate2Collection
@@ -19,9 +23,8 @@ struct X509Store_t4028973563;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "System_System_Security_Cryptography_X509Certificat1570828128.h"
-#include "System_System_Security_Cryptography_X509Certificat2370524385.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Reflection_ParameterAttributes1266705348.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Reflection_ParameterAttributes1266705348.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

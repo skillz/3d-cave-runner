@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_TimeSpan3430258949.h"
+
 // System.Runtime.Remoting.Lifetime.LeaseManager
 struct LeaseManager_t1025868639;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_TimeSpan3430258949.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

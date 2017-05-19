@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Runtime_Serialization_ObjectRecord1923758778.h"
+
 // System.Object
 struct Il2CppObject;
 // System.Runtime.Serialization.SerializationInfo
@@ -27,8 +30,8 @@ struct BaseFixupRecord_t3171032996;
 // System.Runtime.Serialization.ObjectRecord
 struct ObjectRecord_t4134110382;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Runtime_Serialization_ObjectRecord1923758778.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

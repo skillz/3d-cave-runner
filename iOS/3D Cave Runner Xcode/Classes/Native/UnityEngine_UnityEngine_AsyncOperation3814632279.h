@@ -10,9 +10,12 @@
 
 #include <stdint.h>
 
-
 #include "UnityEngine_UnityEngine_YieldInstruction3462875981.h"
 #include "mscorlib_System_IntPtr2504060609.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

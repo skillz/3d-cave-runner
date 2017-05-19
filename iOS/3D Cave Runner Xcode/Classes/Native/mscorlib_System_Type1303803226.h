@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_MemberInfo4043097260.h"
+#include "mscorlib_System_Reflection_BindingFlags1082350898.h"
+#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
+
 // System.Type[]
 struct TypeU5BU5D_t1664964607;
 // System.Reflection.MemberFilter
@@ -17,9 +21,8 @@ struct MemberFilter_t3405857066;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_Reflection_MemberInfo4043097260.h"
-#include "mscorlib_System_Reflection_BindingFlags1082350898.h"
-#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

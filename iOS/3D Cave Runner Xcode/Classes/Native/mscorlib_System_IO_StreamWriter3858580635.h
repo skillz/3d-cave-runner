@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_TextWriter4027217640.h"
+
 // System.Text.Encoding
 struct Encoding_t663144255;
 // System.IO.Stream
@@ -21,7 +23,8 @@ struct CharU5BU5D_t1328083999;
 // System.IO.StreamWriter
 struct StreamWriter_t3858580635;
 
-#include "mscorlib_System_IO_TextWriter4027217640.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

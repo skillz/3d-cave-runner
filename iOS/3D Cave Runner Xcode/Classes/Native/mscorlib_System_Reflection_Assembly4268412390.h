@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+
 // System.Reflection.Assembly/ResolveEventHolder
 struct ResolveEventHolder_t1761494505;
 // System.Security.Policy.Evidence
@@ -19,8 +22,8 @@ struct PermissionSet_t1941658161;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

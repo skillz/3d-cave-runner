@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.Generic.IEnumerator`1<System.Reflection.MemberInfo>
 struct IEnumerator_1_t1518621087;
 // System.Reflection.MemberInfo
@@ -17,7 +19,8 @@ struct MemberInfo_t;
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
 // UnityEngine.GUISkin
 struct GUISkin_t1436893342;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
-#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "System_System_Security_Cryptography_X509Certificat1320896183.h"
+#include "System_System_Security_Cryptography_AsnDecodeStatu1962003286.h"
+
 // System.Security.Cryptography.OidCollection
 struct OidCollection_t3790243618;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "System_System_Security_Cryptography_X509Certificat1320896183.h"
-#include "System_System_Security_Cryptography_AsnDecodeStatu1962003286.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

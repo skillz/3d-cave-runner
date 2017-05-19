@@ -13,30 +13,45 @@
 #include <limits>
 #include <assert.h>
 
-// MyDelegateBase
-struct MyDelegateBase_t1053717880;
-// MyDelegateStandard
-struct MyDelegateStandard_t1766615652;
-// SkillzSDK.Match
-struct Match_t3198203703;
-
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
 #include "mscorlib_System_Array3829468939.h"
 #include "AssemblyU2DCSharp_U3CModuleU3E3783534214.h"
-#include "AssemblyU2DCSharp_U3CModuleU3E3783534214MethodDeclarations.h"
 #include "AssemblyU2DCSharp_MyDelegateBase1053717880.h"
-#include "AssemblyU2DCSharp_MyDelegateBase1053717880MethodDeclarations.h"
 #include "mscorlib_System_Void1841601450.h"
-#include "AssemblyU2DCSharpU2Dfirstpass_SkillzSDK_SkillzDele2433258543MethodDeclarations.h"
-#include "UnityEngine_UnityEngine_Application354826772MethodDeclarations.h"
+#include "AssemblyU2DCSharpU2Dfirstpass_SkillzSDK_SkillzDele2433258543.h"
 #include "mscorlib_System_String2029220233.h"
 #include "AssemblyU2DCSharp_MyDelegateStandard1766615652.h"
-#include "AssemblyU2DCSharp_MyDelegateStandard1766615652MethodDeclarations.h"
-#include "AssemblyU2DCSharpU2Dfirstpass_SkillzSDK_SkillzDele2914650099MethodDeclarations.h"
+#include "AssemblyU2DCSharpU2Dfirstpass_SkillzSDK_SkillzDele2914650099.h"
 #include "AssemblyU2DCSharpU2Dfirstpass_SkillzSDK_Match3198203703.h"
 #include "mscorlib_System_Collections_Generic_Dictionary_2_g3943999495.h"
 
+// MyDelegateBase
+struct MyDelegateBase_t1053717880;
+// SkillzSDK.SkillzDelegateBase
+struct SkillzDelegateBase_t2433258543;
+// System.String
+struct String_t;
+// MyDelegateStandard
+struct MyDelegateStandard_t1766615652;
+// SkillzSDK.SkillzDelegateStandard
+struct SkillzDelegateStandard_t2914650099;
+// SkillzSDK.Match
+struct Match_t3198203703;
+extern Il2CppCodeGenString* _stringLiteral2858725202;
+extern const uint32_t MyDelegateBase_OnSkillzWillExit_m1257785593_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2328218740;
+extern const uint32_t MyDelegateStandard_OnTournamentWillBegin_m3139439550_MetadataUsageId;
+
+
+
+
+// System.Void SkillzSDK.SkillzDelegateBase::.ctor()
+extern "C"  void SkillzDelegateBase__ctor_m2097145993 (SkillzDelegateBase_t2433258543 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Application::LoadLevel(System.String)
+extern "C"  void Application_LoadLevel_m393995325 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void SkillzSDK.SkillzDelegateStandard::.ctor()
+extern "C"  void SkillzDelegateStandard__ctor_m2552137287 (SkillzDelegateStandard_t2914650099 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -51,8 +66,6 @@ extern "C"  void MyDelegateBase__ctor_m1630137489 (MyDelegateBase_t1053717880 * 
 	}
 }
 // System.Void MyDelegateBase::OnSkillzWillExit()
-extern Il2CppCodeGenString* _stringLiteral2858725202;
-extern const uint32_t MyDelegateBase_OnSkillzWillExit_m1257785593_MetadataUsageId;
 extern "C"  void MyDelegateBase_OnSkillzWillExit_m1257785593 (MyDelegateBase_t1053717880 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -75,8 +88,6 @@ extern "C"  void MyDelegateStandard__ctor_m3334492963 (MyDelegateStandard_t17666
 	}
 }
 // System.Void MyDelegateStandard::OnTournamentWillBegin(SkillzSDK.Match)
-extern Il2CppCodeGenString* _stringLiteral2328218740;
-extern const uint32_t MyDelegateStandard_OnTournamentWillBegin_m3139439550_MetadataUsageId;
 extern "C"  void MyDelegateStandard_OnTournamentWillBegin_m3139439550 (MyDelegateStandard_t1766615652 * __this, Match_t3198203703 * ___match0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;

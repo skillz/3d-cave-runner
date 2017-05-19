@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_Behaviour955675639.h"
+
 // UnityEngine.Camera/CameraCallback
 struct CameraCallback_t834278767;
 
-#include "UnityEngine_UnityEngine_Behaviour955675639.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

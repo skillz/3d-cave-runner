@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_KeyedHashAlg1374150027.h"
+
 // System.Security.Cryptography.TripleDES
 struct TripleDES_t243950698;
 // Mono.Security.Cryptography.MACAlgorithm
 struct MACAlgorithm_t2739465458;
 
-#include "mscorlib_System_Security_Cryptography_KeyedHashAlg1374150027.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // Boo.Lang.List`1<System.Reflection.MemberInfo>
 struct List_1_t1414935582;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

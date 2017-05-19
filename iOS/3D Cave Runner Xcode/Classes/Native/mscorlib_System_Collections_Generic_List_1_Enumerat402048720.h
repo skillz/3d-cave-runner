@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_Reflection_CustomAttributeTypedArg1498197914.h"
+
 // System.Collections.Generic.List`1<System.Reflection.CustomAttributeTypedArgument>
 struct List_1_t867319046;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_Reflection_CustomAttributeTypedArg1498197914.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

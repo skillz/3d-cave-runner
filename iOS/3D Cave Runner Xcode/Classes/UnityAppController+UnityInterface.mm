@@ -6,13 +6,14 @@
 
 - (BOOL)paused
 {
-	return UnityIsPaused() ? YES : NO;
+    return UnityIsPaused() ? YES : NO;
 }
+
 - (void)setPaused:(BOOL)pause
 {
-	const int newPause	= pause == YES ? 1 : 0;
+    const int newPause  = pause == YES ? 1 : 0;
 
-	UnityPause(newPause);
+    UnityPause(newPause);
 }
 
 @end

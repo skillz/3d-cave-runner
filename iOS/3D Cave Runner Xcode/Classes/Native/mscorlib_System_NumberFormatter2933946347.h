@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Threading.Thread
 struct Thread_t241561612;
 // System.Globalization.NumberFormatInfo
@@ -27,7 +29,8 @@ struct Char_t3454481338;
 // System.Int64
 struct Int64_t909078037;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

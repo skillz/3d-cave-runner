@@ -2,11 +2,11 @@
 
 
 #ifdef __OBJC__
-	@class CAEAGLLayer;
-	@class EAGLContext;
+@class CAEAGLLayer;
+@class EAGLContext;
 #else
-	typedef struct objc_object CAEAGLLayer;
-	typedef struct objc_object EAGLContext;
+typedef struct objc_object CAEAGLLayer;
+typedef struct objc_object EAGLContext;
 #endif
 
 
@@ -17,7 +17,7 @@
 //#define GLES_UPSCALE_FILTER GL_NEAREST
 
 // if gles support MSAA. We will need to recreate unity view if AA samples count was changed
-extern	bool	_supportsMSAA;
+extern  bool    _supportsMSAA;
 
 
 #ifdef __cplusplus

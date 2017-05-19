@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "UnityEngine_UnityEngine_Vector22243707579.h"
+
 // UnityEngine.GameObject
 struct GameObject_t1756533147;
 // UnityEngine.Transform
@@ -19,8 +22,8 @@ struct TransformU5BU5D_t3764228911;
 // Collector
 struct Collector_t237117861;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
-#include "UnityEngine_UnityEngine_Vector22243707579.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

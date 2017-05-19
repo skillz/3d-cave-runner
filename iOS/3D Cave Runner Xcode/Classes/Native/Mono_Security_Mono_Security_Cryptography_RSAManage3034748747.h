@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_RSA3719518354.h"
+
 // Mono.Math.BigInteger
 struct BigInteger_t925946153;
 // Mono.Security.Cryptography.RSAManaged/KeyGeneratedEventHandler
 struct KeyGeneratedEventHandler_t108853710;
 
-#include "mscorlib_System_Security_Cryptography_RSA3719518354.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

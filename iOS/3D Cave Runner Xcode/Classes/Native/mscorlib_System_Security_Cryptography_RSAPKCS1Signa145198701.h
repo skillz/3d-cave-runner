@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_AsymmetricSi3580832979.h"
+
 // System.Security.Cryptography.RSA
 struct RSA_t3719518354;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Security_Cryptography_AsymmetricSi3580832979.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.String
 struct String_t;
 // UnityEngine.GUIStyle
 struct GUIStyle_t1799908754;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -522,7 +522,7 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Camera_get_clearFlags();
 		Register_UnityEngine_Camera_get_clearFlags();
 
-		//UnityEngine.GameObject UnityEngine.Camera::INTERNAL_CALL_RaycastTry(UnityEngine.Camera,UnityEngine.Ray&,System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)
+		//UnityEngine.GameObject UnityEngine.Camera::INTERNAL_CALL_RaycastTry(UnityEngine.Camera,UnityEngine.Ray&,System.Single,System.Int32)
 		void Register_UnityEngine_Camera_INTERNAL_CALL_RaycastTry();
 		Register_UnityEngine_Camera_INTERNAL_CALL_RaycastTry();
 
@@ -660,89 +660,233 @@ void RegisterAllStrippedInternalCalls()
 
 	//End Registrations for type : UnityEngine.Event
 
-	//Start Registrations for type : UnityEngine.Experimental.Director.GenericMixerPlayable
+	//Start Registrations for type : UnityEngine.Experimental.Director.AnimationClipPlayable
 
-		//System.Void UnityEngine.Experimental.Director.GenericMixerPlayable::InternalCreate(UnityEngine.Experimental.Director.GenericMixerPlayable&)
-		void Register_UnityEngine_Experimental_Director_GenericMixerPlayable_InternalCreate();
-		Register_UnityEngine_Experimental_Director_GenericMixerPlayable_InternalCreate();
+		//System.Boolean UnityEngine.Experimental.Director.AnimationClipPlayable::INTERNAL_CALL_GetApplyFootIK(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetApplyFootIK();
+		Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetApplyFootIK();
 
-	//End Registrations for type : UnityEngine.Experimental.Director.GenericMixerPlayable
+		//System.Boolean UnityEngine.Experimental.Director.AnimationClipPlayable::INTERNAL_CALL_GetRemoveStartOffset(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetRemoveStartOffset();
+		Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetRemoveStartOffset();
 
-	//Start Registrations for type : UnityEngine.Experimental.Director.Playable
+		//System.Single UnityEngine.Experimental.Director.AnimationClipPlayable::INTERNAL_CALL_GetSpeed(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetSpeed();
+		Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetSpeed();
 
-		//System.Boolean UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_IsValidInternal(UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_IsValidInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_IsValidInternal();
+		//System.Void UnityEngine.Experimental.Director.AnimationClipPlayable::INTERNAL_CALL_SetApplyFootIK(UnityEngine.Experimental.Director.PlayableHandle&,System.Boolean)
+		void Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_SetApplyFootIK();
+		Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_SetApplyFootIK();
 
-		//System.Double UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetDurationInternal(UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetDurationInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetDurationInternal();
+		//System.Void UnityEngine.Experimental.Director.AnimationClipPlayable::INTERNAL_CALL_SetRemoveStartOffset(UnityEngine.Experimental.Director.PlayableHandle&,System.Boolean)
+		void Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_SetRemoveStartOffset();
+		Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_SetRemoveStartOffset();
 
-		//System.Double UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetTimeInternal(UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetTimeInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetTimeInternal();
+		//System.Void UnityEngine.Experimental.Director.AnimationClipPlayable::INTERNAL_CALL_SetSpeed(UnityEngine.Experimental.Director.PlayableHandle&,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_SetSpeed();
+		Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_SetSpeed();
 
-		//System.Int32 UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetInputCountInternal(UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetInputCountInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetInputCountInternal();
+		//UnityEngine.AnimationClip UnityEngine.Experimental.Director.AnimationClipPlayable::INTERNAL_CALL_GetAnimationClip(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetAnimationClip();
+		Register_UnityEngine_Experimental_Director_AnimationClipPlayable_INTERNAL_CALL_GetAnimationClip();
 
-		//System.Int32 UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetOutputCountInternal(UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetOutputCountInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetOutputCountInternal();
+	//End Registrations for type : UnityEngine.Experimental.Director.AnimationClipPlayable
 
-		//System.Single UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetInputWeightInternal(UnityEngine.Experimental.Director.Playable&,System.Int32)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetInputWeightInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetInputWeightInternal();
+	//Start Registrations for type : UnityEngine.Experimental.Director.AnimationOffsetPlayable
 
-		//System.Void UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetInputInternal(UnityEngine.Experimental.Director.Playable&,System.Int32,UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetInputInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetInputInternal();
+		//System.Void UnityEngine.Experimental.Director.AnimationOffsetPlayable::INTERNAL_CALL_GetPosition(UnityEngine.Experimental.Director.PlayableHandle&,UnityEngine.Vector3&)
+		void Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_GetPosition();
+		Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_GetPosition();
 
-		//System.Void UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetOutputInternal(UnityEngine.Experimental.Director.Playable&,System.Int32,UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetOutputInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetOutputInternal();
+		//System.Void UnityEngine.Experimental.Director.AnimationOffsetPlayable::INTERNAL_CALL_GetRotation(UnityEngine.Experimental.Director.PlayableHandle&,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_GetRotation();
+		Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_GetRotation();
 
-		//System.Void UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_SetDurationInternal(UnityEngine.Experimental.Director.Playable&,System.Double)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetDurationInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetDurationInternal();
+		//System.Void UnityEngine.Experimental.Director.AnimationOffsetPlayable::INTERNAL_CALL_SetPosition(UnityEngine.Experimental.Director.PlayableHandle&,UnityEngine.Vector3&)
+		void Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_SetPosition();
+		Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_SetPosition();
 
-		//System.Void UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_SetInputWeightFromIndexInternal(UnityEngine.Experimental.Director.Playable&,System.Int32,System.Single)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetInputWeightFromIndexInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetInputWeightFromIndexInternal();
+		//System.Void UnityEngine.Experimental.Director.AnimationOffsetPlayable::INTERNAL_CALL_SetRotation(UnityEngine.Experimental.Director.PlayableHandle&,UnityEngine.Quaternion&)
+		void Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_SetRotation();
+		Register_UnityEngine_Experimental_Director_AnimationOffsetPlayable_INTERNAL_CALL_SetRotation();
 
-		//System.Void UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_SetPlayStateInternal(UnityEngine.Experimental.Director.Playable&,UnityEngine.Experimental.Director.PlayState)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetPlayStateInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetPlayStateInternal();
+	//End Registrations for type : UnityEngine.Experimental.Director.AnimationOffsetPlayable
 
-		//System.Void UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_SetTimeInternal(UnityEngine.Experimental.Director.Playable&,System.Double)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetTimeInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_SetTimeInternal();
+	//Start Registrations for type : UnityEngine.Experimental.Director.AnimatorControllerPlayable
 
-		//UnityEngine.Experimental.Director.PlayState UnityEngine.Experimental.Director.Playable::INTERNAL_CALL_GetPlayStateInternal(UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetPlayStateInternal();
-		Register_UnityEngine_Experimental_Director_Playable_INTERNAL_CALL_GetPlayStateInternal();
+		//System.Boolean UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetBoolID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetBoolID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetBoolID();
 
-	//End Registrations for type : UnityEngine.Experimental.Director.Playable
+		//System.Boolean UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetBoolString(UnityEngine.Experimental.Director.PlayableHandle&,System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetBoolString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetBoolString();
 
-	//Start Registrations for type : UnityEngine.Experimental.Director.Playables
+		//System.Boolean UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_HasStateInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_HasStateInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_HasStateInternal();
 
-		//System.Boolean UnityEngine.Experimental.Director.Playables::INTERNAL_CALL_ConnectInternal(UnityEngine.Experimental.Director.Playable&,UnityEngine.Experimental.Director.Playable&,System.Int32,System.Int32)
-		void Register_UnityEngine_Experimental_Director_Playables_INTERNAL_CALL_ConnectInternal();
-		Register_UnityEngine_Experimental_Director_Playables_INTERNAL_CALL_ConnectInternal();
+		//System.Boolean UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_IsInTransitionInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_IsInTransitionInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_IsInTransitionInternal();
 
-		//System.Object UnityEngine.Experimental.Director.Playables::CastToInternal(System.Type,System.IntPtr,System.Int32)
-		void Register_UnityEngine_Experimental_Director_Playables_CastToInternal();
-		Register_UnityEngine_Experimental_Director_Playables_CastToInternal();
+		//System.Boolean UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_IsParameterControlledByCurveID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_IsParameterControlledByCurveID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_IsParameterControlledByCurveID();
 
-		//System.Void UnityEngine.Experimental.Director.Playables::INTERNAL_CALL_DisconnectInternal(UnityEngine.Experimental.Director.Playable&,System.Int32)
-		void Register_UnityEngine_Experimental_Director_Playables_INTERNAL_CALL_DisconnectInternal();
-		Register_UnityEngine_Experimental_Director_Playables_INTERNAL_CALL_DisconnectInternal();
+		//System.Boolean UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_IsParameterControlledByCurveString(UnityEngine.Experimental.Director.PlayableHandle&,System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_IsParameterControlledByCurveString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_IsParameterControlledByCurveString();
 
-		//System.Void UnityEngine.Experimental.Director.Playables::INTERNAL_CALL_InternalDestroy(UnityEngine.Experimental.Director.Playable&)
-		void Register_UnityEngine_Experimental_Director_Playables_INTERNAL_CALL_InternalDestroy();
-		Register_UnityEngine_Experimental_Director_Playables_INTERNAL_CALL_InternalDestroy();
+		//System.Int32 UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetAnimatorClipInfoCountInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Boolean)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorClipInfoCountInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorClipInfoCountInternal();
 
-	//End Registrations for type : UnityEngine.Experimental.Director.Playables
+		//System.Int32 UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetIntegerID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetIntegerID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetIntegerID();
+
+		//System.Int32 UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetIntegerString(UnityEngine.Experimental.Director.PlayableHandle&,System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetIntegerString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetIntegerString();
+
+		//System.Int32 UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetLayerCountInternal(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerCountInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerCountInternal();
+
+		//System.Int32 UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetLayerIndexInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerIndexInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerIndexInternal();
+
+		//System.Int32 UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetParameterCountInternal(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetParameterCountInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetParameterCountInternal();
+
+		//System.Int32 UnityEngine.Experimental.Director.AnimatorControllerPlayable::StringToHash(System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_StringToHash();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_StringToHash();
+
+		//System.Single UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetFloatID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetFloatID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetFloatID();
+
+		//System.Single UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetFloatString(UnityEngine.Experimental.Director.PlayableHandle&,System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetFloatString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetFloatString();
+
+		//System.Single UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetLayerWeightInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerWeightInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerWeightInternal();
+
+		//System.String UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetLayerNameInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerNameInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetLayerNameInternal();
+
+		//System.String UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_ResolveHashInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_ResolveHashInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_ResolveHashInternal();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_CrossFadeInFixedTimeInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Single,System.Int32,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_CrossFadeInFixedTimeInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_CrossFadeInFixedTimeInternal();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_CrossFadeInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Single,System.Int32,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_CrossFadeInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_CrossFadeInternal();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetAnimatorClipInfoInternal(UnityEngine.Experimental.Director.AnimatorControllerPlayable,UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Boolean,System.Object)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorClipInfoInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorClipInfoInternal();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_PlayInFixedTimeInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Int32,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_PlayInFixedTimeInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_PlayInFixedTimeInternal();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_PlayInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Int32,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_PlayInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_PlayInternal();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_ResetTriggerID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_ResetTriggerID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_ResetTriggerID();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_ResetTriggerString(UnityEngine.Experimental.Director.PlayableHandle&,System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_ResetTriggerString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_ResetTriggerString();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetBoolID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Boolean)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetBoolID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetBoolID();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetBoolString(UnityEngine.Experimental.Director.PlayableHandle&,System.String,System.Boolean)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetBoolString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetBoolString();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetFloatID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetFloatID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetFloatID();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetFloatString(UnityEngine.Experimental.Director.PlayableHandle&,System.String,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetFloatString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetFloatString();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetIntegerID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetIntegerID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetIntegerID();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetIntegerString(UnityEngine.Experimental.Director.PlayableHandle&,System.String,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetIntegerString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetIntegerString();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetLayerWeightInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32,System.Single)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetLayerWeightInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetLayerWeightInternal();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetTriggerID(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetTriggerID();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetTriggerID();
+
+		//System.Void UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_SetTriggerString(UnityEngine.Experimental.Director.PlayableHandle&,System.String)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetTriggerString();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_SetTriggerString();
+
+		//UnityEngine.AnimatorClipInfo[] UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetCurrentAnimatorClipInfoInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetCurrentAnimatorClipInfoInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetCurrentAnimatorClipInfoInternal();
+
+		//UnityEngine.AnimatorClipInfo[] UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetNextAnimatorClipInfoInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetNextAnimatorClipInfoInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetNextAnimatorClipInfoInternal();
+
+		//UnityEngine.AnimatorControllerParameter[] UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetParametersArrayInternal(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetParametersArrayInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetParametersArrayInternal();
+
+		//UnityEngine.AnimatorStateInfo UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetCurrentAnimatorStateInfoInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetCurrentAnimatorStateInfoInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetCurrentAnimatorStateInfoInternal();
+
+		//UnityEngine.AnimatorStateInfo UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetNextAnimatorStateInfoInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetNextAnimatorStateInfoInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetNextAnimatorStateInfoInternal();
+
+		//UnityEngine.AnimatorTransitionInfo UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetAnimatorTransitionInfoInternal(UnityEngine.Experimental.Director.PlayableHandle&,System.Int32)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorTransitionInfoInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorTransitionInfoInternal();
+
+		//UnityEngine.RuntimeAnimatorController UnityEngine.Experimental.Director.AnimatorControllerPlayable::INTERNAL_CALL_GetAnimatorControllerInternal(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorControllerInternal();
+		Register_UnityEngine_Experimental_Director_AnimatorControllerPlayable_INTERNAL_CALL_GetAnimatorControllerInternal();
+
+	//End Registrations for type : UnityEngine.Experimental.Director.AnimatorControllerPlayable
+
+	//Start Registrations for type : UnityEngine.Experimental.Director.PlayableHandle
+
+		//System.Boolean UnityEngine.Experimental.Director.PlayableHandle::INTERNAL_CALL_IsValidInternal(UnityEngine.Experimental.Director.PlayableHandle&)
+		void Register_UnityEngine_Experimental_Director_PlayableHandle_INTERNAL_CALL_IsValidInternal();
+		Register_UnityEngine_Experimental_Director_PlayableHandle_INTERNAL_CALL_IsValidInternal();
+
+	//End Registrations for type : UnityEngine.Experimental.Director.PlayableHandle
 
 	//Start Registrations for type : UnityEngine.GameObject
 
@@ -838,9 +982,9 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Graphics_Internal_GetMaxDrawMeshInstanceCount();
 		Register_UnityEngine_Graphics_Internal_GetMaxDrawMeshInstanceCount();
 
-		//System.Void UnityEngine.Graphics::DrawTexture(UnityEngine.InternalDrawTextureArguments&)
-		void Register_UnityEngine_Graphics_DrawTexture();
-		Register_UnityEngine_Graphics_DrawTexture();
+		//System.Void UnityEngine.Graphics::Internal_DrawTexture(UnityEngine.Internal_DrawTextureArguments&)
+		void Register_UnityEngine_Graphics_Internal_DrawTexture();
+		Register_UnityEngine_Graphics_Internal_DrawTexture();
 
 	//End Registrations for type : UnityEngine.Graphics
 
@@ -1178,9 +1322,9 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GUIUtility_Internal_GetHotControl();
 		Register_UnityEngine_GUIUtility_Internal_GetHotControl();
 
-		//System.Int32 UnityEngine.GUIUtility::get_keyboardControl()
-		void Register_UnityEngine_GUIUtility_get_keyboardControl();
-		Register_UnityEngine_GUIUtility_get_keyboardControl();
+		//System.Int32 UnityEngine.GUIUtility::Internal_GetKeyboardControl()
+		void Register_UnityEngine_GUIUtility_Internal_GetKeyboardControl();
+		Register_UnityEngine_GUIUtility_Internal_GetKeyboardControl();
 
 		//System.Single UnityEngine.GUIUtility::Internal_GetPixelsPerPoint()
 		void Register_UnityEngine_GUIUtility_Internal_GetPixelsPerPoint();
@@ -1362,9 +1506,9 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.Material
 
-		//System.Void UnityEngine.Material::INTERNAL_CALL_SetTextureScale(UnityEngine.Material,System.String,UnityEngine.Vector2&)
-		void Register_UnityEngine_Material_INTERNAL_CALL_SetTextureScale();
-		Register_UnityEngine_Material_INTERNAL_CALL_SetTextureScale();
+		//System.Void UnityEngine.Material::INTERNAL_CALL_SetTextureScaleImpl(UnityEngine.Material,System.Int32,UnityEngine.Vector2&)
+		void Register_UnityEngine_Material_INTERNAL_CALL_SetTextureScaleImpl();
+		Register_UnityEngine_Material_INTERNAL_CALL_SetTextureScaleImpl();
 
 	//End Registrations for type : UnityEngine.Material
 
@@ -1820,6 +1964,14 @@ void RegisterAllStrippedInternalCalls()
 
 	//End Registrations for type : UnityEngine.ScriptableObject
 
+	//Start Registrations for type : UnityEngine.Shader
+
+		//System.Int32 UnityEngine.Shader::PropertyToID(System.String)
+		void Register_UnityEngine_Shader_PropertyToID();
+		Register_UnityEngine_Shader_PropertyToID();
+
+	//End Registrations for type : UnityEngine.Shader
+
 	//Start Registrations for type : UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform
 
 		//System.Boolean UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform::Internal_Authenticated()
@@ -2030,7 +2182,7 @@ void RegisterAllStrippedInternalCalls()
 
 	//Start Registrations for type : UnityEngine.UnhandledExceptionHandler
 
-		//System.Void UnityEngine.UnhandledExceptionHandler::NativeUnhandledExceptionHandler()
+		//System.Void UnityEngine.UnhandledExceptionHandler::NativeUnhandledExceptionHandler(System.String,System.String,System.String)
 		void Register_UnityEngine_UnhandledExceptionHandler_NativeUnhandledExceptionHandler();
 		Register_UnityEngine_UnhandledExceptionHandler_NativeUnhandledExceptionHandler();
 

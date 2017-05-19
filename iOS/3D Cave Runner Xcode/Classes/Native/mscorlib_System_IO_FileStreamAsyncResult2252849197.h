@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Object
 struct Il2CppObject;
 // System.Threading.ManualResetEvent
@@ -17,7 +19,8 @@ struct ManualResetEvent_t926074657;
 // System.AsyncCallback
 struct AsyncCallback_t163412349;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

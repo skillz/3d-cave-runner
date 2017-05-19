@@ -4,51 +4,51 @@
 // it is expected to substitute Metal.h so only objc
 
 #ifdef __cplusplus
-	extern "C" typedef MTLDeviceRef (*MTLCreateSystemDefaultDeviceFunc)();
+extern "C" typedef MTLDeviceRef (*MTLCreateSystemDefaultDeviceFunc)();
 #else
-	typedef MTLDeviceRef (*MTLCreateSystemDefaultDeviceFunc)();
+typedef MTLDeviceRef (*MTLCreateSystemDefaultDeviceFunc)();
 #endif
 
 
 #if UNITY_CAN_USE_METAL
 
-	#import <Metal/Metal.h>
-	#import <QuartzCore/CAMetalLayer.h>
+    #import <Metal/Metal.h>
+    #import <QuartzCore/CAMetalLayer.h>
 
 #else
 
-	typedef NSUInteger MTLPixelFormat;
-	enum
-	{
-		MTLPixelFormatBGRA8Unorm,
-		MTLPixelFormatBGRA8Unorm_sRGB,
-	};
+typedef NSUInteger MTLPixelFormat;
+enum
+{
+    MTLPixelFormatBGRA8Unorm,
+    MTLPixelFormatBGRA8Unorm_sRGB,
+};
 
-	@interface CAMetalLayer : CALayer
-		@property (readwrite) BOOL framebufferOnly;
-		@property (readwrite) CGSize drawableSize;
-		@property BOOL presentsWithTransaction;
-		@property (readwrite, retain) id <MTLDevice> device;
-		@property (readwrite) MTLPixelFormat pixelFormat;
-		@property (readonly) id <MTLTexture> texture;
+@interface CAMetalLayer : CALayer
+@property (readwrite) BOOL framebufferOnly;
+@property (readwrite) CGSize drawableSize;
+@property BOOL presentsWithTransaction;
+@property (readwrite, retain) id<MTLDevice> device;
+@property (readwrite) MTLPixelFormat pixelFormat;
+@property (readonly) id<MTLTexture> texture;
 
-		- (id <CAMetalDrawable>)newDrawable;
-		- (id <CAMetalDrawable>)nextDrawable;
-	@end
+- (id<CAMetalDrawable>)newDrawable;
+- (id<CAMetalDrawable>)nextDrawable;
+@end
 
-	@protocol MTLDrawable
-	@end
-	@protocol CAMetalDrawable <MTLDrawable>
-		@property (readonly) id <MTLTexture> texture;
-	@end
+@protocol MTLDrawable
+@end
+@protocol CAMetalDrawable<MTLDrawable>
+@property (readonly) id<MTLTexture> texture;
+@end
 
-	@protocol MTLDevice
-		- (id <MTLCommandQueue>)newCommandQueue;
-		- (BOOL)supportsTextureSampleCount:(NSUInteger)sampleCount;
-	@end
+@protocol MTLDevice
+- (id<MTLCommandQueue>)newCommandQueue;
+- (BOOL)supportsTextureSampleCount:(NSUInteger)sampleCount;
+@end
 
-	@protocol MTLCommandBuffer
-		- (void)presentDrawable:(id <MTLDrawable>)drawable;
-	@end
+@protocol MTLCommandBuffer
+- (void)presentDrawable:(id<MTLDrawable>)drawable;
+@end
 
 #endif

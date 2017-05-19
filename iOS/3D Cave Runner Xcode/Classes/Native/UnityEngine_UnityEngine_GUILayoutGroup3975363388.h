@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_GUILayoutEntry3828586629.h"
+
 // System.Collections.Generic.List`1<UnityEngine.GUILayoutEntry>
 struct List_1_t3197707761;
 // UnityEngine.RectOffset
 struct RectOffset_t3387826427;
 
-#include "UnityEngine_UnityEngine_GUILayoutEntry3828586629.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

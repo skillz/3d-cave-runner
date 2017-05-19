@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+
 // UnityEngine.Display[]
 struct DisplayU5BU5D_t1314630077;
 // UnityEngine.Display
@@ -17,8 +20,8 @@ struct Display_t3666191348;
 // UnityEngine.Display/DisplaysUpdatedDelegate
 struct DisplaysUpdatedDelegate_t3423469815;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

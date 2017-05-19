@@ -10,6 +10,11 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_TimeSpan3430258949.h"
+#include "mscorlib_System_DateTimeKind2186819611.h"
+#include "mscorlib_System_DateTime693205669.h"
+
 // System.String[]
 struct StringU5BU5D_t1642385972;
 // System.Int32[]
@@ -17,10 +22,8 @@ struct Int32U5BU5D_t3030399641;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_TimeSpan3430258949.h"
-#include "mscorlib_System_DateTimeKind2186819611.h"
-#include "mscorlib_System_DateTime693205669.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

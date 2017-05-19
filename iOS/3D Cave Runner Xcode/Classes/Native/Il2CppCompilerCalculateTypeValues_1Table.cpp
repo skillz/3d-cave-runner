@@ -13,7 +13,6 @@
 #include <limits>
 #include <assert.h>
 
-
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
 #include "mscorlib_Mono_Globalization_Unicode_MSCompatUnicod2040269023.h"
@@ -90,6 +89,10 @@
 #include "mscorlib_System_Collections_Hashtable_Enumerator2466348361.h"
 #include "mscorlib_System_Collections_Hashtable_HashKeys187688763.h"
 #include "mscorlib_System_Collections_Hashtable_HashValues2390200547.h"
+
+
+
+
 
 
 
@@ -729,7 +732,7 @@ extern const int32_t g_FieldOffsetTable193[14] =
 	Hashtable_t909839986::get_offset_of_equalityComparer_12(),
 	Hashtable_t909839986_StaticFields::get_offset_of_primeTbl_13(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize194 = { sizeof (Slot_t2022531261)+ sizeof (Il2CppObject), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize194 = { sizeof (Slot_t2022531261)+ sizeof (Il2CppObject), sizeof(Slot_t2022531261_marshaled_pinvoke), 0, 0 };
 extern const int32_t g_FieldOffsetTable194[2] = 
 {
 	Slot_t2022531261::get_offset_of_key_0() + static_cast<int32_t>(sizeof(Il2CppObject)),

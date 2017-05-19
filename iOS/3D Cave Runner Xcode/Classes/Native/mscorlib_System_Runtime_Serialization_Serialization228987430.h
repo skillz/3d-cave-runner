@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.Hashtable
 struct Hashtable_t909839986;
 // System.Collections.ArrayList
@@ -19,7 +21,8 @@ struct String_t;
 // System.Runtime.Serialization.IFormatterConverter
 struct IFormatterConverter_t1473156697;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

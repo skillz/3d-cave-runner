@@ -10,8 +10,11 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System___Il2CppComObject4064417062.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -30,7 +33,3 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-struct __Il2CppComDelegate_t3311706788CCW : il2cpp::vm::ComObjectBase<__Il2CppComDelegate_t3311706788CCW, Il2CppIInspectable>
-{
-	inline __Il2CppComDelegate_t3311706788CCW(Il2CppObject* obj) : il2cpp::vm::ComObjectBase<__Il2CppComDelegate_t3311706788CCW, Il2CppIInspectable>(obj) {}
-};

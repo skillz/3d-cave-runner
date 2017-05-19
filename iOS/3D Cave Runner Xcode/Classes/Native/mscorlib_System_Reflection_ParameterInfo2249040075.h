@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Reflection_ParameterAttributes1266705348.h"
+
 // System.Type
 struct Type_t;
 // System.Object
@@ -21,8 +24,8 @@ struct String_t;
 // System.Reflection.Emit.UnmanagedMarshal
 struct UnmanagedMarshal_t4270021860;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Reflection_ParameterAttributes1266705348.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

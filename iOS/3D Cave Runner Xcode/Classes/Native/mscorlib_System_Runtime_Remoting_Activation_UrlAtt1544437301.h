@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_Contexts_ContextAt197102333.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Runtime_Remoting_Contexts_ContextAt197102333.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

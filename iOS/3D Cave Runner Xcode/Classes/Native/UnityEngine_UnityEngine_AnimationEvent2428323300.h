@@ -10,6 +10,12 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_AnimationEventSource3560017945.h"
+#include "UnityEngine_UnityEngine_AnimatorStateInfo2577870592.h"
+#include "UnityEngine_UnityEngine_AnimatorClipInfo3905751349.h"
+#include "UnityEngine_UnityEngine_Object1021602117.h"
+
 // System.String
 struct String_t;
 // UnityEngine.Object
@@ -18,11 +24,8 @@ struct Object_t1021602117;
 struct AnimationState_t1303741697;
 struct Object_t1021602117_marshaled_com;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_AnimationEventSource3560017945.h"
-#include "UnityEngine_UnityEngine_AnimatorStateInfo2577870592.h"
-#include "UnityEngine_UnityEngine_AnimatorClipInfo3905751349.h"
-#include "UnityEngine_UnityEngine_Object1021602117.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

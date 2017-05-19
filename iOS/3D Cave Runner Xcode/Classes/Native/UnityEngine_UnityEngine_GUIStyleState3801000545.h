@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+
 // UnityEngine.GUIStyle
 struct GUIStyle_t1799908754;
 // UnityEngine.Texture2D
@@ -17,8 +20,8 @@ struct Texture2D_t3542995729;
 struct GUIStyle_t1799908754_marshaled_pinvoke;
 struct GUIStyle_t1799908754_marshaled_com;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

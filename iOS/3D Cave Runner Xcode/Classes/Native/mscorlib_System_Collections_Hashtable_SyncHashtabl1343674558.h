@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Collections_Hashtable909839986.h"
+
 // System.Collections.Hashtable
 struct Hashtable_t909839986;
 
-#include "mscorlib_System_Collections_Hashtable909839986.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_TypeEntry3321373506.h"
+#include "mscorlib_System_Runtime_Remoting_WellKnownObjectMo2630225581.h"
+
 // System.Type
 struct Type_t;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Runtime_Remoting_TypeEntry3321373506.h"
-#include "mscorlib_System_Runtime_Remoting_WellKnownObjectMo2630225581.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

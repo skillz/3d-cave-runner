@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_Mono_Security_Cryptography_SymmetricTrans1394030013.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.UInt32[]
 struct UInt32U5BU5D_t59386216;
 
-#include "mscorlib_Mono_Security_Cryptography_SymmetricTrans1394030013.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

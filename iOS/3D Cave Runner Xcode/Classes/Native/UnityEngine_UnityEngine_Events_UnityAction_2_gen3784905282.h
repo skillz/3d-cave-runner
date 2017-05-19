@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+#include "mscorlib_System_Void1841601450.h"
+
 // System.Object
 struct Il2CppObject;
 // System.IAsyncResult
@@ -17,8 +20,8 @@ struct IAsyncResult_t1999651008;
 // System.AsyncCallback
 struct AsyncCallback_t163412349;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
-#include "mscorlib_System_Void1841601450.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

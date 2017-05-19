@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Uri
 struct Uri_t19570940;
 // System.Collections.ArrayList
@@ -17,7 +19,8 @@ struct ArrayList_t4252133567;
 // System.Net.ICredentials
 struct ICredentials_t3855617113;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

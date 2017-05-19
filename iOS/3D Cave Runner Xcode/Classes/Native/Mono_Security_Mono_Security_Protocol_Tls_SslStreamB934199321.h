@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_Stream3255436806.h"
+#include "mscorlib_System_Boolean3825574718.h"
+
 // System.Threading.ManualResetEvent
 struct ManualResetEvent_t926074657;
 // System.IO.Stream
@@ -25,8 +28,8 @@ struct Il2CppObject;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_IO_Stream3255436806.h"
-#include "mscorlib_System_Boolean3825574718.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "Mono_Security_Mono_Security_X509_X509ChainStatusFl2843686920.h"
+
 // Mono.Security.X509.X509CertificateCollection
 struct X509CertificateCollection_t3592472866;
 // Mono.Security.X509.X509Certificate
 struct X509Certificate_t324051958;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "Mono_Security_Mono_Security_X509_X509ChainStatusFl2843686920.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

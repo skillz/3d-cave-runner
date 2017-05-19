@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_Reflection_CustomAttributeTypedArg1498197914.h"
+
 // System.Reflection.MemberInfo
 struct MemberInfo_t;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_Reflection_CustomAttributeTypedArg1498197914.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Type1303803226.h"
+#include "mscorlib_System_Reflection_TypeAttributes2229518203.h"
+
 // System.String
 struct String_t;
 // System.Type
@@ -31,8 +34,8 @@ struct ModuleBuilder_t4156028127;
 // System.Reflection.Emit.GenericTypeParameterBuilder[]
 struct GenericTypeParameterBuilderU5BU5D_t358971386;
 
-#include "mscorlib_System_Type1303803226.h"
-#include "mscorlib_System_Reflection_TypeAttributes2229518203.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

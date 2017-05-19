@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // Mono.Security.X509.X509Certificate
 struct X509Certificate_t324051957;
 // System.Byte[]
@@ -17,7 +19,8 @@ struct ByteU5BU5D_t3397334013;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

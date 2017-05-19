@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.UInt32[]
 struct UInt32U5BU5D_t59386216;
 // System.UInt64[]
 struct UInt64U5BU5D_t1668688775;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

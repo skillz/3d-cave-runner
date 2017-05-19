@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "UnityEngine_UnityEngine_Vector22243707579.h"
+
 // UnityEngine.Transform[]
 struct TransformU5BU5D_t3764228911;
 // UnityEngine.Transform
 struct Transform_t3275118058;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
-#include "UnityEngine_UnityEngine_Vector22243707579.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

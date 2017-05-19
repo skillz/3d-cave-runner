@@ -13,41 +13,36 @@
 #include <limits>
 #include <assert.h>
 
-
 #include "class-internals.h"
 #include "codegen/il2cpp-codegen.h"
 
 
+
+
+
+
 extern const Il2CppMethodPointer g_MethodPointers[];
-extern const Il2CppMethodPointer g_DelegateWrappersManagedToNative[];
-extern const Il2CppMarshalingFunctions g_MarshalingFunctions[];
-extern const Il2CppMethodPointer g_CcwMarshalingFunctions[];
 extern const Il2CppMethodPointer g_Il2CppGenericMethodPointers[];
 extern const InvokerMethod g_Il2CppInvokerPointers[];
 extern const CustomAttributesCacheGenerator g_AttributeGenerators[];
 extern const Il2CppMethodPointer g_UnresolvedVirtualMethodPointers[];
+extern Il2CppInteropData g_Il2CppInteropData[];
 const Il2CppCodeRegistration g_CodeRegistration = 
 {
-	9447,
+	9634,
 	g_MethodPointers,
 	0,
 	NULL,
-	21,
-	g_DelegateWrappersManagedToNative,
-	64,
-	g_MarshalingFunctions,
-	1,
-	g_CcwMarshalingFunctions,
-	2166,
+	2319,
 	g_Il2CppGenericMethodPointers,
-	1357,
+	1379,
 	g_Il2CppInvokerPointers,
-	1696,
+	2227,
 	g_AttributeGenerators,
-	0,
-	NULL,
-	154,
+	158,
 	g_UnresolvedVirtualMethodPointers,
+	87,
+	g_Il2CppInteropData,
 };
 extern const Il2CppMetadataRegistration g_MetadataRegistration;
 static const Il2CppCodeGenOptions s_Il2CppCodeGenOptions = 

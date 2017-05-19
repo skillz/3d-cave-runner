@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake3938752374.h"
+
 // Mono.Security.Protocol.Tls.Handshake.ClientCertificateType[]
 struct ClientCertificateTypeU5BU5D_t2397899623;
 // System.String[]
 struct StringU5BU5D_t1642385972;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake3938752374.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

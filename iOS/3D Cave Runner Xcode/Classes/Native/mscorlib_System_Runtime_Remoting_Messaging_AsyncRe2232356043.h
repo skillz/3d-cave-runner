@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+
 // System.Object
 struct Il2CppObject;
 // System.Threading.WaitHandle
@@ -23,8 +26,8 @@ struct IMessageCtrl_t2081697019;
 // System.Runtime.Remoting.Messaging.IMessage
 struct IMessage_t3044378324;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

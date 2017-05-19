@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // Boo.Lang.Runtime.DynamicDispatching.DispatcherKey
 struct DispatcherKey_t708950850;
 // Boo.Lang.Runtime.DynamicDispatching.Dispatcher
 struct Dispatcher_t2240407071;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

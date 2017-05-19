@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_LogType1559732862.h"
+
 // UnityEngine.ILogHandler
 struct ILogHandler_t264057413;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_LogType1559732862.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

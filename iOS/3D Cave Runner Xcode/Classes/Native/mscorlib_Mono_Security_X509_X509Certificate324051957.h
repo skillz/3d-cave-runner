@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_DateTime693205669.h"
+
 // Mono.Security.ASN1
 struct ASN1_t924533535;
 // System.Byte[]
@@ -21,8 +24,8 @@ struct DSA_t903174880;
 // Mono.Security.X509.X509ExtensionCollection
 struct X509ExtensionCollection_t1640144839;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_DateTime693205669.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

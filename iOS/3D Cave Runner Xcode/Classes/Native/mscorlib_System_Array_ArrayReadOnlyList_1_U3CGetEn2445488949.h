@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Object
 struct Il2CppObject;
 // System.Array/ArrayReadOnlyList`1<System.Object>
 struct ArrayReadOnlyList_1_t2471096271;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

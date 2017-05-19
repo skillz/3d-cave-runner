@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.String
 struct String_t;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -59,11 +62,11 @@ public:
 struct ResourceCacheItem_t333236149_marshaled_pinvoke
 {
 	char* ___ResourceName_0;
-	Il2CppObject * ___ResourceValue_1;
+	Il2CppIUnknown* ___ResourceValue_1;
 };
 // Native definition for COM marshalling of System.Resources.ResourceReader/ResourceCacheItem
 struct ResourceCacheItem_t333236149_marshaled_com
 {
 	Il2CppChar* ___ResourceName_0;
-	Il2CppObject * ___ResourceValue_1;
+	Il2CppIUnknown* ___ResourceValue_1;
 };

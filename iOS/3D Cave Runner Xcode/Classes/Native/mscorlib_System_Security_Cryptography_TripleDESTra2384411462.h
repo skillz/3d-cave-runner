@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_Mono_Security_Cryptography_SymmetricTrans1394030013.h"
+
 // System.Security.Cryptography.DESTransform
 struct DESTransform_t179750796;
 
-#include "mscorlib_Mono_Security_Cryptography_SymmetricTrans1394030013.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

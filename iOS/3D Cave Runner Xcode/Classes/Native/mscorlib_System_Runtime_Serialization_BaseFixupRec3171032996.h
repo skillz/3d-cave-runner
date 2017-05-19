@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Runtime.Serialization.ObjectRecord
 struct ObjectRecord_t4134110382;
 // System.Runtime.Serialization.BaseFixupRecord
 struct BaseFixupRecord_t3171032996;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

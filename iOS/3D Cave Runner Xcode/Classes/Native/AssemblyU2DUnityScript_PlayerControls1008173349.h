@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "UnityEngine_UnityEngine_Vector32243707580.h"
+#include "UnityEngine_UnityEngine_Quaternion4030073918.h"
+
 // UnityEngine.GameObject
 struct GameObject_t1756533147;
 // GameController
@@ -29,9 +33,8 @@ struct GUISkin_t1436893342;
 // UnityEngine.Texture2D
 struct Texture2D_t3542995729;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
-#include "UnityEngine_UnityEngine_Vector32243707580.h"
-#include "UnityEngine_UnityEngine_Quaternion4030073918.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

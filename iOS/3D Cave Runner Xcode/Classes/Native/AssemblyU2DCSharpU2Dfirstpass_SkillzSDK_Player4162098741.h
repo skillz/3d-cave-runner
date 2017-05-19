@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_Nullable_1_gen412748336.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_Nullable_1_gen412748336.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

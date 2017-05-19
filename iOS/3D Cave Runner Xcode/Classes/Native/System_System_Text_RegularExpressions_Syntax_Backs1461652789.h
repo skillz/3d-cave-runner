@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "System_System_Text_RegularExpressions_Syntax_Refer1540574699.h"
+
 // System.String
 struct String_t;
 
-#include "System_System_Text_RegularExpressions_Syntax_Refer1540574699.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

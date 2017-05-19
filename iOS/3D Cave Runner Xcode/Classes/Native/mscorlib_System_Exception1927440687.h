@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.IntPtr[]
 struct IntPtrU5BU5D_t169632028;
 // System.Exception
@@ -19,7 +21,8 @@ struct String_t;
 // System.Collections.IDictionary
 struct IDictionary_t596158605;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

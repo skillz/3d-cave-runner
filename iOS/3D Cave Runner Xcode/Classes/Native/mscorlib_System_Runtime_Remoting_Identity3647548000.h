@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.String
 struct String_t;
 // System.Runtime.Remoting.Messaging.IMessageSink
@@ -19,7 +21,8 @@ struct DynamicPropertyCollection_t2282532998;
 // System.Runtime.Remoting.ObjRef
 struct ObjRef_t318414488;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

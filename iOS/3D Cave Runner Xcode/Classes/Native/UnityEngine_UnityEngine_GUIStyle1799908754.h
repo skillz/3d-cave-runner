@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+#include "UnityEngine_UnityEngine_RectOffset3387826427.h"
+
 // UnityEngine.GUIStyleState
 struct GUIStyleState_t3801000545;
 // UnityEngine.RectOffset
@@ -19,12 +23,11 @@ struct Font_t4239498691;
 // UnityEngine.GUIStyle
 struct GUIStyle_t1799908754;
 struct GUIStyleState_t3801000545_marshaled_pinvoke;
-struct RectOffset_t3387826427_marshaled_pinvoke;
 struct GUIStyleState_t3801000545_marshaled_com;
 struct RectOffset_t3387826427_marshaled_com;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -234,10 +237,10 @@ struct GUIStyle_t1799908754_marshaled_pinvoke
 	GUIStyleState_t3801000545_marshaled_pinvoke* ___m_OnHover_6;
 	GUIStyleState_t3801000545_marshaled_pinvoke* ___m_OnActive_7;
 	GUIStyleState_t3801000545_marshaled_pinvoke* ___m_OnFocused_8;
-	RectOffset_t3387826427_marshaled_pinvoke* ___m_Border_9;
-	RectOffset_t3387826427_marshaled_pinvoke* ___m_Padding_10;
-	RectOffset_t3387826427_marshaled_pinvoke* ___m_Margin_11;
-	RectOffset_t3387826427_marshaled_pinvoke* ___m_Overflow_12;
+	RectOffset_t3387826427_marshaled_pinvoke ___m_Border_9;
+	RectOffset_t3387826427_marshaled_pinvoke ___m_Padding_10;
+	RectOffset_t3387826427_marshaled_pinvoke ___m_Margin_11;
+	RectOffset_t3387826427_marshaled_pinvoke ___m_Overflow_12;
 	Font_t4239498691 * ___m_FontInternal_13;
 };
 // Native definition for COM marshalling of UnityEngine.GUIStyle

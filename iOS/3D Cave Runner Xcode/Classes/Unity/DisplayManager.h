@@ -6,17 +6,17 @@
 @class UnityView;
 
 typedef struct
-RenderingSurfaceParams
+    RenderingSurfaceParams
 {
-	// rendering setup
-	int	msaaSampleCount;
-	int	renderW;
-	int	renderH;
-	int	srgb;
+    // rendering setup
+    int msaaSampleCount;
+    int renderW;
+    int renderH;
+    int srgb;
 
-	// unity setup
-	int	disableDepthAndStencil;
-	int	useCVTextureCache;
+    // unity setup
+    int disableDepthAndStencil;
+    int useCVTextureCache;
 }
 RenderingSurfaceParams;
 
@@ -35,13 +35,13 @@ RenderingSurfaceParams;
 - (void)requestRenderingResolution:(CGSize)res;
 - (void)present;
 
-@property (readonly, copy, nonatomic)	UIScreen*				screen;
-@property (readonly, copy, nonatomic)	UIWindow*				window;
-@property (readonly, copy, nonatomic)	UIView*					view;
+@property (readonly, copy, nonatomic)   UIScreen*               screen;
+@property (readonly, copy, nonatomic)   UIWindow*               window;
+@property (readonly, copy, nonatomic)   UIView*                 view;
 
 
-@property (readonly, nonatomic)			CGSize						screenSize;
-@property (readonly, nonatomic)			UnityDisplaySurfaceBase*	surface;
+@property (readonly, nonatomic)         CGSize                      screenSize;
+@property (readonly, nonatomic)         UnityDisplaySurfaceBase*    surface;
 
 @end
 
@@ -60,17 +60,18 @@ RenderingSurfaceParams;
 + (void)Initialize;
 + (DisplayManager*)Instance;
 
-@property (readonly, nonatomic)	DisplayConnection*	mainDisplay;
+@property (readonly, nonatomic) DisplayConnection*  mainDisplay;
 
-@property (readonly, nonatomic)	NSUInteger			displayCount;
+@property (readonly, nonatomic) NSUInteger          displayCount;
 
 @end
 
-inline DisplayConnection*			GetMainDisplay()
+inline DisplayConnection*           GetMainDisplay()
 {
-	return [DisplayManager Instance].mainDisplay;
+    return [DisplayManager Instance].mainDisplay;
 }
-inline UnityDisplaySurfaceBase*		GetMainDisplaySurface()
+
+inline UnityDisplaySurfaceBase*     GetMainDisplaySurface()
 {
-	return GetMainDisplay().surface;
+    return GetMainDisplay().surface;
 }

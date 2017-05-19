@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Serialization_BaseFixupRec3171032996.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Runtime_Serialization_BaseFixupRec3171032996.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

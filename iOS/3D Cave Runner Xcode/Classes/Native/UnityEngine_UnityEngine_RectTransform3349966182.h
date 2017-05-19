@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_Transform3275118058.h"
+
 // UnityEngine.RectTransform/ReapplyDrivenProperties
 struct ReapplyDrivenProperties_t2020713228;
 
-#include "UnityEngine_UnityEngine_Transform3275118058.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

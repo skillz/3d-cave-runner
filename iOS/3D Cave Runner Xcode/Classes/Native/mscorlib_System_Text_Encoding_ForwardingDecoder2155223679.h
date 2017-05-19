@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Text_Decoder3792697818.h"
+
 // System.Text.Encoding
 struct Encoding_t663144255;
 
-#include "mscorlib_System_Text_Decoder3792697818.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

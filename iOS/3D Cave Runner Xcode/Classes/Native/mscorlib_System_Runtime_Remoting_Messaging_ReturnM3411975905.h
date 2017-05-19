@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Object[]
 struct ObjectU5BU5D_t3614634134;
 // System.Runtime.Remoting.Messaging.LogicalCallContext
@@ -29,7 +31,8 @@ struct MethodReturnDictionary_t981009581;
 // System.Runtime.Remoting.Messaging.ArgInfo
 struct ArgInfo_t688271106;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

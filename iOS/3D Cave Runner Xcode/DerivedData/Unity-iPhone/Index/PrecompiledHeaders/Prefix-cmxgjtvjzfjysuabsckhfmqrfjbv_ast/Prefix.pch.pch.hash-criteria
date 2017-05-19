@@ -1,0 +1,148 @@
+-x
+c++
+-arch
+arm64
+-fretain-comments-from-system-headers
+-std=c++11
+-stdlib=libc++
+-gmodules
+-fno-rtti
+-fpascal-strings
+-Os
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk
+-miphoneos-version-min=8.0
+-g
+-fvisibility=hidden
+-fvisibility-inlines-hidden
+-fembed-bitcode-marker
+-iquote
+-iquote
+-I/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode/DerivedData/Unity-iPhone/Build/Products/ReleaseForRunning-iphoneos/include
+-I/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode/Classes
+-I/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode
+-I/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode/Classes/Native
+-I/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode/Libraries/bdwgc/include
+-I/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode/Libraries/libil2cpp/include
+-F/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode/DerivedData/Unity-iPhone/Build/Products/ReleaseForRunning-iphoneos
+-F.
+-Fbuild
+-FClasses
+-FData
+-FDerivedData
+-FLibraries
+-FUnity-iPhone
+-FUnity-iPhone Tests
+-Fbuild/Release-iphoneos
+-Fbuild/Unity-iPhone.build
+-FClasses/Native
+-FClasses/PluginBase
+-FClasses/UI
+-FClasses/Unity
+-FClasses/UnityAds
+-FData/Managed
+-FData/Resources
+-FDerivedData/ModuleCache
+-FDerivedData/Unity-iPhone
+-FLibraries/libil2cpp
+-FLibraries/Standard Assets
+-Fbuild/Unity-iPhone.build/Release-iphoneos
+-FData/Managed/Metadata
+-FData/Managed/mono
+-FData/Managed/Resources
+-FDerivedData/Unity-iPhone/Build
+-FDerivedData/Unity-iPhone/Index
+-FLibraries/libil2cpp/include
+-FLibraries/Standard Assets/Skillz
+-FData/Managed/mono/2.0
+-FDerivedData/Unity-iPhone/Build/Intermediates
+-FDerivedData/Unity-iPhone/Index/ReleaseForRunning
+-FLibraries/libil2cpp/include/codegen
+-FLibraries/libil2cpp/include/debugger
+-FLibraries/libil2cpp/include/external
+-FLibraries/libil2cpp/include/externals
+-FLibraries/libil2cpp/include/gc
+-FLibraries/libil2cpp/include/icalls
+-FLibraries/libil2cpp/include/metadata
+-FLibraries/libil2cpp/include/mono
+-FLibraries/libil2cpp/include/os
+-FLibraries/libil2cpp/include/utils
+-FLibraries/libil2cpp/include/vm
+-FLibraries/Standard Assets/Skillz/Build
+-FDerivedData/Unity-iPhone/Build/Intermediates/Unity-iPhone.build
+-FDerivedData/Unity-iPhone/Index/ReleaseForRunning/iphoneos10.3-arm64
+-FLibraries/libil2cpp/include/debugger/protocol
+-FLibraries/libil2cpp/include/external/google
+-FLibraries/libil2cpp/include/external/xamarin-android
+-FLibraries/libil2cpp/include/external/zlib
+-FLibraries/libil2cpp/include/icalls/mscorlib
+-FLibraries/libil2cpp/include/icalls/System
+-FLibraries/libil2cpp/include/icalls/System.Configuration
+-FLibraries/libil2cpp/include/icalls/System.Core
+-FLibraries/libil2cpp/include/mono/ThreadPool
+-FLibraries/libil2cpp/include/os/Generic
+-FLibraries/libil2cpp/include/os/Posix
+-FLibraries/libil2cpp/include/os/Std
+-FLibraries/libil2cpp/include/os/Tizen
+-FLibraries/libil2cpp/include/os/Unity
+-FLibraries/libil2cpp/include/os/Win32
+-FLibraries/libil2cpp/include/os/WinRT
+-FLibraries/libil2cpp/include/utils/utf8-cpp
+-FLibraries/Standard Assets/Skillz/Build/IncludeInXcode
+-FDerivedData/Unity-iPhone/Build/Intermediates/Unity-iPhone.build/ReleaseForRunning-iphoneos
+-FDerivedData/Unity-iPhone/Index/ReleaseForRunning/iphoneos10.3-arm64/Unity-iPhone.xcindex
+-FLibraries/libil2cpp/include/debugger/protocol/commands
+-FLibraries/libil2cpp/include/external/google/sparsehash
+-FLibraries/libil2cpp/include/icalls/mscorlib/Mono
+-FLibraries/libil2cpp/include/icalls/mscorlib/Mono.Globalization.Unicode
+-FLibraries/libil2cpp/include/icalls/mscorlib/Mono.Interop
+-FLibraries/libil2cpp/include/icalls/mscorlib/Mono.Security.Cryptography
+-FLibraries/libil2cpp/include/icalls/mscorlib/System
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Diagnostics
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Globalization
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.IO
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Reflection
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Reflection.Emit
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.CompilerServices
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.InteropServices
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.InteropServices.WindowsRuntime
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.Remoting
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.Remoting.Activation
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.Remoting.Contexts
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.Remoting.Messaging
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.Remoting.Proxies
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Runtime.Versioning
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Security
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Security.Cryptography
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Security.Policy
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Security.Principal
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Text
+-FLibraries/libil2cpp/include/icalls/mscorlib/System.Threading
+-FLibraries/libil2cpp/include/icalls/System/Microsoft.Win32
+-FLibraries/libil2cpp/include/icalls/System/Mono.Net.Security
+-FLibraries/libil2cpp/include/icalls/System/System
+-FLibraries/libil2cpp/include/icalls/System/System.ComponentModel
+-FLibraries/libil2cpp/include/icalls/System/System.Configuration
+-FLibraries/libil2cpp/include/icalls/System/System.Diagnostics
+-FLibraries/libil2cpp/include/icalls/System/System.IO
+-FLibraries/libil2cpp/include/icalls/System/System.Net
+-FLibraries/libil2cpp/include/icalls/System/System.Net.NetworkInformation
+-FLibraries/libil2cpp/include/icalls/System/System.Net.Sockets
+-FLibraries/libil2cpp/include/icalls/System/System.Threading
+-FLibraries/libil2cpp/include/icalls/System.Configuration/System.Configuration
+-FLibraries/libil2cpp/include/icalls/System.Core/System.IO.MemoryMappedFiles
+-FLibraries/libil2cpp/include/utils/utf8-cpp/source
+-FDerivedData/Unity-iPhone/Build/Intermediates/Unity-iPhone.build/ReleaseForRunning-iphoneos/Unity-iPhone.build
+-FLibraries/libil2cpp/include/utils/utf8-cpp/source/utf8
+-ferror-limit=10
+-working-directory=/Users/elizabethrenn/Desktop/3d-cave-runner/iOS/3D Cave Runner Xcode
+-Xclang
+-detailed-preprocessing-record
+-DINIT_SCRIPTING_BACKEND=1
+-fno-strict-overflow
+-DINIT_SCRIPTING_BACKEND=1
+-fno-strict-overflow
+aarch64-apple-darwin16.5.0
+"4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.42)"
+SDK_PRODUCT_BUILD_VERSION=14E269
+14E269

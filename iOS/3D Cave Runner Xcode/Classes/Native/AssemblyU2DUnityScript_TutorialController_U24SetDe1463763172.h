@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "Boo_Lang_Boo_Lang_GenericGeneratorEnumerator_1_gen300505933.h"
+
 // TutorialController
 struct TutorialController_t4038411994;
 
-#include "Boo_Lang_Boo_Lang_GenericGeneratorEnumerator_1_gen300505933.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

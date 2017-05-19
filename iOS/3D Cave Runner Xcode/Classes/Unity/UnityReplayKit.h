@@ -17,7 +17,7 @@
 @property(nonatomic, readonly) NSString* lastError;
 @property(nonatomic, readonly) RPPreviewViewController* previewController;
 @property(nonatomic, readonly) BOOL recordingPreviewAvailable;
-@property(nonatomic, readonly, getter=isRecording) BOOL recording;
+@property(nonatomic, readonly, getter = isRecording) BOOL recording;
 
 - (BOOL)startRecording:(BOOL)enableMicrophone;
 - (BOOL)stopRecording;
@@ -30,8 +30,8 @@
 @property(nonatomic, readonly) BOOL broadcastingApiAvailable;
 @property(nonatomic, readonly) BOOL isBroadcasting;
 @property(nonatomic, readonly) NSURL* broadcastURL;
-@property(nonatomic, setter=setCameraEnabled:, getter=isCameraEnabled) BOOL cameraEnabled;
-@property(nonatomic, setter=setMicrophoneEnabled:, getter=isMicrophoneEnabled) BOOL microphoneEnabled;
+@property(nonatomic, setter = setCameraEnabled:, getter = isCameraEnabled) BOOL cameraEnabled;
+@property(nonatomic, setter = setMicrophoneEnabled:, getter = isMicrophoneEnabled) BOOL microphoneEnabled;
 
 - (void)startBroadcastingWithCallback:(void *)callback;
 - (void)stopBroadcasting;

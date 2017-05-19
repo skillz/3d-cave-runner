@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_StringComparer1574862926.h"
+
 // System.Globalization.CompareInfo
 struct CompareInfo_t2310920157;
 
-#include "mscorlib_System_StringComparer1574862926.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

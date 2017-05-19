@@ -10,6 +10,12 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_ConstrainedExecution_Criti1920899984.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+#include "mscorlib_System_Threading_ThreadState1158972609.h"
+#include "mscorlib_System_UIntPtr1549717846.h"
+#include "mscorlib_System_Int322071877448.h"
+
 // System.Object
 struct Il2CppObject;
 // System.Threading.ExecutionContext
@@ -23,11 +29,8 @@ struct IPrincipal_t783141777;
 // System.Collections.Hashtable
 struct Hashtable_t909839986;
 
-#include "mscorlib_System_Runtime_ConstrainedExecution_Criti1920899984.h"
-#include "mscorlib_System_IntPtr2504060609.h"
-#include "mscorlib_System_Threading_ThreadState1158972609.h"
-#include "mscorlib_System_UIntPtr1549717846.h"
-#include "mscorlib_System_Int322071877448.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

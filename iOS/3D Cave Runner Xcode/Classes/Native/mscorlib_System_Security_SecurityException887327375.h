@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_SystemException3877406272.h"
+
 // System.String
 struct String_t;
 // System.Type
@@ -23,7 +25,8 @@ struct MethodInfo_t;
 // System.Security.Policy.Evidence
 struct Evidence_t1407710183;
 
-#include "mscorlib_System_SystemException3877406272.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -2,20 +2,20 @@
 
 typedef struct
 {
-	const char* text;
-	const char* placeholder;
+    const char* text;
+    const char* placeholder;
 
-	UIKeyboardType				keyboardType;
-	UITextAutocorrectionType	autocorrectionType;
-	UIKeyboardAppearance		appearance;
+    UIKeyboardType              keyboardType;
+    UITextAutocorrectionType    autocorrectionType;
+    UIKeyboardAppearance        appearance;
 
-	BOOL multiline;
-	BOOL secure;
+    BOOL multiline;
+    BOOL secure;
 }
 KeyboardShowParam;
 
 
-@interface KeyboardDelegate : NSObject <UITextFieldDelegate, UITextViewDelegate>
+@interface KeyboardDelegate : NSObject<UITextFieldDelegate, UITextViewDelegate>
 {
 }
 - (BOOL)textFieldShouldReturn:(UITextField*)textField;
@@ -44,12 +44,12 @@ KeyboardShowParam;
 - (NSString*)getText;
 - (void)setText:(NSString*)newText;
 
-@property (readonly, nonatomic, getter=queryArea)				CGRect		area;
-@property (readonly, nonatomic)									BOOL		active;
-@property (readonly, nonatomic)									BOOL		done;
-@property (readonly, nonatomic)									BOOL		canceled;
-@property (retain, nonatomic, getter=getText, setter=setText:)	NSString*	text;
-@property (readonly, nonatomic)									BOOL		canGetSelection;
-@property (readonly, nonatomic, getter=querySelection)  NSRange   selection;
+@property (readonly, nonatomic, getter = queryArea)               CGRect      area;
+@property (readonly, nonatomic)                                 BOOL        active;
+@property (readonly, nonatomic)                                 BOOL        done;
+@property (readonly, nonatomic)                                 BOOL        canceled;
+@property (retain, nonatomic, getter = getText, setter = setText:)  NSString*   text;
+@property (readonly, nonatomic)                                 BOOL        canGetSelection;
+@property (readonly, nonatomic, getter = querySelection)  NSRange   selection;
 
 @end

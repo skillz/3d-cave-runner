@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // Mono.Security.PKCS7/ContentInfo
 struct ContentInfo_t1443605387;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

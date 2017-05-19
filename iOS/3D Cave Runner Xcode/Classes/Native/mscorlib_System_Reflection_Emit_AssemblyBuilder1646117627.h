@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_Assembly4268412390.h"
+
 // System.Reflection.Emit.ModuleBuilder[]
 struct ModuleBuilderU5BU5D_t3642333382;
 // System.Reflection.Module[]
@@ -19,7 +21,8 @@ struct Type_t;
 // Mono.Security.StrongName
 struct StrongName_t117835354;
 
-#include "mscorlib_System_Reflection_Assembly4268412390.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

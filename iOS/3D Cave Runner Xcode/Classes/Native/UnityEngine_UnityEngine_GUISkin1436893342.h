@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_ScriptableObject1975622470.h"
+
 // UnityEngine.Font
 struct Font_t4239498691;
 // UnityEngine.GUIStyle
@@ -25,7 +27,8 @@ struct SkinChangedDelegate_t3594822336;
 // UnityEngine.GUISkin
 struct GUISkin_t1436893342;
 
-#include "UnityEngine_UnityEngine_ScriptableObject1975622470.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

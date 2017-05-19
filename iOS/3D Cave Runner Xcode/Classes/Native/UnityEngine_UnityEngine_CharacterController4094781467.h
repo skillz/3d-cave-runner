@@ -10,8 +10,11 @@
 
 #include <stdint.h>
 
-
 #include "UnityEngine_UnityEngine_Collider3497673348.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

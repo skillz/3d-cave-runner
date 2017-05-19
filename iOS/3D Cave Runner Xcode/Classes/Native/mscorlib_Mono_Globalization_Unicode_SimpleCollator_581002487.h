@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Byte
 struct Byte_t3683104436;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

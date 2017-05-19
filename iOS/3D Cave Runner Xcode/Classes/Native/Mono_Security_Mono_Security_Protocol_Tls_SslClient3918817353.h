@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_SslStreamB934199321.h"
+
 // Mono.Security.Protocol.Tls.CertificateValidationCallback
 struct CertificateValidationCallback_t989458295;
 // Mono.Security.Protocol.Tls.CertificateSelectionCallback
@@ -19,7 +21,8 @@ struct PrivateKeySelectionCallback_t1663566523;
 // Mono.Security.Protocol.Tls.CertificateValidationCallback2
 struct CertificateValidationCallback2_t3318447433;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_SslStreamB934199321.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

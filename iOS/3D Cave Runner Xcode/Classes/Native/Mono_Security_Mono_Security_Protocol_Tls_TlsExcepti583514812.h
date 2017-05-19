@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Exception1927440687.h"
+
 // Mono.Security.Protocol.Tls.Alert
 struct Alert_t3405955216;
 
-#include "mscorlib_System_Exception1927440687.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

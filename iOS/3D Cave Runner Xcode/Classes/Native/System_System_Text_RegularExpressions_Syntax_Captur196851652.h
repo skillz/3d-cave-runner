@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "System_System_Text_RegularExpressions_Syntax_Asser1490870658.h"
+
 // System.Text.RegularExpressions.Syntax.ExpressionAssertion
 struct ExpressionAssertion_t3255443744;
 // System.Text.RegularExpressions.Syntax.CapturingGroup
@@ -17,7 +19,8 @@ struct CapturingGroup_t3690174926;
 // System.Text.RegularExpressions.Syntax.Literal
 struct Literal_t2896011011;
 
-#include "System_System_Text_RegularExpressions_Syntax_Asser1490870658.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

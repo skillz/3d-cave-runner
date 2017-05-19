@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Collections_SortedList_EnumeratorM4029123303.h"
+
 // System.Collections.SortedList
 struct SortedList_t3004938869;
 // System.Object
@@ -17,8 +20,8 @@ struct Il2CppObject;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Collections_SortedList_EnumeratorM4029123303.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

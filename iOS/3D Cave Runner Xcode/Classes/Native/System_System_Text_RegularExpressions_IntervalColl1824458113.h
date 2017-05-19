@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+#include "System_System_Text_RegularExpressions_Interval2354235237.h"
+
 // System.IAsyncResult
 struct IAsyncResult_t1999651008;
 // System.AsyncCallback
@@ -17,8 +20,8 @@ struct AsyncCallback_t163412349;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
-#include "System_System_Text_RegularExpressions_Interval2354235237.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

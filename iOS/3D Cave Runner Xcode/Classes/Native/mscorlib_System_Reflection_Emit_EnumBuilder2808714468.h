@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Type1303803226.h"
+
 // System.Reflection.Emit.TypeBuilder
 struct TypeBuilder_t3308873219;
 // System.Type
 struct Type_t;
 
-#include "mscorlib_System_Type1303803226.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

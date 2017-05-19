@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_Identity3647548000.h"
+
 // System.Type
 struct Type_t;
 // System.MarshalByRefObject
@@ -17,7 +19,8 @@ struct MarshalByRefObject_t1285298191;
 // System.Runtime.Remoting.Contexts.Context
 struct Context_t502196753;
 
-#include "mscorlib_System_Runtime_Remoting_Identity3647548000.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

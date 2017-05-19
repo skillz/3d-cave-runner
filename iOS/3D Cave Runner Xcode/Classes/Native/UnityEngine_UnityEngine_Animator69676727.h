@@ -10,8 +10,11 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_Behaviour955675639.h"
 
-#include "UnityEngine_UnityEngine_Experimental_Director_Dire2947922465.h"
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -20,7 +23,7 @@
 #endif
 
 // UnityEngine.Animator
-struct  Animator_t69676727  : public DirectorPlayer_t2947922465
+struct  Animator_t69676727  : public Behaviour_t955675639
 {
 public:
 

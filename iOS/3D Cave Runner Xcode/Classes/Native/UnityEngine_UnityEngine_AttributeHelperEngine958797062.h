@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // UnityEngine.DisallowMultipleComponent[]
 struct DisallowMultipleComponentU5BU5D_t674354611;
 // UnityEngine.ExecuteInEditMode[]
@@ -17,7 +19,8 @@ struct ExecuteInEditModeU5BU5D_t1783660110;
 // UnityEngine.RequireComponent[]
 struct RequireComponentU5BU5D_t2214070761;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

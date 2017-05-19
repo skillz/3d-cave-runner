@@ -10,14 +10,17 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Security_Cryptography_CipherMode162592484.h"
+#include "mscorlib_System_Security_Cryptography_PaddingMode3032142640.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.Security.Cryptography.KeySizes[]
 struct KeySizesU5BU5D_t1153004758;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Security_Cryptography_CipherMode162592484.h"
-#include "mscorlib_System_Security_Cryptography_PaddingMode3032142640.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

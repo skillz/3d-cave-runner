@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // UnityEngine.Events.InvokableCallList
 struct InvokableCallList_t2295673753;
 // UnityEngine.Events.PersistentCallGroup
@@ -17,7 +19,8 @@ struct PersistentCallGroup_t339478082;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

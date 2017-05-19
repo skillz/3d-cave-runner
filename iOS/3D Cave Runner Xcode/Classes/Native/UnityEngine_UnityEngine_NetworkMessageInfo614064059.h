@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System_ValueType3507792607.h"
 #include "UnityEngine_UnityEngine_NetworkPlayer1243528291.h"
 #include "UnityEngine_UnityEngine_NetworkViewID3942988548.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

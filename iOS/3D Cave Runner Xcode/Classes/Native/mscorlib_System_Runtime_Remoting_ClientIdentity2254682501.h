@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_Identity3647548000.h"
+
 // System.WeakReference
 struct WeakReference_t1077405567;
 
-#include "mscorlib_System_Runtime_Remoting_Identity3647548000.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

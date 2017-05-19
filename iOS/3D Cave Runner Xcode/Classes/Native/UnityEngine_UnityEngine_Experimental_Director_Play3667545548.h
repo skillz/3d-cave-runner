@@ -10,9 +10,12 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_Experimental_Director_Play1502856514.h"
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -21,29 +24,19 @@
 #endif
 
 // UnityEngine.Experimental.Director.Playable
-struct  Playable_t3667545548 
+struct  Playable_t3667545548  : public Il2CppObject
 {
 public:
-	// System.IntPtr UnityEngine.Experimental.Director.Playable::m_Handle
-	IntPtr_t ___m_Handle_0;
-	// System.Int32 UnityEngine.Experimental.Director.Playable::m_Version
-	int32_t ___m_Version_1;
+	// UnityEngine.Experimental.Director.PlayableHandle UnityEngine.Experimental.Director.Playable::handle
+	PlayableHandle_t1502856514  ___handle_0;
 
 public:
-	inline static int32_t get_offset_of_m_Handle_0() { return static_cast<int32_t>(offsetof(Playable_t3667545548, ___m_Handle_0)); }
-	inline IntPtr_t get_m_Handle_0() const { return ___m_Handle_0; }
-	inline IntPtr_t* get_address_of_m_Handle_0() { return &___m_Handle_0; }
-	inline void set_m_Handle_0(IntPtr_t value)
+	inline static int32_t get_offset_of_handle_0() { return static_cast<int32_t>(offsetof(Playable_t3667545548, ___handle_0)); }
+	inline PlayableHandle_t1502856514  get_handle_0() const { return ___handle_0; }
+	inline PlayableHandle_t1502856514 * get_address_of_handle_0() { return &___handle_0; }
+	inline void set_handle_0(PlayableHandle_t1502856514  value)
 	{
-		___m_Handle_0 = value;
-	}
-
-	inline static int32_t get_offset_of_m_Version_1() { return static_cast<int32_t>(offsetof(Playable_t3667545548, ___m_Version_1)); }
-	inline int32_t get_m_Version_1() const { return ___m_Version_1; }
-	inline int32_t* get_address_of_m_Version_1() { return &___m_Version_1; }
-	inline void set_m_Version_1(int32_t value)
-	{
-		___m_Version_1 = value;
+		___handle_0 = value;
 	}
 };
 

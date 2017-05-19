@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.Hashtable/Slot[]
 struct SlotU5BU5D_t3166395312;
 // System.Int32[]
@@ -27,7 +29,8 @@ struct SerializationInfo_t228987430;
 // System.Collections.IEqualityComparer
 struct IEqualityComparer_t2716208158;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

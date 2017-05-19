@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "Boo_Lang_Boo_Lang_GenericGeneratorEnumerator_1_gen300505933.h"
+
 // System.Collections.Generic.Dictionary`2<System.String,System.String>
 struct Dictionary_2_t3943999495;
 // GameController
 struct GameController_t3607102586;
 
-#include "Boo_Lang_Boo_Lang_GenericGeneratorEnumerator_1_gen300505933.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

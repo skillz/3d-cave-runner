@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Collections.Generic.Stack`1<System.Type>
 struct Stack_1_t2391531380;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

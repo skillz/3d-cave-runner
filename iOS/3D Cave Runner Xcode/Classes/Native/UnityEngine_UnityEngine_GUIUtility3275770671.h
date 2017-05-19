@@ -10,9 +10,12 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System_Object2689449295.h"
 #include "UnityEngine_UnityEngine_Vector22243707579.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -39,8 +42,6 @@ public:
 	bool ___U3CguiIsExitingU3Ek__BackingField_2;
 	// UnityEngine.Vector2 UnityEngine.GUIUtility::s_EditorScreenPointOffset
 	Vector2_t2243707579  ___s_EditorScreenPointOffset_3;
-	// System.Boolean UnityEngine.GUIUtility::s_HasKeyboardFocus
-	bool ___s_HasKeyboardFocus_4;
 
 public:
 	inline static int32_t get_offset_of_s_SkinMode_0() { return static_cast<int32_t>(offsetof(GUIUtility_t3275770671_StaticFields, ___s_SkinMode_0)); }
@@ -73,14 +74,6 @@ public:
 	inline void set_s_EditorScreenPointOffset_3(Vector2_t2243707579  value)
 	{
 		___s_EditorScreenPointOffset_3 = value;
-	}
-
-	inline static int32_t get_offset_of_s_HasKeyboardFocus_4() { return static_cast<int32_t>(offsetof(GUIUtility_t3275770671_StaticFields, ___s_HasKeyboardFocus_4)); }
-	inline bool get_s_HasKeyboardFocus_4() const { return ___s_HasKeyboardFocus_4; }
-	inline bool* get_address_of_s_HasKeyboardFocus_4() { return &___s_HasKeyboardFocus_4; }
-	inline void set_s_HasKeyboardFocus_4(bool value)
-	{
-		___s_HasKeyboardFocus_4 = value;
 	}
 };
 

@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "System_System_Net_WebRequest1365124353.h"
+#include "mscorlib_System_IO_FileAccess4282042064.h"
+
 // System.Uri
 struct Uri_t19570940;
 // System.Net.WebHeaderCollection
@@ -19,8 +22,8 @@ struct String_t;
 // System.Net.IWebProxy
 struct IWebProxy_t3916853445;
 
-#include "System_System_Net_WebRequest1365124353.h"
-#include "mscorlib_System_IO_FileAccess4282042064.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

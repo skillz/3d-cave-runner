@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Reflection.MonoMethod
 struct MonoMethod_t;
 // System.Object[]
@@ -27,7 +29,8 @@ struct String_t;
 // System.Type[]
 struct TypeU5BU5D_t1664964607;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

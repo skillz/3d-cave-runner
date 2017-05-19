@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_Events_UnityEventBase828812576.h"
+
 // System.Object[]
 struct ObjectU5BU5D_t3614634134;
 
-#include "UnityEngine_UnityEngine_Events_UnityEventBase828812576.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

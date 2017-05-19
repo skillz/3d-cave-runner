@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Delegate3022476291.h"
+
 // System.MulticastDelegate
 struct MulticastDelegate_t3201952435;
 
-#include "mscorlib_System_Delegate3022476291.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

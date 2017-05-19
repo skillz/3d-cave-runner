@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.UInt16[]
 struct UInt16U5BU5D_t2527266722;
 // System.Net.IPv6Address
 struct IPv6Address_t2596635879;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Attribute542643598.h"
+
 // System.ComponentModel.TypeConverterAttribute
 struct TypeConverterAttribute_t252469870;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Attribute542643598.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_Rect3681755626.h"
+
 // System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.GUILayoutUtility/LayoutCache>
 struct Dictionary_2_t2128606680;
 // UnityEngine.GUILayoutUtility/LayoutCache
@@ -17,8 +20,8 @@ struct LayoutCache_t3120781045;
 // UnityEngine.GUIStyle
 struct GUIStyle_t1799908754;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_Rect3681755626.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "Boo_Lang_Boo_Lang_GenericGenerator_1_gen4259040017.h"
+
 // GameController
 struct GameController_t3607102586;
 
-#include "Boo_Lang_Boo_Lang_GenericGenerator_1_gen4259040017.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

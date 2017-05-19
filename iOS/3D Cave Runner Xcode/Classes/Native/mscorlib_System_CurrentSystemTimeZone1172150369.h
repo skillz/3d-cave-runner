@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_TimeZone4008205267.h"
+#include "mscorlib_System_TimeSpan3430258949.h"
+
 // System.String
 struct String_t;
 // System.Collections.Hashtable
@@ -17,8 +20,8 @@ struct Hashtable_t909839986;
 // System.Globalization.DaylightTime
 struct DaylightTime_t3800227331;
 
-#include "mscorlib_System_TimeZone4008205267.h"
-#include "mscorlib_System_TimeSpan3430258949.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Security.Cryptography.ICryptoTransform
 struct ICryptoTransform_t281704372;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

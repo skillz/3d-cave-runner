@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
-// System.String
-struct String_t;
-
 #include "mscorlib_System_ValueType3507792607.h"
 #include "UnityEngine_UnityEngine_Vector32243707580.h"
 #include "UnityEngine_UnityEngine_Quaternion4030073918.h"
+
+// System.String
+struct String_t;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

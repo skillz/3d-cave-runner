@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "System_System_Text_RegularExpressions_LinkRef2090853131.h"
+
 // System.Collections.Stack
 struct Stack_t1043988394;
 
-#include "System_System_Text_RegularExpressions_LinkRef2090853131.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

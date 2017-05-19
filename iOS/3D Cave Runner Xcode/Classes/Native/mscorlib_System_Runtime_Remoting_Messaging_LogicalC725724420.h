@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.Hashtable
 struct Hashtable_t909839986;
 // System.Runtime.Remoting.Messaging.CallContextRemotingData
 struct CallContextRemotingData_t2648008188;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

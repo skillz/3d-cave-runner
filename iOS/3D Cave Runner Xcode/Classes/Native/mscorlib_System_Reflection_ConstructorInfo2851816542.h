@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_MethodBase904190842.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Reflection_MethodBase904190842.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

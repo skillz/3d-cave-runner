@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_SocialPlatforms_UserState455716270.h"
+
 // System.String
 struct String_t;
 // UnityEngine.Texture2D
 struct Texture2D_t3542995729;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_SocialPlatforms_UserState455716270.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

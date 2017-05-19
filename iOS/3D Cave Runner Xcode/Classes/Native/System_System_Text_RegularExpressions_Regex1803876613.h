@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "System_System_Text_RegularExpressions_RegexOptions2418259727.h"
+
 // System.Text.RegularExpressions.FactoryCache
 struct FactoryCache_t2051534610;
 // System.Text.RegularExpressions.IMachineFactory
@@ -23,8 +26,8 @@ struct Int32U5BU5D_t3030399641;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "System_System_Text_RegularExpressions_RegexOptions2418259727.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

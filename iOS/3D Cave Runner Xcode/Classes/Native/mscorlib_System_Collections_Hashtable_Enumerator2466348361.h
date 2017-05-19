@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Collections_Hashtable_EnumeratorMo2734922732.h"
+
 // System.Collections.Hashtable
 struct Hashtable_t909839986;
 // System.Object
@@ -17,8 +20,8 @@ struct Il2CppObject;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Collections_Hashtable_EnumeratorMo2734922732.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

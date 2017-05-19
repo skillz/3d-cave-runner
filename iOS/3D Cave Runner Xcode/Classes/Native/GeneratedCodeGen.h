@@ -9,6 +9,13 @@
 #endif
 
 
+#include "mscorlib_System_Array3829468939.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
+#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
+#include "mscorlib_System_RuntimeArgumentHandle3259266975.h"
+#include "mscorlib_System_RuntimeMethodHandle894824333.h"
+
 // System.Object
 struct Il2CppObject;
 // System.String
@@ -26,12 +33,8 @@ struct MethodBase_t904190842;
 // System.Reflection.Assembly
 struct Assembly_t4268412390;
 
-#include "mscorlib_System_Array3829468939.h"
-#include "mscorlib_System_IntPtr2504060609.h"
-#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
-#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
-#include "mscorlib_System_RuntimeArgumentHandle3259266975.h"
-#include "mscorlib_System_RuntimeMethodHandle894824333.h"
+
+
 
 #pragma once
 typedef Il2CppObject Il2CppCodeGenObject;

@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "UnityEngine_UnityEngine_Vector32243707580.h"
+#include "UnityEngine_UnityEngine_Rect3681755626.h"
+
 // UnityEngine.GUISkin
 struct GUISkin_t1436893342;
 // System.String
@@ -31,9 +35,8 @@ struct Transform_t3275118058;
 // UnityScript.Lang.Array
 struct Array_t1396575355;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
-#include "UnityEngine_UnityEngine_Vector32243707580.h"
-#include "UnityEngine_UnityEngine_Rect3681755626.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

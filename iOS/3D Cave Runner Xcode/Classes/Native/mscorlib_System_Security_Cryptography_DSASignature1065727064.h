@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_AsymmetricSi4058014248.h"
+
 // System.Security.Cryptography.DSA
 struct DSA_t903174880;
 
-#include "mscorlib_System_Security_Cryptography_AsymmetricSi4058014248.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

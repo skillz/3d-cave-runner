@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.CaseInsensitiveComparer
 struct CaseInsensitiveComparer_t157661140;
 // System.Globalization.CultureInfo
 struct CultureInfo_t3500843524;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

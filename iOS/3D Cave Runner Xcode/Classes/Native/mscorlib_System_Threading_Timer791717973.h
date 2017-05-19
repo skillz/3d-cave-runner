@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MarshalByRefObject1285298191.h"
+
 // System.Threading.Timer/Scheduler
 struct Scheduler_t697594;
 // System.Threading.TimerCallback
@@ -17,7 +19,8 @@ struct TimerCallback_t1684927372;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_MarshalByRefObject1285298191.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_Messaging_MethodD1742974787.h"
+
 // System.String[]
 struct StringU5BU5D_t1642385972;
 
-#include "mscorlib_System_Runtime_Remoting_Messaging_MethodD1742974787.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

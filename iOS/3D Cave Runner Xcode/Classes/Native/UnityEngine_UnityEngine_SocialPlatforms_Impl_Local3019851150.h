@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_SocialPlatforms_Impl_UserP3365630962.h"
+
 // UnityEngine.SocialPlatforms.IUserProfile[]
 struct IUserProfileU5BU5D_t3461248430;
 
-#include "UnityEngine_UnityEngine_SocialPlatforms_Impl_UserP3365630962.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

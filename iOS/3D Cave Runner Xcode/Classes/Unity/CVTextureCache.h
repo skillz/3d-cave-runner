@@ -3,32 +3,32 @@
 // depending on selected rendering api it will be or GLES or Metal texture cache
 
 // returns CVOpenGLESTextureCacheRef/CVMetalTextureCacheRef
-void*		CreateCVTextureCache();
+void*       CreateCVTextureCache();
 // cache = CVOpenGLESTextureCacheRef/CVMetalTextureCacheRef
-void		FlushCVTextureCache(void* cache);
+void        FlushCVTextureCache(void* cache);
 
 // returns CVOpenGLESTextureRef/CVMetalTextureRef
 // cache = CVOpenGLESTextureCacheRef/CVMetalTextureCacheRef
 // image = CVImageBufferRef/CVPixelBufferRef
-void*		CreateTextureFromCVTextureCache(void* cache, void* image, size_t w, size_t h);
+void*       CreateTextureFromCVTextureCache(void* cache, void* image, size_t w, size_t h);
 
 // texture = CVOpenGLESTextureRef
-unsigned		GetGLTextureFromCVTextureCache(void* texture);
+unsigned        GetGLTextureFromCVTextureCache(void* texture);
 // texture = CVMetalTextureRef
-MTLTextureRef	GetMetalTextureFromCVTextureCache(void* texture);
+MTLTextureRef   GetMetalTextureFromCVTextureCache(void* texture);
 
 // texture = CVOpenGLESTextureRef/CVMetalTextureRef
-uintptr_t		GetTextureFromCVTextureCache(void* texture);
+uintptr_t       GetTextureFromCVTextureCache(void* texture);
 
 
 // returns CVPixelBufferRef
 // enforces kCVPixelFormatType_32BGRA
-void*		CreatePixelBufferForCVTextureCache(size_t w, size_t h);
+void*       CreatePixelBufferForCVTextureCache(size_t w, size_t h);
 // returns CVOpenGLESTextureRef
 // cache = CVOpenGLESTextureCacheRef
 // pb = CVPixelBufferRef (out)
 // enforces rgba texture with bgra backing
-void*		CreateReadableRTFromCVTextureCache(void* cache, size_t w, size_t h, void** pb);
+void*       CreateReadableRTFromCVTextureCache(void* cache, size_t w, size_t h, void** pb);
 
 // texture = CVOpenGLESTextureRef/CVMetalTextureRef
-int			IsCVTextureFlipped(void* texture);
+int         IsCVTextureFlipped(void* texture);

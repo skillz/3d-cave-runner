@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "System_System_Text_RegularExpressions_Group3761430853.h"
+
 // System.Text.RegularExpressions.Regex
 struct Regex_t1803876613;
 // System.Text.RegularExpressions.IMachine
@@ -19,7 +21,8 @@ struct GroupCollection_t939014605;
 // System.Text.RegularExpressions.Match
 struct Match_t3164245899;
 
-#include "System_System_Text_RegularExpressions_Group3761430853.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

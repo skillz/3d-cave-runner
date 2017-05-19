@@ -4,17 +4,17 @@
 
 typedef struct objc_selector* SEL;
 #if !OBJC_OLD_DISPATCH_PROTOTYPES
-	typedef void (*IMP)(void);
+typedef void (*IMP)(void);
 #else
-	typedef id (*IMP)(id, SEL, ...);
+typedef id (*IMP)(id, SEL, ...);
 #endif
 
 
 //OBJC_EXPORT id objc_msgSendSuper(struct objc_super* super, SEL op, ...);
 #ifdef __OBJC__
-	extern "C" id objc_msgSendSuper(struct objc_super* super, SEL op, ...);
+extern "C" id objc_msgSendSuper(struct objc_super* super, SEL op, ...);
 #else
-	extern "C" struct objc_object* objc_msgSendSuper(struct objc_super* super, SEL op, ...);
+extern "C" struct objc_object* objc_msgSendSuper(struct objc_super* super, SEL op, ...);
 #endif
 
 
@@ -26,27 +26,27 @@ typedef struct
 
 #if TARGET_IPHONE_SIMULATOR || TARGET_TVOS_SIMULATOR
 
-#define UNITY_OBJC_FORWARD_TO_SUPER(self_, super_, selector, selectorType, ...)	\
-	do																			\
-	{																			\
-		UnityObjcSuper super = { .receiver = self_, .super_class = super_ };	\
-		objc_msgSendSuper((struct objc_super*)&super, selector, __VA_ARGS__);			\
-	}																			\
-	while(0)
+#define UNITY_OBJC_FORWARD_TO_SUPER(self_, super_, selector, selectorType, ...) \
+    do                                                                          \
+    {                                                                           \
+        UnityObjcSuper super = { .receiver = self_, .super_class = super_ };    \
+        objc_msgSendSuper((struct objc_super*)&super, selector, __VA_ARGS__);           \
+    }                                                                           \
+    while(0)
 
 #else
-/*	It seems that iOS uses wrong calling convention for objc_msgSendSuper than what's
-	in the header. It looks like the function expects the variadic arguments to be
-	passed as regular arguments. This does not happen on simulator though.
+/*  It seems that iOS uses wrong calling convention for objc_msgSendSuper than what's
+    in the header. It looks like the function expects the variadic arguments to be
+    passed as regular arguments. This does not happen on simulator though.
 */
-#define UNITY_OBJC_FORWARD_TO_SUPER(self_, super_, selector, selectorType, ...)	\
-	do																			\
-	{																			\
-		UnityObjcSuper super = { .receiver = self_, .super_class = super_ };	\
-		selectorType msgSendFunc = (selectorType)objc_msgSendSuper;				\
-		msgSendFunc((struct objc_super*)&super, selector, __VA_ARGS__);			\
-	}																			\
-	while(0)
+#define UNITY_OBJC_FORWARD_TO_SUPER(self_, super_, selector, selectorType, ...) \
+    do                                                                          \
+    {                                                                           \
+        UnityObjcSuper super = { .receiver = self_, .super_class = super_ };    \
+        selectorType msgSendFunc = (selectorType)objc_msgSendSuper;             \
+        msgSendFunc((struct objc_super*)&super, selector, __VA_ARGS__);         \
+    }                                                                           \
+    while(0)
 #endif
 
 

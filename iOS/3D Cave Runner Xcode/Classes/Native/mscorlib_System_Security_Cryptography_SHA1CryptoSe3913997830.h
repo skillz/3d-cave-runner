@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_SHA13336793149.h"
+
 // System.Security.Cryptography.SHA1Internal
 struct SHA1Internal_t3873507626;
 
-#include "mscorlib_System_Security_Cryptography_SHA13336793149.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

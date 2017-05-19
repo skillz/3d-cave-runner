@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.AppDomain
 struct AppDomain_t2719102437;
 // System.Reflection.MethodInfo
@@ -17,7 +19,8 @@ struct MethodInfo_t;
 // System.Security.PermissionSet
 struct PermissionSet_t1941658161;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

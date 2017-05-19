@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Attribute542643598.h"
+
 // System.Version
 struct Version_t1755874712;
 
-#include "mscorlib_System_Attribute542643598.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

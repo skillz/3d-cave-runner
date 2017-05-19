@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_AsyncOperation3814632279.h"
+
 // System.String
 struct String_t;
 // System.Type
 struct Type_t;
 
-#include "UnityEngine_UnityEngine_AsyncOperation3814632279.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

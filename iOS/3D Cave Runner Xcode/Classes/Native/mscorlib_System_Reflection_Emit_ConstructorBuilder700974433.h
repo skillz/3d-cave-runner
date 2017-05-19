@@ -10,6 +10,11 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_ConstructorInfo2851816542.h"
+#include "mscorlib_System_Reflection_MethodAttributes790385034.h"
+#include "mscorlib_System_Reflection_MethodImplAttributes1541361196.h"
+#include "mscorlib_System_Reflection_CallingConventions1097349142.h"
+
 // System.Reflection.Emit.ILGenerator
 struct ILGenerator_t99948092;
 // System.Type[]
@@ -21,10 +26,8 @@ struct ParameterBuilderU5BU5D_t2122994367;
 // System.Type[][]
 struct TypeU5BU5DU5BU5D_t2318378278;
 
-#include "mscorlib_System_Reflection_ConstructorInfo2851816542.h"
-#include "mscorlib_System_Reflection_MethodAttributes790385034.h"
-#include "mscorlib_System_Reflection_MethodImplAttributes1541361196.h"
-#include "mscorlib_System_Reflection_CallingConventions1097349142.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

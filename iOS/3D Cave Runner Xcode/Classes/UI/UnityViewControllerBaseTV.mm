@@ -1,4 +1,3 @@
-
 #if UNITY_TVOS
 
 #include "UnityViewControllerBaseTV.h"
@@ -16,32 +15,33 @@
 
 - (id)init
 {
-	return [super init];
+    return [super init];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
-	AppController_SendUnityViewControllerNotification(kUnityViewDidDisappear);
+    [super viewDidDisappear: animated];
+    AppController_SendUnityViewControllerNotification(kUnityViewDidDisappear);
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
-	AppController_SendUnityViewControllerNotification(kUnityViewWillDisappear);
+    [super viewWillDisappear: animated];
+    AppController_SendUnityViewControllerNotification(kUnityViewWillDisappear);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	[super viewDidAppear:animated];
-	AppController_SendUnityViewControllerNotification(kUnityViewDidAppear);
+    [super viewDidAppear: animated];
+    AppController_SendUnityViewControllerNotification(kUnityViewDidAppear);
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
-	AppController_SendUnityViewControllerNotification(kUnityViewWillAppear);
+    [super viewWillAppear: animated];
+    AppController_SendUnityViewControllerNotification(kUnityViewWillAppear);
 }
+
 @end
 
 @implementation UnityDefaultTVViewController

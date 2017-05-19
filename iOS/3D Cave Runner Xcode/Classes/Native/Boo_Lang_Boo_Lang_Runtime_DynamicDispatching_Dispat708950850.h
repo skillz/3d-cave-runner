@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.Generic.IEqualityComparer`1<Boo.Lang.Runtime.DynamicDispatching.DispatcherKey>
 struct IEqualityComparer_1_t4216550924;
 // System.Type
@@ -19,7 +21,8 @@ struct String_t;
 // System.Type[]
 struct TypeU5BU5D_t1664964607;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

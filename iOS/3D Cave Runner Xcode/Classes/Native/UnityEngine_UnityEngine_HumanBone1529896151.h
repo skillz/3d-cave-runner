@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "UnityEngine_UnityEngine_HumanLimit250797648.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "UnityEngine_UnityEngine_HumanLimit250797648.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_TextReader1561828458.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.Char[]
@@ -25,7 +27,8 @@ struct StringBuilder_t1221177846;
 // System.IO.StreamReader
 struct StreamReader_t2360341767;
 
-#include "mscorlib_System_IO_TextReader1561828458.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

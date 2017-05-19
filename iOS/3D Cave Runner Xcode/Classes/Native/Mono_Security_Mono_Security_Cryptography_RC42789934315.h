@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_SymmetricAlg1108166522.h"
+
 // System.Security.Cryptography.KeySizes[]
 struct KeySizesU5BU5D_t1153004758;
 
-#include "mscorlib_System_Security_Cryptography_SymmetricAlg1108166522.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

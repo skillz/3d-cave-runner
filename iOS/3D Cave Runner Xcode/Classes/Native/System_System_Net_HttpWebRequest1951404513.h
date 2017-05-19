@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "System_System_Net_WebRequest1365124353.h"
+
 // System.Uri
 struct Uri_t19570940;
 // System.Security.Cryptography.X509Certificates.X509CertificateCollection
@@ -27,7 +29,8 @@ struct ServicePoint_t2765344313;
 // System.Object
 struct Il2CppObject;
 
-#include "System_System_Net_WebRequest1365124353.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

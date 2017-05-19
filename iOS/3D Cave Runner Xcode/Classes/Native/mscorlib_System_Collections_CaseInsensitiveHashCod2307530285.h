@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.CaseInsensitiveHashCodeProvider
 struct CaseInsensitiveHashCodeProvider_t2307530285;
 // System.Object
@@ -17,7 +19,8 @@ struct Il2CppObject;
 // System.Globalization.TextInfo
 struct TextInfo_t3620182823;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

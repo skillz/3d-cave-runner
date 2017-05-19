@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Security.Cryptography.Oid
 struct Oid_t3221867120;
 // System.Byte[]
@@ -17,7 +19,8 @@ struct ByteU5BU5D_t3397334013;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
-// System.Type
-struct Type_t;
-
 #include "mscorlib_System_ValueType3507792607.h"
 #include "mscorlib_System_Reflection_MethodAttributes790385034.h"
 #include "mscorlib_System_Reflection_MethodImplAttributes1541361196.h"
 #include "mscorlib_System_Reflection_CallingConventions1097349142.h"
+
+// System.Type
+struct Type_t;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

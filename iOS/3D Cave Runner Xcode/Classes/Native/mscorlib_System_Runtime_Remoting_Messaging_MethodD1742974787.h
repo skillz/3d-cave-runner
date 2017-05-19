@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Collections.IDictionary
 struct IDictionary_t596158605;
 // System.Runtime.Remoting.Messaging.IMethodMessage
@@ -19,7 +21,8 @@ struct StringU5BU5D_t1642385972;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

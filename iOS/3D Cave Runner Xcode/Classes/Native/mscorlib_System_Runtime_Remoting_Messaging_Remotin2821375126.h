@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Type
 struct Type_t;
 // System.Runtime.Remoting.Messaging.ObjRefSurrogate
@@ -19,7 +21,8 @@ struct RemotingSurrogate_t3248446683;
 // System.Runtime.Serialization.ISurrogateSelector
 struct ISurrogateSelector_t1912587528;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

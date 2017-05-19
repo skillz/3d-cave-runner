@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Reflection_BindingFlags1082350898.h"
+
 // System.Collections.Hashtable
 struct Hashtable_t909839986;
 // System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
@@ -19,8 +22,8 @@ struct String_t;
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Reflection_BindingFlags1082350898.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

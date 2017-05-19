@@ -166,9 +166,7 @@ function OnGUI()
 
     GUI.skin = GUIskin; //The skin gui we'll use
 
-    var distanceInt:int = TotalDistance; //convert distance to int
-
-    var TotalScore:int = distanceInt * 10 + TotalGems * 100;
+    var TotalScore:int = TotalDistance * 10 + TotalGems * 100;
     GUI.Label (Rect(originalWidth  * 0.85,originalHeight * 0.055 ,0,0 ), TotalGems.ToString() + " Gems"); //Place the gems count on the top right of the screen
     GUI.DrawTexture (Rect(originalWidth  * 0.945,originalHeight * 0.037 ,32 ,32 ), Gems); //Place the gem image beside the gems count on the top right of the screen
 
