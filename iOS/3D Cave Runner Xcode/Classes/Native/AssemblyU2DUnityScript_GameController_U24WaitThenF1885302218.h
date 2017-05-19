@@ -28,17 +28,17 @@ struct GameController_t3607102586;
 struct  U24WaitThenFinishU2477_t1885302218  : public GenericGenerator_1_t4259040017
 {
 public:
-	// GameController GameController/$WaitThenFinish$77::$self_$81
-	GameController_t3607102586 * ___U24self_U2481_0;
+	// GameController GameController/$WaitThenFinish$77::$self_$80
+	GameController_t3607102586 * ___U24self_U2480_0;
 
 public:
-	inline static int32_t get_offset_of_U24self_U2481_0() { return static_cast<int32_t>(offsetof(U24WaitThenFinishU2477_t1885302218, ___U24self_U2481_0)); }
-	inline GameController_t3607102586 * get_U24self_U2481_0() const { return ___U24self_U2481_0; }
-	inline GameController_t3607102586 ** get_address_of_U24self_U2481_0() { return &___U24self_U2481_0; }
-	inline void set_U24self_U2481_0(GameController_t3607102586 * value)
+	inline static int32_t get_offset_of_U24self_U2480_0() { return static_cast<int32_t>(offsetof(U24WaitThenFinishU2477_t1885302218, ___U24self_U2480_0)); }
+	inline GameController_t3607102586 * get_U24self_U2480_0() const { return ___U24self_U2480_0; }
+	inline GameController_t3607102586 ** get_address_of_U24self_U2480_0() { return &___U24self_U2480_0; }
+	inline void set_U24self_U2480_0(GameController_t3607102586 * value)
 	{
-		___U24self_U2481_0 = value;
-		Il2CppCodeGenWriteBarrier(&___U24self_U2481_0, value);
+		___U24self_U2480_0 = value;
+		Il2CppCodeGenWriteBarrier(&___U24self_U2480_0, value);
 	}
 };
 

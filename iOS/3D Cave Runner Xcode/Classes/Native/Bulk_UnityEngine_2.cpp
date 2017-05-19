@@ -9304,6 +9304,15 @@ extern "C"  void Transform_set_parentInternal_m4124721022 (Transform_t3275118058
 	_il2cpp_icall_func = (Transform_set_parentInternal_m4124721022_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Transform::set_parentInternal(UnityEngine.Transform)");
 	_il2cpp_icall_func(__this, ___value0);
 }
+// System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)
+extern "C"  void Transform_SetParent_m1963830867 (Transform_t3275118058 * __this, Transform_t3275118058 * ___parent0, bool ___worldPositionStays1, const MethodInfo* method)
+{
+	typedef void (*Transform_SetParent_m1963830867_ftn) (Transform_t3275118058 *, Transform_t3275118058 *, bool);
+	static Transform_SetParent_m1963830867_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Transform_SetParent_m1963830867_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)");
+	_il2cpp_icall_func(__this, ___parent0, ___worldPositionStays1);
+}
 // System.Void UnityEngine.Transform::Translate(UnityEngine.Vector3,UnityEngine.Space)
 extern "C"  void Transform_Translate_m423862381 (Transform_t3275118058 * __this, Vector3_t2243707580  ___translation0, int32_t ___relativeTo1, const MethodInfo* method)
 {

@@ -50,21 +50,16 @@ function OnGUI()
 	var kMenuItem : MenuItem_;
 
 	var buttonRect : Rect;
+  //draw a button for each item
+  kMenuItem = MenuItems[0].GetComponent("MenuItem_");
 
-    //Draw the first two buttons from the Menu item array
-    for ( MenuIndex = 0 ; MenuIndex <  1; MenuIndex++ )
-    {
-        //draw a button for each item
-        kMenuItem = MenuItems[MenuIndex].GetComponent("MenuItem_");
-
-        buttonRect = Rect((originalWidth/2) - (ButtonWidth/2), originalHeight - ButtonHeight -25,ButtonWidth,ButtonHeight );
-        //Debug.Log("button Rect: " + buttonRect.ToString());
-        if ( GUI.Button (buttonRect , kMenuItem.MenuItemName ) )
-        {
-            kMenuItem.RunMenuItem(); //Run the menu item function which is inside a MenuItem script component attached to a prefab
-        }
-    }
+  buttonRect = Rect((originalWidth/2) - (ButtonWidth/2), originalHeight - ButtonHeight -25,ButtonWidth,ButtonHeight );
+  //Debug.Log("button Rect: " + buttonRect.ToString());
+  if ( GUI.Button (buttonRect , kMenuItem.MenuItemName ) )
+  {
+      kMenuItem.RunMenuItem(); //Run the menu item function which is inside a MenuItem script component attached to a prefab
+  }
 
 	// restore matrix before returning
-    GUI.matrix = svMat; // restore matrix
+  GUI.matrix = svMat; // restore matrix
 }

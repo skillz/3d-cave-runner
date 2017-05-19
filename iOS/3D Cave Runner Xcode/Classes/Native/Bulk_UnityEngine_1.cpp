@@ -633,6 +633,7 @@ extern Il2CppCodeGenString* _stringLiteral4248023613;
 extern const uint32_t GUIUtility_CheckOnGUI_m4284398968_MetadataUsageId;
 extern const uint32_t GUIUtility__cctor_m46116445_MetadataUsageId;
 extern Il2CppClass* Input_t1785128008_il2cpp_TypeInfo_var;
+extern const uint32_t Input_GetKeyUp_m1952023453_MetadataUsageId;
 extern const uint32_t Input_GetKeyUp_m1008512962_MetadataUsageId;
 extern const uint32_t Input_get_mousePosition_m146923508_MetadataUsageId;
 extern const uint32_t Input_get_acceleration_m2886343410_MetadataUsageId;
@@ -765,6 +766,8 @@ extern Il2CppClass* RectTransform_t3349966182_il2cpp_TypeInfo_var;
 extern const uint32_t RectTransform_SendReapplyDrivenProperties_m90487700_MetadataUsageId;
 extern Il2CppClass* RemoteSettings_t392466225_il2cpp_TypeInfo_var;
 extern const uint32_t RemoteSettings_CallOnUpdate_m1624968574_MetadataUsageId;
+extern const Il2CppType* Object_t1021602117_0_0_0_var;
+extern const uint32_t Resources_Load_m2041782325_MetadataUsageId;
 
 // UnityEngine.Component[]
 struct ComponentU5BU5D_t4136971630  : public Il2CppArray
@@ -1694,6 +1697,8 @@ extern "C"  String_t* HumanBone_get_humanName_m2091758568 (HumanBone_t1529896151
 extern "C"  void HumanBone_set_humanName_m1385708911 (HumanBone_t1529896151 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Attribute::.ctor()
 extern "C"  void Attribute__ctor_m1730479323 (Attribute_t542643598 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.Input::GetKeyUpString(System.String)
+extern "C"  bool Input_GetKeyUpString_m3405632380 (Il2CppObject * __this /* static, unused */, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean UnityEngine.Input::GetKeyUpInt(System.Int32)
 extern "C"  bool Input_GetKeyUpInt_m2486491081 (Il2CppObject * __this /* static, unused */, int32_t ___key0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Input::INTERNAL_get_mousePosition(UnityEngine.Vector3&)
@@ -14335,6 +14340,15 @@ extern "C"  bool Input_GetKeyUpInt_m2486491081 (Il2CppObject * __this /* static,
 	_il2cpp_icall_func = (Input_GetKeyUpInt_m2486491081_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::GetKeyUpInt(System.Int32)");
 	return _il2cpp_icall_func(___key0);
 }
+// System.Boolean UnityEngine.Input::GetKeyUpString(System.String)
+extern "C"  bool Input_GetKeyUpString_m3405632380 (Il2CppObject * __this /* static, unused */, String_t* ___name0, const MethodInfo* method)
+{
+	typedef bool (*Input_GetKeyUpString_m3405632380_ftn) (String_t*);
+	static Input_GetKeyUpString_m3405632380_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Input_GetKeyUpString_m3405632380_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::GetKeyUpString(System.String)");
+	return _il2cpp_icall_func(___name0);
+}
 // System.Boolean UnityEngine.Input::GetButtonDown(System.String)
 extern "C"  bool Input_GetButtonDown_m2792523731 (Il2CppObject * __this /* static, unused */, String_t* ___buttonName0, const MethodInfo* method)
 {
@@ -14352,6 +14366,30 @@ extern "C"  bool Input_GetButtonUp_m1680009186 (Il2CppObject * __this /* static,
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Input_GetButtonUp_m1680009186_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::GetButtonUp(System.String)");
 	return _il2cpp_icall_func(___buttonName0);
+}
+// System.Boolean UnityEngine.Input::GetKeyUp(System.String)
+extern "C"  bool Input_GetKeyUp_m1952023453 (Il2CppObject * __this /* static, unused */, String_t* ___name0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Input_GetKeyUp_m1952023453_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	{
+		String_t* L_0 = ___name0;
+		IL2CPP_RUNTIME_CLASS_INIT(Input_t1785128008_il2cpp_TypeInfo_var);
+		bool L_1 = Input_GetKeyUpString_m3405632380(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
+		V_0 = L_1;
+		goto IL_000d;
+	}
+
+IL_000d:
+	{
+		bool L_2 = V_0;
+		return L_2;
+	}
 }
 // System.Boolean UnityEngine.Input::GetKeyUp(UnityEngine.KeyCode)
 extern "C"  bool Input_GetKeyUp_m1008512962 (Il2CppObject * __this /* static, unused */, int32_t ___key0, const MethodInfo* method)
@@ -22235,6 +22273,31 @@ extern "C"  Object_t1021602117 * ResourceRequest_get_asset_m3527928488 (Resource
 	}
 
 IL_0018:
+	{
+		Object_t1021602117 * L_3 = V_0;
+		return L_3;
+	}
+}
+// UnityEngine.Object UnityEngine.Resources::Load(System.String)
+extern "C"  Object_t1021602117 * Resources_Load_m2041782325 (Il2CppObject * __this /* static, unused */, String_t* ___path0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Resources_Load_m2041782325_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	Object_t1021602117 * V_0 = NULL;
+	{
+		String_t* L_0 = ___path0;
+		IL2CPP_RUNTIME_CLASS_INIT(Type_t_il2cpp_TypeInfo_var);
+		Type_t * L_1 = Type_GetTypeFromHandle_m432505302(NULL /*static, unused*/, LoadTypeToken(Object_t1021602117_0_0_0_var), /*hidden argument*/NULL);
+		Object_t1021602117 * L_2 = Resources_Load_m243305716(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
+		V_0 = L_2;
+		goto IL_0017;
+	}
+
+IL_0017:
 	{
 		Object_t1021602117 * L_3 = V_0;
 		return L_3;

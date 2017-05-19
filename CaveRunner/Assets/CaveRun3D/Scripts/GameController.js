@@ -50,11 +50,6 @@ function Start()
   pCreator        = PlatformCreator.GetComponent("PlatformCreator");
 }
 
-function SubmitScore()
-{
-
-}
-
 function Update ()
 {
 	if (Input.GetKeyUp("escape")){

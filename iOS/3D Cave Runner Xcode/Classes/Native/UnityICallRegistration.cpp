@@ -1354,6 +1354,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Input_GetKeyUpInt();
 		Register_UnityEngine_Input_GetKeyUpInt();
 
+		//System.Boolean UnityEngine.Input::GetKeyUpString(System.String)
+		void Register_UnityEngine_Input_GetKeyUpString();
+		Register_UnityEngine_Input_GetKeyUpString();
+
 		//System.Boolean UnityEngine.Input::GetMouseButton(System.Int32)
 		void Register_UnityEngine_Input_GetMouseButton();
 		Register_UnityEngine_Input_GetMouseButton();
@@ -2165,6 +2169,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Transform::INTERNAL_set_rotation(UnityEngine.Quaternion&)
 		void Register_UnityEngine_Transform_INTERNAL_set_rotation();
 		Register_UnityEngine_Transform_INTERNAL_set_rotation();
+
+		//System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)
+		void Register_UnityEngine_Transform_SetParent();
+		Register_UnityEngine_Transform_SetParent();
 
 		//System.Void UnityEngine.Transform::set_parentInternal(UnityEngine.Transform)
 		void Register_UnityEngine_Transform_set_parentInternal();

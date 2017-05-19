@@ -8638,8 +8638,10 @@ extern "C" void HumanBone_get_humanName_m2091758568_AdjustorThunk ();
 extern "C" void HumanBone_set_humanName_m1385708911_AdjustorThunk ();
 extern "C" void IL2CPPStructAlignmentAttribute__ctor_m2555798229 ();
 extern "C" void Input_GetKeyUpInt_m2486491081 ();
+extern "C" void Input_GetKeyUpString_m3405632380 ();
 extern "C" void Input_GetButtonDown_m2792523731 ();
 extern "C" void Input_GetButtonUp_m1680009186 ();
+extern "C" void Input_GetKeyUp_m1952023453 ();
 extern "C" void Input_GetKeyUp_m1008512962 ();
 extern "C" void Input_GetMouseButton_m464100923 ();
 extern "C" void Input_GetMouseButtonDown_m47917805 ();
@@ -8998,6 +9000,7 @@ extern "C" void RenderTexture_get_height_m1108175848 ();
 extern "C" void RequireComponent__ctor_m3475141952 ();
 extern "C" void ResourceRequest__ctor_m3340010930 ();
 extern "C" void ResourceRequest_get_asset_m3527928488 ();
+extern "C" void Resources_Load_m2041782325 ();
 extern "C" void Resources_Load_m243305716 ();
 extern "C" void Rigidbody_get_velocity_m2022666970 ();
 extern "C" void Rigidbody_set_velocity_m2514070071 ();
@@ -9247,6 +9250,7 @@ extern "C" void Transform_get_parent_m147407266 ();
 extern "C" void Transform_set_parent_m3281327839 ();
 extern "C" void Transform_get_parentInternal_m927919099 ();
 extern "C" void Transform_set_parentInternal_m4124721022 ();
+extern "C" void Transform_SetParent_m1963830867 ();
 extern "C" void Transform_Translate_m423862381 ();
 extern "C" void Transform_Rotate_m2612876682 ();
 extern "C" void Transform_RotateAroundInternal_m2303097692 ();
@@ -9522,6 +9526,7 @@ extern "C" void FramesPerSecond_Update_m1597228818 ();
 extern "C" void FramesPerSecond_Main_m1288377110 ();
 extern "C" void GameController__ctor_m3723838820 ();
 extern "C" void GameController_Start_m777191596 ();
+extern "C" void GameController_SubmitScore_m998436066 ();
 extern "C" void GameController_Update_m2980041265 ();
 extern "C" void GameController_EndLevel_m663502689 ();
 extern "C" void GameController_WaitThenFinish_m1732666981 ();
@@ -9583,7 +9588,12 @@ extern "C" void PlayerControls_Main_m2517130198 ();
 extern "C" void ScoreScreen__ctor_m2189572426 ();
 extern "C" void ScoreScreen_Start_m1981810302 ();
 extern "C" void ScoreScreen_OnGUI_m791567246 ();
+extern "C" void ScoreScreen_SubmitScore_m2205568878 ();
 extern "C" void ScoreScreen_Main_m339888425 ();
+extern "C" void U24SubmitScoreU2481__ctor_m3949232460 ();
+extern "C" void U24SubmitScoreU2481_GetEnumerator_m3134779592 ();
+extern "C" void U24__ctor_m1790430951 ();
+extern "C" void U24_MoveNext_m4239379557 ();
 extern "C" void Shake__ctor_m979775786 ();
 extern "C" void Shake_Start_m3609636822 ();
 extern "C" void Shake_Update_m3237552179 ();
@@ -9640,15 +9650,15 @@ extern "C" void TutorialController_SetDeferred_m2573190217 ();
 extern "C" void TutorialController_activateGamePlayElements_m389282167 ();
 extern "C" void TutorialController_setGemAndObstacleRates_m2726736518 ();
 extern "C" void TutorialController_Main_m50441401 ();
-extern "C" void U24SetDeferredU2489__ctor_m3179249273 ();
-extern "C" void U24SetDeferredU2489_GetEnumerator_m4096646201 ();
-extern "C" void U24__ctor_m3524686874 ();
-extern "C" void U24_MoveNext_m2751428332 ();
-extern "C" void U24WaitU2482__ctor_m1092993618 ();
-extern "C" void U24WaitU2482_GetEnumerator_m3082927570 ();
-extern "C" void U24__ctor_m2002601663 ();
-extern "C" void U24_MoveNext_m3881065813 ();
-extern const Il2CppMethodPointer g_MethodPointers[9634] = 
+extern "C" void U24SetDeferredU2491__ctor_m1643825660 ();
+extern "C" void U24SetDeferredU2491_GetEnumerator_m3940394160 ();
+extern "C" void U24__ctor_m2683904455 ();
+extern "C" void U24_MoveNext_m3119816997 ();
+extern "C" void U24WaitU2484__ctor_m610653300 ();
+extern "C" void U24WaitU2484_GetEnumerator_m1218190168 ();
+extern "C" void U24__ctor_m1000149961 ();
+extern "C" void U24_MoveNext_m1789740175 ();
+extern const Il2CppMethodPointer g_MethodPointers[9644] = 
 {
 	Locale_GetText_m1954433032,
 	Locale_GetText_m2553164138,
@@ -18274,8 +18284,10 @@ extern const Il2CppMethodPointer g_MethodPointers[9634] =
 	HumanBone_set_humanName_m1385708911_AdjustorThunk,
 	IL2CPPStructAlignmentAttribute__ctor_m2555798229,
 	Input_GetKeyUpInt_m2486491081,
+	Input_GetKeyUpString_m3405632380,
 	Input_GetButtonDown_m2792523731,
 	Input_GetButtonUp_m1680009186,
+	Input_GetKeyUp_m1952023453,
 	Input_GetKeyUp_m1008512962,
 	Input_GetMouseButton_m464100923,
 	Input_GetMouseButtonDown_m47917805,
@@ -18634,6 +18646,7 @@ extern const Il2CppMethodPointer g_MethodPointers[9634] =
 	RequireComponent__ctor_m3475141952,
 	ResourceRequest__ctor_m3340010930,
 	ResourceRequest_get_asset_m3527928488,
+	Resources_Load_m2041782325,
 	Resources_Load_m243305716,
 	Rigidbody_get_velocity_m2022666970,
 	Rigidbody_set_velocity_m2514070071,
@@ -18883,6 +18896,7 @@ extern const Il2CppMethodPointer g_MethodPointers[9634] =
 	Transform_set_parent_m3281327839,
 	Transform_get_parentInternal_m927919099,
 	Transform_set_parentInternal_m4124721022,
+	Transform_SetParent_m1963830867,
 	Transform_Translate_m423862381,
 	Transform_Rotate_m2612876682,
 	Transform_RotateAroundInternal_m2303097692,
@@ -19158,6 +19172,7 @@ extern const Il2CppMethodPointer g_MethodPointers[9634] =
 	FramesPerSecond_Main_m1288377110,
 	GameController__ctor_m3723838820,
 	GameController_Start_m777191596,
+	GameController_SubmitScore_m998436066,
 	GameController_Update_m2980041265,
 	GameController_EndLevel_m663502689,
 	GameController_WaitThenFinish_m1732666981,
@@ -19219,7 +19234,12 @@ extern const Il2CppMethodPointer g_MethodPointers[9634] =
 	ScoreScreen__ctor_m2189572426,
 	ScoreScreen_Start_m1981810302,
 	ScoreScreen_OnGUI_m791567246,
+	ScoreScreen_SubmitScore_m2205568878,
 	ScoreScreen_Main_m339888425,
+	U24SubmitScoreU2481__ctor_m3949232460,
+	U24SubmitScoreU2481_GetEnumerator_m3134779592,
+	U24__ctor_m1790430951,
+	U24_MoveNext_m4239379557,
 	Shake__ctor_m979775786,
 	Shake_Start_m3609636822,
 	Shake_Update_m3237552179,
@@ -19276,12 +19296,12 @@ extern const Il2CppMethodPointer g_MethodPointers[9634] =
 	TutorialController_activateGamePlayElements_m389282167,
 	TutorialController_setGemAndObstacleRates_m2726736518,
 	TutorialController_Main_m50441401,
-	U24SetDeferredU2489__ctor_m3179249273,
-	U24SetDeferredU2489_GetEnumerator_m4096646201,
-	U24__ctor_m3524686874,
-	U24_MoveNext_m2751428332,
-	U24WaitU2482__ctor_m1092993618,
-	U24WaitU2482_GetEnumerator_m3082927570,
-	U24__ctor_m2002601663,
-	U24_MoveNext_m3881065813,
+	U24SetDeferredU2491__ctor_m1643825660,
+	U24SetDeferredU2491_GetEnumerator_m3940394160,
+	U24__ctor_m2683904455,
+	U24_MoveNext_m3119816997,
+	U24WaitU2484__ctor_m610653300,
+	U24WaitU2484_GetEnumerator_m1218190168,
+	U24__ctor_m1000149961,
+	U24_MoveNext_m1789740175,
 };
