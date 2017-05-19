@@ -7,8 +7,8 @@ private var scale: Vector3;
 
 var GUIskin:GUISkin; //The skin gui we'll use
 
-private var ButtonHeight:int = 97;
-private var ButtonWidth: int = 282;
+private var ButtonHeight:int = 90;
+private var ButtonWidth: int = 360;
 private var ButtonHeightOffset:int = 0; //Used to offset the button(s) in the beginning so that they later move into the scene
 
 private var ButtonMargin:int = (originalWidth-2*ButtonWidth)/4;
@@ -27,12 +27,12 @@ function Start()
 function OnGUI()
 {
 	scale.x = Screen.width/originalWidth; // calculate hor scale
-    scale.y = Screen.height/originalHeight; // calculate vert scale
-    scale.z = 1;
+  scale.y = Screen.height/originalHeight; // calculate vert scale
+  scale.z = 1;
 
-    var svMat = GUI.matrix; // save current matrix
-    // substitute matrix - only scale is altered from standard
-    GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
+  var svMat = GUI.matrix; // save current matrix
+  // substitute matrix - only scale is altered from standard
+  GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 
 
 	//Animate the entry of the menu items, first by waiting a few seconds and then moving them in to the scene

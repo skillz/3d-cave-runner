@@ -101,16 +101,10 @@ function Update ()
 function EndLevel()
 {
   Debug.Log('End Level - Game Controller');
-  PlayerPrefs.SetInt("TotalDistance", TotalDistance); //Put the value of TotalDistance in a playerPref record which will keep this value even after going to a different level or even quitting the game
+  PlayerPrefs.SetFloat("TotalDistance", TotalDistance); //Put the value of TotalDistance in a playerPref record which will keep this value even after going to a different level or even quitting the game
   //Debug.Log("GameController:EndLevel TotalDistance:" + TotalDistance.ToString());
 
   PlayerPrefs.SetInt("TotalGems", TotalGems); //Put the value of TotalGems in a playerPref record which will keep this value even after going to a different level or even quitting the game
-
-  WaitThenFinish(); //moving to coroutine so yield WaitForSeconds works as expected
-}
-
-function WaitThenFinish() {
-  yield WaitForSeconds(2);
 
   var prefab = GameObject.Instantiate(Resources.Load("ScoreScreen")) as GameObject;
   prefab.transform.SetParent(this.transform, false);
