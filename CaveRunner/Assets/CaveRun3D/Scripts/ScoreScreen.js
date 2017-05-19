@@ -2,7 +2,7 @@
 var GUIskin:GUISkin; //The skin gui we'll use
 
 private var originalWidth:float = 600.0;  // define here the original resolution
-private var originalHeight:float = 1024.0; // you used to create the GUI contents 
+private var originalHeight:float = 1024.0; // you used to create the GUI contents
 private var scale: Vector3;
 private var smallBoxHeight = 200;
 private var smallBoxWidth = 600;
@@ -30,6 +30,7 @@ function Start()
 	data["Gems"] = TotalGems.ToString();
 	data["TotalDistance"] = TotalDistance.ToString();
 	data["TotalScore"] = TotalScore.ToString();
+	SubmitScore();
 }
 
 function OnGUI()
@@ -41,9 +42,9 @@ function OnGUI()
     // substitute matrix - only scale is altered from standard
     GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
     // draw your GUI controls here:
-    
+
 	GUI.skin = GUIskin; //The skin gui we'll use
-	
+
 	if ( TotalScoreCurrent < TotalScore ) //If we haven't reached the TotalScore, keep counting up to it
 	{
 		var addS:int =0.005*TotalScore;
@@ -51,16 +52,34 @@ function OnGUI()
 			addS = 1;
 		TotalScoreCurrent+=addS; //Count up from 0 to the value of TotalScore smoothly
 	}
-	if (TotalScoreCurrent > TotalScore)
+
+	if (TotalScoreCurrent > TotalScore) {
 		TotalScoreCurrent = TotalScore;
+	}
 	//GUI.Box(Rect((originalWidth - 400)/2 ,(originalHeight-768)/2 ,400,768), InstructionsText);
 
-	
+
 	//Display 3 boxes, the first showing total distance passed and multiplied by the value of each meter, the second showing total gems collected and multiplied by the value of a gem, and finally a bigger box showing the
     //total score.
-    var offset:int = 70;	
+    var offset:int = 70;
 	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -900 + offset , smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Distance:\n" + TotalDistance.ToString() + "M" + " X " + DistanceValue.ToString() );
 	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -675 + offset , smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Gems: \n" + TotalGems.ToString() + " X " + GemValue.ToString() );
 	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -455 + offset, smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Score \n" + TotalScoreCurrent.ToString());
+
+
 }
 
+function SubmitScore()
+{
+	if (PlayerPrefs.GetInt("SkillzGame") == 1) {
+		PlayerPrefs.SetInt("SkillzGame", 0);
+		yield WaitForSeconds(10);
+#if UNITY_ANDROID
+		var metrics = new Dictionary.<String,String>();
+		metrics["score"] = TotalScore.ToString();
+		Skillz.ReportScore(metrics["score"]);
+#elif UNITY_IOS
+		SkillzSDK.Api.FinishTournament(TotalScore);
+#endif
+	}
+}

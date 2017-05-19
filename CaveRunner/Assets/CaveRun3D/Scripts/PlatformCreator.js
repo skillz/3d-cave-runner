@@ -191,10 +191,11 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 #endif
 		{
 			//Choose one of the obstacle types from an array, and place it at the position of NewPlatformCopy
+			var obstacleIndex = 0;
 #if UNITY_ANDROID
-			var obstacleIndex = Skillz.Random.Range(0,Obstacle.length);
+			obstacleIndex = Skillz.Random.Range(0,Obstacle.length);
 #elif UNITY_IOS
-			var obstacleIndex = SkillzSDK.Api.Random.Range(0,Obstacle.length);
+			obstacleIndex = SkillzSDK.Api.Random.Range(0,Obstacle.length);
 #endif
 			ObstacleCopy = collector.GetObstacle(obstacleIndex);
 			
@@ -218,15 +219,16 @@ function CreateGemOrObstacle(LeftLimit:float, RightLimit:float)
 #endif
 		{
 			//Choose one of the gem types from an array, and place it at the position of NewPlatformCopy
+		var gemIndex = 0;
 #if UNITY_ANDROID
-		var gemIndex = Skillz.Random.Range(0,Gem.length);
+		gemIndex = Skillz.Random.Range(0,Gem.length);
 #elif UNITY_IOS
-		var gemIndex = SkillzSDK.Api.Random.Range(0,Gem.length);
+		gemIndex = SkillzSDK.Api.Random.Range(0,Gem.length);
 #endif
 
-			GemCopy = collector.GetGem(gemIndex);
+		GemCopy = collector.GetGem(gemIndex);
 			
-			GemCopy.transform.position = NewPlatformCopy.transform.position;
+		GemCopy.transform.position = NewPlatformCopy.transform.position;
 #if UNITY_ANDROID
 		GemCopy.transform.rotation = Skillz.Random.Rotation();
 #elif UNITY_IOS
