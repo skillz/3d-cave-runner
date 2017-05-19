@@ -8,7 +8,7 @@ private var scale: Vector3;
 var GUIskin:GUISkin; //The skin gui we'll use
 
 private var ButtonHeight:int = 90;
-private var ButtonWidth: int = 360;
+private var ButtonWidth: int = 420;
 private var ButtonHeightOffset:int = 0; //Used to offset the button(s) in the beginning so that they later move into the scene
 
 private var ButtonMargin:int = (originalWidth-2*ButtonWidth)/4;

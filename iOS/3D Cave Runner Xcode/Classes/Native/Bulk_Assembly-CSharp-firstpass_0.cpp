@@ -5249,6 +5249,7 @@ extern "C"  void SkillzDelegateBase_OnTournamentAborted_m3696654092 (SkillzDeleg
 extern "C"  void SkillzDelegateInit__ctor_m392615900 (SkillzDelegateInit_t4059693480 * __this, const MethodInfo* method)
 {
 	{
+		__this->set_SkillzEnvironment_4(1);
 		MonoBehaviour__ctor_m2464341955(__this, /*hidden argument*/NULL);
 		return;
 	}

@@ -3794,7 +3794,7 @@ extern "C"  void Menu__ctor_m1383122389 (Menu_t4261767481 * __this, const Method
 		__this->set_originalWidth_2((600.0f));
 		__this->set_originalHeight_3((1024.0f));
 		__this->set_ButtonHeight_6(((int32_t)90));
-		__this->set_ButtonWidth_7(((int32_t)360));
+		__this->set_ButtonWidth_7(((int32_t)420));
 		float L_0 = __this->get_originalWidth_2();
 		int32_t L_1 = __this->get_ButtonWidth_7();
 		__this->set_ButtonMargin_9((((int32_t)((int32_t)((float)((float)((float)((float)L_0-(float)(((float)((float)((int32_t)((int32_t)2*(int32_t)L_1)))))))/(float)(((float)((float)4)))))))));
