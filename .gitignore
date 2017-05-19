@@ -12,7 +12,7 @@ Android/3D Cave Runner - Android Studio/app/build
 Android/3D Cave Runner - Android Studio/build
 Android/.idea
 fabric.properties
-*/libiPhone-lib.a
+libiPhone-lib.a
 
 # Xcode
 .DS_Store
