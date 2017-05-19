@@ -90,31 +90,10 @@ function Start () {
   collector          = GameObject.FindWithTag("Collector");
   tunnel             = GameObject.FindGameObjectsWithTag("Tunnel");
 
-  //Check to see if this is the first run of the game...
-  var finishedTutorial = PlayerPrefs.GetInt("FinishedTutorial");
-  #if UNITY_ANDROID
-  if (finishedTutorial != 1 && PlayerPrefs.GetInt("SkillzGame") != 1)
-  {
-    //show welcome popup, ask if he wants to go through the tutorial...
-    tutorialState = 1;
-    setGemAndObstacleRates();//set specific instantiation rates so that gems or obstacles dont get in the way of certain tutorial step.
-    activateElements = false;
-  }
-  #elif UNITY_IOS
-  if (finishedTutorial != 1 && !SkillzSDK.Api.IsTournamentInProgress)
-  {
-    //show welcome popup, ask if he wants to go through the tutorial...
-    tutorialState = 1;
-    setGemAndObstacleRates();//set specific instantiation rates so that gems or obstacles dont get in the way of certain tutorial step.
-    activateElements = false;
-  }
-  #endif
-  else
-  {
-    tutorialState = -1;
-    activateElements = true;
-    Time.timeScale = 1;
-  }
+  //Completely disable the Tutorial
+  tutorialState = -1;
+  activateElements = true;
+  Time.timeScale = 1;
 }
 
 function Update () {

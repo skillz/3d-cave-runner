@@ -50,8 +50,18 @@ function Start()
   pCreator        = PlatformCreator.GetComponent("PlatformCreator");
 }
 
+function SubmitScore()
+{
+
+}
+
 function Update ()
 {
+	if (Input.GetKeyUp("escape")){
+ 		// Quit application
+ 		EndLevel();
+ 	}
+
   //If we haven't already leveled up and we passed the target distance for the next level, LEVEL UP!
   if (Time.timeScale>0)
   if ( LevelUp == false &&  TotalDistance >= DistanceToLevelUp * CurrentLevel + LastLevelDistance )
@@ -107,49 +117,8 @@ function EndLevel()
 function WaitThenFinish() {
   yield WaitForSeconds(2);
 
-  var TotalScore:int = TotalDistance * 10 + TotalGems * 100;
-#if UNITY_ANDROID
-	if (PlayerPrefs.GetInt("SkillzGame") == 1) { //Skillz game: report score to Skillz
-	    /*
-    CaveRunner doesn't use any Match Rules. If it did, we might implement them here.
-
-    Here is a block that prints all the match rules to demonstrate how they work:
-
-    Debug.Log("Match Rules:");
-    var matchRules = Skillz.GetMatchRules();
-    for(var key in matchRules.Keys) {
-      Debug.Log(key + " -> " + matchRules[key]);
-    }
-    Debug.Log("end Match Rules");
-    */
-		var metrics = new Dictionary.<String,String>();
-		metrics["score"] = TotalScore.ToString();
-		PlayerPrefs.SetInt("SkillzGame", 0);
-
-		Debug.Log('UNITY - Loading Start - Load Menu');
-
-		Debug.Log('UNITY - Report Score');
-		Skillz.ReportScore(metrics["score"]);
-	} else { //single player game: exit
-	    Debug.Log('Loading End - Wait Then Finish');
-	    SceneManager.LoadScene("end");
-  	}
-#elif UNITY_IOS
-	
-	if (SkillzSDK.Api.IsTournamentInProgress) { //Skillz game: report score to Skillz
-		var metrics = new Dictionary.<String,String>();
-		metrics["score"] = TotalScore.ToString();
-		PlayerPrefs.SetInt("SkillzGame", 0);
-
-		Debug.Log('UNITY - Loading Start - Load Menu');
-
-		Debug.Log('UNITY - Report Score');
-		SkillzSDK.Api.FinishTournament(TotalScore);
-	} else { //single player game: exit
-	    Debug.Log('Loading End - Wait Then Finish');
-	    SceneManager.LoadScene("end");
-  	}
-#endif
+  var prefab = GameObject.Instantiate(Resources.Load("ScoreScreen")) as GameObject;
+  prefab.transform.SetParent(this.transform, false);
 }
 
 public var showScoreOnScreen : boolean = true;
@@ -179,8 +148,8 @@ function OnGUI()
 	if (PlayerPrefs.GetInt("SkillzGame") == 1) {
 		Skillz.UpdatePlayersCurrentScore(TotalScore);
 	}
-	#endif 
-      
+	#endif
+
 
     //Animate the level up text by passing it from the right side of the screen to the left side
     if ( LevelUp == false && LevelUpPosX > -originalWidth )
