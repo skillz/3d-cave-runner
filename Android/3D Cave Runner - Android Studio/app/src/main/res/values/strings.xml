@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">3D Cave Runner</string>
-  <string name="gcm_sender">407229223867</string>
 </resources>
