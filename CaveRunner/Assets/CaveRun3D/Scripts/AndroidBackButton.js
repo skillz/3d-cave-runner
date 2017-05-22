@@ -15,9 +15,9 @@ function FixedUpdate ()
     {
       if (SceneIndex == 2) //Game
       {
-        //return to MainMenu
-        Debug.Log('Loading Start from Game - Android Back');
-        SceneManager.LoadScene("start");
+        // Disable returning from Game to Main Menu
+        //Debug.Log('Loading Start from Game - Android Back');
+        //SceneManager.LoadScene("start");
         return;
       }
 

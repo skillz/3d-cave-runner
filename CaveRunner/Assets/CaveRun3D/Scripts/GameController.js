@@ -53,8 +53,7 @@ function Start()
 function Update ()
 {
 	if (Input.GetKeyUp("escape")){
- 		// Quit application
- 		EndLevel();
+ 		// Ignore back button
  	}
 
   //If we haven't already leveled up and we passed the target distance for the next level, LEVEL UP!
