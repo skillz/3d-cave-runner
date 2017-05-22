@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.MarshalByRefObject
 struct MarshalByRefObject_t1285298191;
 // System.Runtime.Remoting.Proxies.RealProxy
 struct RealProxy_t298428346;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

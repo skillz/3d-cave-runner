@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ArgumentException3259014390.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_ArgumentException3259014390.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

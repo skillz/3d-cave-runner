@@ -5,6 +5,6 @@
 
 @interface UnityAppController (UnityInterface)
 
-@property (nonatomic) BOOL	paused;
+@property (nonatomic) BOOL  paused;
 
 @end

@@ -13,58 +13,285 @@
 #include <limits>
 #include <assert.h>
 
+#include "class-internals.h"
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Array3829468939.h"
+#include "System_U3CModuleU3E3783534214.h"
+#include "System_U3CPrivateImplementationDetailsU3E1486305137.h"
+#include "System_U3CPrivateImplementationDetailsU3E_U24Array3672778802.h"
+#include "System_U3CPrivateImplementationDetailsU3E_U24ArrayT116038554.h"
+#include "System_Locale4255929014.h"
+#include "mscorlib_System_String2029220233.h"
+#include "mscorlib_System_Object2689449295.h"
+#include "System_System_Collections_Specialized_HybridDiction290043810.h"
+#include "mscorlib_System_Void1841601450.h"
+#include "mscorlib_System_Int322071877448.h"
+#include "mscorlib_System_Boolean3825574718.h"
+#include "mscorlib_System_Collections_CaseInsensitiveComparer157661140.h"
+#include "mscorlib_System_Collections_CaseInsensitiveHashCod2307530285.h"
+#include "System_System_Collections_Specialized_ListDictiona3458713452.h"
+#include "mscorlib_System_Collections_Hashtable909839986.h"
+#include "System_System_Collections_Specialized_ListDictiona2725637098.h"
+#include "System_System_Collections_Specialized_ListDictiona1923170152.h"
+#include "mscorlib_System_ArgumentNullException628810857.h"
+#include "mscorlib_System_Collections_DictionaryEntry3048875398.h"
+#include "mscorlib_System_ArgumentOutOfRangeException279959794.h"
+#include "mscorlib_System_IndexOutOfRangeException3527622107.h"
+#include "mscorlib_System_ArgumentException3259014390.h"
+#include "System_System_Collections_Specialized_ListDictionar528898270.h"
+#include "System_System_Collections_Specialized_ListDictiona2037848305.h"
+#include "mscorlib_System_InvalidOperationException721527559.h"
+#include "System_System_Collections_Specialized_NameObjectCo2034248631.h"
+#include "mscorlib_System_Runtime_Serialization_Serialization228987430.h"
+#include "mscorlib_System_Runtime_Serialization_StreamingCon1417235061.h"
+#include "System_System_Collections_Specialized_NameObjectCol633582367.h"
+#include "mscorlib_System_Collections_ArrayList4252133567.h"
+#include "System_System_Collections_Specialized_NameObjectCo3244489099.h"
+#include "System_System_Collections_Specialized_NameObjectCo1718269396.h"
+#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
+#include "mscorlib_System_Type1303803226.h"
+#include "mscorlib_System_Runtime_Serialization_Serialization753258759.h"
+#include "mscorlib_System_NotSupportedException1793819818.h"
+#include "System_System_Collections_Specialized_NameValueCol3047564564.h"
+#include "mscorlib_System_Char3454481338.h"
+#include "mscorlib_System_Text_StringBuilder1221177846.h"
+#include "System_System_ComponentModel_EditorBrowsableAttrib1050682502.h"
+#include "System_System_ComponentModel_EditorBrowsableState373498655.h"
+#include "mscorlib_System_Attribute542643598.h"
+#include "mscorlib_System_Enum2459695545.h"
+#include "System_System_ComponentModel_TypeConverter745995970.h"
+#include "System_System_ComponentModel_TypeConverterAttribute252469870.h"
+#include "System_System_DefaultUriParser1591960796.h"
+#include "System_System_UriParser1012511323.h"
+#include "System_System_GenericUriParser2599285286.h"
+#include "System_System_MonoTODOAttribute3487514019.h"
+#include "System_System_Net_DefaultCertificatePolicy2545332216.h"
+#include "System_System_Net_ServicePoint2765344313.h"
+#include "mscorlib_System_Security_Cryptography_X509Certifica283079845.h"
+#include "System_System_Net_WebRequest1365124353.h"
+#include "System_System_Net_Security_RemoteCertificateValida2756269959.h"
+#include "System_System_Net_FileWebRequest1571840111.h"
+#include "System_System_Uri19570940.h"
+#include "mscorlib_System_IO_FileAccess4282042064.h"
+#include "System_System_Net_WebHeaderCollection3028142837.h"
+#include "mscorlib_System_Int64909078037.h"
+#include "System_System_Net_FileWebRequestCreator1109072211.h"
+#include "System_System_Net_FtpRequestCreator3711983251.h"
+#include "System_System_Net_FtpWebRequest3120721823.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+#include "System_System_Security_Cryptography_X509Certificate777637347.h"
+#include "System_System_Net_Security_SslPolicyErrors1928581431.h"
+#include "System_System_Net_GlobalProxySelection2251180943.h"
+#include "System_System_Net_HttpRequestCreator1416559589.h"
+#include "System_System_Net_HttpWebRequest1951404513.h"
+#include "System_System_Net_HttpVersion1276659706.h"
+#include "mscorlib_System_Version1755874712.h"
+#include "System_System_Security_Cryptography_X509Certificat1197680765.h"
+#include "System_System_Net_IPAddress1399971723.h"
+#include "System_System_Net_Sockets_AddressFamily303362630.h"
+#include "mscorlib_System_UInt16986882611.h"
+#include "mscorlib_System_Int164041245914.h"
+#include "mscorlib_System_BitConverter3195628829.h"
+#include "mscorlib_System_FormatException2948921286.h"
+#include "mscorlib_System_Globalization_NumberStyles3408984435.h"
+#include "mscorlib_System_Exception1927440687.h"
+#include "System_System_Net_IPv6Address2596635879.h"
+#include "mscorlib_System_Globalization_CultureInfo3500843524.h"
+#include "System_System_Net_Security_AuthenticationLevel2424130044.h"
+#include "mscorlib_System_AsyncCallback163412349.h"
+#include "System_System_Net_SecurityProtocolType3099771628.h"
+#include "mscorlib_System_DateTime693205669.h"
+#include "mscorlib_System_Double4078015681.h"
+#include "System_System_Net_ServicePointManager745663000.h"
+#include "System_System_Net_ServicePointManager_SPKey1552752485.h"
+#include "mscorlib_System_Collections_SortedList3004938869.h"
+#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
+#include "mscorlib_System_StringComparer1574862926.h"
+#include "mscorlib_System_Collections_Generic_Dictionary_2_g1445386684.h"
+#include "System_System_Net_WebProxy1169192840.h"
+#include "System_System_Text_RegularExpressions_RegexOptions2418259727.h"
+#include "System_System_Text_RegularExpressions_Regex1803876613.h"
+#include "mscorlib_System_MarshalByRefObject1285298191.h"
+#include "mscorlib_System_Reflection_Assembly4268412390.h"
+#include "mscorlib_System_NotImplementedException2785117854.h"
+#include "System_System_Security_Cryptography_AsnDecodeStatu1962003286.h"
+#include "System_System_Security_Cryptography_AsnEncodedData463456204.h"
+#include "mscorlib_System_Byte3683104436.h"
+#include "System_System_Security_Cryptography_Oid3221867120.h"
+#include "mscorlib_System_Collections_Generic_Dictionary_2_g3986656710.h"
+#include "System_System_Security_Cryptography_X509Certificat1562873317.h"
+#include "System_System_Security_Cryptography_X509Certificat2099881051.h"
+#include "System_System_Security_Cryptography_X509Certificat1038124237.h"
+#include "System_System_Security_Cryptography_X509Certificat2508879999.h"
+#include "Mono_Security_Mono_Security_ASN1924533535.h"
+#include "mscorlib_System_Text_Encoding663144255.h"
+#include "System_System_Security_Cryptography_OidCollection3790243618.h"
+#include "System_System_Security_Cryptography_OidEnumerator3674631724.h"
+#include "System_System_Security_Cryptography_X509Certificat2370524385.h"
+#include "System_System_Security_Cryptography_X509Certificates_P870392.h"
+#include "Mono_Security_Mono_Security_X509_X509Certificate324051957.h"
+#include "mscorlib_System_Security_Cryptography_RSACryptoSer4229286967.h"
+#include "Mono_Security_Mono_Security_Cryptography_RSAManage3034748747.h"
+#include "mscorlib_System_Security_Cryptography_RSAParameter1462703416.h"
+#include "mscorlib_System_Security_Cryptography_DSACryptoSer2915171657.h"
+#include "mscorlib_System_Security_Cryptography_DSAParameter1872138834.h"
+#include "mscorlib_System_Security_Cryptography_RSA3719518354.h"
+#include "mscorlib_System_Security_Cryptography_AsymmetricAlg784058677.h"
+#include "mscorlib_System_Security_Cryptography_DSA903174880.h"
+#include "mscorlib_System_Security_Cryptography_Cryptographi3349726436.h"
+#include "System_System_Security_Cryptography_X509Certificat1570828128.h"
+#include "System_System_Security_Cryptography_X509Certificat2183514610.h"
+#include "System_System_Security_Cryptography_X509Certificate452415348.h"
+#include "System_System_Security_Cryptography_X509Certificat2005802885.h"
+#include "mscorlib_System_StringSplitOptions2996162939.h"
+#include "System_System_Security_Cryptography_X509Certificat1320896183.h"
+#include "System_System_Security_Cryptography_X509Certificat4056456767.h"
+#include "mscorlib_System_Security_Cryptography_X509Certific1216946873.h"
+#include "System_System_Security_Cryptography_X509Certificate650873211.h"
+#include "System_System_Security_Cryptography_X509Certificat2669466891.h"
+#include "Mono_Security_Mono_Security_X509_PKCS121362584794.h"
+#include "Mono_Security_Mono_Security_X509_X509CertificateCo3592472865.h"
+#include "mscorlib_System_Collections_CollectionBase1101587467.h"
+#include "System_System_Security_Cryptography_X509Certificat1108969367.h"
+#include "System_System_Security_Cryptography_X509Certificat3221716179.h"
+#include "mscorlib_System_StringComparison2376310518.h"
+#include "System_System_Security_Cryptography_X509Certificat2461349531.h"
+#include "mscorlib_System_Security_Cryptography_Cryptographi4184064416.h"
+#include "System_System_Security_Cryptography_X509Certificat2356134957.h"
+#include "System_System_Security_Cryptography_X509Certificat1208230922.h"
+#include "System_System_Security_Cryptography_X509Certificat2081831987.h"
+#include "System_System_Security_Cryptography_X509Certificat3452126517.h"
+#include "System_System_Security_Cryptography_X509Certificat4278378721.h"
+#include "System_System_Security_Cryptography_X509Certificate480677120.h"
+#include "System_System_Security_Cryptography_X509Certificat2169036324.h"
+#include "System_System_Security_Cryptography_X509Certificate528874471.h"
+#include "System_System_Security_Cryptography_X509Certificat3304975821.h"
+#include "System_System_Security_Cryptography_X509Certificat1617430119.h"
+#include "System_System_Security_Cryptography_X509Certificat3763443773.h"
+#include "Mono_Security_Mono_Security_X509_X509Extension1439760127.h"
+#include "Mono_Security_Mono_Security_X509_X509ExtensionColl1640144839.h"
+#include "Mono_Security_Mono_Security_X509_X509Crl1699034837.h"
+#include "Mono_Security_Mono_Security_X509_Extensions_Authori795428182.h"
+#include "System_System_Security_Cryptography_X509Certificat2065307963.h"
+#include "System_System_Security_Cryptography_X509Certificat2166064554.h"
+#include "Mono_Security_Mono_Security_X509_X509Crl_X509CrlEnt743353844.h"
+#include "Mono_Security_Mono_Security_X509_X509Store4028973563.h"
+#include "mscorlib_System_TimeSpan3430258949.h"
+#include "Mono_Security_Mono_Security_X509_X509Stores3001420398.h"
+#include "Mono_Security_Mono_Security_X509_X509CertificateCo3487770522.h"
+#include "System_System_Security_Cryptography_X509Certificate110301003.h"
+#include "mscorlib_System_Security_Cryptography_SHA13336793149.h"
+#include "mscorlib_System_Security_Cryptography_HashAlgorith2624936259.h"
+#include "System_System_Text_RegularExpressions_BaseMachine4008011478.h"
+#include "System_System_Text_RegularExpressions_Match3164245899.h"
+#include "System_System_Text_RegularExpressions_Capture4157900610.h"
+#include "System_System_Text_RegularExpressions_CaptureColle1671345504.h"
+#include "System_System_Text_RegularExpressions_Category1984577050.h"
+#include "System_System_Text_RegularExpressions_CategoryUtil3840220623.h"
+#include "mscorlib_System_Globalization_UnicodeCategory682236799.h"
+#include "System_System_Text_RegularExpressions_FactoryCache2051534610.h"
+#include "System_System_Text_RegularExpressions_MRUList33178162.h"
+#include "System_System_Text_RegularExpressions_FactoryCache_655155419.h"
+#include "System_System_Text_RegularExpressions_Group3761430853.h"
+#include "System_System_Text_RegularExpressions_GroupCollecti939014605.h"
+#include "System_System_Text_RegularExpressions_Interpreter3731288230.h"
+#include "System_System_Text_RegularExpressions_Interpreter_I273560425.h"
+#include "System_System_Text_RegularExpressions_QuickSearch1036078825.h"
+#include "System_System_Text_RegularExpressions_Interpreter_2395763083.h"
+#include "System_System_Text_RegularExpressions_Interpreter_1827616978.h"
+#include "System_System_Text_RegularExpressions_Position3781184359.h"
+#include "System_System_Text_RegularExpressions_Mark2724874473.h"
+#include "System_System_Text_RegularExpressions_OpCode586571952.h"
+#include "System_System_Text_RegularExpressions_OpFlags378191910.h"
+#include "mscorlib_System_SystemException3877406272.h"
+#include "System_System_Text_RegularExpressions_InterpreterFa556462562.h"
+#include "System_System_Text_RegularExpressions_Interval2354235237.h"
+#include "System_System_Text_RegularExpressions_IntervalColl4130821325.h"
+#include "System_System_Text_RegularExpressions_IntervalColl1824458113.h"
+#include "System_System_Text_RegularExpressions_IntervalColl1928086041.h"
+
 // System.String
 struct String_t;
 // System.Object[]
 struct ObjectU5BU5D_t3614634134;
-// System.Collections.Specialized.HybridDictionary
-struct HybridDictionary_t290043810;
-// System.Collections.IEnumerator
-struct IEnumerator_t1466026749;
-// System.Collections.IDictionary
-struct IDictionary_t596158605;
 // System.Object
 struct Il2CppObject;
-// System.Collections.ICollection
-struct ICollection_t91669223;
-// System.Array
-struct Il2CppArray;
-// System.Collections.IDictionaryEnumerator
-struct IDictionaryEnumerator_t259680273;
+// System.Collections.Specialized.HybridDictionary
+struct HybridDictionary_t290043810;
+// System.Collections.CaseInsensitiveComparer
+struct CaseInsensitiveComparer_t157661140;
+// System.Collections.CaseInsensitiveHashCodeProvider
+struct CaseInsensitiveHashCodeProvider_t2307530285;
 // System.Collections.Specialized.ListDictionary
 struct ListDictionary_t3458713452;
 // System.Collections.IComparer
 struct IComparer_t3952557350;
+// System.Collections.Hashtable
+struct Hashtable_t909839986;
+// System.Collections.IHashCodeProvider
+struct IHashCodeProvider_t1980576455;
+// System.Collections.IEnumerator
+struct IEnumerator_t1466026749;
+// System.Collections.IDictionaryEnumerator
+struct IDictionaryEnumerator_t259680273;
+// System.Collections.IDictionary
+struct IDictionary_t596158605;
+// System.Collections.ICollection
+struct ICollection_t91669223;
+// System.Array
+struct Il2CppArray;
+// System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator
+struct DictionaryNodeEnumerator_t1923170152;
 // System.Collections.Specialized.ListDictionary/DictionaryNode
 struct DictionaryNode_t2725637098;
+// System.ArgumentNullException
+struct ArgumentNullException_t628810857;
+// System.ArgumentOutOfRangeException
+struct ArgumentOutOfRangeException_t279959794;
+// System.IndexOutOfRangeException
+struct IndexOutOfRangeException_t3527622107;
+// System.ArgumentException
+struct ArgumentException_t3259014390;
 // System.Collections.Specialized.ListDictionary/DictionaryNodeCollection
 struct DictionaryNodeCollection_t528898270;
 // System.Collections.Specialized.ListDictionary/DictionaryNodeCollection/DictionaryNodeCollectionEnumerator
 struct DictionaryNodeCollectionEnumerator_t2037848305;
-// System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator
-struct DictionaryNodeEnumerator_t1923170152;
+// System.InvalidOperationException
+struct InvalidOperationException_t721527559;
 // System.Collections.Specialized.NameObjectCollectionBase
 struct NameObjectCollectionBase_t2034248631;
 // System.Runtime.Serialization.SerializationInfo
 struct SerializationInfo_t228987430;
-// System.Collections.Specialized.NameObjectCollectionBase/KeysCollection
-struct KeysCollection_t633582367;
-// System.Collections.Specialized.NameObjectCollectionBase/_Item
-struct _Item_t3244489099;
-// System.Collections.Specialized.NameObjectCollectionBase/_KeysEnumerator
-struct _KeysEnumerator_t1718269396;
-// System.Collections.Specialized.NameValueCollection
-struct NameValueCollection_t3047564564;
+// System.Collections.IEqualityComparer
+struct IEqualityComparer_t2716208158;
 // System.Collections.ArrayList
 struct ArrayList_t4252133567;
-// System.ComponentModel.EditorBrowsableAttribute
-struct EditorBrowsableAttribute_t1050682502;
-// System.ComponentModel.TypeConverterAttribute
-struct TypeConverterAttribute_t252469870;
+// System.Collections.Specialized.NameObjectCollectionBase/KeysCollection
+struct KeysCollection_t633582367;
+// System.Collections.Specialized.NameObjectCollectionBase/_KeysEnumerator
+struct _KeysEnumerator_t1718269396;
 // System.Type
 struct Type_t;
+// System.Runtime.Serialization.SerializationException
+struct SerializationException_t753258759;
+// System.NotSupportedException
+struct NotSupportedException_t1793819818;
+// System.Collections.Specialized.NameObjectCollectionBase/_Item
+struct _Item_t3244489099;
+// System.Collections.Specialized.NameValueCollection
+struct NameValueCollection_t3047564564;
+// System.Text.StringBuilder
+struct StringBuilder_t1221177846;
+// System.ComponentModel.EditorBrowsableAttribute
+struct EditorBrowsableAttribute_t1050682502;
+// System.Attribute
+struct Attribute_t542643598;
+// System.ComponentModel.TypeConverterAttribute
+struct TypeConverterAttribute_t252469870;
 // System.DefaultUriParser
 struct DefaultUriParser_t1591960796;
+// System.UriParser
+struct UriParser_t1012511323;
 // System.MonoTODOAttribute
 struct MonoTODOAttribute_t3487514020;
 // System.Net.DefaultCertificatePolicy
@@ -75,32 +302,48 @@ struct ServicePoint_t2765344313;
 struct X509Certificate_t283079845;
 // System.Net.WebRequest
 struct WebRequest_t1365124353;
+// System.Net.Security.RemoteCertificateValidationCallback
+struct RemoteCertificateValidationCallback_t2756269959;
 // System.Net.FileWebRequest
 struct FileWebRequest_t1571840111;
 // System.Uri
 struct Uri_t19570940;
+// System.Net.WebHeaderCollection
+struct WebHeaderCollection_t3028142837;
 // System.Net.FileWebRequestCreator
 struct FileWebRequestCreator_t1109072211;
 // System.Net.FtpRequestCreator
 struct FtpRequestCreator_t3711983251;
 // System.Net.FtpWebRequest
 struct FtpWebRequest_t3120721823;
-// System.Security.Cryptography.X509Certificates.X509Chain
-struct X509Chain_t777637347;
 // System.Net.IWebProxy
 struct IWebProxy_t3916853445;
+// System.Security.Cryptography.X509Certificates.X509Chain
+struct X509Chain_t777637347;
 // System.Net.HttpRequestCreator
 struct HttpRequestCreator_t1416559589;
 // System.Net.HttpWebRequest
 struct HttpWebRequest_t1951404513;
+// System.Version
+struct Version_t1755874712;
 // System.Net.IPAddress
 struct IPAddress_t1399971723;
 // System.UInt16[]
 struct UInt16U5BU5D_t2527266722;
+// System.FormatException
+struct FormatException_t2948921286;
+// System.String[]
+struct StringU5BU5D_t1642385972;
+// System.Char[]
+struct CharU5BU5D_t1328083999;
+// System.IFormatProvider
+struct IFormatProvider_t2849799027;
 // System.Net.IPv6Address
 struct IPv6Address_t2596635879;
-// System.Net.Security.RemoteCertificateValidationCallback
-struct RemoteCertificateValidationCallback_t2756269959;
+// System.Exception
+struct Exception_t1927440687;
+// System.Globalization.CultureInfo
+struct CultureInfo_t3500843524;
 // System.IAsyncResult
 struct IAsyncResult_t1999651008;
 // System.AsyncCallback
@@ -109,22 +352,50 @@ struct AsyncCallback_t163412349;
 struct ICertificatePolicy_t1916536542;
 // System.Net.ServicePointManager/SPKey
 struct SPKey_t1552752485;
-// System.Net.WebHeaderCollection
-struct WebHeaderCollection_t3028142837;
+// System.Collections.SortedList
+struct SortedList_t3004938869;
+// System.StringComparer
+struct StringComparer_t1574862926;
+// System.Collections.Generic.Dictionary`2<System.String,System.Boolean>
+struct Dictionary_2_t1445386684;
+// System.Collections.Generic.IEqualityComparer`1<System.String>
+struct IEqualityComparer_1_t1241853011;
+// System.Collections.Generic.Dictionary`2<System.Object,System.Boolean>
+struct Dictionary_2_t3417634846;
+// System.Collections.Generic.IEqualityComparer`1<System.Object>
+struct IEqualityComparer_1_t1902082073;
 // System.Net.WebProxy
 struct WebProxy_t1169192840;
-// System.String[]
-struct StringU5BU5D_t1642385972;
 // System.Net.ICredentials
 struct ICredentials_t3855617113;
-// System.Exception
-struct Exception_t1927440687;
+// System.Text.RegularExpressions.Regex
+struct Regex_t1803876613;
+// System.MarshalByRefObject
+struct MarshalByRefObject_t1285298191;
+// System.NotImplementedException
+struct NotImplementedException_t2785117854;
 // System.Security.Cryptography.AsnEncodedData
 struct AsnEncodedData_t463456204;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.Security.Cryptography.Oid
 struct Oid_t3221867120;
+// System.Collections.Generic.Dictionary`2<System.String,System.Int32>
+struct Dictionary_2_t3986656710;
+// System.Collections.Generic.Dictionary`2<System.Object,System.Int32>
+struct Dictionary_2_t1663937576;
+// System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension
+struct X509BasicConstraintsExtension_t1562873317;
+// System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension
+struct X509EnhancedKeyUsageExtension_t2099881051;
+// System.Security.Cryptography.X509Certificates.X509KeyUsageExtension
+struct X509KeyUsageExtension_t1038124237;
+// System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension
+struct X509SubjectKeyIdentifierExtension_t2508879999;
+// Mono.Security.ASN1
+struct ASN1_t924533536;
+// System.Text.Encoding
+struct Encoding_t663144255;
 // System.Security.Cryptography.OidCollection
 struct OidCollection_t3790243618;
 // System.Security.Cryptography.OidEnumerator
@@ -133,80 +404,92 @@ struct OidEnumerator_t3674631724;
 struct PublicKey_t870392;
 // Mono.Security.X509.X509Certificate
 struct X509Certificate_t324051958;
-// System.Security.Cryptography.AsymmetricAlgorithm
-struct AsymmetricAlgorithm_t784058677;
-// System.Security.Cryptography.DSA
-struct DSA_t903174880;
+// System.Security.Cryptography.RSACryptoServiceProvider
+struct RSACryptoServiceProvider_t4229286967;
+// Mono.Security.Cryptography.RSAManaged
+struct RSAManaged_t3034748748;
 // System.Security.Cryptography.RSA
 struct RSA_t3719518354;
+// System.Security.Cryptography.DSA
+struct DSA_t903174880;
+// System.Security.Cryptography.DSACryptoServiceProvider
+struct DSACryptoServiceProvider_t2915171657;
+// System.Security.Cryptography.AsymmetricAlgorithm
+struct AsymmetricAlgorithm_t784058677;
+// System.Security.Cryptography.CryptographicException
+struct CryptographicException_t3349726436;
 // System.Security.Cryptography.X509Certificates.X500DistinguishedName
 struct X500DistinguishedName_t452415348;
-// System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension
-struct X509BasicConstraintsExtension_t1562873317;
+// System.Security.Cryptography.X509Certificates.X509Extension
+struct X509Extension_t1320896183;
 // System.Security.Cryptography.X509Certificates.X509Certificate2
 struct X509Certificate2_t4056456767;
 // System.Security.Cryptography.X509Certificates.X509ExtensionCollection
 struct X509ExtensionCollection_t650873211;
-// Mono.Security.ASN1
-struct ASN1_t924533536;
-// System.Text.StringBuilder
-struct StringBuilder_t1221177846;
+// Mono.Security.X509.PKCS12
+struct PKCS12_t1362584795;
+// Mono.Security.X509.X509CertificateCollection
+struct X509CertificateCollection_t3592472866;
+// System.Collections.CollectionBase
+struct CollectionBase_t1101587467;
 // System.Security.Cryptography.X509Certificates.X509Certificate2Collection
 struct X509Certificate2Collection_t1108969367;
-// System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator
-struct X509Certificate2Enumerator_t2356134957;
 // System.Security.Cryptography.X509Certificates.X509CertificateCollection
 struct X509CertificateCollection_t1197680765;
+// System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator
+struct X509Certificate2Enumerator_t2356134957;
 // System.Security.Cryptography.X509Certificates.X509Certificate[]
 struct X509CertificateU5BU5D_t3424334632;
 // System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator
 struct X509CertificateEnumerator_t1208230922;
-// System.Security.Cryptography.X509Certificates.X509ChainPolicy
-struct X509ChainPolicy_t3452126517;
-// System.Security.Cryptography.X509Certificates.X509Store
-struct X509Store_t1617430119;
-// System.Security.Cryptography.X509Certificates.X509ChainElement
-struct X509ChainElement_t528874471;
-// Mono.Security.X509.X509Crl
-struct X509Crl_t1699034837;
-// Mono.Security.X509.X509Extension
-struct X509Extension_t1439760128;
-// Mono.Security.X509.X509Crl/X509CrlEntry
-struct X509CrlEntry_t743353844;
-// System.Security.Cryptography.X509Certificates.X509ChainStatus[]
-struct X509ChainStatusU5BU5D_t830390908;
 // System.Security.Cryptography.X509Certificates.X509ChainElementCollection
 struct X509ChainElementCollection_t2081831987;
+// System.Security.Cryptography.X509Certificates.X509ChainPolicy
+struct X509ChainPolicy_t3452126517;
 // System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator
 struct X509ChainElementEnumerator_t3304975821;
-// System.Collections.IEnumerable
-struct IEnumerable_t2911409499;
-// System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension
-struct X509EnhancedKeyUsageExtension_t2099881051;
-// System.Security.Cryptography.X509Certificates.X509Extension
-struct X509Extension_t1320896183;
+// System.Security.Cryptography.X509Certificates.X509ChainElement
+struct X509ChainElement_t528874471;
+// System.Security.Cryptography.X509Certificates.X509ChainStatus[]
+struct X509ChainStatusU5BU5D_t830390908;
+// System.Security.Cryptography.X509Certificates.X509Store
+struct X509Store_t1617430119;
 // System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator
 struct X509ExtensionEnumerator_t3763443773;
-// System.Security.Cryptography.X509Certificates.X509KeyUsageExtension
-struct X509KeyUsageExtension_t1038124237;
-// Mono.Security.X509.X509Stores
-struct X509Stores_t3001420398;
+// Mono.Security.X509.X509ExtensionCollection
+struct X509ExtensionCollection_t1640144840;
+// Mono.Security.X509.X509Extension
+struct X509Extension_t1439760128;
+// Mono.Security.X509.X509Crl
+struct X509Crl_t1699034837;
+// Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension
+struct AuthorityKeyIdentifierExtension_t795428182;
+// Mono.Security.X509.X509Crl/X509CrlEntry
+struct X509CrlEntry_t743353844;
 // Mono.Security.X509.X509Store
 struct X509Store_t4028973563;
-// System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension
-struct X509SubjectKeyIdentifierExtension_t2508879999;
+// System.Collections.IEnumerable
+struct IEnumerable_t2911409499;
+// Mono.Security.X509.X509Stores
+struct X509Stores_t3001420398;
+// Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator
+struct X509CertificateEnumerator_t3487770523;
+// System.Security.Cryptography.SHA1
+struct SHA1_t3336793149;
+// System.Security.Cryptography.HashAlgorithm
+struct HashAlgorithm_t2624936259;
 // System.Text.RegularExpressions.BaseMachine
 struct BaseMachine_t4008011478;
 // System.Text.RegularExpressions.Match
 struct Match_t3164245899;
-// System.Text.RegularExpressions.Regex
-struct Regex_t1803876613;
 // System.Text.RegularExpressions.Capture
 struct Capture_t4157900610;
 // System.Text.RegularExpressions.CaptureCollection
 struct CaptureCollection_t1671345504;
 // System.Text.RegularExpressions.FactoryCache
 struct FactoryCache_t2051534610;
+// System.Text.RegularExpressions.MRUList
+struct MRUList_t33178162;
 // System.Text.RegularExpressions.IMachineFactory
 struct IMachineFactory_t633643314;
 // System.Text.RegularExpressions.FactoryCache/Key
@@ -217,394 +500,2456 @@ struct Group_t3761430853;
 struct GroupCollection_t939014605;
 // System.Text.RegularExpressions.Interpreter
 struct Interpreter_t3731288230;
+// System.Text.RegularExpressions.QuickSearch
+struct QuickSearch_t1036078825;
 // System.Text.RegularExpressions.Interpreter/RepeatContext
 struct RepeatContext_t1827616978;
-// System.Text.RegularExpressions.InterpreterFactory
-struct InterpreterFactory_t556462562;
 // System.Text.RegularExpressions.IMachine
 struct IMachine_t3406191350;
+// System.SystemException
+struct SystemException_t3877406272;
+// System.Text.RegularExpressions.InterpreterFactory
+struct InterpreterFactory_t556462562;
 // System.Text.RegularExpressions.IntervalCollection
 struct IntervalCollection_t4130821325;
 // System.Text.RegularExpressions.IntervalCollection/CostDelegate
 struct CostDelegate_t1824458113;
+// System.Text.RegularExpressions.IntervalCollection/Enumerator
+struct Enumerator_t1928086041;
+// System.Collections.IList
+struct IList_t3321498491;
+// System.Text.RegularExpressions.Interval
+struct Interval_t2354235237;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern const uint32_t Locale_GetText_m1445803604_MetadataUsageId;
+extern Il2CppClass* CaseInsensitiveComparer_t157661140_il2cpp_TypeInfo_var;
+extern Il2CppClass* CaseInsensitiveHashCodeProvider_t2307530285_il2cpp_TypeInfo_var;
+extern Il2CppClass* ListDictionary_t3458713452_il2cpp_TypeInfo_var;
+extern Il2CppClass* Hashtable_t909839986_il2cpp_TypeInfo_var;
+extern const uint32_t HybridDictionary__ctor_m890422665_MetadataUsageId;
+extern Il2CppClass* ICollection_t91669223_il2cpp_TypeInfo_var;
+extern const uint32_t HybridDictionary_get_Count_m1347303215_MetadataUsageId;
+extern Il2CppClass* IDictionary_t596158605_il2cpp_TypeInfo_var;
+extern const uint32_t HybridDictionary_get_Item_m1077394870_MetadataUsageId;
+extern const uint32_t HybridDictionary_set_Item_m4049906479_MetadataUsageId;
+extern const uint32_t HybridDictionary_get_Keys_m4114678936_MetadataUsageId;
+extern const uint32_t HybridDictionary_Add_m1037587952_MetadataUsageId;
+extern const uint32_t HybridDictionary_CopyTo_m2422525990_MetadataUsageId;
+extern const uint32_t HybridDictionary_GetEnumerator_m3570171579_MetadataUsageId;
+extern const uint32_t HybridDictionary_Remove_m2059808027_MetadataUsageId;
+extern const uint32_t HybridDictionary_Switch_m146896129_MetadataUsageId;
+extern Il2CppClass* DictionaryNodeEnumerator_t1923170152_il2cpp_TypeInfo_var;
+extern const uint32_t ListDictionary_System_Collections_IEnumerable_GetEnumerator_m2244736244_MetadataUsageId;
+extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
+extern Il2CppClass* IComparer_t3952557350_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3021628599;
+extern Il2CppCodeGenString* _stringLiteral2250706828;
+extern const uint32_t ListDictionary_FindEntry_m1690278153_MetadataUsageId;
+extern const uint32_t ListDictionary_FindEntry_m432748847_MetadataUsageId;
+extern Il2CppClass* DictionaryNode_t2725637098_il2cpp_TypeInfo_var;
+extern const uint32_t ListDictionary_AddImpl_m2604632092_MetadataUsageId;
+extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
+extern Il2CppClass* IndexOutOfRangeException_t3527622107_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
+extern Il2CppClass* DictionaryEntry_t3048875398_il2cpp_TypeInfo_var;
+extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1185213181;
+extern Il2CppCodeGenString* _stringLiteral1003153106;
+extern Il2CppCodeGenString* _stringLiteral1460639766;
+extern Il2CppCodeGenString* _stringLiteral3863425438;
+extern Il2CppCodeGenString* _stringLiteral1043308353;
+extern Il2CppCodeGenString* _stringLiteral1406820407;
+extern const uint32_t ListDictionary_CopyTo_m1124479600_MetadataUsageId;
+extern Il2CppClass* DictionaryNodeCollection_t528898270_il2cpp_TypeInfo_var;
+extern const uint32_t ListDictionary_get_Keys_m3344920214_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1659354982;
+extern const uint32_t ListDictionary_Add_m4276262662_MetadataUsageId;
+extern const uint32_t ListDictionary_GetEnumerator_m1511032609_MetadataUsageId;
+extern const uint32_t DictionaryNodeCollection_CopyTo_m3104713877_MetadataUsageId;
+extern Il2CppClass* DictionaryNodeCollectionEnumerator_t2037848305_il2cpp_TypeInfo_var;
+extern const uint32_t DictionaryNodeCollection_GetEnumerator_m4231738996_MetadataUsageId;
+extern Il2CppClass* IDictionaryEnumerator_t259680273_il2cpp_TypeInfo_var;
+extern const uint32_t DictionaryNodeCollectionEnumerator_get_Current_m3220527494_MetadataUsageId;
+extern const uint32_t DictionaryNodeCollectionEnumerator_MoveNext_m848269647_MetadataUsageId;
+extern const uint32_t DictionaryNodeCollectionEnumerator_Reset_m2279681240_MetadataUsageId;
+extern Il2CppClass* InvalidOperationException_t721527559_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral126210674;
+extern const uint32_t DictionaryNodeEnumerator_FailFast_m3568492354_MetadataUsageId;
+extern const uint32_t DictionaryNodeEnumerator_get_Current_m980909215_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2956752624;
+extern const uint32_t DictionaryNodeEnumerator_get_DictionaryNode_m3521889822_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase__ctor_m2433753948_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_System_Collections_ICollection_CopyTo_m810189168_MetadataUsageId;
+extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
+extern const uint32_t NameObjectCollectionBase_Init_m1271766820_MetadataUsageId;
+extern Il2CppClass* KeysCollection_t633582367_il2cpp_TypeInfo_var;
+extern const uint32_t NameObjectCollectionBase_get_Keys_m446053925_MetadataUsageId;
+extern Il2CppClass* _KeysEnumerator_t1718269396_il2cpp_TypeInfo_var;
+extern const uint32_t NameObjectCollectionBase_GetEnumerator_m646294968_MetadataUsageId;
+extern const Il2CppType* IEqualityComparer_t2716208158_0_0_0_var;
+extern const Il2CppType* Int32_t2071877448_0_0_0_var;
+extern const Il2CppType* IHashCodeProvider_t1980576455_0_0_0_var;
+extern const Il2CppType* IComparer_t3952557350_0_0_0_var;
+extern const Il2CppType* StringU5BU5D_t1642385972_0_0_0_var;
+extern const Il2CppType* ObjectU5BU5D_t3614634134_0_0_0_var;
+extern Il2CppClass* StringU5BU5D_t1642385972_il2cpp_TypeInfo_var;
+extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
+extern Il2CppClass* _Item_t3244489099_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2792112382;
+extern Il2CppCodeGenString* _stringLiteral1017838394;
+extern Il2CppCodeGenString* _stringLiteral4699698;
+extern Il2CppCodeGenString* _stringLiteral815656099;
+extern Il2CppCodeGenString* _stringLiteral3743961169;
+extern Il2CppCodeGenString* _stringLiteral1225783828;
+extern Il2CppCodeGenString* _stringLiteral1554779067;
+extern Il2CppCodeGenString* _stringLiteral1857678454;
+extern Il2CppCodeGenString* _stringLiteral1188955108;
+extern const uint32_t NameObjectCollectionBase_GetObjectData_m699981132_MetadataUsageId;
+extern Il2CppClass* IHashCodeProvider_t1980576455_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEqualityComparer_t2716208158_il2cpp_TypeInfo_var;
+extern Il2CppClass* SerializationException_t753258759_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3639910873;
+extern Il2CppCodeGenString* _stringLiteral2897760885;
+extern Il2CppCodeGenString* _stringLiteral1826620485;
+extern const uint32_t NameObjectCollectionBase_OnDeserialization_m3478980442_MetadataUsageId;
+extern Il2CppClass* NotSupportedException_t1793819818_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1461460571;
+extern const uint32_t NameObjectCollectionBase_BaseAdd_m964300824_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_BaseGet_m667273025_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_BaseGetKey_m1766059806_MetadataUsageId;
+extern const uint32_t NameObjectCollectionBase_FindFirstMatchedItem_m2460648656_MetadataUsageId;
+extern const uint32_t _KeysEnumerator_get_Current_m2426335091_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3015127219;
+extern Il2CppCodeGenString* _stringLiteral3834829273;
+extern Il2CppCodeGenString* _stringLiteral3056724556;
+extern Il2CppCodeGenString* _stringLiteral2316951895;
+extern const uint32_t KeysCollection_System_Collections_ICollection_CopyTo_m1079819835_MetadataUsageId;
+extern const uint32_t KeysCollection_GetEnumerator_m3831125359_MetadataUsageId;
+extern const uint32_t NameValueCollection_Add_m263445674_MetadataUsageId;
+extern const uint32_t NameValueCollection_Get_m861415899_MetadataUsageId;
+extern Il2CppClass* Char_t3454481338_il2cpp_TypeInfo_var;
+extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
+extern const uint32_t NameValueCollection_AsSingleString_m10599052_MetadataUsageId;
+extern Il2CppClass* EditorBrowsableAttribute_t1050682502_il2cpp_TypeInfo_var;
+extern const uint32_t EditorBrowsableAttribute_Equals_m345895380_MetadataUsageId;
+extern Il2CppClass* EditorBrowsableState_t373498655_il2cpp_TypeInfo_var;
+extern const uint32_t EditorBrowsableAttribute_GetHashCode_m169893972_MetadataUsageId;
+extern const uint32_t TypeConverterAttribute__ctor_m3322338951_MetadataUsageId;
+extern Il2CppClass* TypeConverterAttribute_t252469870_il2cpp_TypeInfo_var;
+extern const uint32_t TypeConverterAttribute__cctor_m506796812_MetadataUsageId;
+extern const uint32_t TypeConverterAttribute_Equals_m2330345916_MetadataUsageId;
+extern Il2CppClass* UriParser_t1012511323_il2cpp_TypeInfo_var;
+extern const uint32_t DefaultUriParser__ctor_m4218024811_MetadataUsageId;
+extern const uint32_t DefaultUriParser__ctor_m1180095657_MetadataUsageId;
+extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
+extern const uint32_t DefaultCertificatePolicy_CheckValidationResult_m1093127521_MetadataUsageId;
+extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
+extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1596707798;
+extern const uint32_t FileWebRequest__ctor_m4207307562_MetadataUsageId;
+extern const Il2CppType* WebHeaderCollection_t3028142837_0_0_0_var;
+extern const Il2CppType* IWebProxy_t3916853445_0_0_0_var;
+extern const Il2CppType* Uri_t19570940_0_0_0_var;
+extern const Il2CppType* FileAccess_t4282042064_0_0_0_var;
+extern Il2CppClass* IWebProxy_t3916853445_il2cpp_TypeInfo_var;
+extern Il2CppClass* Uri_t19570940_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1945545832;
+extern Il2CppCodeGenString* _stringLiteral3107543502;
+extern Il2CppCodeGenString* _stringLiteral386853516;
+extern Il2CppCodeGenString* _stringLiteral800172446;
+extern Il2CppCodeGenString* _stringLiteral165463247;
+extern Il2CppCodeGenString* _stringLiteral407396305;
+extern Il2CppCodeGenString* _stringLiteral1144299859;
+extern Il2CppCodeGenString* _stringLiteral4264076074;
+extern Il2CppCodeGenString* _stringLiteral142021954;
+extern const uint32_t FileWebRequest__ctor_m4003648606_MetadataUsageId;
+extern Il2CppClass* FileAccess_t4282042064_il2cpp_TypeInfo_var;
+extern const uint32_t FileWebRequest_GetObjectData_m3667486695_MetadataUsageId;
+extern Il2CppClass* FileWebRequest_t1571840111_il2cpp_TypeInfo_var;
+extern const uint32_t FileWebRequestCreator_Create_m1444797040_MetadataUsageId;
+extern Il2CppClass* FtpWebRequest_t3120721823_il2cpp_TypeInfo_var;
+extern const uint32_t FtpRequestCreator_Create_m338695342_MetadataUsageId;
+extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
+extern Il2CppClass* RemoteCertificateValidationCallback_t2756269959_il2cpp_TypeInfo_var;
+extern const MethodInfo* FtpWebRequest_U3CcallbackU3Em__B_m4153123054_MethodInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1938748861;
+extern const uint32_t FtpWebRequest__ctor_m3003551676_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1838250052;
+extern Il2CppCodeGenString* _stringLiteral3054493542;
+extern Il2CppCodeGenString* _stringLiteral2826129522;
+extern Il2CppCodeGenString* _stringLiteral2597506744;
+extern Il2CppCodeGenString* _stringLiteral2047046546;
+extern Il2CppCodeGenString* _stringLiteral641693129;
+extern Il2CppCodeGenString* _stringLiteral4016415563;
+extern Il2CppCodeGenString* _stringLiteral407568648;
+extern Il2CppCodeGenString* _stringLiteral1240477979;
+extern Il2CppCodeGenString* _stringLiteral809707289;
+extern Il2CppCodeGenString* _stringLiteral63747176;
+extern Il2CppCodeGenString* _stringLiteral1629831117;
+extern const uint32_t FtpWebRequest__cctor_m2500702602_MetadataUsageId;
+extern Il2CppClass* SslPolicyErrors_t1928581431_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2344200972;
+extern const uint32_t FtpWebRequest_U3CcallbackU3Em__B_m4153123054_MetadataUsageId;
+extern const uint32_t GlobalProxySelection_get_Select_m1637611912_MetadataUsageId;
+extern Il2CppClass* HttpWebRequest_t1951404513_il2cpp_TypeInfo_var;
+extern const uint32_t HttpRequestCreator_Create_m3607509610_MetadataUsageId;
+extern Il2CppClass* Version_t1755874712_il2cpp_TypeInfo_var;
+extern Il2CppClass* HttpVersion_t1276659706_il2cpp_TypeInfo_var;
+extern const uint32_t HttpVersion__cctor_m144051953_MetadataUsageId;
+extern const uint32_t HttpWebRequest__ctor_m3872859964_MetadataUsageId;
+extern const Il2CppType* X509CertificateCollection_t1197680765_0_0_0_var;
+extern const Il2CppType* Version_t1755874712_0_0_0_var;
+extern Il2CppClass* X509CertificateCollection_t1197680765_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral488920711;
+extern Il2CppCodeGenString* _stringLiteral1852868046;
+extern Il2CppCodeGenString* _stringLiteral3304766204;
+extern Il2CppCodeGenString* _stringLiteral466862365;
+extern Il2CppCodeGenString* _stringLiteral1767150654;
+extern Il2CppCodeGenString* _stringLiteral731126417;
+extern Il2CppCodeGenString* _stringLiteral4071160638;
+extern Il2CppCodeGenString* _stringLiteral2305322104;
+extern Il2CppCodeGenString* _stringLiteral3166593957;
+extern Il2CppCodeGenString* _stringLiteral495123410;
+extern Il2CppCodeGenString* _stringLiteral375915537;
+extern Il2CppCodeGenString* _stringLiteral1563853884;
+extern Il2CppCodeGenString* _stringLiteral3617362;
+extern Il2CppCodeGenString* _stringLiteral105880260;
+extern Il2CppCodeGenString* _stringLiteral3533018601;
+extern const uint32_t HttpWebRequest__ctor_m1248252412_MetadataUsageId;
+extern const uint32_t HttpWebRequest__cctor_m3013631978_MetadataUsageId;
+extern const uint32_t HttpWebRequest_GetServicePoint_m560807134_MetadataUsageId;
+extern const uint32_t HttpWebRequest_GetObjectData_m1200570677_MetadataUsageId;
+extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
+extern const uint32_t IPAddress__ctor_m1927150601_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1976855324;
+extern Il2CppCodeGenString* _stringLiteral2524945039;
+extern Il2CppCodeGenString* _stringLiteral2874782298;
+extern Il2CppCodeGenString* _stringLiteral2880464393;
+extern const uint32_t IPAddress__cctor_m3624830012_MetadataUsageId;
+extern Il2CppClass* BitConverter_t3195628829_il2cpp_TypeInfo_var;
+extern const uint32_t IPAddress_HostToNetworkOrder_m1092199707_MetadataUsageId;
+extern const uint32_t IPAddress_NetworkToHostOrder_m862617551_MetadataUsageId;
+extern Il2CppClass* FormatException_t2948921286_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1196203746;
+extern const uint32_t IPAddress_Parse_m3374241274_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral448723150;
+extern const uint32_t IPAddress_TryParse_m2352368982_MetadataUsageId;
+extern Il2CppClass* CharU5BU5D_t1328083999_il2cpp_TypeInfo_var;
+extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
+extern const uint32_t IPAddress_ParseIPV4_m1639470661_MetadataUsageId;
+extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
+extern const uint32_t IPAddress_ParseIPV6_m2209709575_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2267812556;
+extern const uint32_t IPAddress_get_ScopeId_m133972856_MetadataUsageId;
+extern const uint32_t IPAddress_IsLoopback_m2800578891_MetadataUsageId;
+extern Il2CppClass* UInt16U5BU5D_t2527266722_il2cpp_TypeInfo_var;
+extern const uint32_t IPAddress_ToString_m1462985652_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral372029316;
+extern const uint32_t IPAddress_ToString_m267966740_MetadataUsageId;
+extern const uint32_t IPAddress_Equals_m2372067720_MetadataUsageId;
+extern const uint32_t IPAddress_GetHashCode_m638502356_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3282598431;
+extern const uint32_t IPv6Address__ctor_m206060151_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3127360414;
+extern const uint32_t IPv6Address__ctor_m3329154094_MetadataUsageId;
+extern const uint32_t IPv6Address__cctor_m2028583576_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1750474125;
+extern const uint32_t IPv6Address_Parse_m3111902810_MetadataUsageId;
+extern const uint32_t IPv6Address_Fill_m1824197512_MetadataUsageId;
+extern Il2CppClass* CultureInfo_t3500843524_il2cpp_TypeInfo_var;
+extern const uint32_t IPv6Address_TryParse_m1453091868_MetadataUsageId;
+extern const uint32_t IPv6Address_TryParse_m2220524278_MetadataUsageId;
+extern const uint32_t IPv6Address_AsIPv4Int_m3565745471_MetadataUsageId;
+extern Il2CppClass* UInt16_t986882611_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3060215576;
+extern Il2CppCodeGenString* _stringLiteral372029336;
+extern Il2CppCodeGenString* _stringLiteral2380766138;
+extern const uint32_t IPv6Address_ToString_m1522997104_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1901589082;
+extern Il2CppCodeGenString* _stringLiteral6500416;
+extern const uint32_t IPv6Address_ToString_m2464250971_MetadataUsageId;
+extern const uint32_t IPv6Address_Equals_m478146392_MetadataUsageId;
+extern const uint32_t IPv6Address_GetHashCode_m647521840_MetadataUsageId;
+extern const uint32_t RemoteCertificateValidationCallback_BeginInvoke_m2492197471_MetadataUsageId;
+extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
+extern const uint32_t ServicePoint__ctor_m4262863078_MetadataUsageId;
+extern const uint32_t ServicePoint_get_AvailableForRecycling_m1105513096_MetadataUsageId;
+extern Il2CppClass* HybridDictionary_t290043810_il2cpp_TypeInfo_var;
+extern Il2CppClass* DefaultCertificatePolicy_t2545332216_il2cpp_TypeInfo_var;
+extern const uint32_t ServicePointManager__cctor_m2216295373_MetadataUsageId;
+extern const uint32_t ServicePointManager_get_CertificatePolicy_m481780303_MetadataUsageId;
+extern const uint32_t ServicePointManager_get_CheckCertificateRevocationList_m4009410230_MetadataUsageId;
+extern const uint32_t ServicePointManager_get_SecurityProtocol_m1445189298_MetadataUsageId;
+extern const uint32_t ServicePointManager_get_ServerCertificateValidationCallback_m1419353403_MetadataUsageId;
+extern Il2CppClass* SPKey_t1552752485_il2cpp_TypeInfo_var;
+extern Il2CppClass* ServicePoint_t2765344313_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3134679062;
+extern Il2CppCodeGenString* _stringLiteral4021508911;
+extern Il2CppCodeGenString* _stringLiteral3833952254;
+extern Il2CppCodeGenString* _stringLiteral2513015832;
+extern Il2CppCodeGenString* _stringLiteral57472706;
+extern Il2CppCodeGenString* _stringLiteral2165756446;
+extern const uint32_t ServicePointManager_FindServicePoint_m3137356168_MetadataUsageId;
+extern Il2CppClass* SortedList_t3004938869_il2cpp_TypeInfo_var;
+extern const uint32_t ServicePointManager_RecycleServicePoints_m2772618783_MetadataUsageId;
+extern const uint32_t SPKey_Equals_m1112627532_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1554746267;
+extern Il2CppCodeGenString* _stringLiteral372029383;
+extern Il2CppCodeGenString* _stringLiteral372029388;
+extern const uint32_t WebHeaderCollection__ctor_m4088938710_MetadataUsageId;
+extern Il2CppClass* BooleanU5BU5D_t3568034315_il2cpp_TypeInfo_var;
+extern Il2CppClass* Boolean_t3825574718_il2cpp_TypeInfo_var;
+extern Il2CppClass* StringComparer_t1574862926_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t1445386684_il2cpp_TypeInfo_var;
+extern const MethodInfo* Dictionary_2__ctor_m3530797333_MethodInfo_var;
+extern const MethodInfo* Dictionary_2_Add_m657810184_MethodInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305138____U24U24fieldU2D2_0_FieldInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3819355434;
+extern Il2CppCodeGenString* _stringLiteral172550198;
+extern Il2CppCodeGenString* _stringLiteral435779042;
+extern Il2CppCodeGenString* _stringLiteral4165124290;
+extern Il2CppCodeGenString* _stringLiteral2328218522;
+extern Il2CppCodeGenString* _stringLiteral1991988847;
+extern Il2CppCodeGenString* _stringLiteral3430667732;
+extern Il2CppCodeGenString* _stringLiteral3377642072;
+extern Il2CppCodeGenString* _stringLiteral1352990827;
+extern Il2CppCodeGenString* _stringLiteral3276845361;
+extern Il2CppCodeGenString* _stringLiteral2170876777;
+extern Il2CppCodeGenString* _stringLiteral1094988949;
+extern Il2CppCodeGenString* _stringLiteral3266014003;
+extern Il2CppCodeGenString* _stringLiteral677017058;
+extern Il2CppCodeGenString* _stringLiteral1055241449;
+extern Il2CppCodeGenString* _stringLiteral1978770395;
+extern Il2CppCodeGenString* _stringLiteral925218559;
+extern Il2CppCodeGenString* _stringLiteral2082586684;
+extern Il2CppCodeGenString* _stringLiteral1814119739;
+extern Il2CppCodeGenString* _stringLiteral2656285525;
+extern Il2CppCodeGenString* _stringLiteral1776455741;
+extern Il2CppCodeGenString* _stringLiteral2072771911;
+extern Il2CppCodeGenString* _stringLiteral124473052;
+extern Il2CppCodeGenString* _stringLiteral486338575;
+extern Il2CppCodeGenString* _stringLiteral965719748;
+extern Il2CppCodeGenString* _stringLiteral1864643421;
+extern Il2CppCodeGenString* _stringLiteral1382755766;
+extern Il2CppCodeGenString* _stringLiteral99487132;
+extern Il2CppCodeGenString* _stringLiteral683397145;
+extern Il2CppCodeGenString* _stringLiteral3607284354;
+extern Il2CppCodeGenString* _stringLiteral3228896594;
+extern Il2CppCodeGenString* _stringLiteral339799502;
+extern Il2CppCodeGenString* _stringLiteral1860258274;
+extern Il2CppCodeGenString* _stringLiteral4291256923;
+extern Il2CppCodeGenString* _stringLiteral562836579;
+extern Il2CppCodeGenString* _stringLiteral2508654961;
+extern const uint32_t WebHeaderCollection__cctor_m3314500904_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2328218955;
+extern Il2CppCodeGenString* _stringLiteral3027738051;
+extern const uint32_t WebHeaderCollection_Add_m1090164380_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1612984583;
+extern Il2CppCodeGenString* _stringLiteral2865134852;
+extern Il2CppCodeGenString* _stringLiteral691747707;
+extern Il2CppCodeGenString* _stringLiteral690295872;
+extern const uint32_t WebHeaderCollection_AddWithoutValidate_m1479880592_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2801640164;
+extern Il2CppCodeGenString* _stringLiteral586528222;
+extern const uint32_t WebHeaderCollection_IsRestricted_m2583169910_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral811305496;
+extern Il2CppCodeGenString* _stringLiteral2162321587;
+extern const uint32_t WebHeaderCollection_ToString_m1246460752_MetadataUsageId;
+extern const uint32_t WebHeaderCollection_GetObjectData_m3940120977_MetadataUsageId;
+extern const uint32_t WebHeaderCollection_IsHeaderName_m3758915809_MetadataUsageId;
+extern const uint32_t WebProxy__ctor_m3679722173_MetadataUsageId;
+extern const Il2CppType* ArrayList_t4252133567_0_0_0_var;
+extern Il2CppCodeGenString* _stringLiteral2120680417;
+extern Il2CppCodeGenString* _stringLiteral1474220953;
+extern Il2CppCodeGenString* _stringLiteral2590173043;
+extern Il2CppCodeGenString* _stringLiteral1645517551;
+extern const uint32_t WebProxy__ctor_m2450728151_MetadataUsageId;
+extern Il2CppClass* Regex_t1803876613_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral994494093;
+extern Il2CppCodeGenString* _stringLiteral1108251991;
+extern const uint32_t WebProxy_IsBypassed_m907120600_MetadataUsageId;
+extern const uint32_t WebProxy_GetObjectData_m2019316656_MetadataUsageId;
+extern const uint32_t WebProxy_CheckBypassList_m565639068_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral435537409;
+extern Il2CppCodeGenString* _stringLiteral3457518716;
+extern Il2CppCodeGenString* _stringLiteral3111898531;
+extern Il2CppCodeGenString* _stringLiteral3875251400;
+extern Il2CppCodeGenString* _stringLiteral1467642795;
+extern const uint32_t WebRequest__cctor_m3509849914_MetadataUsageId;
+extern const uint32_t WebRequest_System_Runtime_Serialization_ISerializable_GetObjectData_m3377822910_MetadataUsageId;
+extern const Il2CppType* WebRequest_t1365124353_0_0_0_var;
+extern Il2CppCodeGenString* _stringLiteral939871968;
+extern const uint32_t WebRequest_AddDynamicPrefix_m1363854157_MetadataUsageId;
+extern Il2CppClass* NotImplementedException_t2785117854_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral632465485;
+extern const uint32_t WebRequest_GetMustImplement_m2014409540_MetadataUsageId;
+extern const uint32_t WebRequest_get_DefaultWebProxy_m741473019_MetadataUsageId;
+extern const uint32_t WebRequest_GetObjectData_m2022281397_MetadataUsageId;
+extern const uint32_t WebRequest_AddPrefix_m3456797905_MetadataUsageId;
+extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
+extern const uint32_t AsnEncodedData__ctor_m1211934482_MetadataUsageId;
+extern const uint32_t AsnEncodedData_set_Oid_m3568255745_MetadataUsageId;
+extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2331471940;
+extern const uint32_t AsnEncodedData_set_RawData_m1046549989_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2907895822;
+extern const uint32_t AsnEncodedData_CopyFrom_m2601972121_MetadataUsageId;
+extern Il2CppClass* AsnEncodedData_t463456204_il2cpp_TypeInfo_var;
+extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
+extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
+extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
+extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1568864488;
+extern Il2CppCodeGenString* _stringLiteral406065076;
+extern Il2CppCodeGenString* _stringLiteral1568864492;
+extern Il2CppCodeGenString* _stringLiteral1568864491;
+extern Il2CppCodeGenString* _stringLiteral1568864490;
+extern Il2CppCodeGenString* _stringLiteral3970765683;
+extern const uint32_t AsnEncodedData_ToString_m724151831_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3231012720;
+extern Il2CppCodeGenString* _stringLiteral372029310;
+extern const uint32_t AsnEncodedData_Default_m4197142414_MetadataUsageId;
+extern Il2CppClass* X509BasicConstraintsExtension_t1562873317_il2cpp_TypeInfo_var;
+extern const uint32_t AsnEncodedData_BasicConstraintsExtension_m4139728680_MetadataUsageId;
+extern Il2CppClass* X509EnhancedKeyUsageExtension_t2099881051_il2cpp_TypeInfo_var;
+extern const uint32_t AsnEncodedData_EnhancedKeyUsageExtension_m1452131166_MetadataUsageId;
+extern Il2CppClass* X509KeyUsageExtension_t1038124237_il2cpp_TypeInfo_var;
+extern const uint32_t AsnEncodedData_KeyUsageExtension_m938572452_MetadataUsageId;
+extern Il2CppClass* X509SubjectKeyIdentifierExtension_t2508879999_il2cpp_TypeInfo_var;
+extern const uint32_t AsnEncodedData_SubjectKeyIdentifierExtension_m3991622246_MetadataUsageId;
+extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
+extern Il2CppClass* Encoding_t663144255_il2cpp_TypeInfo_var;
+extern Il2CppClass* Byte_t3683104436_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral652014170;
+extern Il2CppCodeGenString* _stringLiteral3907304405;
+extern Il2CppCodeGenString* _stringLiteral787932375;
+extern Il2CppCodeGenString* _stringLiteral2761554872;
+extern Il2CppCodeGenString* _stringLiteral811305474;
+extern const uint32_t AsnEncodedData_SubjectAltName_m3016089443_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3096109877;
+extern Il2CppCodeGenString* _stringLiteral2388589945;
+extern Il2CppCodeGenString* _stringLiteral432662195;
+extern Il2CppCodeGenString* _stringLiteral3902976916;
+extern Il2CppCodeGenString* _stringLiteral3142894202;
+extern Il2CppCodeGenString* _stringLiteral1056202124;
+extern Il2CppCodeGenString* _stringLiteral680702573;
+extern Il2CppCodeGenString* _stringLiteral1906511964;
+extern Il2CppCodeGenString* _stringLiteral3906992839;
+extern const uint32_t AsnEncodedData_NetscapeCertType_m2899239452_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral339799274;
+extern const uint32_t Oid__ctor_m1936781897_MetadataUsageId;
+extern const uint32_t Oid__ctor_m3386806634_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2506820213;
+extern Il2CppCodeGenString* _stringLiteral2789145215;
+extern Il2CppCodeGenString* _stringLiteral503952339;
+extern Il2CppCodeGenString* _stringLiteral4039404748;
+extern Il2CppCodeGenString* _stringLiteral1310521393;
+extern Il2CppCodeGenString* _stringLiteral1528574038;
+extern Il2CppCodeGenString* _stringLiteral2832535953;
+extern Il2CppCodeGenString* _stringLiteral662711544;
+extern Il2CppCodeGenString* _stringLiteral1690816676;
+extern Il2CppCodeGenString* _stringLiteral696114808;
+extern Il2CppCodeGenString* _stringLiteral1229030361;
+extern Il2CppCodeGenString* _stringLiteral2396971819;
+extern Il2CppCodeGenString* _stringLiteral3458506502;
+extern Il2CppCodeGenString* _stringLiteral1716512973;
+extern Il2CppCodeGenString* _stringLiteral2345811016;
+extern Il2CppCodeGenString* _stringLiteral949530922;
+extern Il2CppCodeGenString* _stringLiteral1177941752;
+extern Il2CppCodeGenString* _stringLiteral2483521376;
+extern Il2CppCodeGenString* _stringLiteral727787524;
+extern Il2CppCodeGenString* _stringLiteral4089825531;
+extern Il2CppCodeGenString* _stringLiteral292744994;
+extern Il2CppCodeGenString* _stringLiteral1723421763;
+extern const uint32_t Oid_GetName_m40695489_MetadataUsageId;
+extern const uint32_t OidCollection__ctor_m3515071701_MetadataUsageId;
+extern Il2CppClass* OidEnumerator_t3674631724_il2cpp_TypeInfo_var;
+extern const uint32_t OidCollection_System_Collections_IEnumerable_GetEnumerator_m2652059920_MetadataUsageId;
+extern const uint32_t OidCollection_get_Item_m1091387424_MetadataUsageId;
+extern const uint32_t OidEnumerator_System_Collections_IEnumerator_get_Current_m2449534361_MetadataUsageId;
+extern Il2CppClass* RSACryptoServiceProvider_t4229286967_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSAManaged_t3034748748_il2cpp_TypeInfo_var;
+extern Il2CppClass* RSA_t3719518354_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSACryptoServiceProvider_t2915171657_il2cpp_TypeInfo_var;
+extern Il2CppClass* DSA_t903174880_il2cpp_TypeInfo_var;
+extern const uint32_t PublicKey__ctor_m613031465_MetadataUsageId;
+extern Il2CppClass* PublicKey_t870392_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral186901249;
+extern Il2CppCodeGenString* _stringLiteral499964095;
+extern const uint32_t PublicKey_get_Key_m126090744_MetadataUsageId;
+extern const uint32_t PublicKey_GetUnsignedBigInteger_m913837477_MetadataUsageId;
+extern Il2CppClass* DSAParameters_t1872138834_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral117466059;
+extern Il2CppCodeGenString* _stringLiteral2958405900;
+extern Il2CppCodeGenString* _stringLiteral3365355999;
+extern Il2CppCodeGenString* _stringLiteral2776537270;
+extern const uint32_t PublicKey_DecodeDSA_m1169363495_MetadataUsageId;
+extern Il2CppClass* RSAParameters_t1462703416_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3425974119;
+extern Il2CppCodeGenString* _stringLiteral2593317087;
+extern Il2CppCodeGenString* _stringLiteral3167016714;
+extern const uint32_t PublicKey_DecodeRSA_m1627823702_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral319192461;
+extern const uint32_t X500DistinguishedName__ctor_m459426370_MetadataUsageId;
+extern Il2CppClass* X501_t349661535_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1232676424;
+extern const uint32_t X500DistinguishedName_Decode_m3070515374_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral811305495;
+extern const uint32_t X500DistinguishedName_GetSeparator_m2215165979_MetadataUsageId;
+extern const uint32_t X500DistinguishedName_DecodeRawData_m3640767187_MetadataUsageId;
+extern const uint32_t X500DistinguishedName_Canonize_m2814323919_MetadataUsageId;
+extern const uint32_t X500DistinguishedName_AreEqual_m2245968769_MetadataUsageId;
+extern const uint32_t X509BasicConstraintsExtension__ctor_m4017912156_MetadataUsageId;
+extern const uint32_t X509BasicConstraintsExtension__ctor_m3320418592_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1475891050;
+extern const uint32_t X509BasicConstraintsExtension__ctor_m3748651446_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1874080883;
+extern const uint32_t X509BasicConstraintsExtension_get_CertificateAuthority_m2220022817_MetadataUsageId;
+extern const uint32_t X509BasicConstraintsExtension_get_HasPathLengthConstraint_m3788532759_MetadataUsageId;
+extern const uint32_t X509BasicConstraintsExtension_get_PathLengthConstraint_m3004531343_MetadataUsageId;
+extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3915869001;
+extern const uint32_t X509BasicConstraintsExtension_CopyFrom_m1321548708_MetadataUsageId;
+extern const uint32_t X509BasicConstraintsExtension_Decode_m2821936487_MetadataUsageId;
+extern const uint32_t X509BasicConstraintsExtension_Encode_m3505127076_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral4000354433;
+extern Il2CppCodeGenString* _stringLiteral755085301;
+extern Il2CppCodeGenString* _stringLiteral3560391898;
+extern Il2CppCodeGenString* _stringLiteral1630329514;
+extern Il2CppCodeGenString* _stringLiteral1656762157;
+extern Il2CppCodeGenString* _stringLiteral1414246128;
+extern const uint32_t X509BasicConstraintsExtension_ToString_m3781281400_MetadataUsageId;
+extern const uint32_t X509Certificate2__ctor_m4067762773_MetadataUsageId;
+extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305138____U24U24fieldU2D3_1_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305138____U24U24fieldU2D4_2_FieldInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1066223945;
+extern const uint32_t X509Certificate2__cctor_m3470694777_MetadataUsageId;
+extern Il2CppClass* X509ExtensionCollection_t650873211_il2cpp_TypeInfo_var;
+extern const uint32_t X509Certificate2_get_Extensions_m3374377562_MetadataUsageId;
+extern Il2CppClass* X500DistinguishedName_t452415348_il2cpp_TypeInfo_var;
+extern const uint32_t X509Certificate2_get_IssuerName_m2295833821_MetadataUsageId;
+extern const uint32_t X509Certificate2_get_NotAfter_m3430171627_MetadataUsageId;
+extern const uint32_t X509Certificate2_get_NotBefore_m2972055762_MetadataUsageId;
+extern const uint32_t X509Certificate2_get_PrivateKey_m2896208208_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2035996860;
+extern const uint32_t X509Certificate2_get_PublicKey_m2119837179_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3231012752;
+extern const uint32_t X509Certificate2_get_SerialNumber_m1521011849_MetadataUsageId;
+extern const uint32_t X509Certificate2_get_SignatureAlgorithm_m3069898012_MetadataUsageId;
+extern const uint32_t X509Certificate2_get_SubjectName_m2958094870_MetadataUsageId;
+extern const uint32_t X509Certificate2_get_Version_m1927399907_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2239808403;
+extern const uint32_t X509Certificate2_GetNameInfo_m402390219_MetadataUsageId;
+extern const uint32_t X509Certificate2_GetValueAsString_m1286925493_MetadataUsageId;
+extern Il2CppClass* PKCS12_t1362584795_il2cpp_TypeInfo_var;
+extern const uint32_t X509Certificate2_ImportPkcs12_m3993877002_MetadataUsageId;
+extern Il2CppClass* X509Certificate_t324051958_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral4189882345;
+extern const uint32_t X509Certificate2_Import_m3813388542_MetadataUsageId;
+extern const uint32_t X509Certificate2_Reset_m414840175_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral4149455680;
+extern const uint32_t X509Certificate2_ToString_m3269655217_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral729509515;
+extern Il2CppCodeGenString* _stringLiteral2773094835;
+extern Il2CppCodeGenString* _stringLiteral3833665838;
+extern Il2CppCodeGenString* _stringLiteral812091658;
+extern Il2CppCodeGenString* _stringLiteral1650683811;
+extern Il2CppCodeGenString* _stringLiteral3942979884;
+extern Il2CppCodeGenString* _stringLiteral3545504282;
+extern Il2CppCodeGenString* _stringLiteral705184417;
+extern Il2CppCodeGenString* _stringLiteral3591277135;
+extern Il2CppCodeGenString* _stringLiteral1690816078;
+extern Il2CppCodeGenString* _stringLiteral472704935;
+extern Il2CppCodeGenString* _stringLiteral2955024046;
+extern const uint32_t X509Certificate2_ToString_m4160733282_MetadataUsageId;
+extern const uint32_t X509Certificate2_AppendBuffer_m3517242299_MetadataUsageId;
+extern Il2CppClass* CryptoConfig_t896479599_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Chain_t777637347_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral1509838121;
+extern const uint32_t X509Certificate2_Verify_m1574874641_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral769671005;
+extern Il2CppCodeGenString* _stringLiteral186536484;
+extern const uint32_t X509Certificate2Collection_get_Item_m2173549554_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral99291529;
+extern const uint32_t X509Certificate2Collection_Add_m3920471111_MetadataUsageId;
+extern const uint32_t X509Certificate2Collection_AddRange_m1503879780_MetadataUsageId;
+extern const uint32_t X509Certificate2Collection_Contains_m109907687_MetadataUsageId;
+extern Il2CppClass* CryptographicUnexpectedOperationException_t4184064416_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509FindType_t3221716179_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509Certificate2Collection_t1108969367_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral600739390;
+extern Il2CppCodeGenString* _stringLiteral4107323250;
+extern Il2CppCodeGenString* _stringLiteral3311014053;
+extern Il2CppCodeGenString* _stringLiteral1966714381;
+extern Il2CppCodeGenString* _stringLiteral1695116836;
+extern Il2CppCodeGenString* _stringLiteral1315792745;
+extern Il2CppCodeGenString* _stringLiteral485104480;
+extern const uint32_t X509Certificate2Collection_Find_m1629908635_MetadataUsageId;
+extern Il2CppClass* X509Certificate2Enumerator_t2356134957_il2cpp_TypeInfo_var;
+extern const uint32_t X509Certificate2Collection_GetEnumerator_m3796176997_MetadataUsageId;
+extern Il2CppClass* IEnumerable_t2911409499_il2cpp_TypeInfo_var;
+extern const uint32_t X509Certificate2Enumerator__ctor_m112131832_MetadataUsageId;
+extern const uint32_t X509Certificate2Enumerator_System_Collections_IEnumerator_get_Current_m3551585134_MetadataUsageId;
+extern const uint32_t X509Certificate2Enumerator_System_Collections_IEnumerator_MoveNext_m3133372279_MetadataUsageId;
+extern const uint32_t X509Certificate2Enumerator_System_Collections_IEnumerator_Reset_m2917062832_MetadataUsageId;
+extern const uint32_t X509Certificate2Enumerator_get_Current_m2016493949_MetadataUsageId;
+extern const uint32_t X509Certificate2Enumerator_MoveNext_m1861665712_MetadataUsageId;
+extern const uint32_t X509Certificate2Enumerator_Reset_m3661628343_MetadataUsageId;
+extern Il2CppClass* X509Certificate_t283079845_il2cpp_TypeInfo_var;
+extern const uint32_t X509CertificateCollection_get_Item_m902045290_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1803325615;
+extern const uint32_t X509CertificateCollection_AddRange_m3378127328_MetadataUsageId;
+extern Il2CppClass* X509CertificateEnumerator_t1208230922_il2cpp_TypeInfo_var;
+extern const uint32_t X509CertificateCollection_GetEnumerator_m1618085929_MetadataUsageId;
+extern const uint32_t X509CertificateEnumerator__ctor_m3485132152_MetadataUsageId;
+extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_get_Current_m1432321028_MetadataUsageId;
+extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_MoveNext_m3708362145_MetadataUsageId;
+extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_Reset_m327358896_MetadataUsageId;
+extern const uint32_t X509CertificateEnumerator_get_Current_m3202551321_MetadataUsageId;
+extern const uint32_t X509CertificateEnumerator_MoveNext_m1691973768_MetadataUsageId;
+extern const uint32_t X509CertificateEnumerator_Reset_m2907979973_MetadataUsageId;
+extern Il2CppClass* X509ChainElementCollection_t2081831987_il2cpp_TypeInfo_var;
+extern Il2CppClass* X509ChainPolicy_t3452126517_il2cpp_TypeInfo_var;
+extern const uint32_t X509Chain__ctor_m3420342903_MetadataUsageId;
+extern Il2CppClass* X509ChainStatusU5BU5D_t830390908_il2cpp_TypeInfo_var;
+extern const uint32_t X509Chain__cctor_m826131835_MetadataUsageId;
+extern const Il2CppType* X509ChainStatus_t4278378721_0_0_0_var;
+extern Il2CppClass* X509ChainStatus_t4278378721_il2cpp_TypeInfo_var;
+extern const uint32_t X509Chain_Build_m1140429528_MetadataUsageId;
+extern Il2CppClass* X509Store_t1617430119_il2cpp_TypeInfo_var;
+extern const uint32_t X509Chain_get_Roots_m4104324715_MetadataUsageId;
+extern const uint32_t X509Chain_get_CertificateAuthorities_m3325663784_MetadataUsageId;
+extern const uint32_t X509Chain_get_CertificateCollection_m324631835_MetadataUsageId;
+extern const uint32_t X509Chain_SelectBestFromCollection_m2712190957_MetadataUsageId;
+extern const uint32_t X509Chain_IsChainComplete_m3393657586_MetadataUsageId;
+extern const uint32_t X509Chain_IsSelfIssued_m2009755967_MetadataUsageId;
+extern const uint32_t X509Chain_Process_m2508784250_MetadataUsageId;
+extern const uint32_t X509Chain_PrepareForNextCertificate_m1967807089_MetadataUsageId;
+extern const uint32_t X509Chain_ProcessCertificateExtensions_m4191338420_MetadataUsageId;
+extern const uint32_t X509Chain_GetSubjectKeyIdentifier_m4232927227_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral406065078;
+extern const uint32_t X509Chain_GetAuthorityKeyIdentifier_m2607407678_MetadataUsageId;
+extern const uint32_t X509Chain_GetAuthorityKeyIdentifier_m3712667872_MetadataUsageId;
+extern Il2CppClass* AuthorityKeyIdentifierExtension_t795428182_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral104530040;
+extern const uint32_t X509Chain_GetAuthorityKeyIdentifier_m4246284366_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3663290860;
+extern const uint32_t X509Chain_CheckRevocationOnChain_m2441901351_MetadataUsageId;
+extern const uint32_t X509Chain_CheckRevocation_m2230738771_MetadataUsageId;
+extern Il2CppClass* X509Crl_t1699034837_il2cpp_TypeInfo_var;
+extern const uint32_t X509Chain_FindCrl_m544748869_MetadataUsageId;
+extern Il2CppClass* X509Extension_t1439760128_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3134948436;
+extern const uint32_t X509Chain_ProcessCrlExtensions_m1682068042_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3134948437;
+extern const uint32_t X509Chain_ProcessCrlEntryExtensions_m919945006_MetadataUsageId;
+extern const uint32_t X509ChainElement__ctor_m3644590622_MetadataUsageId;
+extern const uint32_t X509ChainElement_UncompressFlags_m1688043618_MetadataUsageId;
+extern const uint32_t X509ChainElementCollection__ctor_m2389346408_MetadataUsageId;
+extern Il2CppClass* X509ChainElementEnumerator_t3304975821_il2cpp_TypeInfo_var;
+extern const uint32_t X509ChainElementCollection_System_Collections_IEnumerable_GetEnumerator_m2559704689_MetadataUsageId;
+extern Il2CppClass* X509ChainElement_t528874471_il2cpp_TypeInfo_var;
+extern const uint32_t X509ChainElementCollection_get_Item_m1494130666_MetadataUsageId;
+extern const uint32_t X509ChainElementCollection_GetEnumerator_m3367250365_MetadataUsageId;
+extern const uint32_t X509ChainElementCollection_Add_m1511936349_MetadataUsageId;
+extern const uint32_t X509ChainElementCollection_Contains_m3599995067_MetadataUsageId;
+extern const uint32_t X509ChainElementEnumerator__ctor_m2608504725_MetadataUsageId;
+extern const uint32_t X509ChainElementEnumerator_System_Collections_IEnumerator_get_Current_m40744670_MetadataUsageId;
+extern const uint32_t X509ChainElementEnumerator_get_Current_m2232618221_MetadataUsageId;
+extern const uint32_t X509ChainElementEnumerator_MoveNext_m3157555152_MetadataUsageId;
+extern const uint32_t X509ChainElementEnumerator_Reset_m3832280427_MetadataUsageId;
+extern Il2CppClass* OidCollection_t3790243618_il2cpp_TypeInfo_var;
+extern Il2CppClass* TimeSpan_t3430258949_il2cpp_TypeInfo_var;
+extern const uint32_t X509ChainPolicy_Reset_m430244129_MetadataUsageId;
+extern Il2CppClass* X509ChainStatusFlags_t480677120_il2cpp_TypeInfo_var;
+extern const uint32_t X509ChainStatus_GetInformation_m2968620882_MetadataUsageId;
+extern const uint32_t X509EnhancedKeyUsageExtension__ctor_m4050164330_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2569869112;
+extern const uint32_t X509EnhancedKeyUsageExtension_CopyFrom_m1426370958_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2507192058;
+extern const uint32_t X509EnhancedKeyUsageExtension_Decode_m3866320499_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1888690766;
+extern Il2CppCodeGenString* _stringLiteral1280016077;
+extern Il2CppCodeGenString* _stringLiteral3019305696;
+extern Il2CppCodeGenString* _stringLiteral372029317;
+extern const uint32_t X509EnhancedKeyUsageExtension_ToString_m1748333326_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3967779605;
+extern const uint32_t X509Extension_CopyFrom_m2644634650_MetadataUsageId;
+extern const uint32_t X509Extension_FormatUnkownData_m4057132051_MetadataUsageId;
+extern const uint32_t X509ExtensionCollection__ctor_m1324282194_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1082372484;
+extern const uint32_t X509ExtensionCollection_System_Collections_ICollection_CopyTo_m3421329346_MetadataUsageId;
+extern Il2CppClass* X509ExtensionEnumerator_t3763443773_il2cpp_TypeInfo_var;
+extern const uint32_t X509ExtensionCollection_System_Collections_IEnumerable_GetEnumerator_m1813422183_MetadataUsageId;
+extern const uint32_t X509ExtensionCollection_get_Item_m2392275793_MetadataUsageId;
+extern const uint32_t X509ExtensionCollection_GetEnumerator_m3421097717_MetadataUsageId;
+extern const uint32_t X509ExtensionEnumerator_System_Collections_IEnumerator_get_Current_m1097473930_MetadataUsageId;
+extern const uint32_t X509ExtensionEnumerator_get_Current_m3926549773_MetadataUsageId;
+extern const uint32_t X509ExtensionEnumerator_MoveNext_m1715898942_MetadataUsageId;
+extern const uint32_t X509ExtensionEnumerator_Reset_m3200687545_MetadataUsageId;
+extern const uint32_t X509KeyUsageExtension__ctor_m3849398360_MetadataUsageId;
+extern const uint32_t X509KeyUsageExtension__ctor_m1528821284_MetadataUsageId;
+extern const uint32_t X509KeyUsageExtension__ctor_m2095655547_MetadataUsageId;
+extern const uint32_t X509KeyUsageExtension_get_KeyUsages_m4014806163_MetadataUsageId;
+extern const uint32_t X509KeyUsageExtension_CopyFrom_m931530012_MetadataUsageId;
+extern const uint32_t X509KeyUsageExtension_Decode_m3292847033_MetadataUsageId;
+extern const uint32_t X509KeyUsageExtension_Encode_m3100824560_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2313173972;
+extern Il2CppCodeGenString* _stringLiteral2059189150;
+extern Il2CppCodeGenString* _stringLiteral2032026915;
+extern Il2CppCodeGenString* _stringLiteral2765906018;
+extern Il2CppCodeGenString* _stringLiteral101761045;
+extern Il2CppCodeGenString* _stringLiteral2700970822;
+extern Il2CppCodeGenString* _stringLiteral2274341096;
+extern Il2CppCodeGenString* _stringLiteral1711665224;
+extern Il2CppCodeGenString* _stringLiteral805268368;
+extern Il2CppCodeGenString* _stringLiteral455075110;
+extern const uint32_t X509KeyUsageExtension_ToString_m1992050580_MetadataUsageId;
+extern Il2CppClass* StoreName_t2183514610_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2808514808;
+extern Il2CppCodeGenString* _stringLiteral1054971240;
+extern const uint32_t X509Store__ctor_m1573680316_MetadataUsageId;
+extern const uint32_t X509Store_get_Certificates_m329642048_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1997262885;
+extern Il2CppCodeGenString* _stringLiteral3430669166;
+extern Il2CppCodeGenString* _stringLiteral3060525540;
+extern Il2CppCodeGenString* _stringLiteral1990213415;
+extern const uint32_t X509Store_Open_m3416485546_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m2959112706_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m2412362046_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1896319514;
+extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m3950351260_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m1109455121_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral3249564939;
+extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m3728672874_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension_get_SubjectKeyIdentifier_m1477640894_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension_CopyFrom_m136762226_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension_FromHex_m3272045013_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension_Decode_m4102819207_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension_Encode_m4237278042_MetadataUsageId;
+extern const uint32_t X509SubjectKeyIdentifierExtension_ToString_m4073475390_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2999892720;
+extern const uint32_t BaseMachine_Scan_m122450399_MetadataUsageId;
+extern const uint32_t Capture_get_Value_m147072698_MetadataUsageId;
+extern Il2CppClass* CaptureU5BU5D_t3470489975_il2cpp_TypeInfo_var;
+extern const uint32_t CaptureCollection__ctor_m629636494_MetadataUsageId;
+extern const Il2CppType* Category_t1984577050_0_0_0_var;
+extern Il2CppClass* Enum_t2459695545_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral3110053210;
+extern Il2CppCodeGenString* _stringLiteral3505024847;
+extern const uint32_t CategoryUtils_CategoryFromName_m226887453_MetadataUsageId;
+extern const uint32_t CategoryUtils_IsCategory_m1003669132_MetadataUsageId;
+extern const uint32_t CategoryUtils_IsCategory_m932215390_MetadataUsageId;
+extern Il2CppClass* MRUList_t33178162_il2cpp_TypeInfo_var;
+extern const uint32_t FactoryCache__ctor_m254400436_MetadataUsageId;
+extern Il2CppClass* Key_t655155419_il2cpp_TypeInfo_var;
+extern const uint32_t FactoryCache_Add_m2602974721_MetadataUsageId;
+extern const uint32_t FactoryCache_Cleanup_m4130035987_MetadataUsageId;
+extern Il2CppClass* IMachineFactory_t633643314_il2cpp_TypeInfo_var;
+extern const uint32_t FactoryCache_Lookup_m1681894361_MetadataUsageId;
+extern const uint32_t Key_Equals_m2692934312_MetadataUsageId;
+extern Il2CppClass* RegexOptions_t2418259727_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral408020951;
+extern Il2CppCodeGenString* _stringLiteral4222904668;
+extern Il2CppCodeGenString* _stringLiteral3183958580;
+extern const uint32_t Key_ToString_m1129871742_MetadataUsageId;
+extern Il2CppClass* CaptureCollection_t1671345504_il2cpp_TypeInfo_var;
+extern const uint32_t Group__ctor_m1187945851_MetadataUsageId;
+extern const uint32_t Group__ctor_m2264492664_MetadataUsageId;
+extern Il2CppClass* Group_t3761430853_il2cpp_TypeInfo_var;
+extern const uint32_t Group__cctor_m3460156167_MetadataUsageId;
+extern Il2CppClass* GroupU5BU5D_t2272681992_il2cpp_TypeInfo_var;
+extern const uint32_t GroupCollection__ctor_m3255346384_MetadataUsageId;
+extern Il2CppClass* Match_t3164245899_il2cpp_TypeInfo_var;
+extern const uint32_t GroupCollection_get_Item_m3627349778_MetadataUsageId;
+extern Il2CppClass* IntStack_t273560425_il2cpp_TypeInfo_var;
+extern Il2CppClass* Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var;
+extern const uint32_t Interpreter__ctor_m1139507339_MetadataUsageId;
+extern const uint32_t Interpreter_Scan_m4259907439_MetadataUsageId;
+extern Il2CppClass* QuickSearch_t1036078825_il2cpp_TypeInfo_var;
+extern Il2CppClass* RepeatContext_t1827616978_il2cpp_TypeInfo_var;
+extern const uint32_t Interpreter_Eval_m1448443064_MetadataUsageId;
+extern const uint32_t Interpreter_EvalChar_m1135512271_MetadataUsageId;
+extern const uint32_t Interpreter_GetString_m2427752964_MetadataUsageId;
+extern Il2CppClass* MarkU5BU5D_t3801731412_il2cpp_TypeInfo_var;
+extern const uint32_t Interpreter_ResetGroups_m2279870744_MetadataUsageId;
+extern const uint32_t Interpreter_CreateMark_m603764609_MetadataUsageId;
+extern Il2CppClass* Capture_t4157900610_il2cpp_TypeInfo_var;
+extern const uint32_t Interpreter_PopulateGroup_m4098755954_MetadataUsageId;
+extern const uint32_t Interpreter_GenerateMatch_m4061336978_MetadataUsageId;
+extern const uint32_t IntStack_t273560425_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
+extern const uint32_t IntStack_t273560425_com_FromNativeMethodDefinition_MetadataUsageId;
+extern const uint32_t IntStack_Push_m1259764820_MetadataUsageId;
+extern Il2CppClass* SystemException_t3877406272_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral337649789;
+extern const uint32_t IntStack_set_Count_m2324758988_MetadataUsageId;
+extern Il2CppClass* Interpreter_t3731288230_il2cpp_TypeInfo_var;
+extern const uint32_t InterpreterFactory_NewInstance_m1241029724_MetadataUsageId;
+extern Il2CppClass* Interval_t2354235237_il2cpp_TypeInfo_var;
+extern const uint32_t Interval_CompareTo_m2909556284_MetadataUsageId;
+extern const uint32_t IntervalCollection__ctor_m761408702_MetadataUsageId;
+extern const uint32_t IntervalCollection_get_Item_m1667788970_MetadataUsageId;
+extern const uint32_t IntervalCollection_Add_m474325761_MetadataUsageId;
+extern const uint32_t IntervalCollection_Normalize_m538796191_MetadataUsageId;
+extern Il2CppClass* IntervalCollection_t4130821325_il2cpp_TypeInfo_var;
+extern const uint32_t IntervalCollection_GetMetaCollection_m3859513527_MetadataUsageId;
+extern const uint32_t IntervalCollection_CopyTo_m3977468795_MetadataUsageId;
+extern Il2CppClass* Enumerator_t1928086041_il2cpp_TypeInfo_var;
+extern const uint32_t IntervalCollection_GetEnumerator_m1653952170_MetadataUsageId;
+struct Interval_t2354235237_marshaled_pinvoke;
+struct Interval_t2354235237;;
+struct Interval_t2354235237_marshaled_pinvoke;;
+extern const uint32_t CostDelegate_BeginInvoke_m1628968398_MetadataUsageId;
 
-#include "class-internals.h"
-#include "codegen/il2cpp-codegen.h"
-#include "mscorlib_System_Array3829468939.h"
-#include "System_U3CModuleU3E3783534214.h"
-#include "System_U3CModuleU3E3783534214MethodDeclarations.h"
-#include "System_U3CPrivateImplementationDetailsU3E1486305137.h"
-#include "System_U3CPrivateImplementationDetailsU3E1486305137MethodDeclarations.h"
-#include "System_U3CPrivateImplementationDetailsU3E_U24Array3672778802.h"
-#include "System_U3CPrivateImplementationDetailsU3E_U24Array3672778802MethodDeclarations.h"
-#include "System_U3CPrivateImplementationDetailsU3E_U24ArrayT116038554.h"
-#include "System_U3CPrivateImplementationDetailsU3E_U24ArrayT116038554MethodDeclarations.h"
-#include "System_Locale4255929014.h"
-#include "System_Locale4255929014MethodDeclarations.h"
-#include "mscorlib_System_String2029220233.h"
-#include "mscorlib_ArrayTypes.h"
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_String2029220233MethodDeclarations.h"
-#include "System_System_Collections_Specialized_HybridDiction290043810.h"
-#include "System_System_Collections_Specialized_HybridDiction290043810MethodDeclarations.h"
-#include "mscorlib_System_Void1841601450.h"
-#include "mscorlib_System_Int322071877448.h"
-#include "mscorlib_System_Boolean3825574718.h"
-#include "mscorlib_System_Object2689449295MethodDeclarations.h"
-#include "mscorlib_System_Collections_CaseInsensitiveComparer157661140MethodDeclarations.h"
-#include "mscorlib_System_Collections_CaseInsensitiveHashCod2307530285MethodDeclarations.h"
-#include "System_System_Collections_Specialized_ListDictiona3458713452MethodDeclarations.h"
-#include "mscorlib_System_Collections_Hashtable909839986MethodDeclarations.h"
-#include "mscorlib_System_Collections_CaseInsensitiveComparer157661140.h"
-#include "mscorlib_System_Collections_CaseInsensitiveHashCod2307530285.h"
-#include "System_System_Collections_Specialized_ListDictiona3458713452.h"
-#include "mscorlib_System_Collections_Hashtable909839986.h"
-#include "System_System_Collections_Specialized_ListDictiona2725637098.h"
-#include "System_System_Collections_Specialized_ListDictiona1923170152MethodDeclarations.h"
-#include "System_System_Collections_Specialized_ListDictiona1923170152.h"
-#include "mscorlib_System_ArgumentNullException628810857MethodDeclarations.h"
-#include "mscorlib_System_ArgumentNullException628810857.h"
-#include "System_System_Collections_Specialized_ListDictiona2725637098MethodDeclarations.h"
-#include "mscorlib_System_ArgumentOutOfRangeException279959794MethodDeclarations.h"
-#include "mscorlib_System_Array3829468939MethodDeclarations.h"
-#include "mscorlib_System_IndexOutOfRangeException3527622107MethodDeclarations.h"
-#include "mscorlib_System_ArgumentException3259014390MethodDeclarations.h"
-#include "mscorlib_System_Collections_DictionaryEntry3048875398.h"
-#include "mscorlib_System_ArgumentOutOfRangeException279959794.h"
-#include "mscorlib_System_IndexOutOfRangeException3527622107.h"
-#include "mscorlib_System_ArgumentException3259014390.h"
-#include "System_System_Collections_Specialized_ListDictionar528898270MethodDeclarations.h"
-#include "System_System_Collections_Specialized_ListDictionar528898270.h"
-#include "System_System_Collections_Specialized_ListDictiona2037848305MethodDeclarations.h"
-#include "System_System_Collections_Specialized_ListDictiona2037848305.h"
-#include "mscorlib_System_InvalidOperationException721527559MethodDeclarations.h"
-#include "mscorlib_System_InvalidOperationException721527559.h"
-#include "mscorlib_System_Collections_DictionaryEntry3048875398MethodDeclarations.h"
-#include "System_System_Collections_Specialized_NameObjectCo2034248631.h"
-#include "System_System_Collections_Specialized_NameObjectCo2034248631MethodDeclarations.h"
-#include "mscorlib_System_Runtime_Serialization_Serialization228987430.h"
-#include "mscorlib_System_Runtime_Serialization_StreamingCon1417235061.h"
-#include "System_System_Collections_Specialized_NameObjectCol633582367.h"
-#include "mscorlib_System_Collections_ArrayList4252133567MethodDeclarations.h"
-#include "mscorlib_System_Collections_ArrayList4252133567.h"
-#include "System_System_Collections_Specialized_NameObjectCo3244489099.h"
-#include "System_System_Collections_Specialized_NameObjectCol633582367MethodDeclarations.h"
-#include "System_System_Collections_Specialized_NameObjectCo1718269396MethodDeclarations.h"
-#include "System_System_Collections_Specialized_NameObjectCo1718269396.h"
-#include "mscorlib_System_Type1303803226MethodDeclarations.h"
-#include "mscorlib_System_Runtime_Serialization_Serialization228987430MethodDeclarations.h"
-#include "mscorlib_System_Type1303803226.h"
-#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
-#include "mscorlib_System_Runtime_Serialization_Serialization753258759MethodDeclarations.h"
-#include "mscorlib_System_Runtime_Serialization_Serialization753258759.h"
-#include "mscorlib_System_NotSupportedException1793819818MethodDeclarations.h"
-#include "System_System_Collections_Specialized_NameObjectCo3244489099MethodDeclarations.h"
-#include "mscorlib_System_NotSupportedException1793819818.h"
-#include "System_System_Collections_Specialized_NameValueCol3047564564.h"
-#include "System_System_Collections_Specialized_NameValueCol3047564564MethodDeclarations.h"
-#include "mscorlib_System_Text_StringBuilder1221177846MethodDeclarations.h"
-#include "mscorlib_System_Char3454481338.h"
-#include "mscorlib_System_Text_StringBuilder1221177846.h"
-#include "System_System_ComponentModel_EditorBrowsableAttrib1050682502.h"
-#include "System_System_ComponentModel_EditorBrowsableAttrib1050682502MethodDeclarations.h"
-#include "System_System_ComponentModel_EditorBrowsableState373498655.h"
-#include "mscorlib_System_Attribute542643598MethodDeclarations.h"
-#include "mscorlib_System_Enum2459695545MethodDeclarations.h"
-#include "mscorlib_System_Enum2459695545.h"
-#include "System_System_ComponentModel_EditorBrowsableState373498655MethodDeclarations.h"
-#include "System_System_ComponentModel_TypeConverter745995970.h"
-#include "System_System_ComponentModel_TypeConverter745995970MethodDeclarations.h"
-#include "System_System_ComponentModel_TypeConverterAttribute252469870.h"
-#include "System_System_ComponentModel_TypeConverterAttribute252469870MethodDeclarations.h"
-#include "System_System_DefaultUriParser1591960796.h"
-#include "System_System_DefaultUriParser1591960796MethodDeclarations.h"
-#include "System_System_UriParser1012511323MethodDeclarations.h"
-#include "System_System_UriParser1012511323.h"
-#include "System_System_GenericUriParser2599285286.h"
-#include "System_System_GenericUriParser2599285286MethodDeclarations.h"
-#include "System_System_MonoTODOAttribute3487514019.h"
-#include "System_System_MonoTODOAttribute3487514019MethodDeclarations.h"
-#include "System_System_Net_DefaultCertificatePolicy2545332216.h"
-#include "System_System_Net_DefaultCertificatePolicy2545332216MethodDeclarations.h"
-#include "System_System_Net_ServicePoint2765344313.h"
-#include "mscorlib_System_Security_Cryptography_X509Certifica283079845.h"
-#include "System_System_Net_WebRequest1365124353.h"
-#include "System_System_Net_ServicePointManager745663000MethodDeclarations.h"
-#include "System_System_Net_Security_RemoteCertificateValida2756269959.h"
-#include "System_System_Net_FileWebRequest1571840111.h"
-#include "System_System_Net_FileWebRequest1571840111MethodDeclarations.h"
-#include "System_System_Uri19570940.h"
-#include "System_System_Net_WebRequest1365124353MethodDeclarations.h"
-#include "System_System_Net_WebHeaderCollection3028142837MethodDeclarations.h"
-#include "mscorlib_System_IO_FileAccess4282042064.h"
-#include "System_System_Net_WebHeaderCollection3028142837.h"
-#include "mscorlib_System_Int64909078037.h"
-#include "System_System_Net_FileWebRequestCreator1109072211.h"
-#include "System_System_Net_FileWebRequestCreator1109072211MethodDeclarations.h"
-#include "System_System_Net_FtpRequestCreator3711983251.h"
-#include "System_System_Net_FtpRequestCreator3711983251MethodDeclarations.h"
-#include "System_System_Net_FtpWebRequest3120721823MethodDeclarations.h"
-#include "System_System_Net_FtpWebRequest3120721823.h"
-#include "System_System_Net_Security_RemoteCertificateValida2756269959MethodDeclarations.h"
-#include "System_System_Net_GlobalProxySelection2251180943MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificate777637347.h"
-#include "System_System_Net_Security_SslPolicyErrors1928581431.h"
-#include "mscorlib_System_IntPtr2504060609.h"
-#include "System_System_Net_GlobalProxySelection2251180943.h"
-#include "System_System_Net_HttpRequestCreator1416559589.h"
-#include "System_System_Net_HttpRequestCreator1416559589MethodDeclarations.h"
-#include "System_System_Net_HttpWebRequest1951404513MethodDeclarations.h"
-#include "System_System_Net_HttpWebRequest1951404513.h"
-#include "System_System_Net_HttpVersion1276659706.h"
-#include "System_System_Net_HttpVersion1276659706MethodDeclarations.h"
-#include "mscorlib_System_Version1755874712MethodDeclarations.h"
-#include "mscorlib_System_Version1755874712.h"
-#include "System_System_Security_Cryptography_X509Certificat1197680765.h"
-#include "mscorlib_System_Threading_Monitor3228523394MethodDeclarations.h"
-#include "System_System_Net_IPAddress1399971723.h"
-#include "System_System_Net_IPAddress1399971723MethodDeclarations.h"
-#include "System_System_Net_Sockets_AddressFamily303362630.h"
-#include "mscorlib_System_UInt16986882611.h"
-#include "mscorlib_System_Int164041245914.h"
-#include "mscorlib_System_BitConverter3195628829.h"
-#include "mscorlib_System_BitConverter3195628829MethodDeclarations.h"
-#include "mscorlib_System_FormatException2948921286MethodDeclarations.h"
-#include "mscorlib_System_FormatException2948921286.h"
-#include "System_System_Uri19570940MethodDeclarations.h"
-#include "mscorlib_System_Int64909078037MethodDeclarations.h"
-#include "mscorlib_System_Exception1927440687.h"
-#include "mscorlib_System_Globalization_NumberStyles3408984435.h"
-#include "System_System_Net_IPv6Address2596635879MethodDeclarations.h"
-#include "System_System_Net_IPv6Address2596635879.h"
-#include "mscorlib_System_Exception1927440687MethodDeclarations.h"
-#include "mscorlib_System_Globalization_CultureInfo3500843524MethodDeclarations.h"
-#include "mscorlib_System_Int322071877448MethodDeclarations.h"
-#include "mscorlib_System_Globalization_CultureInfo3500843524.h"
-#include "System_System_Net_Security_AuthenticationLevel2424130044.h"
-#include "System_System_Net_Security_AuthenticationLevel2424130044MethodDeclarations.h"
-#include "mscorlib_System_AsyncCallback163412349.h"
-#include "System_System_Net_Security_SslPolicyErrors1928581431MethodDeclarations.h"
-#include "System_System_Net_SecurityProtocolType3099771628.h"
-#include "System_System_Net_SecurityProtocolType3099771628MethodDeclarations.h"
-#include "System_System_Net_ServicePoint2765344313MethodDeclarations.h"
-#include "mscorlib_System_DateTime693205669MethodDeclarations.h"
-#include "mscorlib_System_DateTime693205669.h"
-#include "mscorlib_System_Double4078015681.h"
-#include "System_System_Net_ServicePointManager745663000.h"
-#include "System_System_Net_ServicePointManager_SPKey1552752485MethodDeclarations.h"
-#include "System_System_Net_ServicePointManager_SPKey1552752485.h"
-#include "mscorlib_System_Collections_SortedList3004938869MethodDeclarations.h"
-#include "mscorlib_System_Collections_SortedList3004938869.h"
-#include "System_System_Net_Sockets_AddressFamily303362630MethodDeclarations.h"
-#include "mscorlib_System_Runtime_CompilerServices_RuntimeHel266230107MethodDeclarations.h"
-#include "mscorlib_System_StringComparer1574862926MethodDeclarations.h"
-#include "mscorlib_System_Collections_Generic_Dictionary_2_g1445386684MethodDeclarations.h"
-#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
-#include "mscorlib_System_StringComparer1574862926.h"
-#include "mscorlib_System_Collections_Generic_Dictionary_2_g1445386684.h"
-#include "System_System_Net_WebProxy1169192840.h"
-#include "System_System_Net_WebProxy1169192840MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Regex1803876613MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Regex1803876613.h"
-#include "System_System_Text_RegularExpressions_RegexOptions2418259727.h"
-#include "mscorlib_System_MarshalByRefObject1285298191MethodDeclarations.h"
-#include "mscorlib_System_Reflection_Assembly4268412390.h"
-#include "mscorlib_System_Reflection_Assembly4268412390MethodDeclarations.h"
-#include "mscorlib_System_NotImplementedException2785117854MethodDeclarations.h"
-#include "mscorlib_System_NotImplementedException2785117854.h"
-#include "mscorlib_System_Activator1850728717MethodDeclarations.h"
-#include "System_System_Security_Cryptography_AsnDecodeStatu1962003286.h"
-#include "System_System_Security_Cryptography_AsnDecodeStatu1962003286MethodDeclarations.h"
-#include "System_System_Security_Cryptography_AsnEncodedData463456204.h"
-#include "System_System_Security_Cryptography_AsnEncodedData463456204MethodDeclarations.h"
-#include "mscorlib_System_Byte3683104436.h"
-#include "System_System_Security_Cryptography_Oid3221867120MethodDeclarations.h"
-#include "System_System_Security_Cryptography_Oid3221867120.h"
-#include "mscorlib_System_Collections_Generic_Dictionary_2_g3986656710MethodDeclarations.h"
-#include "mscorlib_System_Collections_Generic_Dictionary_2_g3986656710.h"
-#include "mscorlib_System_Byte3683104436MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1562873317MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1562873317.h"
-#include "System_System_Security_Cryptography_X509Certificat2099881051MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2099881051.h"
-#include "System_System_Security_Cryptography_X509Certificat1038124237MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1038124237.h"
-#include "System_System_Security_Cryptography_X509Certificat2508879999MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2508879999.h"
-#include "Mono_Security_Mono_Security_ASN1924533535MethodDeclarations.h"
-#include "mscorlib_System_Text_Encoding663144255MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_Cryptography_CryptoCon4146607874MethodDeclarations.h"
-#include "mscorlib_System_Environment3662374671MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_ASN1924533535.h"
-#include "mscorlib_System_Text_Encoding663144255.h"
-#include "System_System_Security_Cryptography_OidCollection3790243618.h"
-#include "System_System_Security_Cryptography_OidCollection3790243618MethodDeclarations.h"
-#include "System_System_Security_Cryptography_OidEnumerator3674631724MethodDeclarations.h"
-#include "System_System_Security_Cryptography_OidEnumerator3674631724.h"
-#include "System_System_Security_Cryptography_X509Certificat2370524385.h"
-#include "System_System_Security_Cryptography_X509Certificat2370524385MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificates_P870392.h"
-#include "System_System_Security_Cryptography_X509Certificates_P870392MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509Certificate324051957.h"
-#include "mscorlib_System_Security_Cryptography_RSACryptoSer4229286967MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_Cryptography_RSAManage3034748747MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_RSA3719518354MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509Certificate324051957MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_DSACryptoSer2915171657MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_DSA903174880MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_RSACryptoSer4229286967.h"
-#include "Mono_Security_Mono_Security_Cryptography_RSAManage3034748747.h"
-#include "mscorlib_System_Security_Cryptography_RSAParameter1462703416.h"
-#include "mscorlib_System_Security_Cryptography_DSACryptoSer2915171657.h"
-#include "mscorlib_System_Security_Cryptography_DSAParameter1872138834.h"
-#include "mscorlib_System_Security_Cryptography_RSA3719518354.h"
-#include "mscorlib_System_Security_Cryptography_AsymmetricAlg784058677.h"
-#include "mscorlib_System_Security_Cryptography_DSA903174880.h"
-#include "mscorlib_System_Buffer3497320070MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_Cryptographi3349726436MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_Cryptographi3349726436.h"
-#include "System_System_Security_Cryptography_X509Certificat1570828128.h"
-#include "System_System_Security_Cryptography_X509Certificat1570828128MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2183514610.h"
-#include "System_System_Security_Cryptography_X509Certificat2183514610MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificate452415348.h"
-#include "System_System_Security_Cryptography_X509Certificate452415348MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2005802885.h"
-#include "Mono_Security_Mono_Security_X509_X501349661534MethodDeclarations.h"
-#include "mscorlib_System_Char3454481338MethodDeclarations.h"
-#include "mscorlib_System_StringSplitOptions2996162939.h"
-#include "System_System_Security_Cryptography_X509Certificat2005802885MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1320896183MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1320896183.h"
-#include "Mono_Security_Mono_Security_ASN1Convert3301846396MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat4056456767.h"
-#include "System_System_Security_Cryptography_X509Certificat4056456767MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_X509Certifica283079845MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_X509Certific1216946873.h"
-#include "System_System_Security_Cryptography_X509Certificate650873211.h"
-#include "System_System_Security_Cryptography_X509Certificate650873211MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2669466891.h"
-#include "Mono_Security_Mono_Security_X509_PKCS121362584794MethodDeclarations.h"
-#include "mscorlib_System_Collections_CollectionBase1101587467MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509CertificateCo3592472865MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_PKCS121362584794.h"
-#include "Mono_Security_Mono_Security_X509_X509CertificateCo3592472865.h"
-#include "mscorlib_System_Collections_CollectionBase1101587467.h"
-#include "mscorlib_System_Security_Cryptography_AsymmetricAlg784058677MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_CryptoConfig896479599MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificate777637347MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1108969367.h"
-#include "System_System_Security_Cryptography_X509Certificat1108969367MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1197680765MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat3221716179.h"
-#include "System_System_Security_Cryptography_X509Certificat2461349531.h"
-#include "mscorlib_System_Security_Cryptography_Cryptographi4184064416.h"
-#include "mscorlib_System_StringComparison2376310518.h"
-#include "System_System_Security_Cryptography_X509Certificat2356134957.h"
-#include "System_System_Security_Cryptography_X509Certificat2356134957MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1208230922.h"
-#include "System_System_Security_Cryptography_X509Certificat1208230922MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2081831987MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat3452126517MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2081831987.h"
-#include "System_System_Security_Cryptography_X509Certificat3452126517.h"
-#include "System_ArrayTypes.h"
-#include "System_System_Security_Cryptography_X509Certificat4278378721.h"
-#include "System_System_Security_Cryptography_X509Certificat3304975821MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificate528874471MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificate480677120.h"
-#include "System_System_Security_Cryptography_X509Certificate528874471.h"
-#include "System_System_Security_Cryptography_X509Certificat3304975821.h"
-#include "System_System_Security_Cryptography_X509Certificat4278378721MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2169036324.h"
-#include "System_System_Security_Cryptography_X509Certificat1617430119MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat1617430119.h"
-#include "System_System_Security_Cryptography_X509Certificat3763443773MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat3763443773.h"
-#include "Mono_Security_Mono_Security_X509_X509ExtensionColl1640144839MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509ExtensionColl1640144839.h"
-#include "Mono_Security_Mono_Security_X509_X509Extension1439760127.h"
-#include "Mono_Security_Mono_Security_X509_X509Crl1699034837.h"
-#include "Mono_Security_Mono_Security_X509_X509Crl1699034837MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_Extensions_Authori795428182MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_Extensions_Authori795428182.h"
-#include "System_System_Security_Cryptography_X509Certificat2065307963.h"
-#include "System_System_Security_Cryptography_X509Certificat2166064554.h"
-#include "Mono_Security_Mono_Security_X509_X509Crl_X509CrlEnt743353844MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509Crl_X509CrlEnt743353844.h"
-#include "Mono_Security_Mono_Security_X509_X509Store4028973563MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509Store4028973563.h"
-#include "Mono_Security_Mono_Security_X509_X509Extension1439760127MethodDeclarations.h"
-#include "mscorlib_System_TimeSpan3430258949.h"
-#include "mscorlib_System_TimeSpan3430258949MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificate480677120MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat3221716179MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2461349531MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2669466891MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2166064554MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2065307963MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509Stores3001420398.h"
-#include "Mono_Security_Mono_Security_X509_X509StoreManager1740460066MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509Stores3001420398MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509CertificateCo3487770522MethodDeclarations.h"
-#include "Mono_Security_Mono_Security_X509_X509CertificateCo3487770522.h"
-#include "System_System_Security_Cryptography_X509Certificate110301003.h"
-#include "mscorlib_System_Security_Cryptography_SHA13336793149MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_HashAlgorith2624936259MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_SHA13336793149.h"
-#include "System_System_Security_Cryptography_X509Certificate110301003MethodDeclarations.h"
-#include "System_System_Security_Cryptography_X509Certificat2169036324MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_BaseMachine4008011478.h"
-#include "System_System_Text_RegularExpressions_BaseMachine4008011478MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Match3164245899.h"
-#include "System_System_Text_RegularExpressions_Capture4157900610.h"
-#include "System_System_Text_RegularExpressions_Capture4157900610MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_CaptureColle1671345504.h"
-#include "System_System_Text_RegularExpressions_CaptureColle1671345504MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Category1984577050.h"
-#include "System_System_Text_RegularExpressions_Category1984577050MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_CategoryUtil3840220623.h"
-#include "System_System_Text_RegularExpressions_CategoryUtil3840220623MethodDeclarations.h"
-#include "mscorlib_System_Globalization_UnicodeCategory682236799.h"
-#include "System_System_Text_RegularExpressions_FactoryCache2051534610.h"
-#include "System_System_Text_RegularExpressions_FactoryCache2051534610MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_MRUList33178162MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_MRUList33178162.h"
-#include "System_System_Text_RegularExpressions_FactoryCache_655155419MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_FactoryCache_655155419.h"
-#include "System_System_Text_RegularExpressions_Group3761430853.h"
-#include "System_System_Text_RegularExpressions_Group3761430853MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_GroupCollecti939014605.h"
-#include "System_System_Text_RegularExpressions_GroupCollecti939014605MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Match3164245899MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Interpreter3731288230.h"
-#include "System_System_Text_RegularExpressions_Interpreter3731288230MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Interpreter_I273560425.h"
-#include "System_System_Text_RegularExpressions_QuickSearch1036078825.h"
-#include "System_System_Text_RegularExpressions_Interpreter_2395763083.h"
-#include "System_System_Text_RegularExpressions_Interpreter_1827616978.h"
-#include "System_System_Text_RegularExpressions_QuickSearch1036078825MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Interpreter_1827616978MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_OpCode586571952.h"
-#include "System_System_Text_RegularExpressions_OpFlags378191910.h"
-#include "System_System_Text_RegularExpressions_Position3781184359.h"
-#include "System_System_Text_RegularExpressions_Mark2724874473.h"
-#include "System_System_Text_RegularExpressions_Mark2724874473MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Interpreter_I273560425MethodDeclarations.h"
-#include "mscorlib_System_SystemException3877406272MethodDeclarations.h"
-#include "mscorlib_System_SystemException3877406272.h"
-#include "System_System_Text_RegularExpressions_Interpreter_2395763083MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_InterpreterFa556462562.h"
-#include "System_System_Text_RegularExpressions_InterpreterFa556462562MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_Interval2354235237.h"
-#include "System_System_Text_RegularExpressions_Interval2354235237MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_IntervalColl4130821325.h"
-#include "System_System_Text_RegularExpressions_IntervalColl4130821325MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_IntervalColl1824458113.h"
-#include "System_System_Text_RegularExpressions_IntervalColl1824458113MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_IntervalColl1928086041MethodDeclarations.h"
-#include "System_System_Text_RegularExpressions_IntervalColl1928086041.h"
+// System.Object[]
+struct ObjectU5BU5D_t3614634134  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Il2CppObject * m_Items[1];
 
+public:
+	inline Il2CppObject * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Il2CppObject ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Il2CppObject * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline Il2CppObject * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Il2CppObject ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Il2CppObject * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+// System.String[]
+struct StringU5BU5D_t1642385972  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) String_t* m_Items[1];
+
+public:
+	inline String_t* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline String_t** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, String_t* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline String_t* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline String_t** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, String_t* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+// System.UInt16[]
+struct UInt16U5BU5D_t2527266722  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) uint16_t m_Items[1];
+
+public:
+	inline uint16_t GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline uint16_t* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, uint16_t value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline uint16_t GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline uint16_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, uint16_t value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Char[]
+struct CharU5BU5D_t1328083999  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Il2CppChar m_Items[1];
+
+public:
+	inline Il2CppChar GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Il2CppChar* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Il2CppChar value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline Il2CppChar GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Il2CppChar* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Il2CppChar value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Boolean[]
+struct BooleanU5BU5D_t3568034315  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) bool m_Items[1];
+
+public:
+	inline bool GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline bool* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, bool value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline bool GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline bool* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, bool value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Byte[]
+struct ByteU5BU5D_t3397334013  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) uint8_t m_Items[1];
+
+public:
+	inline uint8_t GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline uint8_t* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, uint8_t value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline uint8_t GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline uint8_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, uint8_t value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Security.Cryptography.X509Certificates.X509Certificate[]
+struct X509CertificateU5BU5D_t3424334632  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) X509Certificate_t283079845 * m_Items[1];
+
+public:
+	inline X509Certificate_t283079845 * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline X509Certificate_t283079845 ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, X509Certificate_t283079845 * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline X509Certificate_t283079845 * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline X509Certificate_t283079845 ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, X509Certificate_t283079845 * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+// System.Security.Cryptography.X509Certificates.X509ChainStatus[]
+struct X509ChainStatusU5BU5D_t830390908  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) X509ChainStatus_t4278378721  m_Items[1];
+
+public:
+	inline X509ChainStatus_t4278378721  GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline X509ChainStatus_t4278378721 * GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, X509ChainStatus_t4278378721  value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline X509ChainStatus_t4278378721  GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline X509ChainStatus_t4278378721 * GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, X509ChainStatus_t4278378721  value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Text.RegularExpressions.Capture[]
+struct CaptureU5BU5D_t3470489975  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Capture_t4157900610 * m_Items[1];
+
+public:
+	inline Capture_t4157900610 * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Capture_t4157900610 ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Capture_t4157900610 * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline Capture_t4157900610 * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Capture_t4157900610 ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Capture_t4157900610 * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+// System.Text.RegularExpressions.Group[]
+struct GroupU5BU5D_t2272681992  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Group_t3761430853 * m_Items[1];
+
+public:
+	inline Group_t3761430853 * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Group_t3761430853 ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Group_t3761430853 * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline Group_t3761430853 * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Group_t3761430853 ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Group_t3761430853 * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+// System.Int32[]
+struct Int32U5BU5D_t3030399641  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) int32_t m_Items[1];
+
+public:
+	inline int32_t GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline int32_t* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, int32_t value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline int32_t GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline int32_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, int32_t value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Text.RegularExpressions.Mark[]
+struct MarkU5BU5D_t3801731412  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Mark_t2724874473  m_Items[1];
+
+public:
+	inline Mark_t2724874473  GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Mark_t2724874473 * GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Mark_t2724874473  value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline Mark_t2724874473  GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Mark_t2724874473 * GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Mark_t2724874473  value)
+	{
+		m_Items[index] = value;
+	}
+};
+
+extern "C" void Interval_t2354235237_marshal_pinvoke(const Interval_t2354235237& unmarshaled, Interval_t2354235237_marshaled_pinvoke& marshaled);
+extern "C" void Interval_t2354235237_marshal_pinvoke_back(const Interval_t2354235237_marshaled_pinvoke& marshaled, Interval_t2354235237& unmarshaled);
+extern "C" void Interval_t2354235237_marshal_pinvoke_cleanup(Interval_t2354235237_marshaled_pinvoke& marshaled);
+
+// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Boolean>::.ctor(System.Collections.Generic.IEqualityComparer`1<!0>)
+extern "C"  void Dictionary_2__ctor_m3313899087_gshared (Dictionary_2_t3417634846 * __this, Il2CppObject* p0, const MethodInfo* method);
+// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Boolean>::Add(!0,!1)
+extern "C"  void Dictionary_2_Add_m3435012856_gshared (Dictionary_2_t3417634846 * __this, Il2CppObject * p0, bool p1, const MethodInfo* method);
+// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Int32>::.ctor(System.Int32)
+extern "C"  void Dictionary_2__ctor_m3043033341_gshared (Dictionary_2_t1663937576 * __this, int32_t p0, const MethodInfo* method);
+// System.Void System.Collections.Generic.Dictionary`2<System.Object,System.Int32>::Add(!0,!1)
+extern "C"  void Dictionary_2_Add_m790520409_gshared (Dictionary_2_t1663937576 * __this, Il2CppObject * p0, int32_t p1, const MethodInfo* method);
+// System.Boolean System.Collections.Generic.Dictionary`2<System.Object,System.Int32>::TryGetValue(!0,!1&)
+extern "C"  bool Dictionary_2_TryGetValue_m2330758874_gshared (Dictionary_2_t1663937576 * __this, Il2CppObject * p0, int32_t* p1, const MethodInfo* method);
+
+// System.String System.String::Format(System.String,System.Object[])
+extern "C"  String_t* String_Format_m1263743648 (Il2CppObject * __this /* static, unused */, String_t* p0, ObjectU5BU5D_t3614634134* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.HybridDictionary::.ctor(System.Int32,System.Boolean)
+extern "C"  void HybridDictionary__ctor_m890422665 (HybridDictionary_t290043810 * __this, int32_t ___initialSize0, bool ___caseInsensitive1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Object::.ctor()
+extern "C"  void Object__ctor_m2551263788 (Il2CppObject * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.CaseInsensitiveComparer System.Collections.CaseInsensitiveComparer::get_DefaultInvariant()
+extern "C"  CaseInsensitiveComparer_t157661140 * CaseInsensitiveComparer_get_DefaultInvariant_m93592233 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.CaseInsensitiveHashCodeProvider System.Collections.CaseInsensitiveHashCodeProvider::get_DefaultInvariant()
+extern "C"  CaseInsensitiveHashCodeProvider_t2307530285 * CaseInsensitiveHashCodeProvider_get_DefaultInvariant_m1293455465 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary::.ctor(System.Collections.IComparer)
+extern "C"  void ListDictionary__ctor_m319558045 (ListDictionary_t3458713452 * __this, Il2CppObject * ___comparer0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Hashtable::.ctor(System.Int32,System.Collections.IHashCodeProvider,System.Collections.IComparer)
+extern "C"  void Hashtable__ctor_m4106078798 (Hashtable_t909839986 * __this, int32_t p0, Il2CppObject * p1, Il2CppObject * p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IDictionaryEnumerator System.Collections.Specialized.HybridDictionary::GetEnumerator()
+extern "C"  Il2CppObject * HybridDictionary_GetEnumerator_m3570171579 (HybridDictionary_t290043810 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IDictionary System.Collections.Specialized.HybridDictionary::get_inner()
+extern "C"  Il2CppObject * HybridDictionary_get_inner_m3223590742 (HybridDictionary_t290043810 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Specialized.HybridDictionary::get_Count()
+extern "C"  int32_t HybridDictionary_get_Count_m1347303215 (HybridDictionary_t290043810 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.HybridDictionary::Switch()
+extern "C"  void HybridDictionary_Switch_m146896129 (HybridDictionary_t290043810 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Hashtable::.ctor(System.Collections.IDictionary,System.Collections.IHashCodeProvider,System.Collections.IComparer)
+extern "C"  void Hashtable__ctor_m3742489710 (Hashtable_t909839986 * __this, Il2CppObject * p0, Il2CppObject * p1, Il2CppObject * p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary::Clear()
+extern "C"  void ListDictionary_Clear_m3646179034 (ListDictionary_t3458713452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary::.ctor()
+extern "C"  void ListDictionary__ctor_m3573908233 (ListDictionary_t3458713452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::.ctor(System.Collections.Specialized.ListDictionary)
+extern "C"  void DictionaryNodeEnumerator__ctor_m3657252825 (DictionaryNodeEnumerator_t1923170152 * __this, ListDictionary_t3458713452 * ___dict0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentNullException::.ctor(System.String,System.String)
+extern "C"  void ArgumentNullException__ctor_m2624491786 (ArgumentNullException_t628810857 * __this, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary/DictionaryNode::.ctor(System.Object,System.Object,System.Collections.Specialized.ListDictionary/DictionaryNode)
+extern "C"  void DictionaryNode__ctor_m2839151850 (DictionaryNode_t2725637098 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, DictionaryNode_t2725637098 * ___next2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentOutOfRangeException::.ctor(System.String,System.String)
+extern "C"  void ArgumentOutOfRangeException__ctor_m4234257711 (ArgumentOutOfRangeException_t279959794 * __this, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Array::get_Length()
+extern "C"  int32_t Array_get_Length_m1498215565 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.IndexOutOfRangeException::.ctor(System.String)
+extern "C"  void IndexOutOfRangeException__ctor_m1847153122 (IndexOutOfRangeException_t3527622107 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Specialized.ListDictionary::get_Count()
+extern "C"  int32_t ListDictionary_get_Count_m2397535557 (ListDictionary_t3458713452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentException::.ctor(System.String)
+extern "C"  void ArgumentException__ctor_m3739475201 (ArgumentException_t3259014390 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IDictionaryEnumerator System.Collections.Specialized.ListDictionary::GetEnumerator()
+extern "C"  Il2CppObject * ListDictionary_GetEnumerator_m1511032609 (ListDictionary_t3458713452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array::SetValue(System.Object,System.Int32)
+extern "C"  void Array_SetValue_m2652759566 (Il2CppArray * __this, Il2CppObject * p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary::FindEntry(System.Object)
+extern "C"  DictionaryNode_t2725637098 * ListDictionary_FindEntry_m1690278153 (ListDictionary_t3458713452 * __this, Il2CppObject * ___key0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary::FindEntry(System.Object,System.Collections.Specialized.ListDictionary/DictionaryNode&)
+extern "C"  DictionaryNode_t2725637098 * ListDictionary_FindEntry_m432748847 (ListDictionary_t3458713452 * __this, Il2CppObject * ___key0, DictionaryNode_t2725637098 ** ___prev1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary::AddImpl(System.Object,System.Object,System.Collections.Specialized.ListDictionary/DictionaryNode)
+extern "C"  void ListDictionary_AddImpl_m2604632092 (ListDictionary_t3458713452 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, DictionaryNode_t2725637098 * ___prev2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeCollection::.ctor(System.Collections.Specialized.ListDictionary,System.Boolean)
+extern "C"  void DictionaryNodeCollection__ctor_m445138956 (DictionaryNodeCollection_t528898270 * __this, ListDictionary_t3458713452 * ___dict0, bool ___isKeyList1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentException::.ctor(System.String,System.String)
+extern "C"  void ArgumentException__ctor_m544251339 (ArgumentException_t3259014390 * __this, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.Specialized.ListDictionary::get_SyncRoot()
+extern "C"  Il2CppObject * ListDictionary_get_SyncRoot_m1212356752 (ListDictionary_t3458713452 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Specialized.ListDictionary/DictionaryNodeCollection::get_Count()
+extern "C"  int32_t DictionaryNodeCollection_get_Count_m3891757076 (DictionaryNodeCollection_t528898270 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator System.Collections.Specialized.ListDictionary/DictionaryNodeCollection::GetEnumerator()
+extern "C"  Il2CppObject * DictionaryNodeCollection_GetEnumerator_m4231738996 (DictionaryNodeCollection_t528898270 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeCollection/DictionaryNodeCollectionEnumerator::.ctor(System.Collections.IDictionaryEnumerator,System.Boolean)
+extern "C"  void DictionaryNodeCollectionEnumerator__ctor_m84810679 (DictionaryNodeCollectionEnumerator_t2037848305 * __this, Il2CppObject * ___inner0, bool ___isKeyList1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::Reset()
+extern "C"  void DictionaryNodeEnumerator_Reset_m1131304747 (DictionaryNodeEnumerator_t1923170152 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.InvalidOperationException::.ctor(System.String)
+extern "C"  void InvalidOperationException__ctor_m2801133788 (InvalidOperationException_t721527559 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::FailFast()
+extern "C"  void DictionaryNodeEnumerator_FailFast_m3568492354 (DictionaryNodeEnumerator_t1923170152 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.DictionaryEntry System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::get_Entry()
+extern "C"  DictionaryEntry_t3048875398  DictionaryNodeEnumerator_get_Entry_m2402517470 (DictionaryNodeEnumerator_t1923170152 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::get_DictionaryNode()
+extern "C"  DictionaryNode_t2725637098 * DictionaryNodeEnumerator_get_DictionaryNode_m3521889822 (DictionaryNodeEnumerator_t1923170152 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.DictionaryEntry::.ctor(System.Object,System.Object)
+extern "C"  void DictionaryEntry__ctor_m2901884110 (DictionaryEntry_t3048875398 * __this, Il2CppObject * p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase::Init()
+extern "C"  void NameObjectCollectionBase_Init_m1271766820 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Hashtable::.ctor(System.Int32,System.Collections.IEqualityComparer)
+extern "C"  void Hashtable__ctor_m622168569 (Hashtable_t909839986 * __this, int32_t p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ArrayList::.ctor()
+extern "C"  void ArrayList__ctor_m4012174379 (ArrayList_t4252133567 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase/KeysCollection::.ctor(System.Collections.Specialized.NameObjectCollectionBase)
+extern "C"  void KeysCollection__ctor_m847580183 (KeysCollection_t633582367 * __this, NameObjectCollectionBase_t2034248631 * ___collection0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase/_KeysEnumerator::.ctor(System.Collections.Specialized.NameObjectCollectionBase)
+extern "C"  void _KeysEnumerator__ctor_m995107394 (_KeysEnumerator_t1718269396 * __this, NameObjectCollectionBase_t2034248631 * ___collection0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentNullException::.ctor(System.String)
+extern "C"  void ArgumentNullException__ctor_m3380712306 (ArgumentNullException_t628810857 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+extern "C"  Type_t * Type_GetTypeFromHandle_m432505302 (Il2CppObject * __this /* static, unused */, RuntimeTypeHandle_t2330101084  p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.Serialization.SerializationInfo::AddValue(System.String,System.Object,System.Type)
+extern "C"  void SerializationInfo_AddValue_m1781549036 (SerializationInfo_t228987430 * __this, String_t* p0, Il2CppObject * p1, Type_t * p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.Serialization.SerializationInfo::AddValue(System.String,System.Boolean)
+extern "C"  void SerializationInfo_AddValue_m1192926088 (SerializationInfo_t228987430 * __this, String_t* p0, bool p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.Serialization.SerializationInfo::AddValue(System.String,System.Int32)
+extern "C"  void SerializationInfo_AddValue_m902275108 (SerializationInfo_t228987430 * __this, String_t* p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Runtime.Serialization.SerializationInfo::GetValue(System.String,System.Type)
+extern "C"  Il2CppObject * SerializationInfo_GetValue_m1127314592 (SerializationInfo_t228987430 * __this, String_t* p0, Type_t * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.Serialization.SerializationException::.ctor(System.String)
+extern "C"  void SerializationException__ctor_m1019897788 (SerializationException_t753258759 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Runtime.Serialization.SerializationInfo::GetBoolean(System.String)
+extern "C"  bool SerializationInfo_GetBoolean_m3573708305 (SerializationInfo_t228987430 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseAdd(System.String,System.Object)
+extern "C"  void NameObjectCollectionBase_BaseAdd_m964300824 (NameObjectCollectionBase_t2034248631 * __this, String_t* ___name0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Collections.Specialized.NameObjectCollectionBase::get_IsReadOnly()
+extern "C"  bool NameObjectCollectionBase_get_IsReadOnly_m3287350911 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.NotSupportedException::.ctor(System.String)
+extern "C"  void NotSupportedException__ctor_m836173213 (NotSupportedException_t1793819818 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase/_Item::.ctor(System.String,System.Object)
+extern "C"  void _Item__ctor_m1496904011 (_Item_t3244489099 * __this, String_t* ___key0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.Specialized.NameObjectCollectionBase/_Item System.Collections.Specialized.NameObjectCollectionBase::FindFirstMatchedItem(System.String)
+extern "C"  _Item_t3244489099 * NameObjectCollectionBase_FindFirstMatchedItem_m2460648656 (NameObjectCollectionBase_t2034248631 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase/_KeysEnumerator::Reset()
+extern "C"  void _KeysEnumerator_Reset_m3709233259 (_KeysEnumerator_t1718269396 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Collections.Specialized.NameObjectCollectionBase::BaseGetKey(System.Int32)
+extern "C"  String_t* NameObjectCollectionBase_BaseGetKey_m1766059806 (NameObjectCollectionBase_t2034248631 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.InvalidOperationException::.ctor()
+extern "C"  void InvalidOperationException__ctor_m102359810 (InvalidOperationException_t721527559 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentOutOfRangeException::.ctor(System.String)
+extern "C"  void ArgumentOutOfRangeException__ctor_m1595007065 (ArgumentOutOfRangeException_t279959794 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Array::get_Rank()
+extern "C"  int32_t Array_get_Rank_m3837250695 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor()
+extern "C"  void NameObjectCollectionBase__ctor_m2433753948 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+extern "C"  void NameObjectCollectionBase__ctor_m241668161 (NameObjectCollectionBase_t2034248631 * __this, SerializationInfo_t228987430 * ___info0, StreamingContext_t1417235061  ___context1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameValueCollection::InvalidateCachedArrays()
+extern "C"  void NameValueCollection_InvalidateCachedArrays_m1142700554 (NameValueCollection_t3047564564 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.String)
+extern "C"  Il2CppObject * NameObjectCollectionBase_BaseGet_m3772026934 (NameObjectCollectionBase_t2034248631 * __this, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.Int32)
+extern "C"  Il2CppObject * NameObjectCollectionBase_BaseGet_m667273025 (NameObjectCollectionBase_t2034248631 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Collections.Specialized.NameValueCollection::AsSingleString(System.Collections.ArrayList)
+extern "C"  String_t* NameValueCollection_AsSingleString_m10599052 (Il2CppObject * __this /* static, unused */, ArrayList_t4252133567 * ___values0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Concat(System.Object,System.Object,System.Object)
+extern "C"  String_t* String_Concat_m2000667605 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, Il2CppObject * p1, Il2CppObject * p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.String::get_Length()
+extern "C"  int32_t String_get_Length_m1606060069 (String_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.StringBuilder::.ctor(System.String,System.Int32)
+extern "C"  void StringBuilder__ctor_m1456828835 (StringBuilder_t1221177846 * __this, String_t* p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.Char)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_Append_m3618697540 (StringBuilder_t1221177846 * __this, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.Object)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_Append_m3541816491 (StringBuilder_t1221177846 * __this, Il2CppObject * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Text.StringBuilder::ToString()
+extern "C"  String_t* StringBuilder_ToString_m1507807375 (StringBuilder_t1221177846 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Attribute::.ctor()
+extern "C"  void Attribute__ctor_m1730479323 (Attribute_t542643598 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.ComponentModel.EditorBrowsableState System.ComponentModel.EditorBrowsableAttribute::get_State()
+extern "C"  int32_t EditorBrowsableAttribute_get_State_m3897062724 (EditorBrowsableAttribute_t1050682502 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ComponentModel.TypeConverterAttribute::.ctor()
+extern "C"  void TypeConverterAttribute__ctor_m3322338951 (TypeConverterAttribute_t252469870 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.ComponentModel.TypeConverterAttribute::get_ConverterTypeName()
+extern "C"  String_t* TypeConverterAttribute_get_ConverterTypeName_m2296240606 (TypeConverterAttribute_t252469870 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.String::op_Equality(System.String,System.String)
+extern "C"  bool String_op_Equality_m1790663636 (Il2CppObject * __this /* static, unused */, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.String::GetHashCode()
+extern "C"  int32_t String_GetHashCode_m931956593 (String_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.UriParser::.ctor()
+extern "C"  void UriParser__ctor_m1282308392 (UriParser_t1012511323 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.Security.RemoteCertificateValidationCallback System.Net.ServicePointManager::get_ServerCertificateValidationCallback()
+extern "C"  RemoteCertificateValidationCallback_t2756269959 * ServicePointManager_get_ServerCertificateValidationCallback_m1419353403 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebRequest::.ctor()
+extern "C"  void WebRequest__ctor_m2841187593 (WebRequest_t1365124353 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebHeaderCollection::.ctor()
+extern "C"  void WebHeaderCollection__ctor_m3030572237 (WebHeaderCollection_t3028142837 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Runtime.Serialization.SerializationInfo::GetString(System.String)
+extern "C"  String_t* SerializationInfo_GetString_m547109409 (SerializationInfo_t228987430 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int64 System.Runtime.Serialization.SerializationInfo::GetInt64(System.String)
+extern "C"  int64_t SerializationInfo_GetInt64_m1778999221 (SerializationInfo_t228987430 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Runtime.Serialization.SerializationInfo::GetInt32(System.String)
+extern "C"  int32_t SerializationInfo_GetInt32_m4039439501 (SerializationInfo_t228987430 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.Serialization.SerializationInfo::AddValue(System.String,System.Object)
+extern "C"  void SerializationInfo_AddValue_m1740888931 (SerializationInfo_t228987430 * __this, String_t* p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.Serialization.SerializationInfo::AddValue(System.String,System.Int64)
+extern "C"  void SerializationInfo_AddValue_m1708843935 (SerializationInfo_t228987430 * __this, String_t* p0, int64_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.FileWebRequest::.ctor(System.Uri)
+extern "C"  void FileWebRequest__ctor_m4207307562 (FileWebRequest_t1571840111 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.FtpWebRequest::.ctor(System.Uri)
+extern "C"  void FtpWebRequest__ctor_m3003551676 (FtpWebRequest_t3120721823 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.Security.RemoteCertificateValidationCallback::.ctor(System.Object,System.IntPtr)
+extern "C"  void RemoteCertificateValidationCallback__ctor_m2946714095 (RemoteCertificateValidationCallback_t2756269959 * __this, Il2CppObject * ___object0, IntPtr_t ___method1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.IWebProxy System.Net.GlobalProxySelection::get_Select()
+extern "C"  Il2CppObject * GlobalProxySelection_get_Select_m1637611912 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.Security.RemoteCertificateValidationCallback::Invoke(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)
+extern "C"  bool RemoteCertificateValidationCallback_Invoke_m3011066238 (RemoteCertificateValidationCallback_t2756269959 * __this, Il2CppObject * ___sender0, X509Certificate_t283079845 * ___certificate1, X509Chain_t777637347 * ___chain2, int32_t ___sslPolicyErrors3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Concat(System.Object,System.Object)
+extern "C"  String_t* String_Concat_m56707527 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.IWebProxy System.Net.WebRequest::get_DefaultWebProxy()
+extern "C"  Il2CppObject * WebRequest_get_DefaultWebProxy_m741473019 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.HttpWebRequest::.ctor(System.Uri)
+extern "C"  void HttpWebRequest__ctor_m3872859964 (HttpWebRequest_t1951404513 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Version::.ctor(System.Int32,System.Int32)
+extern "C"  void Version__ctor_m2035466001 (Version_t1755874712 * __this, int32_t p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebHeaderCollection::.ctor(System.Boolean)
+extern "C"  void WebHeaderCollection__ctor_m3472091620 (WebHeaderCollection_t3028142837 * __this, bool ___internallyCreated0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.ServicePoint System.Net.HttpWebRequest::GetServicePoint()
+extern "C"  ServicePoint_t2765344313 * HttpWebRequest_GetServicePoint_m560807134 (HttpWebRequest_t1951404513 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Threading.Monitor::Enter(System.Object)
+extern "C"  void Monitor_Enter_m2136705809 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.ServicePoint System.Net.ServicePointManager::FindServicePoint(System.Uri,System.Net.IWebProxy)
+extern "C"  ServicePoint_t2765344313 * ServicePointManager_FindServicePoint_m3137356168 (Il2CppObject * __this /* static, unused */, Uri_t19570940 * ___address0, Il2CppObject * ___proxy1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Threading.Monitor::Exit(System.Object)
+extern "C"  void Monitor_Exit_m2677760297 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int16 System.Net.IPAddress::HostToNetworkOrder(System.Int16)
+extern "C"  int16_t IPAddress_HostToNetworkOrder_m1092199707 (Il2CppObject * __this /* static, unused */, int16_t ___host0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.IPAddress::.ctor(System.Int64)
+extern "C"  void IPAddress__ctor_m4294749317 (IPAddress_t1399971723 * __this, int64_t ___addr0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.IPAddress System.Net.IPAddress::Parse(System.String)
+extern "C"  IPAddress_t1399971723 * IPAddress_Parse_m3374241274 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.IPAddress System.Net.IPAddress::ParseIPV6(System.String)
+extern "C"  IPAddress_t1399971723 * IPAddress_ParseIPV6_m2209709575 (Il2CppObject * __this /* static, unused */, String_t* ___ip0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int16 System.Net.IPAddress::SwapShort(System.Int16)
+extern "C"  int16_t IPAddress_SwapShort_m3285274063 (Il2CppObject * __this /* static, unused */, int16_t ___number0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.IPAddress::TryParse(System.String,System.Net.IPAddress&)
+extern "C"  bool IPAddress_TryParse_m2352368982 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, IPAddress_t1399971723 ** ___address1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.FormatException::.ctor(System.String)
+extern "C"  void FormatException__ctor_m1466217969 (FormatException_t2948921286 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.IPAddress System.Net.IPAddress::ParseIPV4(System.String)
+extern "C"  IPAddress_t1399971723 * IPAddress_ParseIPV4_m1639470661 (Il2CppObject * __this /* static, unused */, String_t* ___ip0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.String::IndexOf(System.Char)
+extern "C"  int32_t String_IndexOf_m2358239236 (String_t* __this, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Substring(System.Int32)
+extern "C"  String_t* String_Substring_m2032624251 (String_t* __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String[] System.String::Split(System.Char[])
+extern "C"  StringU5BU5D_t1642385972* String_Split_m3326265864 (String_t* __this, CharU5BU5D_t1328083999* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Char[] System.String::ToCharArray()
+extern "C"  CharU5BU5D_t1328083999* String_ToCharArray_m870309954 (String_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Uri::IsHexDigit(System.Char)
+extern "C"  bool Uri_IsHexDigit_m4245599548 (Il2CppObject * __this /* static, unused */, Il2CppChar ___digit0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Substring(System.Int32,System.Int32)
+extern "C"  String_t* String_Substring_m12482732 (String_t* __this, int32_t p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Char System.String::get_Chars(System.Int32)
+extern "C"  Il2CppChar String_get_Chars_m4230566705 (String_t* __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Uri::FromHex(System.Char)
+extern "C"  int32_t Uri_FromHex_m2384283021 (Il2CppObject * __this /* static, unused */, Il2CppChar ___digit0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Int64::TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int64&)
+extern "C"  bool Int64_TryParse_m3093198325 (Il2CppObject * __this /* static, unused */, String_t* p0, int32_t p1, Il2CppObject * p2, int64_t* p3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.IPv6Address::TryParse(System.String,System.Net.IPv6Address&)
+extern "C"  bool IPv6Address_TryParse_m2220524278 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, IPv6Address_t2596635879 ** ___result1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.UInt16[] System.Net.IPv6Address::get_Address()
+extern "C"  UInt16U5BU5D_t2527266722* IPv6Address_get_Address_m3475254999 (IPv6Address_t2596635879 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int64 System.Net.IPv6Address::get_ScopeId()
+extern "C"  int64_t IPv6Address_get_ScopeId_m2206438412 (IPv6Address_t2596635879 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.IPAddress::.ctor(System.UInt16[],System.Int64)
+extern "C"  void IPAddress__ctor_m1927150601 (IPAddress_t1399971723 * __this, UInt16U5BU5D_t2527266722* ___address0, int64_t ___scopeId1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Exception::.ctor(System.String)
+extern "C"  void Exception__ctor_m485833136 (Exception_t1927440687 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int16 System.Net.IPAddress::NetworkToHostOrder(System.Int16)
+extern "C"  int16_t IPAddress_NetworkToHostOrder_m862617551 (Il2CppObject * __this /* static, unused */, int16_t ___network0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Net.IPAddress::ToString(System.Int64)
+extern "C"  String_t* IPAddress_ToString_m267966740 (Il2CppObject * __this /* static, unused */, int64_t ___addr0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array::Clone()
+extern "C"  Il2CppObject * Array_Clone_m768574314 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.IPv6Address::.ctor(System.UInt16[])
+extern "C"  void IPv6Address__ctor_m206060151 (IPv6Address_t2596635879 * __this, UInt16U5BU5D_t2527266722* ___addr0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int64 System.Net.IPAddress::get_ScopeId()
+extern "C"  int64_t IPAddress_get_ScopeId_m133972856 (IPAddress_t1399971723 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.IPv6Address::set_ScopeId(System.Int64)
+extern "C"  void IPv6Address_set_ScopeId_m1442934355 (IPv6Address_t2596635879 * __this, int64_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Int64::ToString()
+extern "C"  String_t* Int64_ToString_m689375889 (int64_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Concat(System.String[])
+extern "C"  String_t* String_Concat_m626692867 (Il2CppObject * __this /* static, unused */, StringU5BU5D_t1642385972* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.Sockets.AddressFamily System.Net.IPAddress::get_AddressFamily()
+extern "C"  int32_t IPAddress_get_AddressFamily_m2727317531 (IPAddress_t1399971723 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Net.IPAddress::Hash(System.Int32,System.Int32,System.Int32,System.Int32)
+extern "C"  int32_t IPAddress_Hash_m1078373075 (Il2CppObject * __this /* static, unused */, int32_t ___i0, int32_t ___j1, int32_t ___k2, int32_t ___l3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.IPv6Address::.ctor(System.UInt16[],System.Int32)
+extern "C"  void IPv6Address__ctor_m3329154094 (IPv6Address_t2596635879 * __this, UInt16U5BU5D_t2527266722* ___addr0, int32_t ___prefixLength1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.IPv6Address System.Net.IPv6Address::Parse(System.String)
+extern "C"  IPv6Address_t2596635879 * IPv6Address_Parse_m3111902810 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.String::IndexOf(System.String)
+extern "C"  int32_t String_IndexOf_m4251815737 (String_t* __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Globalization.CultureInfo System.Globalization.CultureInfo::get_InvariantCulture()
+extern "C"  CultureInfo_t3500843524 * CultureInfo_get_InvariantCulture_m398972276 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Int32::TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int32&)
+extern "C"  bool Int32_TryParse_m2941352213 (Il2CppObject * __this /* static, unused */, String_t* p0, int32_t p1, Il2CppObject * p2, int32_t* p3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.String::LastIndexOf(System.Char)
+extern "C"  int32_t String_LastIndexOf_m3555875680 (String_t* __this, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.IPv6Address::TryParse(System.String,System.Int32&)
+extern "C"  bool IPv6Address_TryParse_m1453091868 (Il2CppObject * __this /* static, unused */, String_t* ___prefix0, int32_t* ___res1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int64 System.Net.IPAddress::get_InternalIPv4Address()
+extern "C"  int64_t IPAddress_get_InternalIPv4Address_m2113749881 (IPAddress_t1399971723 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Net.IPv6Address::Fill(System.UInt16[],System.String)
+extern "C"  int32_t IPv6Address_Fill_m1824197512 (Il2CppObject * __this /* static, unused */, UInt16U5BU5D_t2527266722* ___addr0, String_t* ___ipString1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.IPv6Address::.ctor(System.UInt16[],System.Int32,System.Int32)
+extern "C"  void IPv6Address__ctor_m4273527307 (IPv6Address_t2596635879 * __this, UInt16U5BU5D_t2527266722* ___addr0, int32_t ___prefixLength1, int32_t ___scopeId2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.UInt16 System.Net.IPv6Address::SwapUShort(System.UInt16)
+extern "C"  uint16_t IPv6Address_SwapUShort_m1481806078 (Il2CppObject * __this /* static, unused */, uint16_t ___number0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Net.IPv6Address::AsIPv4Int()
+extern "C"  int32_t IPv6Address_AsIPv4Int_m3565745471 (IPv6Address_t2596635879 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.StringBuilder::.ctor()
+extern "C"  void StringBuilder__ctor_m3946851802 (StringBuilder_t1221177846 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.IPv6Address::IsIPv4Compatible()
+extern "C"  bool IPv6Address_IsIPv4Compatible_m3718347864 (IPv6Address_t2596635879 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.IPv6Address::IsIPv4Mapped()
+extern "C"  bool IPv6Address_IsIPv4Mapped_m3798585235 (IPv6Address_t2596635879 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.String)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_Append_m3636508479 (StringBuilder_t1221177846 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::AppendFormat(System.String,System.Object)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_AppendFormat_m3265503696 (StringBuilder_t1221177846 * __this, String_t* p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.Int64)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_Append_m1128243247 (StringBuilder_t1221177846 * __this, int64_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Net.IPv6Address::Hash(System.Int32,System.Int32,System.Int32,System.Int32)
+extern "C"  int32_t IPv6Address_Hash_m2884881363 (Il2CppObject * __this /* static, unused */, int32_t ___i0, int32_t ___j1, int32_t ___k2, int32_t ___l3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime System.DateTime::get_Now()
+extern "C"  DateTime_t693205669  DateTime_get_Now_m24136300 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePoint::set_SendContinue(System.Boolean)
+extern "C"  void ServicePoint_set_SendContinue_m2270873616 (ServicePoint_t2765344313 * __this, bool ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Net.ServicePoint::get_CurrentConnections()
+extern "C"  int32_t ServicePoint_get_CurrentConnections_m2605637468 (ServicePoint_t2765344313 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime System.Net.ServicePoint::get_IdleSince()
+extern "C"  DateTime_t693205669  ServicePoint_get_IdleSince_m1157936783 (ServicePoint_t2765344313 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime System.DateTime::AddMilliseconds(System.Double)
+extern "C"  DateTime_t693205669  DateTime_AddMilliseconds_m1813199744 (DateTime_t693205669 * __this, double p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.DateTime::op_GreaterThanOrEqual(System.DateTime,System.DateTime)
+extern "C"  bool DateTime_op_GreaterThanOrEqual_m3818963848 (Il2CppObject * __this /* static, unused */, DateTime_t693205669  p0, DateTime_t693205669  p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.HybridDictionary::.ctor()
+extern "C"  void HybridDictionary__ctor_m884012539 (HybridDictionary_t290043810 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.DefaultCertificatePolicy::.ctor()
+extern "C"  void DefaultCertificatePolicy__ctor_m4075407028 (DefaultCertificatePolicy_t2545332216 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Uri::op_Equality(System.Uri,System.Uri)
+extern "C"  bool Uri_op_Equality_m110355127 (Il2CppObject * __this /* static, unused */, Uri_t19570940 * ___u10, Uri_t19570940 * ___u21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePointManager::RecycleServicePoints()
+extern "C"  void ServicePointManager_RecycleServicePoints_m2772618783 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Uri::get_Scheme()
+extern "C"  String_t* Uri_get_Scheme_m55908894 (Uri_t19570940 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.String::op_Inequality(System.String,System.String)
+extern "C"  bool String_op_Inequality_m304203149 (Il2CppObject * __this /* static, unused */, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Uri::get_Authority()
+extern "C"  String_t* Uri_get_Authority_m936382664 (Uri_t19570940 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Concat(System.String,System.String,System.String)
+extern "C"  String_t* String_Concat_m612901809 (Il2CppObject * __this /* static, unused */, String_t* p0, String_t* p1, String_t* p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Uri::.ctor(System.String)
+extern "C"  void Uri__ctor_m3927533881 (Uri_t19570940 * __this, String_t* ___uriString0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePointManager/SPKey::.ctor(System.Uri,System.Boolean)
+extern "C"  void SPKey__ctor_m3372976455 (SPKey_t1552752485 * __this, Uri_t19570940 * ___uri0, bool ___use_connect1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Collections.Specialized.HybridDictionary::get_Item(System.Object)
+extern "C"  Il2CppObject * HybridDictionary_get_Item_m1077394870 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePoint::.ctor(System.Uri,System.Int32,System.Int32)
+extern "C"  void ServicePoint__ctor_m4262863078 (ServicePoint_t2765344313 * __this, Uri_t19570940 * ___uri0, int32_t ___connectionLimit1, int32_t ___maxIdleTime2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePoint::set_Expect100Continue(System.Boolean)
+extern "C"  void ServicePoint_set_Expect100Continue_m426209852 (ServicePoint_t2765344313 * __this, bool ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePoint::set_UseNagleAlgorithm(System.Boolean)
+extern "C"  void ServicePoint_set_UseNagleAlgorithm_m2618011464 (ServicePoint_t2765344313 * __this, bool ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePoint::set_UsesProxy(System.Boolean)
+extern "C"  void ServicePoint_set_UsesProxy_m654127651 (ServicePoint_t2765344313 * __this, bool ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePoint::set_UseConnect(System.Boolean)
+extern "C"  void ServicePoint_set_UseConnect_m3091750992 (ServicePoint_t2765344313 * __this, bool ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.HybridDictionary::Add(System.Object,System.Object)
+extern "C"  void HybridDictionary_Add_m1037587952 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.ServicePoint::get_AvailableForRecycling()
+extern "C"  bool ServicePoint_get_AvailableForRecycling_m1105513096 (ServicePoint_t2765344313 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.HybridDictionary::Remove(System.Object)
+extern "C"  void HybridDictionary_Remove_m2059808027 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.SortedList::.ctor(System.Int32)
+extern "C"  void SortedList__ctor_m3698381356 (SortedList_t3004938869 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.ServicePoint::set_IdleSince(System.DateTime)
+extern "C"  void ServicePoint_set_IdleSince_m797014038 (ServicePoint_t2765344313 * __this, DateTime_t693205669  ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Uri System.Net.ServicePoint::get_Address()
+extern "C"  Uri_t19570940 * ServicePoint_get_Address_m578153126 (ServicePoint_t2765344313 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameValueCollection::.ctor()
+extern "C"  void NameValueCollection__ctor_m1767369537 (NameValueCollection_t3047564564 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Int32::ToString()
+extern "C"  String_t* Int32_ToString_m2960866144 (int32_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
+extern "C"  void RuntimeHelpers_InitializeArray_m3920580167 (Il2CppObject * __this /* static, unused */, Il2CppArray * p0, RuntimeFieldHandle_t2331729674  p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Hashtable::.ctor(System.Collections.IHashCodeProvider,System.Collections.IComparer)
+extern "C"  void Hashtable__ctor_m2337481811 (Hashtable_t909839986 * __this, Il2CppObject * p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.StringComparer System.StringComparer::get_InvariantCultureIgnoreCase()
+extern "C"  StringComparer_t1574862926 * StringComparer_get_InvariantCultureIgnoreCase_m1052445386 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.Dictionary`2<System.String,System.Boolean>::.ctor(System.Collections.Generic.IEqualityComparer`1<!0>)
+#define Dictionary_2__ctor_m3530797333(__this, p0, method) ((  void (*) (Dictionary_2_t1445386684 *, Il2CppObject*, const MethodInfo*))Dictionary_2__ctor_m3313899087_gshared)(__this, p0, method)
+// System.Void System.Collections.Generic.Dictionary`2<System.String,System.Boolean>::Add(!0,!1)
+#define Dictionary_2_Add_m657810184(__this, p0, p1, method) ((  void (*) (Dictionary_2_t1445386684 *, String_t*, bool, const MethodInfo*))Dictionary_2_Add_m3435012856_gshared)(__this, p0, p1, method)
+// System.Boolean System.Net.WebHeaderCollection::IsRestricted(System.String)
+extern "C"  bool WebHeaderCollection_IsRestricted_m2583169910 (Il2CppObject * __this /* static, unused */, String_t* ___headerName0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebHeaderCollection::AddWithoutValidate(System.String,System.String)
+extern "C"  void WebHeaderCollection_AddWithoutValidate_m1479880592 (WebHeaderCollection_t3028142837 * __this, String_t* ___headerName0, String_t* ___headerValue1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.WebHeaderCollection::IsHeaderName(System.String)
+extern "C"  bool WebHeaderCollection_IsHeaderName_m3758915809 (Il2CppObject * __this /* static, unused */, String_t* ___name0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Concat(System.String,System.String)
+extern "C"  String_t* String_Concat_m2596409543 (Il2CppObject * __this /* static, unused */, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Trim()
+extern "C"  String_t* String_Trim_m2668767713 (String_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.WebHeaderCollection::IsHeaderValue(System.String)
+extern "C"  bool WebHeaderCollection_IsHeaderValue_m1723393133 (Il2CppObject * __this /* static, unused */, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.NameValueCollection::Add(System.String,System.String)
+extern "C"  void NameValueCollection_Add_m263445674 (NameValueCollection_t3047564564 * __this, String_t* ___name0, String_t* ___val1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.Specialized.NameObjectCollectionBase::get_Count()
+extern "C"  int32_t NameObjectCollectionBase_get_Count_m2353593692 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.Specialized.NameObjectCollectionBase/KeysCollection System.Collections.Specialized.NameObjectCollectionBase::get_Keys()
+extern "C"  KeysCollection_t633582367 * NameObjectCollectionBase_get_Keys_m446053925 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Collections.Specialized.NameValueCollection::Get(System.Int32)
+extern "C"  String_t* NameValueCollection_Get_m861415899 (NameValueCollection_t3047564564 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Collections.Specialized.NameValueCollection::GetKey(System.Int32)
+extern "C"  String_t* NameValueCollection_GetKey_m3871624648 (NameValueCollection_t3047564564 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator System.Collections.Specialized.NameObjectCollectionBase::GetEnumerator()
+extern "C"  Il2CppObject * NameObjectCollectionBase_GetEnumerator_m646294968 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebProxy::.ctor(System.Uri,System.Boolean,System.String[],System.Net.ICredentials)
+extern "C"  void WebProxy__ctor_m3679722173 (WebProxy_t1169192840 * __this, Uri_t19570940 * ___address0, bool ___bypassOnLocal1, StringU5BU5D_t1642385972* ___bypassList2, Il2CppObject * ___credentials3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ArrayList::.ctor(System.Collections.ICollection)
+extern "C"  void ArrayList__ctor_m194094802 (ArrayList_t4252133567 * __this, Il2CppObject * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebProxy::CheckBypassList()
+extern "C"  void WebProxy_CheckBypassList_m565639068 (WebProxy_t1169192840 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.WebProxy::IsBypassed(System.Uri)
+extern "C"  bool WebProxy_IsBypassed_m907120600 (WebProxy_t1169192840 * __this, Uri_t19570940 * ___host0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Uri::get_IsLoopback()
+extern "C"  bool Uri_get_IsLoopback_m2113378011 (Uri_t19570940 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Uri::get_Host()
+extern "C"  String_t* Uri_get_Host_m395387191 (Uri_t19570940 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.String::Compare(System.String,System.String,System.Boolean,System.Globalization.CultureInfo)
+extern "C"  int32_t String_Compare_m1847873744 (Il2CppObject * __this /* static, unused */, String_t* p0, String_t* p1, bool p2, CultureInfo_t3500843524 * p3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.IPAddress::IsLoopback(System.Net.IPAddress)
+extern "C"  bool IPAddress_IsLoopback_m2800578891 (Il2CppObject * __this /* static, unused */, IPAddress_t1399971723 * ___addr0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Regex::.ctor(System.String,System.Text.RegularExpressions.RegexOptions)
+extern "C"  void Regex__ctor_m2521903438 (Regex_t1803876613 * __this, String_t* ___pattern0, int32_t ___options1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Regex::IsMatch(System.String)
+extern "C"  bool Regex_IsMatch_m2159202025 (Regex_t1803876613 * __this, String_t* ___input0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Regex::.ctor(System.String)
+extern "C"  void Regex__ctor_m1229307206 (Regex_t1803876613 * __this, String_t* ___pattern0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Net.WebProxy::get_UseDefaultCredentials()
+extern "C"  bool WebProxy_get_UseDefaultCredentials_m2426255561 (WebProxy_t1169192840 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.MarshalByRefObject::.ctor()
+extern "C"  void MarshalByRefObject__ctor_m529577364 (MarshalByRefObject_t1285298191 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebRequest::AddDynamicPrefix(System.String,System.String)
+extern "C"  void WebRequest_AddDynamicPrefix_m1363854157 (Il2CppObject * __this /* static, unused */, String_t* ___protocol0, String_t* ___implementor1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.NotSupportedException::.ctor()
+extern "C"  void NotSupportedException__ctor_m3232764727 (NotSupportedException_t1793819818 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Net.WebRequest::AddPrefix(System.String,System.Type)
+extern "C"  void WebRequest_AddPrefix_m3456797905 (Il2CppObject * __this /* static, unused */, String_t* ___prefix0, Type_t * ___type1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.NotImplementedException::.ctor(System.String)
+extern "C"  void NotImplementedException__ctor_m1795163961 (NotImplementedException_t2785117854 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Net.IWebProxy System.Net.WebRequest::GetDefaultWebProxy()
+extern "C"  Il2CppObject * WebRequest_GetDefaultWebProxy_m1479642708 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Exception System.Net.WebRequest::GetMustImplement()
+extern "C"  Exception_t1927440687 * WebRequest_GetMustImplement_m2014409540 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Activator::CreateInstance(System.Type,System.Boolean)
+extern "C"  Il2CppObject * Activator_CreateInstance_m4123570586 (Il2CppObject * __this /* static, unused */, Type_t * p0, bool p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Specialized.HybridDictionary::set_Item(System.Object,System.Object)
+extern "C"  void HybridDictionary_set_Item_m4049906479 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.Oid::.ctor(System.String)
+extern "C"  void Oid__ctor_m1936781897 (Oid_t3221867120 * __this, String_t* ___oid0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AsnEncodedData::set_RawData(System.Byte[])
+extern "C"  void AsnEncodedData_set_RawData_m1046549989 (AsnEncodedData_t463456204 * __this, ByteU5BU5D_t3397334013* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AsnEncodedData::set_Oid(System.Security.Cryptography.Oid)
+extern "C"  void AsnEncodedData_set_Oid_m3568255745 (AsnEncodedData_t463456204 * __this, Oid_t3221867120 * ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.Oid::.ctor(System.Security.Cryptography.Oid)
+extern "C"  void Oid__ctor_m3386806634 (Oid_t3221867120 * __this, Oid_t3221867120 * ___oid0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.Oid::get_Value()
+extern "C"  String_t* Oid_get_Value_m2271181078 (Oid_t3221867120 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Generic.Dictionary`2<System.String,System.Int32>::.ctor(System.Int32)
+#define Dictionary_2__ctor_m2118310873(__this, p0, method) ((  void (*) (Dictionary_2_t3986656710 *, int32_t, const MethodInfo*))Dictionary_2__ctor_m3043033341_gshared)(__this, p0, method)
+// System.Void System.Collections.Generic.Dictionary`2<System.String,System.Int32>::Add(!0,!1)
+#define Dictionary_2_Add_m1209957957(__this, p0, p1, method) ((  void (*) (Dictionary_2_t3986656710 *, String_t*, int32_t, const MethodInfo*))Dictionary_2_Add_m790520409_gshared)(__this, p0, p1, method)
+// System.Boolean System.Collections.Generic.Dictionary`2<System.String,System.Int32>::TryGetValue(!0,!1&)
+#define Dictionary_2_TryGetValue_m2977303364(__this, p0, p1, method) ((  bool (*) (Dictionary_2_t3986656710 *, String_t*, int32_t*, const MethodInfo*))Dictionary_2_TryGetValue_m2330758874_gshared)(__this, p0, p1, method)
+// System.String System.Security.Cryptography.AsnEncodedData::BasicConstraintsExtension(System.Boolean)
+extern "C"  String_t* AsnEncodedData_BasicConstraintsExtension_m4139728680 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.AsnEncodedData::EnhancedKeyUsageExtension(System.Boolean)
+extern "C"  String_t* AsnEncodedData_EnhancedKeyUsageExtension_m1452131166 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.AsnEncodedData::KeyUsageExtension(System.Boolean)
+extern "C"  String_t* AsnEncodedData_KeyUsageExtension_m938572452 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.AsnEncodedData::SubjectKeyIdentifierExtension(System.Boolean)
+extern "C"  String_t* AsnEncodedData_SubjectKeyIdentifierExtension_m3991622246 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.AsnEncodedData::SubjectAltName(System.Boolean)
+extern "C"  String_t* AsnEncodedData_SubjectAltName_m3016089443 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.AsnEncodedData::NetscapeCertType(System.Boolean)
+extern "C"  String_t* AsnEncodedData_NetscapeCertType_m2899239452 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.AsnEncodedData::Default(System.Boolean)
+extern "C"  String_t* AsnEncodedData_Default_m4197142414 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Byte::ToString(System.String)
+extern "C"  String_t* Byte_ToString_m1309661918 (uint8_t* __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
+extern "C"  void X509BasicConstraintsExtension__ctor_m3320418592 (X509BasicConstraintsExtension_t1562873317 * __this, AsnEncodedData_t463456204 * ___encodedBasicConstraints0, bool ___critical1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::ToString(System.Boolean)
+extern "C"  String_t* X509BasicConstraintsExtension_ToString_m3781281400 (X509BasicConstraintsExtension_t1562873317 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
+extern "C"  void X509EnhancedKeyUsageExtension__ctor_m4050164330 (X509EnhancedKeyUsageExtension_t2099881051 * __this, AsnEncodedData_t463456204 * ___encodedEnhancedKeyUsages0, bool ___critical1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension::ToString(System.Boolean)
+extern "C"  String_t* X509EnhancedKeyUsageExtension_ToString_m1748333326 (X509EnhancedKeyUsageExtension_t2099881051 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
+extern "C"  void X509KeyUsageExtension__ctor_m1528821284 (X509KeyUsageExtension_t1038124237 * __this, AsnEncodedData_t463456204 * ___encodedKeyUsage0, bool ___critical1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::ToString(System.Boolean)
+extern "C"  String_t* X509KeyUsageExtension_ToString_m1992050580 (X509KeyUsageExtension_t1038124237 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
+extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m2412362046 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, AsnEncodedData_t463456204 * ___encodedSubjectKeyIdentifier0, bool ___critical1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::ToString(System.Boolean)
+extern "C"  String_t* X509SubjectKeyIdentifierExtension_ToString_m4073475390 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, bool ___multiLine0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.ASN1::.ctor(System.Byte[])
+extern "C"  void ASN1__ctor_m2812922997 (ASN1_t924533536 * __this, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.ASN1::get_Item(System.Int32)
+extern "C"  ASN1_t924533536 * ASN1_get_Item_m3505242534 (ASN1_t924533536 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte Mono.Security.ASN1::get_Tag()
+extern "C"  uint8_t ASN1_get_Tag_m2798873007 (ASN1_t924533536 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.Encoding System.Text.Encoding::get_ASCII()
+extern "C"  Encoding_t663144255 * Encoding_get_ASCII_m2727409419 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] Mono.Security.ASN1::get_Value()
+extern "C"  ByteU5BU5D_t3397334013* ASN1_get_Value_m2229768312 (ASN1_t924533536 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Format(System.String,System.Object)
+extern "C"  String_t* String_Format_m2024975688 (Il2CppObject * __this /* static, unused */, String_t* p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Mono.Security.Cryptography.CryptoConvert::ToHex(System.Byte[])
+extern "C"  String_t* CryptoConvert_ToHex_m3804747475 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Environment::get_NewLine()
+extern "C"  String_t* Environment_get_NewLine_m266316410 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 Mono.Security.ASN1::get_Count()
+extern "C"  int32_t ASN1_get_Count_m579313466 (ASN1_t924533536 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.StringBuilder::get_Length()
+extern "C"  int32_t StringBuilder_get_Length_m1608241323 (StringBuilder_t1221177846 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Int32::ToString(System.String)
+extern "C"  String_t* Int32_ToString_m1064459878 (int32_t* __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.Oid::GetName(System.String)
+extern "C"  String_t* Oid_GetName_m40695489 (Oid_t3221867120 * __this, String_t* ___oid0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.Oid::get_FriendlyName()
+extern "C"  String_t* Oid_get_FriendlyName_m3094550571 (Oid_t3221867120 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.OidEnumerator::.ctor(System.Security.Cryptography.OidCollection)
+extern "C"  void OidEnumerator__ctor_m675250776 (OidEnumerator_t3674631724 * __this, OidCollection_t3790243618 * ___collection0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentOutOfRangeException::.ctor()
+extern "C"  void ArgumentOutOfRangeException__ctor_m15523695 (ArgumentOutOfRangeException_t279959794 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.Oid System.Security.Cryptography.OidCollection::get_Item(System.Int32)
+extern "C"  Oid_t3221867120 * OidCollection_get_Item_m1091387424 (OidCollection_t3790243618 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.OidCollection::get_Count()
+extern "C"  int32_t OidCollection_get_Count_m1266492637 (OidCollection_t3790243618 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.RSACryptoServiceProvider::get_PublicOnly()
+extern "C"  bool RSACryptoServiceProvider_get_PublicOnly_m2672124340 (RSACryptoServiceProvider_t4229286967 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Mono.Security.Cryptography.RSAManaged::get_PublicOnly()
+extern "C"  bool RSAManaged_get_PublicOnly_m343941928 (RSAManaged_t3034748748 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.RSA System.Security.Cryptography.RSA::Create()
+extern "C"  RSA_t3719518354 * RSA_Create_m4148185627 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.DSA Mono.Security.X509.X509Certificate::get_DSA()
+extern "C"  DSA_t903174880 * X509Certificate_get_DSA_m2452394785 (X509Certificate_t324051958 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.DSACryptoServiceProvider::get_PublicOnly()
+extern "C"  bool DSACryptoServiceProvider_get_PublicOnly_m998015514 (DSACryptoServiceProvider_t2915171657 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.DSA System.Security.Cryptography.DSA::Create()
+extern "C"  DSA_t903174880 * DSA_Create_m1032215987 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AsnEncodedData::.ctor(System.Security.Cryptography.Oid,System.Byte[])
+extern "C"  void AsnEncodedData__ctor_m3538036029 (AsnEncodedData_t463456204 * __this, Oid_t3221867120 * ___oid0, ByteU5BU5D_t3397334013* ___rawData1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.AsnEncodedData::get_RawData()
+extern "C"  ByteU5BU5D_t3397334013* AsnEncodedData_get_RawData_m895923910 (AsnEncodedData_t463456204 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.RSA System.Security.Cryptography.X509Certificates.PublicKey::DecodeRSA(System.Byte[])
+extern "C"  RSA_t3719518354 * PublicKey_DecodeRSA_m1627823702 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t3397334013* ___rawPublicKey0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.DSA System.Security.Cryptography.X509Certificates.PublicKey::DecodeDSA(System.Byte[],System.Byte[])
+extern "C"  DSA_t903174880 * PublicKey_DecodeDSA_m1169363495 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t3397334013* ___rawPublicKey0, ByteU5BU5D_t3397334013* ___rawParameters1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Locale::GetText(System.String,System.Object[])
+extern "C"  String_t* Locale_GetText_m1445803604 (Il2CppObject * __this /* static, unused */, String_t* ___fmt0, ObjectU5BU5D_t3614634134* ___args1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+extern "C"  void Buffer_BlockCopy_m1586717258 (Il2CppObject * __this /* static, unused */, Il2CppArray * p0, int32_t p1, Il2CppArray * p2, int32_t p3, int32_t p4, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Locale::GetText(System.String)
+extern "C"  String_t* Locale_GetText_m4034107474 (Il2CppObject * __this /* static, unused */, String_t* ___msg0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.CryptographicException::.ctor(System.String)
+extern "C"  void CryptographicException__ctor_m2415891459 (CryptographicException_t3349726436 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.X509Certificates.PublicKey::GetUnsignedBigInteger(System.Byte[])
+extern "C"  ByteU5BU5D_t3397334013* PublicKey_GetUnsignedBigInteger_m913837477 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t3397334013* ___integer0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.CryptographicException::.ctor(System.String,System.Exception)
+extern "C"  void CryptographicException__ctor_m1012314467 (CryptographicException_t3349726436 * __this, String_t* p0, Exception_t1927440687 * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.DSACryptoServiceProvider::.ctor(System.Int32)
+extern "C"  void DSACryptoServiceProvider__ctor_m181065031 (DSACryptoServiceProvider_t2915171657 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.RSACryptoServiceProvider::.ctor(System.Int32)
+extern "C"  void RSACryptoServiceProvider__ctor_m2716420409 (RSACryptoServiceProvider_t4229286967 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AsnEncodedData::.ctor()
+extern "C"  void AsnEncodedData__ctor_m1611830939 (AsnEncodedData_t463456204 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.Oid::.ctor()
+extern "C"  void Oid__ctor_m83809371 (Oid_t3221867120 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X500DistinguishedName::DecodeRawData()
+extern "C"  void X500DistinguishedName_DecodeRawData_m3640767187 (X500DistinguishedName_t452415348 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X500DistinguishedName::GetSeparator(System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags)
+extern "C"  String_t* X500DistinguishedName_GetSeparator_m2215165979 (Il2CppObject * __this /* static, unused */, int32_t ___flag0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Mono.Security.X509.X501::ToString(Mono.Security.ASN1,System.Boolean,System.String,System.Boolean)
+extern "C"  String_t* X501_ToString_m3314567798 (Il2CppObject * __this /* static, unused */, ASN1_t924533536 * p0, bool p1, String_t* p2, bool p3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.StringBuilder::.ctor(System.String)
+extern "C"  void StringBuilder__ctor_m782331808 (StringBuilder_t1221177846 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Char::IsWhiteSpace(System.String,System.Int32)
+extern "C"  bool Char_IsWhiteSpace_m1797813613 (Il2CppObject * __this /* static, unused */, String_t* p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::TrimEnd(System.Char[])
+extern "C"  String_t* String_TrimEnd_m3153143011 (String_t* __this, CharU5BU5D_t1328083999* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Char System.Char::ToUpperInvariant(System.Char)
+extern "C"  Il2CppChar Char_ToUpperInvariant_m3983736813 (Il2CppObject * __this /* static, unused */, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X500DistinguishedName::Decode(System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags)
+extern "C"  String_t* X500DistinguishedName_Decode_m3070515374 (X500DistinguishedName_t452415348 * __this, int32_t ___flag0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String[] System.String::Split(System.String[],System.StringSplitOptions)
+extern "C"  StringU5BU5D_t1642385972* String_Split_m3927740091 (String_t* __this, StringU5BU5D_t1642385972* p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X500DistinguishedName::Canonize(System.String)
+extern "C"  String_t* X500DistinguishedName_Canonize_m2814323919 (Il2CppObject * __this /* static, unused */, String_t* ___s0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Extension::.ctor()
+extern "C"  void X509Extension__ctor_m4030395494 (X509Extension_t1320896183 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.Oid::.ctor(System.String,System.String)
+extern "C"  void Oid__ctor_m954395291 (Oid_t3221867120 * __this, String_t* ___value0, String_t* ___friendlyName1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Extension::set_Critical(System.Boolean)
+extern "C"  void X509Extension_set_Critical_m1247863465 (X509Extension_t1320896183 * __this, bool ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::Decode(System.Byte[])
+extern "C"  int32_t X509BasicConstraintsExtension_Decode_m2821936487 (X509BasicConstraintsExtension_t1562873317 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::Encode()
+extern "C"  ByteU5BU5D_t3397334013* X509BasicConstraintsExtension_Encode_m3505127076 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Extension::get_Critical()
+extern "C"  bool X509Extension_get_Critical_m1395159716 (X509Extension_t1320896183 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 Mono.Security.ASN1Convert::ToInt32(Mono.Security.ASN1)
+extern "C"  int32_t ASN1Convert_ToInt32_m2121135414 (Il2CppObject * __this /* static, unused */, ASN1_t924533536 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.ASN1::.ctor(System.Byte)
+extern "C"  void ASN1__ctor_m32691595 (ASN1_t924533536 * __this, uint8_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.ASN1::.ctor(System.Byte,System.Byte[])
+extern "C"  void ASN1__ctor_m3688855288 (ASN1_t924533536 * __this, uint8_t p0, ByteU5BU5D_t3397334013* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.ASN1::Add(Mono.Security.ASN1)
+extern "C"  ASN1_t924533536 * ASN1_Add_m1528660622 (ASN1_t924533536 * __this, ASN1_t924533536 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.ASN1Convert::FromInt32(System.Int32)
+extern "C"  ASN1_t924533536 * ASN1Convert_FromInt32_m1048976215 (Il2CppObject * __this /* static, unused */, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Extension::FormatUnkownData(System.Byte[])
+extern "C"  String_t* X509Extension_FormatUnkownData_m4057132051 (X509Extension_t1320896183 * __this, ByteU5BU5D_t3397334013* ___data0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::Append(System.Int32)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_Append_m2109474214 (StringBuilder_t1221177846 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate::.ctor()
+extern "C"  void X509Certificate__ctor_m1864862806 (X509Certificate_t283079845 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ExtensionCollection::.ctor(Mono.Security.X509.X509Certificate)
+extern "C"  void X509ExtensionCollection__ctor_m1324282194 (X509ExtensionCollection_t650873211 * __this, X509Certificate_t324051958 * ___cert0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.X509.X509Certificate::GetIssuerName()
+extern "C"  ASN1_t924533536 * X509Certificate_GetIssuerName_m2151596145 (X509Certificate_t324051958 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X500DistinguishedName::.ctor(System.Byte[])
+extern "C"  void X500DistinguishedName__ctor_m459426370 (X500DistinguishedName_t452415348 * __this, ByteU5BU5D_t3397334013* ___encodedDistinguishedName0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime System.DateTime::ToLocalTime()
+extern "C"  DateTime_t693205669  DateTime_ToLocalTime_m1957689902 (DateTime_t693205669 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.PublicKey::.ctor(Mono.Security.X509.X509Certificate)
+extern "C"  void PublicKey__ctor_m613031465 (PublicKey_t870392 * __this, X509Certificate_t324051958 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.X509.X509Certificate::GetSubjectName()
+extern "C"  ASN1_t924533536 * X509Certificate_GetSubjectName_m1189079906 (X509Certificate_t324051958 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate::GetCertHashString()
+extern "C"  String_t* X509Certificate_GetCertHashString_m419611192 (X509Certificate_t283079845 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 Mono.Security.X509.X509Certificate::get_Version()
+extern "C"  int32_t X509Certificate_get_Version_m3031985157 (X509Certificate_t324051958 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 System.Security.Cryptography.X509Certificates.X509Certificate2::Find(System.Byte[],Mono.Security.ASN1)
+extern "C"  ASN1_t924533536 * X509Certificate2_Find_m833446211 (X509Certificate2_t4056456767 * __this, ByteU5BU5D_t3397334013* ___oid0, ASN1_t924533536 * ___dn1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate2::GetValueAsString(Mono.Security.ASN1)
+extern "C"  String_t* X509Certificate2_GetValueAsString_m1286925493 (X509Certificate2_t4056456767 * __this, ASN1_t924533536 * ___pair0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Mono.Security.ASN1::CompareValue(System.Byte[])
+extern "C"  bool ASN1_CompareValue_m3117818461 (ASN1_t924533536 * __this, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 Mono.Security.ASN1::get_Length()
+extern "C"  int32_t ASN1_get_Length_m778823697 (ASN1_t924533536 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.Encoding System.Text.Encoding::get_UTF8()
+extern "C"  Encoding_t663144255 * Encoding_get_UTF8_m1752852937 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.X509.PKCS12::.ctor(System.Byte[])
+extern "C"  void PKCS12__ctor_m2046019834 (PKCS12_t1362584795 * __this, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.X509.PKCS12::.ctor(System.Byte[],System.String)
+extern "C"  void PKCS12__ctor_m3389239718 (PKCS12_t1362584795 * __this, ByteU5BU5D_t3397334013* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509CertificateCollection Mono.Security.X509.PKCS12::get_Certificates()
+extern "C"  X509CertificateCollection_t3592472866 * PKCS12_get_Certificates_m2320062949 (PKCS12_t1362584795 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.CollectionBase::get_Count()
+extern "C"  int32_t CollectionBase_get_Count_m740218359 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Certificate Mono.Security.X509.X509CertificateCollection::get_Item(System.Int32)
+extern "C"  X509Certificate_t324051958 * X509CertificateCollection_get_Item_m123527754 (X509CertificateCollection_t3592472866 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.ArrayList Mono.Security.X509.PKCS12::get_Keys()
+extern "C"  ArrayList_t4252133567 * PKCS12_get_Keys_m288413492 (PKCS12_t1362584795 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.X509.X509Certificate::set_DSA(System.Security.Cryptography.DSA)
+extern "C"  void X509Certificate_set_DSA_m1358261980 (X509Certificate_t324051958 * __this, DSA_t903174880 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate::Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)
+extern "C"  void X509Certificate_Import_m562956152 (X509Certificate_t283079845 * __this, ByteU5BU5D_t3397334013* p0, String_t* p1, int32_t p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.X509.X509Certificate::.ctor(System.Byte[])
+extern "C"  void X509Certificate__ctor_m2143220811 (X509Certificate_t324051958 * __this, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::ImportPkcs12(System.Byte[],System.String)
+extern "C"  void X509Certificate2_ImportPkcs12_m3993877002 (X509Certificate2_t4056456767 * __this, ByteU5BU5D_t3397334013* ___rawData0, String_t* ___password1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate::Reset()
+extern "C"  void X509Certificate_Reset_m1676863543 (X509Certificate_t283079845 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate::ToString(System.Boolean)
+extern "C"  String_t* X509Certificate_ToString_m1582581274 (X509Certificate_t283079845 * __this, bool p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.X509Certificates.X509Certificate2::get_Version()
+extern "C"  int32_t X509Certificate2_get_Version_m1927399907 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::AppendFormat(System.String,System.Object,System.Object)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_AppendFormat_m759296786 (StringBuilder_t1221177846 * __this, String_t* p0, Il2CppObject * p1, Il2CppObject * p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate::get_Subject()
+extern "C"  String_t* X509Certificate_get_Subject_m3123435748 (X509Certificate_t283079845 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate::get_Issuer()
+extern "C"  String_t* X509Certificate_get_Issuer_m3750321873 (X509Certificate_t283079845 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate2::get_SerialNumber()
+extern "C"  String_t* X509Certificate2_get_SerialNumber_m1521011849 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime System.Security.Cryptography.X509Certificates.X509Certificate2::get_NotBefore()
+extern "C"  DateTime_t693205669  X509Certificate2_get_NotBefore_m2972055762 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime System.Security.Cryptography.X509Certificates.X509Certificate2::get_NotAfter()
+extern "C"  DateTime_t693205669  X509Certificate2_get_NotAfter_m3430171627 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate2::get_Thumbprint()
+extern "C"  String_t* X509Certificate2_get_Thumbprint_m4244025929 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.Oid System.Security.Cryptography.X509Certificates.X509Certificate2::get_SignatureAlgorithm()
+extern "C"  Oid_t3221867120 * X509Certificate2_get_SignatureAlgorithm_m3069898012 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.StringBuilder System.Text.StringBuilder::AppendFormat(System.String,System.Object,System.Object,System.Object)
+extern "C"  StringBuilder_t1221177846 * StringBuilder_AppendFormat_m1666670800 (StringBuilder_t1221177846 * __this, String_t* p0, Il2CppObject * p1, Il2CppObject * p2, Il2CppObject * p3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.PublicKey System.Security.Cryptography.X509Certificates.X509Certificate2::get_PublicKey()
+extern "C"  PublicKey_t870392 * X509Certificate2_get_PublicKey_m2119837179 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.AsymmetricAlgorithm System.Security.Cryptography.X509Certificates.PublicKey::get_Key()
+extern "C"  AsymmetricAlgorithm_t784058677 * PublicKey_get_Key_m126090744 (PublicKey_t870392 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.AsnEncodedData System.Security.Cryptography.X509Certificates.PublicKey::get_EncodedKeyValue()
+extern "C"  AsnEncodedData_t463456204 * PublicKey_get_EncodedKeyValue_m3051963850 (PublicKey_t870392 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::AppendBuffer(System.Text.StringBuilder,System.Byte[])
+extern "C"  void X509Certificate2_AppendBuffer_m3517242299 (Il2CppObject * __this /* static, unused */, StringBuilder_t1221177846 * ___sb0, ByteU5BU5D_t3397334013* ___buffer1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.AsnEncodedData System.Security.Cryptography.X509Certificates.PublicKey::get_EncodedParameters()
+extern "C"  AsnEncodedData_t463456204 * PublicKey_get_EncodedParameters_m2182265270 (PublicKey_t870392 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Security.Cryptography.CryptoConfig::CreateFromName(System.String)
+extern "C"  Il2CppObject * CryptoConfig_CreateFromName_m391442950 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::Build(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  bool X509Chain_Build_m1140429528 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509CertificateCollection::.ctor()
+extern "C"  void X509CertificateCollection__ctor_m1497182392 (X509CertificateCollection_t1197680765 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Collection::AddRange(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)
+extern "C"  void X509Certificate2Collection_AddRange_m1503879780 (X509Certificate2Collection_t1108969367 * __this, X509Certificate2Collection_t1108969367 * ___certificates0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.ArrayList System.Collections.CollectionBase::get_InnerList()
+extern "C"  ArrayList_t4252133567 * CollectionBase_get_InnerList_m44314156 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Type System.Object::GetType()
+extern "C"  Type_t * Object_GetType_m191970594 (Il2CppObject * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.CryptoConfig::EncodeOID(System.String)
+extern "C"  ByteU5BU5D_t3397334013* CryptoConfig_EncodeOID_m276236568 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Collection::.ctor()
+extern "C"  void X509Certificate2Collection__ctor_m406839448 (X509Certificate2Collection_t1108969367 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Certificate2::GetNameInfo(System.Security.Cryptography.X509Certificates.X509NameType,System.Boolean)
+extern "C"  String_t* X509Certificate2_GetNameInfo_m402390219 (X509Certificate2_t4056456767 * __this, int32_t ___nameType0, bool ___forIssuer1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.String::IndexOf(System.String,System.StringComparison)
+extern "C"  int32_t String_IndexOf_m570401060 (String_t* __this, String_t* p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ExtensionCollection System.Security.Cryptography.X509Certificates.X509Certificate2::get_Extensions()
+extern "C"  X509ExtensionCollection_t650873211 * X509Certificate2_get_Extensions_m3374377562 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Extension System.Security.Cryptography.X509Certificates.X509ExtensionCollection::get_Item(System.String)
+extern "C"  X509Extension_t1320896183 * X509ExtensionCollection_get_Item_m2392275793 (X509ExtensionCollection_t650873211 * __this, String_t* ___oid0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::get_SubjectKeyIdentifier()
+extern "C"  String_t* X509SubjectKeyIdentifierExtension_get_SubjectKeyIdentifier_m1477640894 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.X509Certificates.X509ExtensionCollection::get_Count()
+extern "C"  int32_t X509ExtensionCollection_get_Count_m3798021134 (X509ExtensionCollection_t650873211 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509KeyUsageFlags System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::get_KeyUsages()
+extern "C"  int32_t X509KeyUsageExtension_get_KeyUsages_m4014806163 (X509KeyUsageExtension_t1038124237 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.DateTime::op_LessThanOrEqual(System.DateTime,System.DateTime)
+extern "C"  bool DateTime_op_LessThanOrEqual_m2191641069 (Il2CppObject * __this /* static, unused */, DateTime_t693205669  p0, DateTime_t693205669  p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.DateTime::op_LessThan(System.DateTime,System.DateTime)
+extern "C"  bool DateTime_op_LessThan_m3944619870 (Il2CppObject * __this /* static, unused */, DateTime_t693205669  p0, DateTime_t693205669  p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.DateTime::op_GreaterThan(System.DateTime,System.DateTime)
+extern "C"  bool DateTime_op_GreaterThan_m2730200039 (Il2CppObject * __this /* static, unused */, DateTime_t693205669  p0, DateTime_t693205669  p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Certificate2::Verify()
+extern "C"  bool X509Certificate2_Verify_m1574874641 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.X509Certificates.X509Certificate2Collection::Add(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  int32_t X509Certificate2Collection_Add_m3920471111 (X509Certificate2Collection_t1108969367 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::.ctor(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)
+extern "C"  void X509Certificate2Enumerator__ctor_m112131832 (X509Certificate2Enumerator_t2356134957 * __this, X509Certificate2Collection_t1108969367 * ___collection0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.CollectionBase::.ctor()
+extern "C"  void CollectionBase__ctor_m2525885291 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509CertificateCollection::AddRange(System.Security.Cryptography.X509Certificates.X509Certificate[])
+extern "C"  void X509CertificateCollection_AddRange_m3378127328 (X509CertificateCollection_t1197680765 * __this, X509CertificateU5BU5D_t3424334632* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::.ctor(System.Security.Cryptography.X509Certificates.X509CertificateCollection)
+extern "C"  void X509CertificateEnumerator__ctor_m3485132152 (X509CertificateEnumerator_t1208230922 * __this, X509CertificateCollection_t1197680765 * ___mappings0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::.ctor(System.Boolean)
+extern "C"  void X509Chain__ctor_m3420342903 (X509Chain_t777637347 * __this, bool ___useMachineContext0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElementCollection::.ctor()
+extern "C"  void X509ChainElementCollection__ctor_m2389346408 (X509ChainElementCollection_t2081831987 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainPolicy::.ctor()
+extern "C"  void X509ChainPolicy__ctor_m1262497552 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::Reset()
+extern "C"  void X509Chain_Reset_m3078515705 (X509Chain_t777637347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainStatusFlags System.Security.Cryptography.X509Certificates.X509Chain::BuildChainFrom(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  int32_t X509Chain_BuildChainFrom_m4135025663 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::ValidateChain(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  void X509Chain_ValidateChain_m1002648716 (X509Chain_t777637347 * __this, int32_t ___flag0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentException::.ctor(System.String,System.Exception)
+extern "C"  void ArgumentException__ctor_m3553968249 (ArgumentException_t3259014390 * __this, String_t* p0, Exception_t1927440687 * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator System.Security.Cryptography.X509Certificates.X509ChainElementCollection::GetEnumerator()
+extern "C"  X509ChainElementEnumerator_t3304975821 * X509ChainElementCollection_GetEnumerator_m3367250365 (X509ChainElementCollection_t2081831987 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainElement System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::get_Current()
+extern "C"  X509ChainElement_t528874471 * X509ChainElementEnumerator_get_Current_m2232618221 (X509ChainElementEnumerator_t3304975821 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainStatus[] System.Security.Cryptography.X509Certificates.X509ChainElement::get_ChainElementStatus()
+extern "C"  X509ChainStatusU5BU5D_t830390908* X509ChainElement_get_ChainElementStatus_m2778866439 (X509ChainElement_t528874471 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainStatusFlags System.Security.Cryptography.X509Certificates.X509ChainStatus::get_Status()
+extern "C"  int32_t X509ChainStatus_get_Status_m3251168011 (X509ChainStatus_t4278378721 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::MoveNext()
+extern "C"  bool X509ChainElementEnumerator_MoveNext_m3157555152 (X509ChainElementEnumerator_t3304975821 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainStatus::.ctor(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  void X509ChainStatus__ctor_m3628359961 (X509ChainStatus_t4278378721 * __this, int32_t ___flag0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainPolicy System.Security.Cryptography.X509Certificates.X509Chain::get_ChainPolicy()
+extern "C"  X509ChainPolicy_t3452126517 * X509Chain_get_ChainPolicy_m732957765 (X509Chain_t777637347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509VerificationFlags System.Security.Cryptography.X509Certificates.X509ChainPolicy::get_VerificationFlags()
+extern "C"  int32_t X509ChainPolicy_get_VerificationFlags_m2677203157 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.X509Certificates.X509ChainElementCollection::get_Count()
+extern "C"  int32_t X509ChainElementCollection_get_Count_m905965108 (X509ChainElementCollection_t2081831987 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElementCollection::Clear()
+extern "C"  void X509ChainElementCollection_Clear_m414681645 (X509ChainElementCollection_t2081831987 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Store::Close()
+extern "C"  void X509Store_Close_m2412711366 (X509Store_t1617430119 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Store::.ctor(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation)
+extern "C"  void X509Store__ctor_m1573680316 (X509Store_t1617430119 * __this, int32_t ___storeName0, int32_t ___storeLocation1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Store::Open(System.Security.Cryptography.X509Certificates.OpenFlags)
+extern "C"  void X509Store_Open_m3416485546 (X509Store_t1617430119 * __this, int32_t ___flags0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509ChainPolicy::get_ExtraStore()
+extern "C"  X509Certificate2Collection_t1108969367 * X509ChainPolicy_get_ExtraStore_m2890873777 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Collection::.ctor(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)
+extern "C"  void X509Certificate2Collection__ctor_m819526826 (X509Certificate2Collection_t1108969367 * __this, X509Certificate2Collection_t1108969367 * ___certificates0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Store System.Security.Cryptography.X509Certificates.X509Chain::get_Roots()
+extern "C"  X509Store_t1617430119 * X509Chain_get_Roots_m4104324715 (X509Chain_t777637347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509Store::get_Certificates()
+extern "C"  X509Certificate2Collection_t1108969367 * X509Store_get_Certificates_m329642048 (X509Store_t1617430119 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Store System.Security.Cryptography.X509Certificates.X509Chain::get_CertificateAuthorities()
+extern "C"  X509Store_t1617430119 * X509Chain_get_CertificateAuthorities_m3325663784 (X509Chain_t777637347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElementCollection::Add(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  void X509ChainElementCollection_Add_m1511936349 (X509ChainElementCollection_t2081831987 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509Chain::FindParent(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  X509Certificate2_t4056456767 * X509Chain_FindParent_m404663796 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509ChainElementCollection::Contains(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  bool X509ChainElementCollection_Contains_m3599995067 (X509ChainElementCollection_t2081831987 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::IsChainComplete(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  bool X509Chain_IsChainComplete_m3393657586 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Certificate2Collection::Contains(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  bool X509Certificate2Collection_Contains_m109907687 (X509Certificate2Collection_t1108969367 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainElement System.Security.Cryptography.X509Certificates.X509ChainElementCollection::get_Item(System.Int32)
+extern "C"  X509ChainElement_t528874471 * X509ChainElementCollection_get_Item_m1494130666 (X509ChainElementCollection_t2081831987 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainStatusFlags System.Security.Cryptography.X509Certificates.X509ChainElement::get_StatusFlags()
+extern "C"  int32_t X509ChainElement_get_StatusFlags_m2197618238 (X509ChainElement_t528874471 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElement::set_StatusFlags(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  void X509ChainElement_set_StatusFlags_m1058207137 (X509ChainElement_t528874471 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509Certificate2Collection::get_Item(System.Int32)
+extern "C"  X509Certificate2_t4056456767 * X509Certificate2Collection_get_Item_m2173549554 (X509Certificate2Collection_t1108969367 * __this, int32_t ___index0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime System.Security.Cryptography.X509Certificates.X509ChainPolicy::get_VerificationTime()
+extern "C"  DateTime_t693205669  X509ChainPolicy_get_VerificationTime_m4100358726 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509Certificate2Collection::Find(System.Security.Cryptography.X509Certificates.X509FindType,System.Object,System.Boolean)
+extern "C"  X509Certificate2Collection_t1108969367 * X509Certificate2Collection_Find_m1629908635 (X509Certificate2Collection_t1108969367 * __this, int32_t ___findType0, Il2CppObject * ___findValue1, bool ___validOnly2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Chain::GetAuthorityKeyIdentifier(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m2607407678 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.String::IsNullOrEmpty(System.String)
+extern "C"  bool String_IsNullOrEmpty_m2802126737 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator System.Security.Cryptography.X509Certificates.X509Certificate2Collection::GetEnumerator()
+extern "C"  X509Certificate2Enumerator_t2356134957 * X509Certificate2Collection_GetEnumerator_m3796176997 (X509Certificate2Collection_t1108969367 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::get_Current()
+extern "C"  X509Certificate2_t4056456767 * X509Certificate2Enumerator_get_Current_m2016493949 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Chain::GetSubjectKeyIdentifier(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  String_t* X509Chain_GetSubjectKeyIdentifier_m4232927227 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::MoveNext()
+extern "C"  bool X509Certificate2Enumerator_MoveNext_m1861665712 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509Chain::get_CertificateCollection()
+extern "C"  X509Certificate2Collection_t1108969367 * X509Chain_get_CertificateCollection_m324631835 (X509Chain_t777637347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509Chain::SelectBestFromCollection(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)
+extern "C"  X509Certificate2_t4056456767 * X509Chain_SelectBestFromCollection_m2712190957 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___child0, X509Certificate2Collection_t1108969367 * ___c1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::IsSelfIssued(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  bool X509Chain_IsSelfIssued_m2009755967 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509ChainElement::get_Certificate()
+extern "C"  X509Certificate2_t4056456767 * X509ChainElement_get_Certificate_m3929662793 (X509ChainElement_t528874471 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::Process(System.Int32)
+extern "C"  void X509Chain_Process_m2508784250 (X509Chain_t777637347 * __this, int32_t ___n0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElement::UncompressFlags()
+extern "C"  void X509ChainElement_UncompressFlags_m1688043618 (X509ChainElement_t528874471 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X500DistinguishedName System.Security.Cryptography.X509Certificates.X509Certificate2::get_IssuerName()
+extern "C"  X500DistinguishedName_t452415348 * X509Certificate2_get_IssuerName_m2295833821 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::PrepareForNextCertificate(System.Int32)
+extern "C"  void X509Chain_PrepareForNextCertificate_m1967807089 (X509Chain_t777637347 * __this, int32_t ___n0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::CheckRevocationOnChain(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  void X509Chain_CheckRevocationOnChain_m2441901351 (X509Chain_t777637347 * __this, int32_t ___flag0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::WrapUp()
+extern "C"  void X509Chain_WrapUp_m1072032285 (X509Chain_t777637347 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Certificate System.Security.Cryptography.X509Certificates.X509Certificate2::get_MonoCertificate()
+extern "C"  X509Certificate_t324051958 * X509Certificate2_get_MonoCertificate_m2721967882 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::IsSignedWith(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.AsymmetricAlgorithm)
+extern "C"  bool X509Chain_IsSignedWith_m292245392 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___signed0, AsymmetricAlgorithm_t784058677 * ___pubkey1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X500DistinguishedName::AreEqual(System.Security.Cryptography.X509Certificates.X500DistinguishedName,System.Security.Cryptography.X509Certificates.X500DistinguishedName)
+extern "C"  bool X500DistinguishedName_AreEqual_m2245968769 (Il2CppObject * __this /* static, unused */, X500DistinguishedName_t452415348 * ___name10, X500DistinguishedName_t452415348 * ___name21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X500DistinguishedName System.Security.Cryptography.X509Certificates.X509Certificate2::get_SubjectName()
+extern "C"  X500DistinguishedName_t452415348 * X509Certificate2_get_SubjectName_m2958094870 (X509Certificate2_t4056456767 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::get_CertificateAuthority()
+extern "C"  bool X509BasicConstraintsExtension_get_CertificateAuthority_m2220022817 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::get_HasPathLengthConstraint()
+extern "C"  bool X509BasicConstraintsExtension_get_HasPathLengthConstraint_m3788532759 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::get_PathLengthConstraint()
+extern "C"  int32_t X509BasicConstraintsExtension_get_PathLengthConstraint_m3004531343 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Chain::ProcessCertificateExtensions(System.Security.Cryptography.X509Certificates.X509ChainElement)
+extern "C"  void X509Chain_ProcessCertificateExtensions_m4191338420 (X509Chain_t777637347 * __this, X509ChainElement_t528874471 * ___element0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator System.Security.Cryptography.X509Certificates.X509ExtensionCollection::GetEnumerator()
+extern "C"  X509ExtensionEnumerator_t3763443773 * X509ExtensionCollection_GetEnumerator_m3421097717 (X509ExtensionCollection_t650873211 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509Extension System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator::get_Current()
+extern "C"  X509Extension_t1320896183 * X509ExtensionEnumerator_get_Current_m3926549773 (X509ExtensionEnumerator_t3763443773 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.Oid System.Security.Cryptography.AsnEncodedData::get_Oid()
+extern "C"  Oid_t3221867120 * AsnEncodedData_get_Oid_m625199204 (AsnEncodedData_t463456204 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator::MoveNext()
+extern "C"  bool X509ExtensionEnumerator_MoveNext_m1715898942 (X509ExtensionEnumerator_t3763443773 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Mono.Security.X509.X509Certificate::VerifySignature(System.Security.Cryptography.AsymmetricAlgorithm)
+extern "C"  bool X509Certificate_VerifySignature_m2806336005 (X509Certificate_t324051958 * __this, AsymmetricAlgorithm_t784058677 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509ExtensionCollection Mono.Security.X509.X509Certificate::get_Extensions()
+extern "C"  X509ExtensionCollection_t1640144840 * X509Certificate_get_Extensions_m1784966408 (X509Certificate_t324051958 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Extension Mono.Security.X509.X509ExtensionCollection::get_Item(System.String)
+extern "C"  X509Extension_t1439760128 * X509ExtensionCollection_get_Item_m1497604741 (X509ExtensionCollection_t1640144840 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Chain::GetAuthorityKeyIdentifier(Mono.Security.X509.X509Extension)
+extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m4246284366 (X509Chain_t777637347 * __this, X509Extension_t1439760128 * ___ext0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509ExtensionCollection Mono.Security.X509.X509Crl::get_Extensions()
+extern "C"  X509ExtensionCollection_t1640144840 * X509Crl_get_Extensions_m4055821100 (X509Crl_t1699034837 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension::.ctor(Mono.Security.X509.X509Extension)
+extern "C"  void AuthorityKeyIdentifierExtension__ctor_m3002543607 (AuthorityKeyIdentifierExtension_t795428182 * __this, X509Extension_t1439760128 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] Mono.Security.X509.Extensions.AuthorityKeyIdentifierExtension::get_Identifier()
+extern "C"  ByteU5BU5D_t3397334013* AuthorityKeyIdentifierExtension_get_Identifier_m3535568551 (AuthorityKeyIdentifierExtension_t795428182 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509RevocationMode System.Security.Cryptography.X509Certificates.X509ChainPolicy::get_RevocationMode()
+extern "C"  int32_t X509ChainPolicy_get_RevocationMode_m3875602137 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509RevocationFlag System.Security.Cryptography.X509Certificates.X509ChainPolicy::get_RevocationFlag()
+extern "C"  int32_t X509ChainPolicy_get_RevocationFlag_m2635879545 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainStatusFlags System.Security.Cryptography.X509Certificates.X509Chain::CheckRevocation(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Int32,System.Boolean)
+extern "C"  int32_t X509Chain_CheckRevocation_m2480313486 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, int32_t ___ca1, bool ___online2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509ChainStatusFlags System.Security.Cryptography.X509Certificates.X509Chain::CheckRevocation(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Boolean)
+extern "C"  int32_t X509Chain_CheckRevocation_m2230738771 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, X509Certificate2_t4056456767 * ___ca_cert1, bool ___online2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Crl System.Security.Cryptography.X509Certificates.X509Chain::FindCrl(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  X509Crl_t1699034837 * X509Chain_FindCrl_m544748869 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___caCertificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Mono.Security.X509.X509Crl::VerifySignature(System.Security.Cryptography.AsymmetricAlgorithm)
+extern "C"  bool X509Crl_VerifySignature_m833718649 (X509Crl_t1699034837 * __this, AsymmetricAlgorithm_t784058677 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Crl/X509CrlEntry Mono.Security.X509.X509Crl::GetCrlEntry(Mono.Security.X509.X509Certificate)
+extern "C"  X509CrlEntry_t743353844 * X509Crl_GetCrlEntry_m1677459928 (X509Crl_t1699034837 * __this, X509Certificate_t324051958 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::ProcessCrlEntryExtensions(Mono.Security.X509.X509Crl/X509CrlEntry)
+extern "C"  bool X509Chain_ProcessCrlEntryExtensions_m919945006 (X509Chain_t777637347 * __this, X509CrlEntry_t743353844 * ___entry0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime Mono.Security.X509.X509Crl/X509CrlEntry::get_RevocationDate()
+extern "C"  DateTime_t693205669  X509CrlEntry_get_RevocationDate_m828452960 (X509CrlEntry_t743353844 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.DateTime Mono.Security.X509.X509Crl::get_NextUpdate()
+extern "C"  DateTime_t693205669  X509Crl_get_NextUpdate_m732409688 (X509Crl_t1699034837 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::ProcessCrlExtensions(Mono.Security.X509.X509Crl)
+extern "C"  bool X509Chain_ProcessCrlExtensions_m1682068042 (X509Chain_t777637347 * __this, X509Crl_t1699034837 * ___crl0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Store System.Security.Cryptography.X509Certificates.X509Store::get_Store()
+extern "C"  X509Store_t4028973563 * X509Store_get_Store_m3940520391 (X509Store_t1617430119 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.ArrayList Mono.Security.X509.X509Store::get_Crls()
+extern "C"  ArrayList_t4252133567 * X509Store_get_Crls_m925259309 (X509Store_t4028973563 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Mono.Security.X509.X509Crl::get_IssuerName()
+extern "C"  String_t* X509Crl_get_IssuerName_m4008957916 (X509Crl_t1699034837 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509Chain::GetAuthorityKeyIdentifier(Mono.Security.X509.X509Crl)
+extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m3712667872 (X509Chain_t777637347 * __this, X509Crl_t1699034837 * ___crl0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator System.Collections.CollectionBase::GetEnumerator()
+extern "C"  Il2CppObject * CollectionBase_GetEnumerator_m1161625307 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Mono.Security.X509.X509Extension::get_Critical()
+extern "C"  bool X509Extension_get_Critical_m1353779422 (X509Extension_t1439760128 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Mono.Security.X509.X509Extension::get_Oid()
+extern "C"  String_t* X509Extension_get_Oid_m3620527052 (X509Extension_t1439760128 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509ExtensionCollection Mono.Security.X509.X509Crl/X509CrlEntry::get_Extensions()
+extern "C"  X509ExtensionCollection_t1640144840 * X509CrlEntry_get_Extensions_m1330698752 (X509CrlEntry_t743353844 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainStatus::set_Status(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  void X509ChainStatus_set_Status_m4288653744 (X509ChainStatus_t4278378721 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Security.Cryptography.X509Certificates.X509ChainStatus::GetInformation(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  String_t* X509ChainStatus_GetInformation_m2968620882 (Il2CppObject * __this /* static, unused */, int32_t ___flags0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainStatus::set_StatusInformation(System.String)
+extern "C"  void X509ChainStatus_set_StatusInformation_m2903201015 (X509ChainStatus_t4278378721 * __this, String_t* ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.X509Certificates.X509ChainElement::Count(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  int32_t X509ChainElement_Count_m228862214 (X509ChainElement_t528874471 * __this, int32_t ___flags0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElement::Set(System.Security.Cryptography.X509Certificates.X509ChainStatus[],System.Int32&,System.Security.Cryptography.X509Certificates.X509ChainStatusFlags,System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
+extern "C"  void X509ChainElement_Set_m2634474339 (X509ChainElement_t528874471 * __this, X509ChainStatusU5BU5D_t830390908* ___status0, int32_t* ___position1, int32_t ___flags2, int32_t ___mask3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::.ctor(System.Collections.IEnumerable)
+extern "C"  void X509ChainElementEnumerator__ctor_m2608504725 (X509ChainElementEnumerator_t3304975821 * __this, Il2CppObject * ___enumerable0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainElement::.ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)
+extern "C"  void X509ChainElement__ctor_m3644590622 (X509ChainElement_t528874471 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ChainPolicy::Reset()
+extern "C"  void X509ChainPolicy_Reset_m430244129 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.OidCollection::.ctor()
+extern "C"  void OidCollection__ctor_m3515071701 (OidCollection_t3790243618 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension::Decode(System.Byte[])
+extern "C"  int32_t X509EnhancedKeyUsageExtension_Decode_m3866320499 (X509EnhancedKeyUsageExtension_t2099881051 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Mono.Security.ASN1Convert::ToOid(Mono.Security.ASN1)
+extern "C"  String_t* ASN1Convert_ToOid_m35757129 (Il2CppObject * __this /* static, unused */, ASN1_t924533536 * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.OidCollection::Add(System.Security.Cryptography.Oid)
+extern "C"  int32_t OidCollection_Add_m3712419303 (OidCollection_t3790243618 * __this, Oid_t3221867120 * ___oid0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AsnEncodedData::.ctor(System.String,System.Byte[])
+extern "C"  void AsnEncodedData__ctor_m1211934482 (AsnEncodedData_t463456204 * __this, String_t* ___oid0, ByteU5BU5D_t3397334013* ___rawData1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AsnEncodedData::CopyFrom(System.Security.Cryptography.AsnEncodedData)
+extern "C"  void AsnEncodedData_CopyFrom_m2601972121 (AsnEncodedData_t463456204 * __this, AsnEncodedData_t463456204 * ___asnEncodedData0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.ArrayList::.ctor(System.Int32)
+extern "C"  void ArrayList__ctor_m1467563650 (ArrayList_t4252133567 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.ASN1 Mono.Security.X509.X509Extension::get_Value()
+extern "C"  ASN1_t924533536 * X509Extension_get_Value_m1361397841 (X509Extension_t1439760128 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Security.Cryptography.CryptoConfig::CreateFromName(System.String,System.Object[])
+extern "C"  Il2CppObject * CryptoConfig_CreateFromName_m2169102076 (Il2CppObject * __this /* static, unused */, String_t* p0, ObjectU5BU5D_t3614634134* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Extension::.ctor(System.String,System.Byte[],System.Boolean)
+extern "C"  void X509Extension__ctor_m1827839564 (X509Extension_t1320896183 * __this, String_t* ___oid0, ByteU5BU5D_t3397334013* ___rawData1, bool ___critical2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator::.ctor(System.Collections.ArrayList)
+extern "C"  void X509ExtensionEnumerator__ctor_m1818832067 (X509ExtensionEnumerator_t3763443773 * __this, ArrayList_t4252133567 * ___list0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.String::Equals(System.String)
+extern "C"  bool String_Equals_m2633592423 (String_t* __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::Decode(System.Byte[])
+extern "C"  int32_t X509KeyUsageExtension_Decode_m3292847033 (X509KeyUsageExtension_t1038124237 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.X509Certificates.X509KeyUsageFlags System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::GetValidFlags(System.Security.Cryptography.X509Certificates.X509KeyUsageFlags)
+extern "C"  int32_t X509KeyUsageExtension_GetValidFlags_m1346045110 (X509KeyUsageExtension_t1038124237 * __this, int32_t ___flags0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::Encode()
+extern "C"  ByteU5BU5D_t3397334013* X509KeyUsageExtension_Encode_m3100824560 (X509KeyUsageExtension_t1038124237 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.CollectionBase::Clear()
+extern "C"  void CollectionBase_Clear_m4223862684 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Stores Mono.Security.X509.X509StoreManager::get_CurrentUser()
+extern "C"  X509Stores_t3001420398 * X509StoreManager_get_CurrentUser_m215742422 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Stores Mono.Security.X509.X509StoreManager::get_LocalMachine()
+extern "C"  X509Stores_t3001420398 * X509StoreManager_get_LocalMachine_m3654759838 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Stores System.Security.Cryptography.X509Certificates.X509Store::get_Factory()
+extern "C"  X509Stores_t3001420398 * X509Store_get_Factory_m428109475 (X509Store_t1617430119 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Store Mono.Security.X509.X509Stores::Open(System.String,System.Boolean)
+extern "C"  X509Store_t4028973563 * X509Stores_Open_m2057354563 (X509Stores_t3001420398 * __this, String_t* p0, bool p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509CertificateCollection Mono.Security.X509.X509Store::get_Certificates()
+extern "C"  X509CertificateCollection_t3592472866 * X509Store_get_Certificates_m292492922 (X509Store_t4028973563 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator Mono.Security.X509.X509CertificateCollection::GetEnumerator()
+extern "C"  X509CertificateEnumerator_t3487770523 * X509CertificateCollection_GetEnumerator_m1235754237 (X509CertificateCollection_t3592472866 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// Mono.Security.X509.X509Certificate Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::get_Current()
+extern "C"  X509Certificate_t324051958 * X509CertificateEnumerator_get_Current_m3745394949 (X509CertificateEnumerator_t3487770523 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::.ctor(System.Byte[])
+extern "C"  void X509Certificate2__ctor_m4067762773 (X509Certificate2_t4056456767 * __this, ByteU5BU5D_t3397334013* ___rawData0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Mono.Security.X509.X509CertificateCollection/X509CertificateEnumerator::MoveNext()
+extern "C"  bool X509CertificateEnumerator_MoveNext_m1422952050 (X509CertificateEnumerator_t3487770523 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::Decode(System.Byte[])
+extern "C"  int32_t X509SubjectKeyIdentifierExtension_Decode_m4102819207 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::Encode()
+extern "C"  ByteU5BU5D_t3397334013* X509SubjectKeyIdentifierExtension_Encode_m4237278042 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::FromHex(System.String)
+extern "C"  ByteU5BU5D_t3397334013* X509SubjectKeyIdentifierExtension_FromHex_m3272045013 (Il2CppObject * __this /* static, unused */, String_t* ___hex0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::.ctor(System.Security.Cryptography.X509Certificates.PublicKey,System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierHashAlgorithm,System.Boolean)
+extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m3728672874 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, PublicKey_t870392 * ___key0, int32_t ___algorithm1, bool ___critical2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.SHA1 System.Security.Cryptography.SHA1::Create()
+extern "C"  SHA1_t3336793149 * SHA1_Create_m139442991 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.HashAlgorithm::ComputeHash(System.Byte[])
+extern "C"  ByteU5BU5D_t3397334013* HashAlgorithm_ComputeHash_m3637856778 (HashAlgorithm_t2624936259 * __this, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.Oid System.Security.Cryptography.X509Certificates.PublicKey::get_Oid()
+extern "C"  Oid_t3221867120 * PublicKey_get_Oid_m4224222642 (PublicKey_t870392 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::FromHexChar(System.Char)
+extern "C"  uint8_t X509SubjectKeyIdentifierExtension_FromHexChar_m4225129392 (Il2CppObject * __this /* static, unused */, Il2CppChar ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::FromHexChars(System.Char,System.Char)
+extern "C"  uint8_t X509SubjectKeyIdentifierExtension_FromHexChars_m2515150420 (Il2CppObject * __this /* static, unused */, Il2CppChar ___c10, Il2CppChar ___c21, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Capture::.ctor(System.String,System.Int32,System.Int32)
+extern "C"  void Capture__ctor_m2965900721 (Capture_t4157900610 * __this, String_t* ___text0, int32_t ___index1, int32_t ___length2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Text.RegularExpressions.Capture::get_Value()
+extern "C"  String_t* Capture_get_Value_m147072698 (Capture_t4157900610 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array::CopyTo(System.Array,System.Int32)
+extern "C"  void Array_CopyTo_m4061033315 (Il2CppArray * __this, Il2CppArray * p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator System.Array::GetEnumerator()
+extern "C"  Il2CppObject * Array_GetEnumerator_m2284404958 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.String::StartsWith(System.String)
+extern "C"  bool String_StartsWith_m1841920685 (String_t* __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Enum::Parse(System.Type,System.String,System.Boolean)
+extern "C"  Il2CppObject * Enum_Parse_m982704874 (Il2CppObject * __this /* static, unused */, Type_t * p0, String_t* p1, bool p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Char::IsLetterOrDigit(System.Char)
+extern "C"  bool Char_IsLetterOrDigit_m2164758816 (Il2CppObject * __this /* static, unused */, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.CategoryUtils::IsCategory(System.Globalization.UnicodeCategory,System.Char)
+extern "C"  bool CategoryUtils_IsCategory_m932215390 (Il2CppObject * __this /* static, unused */, int32_t ___uc0, Il2CppChar ___c1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Char::IsDigit(System.Char)
+extern "C"  bool Char_IsDigit_m751559221 (Il2CppObject * __this /* static, unused */, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Char::IsWhiteSpace(System.Char)
+extern "C"  bool Char_IsWhiteSpace_m1507160293 (Il2CppObject * __this /* static, unused */, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Globalization.UnicodeCategory System.Char::GetUnicodeCategory(System.Char)
+extern "C"  int32_t Char_GetUnicodeCategory_m4273361321 (Il2CppObject * __this /* static, unused */, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Collections.Hashtable::.ctor(System.Int32)
+extern "C"  void Hashtable__ctor_m2702360557 (Hashtable_t909839986 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.MRUList::.ctor()
+extern "C"  void MRUList__ctor_m2726533367 (MRUList_t33178162 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.FactoryCache/Key::.ctor(System.String,System.Text.RegularExpressions.RegexOptions)
+extern "C"  void Key__ctor_m3845666353 (Key_t655155419 * __this, String_t* ___pattern0, int32_t ___options1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.FactoryCache::Cleanup()
+extern "C"  void FactoryCache_Cleanup_m4130035987 (FactoryCache_t2051534610 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.MRUList::Use(System.Object)
+extern "C"  void MRUList_Use_m1589089668 (MRUList_t33178162 * __this, Il2CppObject * ___o0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Text.RegularExpressions.MRUList::Evict()
+extern "C"  Il2CppObject * MRUList_Evict_m2430323183 (MRUList_t33178162 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Concat(System.Object[])
+extern "C"  String_t* String_Concat_m3881798623 (Il2CppObject * __this /* static, unused */, ObjectU5BU5D_t3614634134* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.CaptureCollection::.ctor(System.Int32)
+extern "C"  void CaptureCollection__ctor_m629636494 (CaptureCollection_t1671345504 * __this, int32_t ___n0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.CaptureCollection::SetValue(System.Text.RegularExpressions.Capture,System.Int32)
+extern "C"  void CaptureCollection_SetValue_m3422959110 (CaptureCollection_t1671345504 * __this, Capture_t4157900610 * ___cap0, int32_t ___i1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Capture::.ctor(System.String)
+extern "C"  void Capture__ctor_m885749277 (Capture_t4157900610 * __this, String_t* ___text0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Group::.ctor()
+extern "C"  void Group__ctor_m2264492664 (Group_t3761430853 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.RegularExpressions.Match System.Text.RegularExpressions.Match::get_Empty()
+extern "C"  Match_t3164245899 * Match_get_Empty_m3581361913 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.RegularExpressions.Regex System.Text.RegularExpressions.Match::get_Regex()
+extern "C"  Regex_t1803876613 * Match_get_Regex_m3526002767 (Match_t3164245899 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Regex::GetGroupIndex(System.Int32)
+extern "C"  int32_t Regex_GetGroupIndex_m1686599756 (Regex_t1803876613 * __this, int32_t ___number0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.BaseMachine::.ctor()
+extern "C"  void BaseMachine__ctor_m2327544039 (BaseMachine_t4008011478 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter::ReadProgramCount(System.Int32)
+extern "C"  int32_t Interpreter_ReadProgramCount_m1520031325 (Interpreter_t3731288230 * __this, int32_t ___ptr0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter::Eval(System.Text.RegularExpressions.Interpreter/Mode,System.Int32&,System.Int32)
+extern "C"  bool Interpreter_Eval_m1448443064 (Interpreter_t3731288230 * __this, int32_t ___mode0, int32_t* ___ref_ptr1, int32_t ___pc2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.RegularExpressions.Match System.Text.RegularExpressions.Interpreter::GenerateMatch(System.Text.RegularExpressions.Regex)
+extern "C"  Match_t3164245899 * Interpreter_GenerateMatch_m4061336978 (Interpreter_t3731288230 * __this, Regex_t1803876613 * ___regex0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::ResetGroups()
+extern "C"  void Interpreter_ResetGroups_m2279870744 (Interpreter_t3731288230 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter::TryMatch(System.Int32&,System.Int32)
+extern "C"  bool Interpreter_TryMatch_m3515025641 (Interpreter_t3731288230 * __this, int32_t* ___ref_ptr0, int32_t ___pc1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.Text.RegularExpressions.Interpreter::GetString(System.Int32)
+extern "C"  String_t* Interpreter_GetString_m2427752964 (Interpreter_t3731288230 * __this, int32_t ___pc0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.QuickSearch::.ctor(System.String,System.Boolean,System.Boolean)
+extern "C"  void QuickSearch__ctor_m3154883280 (QuickSearch_t1036078825 * __this, String_t* ___str0, bool ___ignore1, bool ___reverse2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.QuickSearch::Search(System.String,System.Int32,System.Int32)
+extern "C"  int32_t QuickSearch_Search_m1829030982 (QuickSearch_t1036078825 * __this, String_t* ___text0, int32_t ___start1, int32_t ___end2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.QuickSearch::get_Length()
+extern "C"  int32_t QuickSearch_get_Length_m941459387 (QuickSearch_t1036078825 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter::IsPosition(System.Text.RegularExpressions.Position,System.Int32)
+extern "C"  bool Interpreter_IsPosition_m1570996169 (Interpreter_t3731288230 * __this, uint16_t ___pos0, int32_t ___ptr1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Char System.Char::ToLower(System.Char)
+extern "C"  Il2CppChar Char_ToLower_m2719897546 (Il2CppObject * __this /* static, unused */, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter::GetLastDefined(System.Int32)
+extern "C"  int32_t Interpreter_GetLastDefined_m2450713313 (Interpreter_t3731288230 * __this, int32_t ___gid0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Mark::get_Index()
+extern "C"  int32_t Mark_get_Index_m990057995 (Mark_t2724874473 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Mark::get_Length()
+extern "C"  int32_t Mark_get_Length_m3493411061 (Mark_t2724874473 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter::EvalChar(System.Text.RegularExpressions.Interpreter/Mode,System.Int32&,System.Int32&,System.Boolean)
+extern "C"  bool Interpreter_EvalChar_m1135512271 (Interpreter_t3731288230 * __this, int32_t ___mode0, int32_t* ___ptr1, int32_t* ___pc2, bool ___multi3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::Open(System.Int32,System.Int32)
+extern "C"  void Interpreter_Open_m1604955807 (Interpreter_t3731288230 * __this, int32_t ___gid0, int32_t ___ptr1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::Close(System.Int32,System.Int32)
+extern "C"  void Interpreter_Close_m1500459069 (Interpreter_t3731288230 * __this, int32_t ___gid0, int32_t ___ptr1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter::Balance(System.Int32,System.Int32,System.Boolean,System.Int32)
+extern "C"  bool Interpreter_Balance_m3069360007 (Interpreter_t3731288230 * __this, int32_t ___gid0, int32_t ___balance_gid1, bool ___capture2, int32_t ___ptr3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter::Checkpoint()
+extern "C"  int32_t Interpreter_Checkpoint_m1028400787 (Interpreter_t3731288230 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::Backtrack(System.Int32)
+extern "C"  void Interpreter_Backtrack_m965888372 (Interpreter_t3731288230 * __this, int32_t ___cp0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter/RepeatContext::.ctor(System.Text.RegularExpressions.Interpreter/RepeatContext,System.Int32,System.Int32,System.Boolean,System.Int32)
+extern "C"  void RepeatContext__ctor_m1528676798 (RepeatContext_t1827616978 * __this, RepeatContext_t1827616978 * ___previous0, int32_t ___min1, int32_t ___max2, bool ___lazy3, int32_t ___expr_pc4, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.RegularExpressions.Interpreter/RepeatContext System.Text.RegularExpressions.Interpreter/RepeatContext::get_Previous()
+extern "C"  RepeatContext_t1827616978 * RepeatContext_get_Previous_m808449037 (RepeatContext_t1827616978 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter/RepeatContext::get_Start()
+extern "C"  int32_t RepeatContext_get_Start_m1989972711 (RepeatContext_t1827616978 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter/RepeatContext::get_Count()
+extern "C"  int32_t RepeatContext_get_Count_m1494501556 (RepeatContext_t1827616978 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter/RepeatContext::set_Count(System.Int32)
+extern "C"  void RepeatContext_set_Count_m2351887223 (RepeatContext_t1827616978 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter/RepeatContext::set_Start(System.Int32)
+extern "C"  void RepeatContext_set_Start_m365632994 (RepeatContext_t1827616978 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter/RepeatContext::get_Expression()
+extern "C"  int32_t RepeatContext_get_Expression_m1655768241 (RepeatContext_t1827616978 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter/RepeatContext::get_IsMinimum()
+extern "C"  bool RepeatContext_get_IsMinimum_m953426621 (RepeatContext_t1827616978 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter/RepeatContext::get_IsLazy()
+extern "C"  bool RepeatContext_get_IsLazy_m1620488045 (RepeatContext_t1827616978 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter/RepeatContext::get_IsMaximum()
+extern "C"  bool RepeatContext_get_IsMaximum_m168299287 (RepeatContext_t1827616978 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter/IntStack::get_Count()
+extern "C"  int32_t IntStack_get_Count_m667249805 (IntStack_t273560425 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter/IntStack::set_Count(System.Int32)
+extern "C"  void IntStack_set_Count_m2324758988 (IntStack_t273560425 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter/IntStack::Push(System.Int32)
+extern "C"  void IntStack_Push_m1259764820 (IntStack_t273560425 * __this, int32_t ___value0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter/IntStack::Pop()
+extern "C"  int32_t IntStack_Pop_m2060782614 (IntStack_t273560425 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Char System.Char::ToUpper(System.Char)
+extern "C"  Il2CppChar Char_ToUpper_m109978609 (Il2CppObject * __this /* static, unused */, Il2CppChar p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.CategoryUtils::IsCategory(System.Text.RegularExpressions.Category,System.Char)
+extern "C"  bool CategoryUtils_IsCategory_m1003669132 (Il2CppObject * __this /* static, unused */, uint16_t ___cat0, Il2CppChar ___c1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::Reset()
+extern "C"  void Interpreter_Reset_m316758268 (Interpreter_t3731288230 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interpreter::IsWordChar(System.Char)
+extern "C"  bool Interpreter_IsWordChar_m296836120 (Interpreter_t3731288230 * __this, Il2CppChar ___c0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::CreateString(System.Char[])
+extern "C"  String_t* String_CreateString_m3818307083 (String_t* __this, CharU5BU5D_t1328083999* ___val0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Mark::get_IsDefined()
+extern "C"  bool Mark_get_IsDefined_m3332701456 (Mark_t2724874473 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interpreter::CreateMark(System.Int32)
+extern "C"  int32_t Interpreter_CreateMark_m603764609 (Interpreter_t3731288230 * __this, int32_t ___previous0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.RegularExpressions.CaptureCollection System.Text.RegularExpressions.Group::get_Captures()
+extern "C"  CaptureCollection_t1671345504 * Group_get_Captures_m2440248304 (Group_t3761430853 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::GetGroupInfo(System.Int32,System.Int32&,System.Int32&)
+extern "C"  void Interpreter_GetGroupInfo_m312421921 (Interpreter_t3731288230 * __this, int32_t ___gid0, int32_t* ___first_mark_index1, int32_t* ___n_caps2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Match::.ctor(System.Text.RegularExpressions.Regex,System.Text.RegularExpressions.IMachine,System.String,System.Int32,System.Int32,System.Int32,System.Int32)
+extern "C"  void Match__ctor_m920678511 (Match_t3164245899 * __this, Regex_t1803876613 * ___regex0, Il2CppObject * ___machine1, String_t* ___text2, int32_t ___text_length3, int32_t ___n_groups4, int32_t ___index5, int32_t ___length6, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Match::.ctor(System.Text.RegularExpressions.Regex,System.Text.RegularExpressions.IMachine,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+extern "C"  void Match__ctor_m2452513644 (Match_t3164245899 * __this, Regex_t1803876613 * ___regex0, Il2CppObject * ___machine1, String_t* ___text2, int32_t ___text_length3, int32_t ___n_groups4, int32_t ___index5, int32_t ___length6, int32_t ___n_caps7, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::PopulateGroup(System.Text.RegularExpressions.Group,System.Int32,System.Int32)
+extern "C"  void Interpreter_PopulateGroup_m4098755954 (Interpreter_t3731288230 * __this, Group_t3761430853 * ___g0, int32_t ___first_mark_index1, int32_t ___n_caps2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Group::.ctor(System.String,System.Int32,System.Int32,System.Int32)
+extern "C"  void Group__ctor_m1187945851 (Group_t3761430853 * __this, String_t* ___text0, int32_t ___index1, int32_t ___length2, int32_t ___n_caps3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.GroupCollection::SetValue(System.Text.RegularExpressions.Group,System.Int32)
+extern "C"  void GroupCollection_SetValue_m3560779396 (GroupCollection_t939014605 * __this, Group_t3761430853 * ___g0, int32_t ___i1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.SystemException::.ctor(System.String)
+extern "C"  void SystemException__ctor_m4001391027 (SystemException_t3877406272 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interpreter::.ctor(System.UInt16[])
+extern "C"  void Interpreter__ctor_m1139507339 (Interpreter_t3731288230 * __this, UInt16U5BU5D_t2527266722* ___program0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interval::.ctor(System.Int32,System.Int32)
+extern "C"  void Interval__ctor_m160053574 (Interval_t2354235237 * __this, int32_t ___low0, int32_t ___high1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::get_IsDiscontiguous()
+extern "C"  bool Interval_get_IsDiscontiguous_m2826395253 (Interval_t2354235237 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::get_IsSingleton()
+extern "C"  bool Interval_get_IsSingleton_m1888598248 (Interval_t2354235237 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::get_IsEmpty()
+extern "C"  bool Interval_get_IsEmpty_m1232768344 (Interval_t2354235237 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interval::get_Size()
+extern "C"  int32_t Interval_get_Size_m252675452 (Interval_t2354235237 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::IsDisjoint(System.Text.RegularExpressions.Interval)
+extern "C"  bool Interval_IsDisjoint_m2165873260 (Interval_t2354235237 * __this, Interval_t2354235237  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::IsAdjacent(System.Text.RegularExpressions.Interval)
+extern "C"  bool Interval_IsAdjacent_m294638198 (Interval_t2354235237 * __this, Interval_t2354235237  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::Contains(System.Text.RegularExpressions.Interval)
+extern "C"  bool Interval_Contains_m3209397137 (Interval_t2354235237 * __this, Interval_t2354235237  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::Contains(System.Int32)
+extern "C"  bool Interval_Contains_m1289613164 (Interval_t2354235237 * __this, int32_t ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Text.RegularExpressions.Interval::Intersects(System.Text.RegularExpressions.Interval)
+extern "C"  bool Interval_Intersects_m3480157390 (Interval_t2354235237 * __this, Interval_t2354235237  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.Interval::Merge(System.Text.RegularExpressions.Interval)
+extern "C"  void Interval_Merge_m1170166798 (Interval_t2354235237 * __this, Interval_t2354235237  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.Interval::CompareTo(System.Object)
+extern "C"  int32_t Interval_CompareTo_m2909556284 (Interval_t2354235237 * __this, Il2CppObject * ___o0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.IntervalCollection::.ctor()
+extern "C"  void IntervalCollection__ctor_m761408702 (IntervalCollection_t4130821325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.IntervalCollection::Normalize()
+extern "C"  void IntervalCollection_Normalize_m538796191 (IntervalCollection_t4130821325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Text.RegularExpressions.IntervalCollection::get_Count()
+extern "C"  int32_t IntervalCollection_get_Count_m2594835678 (IntervalCollection_t4130821325 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.IntervalCollection::Optimize(System.Int32,System.Int32,System.Text.RegularExpressions.IntervalCollection,System.Text.RegularExpressions.IntervalCollection/CostDelegate)
+extern "C"  void IntervalCollection_Optimize_m2229933552 (IntervalCollection_t4130821325 * __this, int32_t ___begin0, int32_t ___end1, IntervalCollection_t4130821325 * ___meta2, CostDelegate_t1824458113 * ___cost_del3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Text.RegularExpressions.Interval System.Text.RegularExpressions.IntervalCollection::get_Item(System.Int32)
+extern "C"  Interval_t2354235237  IntervalCollection_get_Item_m1667788970 (IntervalCollection_t4130821325 * __this, int32_t ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Double System.Text.RegularExpressions.IntervalCollection/CostDelegate::Invoke(System.Text.RegularExpressions.Interval)
+extern "C"  double CostDelegate_Invoke_m2580283336 (CostDelegate_t1824458113 * __this, Interval_t2354235237  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.IntervalCollection::Add(System.Text.RegularExpressions.Interval)
+extern "C"  void IntervalCollection_Add_m474325761 (IntervalCollection_t4130821325 * __this, Interval_t2354235237  ___i0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Text.RegularExpressions.IntervalCollection/Enumerator::.ctor(System.Collections.IList)
+extern "C"  void Enumerator__ctor_m3782962052 (Enumerator_t1928086041 * __this, Il2CppObject * ___list0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -619,8 +2964,6 @@ extern "C"  String_t* Locale_GetText_m4034107474 (Il2CppObject * __this /* stati
 	}
 }
 // System.String Locale::GetText(System.String,System.Object[])
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t Locale_GetText_m1445803604_MetadataUsageId;
 extern "C"  String_t* Locale_GetText_m1445803604 (Il2CppObject * __this /* static, unused */, String_t* ___fmt0, ObjectU5BU5D_t3614634134* ___args1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -646,11 +2989,6 @@ extern "C"  void HybridDictionary__ctor_m884012539 (HybridDictionary_t290043810 
 	}
 }
 // System.Void System.Collections.Specialized.HybridDictionary::.ctor(System.Int32,System.Boolean)
-extern Il2CppClass* CaseInsensitiveComparer_t157661140_il2cpp_TypeInfo_var;
-extern Il2CppClass* CaseInsensitiveHashCodeProvider_t2307530285_il2cpp_TypeInfo_var;
-extern Il2CppClass* ListDictionary_t3458713452_il2cpp_TypeInfo_var;
-extern Il2CppClass* Hashtable_t909839986_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary__ctor_m890422665_MetadataUsageId;
 extern "C"  void HybridDictionary__ctor_m890422665 (HybridDictionary_t290043810 * __this, int32_t ___initialSize0, bool ___caseInsensitive1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -778,8 +3116,6 @@ IL_001e:
 	}
 }
 // System.Int32 System.Collections.Specialized.HybridDictionary::get_Count()
-extern Il2CppClass* ICollection_t91669223_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_get_Count_m1347303215_MetadataUsageId;
 extern "C"  int32_t HybridDictionary_get_Count_m1347303215 (HybridDictionary_t290043810 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -796,8 +3132,6 @@ extern "C"  int32_t HybridDictionary_get_Count_m1347303215 (HybridDictionary_t29
 	}
 }
 // System.Object System.Collections.Specialized.HybridDictionary::get_Item(System.Object)
-extern Il2CppClass* IDictionary_t596158605_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_get_Item_m1077394870_MetadataUsageId;
 extern "C"  Il2CppObject * HybridDictionary_get_Item_m1077394870 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -815,8 +3149,6 @@ extern "C"  Il2CppObject * HybridDictionary_get_Item_m1077394870 (HybridDictiona
 	}
 }
 // System.Void System.Collections.Specialized.HybridDictionary::set_Item(System.Object,System.Object)
-extern Il2CppClass* IDictionary_t596158605_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_set_Item_m4049906479_MetadataUsageId;
 extern "C"  void HybridDictionary_set_Item_m4049906479 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -854,8 +3186,6 @@ IL_002b:
 	}
 }
 // System.Collections.ICollection System.Collections.Specialized.HybridDictionary::get_Keys()
-extern Il2CppClass* IDictionary_t596158605_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_get_Keys_m4114678936_MetadataUsageId;
 extern "C"  Il2CppObject * HybridDictionary_get_Keys_m4114678936 (HybridDictionary_t290043810 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -879,8 +3209,6 @@ extern "C"  Il2CppObject * HybridDictionary_get_SyncRoot_m1170821686 (HybridDict
 	}
 }
 // System.Void System.Collections.Specialized.HybridDictionary::Add(System.Object,System.Object)
-extern Il2CppClass* IDictionary_t596158605_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_Add_m1037587952_MetadataUsageId;
 extern "C"  void HybridDictionary_Add_m1037587952 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -918,8 +3246,6 @@ IL_002b:
 	}
 }
 // System.Void System.Collections.Specialized.HybridDictionary::CopyTo(System.Array,System.Int32)
-extern Il2CppClass* ICollection_t91669223_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_CopyTo_m2422525990_MetadataUsageId;
 extern "C"  void HybridDictionary_CopyTo_m2422525990 (HybridDictionary_t290043810 * __this, Il2CppArray * ___array0, int32_t ___index1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -938,8 +3264,6 @@ extern "C"  void HybridDictionary_CopyTo_m2422525990 (HybridDictionary_t29004381
 	}
 }
 // System.Collections.IDictionaryEnumerator System.Collections.Specialized.HybridDictionary::GetEnumerator()
-extern Il2CppClass* IDictionary_t596158605_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_GetEnumerator_m3570171579_MetadataUsageId;
 extern "C"  Il2CppObject * HybridDictionary_GetEnumerator_m3570171579 (HybridDictionary_t290043810 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -956,8 +3280,6 @@ extern "C"  Il2CppObject * HybridDictionary_GetEnumerator_m3570171579 (HybridDic
 	}
 }
 // System.Void System.Collections.Specialized.HybridDictionary::Remove(System.Object)
-extern Il2CppClass* IDictionary_t596158605_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_Remove_m2059808027_MetadataUsageId;
 extern "C"  void HybridDictionary_Remove_m2059808027 (HybridDictionary_t290043810 * __this, Il2CppObject * ___key0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -975,10 +3297,6 @@ extern "C"  void HybridDictionary_Remove_m2059808027 (HybridDictionary_t29004381
 	}
 }
 // System.Void System.Collections.Specialized.HybridDictionary::Switch()
-extern Il2CppClass* CaseInsensitiveComparer_t157661140_il2cpp_TypeInfo_var;
-extern Il2CppClass* CaseInsensitiveHashCodeProvider_t2307530285_il2cpp_TypeInfo_var;
-extern Il2CppClass* Hashtable_t909839986_il2cpp_TypeInfo_var;
-extern const uint32_t HybridDictionary_Switch_m146896129_MetadataUsageId;
 extern "C"  void HybridDictionary_Switch_m146896129 (HybridDictionary_t290043810 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1070,8 +3388,6 @@ extern "C"  void ListDictionary__ctor_m319558045 (ListDictionary_t3458713452 * _
 	}
 }
 // System.Collections.IEnumerator System.Collections.Specialized.ListDictionary::System.Collections.IEnumerable.GetEnumerator()
-extern Il2CppClass* DictionaryNodeEnumerator_t1923170152_il2cpp_TypeInfo_var;
-extern const uint32_t ListDictionary_System_Collections_IEnumerable_GetEnumerator_m2244736244_MetadataUsageId;
 extern "C"  Il2CppObject * ListDictionary_System_Collections_IEnumerable_GetEnumerator_m2244736244 (ListDictionary_t3458713452 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1087,11 +3403,6 @@ extern "C"  Il2CppObject * ListDictionary_System_Collections_IEnumerable_GetEnum
 	}
 }
 // System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary::FindEntry(System.Object)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* IComparer_t3952557350_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3021628599;
-extern Il2CppCodeGenString* _stringLiteral2250706828;
-extern const uint32_t ListDictionary_FindEntry_m1690278153_MetadataUsageId;
 extern "C"  DictionaryNode_t2725637098 * ListDictionary_FindEntry_m1690278153 (ListDictionary_t3458713452 * __this, Il2CppObject * ___key0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1214,11 +3525,6 @@ IL_0083:
 	}
 }
 // System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary::FindEntry(System.Object,System.Collections.Specialized.ListDictionary/DictionaryNode&)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* IComparer_t3952557350_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3021628599;
-extern Il2CppCodeGenString* _stringLiteral2250706828;
-extern const uint32_t ListDictionary_FindEntry_m432748847_MetadataUsageId;
 extern "C"  DictionaryNode_t2725637098 * ListDictionary_FindEntry_m432748847 (ListDictionary_t3458713452 * __this, Il2CppObject * ___key0, DictionaryNode_t2725637098 ** ___prev1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1352,8 +3658,6 @@ IL_008c:
 	}
 }
 // System.Void System.Collections.Specialized.ListDictionary::AddImpl(System.Object,System.Object,System.Collections.Specialized.ListDictionary/DictionaryNode)
-extern Il2CppClass* DictionaryNode_t2725637098_il2cpp_TypeInfo_var;
-extern const uint32_t ListDictionary_AddImpl_m2604632092_MetadataUsageId;
 extern "C"  void ListDictionary_AddImpl_m2604632092 (ListDictionary_t3458713452 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, DictionaryNode_t2725637098 * ___prev2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1418,20 +3722,6 @@ extern "C"  Il2CppObject * ListDictionary_get_SyncRoot_m1212356752 (ListDictiona
 	}
 }
 // System.Void System.Collections.Specialized.ListDictionary::CopyTo(System.Array,System.Int32)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppClass* IndexOutOfRangeException_t3527622107_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* DictionaryEntry_t3048875398_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1185213181;
-extern Il2CppCodeGenString* _stringLiteral1003153106;
-extern Il2CppCodeGenString* _stringLiteral1460639766;
-extern Il2CppCodeGenString* _stringLiteral3863425438;
-extern Il2CppCodeGenString* _stringLiteral1043308353;
-extern Il2CppCodeGenString* _stringLiteral1406820407;
-extern const uint32_t ListDictionary_CopyTo_m1124479600_MetadataUsageId;
 extern "C"  void ListDictionary_CopyTo_m1124479600 (ListDictionary_t3458713452 * __this, Il2CppArray * ___array0, int32_t ___index1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1530,7 +3820,7 @@ IL_006e:
 			Il2CppObject * L_14 = V_1;
 			NullCheck(L_14);
 			Il2CppObject * L_15 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(0 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t1466026749_il2cpp_TypeInfo_var, L_14);
-			V_0 = ((*(DictionaryEntry_t3048875398 *)((DictionaryEntry_t3048875398 *)UnBox (L_15, DictionaryEntry_t3048875398_il2cpp_TypeInfo_var))));
+			V_0 = ((*(DictionaryEntry_t3048875398 *)((DictionaryEntry_t3048875398 *)UnBox(L_15, DictionaryEntry_t3048875398_il2cpp_TypeInfo_var))));
 			Il2CppArray * L_16 = ___array0;
 			DictionaryEntry_t3048875398  L_17 = V_0;
 			DictionaryEntry_t3048875398  L_18 = L_17;
@@ -1670,8 +3960,6 @@ IL_0025:
 	}
 }
 // System.Collections.ICollection System.Collections.Specialized.ListDictionary::get_Keys()
-extern Il2CppClass* DictionaryNodeCollection_t528898270_il2cpp_TypeInfo_var;
-extern const uint32_t ListDictionary_get_Keys_m3344920214_MetadataUsageId;
 extern "C"  Il2CppObject * ListDictionary_get_Keys_m3344920214 (ListDictionary_t3458713452 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1687,10 +3975,6 @@ extern "C"  Il2CppObject * ListDictionary_get_Keys_m3344920214 (ListDictionary_t
 	}
 }
 // System.Void System.Collections.Specialized.ListDictionary::Add(System.Object,System.Object)
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3021628599;
-extern Il2CppCodeGenString* _stringLiteral1659354982;
-extern const uint32_t ListDictionary_Add_m4276262662_MetadataUsageId;
 extern "C"  void ListDictionary_Add_m4276262662 (ListDictionary_t3458713452 * __this, Il2CppObject * ___key0, Il2CppObject * ___value1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1738,8 +4022,6 @@ extern "C"  void ListDictionary_Clear_m3646179034 (ListDictionary_t3458713452 * 
 	}
 }
 // System.Collections.IDictionaryEnumerator System.Collections.Specialized.ListDictionary::GetEnumerator()
-extern Il2CppClass* DictionaryNodeEnumerator_t1923170152_il2cpp_TypeInfo_var;
-extern const uint32_t ListDictionary_GetEnumerator_m1511032609_MetadataUsageId;
 extern "C"  Il2CppObject * ListDictionary_GetEnumerator_m1511032609 (ListDictionary_t3458713452 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1858,19 +4140,6 @@ extern "C"  Il2CppObject * DictionaryNodeCollection_get_SyncRoot_m4292609649 (Di
 	}
 }
 // System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeCollection::CopyTo(System.Array,System.Int32)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppClass* IndexOutOfRangeException_t3527622107_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1185213181;
-extern Il2CppCodeGenString* _stringLiteral1003153106;
-extern Il2CppCodeGenString* _stringLiteral1460639766;
-extern Il2CppCodeGenString* _stringLiteral3863425438;
-extern Il2CppCodeGenString* _stringLiteral1043308353;
-extern Il2CppCodeGenString* _stringLiteral1406820407;
-extern const uint32_t DictionaryNodeCollection_CopyTo_m3104713877_MetadataUsageId;
 extern "C"  void DictionaryNodeCollection_CopyTo_m3104713877 (DictionaryNodeCollection_t528898270 * __this, Il2CppArray * ___array0, int32_t ___index1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2037,8 +4306,6 @@ IL_00a4:
 	}
 }
 // System.Collections.IEnumerator System.Collections.Specialized.ListDictionary/DictionaryNodeCollection::GetEnumerator()
-extern Il2CppClass* DictionaryNodeCollectionEnumerator_t2037848305_il2cpp_TypeInfo_var;
-extern const uint32_t DictionaryNodeCollection_GetEnumerator_m4231738996_MetadataUsageId;
 extern "C"  Il2CppObject * DictionaryNodeCollection_GetEnumerator_m4231738996 (DictionaryNodeCollection_t528898270 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2070,8 +4337,6 @@ extern "C"  void DictionaryNodeCollectionEnumerator__ctor_m84810679 (DictionaryN
 	}
 }
 // System.Object System.Collections.Specialized.ListDictionary/DictionaryNodeCollection/DictionaryNodeCollectionEnumerator::get_Current()
-extern Il2CppClass* IDictionaryEnumerator_t259680273_il2cpp_TypeInfo_var;
-extern const uint32_t DictionaryNodeCollectionEnumerator_get_Current_m3220527494_MetadataUsageId;
 extern "C"  Il2CppObject * DictionaryNodeCollectionEnumerator_get_Current_m3220527494 (DictionaryNodeCollectionEnumerator_t2037848305 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2110,8 +4375,6 @@ IL_0026:
 	}
 }
 // System.Boolean System.Collections.Specialized.ListDictionary/DictionaryNodeCollection/DictionaryNodeCollectionEnumerator::MoveNext()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t DictionaryNodeCollectionEnumerator_MoveNext_m848269647_MetadataUsageId;
 extern "C"  bool DictionaryNodeCollectionEnumerator_MoveNext_m848269647 (DictionaryNodeCollectionEnumerator_t2037848305 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2128,8 +4391,6 @@ extern "C"  bool DictionaryNodeCollectionEnumerator_MoveNext_m848269647 (Diction
 	}
 }
 // System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeCollection/DictionaryNodeCollectionEnumerator::Reset()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t DictionaryNodeCollectionEnumerator_Reset_m2279681240_MetadataUsageId;
 extern "C"  void DictionaryNodeCollectionEnumerator_Reset_m2279681240 (DictionaryNodeCollectionEnumerator_t2037848305 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2161,9 +4422,6 @@ extern "C"  void DictionaryNodeEnumerator__ctor_m3657252825 (DictionaryNodeEnume
 	}
 }
 // System.Void System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::FailFast()
-extern Il2CppClass* InvalidOperationException_t721527559_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral126210674;
-extern const uint32_t DictionaryNodeEnumerator_FailFast_m3568492354_MetadataUsageId;
 extern "C"  void DictionaryNodeEnumerator_FailFast_m3568492354 (DictionaryNodeEnumerator_t1923170152 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2267,8 +4525,6 @@ extern "C"  void DictionaryNodeEnumerator_Reset_m1131304747 (DictionaryNodeEnume
 	}
 }
 // System.Object System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::get_Current()
-extern Il2CppClass* DictionaryEntry_t3048875398_il2cpp_TypeInfo_var;
-extern const uint32_t DictionaryNodeEnumerator_get_Current_m980909215_MetadataUsageId;
 extern "C"  Il2CppObject * DictionaryNodeEnumerator_get_Current_m980909215 (DictionaryNodeEnumerator_t1923170152 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2285,9 +4541,6 @@ extern "C"  Il2CppObject * DictionaryNodeEnumerator_get_Current_m980909215 (Dict
 	}
 }
 // System.Collections.Specialized.ListDictionary/DictionaryNode System.Collections.Specialized.ListDictionary/DictionaryNodeEnumerator::get_DictionaryNode()
-extern Il2CppClass* InvalidOperationException_t721527559_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2956752624;
-extern const uint32_t DictionaryNodeEnumerator_get_DictionaryNode_m3521889822_MetadataUsageId;
 extern "C"  DictionaryNode_t2725637098 * DictionaryNodeEnumerator_get_DictionaryNode_m3521889822 (DictionaryNodeEnumerator_t1923170152 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2356,9 +4609,6 @@ extern "C"  Il2CppObject * DictionaryNodeEnumerator_get_Value_m2179504825 (Dicti
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::.ctor()
-extern Il2CppClass* CaseInsensitiveHashCodeProvider_t2307530285_il2cpp_TypeInfo_var;
-extern Il2CppClass* CaseInsensitiveComparer_t157661140_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase__ctor_m2433753948_MetadataUsageId;
 extern "C"  void NameObjectCollectionBase__ctor_m2433753948 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2399,8 +4649,6 @@ extern "C"  Il2CppObject * NameObjectCollectionBase_System_Collections_ICollecti
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-extern Il2CppClass* ICollection_t91669223_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase_System_Collections_ICollection_CopyTo_m810189168_MetadataUsageId;
 extern "C"  void NameObjectCollectionBase_System_Collections_ICollection_CopyTo_m810189168 (NameObjectCollectionBase_t2034248631 * __this, Il2CppArray * ___array0, int32_t ___index1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2419,9 +4667,6 @@ extern "C"  void NameObjectCollectionBase_System_Collections_ICollection_CopyTo_
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::Init()
-extern Il2CppClass* Hashtable_t909839986_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase_Init_m1271766820_MetadataUsageId;
 extern "C"  void NameObjectCollectionBase_Init_m1271766820 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2466,8 +4711,6 @@ IL_0044:
 	}
 }
 // System.Collections.Specialized.NameObjectCollectionBase/KeysCollection System.Collections.Specialized.NameObjectCollectionBase::get_Keys()
-extern Il2CppClass* KeysCollection_t633582367_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase_get_Keys_m446053925_MetadataUsageId;
 extern "C"  KeysCollection_t633582367 * NameObjectCollectionBase_get_Keys_m446053925 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2496,8 +4739,6 @@ IL_0017:
 	}
 }
 // System.Collections.IEnumerator System.Collections.Specialized.NameObjectCollectionBase::GetEnumerator()
-extern Il2CppClass* _KeysEnumerator_t1718269396_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase_GetEnumerator_m646294968_MetadataUsageId;
 extern "C"  Il2CppObject * NameObjectCollectionBase_GetEnumerator_m646294968 (NameObjectCollectionBase_t2034248631 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2513,30 +4754,6 @@ extern "C"  Il2CppObject * NameObjectCollectionBase_GetEnumerator_m646294968 (Na
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern const Il2CppType* IEqualityComparer_t2716208158_0_0_0_var;
-extern const Il2CppType* Int32_t2071877448_0_0_0_var;
-extern const Il2CppType* IHashCodeProvider_t1980576455_0_0_0_var;
-extern const Il2CppType* IComparer_t3952557350_0_0_0_var;
-extern const Il2CppType* StringU5BU5D_t1642385972_0_0_0_var;
-extern const Il2CppType* ObjectU5BU5D_t3614634134_0_0_0_var;
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringU5BU5D_t1642385972_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* _Item_t3244489099_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2792112382;
-extern Il2CppCodeGenString* _stringLiteral1017838394;
-extern Il2CppCodeGenString* _stringLiteral4699698;
-extern Il2CppCodeGenString* _stringLiteral815656099;
-extern Il2CppCodeGenString* _stringLiteral3743961169;
-extern Il2CppCodeGenString* _stringLiteral1225783828;
-extern Il2CppCodeGenString* _stringLiteral1554779067;
-extern Il2CppCodeGenString* _stringLiteral1857678454;
-extern Il2CppCodeGenString* _stringLiteral1188955108;
-extern const uint32_t NameObjectCollectionBase_GetObjectData_m699981132_MetadataUsageId;
 extern "C"  void NameObjectCollectionBase_GetObjectData_m699981132 (NameObjectCollectionBase_t2034248631 * __this, SerializationInfo_t228987430 * ___info0, StreamingContext_t1417235061  ___context1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2752,28 +4969,6 @@ extern "C"  int32_t NameObjectCollectionBase_get_Count_m2353593692 (NameObjectCo
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::OnDeserialization(System.Object)
-extern const Il2CppType* IHashCodeProvider_t1980576455_0_0_0_var;
-extern const Il2CppType* IEqualityComparer_t2716208158_0_0_0_var;
-extern const Il2CppType* IComparer_t3952557350_0_0_0_var;
-extern const Il2CppType* StringU5BU5D_t1642385972_0_0_0_var;
-extern const Il2CppType* ObjectU5BU5D_t3614634134_0_0_0_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* IHashCodeProvider_t1980576455_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEqualityComparer_t2716208158_il2cpp_TypeInfo_var;
-extern Il2CppClass* IComparer_t3952557350_il2cpp_TypeInfo_var;
-extern Il2CppClass* SerializationException_t753258759_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringU5BU5D_t1642385972_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral815656099;
-extern Il2CppCodeGenString* _stringLiteral1017838394;
-extern Il2CppCodeGenString* _stringLiteral3743961169;
-extern Il2CppCodeGenString* _stringLiteral3639910873;
-extern Il2CppCodeGenString* _stringLiteral1225783828;
-extern Il2CppCodeGenString* _stringLiteral1857678454;
-extern Il2CppCodeGenString* _stringLiteral2897760885;
-extern Il2CppCodeGenString* _stringLiteral1188955108;
-extern Il2CppCodeGenString* _stringLiteral1826620485;
-extern const uint32_t NameObjectCollectionBase_OnDeserialization_m3478980442_MetadataUsageId;
 extern "C"  void NameObjectCollectionBase_OnDeserialization_m3478980442 (NameObjectCollectionBase_t2034248631 * __this, Il2CppObject * ___sender0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2938,10 +5133,6 @@ extern "C"  bool NameObjectCollectionBase_get_IsReadOnly_m3287350911 (NameObject
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase::BaseAdd(System.String,System.Object)
-extern Il2CppClass* NotSupportedException_t1793819818_il2cpp_TypeInfo_var;
-extern Il2CppClass* _Item_t3244489099_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1461460571;
-extern const uint32_t NameObjectCollectionBase_BaseAdd_m964300824_MetadataUsageId;
 extern "C"  void NameObjectCollectionBase_BaseAdd_m964300824 (NameObjectCollectionBase_t2034248631 * __this, String_t* ___name0, Il2CppObject * ___value1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3023,8 +5214,6 @@ IL_0059:
 	}
 }
 // System.Object System.Collections.Specialized.NameObjectCollectionBase::BaseGet(System.Int32)
-extern Il2CppClass* _Item_t3244489099_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase_BaseGet_m667273025_MetadataUsageId;
 extern "C"  Il2CppObject * NameObjectCollectionBase_BaseGet_m667273025 (NameObjectCollectionBase_t2034248631 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3070,8 +5259,6 @@ IL_0010:
 	}
 }
 // System.String System.Collections.Specialized.NameObjectCollectionBase::BaseGetKey(System.Int32)
-extern Il2CppClass* _Item_t3244489099_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase_BaseGetKey_m1766059806_MetadataUsageId;
 extern "C"  String_t* NameObjectCollectionBase_BaseGetKey_m1766059806 (NameObjectCollectionBase_t2034248631 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3091,8 +5278,6 @@ extern "C"  String_t* NameObjectCollectionBase_BaseGetKey_m1766059806 (NameObjec
 	}
 }
 // System.Collections.Specialized.NameObjectCollectionBase/_Item System.Collections.Specialized.NameObjectCollectionBase::FindFirstMatchedItem(System.String)
-extern Il2CppClass* _Item_t3244489099_il2cpp_TypeInfo_var;
-extern const uint32_t NameObjectCollectionBase_FindFirstMatchedItem_m2460648656_MetadataUsageId;
 extern "C"  _Item_t3244489099 * NameObjectCollectionBase_FindFirstMatchedItem_m2460648656 (NameObjectCollectionBase_t2034248631 * __this, String_t* ___name0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3146,8 +5331,6 @@ extern "C"  void _KeysEnumerator__ctor_m995107394 (_KeysEnumerator_t1718269396 *
 	}
 }
 // System.Object System.Collections.Specialized.NameObjectCollectionBase/_KeysEnumerator::get_Current()
-extern Il2CppClass* InvalidOperationException_t721527559_il2cpp_TypeInfo_var;
-extern const uint32_t _KeysEnumerator_get_Current_m2426335091_MetadataUsageId;
 extern "C"  Il2CppObject * _KeysEnumerator_get_Current_m2426335091 (_KeysEnumerator_t1718269396 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3225,17 +5408,6 @@ extern "C"  void KeysCollection__ctor_m847580183 (KeysCollection_t633582367 * __
 	}
 }
 // System.Void System.Collections.Specialized.NameObjectCollectionBase/KeysCollection::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* _Item_t3244489099_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1185213181;
-extern Il2CppCodeGenString* _stringLiteral3015127219;
-extern Il2CppCodeGenString* _stringLiteral3834829273;
-extern Il2CppCodeGenString* _stringLiteral3056724556;
-extern Il2CppCodeGenString* _stringLiteral2316951895;
-extern const uint32_t KeysCollection_System_Collections_ICollection_CopyTo_m1079819835_MetadataUsageId;
 extern "C"  void KeysCollection_System_Collections_ICollection_CopyTo_m1079819835 (KeysCollection_t633582367 * __this, Il2CppArray * ___array0, int32_t ___arrayIndex1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3408,8 +5580,6 @@ extern "C"  int32_t KeysCollection_get_Count_m3650400467 (KeysCollection_t633582
 	}
 }
 // System.Collections.IEnumerator System.Collections.Specialized.NameObjectCollectionBase/KeysCollection::GetEnumerator()
-extern Il2CppClass* _KeysEnumerator_t1718269396_il2cpp_TypeInfo_var;
-extern const uint32_t KeysCollection_GetEnumerator_m3831125359_MetadataUsageId;
 extern "C"  Il2CppObject * KeysCollection_GetEnumerator_m3831125359 (KeysCollection_t633582367 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3444,10 +5614,6 @@ extern "C"  void NameValueCollection__ctor_m3660918416 (NameValueCollection_t304
 	}
 }
 // System.Void System.Collections.Specialized.NameValueCollection::Add(System.String,System.String)
-extern Il2CppClass* NotSupportedException_t1793819818_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1461460571;
-extern const uint32_t NameValueCollection_Add_m263445674_MetadataUsageId;
 extern "C"  void NameValueCollection_Add_m263445674 (NameValueCollection_t3047564564 * __this, String_t* ___name0, String_t* ___val1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3528,8 +5694,6 @@ IL_005e:
 	}
 }
 // System.String System.Collections.Specialized.NameValueCollection::Get(System.Int32)
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern const uint32_t NameValueCollection_Get_m861415899_MetadataUsageId;
 extern "C"  String_t* NameValueCollection_Get_m861415899 (NameValueCollection_t3047564564 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3549,10 +5713,6 @@ extern "C"  String_t* NameValueCollection_Get_m861415899 (NameValueCollection_t3
 	}
 }
 // System.String System.Collections.Specialized.NameValueCollection::AsSingleString(System.Collections.ArrayList)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Char_t3454481338_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern const uint32_t NameValueCollection_AsSingleString_m10599052_MetadataUsageId;
 extern "C"  String_t* NameValueCollection_AsSingleString_m10599052 (Il2CppObject * __this /* static, unused */, ArrayList_t4252133567 * ___values0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3588,17 +5748,20 @@ IL_0008:
 		int32_t L_3 = V_1;
 		V_6 = L_3;
 		int32_t L_4 = V_6;
-		if (L_4 == 0)
+		switch (L_4)
 		{
-			goto IL_002a;
-		}
-		if (L_4 == 1)
-		{
-			goto IL_002c;
-		}
-		if (L_4 == 2)
-		{
-			goto IL_0039;
+			case 0:
+			{
+				goto IL_002a;
+			}
+			case 1:
+			{
+				goto IL_002c;
+			}
+			case 2:
+			{
+				goto IL_0039;
+			}
 		}
 	}
 	{
@@ -3745,8 +5908,6 @@ extern "C"  int32_t EditorBrowsableAttribute_get_State_m3897062724 (EditorBrowsa
 	}
 }
 // System.Boolean System.ComponentModel.EditorBrowsableAttribute::Equals(System.Object)
-extern Il2CppClass* EditorBrowsableAttribute_t1050682502_il2cpp_TypeInfo_var;
-extern const uint32_t EditorBrowsableAttribute_Equals_m345895380_MetadataUsageId;
 extern "C"  bool EditorBrowsableAttribute_Equals_m345895380 (EditorBrowsableAttribute_t1050682502 * __this, Il2CppObject * ___obj0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3788,8 +5949,6 @@ IL_0016:
 	}
 }
 // System.Int32 System.ComponentModel.EditorBrowsableAttribute::GetHashCode()
-extern Il2CppClass* EditorBrowsableState_t373498655_il2cpp_TypeInfo_var;
-extern const uint32_t EditorBrowsableAttribute_GetHashCode_m169893972_MetadataUsageId;
 extern "C"  int32_t EditorBrowsableAttribute_GetHashCode_m169893972 (EditorBrowsableAttribute_t1050682502 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3808,8 +5967,6 @@ extern "C"  int32_t EditorBrowsableAttribute_GetHashCode_m169893972 (EditorBrows
 	}
 }
 // System.Void System.ComponentModel.TypeConverterAttribute::.ctor()
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t TypeConverterAttribute__ctor_m3322338951_MetadataUsageId;
 extern "C"  void TypeConverterAttribute__ctor_m3322338951 (TypeConverterAttribute_t252469870 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3839,8 +5996,6 @@ extern "C"  void TypeConverterAttribute__ctor_m4061167050 (TypeConverterAttribut
 	}
 }
 // System.Void System.ComponentModel.TypeConverterAttribute::.cctor()
-extern Il2CppClass* TypeConverterAttribute_t252469870_il2cpp_TypeInfo_var;
-extern const uint32_t TypeConverterAttribute__cctor_m506796812_MetadataUsageId;
 extern "C"  void TypeConverterAttribute__cctor_m506796812 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3857,9 +6012,6 @@ extern "C"  void TypeConverterAttribute__cctor_m506796812 (Il2CppObject * __this
 	}
 }
 // System.Boolean System.ComponentModel.TypeConverterAttribute::Equals(System.Object)
-extern Il2CppClass* TypeConverterAttribute_t252469870_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t TypeConverterAttribute_Equals_m2330345916_MetadataUsageId;
 extern "C"  bool TypeConverterAttribute_Equals_m2330345916 (TypeConverterAttribute_t252469870 * __this, Il2CppObject * ___obj0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3909,8 +6061,6 @@ extern "C"  String_t* TypeConverterAttribute_get_ConverterTypeName_m2296240606 (
 	}
 }
 // System.Void System.DefaultUriParser::.ctor()
-extern Il2CppClass* UriParser_t1012511323_il2cpp_TypeInfo_var;
-extern const uint32_t DefaultUriParser__ctor_m4218024811_MetadataUsageId;
 extern "C"  void DefaultUriParser__ctor_m4218024811 (DefaultUriParser_t1591960796 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3926,8 +6076,6 @@ extern "C"  void DefaultUriParser__ctor_m4218024811 (DefaultUriParser_t159196079
 	}
 }
 // System.Void System.DefaultUriParser::.ctor(System.String)
-extern Il2CppClass* UriParser_t1012511323_il2cpp_TypeInfo_var;
-extern const uint32_t DefaultUriParser__ctor_m1180095657_MetadataUsageId;
 extern "C"  void DefaultUriParser__ctor_m1180095657 (DefaultUriParser_t1591960796 * __this, String_t* ___scheme0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3971,8 +6119,6 @@ extern "C"  void DefaultCertificatePolicy__ctor_m4075407028 (DefaultCertificateP
 	}
 }
 // System.Boolean System.Net.DefaultCertificatePolicy::CheckValidationResult(System.Net.ServicePoint,System.Security.Cryptography.X509Certificates.X509Certificate,System.Net.WebRequest,System.Int32)
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern const uint32_t DefaultCertificatePolicy_CheckValidationResult_m1093127521_MetadataUsageId;
 extern "C"  bool DefaultCertificatePolicy_CheckValidationResult_m1093127521 (DefaultCertificatePolicy_t2545332216 * __this, ServicePoint_t2765344313 * ___point0, X509Certificate_t283079845 * ___certificate1, WebRequest_t1365124353 * ___request2, int32_t ___certificateProblem3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4026,10 +6172,6 @@ IL_0027:
 	}
 }
 // System.Void System.Net.FileWebRequest::.ctor(System.Uri)
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1596707798;
-extern const uint32_t FileWebRequest__ctor_m4207307562_MetadataUsageId;
 extern "C"  void FileWebRequest__ctor_m4207307562 (FileWebRequest_t1571840111 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4053,27 +6195,6 @@ extern "C"  void FileWebRequest__ctor_m4207307562 (FileWebRequest_t1571840111 * 
 	}
 }
 // System.Void System.Net.FileWebRequest::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern const Il2CppType* WebHeaderCollection_t3028142837_0_0_0_var;
-extern const Il2CppType* IWebProxy_t3916853445_0_0_0_var;
-extern const Il2CppType* Uri_t19570940_0_0_0_var;
-extern const Il2CppType* FileAccess_t4282042064_0_0_0_var;
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppClass* IWebProxy_t3916853445_il2cpp_TypeInfo_var;
-extern Il2CppClass* Uri_t19570940_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1596707798;
-extern Il2CppCodeGenString* _stringLiteral1945545832;
-extern Il2CppCodeGenString* _stringLiteral3107543502;
-extern Il2CppCodeGenString* _stringLiteral386853516;
-extern Il2CppCodeGenString* _stringLiteral800172446;
-extern Il2CppCodeGenString* _stringLiteral165463247;
-extern Il2CppCodeGenString* _stringLiteral407396305;
-extern Il2CppCodeGenString* _stringLiteral1144299859;
-extern Il2CppCodeGenString* _stringLiteral4264076074;
-extern Il2CppCodeGenString* _stringLiteral142021954;
-extern const uint32_t FileWebRequest__ctor_m4003648606_MetadataUsageId;
 extern "C"  void FileWebRequest__ctor_m4003648606 (FileWebRequest_t1571840111 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4127,7 +6248,7 @@ extern "C"  void FileWebRequest__ctor_m4003648606 (FileWebRequest_t1571840111 * 
 		Type_t * L_19 = Type_GetTypeFromHandle_m432505302(NULL /*static, unused*/, LoadTypeToken(FileAccess_t4282042064_0_0_0_var), /*hidden argument*/NULL);
 		NullCheck(L_18);
 		Il2CppObject * L_20 = SerializationInfo_GetValue_m1127314592(L_18, _stringLiteral4264076074, L_19, /*hidden argument*/NULL);
-		__this->set_fileAccess_10(((*(int32_t*)((int32_t*)UnBox (L_20, Int32_t2071877448_il2cpp_TypeInfo_var)))));
+		__this->set_fileAccess_10(((*(int32_t*)((int32_t*)UnBox(L_20, Int32_t2071877448_il2cpp_TypeInfo_var)))));
 		SerializationInfo_t228987430 * L_21 = V_0;
 		NullCheck(L_21);
 		bool L_22 = SerializationInfo_GetBoolean_m3573708305(L_21, _stringLiteral142021954, /*hidden argument*/NULL);
@@ -4146,21 +6267,6 @@ extern "C"  void FileWebRequest_System_Runtime_Serialization_ISerializable_GetOb
 	}
 }
 // System.Void System.Net.FileWebRequest::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern const Il2CppType* WebHeaderCollection_t3028142837_0_0_0_var;
-extern const Il2CppType* IWebProxy_t3916853445_0_0_0_var;
-extern const Il2CppType* Uri_t19570940_0_0_0_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* FileAccess_t4282042064_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1945545832;
-extern Il2CppCodeGenString* _stringLiteral3107543502;
-extern Il2CppCodeGenString* _stringLiteral386853516;
-extern Il2CppCodeGenString* _stringLiteral800172446;
-extern Il2CppCodeGenString* _stringLiteral165463247;
-extern Il2CppCodeGenString* _stringLiteral407396305;
-extern Il2CppCodeGenString* _stringLiteral1144299859;
-extern Il2CppCodeGenString* _stringLiteral4264076074;
-extern Il2CppCodeGenString* _stringLiteral142021954;
-extern const uint32_t FileWebRequest_GetObjectData_m3667486695_MetadataUsageId;
 extern "C"  void FileWebRequest_GetObjectData_m3667486695 (FileWebRequest_t1571840111 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4226,8 +6332,6 @@ extern "C"  void FileWebRequestCreator__ctor_m2951446895 (FileWebRequestCreator_
 	}
 }
 // System.Net.WebRequest System.Net.FileWebRequestCreator::Create(System.Uri)
-extern Il2CppClass* FileWebRequest_t1571840111_il2cpp_TypeInfo_var;
-extern const uint32_t FileWebRequestCreator_Create_m1444797040_MetadataUsageId;
 extern "C"  WebRequest_t1365124353 * FileWebRequestCreator_Create_m1444797040 (FileWebRequestCreator_t1109072211 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4252,8 +6356,6 @@ extern "C"  void FtpRequestCreator__ctor_m175716079 (FtpRequestCreator_t37119832
 	}
 }
 // System.Net.WebRequest System.Net.FtpRequestCreator::Create(System.Uri)
-extern Il2CppClass* FtpWebRequest_t3120721823_il2cpp_TypeInfo_var;
-extern const uint32_t FtpRequestCreator_Create_m338695342_MetadataUsageId;
 extern "C"  WebRequest_t1365124353 * FtpRequestCreator_Create_m338695342 (FtpRequestCreator_t3711983251 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4270,13 +6372,6 @@ extern "C"  WebRequest_t1365124353 * FtpRequestCreator_Create_m338695342 (FtpReq
 	}
 }
 // System.Void System.Net.FtpWebRequest::.ctor(System.Uri)
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* FtpWebRequest_t3120721823_il2cpp_TypeInfo_var;
-extern Il2CppClass* RemoteCertificateValidationCallback_t2756269959_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern const MethodInfo* FtpWebRequest_U3CcallbackU3Em__B_m4153123054_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1938748861;
-extern const uint32_t FtpWebRequest__ctor_m3003551676_MetadataUsageId;
 extern "C"  void FtpWebRequest__ctor_m3003551676 (FtpWebRequest_t3120721823 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4331,22 +6426,6 @@ IL_0053:
 	}
 }
 // System.Void System.Net.FtpWebRequest::.cctor()
-extern Il2CppClass* StringU5BU5D_t1642385972_il2cpp_TypeInfo_var;
-extern Il2CppClass* FtpWebRequest_t3120721823_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1838250052;
-extern Il2CppCodeGenString* _stringLiteral3054493542;
-extern Il2CppCodeGenString* _stringLiteral2826129522;
-extern Il2CppCodeGenString* _stringLiteral2597506744;
-extern Il2CppCodeGenString* _stringLiteral2047046546;
-extern Il2CppCodeGenString* _stringLiteral641693129;
-extern Il2CppCodeGenString* _stringLiteral4016415563;
-extern Il2CppCodeGenString* _stringLiteral407568648;
-extern Il2CppCodeGenString* _stringLiteral1938748861;
-extern Il2CppCodeGenString* _stringLiteral1240477979;
-extern Il2CppCodeGenString* _stringLiteral809707289;
-extern Il2CppCodeGenString* _stringLiteral63747176;
-extern Il2CppCodeGenString* _stringLiteral1629831117;
-extern const uint32_t FtpWebRequest__cctor_m2500702602_MetadataUsageId;
 extern "C"  void FtpWebRequest__cctor_m2500702602 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4413,12 +6492,6 @@ extern "C"  void FtpWebRequest__cctor_m2500702602 (Il2CppObject * __this /* stat
 	}
 }
 // System.Boolean System.Net.FtpWebRequest::<callback>m__B(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern Il2CppClass* SslPolicyErrors_t1928581431_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* InvalidOperationException_t721527559_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2344200972;
-extern const uint32_t FtpWebRequest_U3CcallbackU3Em__B_m4153123054_MetadataUsageId;
 extern "C"  bool FtpWebRequest_U3CcallbackU3Em__B_m4153123054 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___sender0, X509Certificate_t283079845 * ___certificate1, X509Chain_t777637347 * ___chain2, int32_t ___sslPolicyErrors3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4472,8 +6545,6 @@ IL_0035:
 	}
 }
 // System.Net.IWebProxy System.Net.GlobalProxySelection::get_Select()
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern const uint32_t GlobalProxySelection_get_Select_m1637611912_MetadataUsageId;
 extern "C"  Il2CppObject * GlobalProxySelection_get_Select_m1637611912 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4497,8 +6568,6 @@ extern "C"  void HttpRequestCreator__ctor_m2513916021 (HttpRequestCreator_t14165
 	}
 }
 // System.Net.WebRequest System.Net.HttpRequestCreator::Create(System.Uri)
-extern Il2CppClass* HttpWebRequest_t1951404513_il2cpp_TypeInfo_var;
-extern const uint32_t HttpRequestCreator_Create_m3607509610_MetadataUsageId;
 extern "C"  WebRequest_t1365124353 * HttpRequestCreator_Create_m3607509610 (HttpRequestCreator_t1416559589 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4515,9 +6584,6 @@ extern "C"  WebRequest_t1365124353 * HttpRequestCreator_Create_m3607509610 (Http
 	}
 }
 // System.Void System.Net.HttpVersion::.cctor()
-extern Il2CppClass* Version_t1755874712_il2cpp_TypeInfo_var;
-extern Il2CppClass* HttpVersion_t1276659706_il2cpp_TypeInfo_var;
-extern const uint32_t HttpVersion__cctor_m144051953_MetadataUsageId;
 extern "C"  void HttpVersion__cctor_m144051953 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4537,13 +6603,6 @@ extern "C"  void HttpVersion__cctor_m144051953 (Il2CppObject * __this /* static,
 	}
 }
 // System.Void System.Net.HttpWebRequest::.ctor(System.Uri)
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* HttpVersion_t1276659706_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1596707798;
-extern const uint32_t HttpWebRequest__ctor_m3872859964_MetadataUsageId;
 extern "C"  void HttpWebRequest__ctor_m3872859964 (HttpWebRequest_t1951404513 * __this, Uri_t19570940 * ___uri0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4587,42 +6646,6 @@ extern "C"  void HttpWebRequest__ctor_m3872859964 (HttpWebRequest_t1951404513 * 
 	}
 }
 // System.Void System.Net.HttpWebRequest::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern const Il2CppType* Uri_t19570940_0_0_0_var;
-extern const Il2CppType* X509CertificateCollection_t1197680765_0_0_0_var;
-extern const Il2CppType* WebHeaderCollection_t3028142837_0_0_0_var;
-extern const Il2CppType* Version_t1755874712_0_0_0_var;
-extern const Il2CppType* IWebProxy_t3916853445_0_0_0_var;
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* HttpVersion_t1276659706_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Uri_t19570940_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509CertificateCollection_t1197680765_il2cpp_TypeInfo_var;
-extern Il2CppClass* Version_t1755874712_il2cpp_TypeInfo_var;
-extern Il2CppClass* IWebProxy_t3916853445_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1596707798;
-extern Il2CppCodeGenString* _stringLiteral488920711;
-extern Il2CppCodeGenString* _stringLiteral1852868046;
-extern Il2CppCodeGenString* _stringLiteral3304766204;
-extern Il2CppCodeGenString* _stringLiteral466862365;
-extern Il2CppCodeGenString* _stringLiteral1767150654;
-extern Il2CppCodeGenString* _stringLiteral731126417;
-extern Il2CppCodeGenString* _stringLiteral407396305;
-extern Il2CppCodeGenString* _stringLiteral4071160638;
-extern Il2CppCodeGenString* _stringLiteral2305322104;
-extern Il2CppCodeGenString* _stringLiteral3166593957;
-extern Il2CppCodeGenString* _stringLiteral495123410;
-extern Il2CppCodeGenString* _stringLiteral165463247;
-extern Il2CppCodeGenString* _stringLiteral375915537;
-extern Il2CppCodeGenString* _stringLiteral1563853884;
-extern Il2CppCodeGenString* _stringLiteral3617362;
-extern Il2CppCodeGenString* _stringLiteral3107543502;
-extern Il2CppCodeGenString* _stringLiteral105880260;
-extern Il2CppCodeGenString* _stringLiteral1144299859;
-extern Il2CppCodeGenString* _stringLiteral3533018601;
-extern const uint32_t HttpWebRequest__ctor_m1248252412_MetadataUsageId;
 extern "C"  void HttpWebRequest__ctor_m1248252412 (HttpWebRequest_t1951404513 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4746,8 +6769,6 @@ extern "C"  void HttpWebRequest__ctor_m1248252412 (HttpWebRequest_t1951404513 * 
 	}
 }
 // System.Void System.Net.HttpWebRequest::.cctor()
-extern Il2CppClass* HttpWebRequest_t1951404513_il2cpp_TypeInfo_var;
-extern const uint32_t HttpWebRequest__cctor_m3013631978_MetadataUsageId;
 extern "C"  void HttpWebRequest__cctor_m3013631978 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4788,8 +6809,6 @@ extern "C"  ServicePoint_t2765344313 * HttpWebRequest_get_ServicePoint_m32357557
 	}
 }
 // System.Net.ServicePoint System.Net.HttpWebRequest::GetServicePoint()
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern const uint32_t HttpWebRequest_GetServicePoint_m560807134_MetadataUsageId;
 extern "C"  ServicePoint_t2765344313 * HttpWebRequest_GetServicePoint_m560807134 (HttpWebRequest_t1951404513 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4872,32 +6891,6 @@ IL_004d:
 	}
 }
 // System.Void System.Net.HttpWebRequest::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern const Il2CppType* Uri_t19570940_0_0_0_var;
-extern const Il2CppType* X509CertificateCollection_t1197680765_0_0_0_var;
-extern const Il2CppType* WebHeaderCollection_t3028142837_0_0_0_var;
-extern const Il2CppType* Version_t1755874712_0_0_0_var;
-extern const Il2CppType* IWebProxy_t3916853445_0_0_0_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral488920711;
-extern Il2CppCodeGenString* _stringLiteral1852868046;
-extern Il2CppCodeGenString* _stringLiteral3304766204;
-extern Il2CppCodeGenString* _stringLiteral466862365;
-extern Il2CppCodeGenString* _stringLiteral1767150654;
-extern Il2CppCodeGenString* _stringLiteral731126417;
-extern Il2CppCodeGenString* _stringLiteral407396305;
-extern Il2CppCodeGenString* _stringLiteral4071160638;
-extern Il2CppCodeGenString* _stringLiteral2305322104;
-extern Il2CppCodeGenString* _stringLiteral3166593957;
-extern Il2CppCodeGenString* _stringLiteral495123410;
-extern Il2CppCodeGenString* _stringLiteral165463247;
-extern Il2CppCodeGenString* _stringLiteral375915537;
-extern Il2CppCodeGenString* _stringLiteral1563853884;
-extern Il2CppCodeGenString* _stringLiteral3617362;
-extern Il2CppCodeGenString* _stringLiteral3107543502;
-extern Il2CppCodeGenString* _stringLiteral105880260;
-extern Il2CppCodeGenString* _stringLiteral1144299859;
-extern Il2CppCodeGenString* _stringLiteral3533018601;
-extern const uint32_t HttpWebRequest_GetObjectData_m1200570677_MetadataUsageId;
 extern "C"  void HttpWebRequest_GetObjectData_m1200570677 (HttpWebRequest_t1951404513 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5008,8 +7001,6 @@ extern "C"  void IPAddress__ctor_m4294749317 (IPAddress_t1399971723 * __this, in
 	}
 }
 // System.Void System.Net.IPAddress::.ctor(System.UInt16[],System.Int64)
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress__ctor_m1927150601_MetadataUsageId;
 extern "C"  void IPAddress__ctor_m1927150601 (IPAddress_t1399971723 * __this, UInt16U5BU5D_t2527266722* ___address0, int64_t ___scopeId1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5060,12 +7051,6 @@ IL_002f:
 	}
 }
 // System.Void System.Net.IPAddress::.cctor()
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1976855324;
-extern Il2CppCodeGenString* _stringLiteral2524945039;
-extern Il2CppCodeGenString* _stringLiteral2874782298;
-extern Il2CppCodeGenString* _stringLiteral2880464393;
-extern const uint32_t IPAddress__cctor_m3624830012_MetadataUsageId;
 extern "C"  void IPAddress__cctor_m3624830012 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5103,9 +7088,6 @@ extern "C"  int16_t IPAddress_SwapShort_m3285274063 (Il2CppObject * __this /* st
 	}
 }
 // System.Int16 System.Net.IPAddress::HostToNetworkOrder(System.Int16)
-extern Il2CppClass* BitConverter_t3195628829_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_HostToNetworkOrder_m1092199707_MetadataUsageId;
 extern "C"  int16_t IPAddress_HostToNetworkOrder_m1092199707 (Il2CppObject * __this /* static, unused */, int16_t ___host0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5136,9 +7118,6 @@ IL_000c:
 	}
 }
 // System.Int16 System.Net.IPAddress::NetworkToHostOrder(System.Int16)
-extern Il2CppClass* BitConverter_t3195628829_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_NetworkToHostOrder_m862617551_MetadataUsageId;
 extern "C"  int16_t IPAddress_NetworkToHostOrder_m862617551 (Il2CppObject * __this /* static, unused */, int16_t ___network0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5169,10 +7148,6 @@ IL_000c:
 	}
 }
 // System.Net.IPAddress System.Net.IPAddress::Parse(System.String)
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppClass* FormatException_t2948921286_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1196203746;
-extern const uint32_t IPAddress_Parse_m3374241274_MetadataUsageId;
 extern "C"  IPAddress_t1399971723 * IPAddress_Parse_m3374241274 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5204,10 +7179,6 @@ IL_000f:
 	}
 }
 // System.Boolean System.Net.IPAddress::TryParse(System.String,System.Net.IPAddress&)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral448723150;
-extern const uint32_t IPAddress_TryParse_m2352368982_MetadataUsageId;
 extern "C"  bool IPAddress_TryParse_m2352368982 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, IPAddress_t1399971723 ** ___address1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5271,11 +7242,6 @@ IL_0033:
 	}
 }
 // System.Net.IPAddress System.Net.IPAddress::ParseIPV4(System.String)
-extern Il2CppClass* CharU5BU5D_t1328083999_il2cpp_TypeInfo_var;
-extern Il2CppClass* Uri_t19570940_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_ParseIPV4_m1639470661_MetadataUsageId;
 extern "C"  IPAddress_t1399971723 * IPAddress_ParseIPV4_m1639470661 (Il2CppObject * __this /* static, unused */, String_t* ___ip0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5778,7 +7744,7 @@ IL_0297:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_029c;
 		throw e;
 	}
@@ -5803,9 +7769,6 @@ IL_02aa:
 	}
 }
 // System.Net.IPAddress System.Net.IPAddress::ParseIPV6(System.String)
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_ParseIPV6_m2209709575_MetadataUsageId;
 extern "C"  IPAddress_t1399971723 * IPAddress_ParseIPV6_m2209709575 (Il2CppObject * __this /* static, unused */, String_t* ___ip0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5850,9 +7813,6 @@ extern "C"  int64_t IPAddress_get_InternalIPv4Address_m2113749881 (IPAddress_t13
 	}
 }
 // System.Int64 System.Net.IPAddress::get_ScopeId()
-extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2267812556;
-extern const uint32_t IPAddress_get_ScopeId_m133972856_MetadataUsageId;
 extern "C"  int64_t IPAddress_get_ScopeId_m133972856 (IPAddress_t1399971723 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5889,8 +7849,6 @@ extern "C"  int32_t IPAddress_get_AddressFamily_m2727317531 (IPAddress_t13999717
 	}
 }
 // System.Boolean System.Net.IPAddress::IsLoopback(System.Net.IPAddress)
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_IsLoopback_m2800578891_MetadataUsageId;
 extern "C"  bool IPAddress_IsLoopback_m2800578891 (Il2CppObject * __this /* static, unused */, IPAddress_t1399971723 * ___addr0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5967,10 +7925,6 @@ IL_0039:
 	}
 }
 // System.String System.Net.IPAddress::ToString()
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppClass* UInt16U5BU5D_t2527266722_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_ToString_m1462985652_MetadataUsageId;
 extern "C"  String_t* IPAddress_ToString_m1462985652 (IPAddress_t1399971723 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6049,10 +8003,6 @@ IL_0041:
 	}
 }
 // System.String System.Net.IPAddress::ToString(System.Int64)
-extern Il2CppClass* StringU5BU5D_t1642385972_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral372029316;
-extern const uint32_t IPAddress_ToString_m267966740_MetadataUsageId;
 extern "C"  String_t* IPAddress_ToString_m267966740 (Il2CppObject * __this /* static, unused */, int64_t ___addr0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6112,8 +8062,6 @@ extern "C"  String_t* IPAddress_ToString_m267966740 (Il2CppObject * __this /* st
 	}
 }
 // System.Boolean System.Net.IPAddress::Equals(System.Object)
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_Equals_m2372067720_MetadataUsageId;
 extern "C"  bool IPAddress_Equals_m2372067720 (IPAddress_t1399971723 * __this, Il2CppObject * ___other0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6219,8 +8167,6 @@ IL_0068:
 	}
 }
 // System.Int32 System.Net.IPAddress::GetHashCode()
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPAddress_GetHashCode_m638502356_MetadataUsageId;
 extern "C"  int32_t IPAddress_GetHashCode_m638502356 (IPAddress_t1399971723 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6295,10 +8241,6 @@ extern "C"  int32_t IPAddress_Hash_m1078373075 (Il2CppObject * __this /* static,
 	}
 }
 // System.Void System.Net.IPv6Address::.ctor(System.UInt16[])
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3282598431;
-extern const uint32_t IPv6Address__ctor_m206060151_MetadataUsageId;
 extern "C"  void IPv6Address__ctor_m206060151 (IPv6Address_t2596635879 * __this, UInt16U5BU5D_t2527266722* ___addr0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6344,9 +8286,6 @@ IL_002b:
 	}
 }
 // System.Void System.Net.IPv6Address::.ctor(System.UInt16[],System.Int32)
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3127360414;
-extern const uint32_t IPv6Address__ctor_m3329154094_MetadataUsageId;
 extern "C"  void IPv6Address__ctor_m3329154094 (IPv6Address_t2596635879 * __this, UInt16U5BU5D_t2527266722* ___addr0, int32_t ___prefixLength1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6399,10 +8338,6 @@ extern "C"  void IPv6Address__ctor_m4273527307 (IPv6Address_t2596635879 * __this
 	}
 }
 // System.Void System.Net.IPv6Address::.cctor()
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2880464393;
-extern Il2CppCodeGenString* _stringLiteral2874782298;
-extern const uint32_t IPv6Address__cctor_m2028583576_MetadataUsageId;
 extern "C"  void IPv6Address__cctor_m2028583576 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6420,12 +8355,6 @@ extern "C"  void IPv6Address__cctor_m2028583576 (Il2CppObject * __this /* static
 	}
 }
 // System.Net.IPv6Address System.Net.IPv6Address::Parse(System.String)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern Il2CppClass* FormatException_t2948921286_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral448723150;
-extern Il2CppCodeGenString* _stringLiteral1750474125;
-extern const uint32_t IPv6Address_Parse_m3111902810_MetadataUsageId;
 extern "C"  IPv6Address_t2596635879 * IPv6Address_Parse_m3111902810 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6471,8 +8400,6 @@ IL_0020:
 	}
 }
 // System.Int32 System.Net.IPv6Address::Fill(System.UInt16[],System.String)
-extern Il2CppCodeGenString* _stringLiteral2874782298;
-extern const uint32_t IPv6Address_Fill_m1824197512_MetadataUsageId;
 extern "C"  int32_t IPv6Address_Fill_m1824197512 (Il2CppObject * __this /* static, unused */, UInt16U5BU5D_t2527266722* ___addr0, String_t* ___ipString1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6698,8 +8625,6 @@ IL_00ea:
 	}
 }
 // System.Boolean System.Net.IPv6Address::TryParse(System.String,System.Int32&)
-extern Il2CppClass* CultureInfo_t3500843524_il2cpp_TypeInfo_var;
-extern const uint32_t IPv6Address_TryParse_m1453091868_MetadataUsageId;
 extern "C"  bool IPv6Address_TryParse_m1453091868 (Il2CppObject * __this /* static, unused */, String_t* ___prefix0, int32_t* ___res1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6718,11 +8643,6 @@ extern "C"  bool IPv6Address_TryParse_m1453091868 (Il2CppObject * __this /* stat
 	}
 }
 // System.Boolean System.Net.IPv6Address::TryParse(System.String,System.Net.IPv6Address&)
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern Il2CppClass* UInt16U5BU5D_t2527266722_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2874782298;
-extern const uint32_t IPv6Address_TryParse_m2220524278_MetadataUsageId;
 extern "C"  bool IPv6Address_TryParse_m2220524278 (Il2CppObject * __this /* static, unused */, String_t* ___ipString0, IPv6Address_t2596635879 ** ___result1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7464,12 +9384,10 @@ extern "C"  uint16_t IPv6Address_SwapUShort_m1481806078 (Il2CppObject * __this /
 	{
 		uint16_t L_0 = ___number0;
 		uint16_t L_1 = ___number0;
-		return (((int32_t)((uint16_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)L_0>>(int32_t)8))&(int32_t)((int32_t)255)))+(int32_t)((int32_t)((int32_t)((int32_t)((int32_t)L_1<<(int32_t)8))&(int32_t)((int32_t)65280))))))));
+		return (uint16_t)(((int32_t)((uint16_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)L_0>>(int32_t)8))&(int32_t)((int32_t)255)))+(int32_t)((int32_t)((int32_t)((int32_t)((int32_t)L_1<<(int32_t)8))&(int32_t)((int32_t)65280))))))));
 	}
 }
 // System.Int32 System.Net.IPv6Address::AsIPv4Int()
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern const uint32_t IPv6Address_AsIPv4Int_m3565745471_MetadataUsageId;
 extern "C"  int32_t IPv6Address_AsIPv4Int_m3565745471 (IPv6Address_t2596635879 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7585,14 +9503,6 @@ IL_001a:
 	}
 }
 // System.String System.Net.IPv6Address::ToString()
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppClass* UInt16_t986882611_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2874782298;
-extern Il2CppCodeGenString* _stringLiteral3060215576;
-extern Il2CppCodeGenString* _stringLiteral372029336;
-extern Il2CppCodeGenString* _stringLiteral2380766138;
-extern const uint32_t IPv6Address_ToString_m1522997104_MetadataUsageId;
 extern "C"  String_t* IPv6Address_ToString_m1522997104 (IPv6Address_t2596635879 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7852,11 +9762,6 @@ IL_014f:
 	}
 }
 // System.String System.Net.IPv6Address::ToString(System.Boolean)
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppClass* UInt16_t986882611_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1901589082;
-extern Il2CppCodeGenString* _stringLiteral6500416;
-extern const uint32_t IPv6Address_ToString_m2464250971_MetadataUsageId;
 extern "C"  String_t* IPv6Address_ToString_m2464250971 (IPv6Address_t2596635879 * __this, bool ___fullLength0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7933,9 +9838,6 @@ IL_0037:
 	}
 }
 // System.Boolean System.Net.IPv6Address::Equals(System.Object)
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern const uint32_t IPv6Address_Equals_m478146392_MetadataUsageId;
 extern "C"  bool IPv6Address_Equals_m478146392 (IPv6Address_t2596635879 * __this, Il2CppObject * ___other0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8119,8 +10021,6 @@ IL_00e5:
 	}
 }
 // System.Int32 System.Net.IPv6Address::GetHashCode()
-extern Il2CppClass* IPv6Address_t2596635879_il2cpp_TypeInfo_var;
-extern const uint32_t IPv6Address_GetHashCode_m647521840_MetadataUsageId;
 extern "C"  int32_t IPv6Address_GetHashCode_m647521840 (IPv6Address_t2596635879 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8214,8 +10114,6 @@ extern "C"  bool RemoteCertificateValidationCallback_Invoke_m3011066238 (RemoteC
 	}
 }
 // System.IAsyncResult System.Net.Security.RemoteCertificateValidationCallback::BeginInvoke(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors,System.AsyncCallback,System.Object)
-extern Il2CppClass* SslPolicyErrors_t1928581431_il2cpp_TypeInfo_var;
-extern const uint32_t RemoteCertificateValidationCallback_BeginInvoke_m2492197471_MetadataUsageId;
 extern "C"  Il2CppObject * RemoteCertificateValidationCallback_BeginInvoke_m2492197471 (RemoteCertificateValidationCallback_t2756269959 * __this, Il2CppObject * ___sender0, X509Certificate_t283079845 * ___certificate1, X509Chain_t777637347 * ___chain2, int32_t ___sslPolicyErrors3, AsyncCallback_t163412349 * ___callback4, Il2CppObject * ___object5, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8238,9 +10136,6 @@ extern "C"  bool RemoteCertificateValidationCallback_EndInvoke_m449921409 (Remot
 	return *(bool*)UnBox ((Il2CppCodeGenObject*)__result);
 }
 // System.Void System.Net.ServicePoint::.ctor(System.Uri,System.Int32,System.Int32)
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePoint__ctor_m4262863078_MetadataUsageId;
 extern "C"  void ServicePoint__ctor_m4262863078 (ServicePoint_t2765344313 * __this, Uri_t19570940 * ___uri0, int32_t ___connectionLimit1, int32_t ___maxIdleTime2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8388,8 +10283,6 @@ extern "C"  void ServicePoint_set_UseConnect_m3091750992 (ServicePoint_t27653443
 	}
 }
 // System.Boolean System.Net.ServicePoint::get_AvailableForRecycling()
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePoint_get_AvailableForRecycling_m1105513096_MetadataUsageId;
 extern "C"  bool ServicePoint_get_AvailableForRecycling_m1105513096 (ServicePoint_t2765344313 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8438,10 +10331,6 @@ IL_0039:
 	}
 }
 // System.Void System.Net.ServicePointManager::.cctor()
-extern Il2CppClass* HybridDictionary_t290043810_il2cpp_TypeInfo_var;
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern Il2CppClass* DefaultCertificatePolicy_t2545332216_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePointManager__cctor_m2216295373_MetadataUsageId;
 extern "C"  void ServicePointManager__cctor_m2216295373 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8467,8 +10356,6 @@ extern "C"  void ServicePointManager__cctor_m2216295373 (Il2CppObject * __this /
 	}
 }
 // System.Net.ICertificatePolicy System.Net.ServicePointManager::get_CertificatePolicy()
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePointManager_get_CertificatePolicy_m481780303_MetadataUsageId;
 extern "C"  Il2CppObject * ServicePointManager_get_CertificatePolicy_m481780303 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8484,8 +10371,6 @@ extern "C"  Il2CppObject * ServicePointManager_get_CertificatePolicy_m481780303 
 	}
 }
 // System.Boolean System.Net.ServicePointManager::get_CheckCertificateRevocationList()
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePointManager_get_CheckCertificateRevocationList_m4009410230_MetadataUsageId;
 extern "C"  bool ServicePointManager_get_CheckCertificateRevocationList_m4009410230 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8501,8 +10386,6 @@ extern "C"  bool ServicePointManager_get_CheckCertificateRevocationList_m4009410
 	}
 }
 // System.Net.SecurityProtocolType System.Net.ServicePointManager::get_SecurityProtocol()
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePointManager_get_SecurityProtocol_m1445189298_MetadataUsageId;
 extern "C"  int32_t ServicePointManager_get_SecurityProtocol_m1445189298 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8518,8 +10401,6 @@ extern "C"  int32_t ServicePointManager_get_SecurityProtocol_m1445189298 (Il2Cpp
 	}
 }
 // System.Net.Security.RemoteCertificateValidationCallback System.Net.ServicePointManager::get_ServerCertificateValidationCallback()
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePointManager_get_ServerCertificateValidationCallback_m1419353403_MetadataUsageId;
 extern "C"  RemoteCertificateValidationCallback_t2756269959 * ServicePointManager_get_ServerCertificateValidationCallback_m1419353403 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8535,22 +10416,6 @@ extern "C"  RemoteCertificateValidationCallback_t2756269959 * ServicePointManage
 	}
 }
 // System.Net.ServicePoint System.Net.ServicePointManager::FindServicePoint(System.Uri,System.Net.IWebProxy)
-extern Il2CppClass* Uri_t19570940_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern Il2CppClass* IWebProxy_t3916853445_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* NotSupportedException_t1793819818_il2cpp_TypeInfo_var;
-extern Il2CppClass* SPKey_t1552752485_il2cpp_TypeInfo_var;
-extern Il2CppClass* ServicePoint_t2765344313_il2cpp_TypeInfo_var;
-extern Il2CppClass* InvalidOperationException_t721527559_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3134679062;
-extern Il2CppCodeGenString* _stringLiteral4021508911;
-extern Il2CppCodeGenString* _stringLiteral3833952254;
-extern Il2CppCodeGenString* _stringLiteral2513015832;
-extern Il2CppCodeGenString* _stringLiteral57472706;
-extern Il2CppCodeGenString* _stringLiteral2165756446;
-extern const uint32_t ServicePointManager_FindServicePoint_m3137356168_MetadataUsageId;
 extern "C"  ServicePoint_t2765344313 * ServicePointManager_FindServicePoint_m3137356168 (Il2CppObject * __this /* static, unused */, Uri_t19570940 * ___address0, Il2CppObject * ___proxy1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8820,14 +10685,6 @@ IL_016e:
 	}
 }
 // System.Void System.Net.ServicePointManager::RecycleServicePoints()
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern Il2CppClass* ServicePointManager_t745663000_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDictionaryEnumerator_t259680273_il2cpp_TypeInfo_var;
-extern Il2CppClass* ServicePoint_t2765344313_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* SortedList_t3004938869_il2cpp_TypeInfo_var;
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern const uint32_t ServicePointManager_RecycleServicePoints_m2772618783_MetadataUsageId;
 extern "C"  void ServicePointManager_RecycleServicePoints_m2772618783 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9183,8 +11040,6 @@ IL_001d:
 	}
 }
 // System.Boolean System.Net.ServicePointManager/SPKey::Equals(System.Object)
-extern Il2CppClass* SPKey_t1552752485_il2cpp_TypeInfo_var;
-extern const uint32_t SPKey_Equals_m1112627532_MetadataUsageId;
 extern "C"  bool SPKey_Equals_m1112627532 (SPKey_t1552752485 * __this, Il2CppObject * ___obj0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9249,14 +11104,6 @@ extern "C"  void WebHeaderCollection__ctor_m3030572237 (WebHeaderCollection_t302
 	}
 }
 // System.Void System.Net.WebHeaderCollection::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern Il2CppClass* SerializationException_t753258759_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1554779067;
-extern Il2CppCodeGenString* _stringLiteral1554746267;
-extern Il2CppCodeGenString* _stringLiteral372029383;
-extern Il2CppCodeGenString* _stringLiteral372029388;
-extern const uint32_t WebHeaderCollection__ctor_m4088938710_MetadataUsageId;
 extern "C"  void WebHeaderCollection__ctor_m4088938710 (WebHeaderCollection_t3028142837 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9327,7 +11174,7 @@ IL_0048:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (SerializationException_t753258759_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (SerializationException_t753258759_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_004d;
 		throw e;
 	}
@@ -9397,54 +11244,6 @@ extern "C"  void WebHeaderCollection__ctor_m3472091620 (WebHeaderCollection_t302
 	}
 }
 // System.Void System.Net.WebHeaderCollection::.cctor()
-extern Il2CppClass* BooleanU5BU5D_t3568034315_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppClass* CaseInsensitiveHashCodeProvider_t2307530285_il2cpp_TypeInfo_var;
-extern Il2CppClass* CaseInsensitiveComparer_t157661140_il2cpp_TypeInfo_var;
-extern Il2CppClass* Hashtable_t909839986_il2cpp_TypeInfo_var;
-extern Il2CppClass* Boolean_t3825574718_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringComparer_t1574862926_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t1445386684_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m3530797333_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m657810184_MethodInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305138____U24U24fieldU2D2_0_FieldInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3819355434;
-extern Il2CppCodeGenString* _stringLiteral172550198;
-extern Il2CppCodeGenString* _stringLiteral435779042;
-extern Il2CppCodeGenString* _stringLiteral4165124290;
-extern Il2CppCodeGenString* _stringLiteral2328218522;
-extern Il2CppCodeGenString* _stringLiteral1991988847;
-extern Il2CppCodeGenString* _stringLiteral3430667732;
-extern Il2CppCodeGenString* _stringLiteral3377642072;
-extern Il2CppCodeGenString* _stringLiteral1352990827;
-extern Il2CppCodeGenString* _stringLiteral3276845361;
-extern Il2CppCodeGenString* _stringLiteral2170876777;
-extern Il2CppCodeGenString* _stringLiteral1094988949;
-extern Il2CppCodeGenString* _stringLiteral3266014003;
-extern Il2CppCodeGenString* _stringLiteral677017058;
-extern Il2CppCodeGenString* _stringLiteral1055241449;
-extern Il2CppCodeGenString* _stringLiteral1978770395;
-extern Il2CppCodeGenString* _stringLiteral925218559;
-extern Il2CppCodeGenString* _stringLiteral2082586684;
-extern Il2CppCodeGenString* _stringLiteral1814119739;
-extern Il2CppCodeGenString* _stringLiteral2656285525;
-extern Il2CppCodeGenString* _stringLiteral1776455741;
-extern Il2CppCodeGenString* _stringLiteral2072771911;
-extern Il2CppCodeGenString* _stringLiteral124473052;
-extern Il2CppCodeGenString* _stringLiteral486338575;
-extern Il2CppCodeGenString* _stringLiteral965719748;
-extern Il2CppCodeGenString* _stringLiteral1864643421;
-extern Il2CppCodeGenString* _stringLiteral1382755766;
-extern Il2CppCodeGenString* _stringLiteral99487132;
-extern Il2CppCodeGenString* _stringLiteral683397145;
-extern Il2CppCodeGenString* _stringLiteral3607284354;
-extern Il2CppCodeGenString* _stringLiteral3228896594;
-extern Il2CppCodeGenString* _stringLiteral339799502;
-extern Il2CppCodeGenString* _stringLiteral1860258274;
-extern Il2CppCodeGenString* _stringLiteral4291256923;
-extern Il2CppCodeGenString* _stringLiteral562836579;
-extern Il2CppCodeGenString* _stringLiteral2508654961;
-extern const uint32_t WebHeaderCollection__cctor_m3314500904_MetadataUsageId;
 extern "C"  void WebHeaderCollection__cctor_m3314500904 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9687,12 +11486,6 @@ extern "C"  void WebHeaderCollection_System_Runtime_Serialization_ISerializable_
 	}
 }
 // System.Void System.Net.WebHeaderCollection::Add(System.String,System.String)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2328218955;
-extern Il2CppCodeGenString* _stringLiteral3027738051;
-extern const uint32_t WebHeaderCollection_Add_m1090164380_MetadataUsageId;
 extern "C"  void WebHeaderCollection_Add_m1090164380 (WebHeaderCollection_t3028142837 * __this, String_t* ___name0, String_t* ___value1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9746,14 +11539,6 @@ IL_0032:
 	}
 }
 // System.Void System.Net.WebHeaderCollection::AddWithoutValidate(System.String,System.String)
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1612984583;
-extern Il2CppCodeGenString* _stringLiteral2865134852;
-extern Il2CppCodeGenString* _stringLiteral691747707;
-extern Il2CppCodeGenString* _stringLiteral690295872;
-extern const uint32_t WebHeaderCollection_AddWithoutValidate_m1479880592_MetadataUsageId;
 extern "C"  void WebHeaderCollection_AddWithoutValidate_m1479880592 (WebHeaderCollection_t3028142837 * __this, String_t* ___headerName0, String_t* ___headerValue1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9831,14 +11616,6 @@ IL_005c:
 	}
 }
 // System.Boolean System.Net.WebHeaderCollection::IsRestricted(System.String)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2865134852;
-extern Il2CppCodeGenString* _stringLiteral2801640164;
-extern Il2CppCodeGenString* _stringLiteral586528222;
-extern const uint32_t WebHeaderCollection_IsRestricted_m2583169910_MetadataUsageId;
 extern "C"  bool WebHeaderCollection_IsRestricted_m2583169910 (Il2CppObject * __this /* static, unused */, String_t* ___headerName0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9911,10 +11688,6 @@ extern "C"  void WebHeaderCollection_OnDeserialization_m1255164557 (WebHeaderCol
 	}
 }
 // System.String System.Net.WebHeaderCollection::ToString()
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral811305496;
-extern Il2CppCodeGenString* _stringLiteral2162321587;
-extern const uint32_t WebHeaderCollection_ToString_m1246460752_MetadataUsageId;
 extern "C"  String_t* WebHeaderCollection_ToString_m1246460752 (WebHeaderCollection_t3028142837 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9974,8 +11747,6 @@ IL_0046:
 	}
 }
 // System.Void System.Net.WebHeaderCollection::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern Il2CppCodeGenString* _stringLiteral1554779067;
-extern const uint32_t WebHeaderCollection_GetObjectData_m3940120977_MetadataUsageId;
 extern "C"  void WebHeaderCollection_GetObjectData_m3940120977 (WebHeaderCollection_t3028142837 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10200,8 +11971,6 @@ IL_0073:
 	}
 }
 // System.Boolean System.Net.WebHeaderCollection::IsHeaderName(System.String)
-extern Il2CppClass* WebHeaderCollection_t3028142837_il2cpp_TypeInfo_var;
-extern const uint32_t WebHeaderCollection_IsHeaderName_m3758915809_MetadataUsageId;
 extern "C"  bool WebHeaderCollection_IsHeaderName_m3758915809 (Il2CppObject * __this /* static, unused */, String_t* ___name0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10304,8 +12073,6 @@ extern "C"  void WebProxy__ctor_m2857702508 (WebProxy_t1169192840 * __this, cons
 	}
 }
 // System.Void System.Net.WebProxy::.ctor(System.Uri,System.Boolean,System.String[],System.Net.ICredentials)
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern const uint32_t WebProxy__ctor_m3679722173_MetadataUsageId;
 extern "C"  void WebProxy__ctor_m3679722173 (WebProxy_t1169192840 * __this, Uri_t19570940 * ___address0, bool ___bypassOnLocal1, StringU5BU5D_t1642385972* ___bypassList2, Il2CppObject * ___credentials3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10342,16 +12109,6 @@ IL_0026:
 	}
 }
 // System.Void System.Net.WebProxy::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern const Il2CppType* Uri_t19570940_0_0_0_var;
-extern const Il2CppType* ArrayList_t4252133567_0_0_0_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Uri_t19570940_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2120680417;
-extern Il2CppCodeGenString* _stringLiteral1474220953;
-extern Il2CppCodeGenString* _stringLiteral2590173043;
-extern Il2CppCodeGenString* _stringLiteral1645517551;
-extern const uint32_t WebProxy__ctor_m2450728151_MetadataUsageId;
 extern "C"  void WebProxy__ctor_m2450728151 (WebProxy_t1169192840 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10427,18 +12184,6 @@ IL_000e:
 	}
 }
 // System.Boolean System.Net.WebProxy::IsBypassed(System.Uri)
-extern Il2CppClass* Uri_t19570940_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* CultureInfo_t3500843524_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* IPAddress_t1399971723_il2cpp_TypeInfo_var;
-extern Il2CppClass* Regex_t1803876613_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3430667732;
-extern Il2CppCodeGenString* _stringLiteral994494093;
-extern Il2CppCodeGenString* _stringLiteral1108251991;
-extern Il2CppCodeGenString* _stringLiteral57472706;
-extern const uint32_t WebProxy_IsBypassed_m907120600_MetadataUsageId;
 extern "C"  bool WebProxy_IsBypassed_m907120600 (WebProxy_t1169192840 * __this, Uri_t19570940 * ___host0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10740,7 +12485,7 @@ IL_0189:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (ArgumentException_t3259014390_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (ArgumentException_t3259014390_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_018e;
 		throw e;
 	}
@@ -10765,11 +12510,6 @@ IL_019c:
 	}
 }
 // System.Void System.Net.WebProxy::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern Il2CppCodeGenString* _stringLiteral1474220953;
-extern Il2CppCodeGenString* _stringLiteral2120680417;
-extern Il2CppCodeGenString* _stringLiteral2590173043;
-extern Il2CppCodeGenString* _stringLiteral1645517551;
-extern const uint32_t WebProxy_GetObjectData_m2019316656_MetadataUsageId;
 extern "C"  void WebProxy_GetObjectData_m2019316656 (WebProxy_t1169192840 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10799,9 +12539,6 @@ extern "C"  void WebProxy_GetObjectData_m2019316656 (WebProxy_t1169192840 * __th
 	}
 }
 // System.Void System.Net.WebProxy::CheckBypassList()
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Regex_t1803876613_il2cpp_TypeInfo_var;
-extern const uint32_t WebProxy_CheckBypassList_m565639068_MetadataUsageId;
 extern "C"  void WebProxy_CheckBypassList_m565639068 (WebProxy_t1169192840 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10874,17 +12611,6 @@ extern "C"  void WebRequest__ctor_m1537196628 (WebRequest_t1365124353 * __this, 
 	}
 }
 // System.Void System.Net.WebRequest::.cctor()
-extern Il2CppClass* HybridDictionary_t290043810_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3833952254;
-extern Il2CppCodeGenString* _stringLiteral435537409;
-extern Il2CppCodeGenString* _stringLiteral4021508911;
-extern Il2CppCodeGenString* _stringLiteral3457518716;
-extern Il2CppCodeGenString* _stringLiteral3111898531;
-extern Il2CppCodeGenString* _stringLiteral3875251400;
-extern Il2CppCodeGenString* _stringLiteral1467642795;
-extern const uint32_t WebRequest__cctor_m3509849914_MetadataUsageId;
 extern "C"  void WebRequest__cctor_m3509849914 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10908,8 +12634,6 @@ extern "C"  void WebRequest__cctor_m3509849914 (Il2CppObject * __this /* static,
 	}
 }
 // System.Void System.Net.WebRequest::System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern Il2CppClass* NotSupportedException_t1793819818_il2cpp_TypeInfo_var;
-extern const uint32_t WebRequest_System_Runtime_Serialization_ISerializable_GetObjectData_m3377822910_MetadataUsageId;
 extern "C"  void WebRequest_System_Runtime_Serialization_ISerializable_GetObjectData_m3377822910 (WebRequest_t1365124353 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10925,12 +12649,6 @@ extern "C"  void WebRequest_System_Runtime_Serialization_ISerializable_GetObject
 	}
 }
 // System.Void System.Net.WebRequest::AddDynamicPrefix(System.String,System.String)
-extern const Il2CppType* WebRequest_t1365124353_0_0_0_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral939871968;
-extern const uint32_t WebRequest_AddDynamicPrefix_m1363854157_MetadataUsageId;
 extern "C"  void WebRequest_AddDynamicPrefix_m1363854157 (Il2CppObject * __this /* static, unused */, String_t* ___protocol0, String_t* ___implementor1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10971,9 +12689,6 @@ IL_0027:
 	}
 }
 // System.Exception System.Net.WebRequest::GetMustImplement()
-extern Il2CppClass* NotImplementedException_t2785117854_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral632465485;
-extern const uint32_t WebRequest_GetMustImplement_m2014409540_MetadataUsageId;
 extern "C"  Exception_t1927440687 * WebRequest_GetMustImplement_m2014409540 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10989,8 +12704,6 @@ extern "C"  Exception_t1927440687 * WebRequest_GetMustImplement_m2014409540 (Il2
 	}
 }
 // System.Net.IWebProxy System.Net.WebRequest::get_DefaultWebProxy()
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern const uint32_t WebRequest_get_DefaultWebProxy_m741473019_MetadataUsageId;
 extern "C"  Il2CppObject * WebRequest_get_DefaultWebProxy_m741473019 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11082,8 +12795,6 @@ extern "C"  Il2CppObject * WebRequest_GetDefaultWebProxy_m1479642708 (Il2CppObje
 	}
 }
 // System.Void System.Net.WebRequest::GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern const uint32_t WebRequest_GetObjectData_m2022281397_MetadataUsageId;
 extern "C"  void WebRequest_GetObjectData_m2022281397 (WebRequest_t1365124353 * __this, SerializationInfo_t228987430 * ___serializationInfo0, StreamingContext_t1417235061  ___streamingContext1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11099,8 +12810,6 @@ extern "C"  void WebRequest_GetObjectData_m2022281397 (WebRequest_t1365124353 * 
 	}
 }
 // System.Void System.Net.WebRequest::AddPrefix(System.String,System.Type)
-extern Il2CppClass* WebRequest_t1365124353_il2cpp_TypeInfo_var;
-extern const uint32_t WebRequest_AddPrefix_m3456797905_MetadataUsageId;
 extern "C"  void WebRequest_AddPrefix_m3456797905 (Il2CppObject * __this /* static, unused */, String_t* ___prefix0, Type_t * ___type1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11132,8 +12841,6 @@ extern "C"  void AsnEncodedData__ctor_m1611830939 (AsnEncodedData_t463456204 * _
 	}
 }
 // System.Void System.Security.Cryptography.AsnEncodedData::.ctor(System.String,System.Byte[])
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern const uint32_t AsnEncodedData__ctor_m1211934482_MetadataUsageId;
 extern "C"  void AsnEncodedData__ctor_m1211934482 (AsnEncodedData_t463456204 * __this, String_t* ___oid0, ByteU5BU5D_t3397334013* ___rawData1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11174,8 +12881,6 @@ extern "C"  Oid_t3221867120 * AsnEncodedData_get_Oid_m625199204 (AsnEncodedData_
 	}
 }
 // System.Void System.Security.Cryptography.AsnEncodedData::set_Oid(System.Security.Cryptography.Oid)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern const uint32_t AsnEncodedData_set_Oid_m3568255745_MetadataUsageId;
 extern "C"  void AsnEncodedData_set_Oid_m3568255745 (AsnEncodedData_t463456204 * __this, Oid_t3221867120 * ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11218,10 +12923,6 @@ extern "C"  ByteU5BU5D_t3397334013* AsnEncodedData_get_RawData_m895923910 (AsnEn
 	}
 }
 // System.Void System.Security.Cryptography.AsnEncodedData::set_RawData(System.Byte[])
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2331471940;
-extern const uint32_t AsnEncodedData_set_RawData_m1046549989_MetadataUsageId;
 extern "C"  void AsnEncodedData_set_RawData_m1046549989 (AsnEncodedData_t463456204 * __this, ByteU5BU5D_t3397334013* ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11253,10 +12954,6 @@ IL_0011:
 	}
 }
 // System.Void System.Security.Cryptography.AsnEncodedData::CopyFrom(System.Security.Cryptography.AsnEncodedData)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2907895822;
-extern const uint32_t AsnEncodedData_CopyFrom_m2601972121_MetadataUsageId;
 extern "C"  void AsnEncodedData_CopyFrom_m2601972121 (AsnEncodedData_t463456204 * __this, AsnEncodedData_t463456204 * ___asnEncodedData0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11313,18 +13010,6 @@ IL_0039:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::ToString(System.Boolean)
-extern Il2CppClass* AsnEncodedData_t463456204_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral406065076;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral1568864490;
-extern Il2CppCodeGenString* _stringLiteral3970765683;
-extern const uint32_t AsnEncodedData_ToString_m724151831_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_ToString_m724151831 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11393,29 +13078,32 @@ IL_0071:
 	}
 	{
 		int32_t L_15 = V_2;
-		if (L_15 == 0)
+		switch (L_15)
 		{
-			goto IL_00a6;
-		}
-		if (L_15 == 1)
-		{
-			goto IL_00ae;
-		}
-		if (L_15 == 2)
-		{
-			goto IL_00b6;
-		}
-		if (L_15 == 3)
-		{
-			goto IL_00be;
-		}
-		if (L_15 == 4)
-		{
-			goto IL_00c6;
-		}
-		if (L_15 == 5)
-		{
-			goto IL_00ce;
+			case 0:
+			{
+				goto IL_00a6;
+			}
+			case 1:
+			{
+				goto IL_00ae;
+			}
+			case 2:
+			{
+				goto IL_00b6;
+			}
+			case 3:
+			{
+				goto IL_00be;
+			}
+			case 4:
+			{
+				goto IL_00c6;
+			}
+			case 5:
+			{
+				goto IL_00ce;
+			}
 		}
 	}
 	{
@@ -11472,10 +13160,6 @@ IL_00d6:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::Default(System.Boolean)
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3231012720;
-extern Il2CppCodeGenString* _stringLiteral372029310;
-extern const uint32_t AsnEncodedData_Default_m4197142414_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_Default_m4197142414 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11541,10 +13225,6 @@ IL_004a:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::BasicConstraintsExtension(System.Boolean)
-extern Il2CppClass* X509BasicConstraintsExtension_t1562873317_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t AsnEncodedData_BasicConstraintsExtension_m4139728680_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_BasicConstraintsExtension_m4139728680 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11585,7 +13265,7 @@ IL_0015:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_001a;
 		throw e;
 	}
@@ -11612,10 +13292,6 @@ IL_002b:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::EnhancedKeyUsageExtension(System.Boolean)
-extern Il2CppClass* X509EnhancedKeyUsageExtension_t2099881051_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t AsnEncodedData_EnhancedKeyUsageExtension_m1452131166_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_EnhancedKeyUsageExtension_m1452131166 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11656,7 +13332,7 @@ IL_0015:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_001a;
 		throw e;
 	}
@@ -11683,10 +13359,6 @@ IL_002b:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::KeyUsageExtension(System.Boolean)
-extern Il2CppClass* X509KeyUsageExtension_t1038124237_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t AsnEncodedData_KeyUsageExtension_m938572452_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_KeyUsageExtension_m938572452 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11727,7 +13399,7 @@ IL_0015:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_001a;
 		throw e;
 	}
@@ -11754,10 +13426,6 @@ IL_002b:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::SubjectKeyIdentifierExtension(System.Boolean)
-extern Il2CppClass* X509SubjectKeyIdentifierExtension_t2508879999_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t AsnEncodedData_SubjectKeyIdentifierExtension_m3991622246_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_SubjectKeyIdentifierExtension_m3991622246 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11798,7 +13466,7 @@ IL_0015:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_001a;
 		throw e;
 	}
@@ -11825,18 +13493,6 @@ IL_002b:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::SubjectAltName(System.Boolean)
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppClass* Encoding_t663144255_il2cpp_TypeInfo_var;
-extern Il2CppClass* Byte_t3683104436_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral652014170;
-extern Il2CppCodeGenString* _stringLiteral3907304405;
-extern Il2CppCodeGenString* _stringLiteral787932375;
-extern Il2CppCodeGenString* _stringLiteral2761554872;
-extern Il2CppCodeGenString* _stringLiteral811305474;
-extern const uint32_t AsnEncodedData_SubjectAltName_m3016089443_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_SubjectAltName_m3016089443 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12046,7 +13702,7 @@ IL_0125:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_012a;
 		throw e;
 	}
@@ -12073,20 +13729,6 @@ IL_013c:
 	}
 }
 // System.String System.Security.Cryptography.AsnEncodedData::NetscapeCertType(System.Boolean)
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral652014170;
-extern Il2CppCodeGenString* _stringLiteral3096109877;
-extern Il2CppCodeGenString* _stringLiteral811305474;
-extern Il2CppCodeGenString* _stringLiteral2388589945;
-extern Il2CppCodeGenString* _stringLiteral432662195;
-extern Il2CppCodeGenString* _stringLiteral3902976916;
-extern Il2CppCodeGenString* _stringLiteral3142894202;
-extern Il2CppCodeGenString* _stringLiteral1056202124;
-extern Il2CppCodeGenString* _stringLiteral680702573;
-extern Il2CppCodeGenString* _stringLiteral1906511964;
-extern Il2CppCodeGenString* _stringLiteral3906992839;
-extern Il2CppCodeGenString* _stringLiteral3231012720;
-extern const uint32_t AsnEncodedData_NetscapeCertType_m2899239452_MetadataUsageId;
 extern "C"  String_t* AsnEncodedData_NetscapeCertType_m2899239452 (AsnEncodedData_t463456204 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12392,9 +14034,6 @@ extern "C"  void Oid__ctor_m83809371 (Oid_t3221867120 * __this, const MethodInfo
 	}
 }
 // System.Void System.Security.Cryptography.Oid::.ctor(System.String)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral339799274;
-extern const uint32_t Oid__ctor_m1936781897_MetadataUsageId;
 extern "C"  void Oid__ctor_m1936781897 (Oid_t3221867120 * __this, String_t* ___oid0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12440,9 +14079,6 @@ extern "C"  void Oid__ctor_m954395291 (Oid_t3221867120 * __this, String_t* ___va
 	}
 }
 // System.Void System.Security.Cryptography.Oid::.ctor(System.Security.Cryptography.Oid)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral339799274;
-extern const uint32_t Oid__ctor_m3386806634_MetadataUsageId;
 extern "C"  void Oid__ctor_m3386806634 (Oid_t3221867120 * __this, Oid_t3221867120 * ___oid0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12495,40 +14131,6 @@ extern "C"  String_t* Oid_get_Value_m2271181078 (Oid_t3221867120 * __this, const
 	}
 }
 // System.String System.Security.Cryptography.Oid::GetName(System.String)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2506820213;
-extern Il2CppCodeGenString* _stringLiteral2789145215;
-extern Il2CppCodeGenString* _stringLiteral503952339;
-extern Il2CppCodeGenString* _stringLiteral4039404748;
-extern Il2CppCodeGenString* _stringLiteral1310521393;
-extern Il2CppCodeGenString* _stringLiteral1528574038;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral406065076;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral1568864490;
-extern Il2CppCodeGenString* _stringLiteral3970765683;
-extern Il2CppCodeGenString* _stringLiteral2832535953;
-extern Il2CppCodeGenString* _stringLiteral662711544;
-extern Il2CppCodeGenString* _stringLiteral1690816676;
-extern Il2CppCodeGenString* _stringLiteral696114808;
-extern Il2CppCodeGenString* _stringLiteral1229030361;
-extern Il2CppCodeGenString* _stringLiteral2396971819;
-extern Il2CppCodeGenString* _stringLiteral3458506502;
-extern Il2CppCodeGenString* _stringLiteral1716512973;
-extern Il2CppCodeGenString* _stringLiteral2345811016;
-extern Il2CppCodeGenString* _stringLiteral949530922;
-extern Il2CppCodeGenString* _stringLiteral1177941752;
-extern Il2CppCodeGenString* _stringLiteral2483521376;
-extern Il2CppCodeGenString* _stringLiteral727787524;
-extern Il2CppCodeGenString* _stringLiteral4089825531;
-extern Il2CppCodeGenString* _stringLiteral292744994;
-extern Il2CppCodeGenString* _stringLiteral1723421763;
-extern const uint32_t Oid_GetName_m40695489_MetadataUsageId;
 extern "C"  String_t* Oid_GetName_m40695489 (Oid_t3221867120 * __this, String_t* ___oid0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12619,61 +14221,64 @@ IL_00cd:
 	}
 	{
 		int32_t L_22 = V_2;
-		if (L_22 == 0)
+		switch (L_22)
 		{
-			goto IL_0122;
-		}
-		if (L_22 == 1)
-		{
-			goto IL_0128;
-		}
-		if (L_22 == 2)
-		{
-			goto IL_012e;
-		}
-		if (L_22 == 3)
-		{
-			goto IL_0134;
-		}
-		if (L_22 == 4)
-		{
-			goto IL_013a;
-		}
-		if (L_22 == 5)
-		{
-			goto IL_0140;
-		}
-		if (L_22 == 6)
-		{
-			goto IL_0146;
-		}
-		if (L_22 == 7)
-		{
-			goto IL_014c;
-		}
-		if (L_22 == 8)
-		{
-			goto IL_0152;
-		}
-		if (L_22 == 9)
-		{
-			goto IL_0158;
-		}
-		if (L_22 == 10)
-		{
-			goto IL_015e;
-		}
-		if (L_22 == 11)
-		{
-			goto IL_0164;
-		}
-		if (L_22 == 12)
-		{
-			goto IL_016a;
-		}
-		if (L_22 == 13)
-		{
-			goto IL_0170;
+			case 0:
+			{
+				goto IL_0122;
+			}
+			case 1:
+			{
+				goto IL_0128;
+			}
+			case 2:
+			{
+				goto IL_012e;
+			}
+			case 3:
+			{
+				goto IL_0134;
+			}
+			case 4:
+			{
+				goto IL_013a;
+			}
+			case 5:
+			{
+				goto IL_0140;
+			}
+			case 6:
+			{
+				goto IL_0146;
+			}
+			case 7:
+			{
+				goto IL_014c;
+			}
+			case 8:
+			{
+				goto IL_0152;
+			}
+			case 9:
+			{
+				goto IL_0158;
+			}
+			case 10:
+			{
+				goto IL_015e;
+			}
+			case 11:
+			{
+				goto IL_0164;
+			}
+			case 12:
+			{
+				goto IL_016a;
+			}
+			case 13:
+			{
+				goto IL_0170;
+			}
 		}
 	}
 	{
@@ -12757,8 +14362,6 @@ IL_0176:
 	}
 }
 // System.Void System.Security.Cryptography.OidCollection::.ctor()
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern const uint32_t OidCollection__ctor_m3515071701_MetadataUsageId;
 extern "C"  void OidCollection__ctor_m3515071701 (OidCollection_t3790243618 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12788,8 +14391,6 @@ extern "C"  void OidCollection_System_Collections_ICollection_CopyTo_m1176626933
 	}
 }
 // System.Collections.IEnumerator System.Security.Cryptography.OidCollection::System.Collections.IEnumerable.GetEnumerator()
-extern Il2CppClass* OidEnumerator_t3674631724_il2cpp_TypeInfo_var;
-extern const uint32_t OidCollection_System_Collections_IEnumerable_GetEnumerator_m2652059920_MetadataUsageId;
 extern "C"  Il2CppObject * OidCollection_System_Collections_IEnumerable_GetEnumerator_m2652059920 (OidCollection_t3790243618 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12815,8 +14416,6 @@ extern "C"  int32_t OidCollection_get_Count_m1266492637 (OidCollection_t37902436
 	}
 }
 // System.Security.Cryptography.Oid System.Security.Cryptography.OidCollection::get_Item(System.Int32)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern const uint32_t OidCollection_get_Item_m1091387424_MetadataUsageId;
 extern "C"  Oid_t3221867120 * OidCollection_get_Item_m1091387424 (OidCollection_t3790243618 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12885,8 +14484,6 @@ extern "C"  void OidEnumerator__ctor_m675250776 (OidEnumerator_t3674631724 * __t
 	}
 }
 // System.Object System.Security.Cryptography.OidEnumerator::System.Collections.IEnumerator.get_Current()
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern const uint32_t OidEnumerator_System_Collections_IEnumerator_get_Current_m2449534361_MetadataUsageId;
 extern "C"  Il2CppObject * OidEnumerator_System_Collections_IEnumerator_get_Current_m2449534361 (OidEnumerator_t3674631724 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12957,16 +14554,6 @@ extern "C"  void OidEnumerator_Reset_m400083278 (OidEnumerator_t3674631724 * __t
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.PublicKey::.ctor(Mono.Security.X509.X509Certificate)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSACryptoServiceProvider_t4229286967_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSAManaged_t3034748748_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSA_t3719518354_il2cpp_TypeInfo_var;
-extern Il2CppClass* DSACryptoServiceProvider_t2915171657_il2cpp_TypeInfo_var;
-extern Il2CppClass* DSA_t903174880_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppClass* AsnEncodedData_t463456204_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2506820213;
-extern const uint32_t PublicKey__ctor_m613031465_MetadataUsageId;
 extern "C"  void PublicKey__ctor_m613031465 (PublicKey_t870392 * __this, X509Certificate_t324051958 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13176,17 +14763,6 @@ extern "C"  AsnEncodedData_t463456204 * PublicKey_get_EncodedParameters_m2182265
 	}
 }
 // System.Security.Cryptography.AsymmetricAlgorithm System.Security.Cryptography.X509Certificates.PublicKey::get_Key()
-extern Il2CppClass* PublicKey_t870392_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* NotSupportedException_t1793819818_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2506820213;
-extern Il2CppCodeGenString* _stringLiteral186901249;
-extern Il2CppCodeGenString* _stringLiteral499964095;
-extern const uint32_t PublicKey_get_Key_m126090744_MetadataUsageId;
 extern "C"  AsymmetricAlgorithm_t784058677 * PublicKey_get_Key_m126090744 (PublicKey_t870392 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13322,8 +14898,6 @@ extern "C"  Oid_t3221867120 * PublicKey_get_Oid_m4224222642 (PublicKey_t870392 *
 	}
 }
 // System.Byte[] System.Security.Cryptography.X509Certificates.PublicKey::GetUnsignedBigInteger(System.Byte[])
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern const uint32_t PublicKey_GetUnsignedBigInteger_m913837477_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* PublicKey_GetUnsignedBigInteger_m913837477 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t3397334013* ___integer0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13365,16 +14939,6 @@ IL_000a:
 	}
 }
 // System.Security.Cryptography.DSA System.Security.Cryptography.X509Certificates.PublicKey::DecodeDSA(System.Byte[],System.Byte[])
-extern Il2CppClass* DSAParameters_t1872138834_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
-extern Il2CppClass* DSACryptoServiceProvider_t2915171657_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral117466059;
-extern Il2CppCodeGenString* _stringLiteral2958405900;
-extern Il2CppCodeGenString* _stringLiteral3365355999;
-extern Il2CppCodeGenString* _stringLiteral2776537270;
-extern const uint32_t PublicKey_DecodeDSA_m1169363495_MetadataUsageId;
 extern "C"  DSA_t903174880 * PublicKey_DecodeDSA_m1169363495 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t3397334013* ___rawPublicKey0, ByteU5BU5D_t3397334013* ___rawParameters1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13549,7 +15113,7 @@ IL_00b9:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0106;
 		throw e;
 	}
@@ -13589,16 +15153,6 @@ IL_0121:
 	}
 }
 // System.Security.Cryptography.RSA System.Security.Cryptography.X509Certificates.PublicKey::DecodeRSA(System.Byte[])
-extern Il2CppClass* RSAParameters_t1462703416_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSACryptoServiceProvider_t4229286967_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3425974119;
-extern Il2CppCodeGenString* _stringLiteral2593317087;
-extern Il2CppCodeGenString* _stringLiteral3167016714;
-extern Il2CppCodeGenString* _stringLiteral2776537270;
-extern const uint32_t PublicKey_DecodeRSA_m1627823702_MetadataUsageId;
 extern "C"  RSA_t3719518354 * PublicKey_DecodeRSA_m1627823702 (Il2CppObject * __this /* static, unused */, ByteU5BU5D_t3397334013* ___rawPublicKey0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13723,7 +15277,7 @@ IL_0078:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_009c;
 		throw e;
 	}
@@ -13765,11 +15319,6 @@ IL_00b9:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X500DistinguishedName::.ctor(System.Byte[])
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral319192461;
-extern const uint32_t X500DistinguishedName__ctor_m459426370_MetadataUsageId;
 extern "C"  void X500DistinguishedName__ctor_m459426370 (X500DistinguishedName_t452415348 * __this, ByteU5BU5D_t3397334013* ___encodedDistinguishedName0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13824,12 +15373,6 @@ IL_0048:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X500DistinguishedName::Decode(System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags)
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* X501_t349661535_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1232676424;
-extern const uint32_t X500DistinguishedName_Decode_m3070515374_MetadataUsageId;
 extern "C"  String_t* X500DistinguishedName_Decode_m3070515374 (X500DistinguishedName_t452415348 * __this, int32_t ___flag0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13900,9 +15443,6 @@ IL_0030:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X500DistinguishedName::GetSeparator(System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags)
-extern Il2CppCodeGenString* _stringLiteral811305495;
-extern Il2CppCodeGenString* _stringLiteral811305474;
-extern const uint32_t X500DistinguishedName_GetSeparator_m2215165979_MetadataUsageId;
 extern "C"  String_t* X500DistinguishedName_GetSeparator_m2215165979 (Il2CppObject * __this /* static, unused */, int32_t ___flag0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13953,11 +15493,6 @@ IL_0033:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X500DistinguishedName::DecodeRawData()
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* X501_t349661535_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral811305474;
-extern const uint32_t X500DistinguishedName_DecodeRawData_m3640767187_MetadataUsageId;
 extern "C"  void X500DistinguishedName_DecodeRawData_m3640767187 (X500DistinguishedName_t452415348 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14005,10 +15540,6 @@ IL_0025:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X500DistinguishedName::Canonize(System.String)
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppClass* Char_t3454481338_il2cpp_TypeInfo_var;
-extern Il2CppClass* CharU5BU5D_t1328083999_il2cpp_TypeInfo_var;
-extern const uint32_t X500DistinguishedName_Canonize_m2814323919_MetadataUsageId;
 extern "C"  String_t* X500DistinguishedName_Canonize_m2814323919 (Il2CppObject * __this /* static, unused */, String_t* ___s0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14134,9 +15665,6 @@ IL_0081:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X500DistinguishedName::AreEqual(System.Security.Cryptography.X509Certificates.X500DistinguishedName,System.Security.Cryptography.X509Certificates.X500DistinguishedName)
-extern Il2CppClass* StringU5BU5D_t1642385972_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X500DistinguishedName_AreEqual_m2245968769_MetadataUsageId;
 extern "C"  bool X500DistinguishedName_AreEqual_m2245968769 (Il2CppObject * __this /* static, unused */, X500DistinguishedName_t452415348 * ___name10, X500DistinguishedName_t452415348 * ___name21, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14264,10 +15792,6 @@ IL_007f:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::.ctor()
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral2345811016;
-extern const uint32_t X509BasicConstraintsExtension__ctor_m4017912156_MetadataUsageId;
 extern "C"  void X509BasicConstraintsExtension__ctor_m4017912156 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14285,10 +15809,6 @@ extern "C"  void X509BasicConstraintsExtension__ctor_m4017912156 (X509BasicConst
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral2345811016;
-extern const uint32_t X509BasicConstraintsExtension__ctor_m3320418592_MetadataUsageId;
 extern "C"  void X509BasicConstraintsExtension__ctor_m3320418592 (X509BasicConstraintsExtension_t1562873317 * __this, AsnEncodedData_t463456204 * ___encodedBasicConstraints0, bool ___critical1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14315,12 +15835,6 @@ extern "C"  void X509BasicConstraintsExtension__ctor_m3320418592 (X509BasicConst
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::.ctor(System.Boolean,System.Boolean,System.Int32,System.Boolean)
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1475891050;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral2345811016;
-extern const uint32_t X509BasicConstraintsExtension__ctor_m3748651446_MetadataUsageId;
 extern "C"  void X509BasicConstraintsExtension__ctor_m3748651446 (X509BasicConstraintsExtension_t1562873317 * __this, bool ___certificateAuthority0, bool ___hasPathLengthConstraint1, int32_t ___pathLengthConstraint2, bool ___critical3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14373,9 +15887,6 @@ IL_0025:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::get_CertificateAuthority()
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1874080883;
-extern const uint32_t X509BasicConstraintsExtension_get_CertificateAuthority_m2220022817_MetadataUsageId;
 extern "C"  bool X509BasicConstraintsExtension_get_CertificateAuthority_m2220022817 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14419,9 +15930,6 @@ IL_0020:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::get_HasPathLengthConstraint()
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1874080883;
-extern const uint32_t X509BasicConstraintsExtension_get_HasPathLengthConstraint_m3788532759_MetadataUsageId;
 extern "C"  bool X509BasicConstraintsExtension_get_HasPathLengthConstraint_m3788532759 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14465,9 +15973,6 @@ IL_0020:
 	}
 }
 // System.Int32 System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::get_PathLengthConstraint()
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1874080883;
-extern const uint32_t X509BasicConstraintsExtension_get_PathLengthConstraint_m3004531343_MetadataUsageId;
 extern "C"  int32_t X509BasicConstraintsExtension_get_PathLengthConstraint_m3004531343 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14511,15 +16016,6 @@ IL_0020:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::CopyFrom(System.Security.Cryptography.AsnEncodedData)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2907895822;
-extern Il2CppCodeGenString* _stringLiteral3915869001;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral2345811016;
-extern const uint32_t X509BasicConstraintsExtension_CopyFrom_m1321548708_MetadataUsageId;
 extern "C"  void X509BasicConstraintsExtension_CopyFrom_m1321548708 (X509BasicConstraintsExtension_t1562873317 * __this, AsnEncodedData_t463456204 * ___asnEncodedData0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14603,9 +16099,6 @@ IL_0069:
 	}
 }
 // System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::Decode(System.Byte[])
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern const uint32_t X509BasicConstraintsExtension_Decode_m2821936487_MetadataUsageId;
 extern "C"  int32_t X509BasicConstraintsExtension_Decode_m2821936487 (X509BasicConstraintsExtension_t1562873317 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14781,7 +16274,7 @@ IL_00a5:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_00aa;
 		throw e;
 	}
@@ -14811,9 +16304,6 @@ IL_00b9:
 	}
 }
 // System.Byte[] System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::Encode()
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern const uint32_t X509BasicConstraintsExtension_Encode_m3505127076_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* X509BasicConstraintsExtension_Encode_m3505127076 (X509BasicConstraintsExtension_t1562873317 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14825,7 +16315,7 @@ extern "C"  ByteU5BU5D_t3397334013* X509BasicConstraintsExtension_Encode_m350512
 	ASN1_t924533536 * V_0 = NULL;
 	{
 		ASN1_t924533536 * L_0 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m32691595(L_0, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m32691595(L_0, (uint8_t)((int32_t)48), /*hidden argument*/NULL);
 		V_0 = L_0;
 		bool L_1 = __this->get__certificateAuthority_6();
 		if (!L_1)
@@ -14839,7 +16329,7 @@ extern "C"  ByteU5BU5D_t3397334013* X509BasicConstraintsExtension_Encode_m350512
 		NullCheck(L_3);
 		(L_3)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)((int32_t)255));
 		ASN1_t924533536 * L_4 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3688855288(L_4, 1, L_3, /*hidden argument*/NULL);
+		ASN1__ctor_m3688855288(L_4, (uint8_t)1, L_3, /*hidden argument*/NULL);
 		NullCheck(L_2);
 		ASN1_Add_m1528660622(L_2, L_4, /*hidden argument*/NULL);
 	}
@@ -14862,7 +16352,7 @@ IL_002e:
 	{
 		ASN1_t924533536 * L_7 = V_0;
 		ASN1_t924533536 * L_8 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3688855288(L_8, 2, ((ByteU5BU5D_t3397334013*)SZArrayNew(ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var, (uint32_t)1)), /*hidden argument*/NULL);
+		ASN1__ctor_m3688855288(L_8, (uint8_t)2, ((ByteU5BU5D_t3397334013*)SZArrayNew(ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var, (uint32_t)1)), /*hidden argument*/NULL);
 		NullCheck(L_7);
 		ASN1_Add_m1528660622(L_7, L_8, /*hidden argument*/NULL);
 		goto IL_006e;
@@ -14886,18 +16376,6 @@ IL_006e:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension::ToString(System.Boolean)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral652014170;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral4000354433;
-extern Il2CppCodeGenString* _stringLiteral755085301;
-extern Il2CppCodeGenString* _stringLiteral3560391898;
-extern Il2CppCodeGenString* _stringLiteral1630329514;
-extern Il2CppCodeGenString* _stringLiteral811305474;
-extern Il2CppCodeGenString* _stringLiteral1656762157;
-extern Il2CppCodeGenString* _stringLiteral1414246128;
-extern const uint32_t X509BasicConstraintsExtension_ToString_m3781281400_MetadataUsageId;
 extern "C"  String_t* X509BasicConstraintsExtension_ToString_m3781281400 (X509BasicConstraintsExtension_t1562873317 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14912,21 +16390,24 @@ extern "C"  String_t* X509BasicConstraintsExtension_ToString_m3781281400 (X509Ba
 		int32_t L_0 = __this->get__status_9();
 		V_1 = L_0;
 		int32_t L_1 = V_1;
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 0)
+		switch (((int32_t)((int32_t)L_1-(int32_t)1)))
 		{
-			goto IL_0024;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 1)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 2)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 3)
-		{
-			goto IL_0037;
+			case 0:
+			{
+				goto IL_0024;
+			}
+			case 1:
+			{
+				goto IL_002a;
+			}
+			case 2:
+			{
+				goto IL_002a;
+			}
+			case 3:
+			{
+				goto IL_0037;
+			}
 		}
 	}
 	{
@@ -15074,8 +16555,6 @@ IL_0111:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::.ctor(System.Byte[])
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2__ctor_m4067762773_MetadataUsageId;
 extern "C"  void X509Certificate2__ctor_m4067762773 (X509Certificate2_t4056456767 * __this, ByteU5BU5D_t3397334013* ___rawData0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15095,12 +16574,6 @@ extern "C"  void X509Certificate2__ctor_m4067762773 (X509Certificate2_t405645676
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::.cctor()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305138____U24U24fieldU2D3_1_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305138____U24U24fieldU2D4_2_FieldInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1066223945;
-extern const uint32_t X509Certificate2__cctor_m3470694777_MetadataUsageId;
 extern "C"  void X509Certificate2__cctor_m3470694777 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15132,10 +16605,6 @@ extern "C"  void X509Certificate2__cctor_m3470694777 (Il2CppObject * __this /* s
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509ExtensionCollection System.Security.Cryptography.X509Certificates.X509Certificate2::get_Extensions()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509ExtensionCollection_t650873211_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_Extensions_m3374377562_MetadataUsageId;
 extern "C"  X509ExtensionCollection_t650873211 * X509Certificate2_get_Extensions_m3374377562 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15181,10 +16650,6 @@ IL_0032:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X500DistinguishedName System.Security.Cryptography.X509Certificates.X509Certificate2::get_IssuerName()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* X500DistinguishedName_t452415348_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_IssuerName_m2295833821_MetadataUsageId;
 extern "C"  X500DistinguishedName_t452415348 * X509Certificate2_get_IssuerName_m2295833821 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15234,9 +16699,6 @@ IL_003c:
 	}
 }
 // System.DateTime System.Security.Cryptography.X509Certificates.X509Certificate2::get_NotAfter()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_NotAfter_m3430171627_MetadataUsageId;
 extern "C"  DateTime_t693205669  X509Certificate2_get_NotAfter_m3430171627 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15273,9 +16735,6 @@ IL_0016:
 	}
 }
 // System.DateTime System.Security.Cryptography.X509Certificates.X509Certificate2::get_NotBefore()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_NotBefore_m2972055762_MetadataUsageId;
 extern "C"  DateTime_t693205669  X509Certificate2_get_NotBefore_m2972055762 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15312,13 +16771,6 @@ IL_0016:
 	}
 }
 // System.Security.Cryptography.AsymmetricAlgorithm System.Security.Cryptography.X509Certificates.X509Certificate2::get_PrivateKey()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSACryptoServiceProvider_t4229286967_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSAManaged_t3034748748_il2cpp_TypeInfo_var;
-extern Il2CppClass* DSACryptoServiceProvider_t2915171657_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_PrivateKey_m2896208208_MetadataUsageId;
 extern "C"  AsymmetricAlgorithm_t784058677 * X509Certificate2_get_PrivateKey_m2896208208 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15541,7 +16993,7 @@ IL_0109:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_010e;
 		throw e;
 	}
@@ -15563,12 +17015,6 @@ IL_0116:
 	}
 }
 // System.Security.Cryptography.X509Certificates.PublicKey System.Security.Cryptography.X509Certificates.X509Certificate2::get_PublicKey()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* PublicKey_t870392_il2cpp_TypeInfo_var;
-extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2035996860;
-extern const uint32_t X509Certificate2_get_PublicKey_m2119837179_MetadataUsageId;
 extern "C"  PublicKey_t870392 * X509Certificate2_get_PublicKey_m2119837179 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15621,7 +17067,7 @@ IL_0021:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0037;
 		throw e;
 	}
@@ -15652,11 +17098,6 @@ IL_0050:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Certificate2::get_SerialNumber()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3231012752;
-extern const uint32_t X509Certificate2_get_SerialNumber_m1521011849_MetadataUsageId;
 extern "C"  String_t* X509Certificate2_get_SerialNumber_m1521011849 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15740,10 +17181,6 @@ IL_006d:
 	}
 }
 // System.Security.Cryptography.Oid System.Security.Cryptography.X509Certificates.X509Certificate2::get_SignatureAlgorithm()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_SignatureAlgorithm_m3069898012_MetadataUsageId;
 extern "C"  Oid_t3221867120 * X509Certificate2_get_SignatureAlgorithm_m3069898012 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15791,10 +17228,6 @@ IL_0037:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X500DistinguishedName System.Security.Cryptography.X509Certificates.X509Certificate2::get_SubjectName()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* X500DistinguishedName_t452415348_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_SubjectName_m2958094870_MetadataUsageId;
 extern "C"  X500DistinguishedName_t452415348 * X509Certificate2_get_SubjectName_m2958094870 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15852,9 +17285,6 @@ extern "C"  String_t* X509Certificate2_get_Thumbprint_m4244025929 (X509Certifica
 	}
 }
 // System.Int32 System.Security.Cryptography.X509Certificates.X509Certificate2::get_Version()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_get_Version_m1927399907_MetadataUsageId;
 extern "C"  int32_t X509Certificate2_get_Version_m1927399907 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15887,12 +17317,6 @@ IL_0016:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Certificate2::GetNameInfo(System.Security.Cryptography.X509Certificates.X509NameType,System.Boolean)
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2239808403;
-extern const uint32_t X509Certificate2_GetNameInfo_m402390219_MetadataUsageId;
 extern "C"  String_t* X509Certificate2_GetNameInfo_m402390219 (X509Certificate2_t4056456767 * __this, int32_t ___nameType0, bool ___forIssuer1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15926,29 +17350,32 @@ extern "C"  String_t* X509Certificate2_GetNameInfo_m402390219 (X509Certificate2_
 		int32_t L_0 = ___nameType0;
 		V_5 = L_0;
 		int32_t L_1 = V_5;
-		if (L_1 == 0)
+		switch (L_1)
 		{
-			goto IL_0027;
-		}
-		if (L_1 == 1)
-		{
-			goto IL_00b9;
-		}
-		if (L_1 == 2)
-		{
-			goto IL_00fa;
-		}
-		if (L_1 == 3)
-		{
-			goto IL_0100;
-		}
-		if (L_1 == 4)
-		{
-			goto IL_0144;
-		}
-		if (L_1 == 5)
-		{
-			goto IL_014a;
+			case 0:
+			{
+				goto IL_0027;
+			}
+			case 1:
+			{
+				goto IL_00b9;
+			}
+			case 2:
+			{
+				goto IL_00fa;
+			}
+			case 3:
+			{
+				goto IL_0100;
+			}
+			case 4:
+			{
+				goto IL_0144;
+			}
+			case 5:
+			{
+				goto IL_014a;
+			}
 		}
 	}
 	{
@@ -16334,10 +17761,6 @@ IL_0074:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Certificate2::GetValueAsString(Mono.Security.ASN1)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppClass* Encoding_t663144255_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_GetValueAsString_m1286925493_MetadataUsageId;
 extern "C"  String_t* X509Certificate2_GetValueAsString_m1286925493 (X509Certificate2_t4056456767 * __this, ASN1_t924533536 * ___pair0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16461,10 +17884,6 @@ IL_0079:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::ImportPkcs12(System.Byte[],System.String)
-extern Il2CppClass* PKCS12_t1362584795_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSA_t3719518354_il2cpp_TypeInfo_var;
-extern Il2CppClass* DSA_t903174880_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_ImportPkcs12_m3993877002_MetadataUsageId;
 extern "C"  void X509Certificate2_ImportPkcs12_m3993877002 (X509Certificate2_t4056456767 * __this, ByteU5BU5D_t3397334013* ___rawData0, String_t* ___password1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16564,12 +17983,6 @@ IL_0091:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)
-extern Il2CppClass* X509Certificate_t324051958_il2cpp_TypeInfo_var;
-extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral4189882345;
-extern const uint32_t X509Certificate2_Import_m3813388542_MetadataUsageId;
 extern "C"  void X509Certificate2_Import_m3813388542 (X509Certificate2_t4056456767 * __this, ByteU5BU5D_t3397334013* ___rawData0, String_t* ___password1, int32_t ___keyStorageFlags2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16610,7 +18023,7 @@ IL_000f:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0020;
 		throw e;
 	}
@@ -16631,7 +18044,7 @@ IL_0021:
 		catch(Il2CppExceptionWrapper& e)
 		{
 			__exception_local = (Exception_t1927440687 *)e.ex;
-			if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+			if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 				goto CATCH_002e;
 			throw e;
 		}
@@ -16676,7 +18089,7 @@ IL_0051:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_005e;
 		throw e;
 	}
@@ -16696,8 +18109,6 @@ IL_0070:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::Reset()
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2_Reset_m414840175_MetadataUsageId;
 extern "C"  void X509Certificate2_Reset_m414840175 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16723,8 +18134,6 @@ extern "C"  void X509Certificate2_Reset_m414840175 (X509Certificate2_t4056456767
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Certificate2::ToString()
-extern Il2CppCodeGenString* _stringLiteral4149455680;
-extern const uint32_t X509Certificate2_ToString_m3269655217_MetadataUsageId;
 extern "C"  String_t* X509Certificate2_ToString_m3269655217 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16751,27 +18160,6 @@ IL_0011:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Certificate2::ToString(System.Boolean)
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern Il2CppClass* RSA_t3719518354_il2cpp_TypeInfo_var;
-extern Il2CppClass* DSA_t903174880_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral4149455680;
-extern Il2CppCodeGenString* _stringLiteral729509515;
-extern Il2CppCodeGenString* _stringLiteral2773094835;
-extern Il2CppCodeGenString* _stringLiteral3833665838;
-extern Il2CppCodeGenString* _stringLiteral812091658;
-extern Il2CppCodeGenString* _stringLiteral1650683811;
-extern Il2CppCodeGenString* _stringLiteral3942979884;
-extern Il2CppCodeGenString* _stringLiteral3545504282;
-extern Il2CppCodeGenString* _stringLiteral705184417;
-extern Il2CppCodeGenString* _stringLiteral3591277135;
-extern Il2CppCodeGenString* _stringLiteral1690816676;
-extern Il2CppCodeGenString* _stringLiteral1690816078;
-extern Il2CppCodeGenString* _stringLiteral472704935;
-extern Il2CppCodeGenString* _stringLiteral2955024046;
-extern const uint32_t X509Certificate2_ToString_m4160733282_MetadataUsageId;
 extern "C"  String_t* X509Certificate2_ToString_m4160733282 (X509Certificate2_t4056456767 * __this, bool ___verbose0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16952,9 +18340,6 @@ IL_0140:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2::AppendBuffer(System.Text.StringBuilder,System.Byte[])
-extern Il2CppCodeGenString* _stringLiteral3231012720;
-extern Il2CppCodeGenString* _stringLiteral372029310;
-extern const uint32_t X509Certificate2_AppendBuffer_m3517242299_MetadataUsageId;
 extern "C"  void X509Certificate2_AppendBuffer_m3517242299 (Il2CppObject * __this /* static, unused */, StringBuilder_t1221177846 * ___sb0, ByteU5BU5D_t3397334013* ___buffer1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17025,12 +18410,6 @@ IL_0041:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Certificate2::Verify()
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptoConfig_t896479599_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Chain_t777637347_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1509838121;
-extern const uint32_t X509Certificate2_Verify_m1574874641_MetadataUsageId;
 extern "C"  bool X509Certificate2_Verify_m1574874641 (X509Certificate2_t4056456767 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17104,11 +18483,6 @@ extern "C"  void X509Certificate2Collection__ctor_m819526826 (X509Certificate2Co
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509Certificate2Collection::get_Item(System.Int32)
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral769671005;
-extern Il2CppCodeGenString* _stringLiteral186536484;
-extern const uint32_t X509Certificate2Collection_get_Item_m2173549554_MetadataUsageId;
 extern "C"  X509Certificate2_t4056456767 * X509Certificate2Collection_get_Item_m2173549554 (X509Certificate2Collection_t1108969367 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17157,9 +18531,6 @@ IL_002e:
 	}
 }
 // System.Int32 System.Security.Cryptography.X509Certificates.X509Certificate2Collection::Add(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral99291529;
-extern const uint32_t X509Certificate2Collection_Add_m3920471111_MetadataUsageId;
 extern "C"  int32_t X509Certificate2Collection_Add_m3920471111 (X509Certificate2Collection_t1108969367 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17191,9 +18562,6 @@ IL_0011:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Collection::AddRange(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1767150654;
-extern const uint32_t X509Certificate2Collection_AddRange_m1503879780_MetadataUsageId;
 extern "C"  void X509Certificate2Collection_AddRange_m1503879780 (X509Certificate2Collection_t1108969367 * __this, X509Certificate2Collection_t1108969367 * ___certificates0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17225,12 +18593,6 @@ IL_0011:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Certificate2Collection::Contains(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral99291529;
-extern const uint32_t X509Certificate2Collection_Contains_m109907687_MetadataUsageId;
 extern "C"  bool X509Certificate2Collection_Contains_m109907687 (X509Certificate2Collection_t1108969367 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17365,35 +18727,6 @@ IL_0065:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509Certificate2Collection::Find(System.Security.Cryptography.X509Certificates.X509FindType,System.Object,System.Boolean)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern Il2CppClass* Exception_t1927440687_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptoConfig_t896479599_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicUnexpectedOperationException_t4184064416_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509FindType_t3221716179_il2cpp_TypeInfo_var;
-extern Il2CppClass* CultureInfo_t3500843524_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2Collection_t1108969367_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509SubjectKeyIdentifierExtension_t2508879999_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509KeyUsageExtension_t1038124237_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral600739390;
-extern Il2CppCodeGenString* _stringLiteral4107323250;
-extern Il2CppCodeGenString* _stringLiteral3311014053;
-extern Il2CppCodeGenString* _stringLiteral1966714381;
-extern Il2CppCodeGenString* _stringLiteral1695116836;
-extern Il2CppCodeGenString* _stringLiteral1315792745;
-extern Il2CppCodeGenString* _stringLiteral485104480;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern const uint32_t X509Certificate2Collection_Find_m1629908635_MetadataUsageId;
 extern "C"  X509Certificate2Collection_t1108969367 * X509Certificate2Collection_Find_m1629908635 (X509Certificate2Collection_t1108969367 * __this, int32_t ___findType0, Il2CppObject * ___findValue1, bool ___validOnly2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17463,65 +18796,68 @@ IL_0011:
 		int32_t L_5 = ___findType0;
 		V_23 = L_5;
 		int32_t L_6 = V_23;
-		if (L_6 == 0)
+		switch (L_6)
 		{
-			goto IL_0070;
-		}
-		if (L_6 == 1)
-		{
-			goto IL_0070;
-		}
-		if (L_6 == 2)
-		{
-			goto IL_0070;
-		}
-		if (L_6 == 3)
-		{
-			goto IL_0070;
-		}
-		if (L_6 == 4)
-		{
-			goto IL_0070;
-		}
-		if (L_6 == 5)
-		{
-			goto IL_0070;
-		}
-		if (L_6 == 6)
-		{
-			goto IL_0174;
-		}
-		if (L_6 == 7)
-		{
-			goto IL_0174;
-		}
-		if (L_6 == 8)
-		{
-			goto IL_0174;
-		}
-		if (L_6 == 9)
-		{
-			goto IL_0070;
-		}
-		if (L_6 == 10)
-		{
-			goto IL_00b5;
-		}
-		if (L_6 == 11)
-		{
-			goto IL_00b5;
-		}
-		if (L_6 == 12)
-		{
-			goto IL_00b5;
-		}
-		if (L_6 == 13)
-		{
-			goto IL_012f;
-		}
-		if (L_6 == 14)
-		{
-			goto IL_0070;
+			case 0:
+			{
+				goto IL_0070;
+			}
+			case 1:
+			{
+				goto IL_0070;
+			}
+			case 2:
+			{
+				goto IL_0070;
+			}
+			case 3:
+			{
+				goto IL_0070;
+			}
+			case 4:
+			{
+				goto IL_0070;
+			}
+			case 5:
+			{
+				goto IL_0070;
+			}
+			case 6:
+			{
+				goto IL_0174;
+			}
+			case 7:
+			{
+				goto IL_0174;
+			}
+			case 8:
+			{
+				goto IL_0174;
+			}
+			case 9:
+			{
+				goto IL_0070;
+			}
+			case 10:
+			{
+				goto IL_00b5;
+			}
+			case 11:
+			{
+				goto IL_00b5;
+			}
+			case 12:
+			{
+				goto IL_00b5;
+			}
+			case 13:
+			{
+				goto IL_012f;
+			}
+			case 14:
+			{
+				goto IL_0070;
+			}
 		}
 	}
 	{
@@ -17538,7 +18874,7 @@ IL_0070:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_007c;
 		throw e;
 	}
@@ -17588,7 +18924,7 @@ IL_00b5:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_00c1;
 		throw e;
 	}
@@ -17634,7 +18970,7 @@ IL_00f5:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (CryptographicUnexpectedOperationException_t4184064416_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (CryptographicUnexpectedOperationException_t4184064416_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0101;
 		throw e;
 	}
@@ -17670,13 +19006,13 @@ IL_012f:
 	try
 	{ // begin try (depth: 1)
 		Il2CppObject * L_31 = ___findValue1;
-		V_2 = ((*(int32_t*)((int32_t*)UnBox (L_31, Int32_t2071877448_il2cpp_TypeInfo_var))));
+		V_2 = ((*(int32_t*)((int32_t*)UnBox(L_31, Int32_t2071877448_il2cpp_TypeInfo_var))));
 		goto IL_016f;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_013b;
 		throw e;
 	}
@@ -17720,13 +19056,13 @@ IL_0174:
 	try
 	{ // begin try (depth: 1)
 		Il2CppObject * L_40 = ___findValue1;
-		V_3 = ((*(DateTime_t693205669 *)((DateTime_t693205669 *)UnBox (L_40, DateTime_t693205669_il2cpp_TypeInfo_var))));
+		V_3 = ((*(DateTime_t693205669 *)((DateTime_t693205669 *)UnBox(L_40, DateTime_t693205669_il2cpp_TypeInfo_var))));
 		goto IL_01b4;
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Exception_t1927440687_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0180;
 		throw e;
 	}
@@ -17814,65 +19150,68 @@ IL_01fc:
 			int32_t L_62 = ___findType0;
 			V_23 = L_62;
 			int32_t L_63 = V_23;
-			if (L_63 == 0)
+			switch (L_63)
 			{
-				goto IL_0258;
-			}
-			if (L_63 == 1)
-			{
-				goto IL_028a;
-			}
-			if (L_63 == 2)
-			{
-				goto IL_02ab;
-			}
-			if (L_63 == 3)
-			{
-				goto IL_02c5;
-			}
-			if (L_63 == 4)
-			{
-				goto IL_02e6;
-			}
-			if (L_63 == 5)
-			{
-				goto IL_0300;
-			}
-			if (L_63 == 6)
-			{
-				goto IL_03c7;
-			}
-			if (L_63 == 7)
-			{
-				goto IL_03f0;
-			}
-			if (L_63 == 8)
-			{
-				goto IL_0404;
-			}
-			if (L_63 == 9)
-			{
-				goto IL_031a;
-			}
-			if (L_63 == 10)
-			{
-				goto IL_0358;
-			}
-			if (L_63 == 11)
-			{
-				goto IL_036e;
-			}
-			if (L_63 == 12)
-			{
-				goto IL_0373;
-			}
-			if (L_63 == 13)
-			{
-				goto IL_038d;
-			}
-			if (L_63 == 14)
-			{
-				goto IL_031f;
+				case 0:
+				{
+					goto IL_0258;
+				}
+				case 1:
+				{
+					goto IL_028a;
+				}
+				case 2:
+				{
+					goto IL_02ab;
+				}
+				case 3:
+				{
+					goto IL_02c5;
+				}
+				case 4:
+				{
+					goto IL_02e6;
+				}
+				case 5:
+				{
+					goto IL_0300;
+				}
+				case 6:
+				{
+					goto IL_03c7;
+				}
+				case 7:
+				{
+					goto IL_03f0;
+				}
+				case 8:
+				{
+					goto IL_0404;
+				}
+				case 9:
+				{
+					goto IL_031a;
+				}
+				case 10:
+				{
+					goto IL_0358;
+				}
+				case 11:
+				{
+					goto IL_036e;
+				}
+				case 12:
+				{
+					goto IL_0373;
+				}
+				case 13:
+				{
+					goto IL_038d;
+				}
+				case 14:
+				{
+					goto IL_031f;
+				}
 			}
 		}
 
@@ -18201,7 +19540,7 @@ IL_0440:
 		catch(Il2CppExceptionWrapper& e)
 		{
 			__exception_local = (Exception_t1927440687 *)e.ex;
-			if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+			if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 				goto CATCH_0445;
 			throw e;
 		}
@@ -18284,8 +19623,6 @@ IL_0481:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator System.Security.Cryptography.X509Certificates.X509Certificate2Collection::GetEnumerator()
-extern Il2CppClass* X509Certificate2Enumerator_t2356134957_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Collection_GetEnumerator_m3796176997_MetadataUsageId;
 extern "C"  X509Certificate2Enumerator_t2356134957 * X509Certificate2Collection_GetEnumerator_m3796176997 (X509Certificate2Collection_t1108969367 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18301,8 +19638,6 @@ extern "C"  X509Certificate2Enumerator_t2356134957 * X509Certificate2Collection_
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::.ctor(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)
-extern Il2CppClass* IEnumerable_t2911409499_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Enumerator__ctor_m112131832_MetadataUsageId;
 extern "C"  void X509Certificate2Enumerator__ctor_m112131832 (X509Certificate2Enumerator_t2356134957 * __this, X509Certificate2Collection_t1108969367 * ___collection0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18321,8 +19656,6 @@ extern "C"  void X509Certificate2Enumerator__ctor_m112131832 (X509Certificate2En
 	}
 }
 // System.Object System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::System.Collections.IEnumerator.get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Enumerator_System_Collections_IEnumerator_get_Current_m3551585134_MetadataUsageId;
 extern "C"  Il2CppObject * X509Certificate2Enumerator_System_Collections_IEnumerator_get_Current_m3551585134 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18339,8 +19672,6 @@ extern "C"  Il2CppObject * X509Certificate2Enumerator_System_Collections_IEnumer
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::System.Collections.IEnumerator.MoveNext()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Enumerator_System_Collections_IEnumerator_MoveNext_m3133372279_MetadataUsageId;
 extern "C"  bool X509Certificate2Enumerator_System_Collections_IEnumerator_MoveNext_m3133372279 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18357,8 +19688,6 @@ extern "C"  bool X509Certificate2Enumerator_System_Collections_IEnumerator_MoveN
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::System.Collections.IEnumerator.Reset()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Enumerator_System_Collections_IEnumerator_Reset_m2917062832_MetadataUsageId;
 extern "C"  void X509Certificate2Enumerator_System_Collections_IEnumerator_Reset_m2917062832 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18375,9 +19704,6 @@ extern "C"  void X509Certificate2Enumerator_System_Collections_IEnumerator_Reset
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Enumerator_get_Current_m2016493949_MetadataUsageId;
 extern "C"  X509Certificate2_t4056456767 * X509Certificate2Enumerator_get_Current_m2016493949 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18394,8 +19720,6 @@ extern "C"  X509Certificate2_t4056456767 * X509Certificate2Enumerator_get_Curren
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::MoveNext()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Enumerator_MoveNext_m1861665712_MetadataUsageId;
 extern "C"  bool X509Certificate2Enumerator_MoveNext_m1861665712 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18412,8 +19736,6 @@ extern "C"  bool X509Certificate2Enumerator_MoveNext_m1861665712 (X509Certificat
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator::Reset()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509Certificate2Enumerator_Reset_m3661628343_MetadataUsageId;
 extern "C"  void X509Certificate2Enumerator_Reset_m3661628343 (X509Certificate2Enumerator_t2356134957 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18448,8 +19770,6 @@ extern "C"  void X509CertificateCollection__ctor_m2660736858 (X509CertificateCol
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate System.Security.Cryptography.X509Certificates.X509CertificateCollection::get_Item(System.Int32)
-extern Il2CppClass* X509Certificate_t283079845_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateCollection_get_Item_m902045290_MetadataUsageId;
 extern "C"  X509Certificate_t283079845 * X509CertificateCollection_get_Item_m902045290 (X509CertificateCollection_t1197680765 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18467,9 +19787,6 @@ extern "C"  X509Certificate_t283079845 * X509CertificateCollection_get_Item_m902
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509CertificateCollection::AddRange(System.Security.Cryptography.X509Certificates.X509Certificate[])
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1803325615;
-extern const uint32_t X509CertificateCollection_AddRange_m3378127328_MetadataUsageId;
 extern "C"  void X509CertificateCollection_AddRange_m3378127328 (X509CertificateCollection_t1197680765 * __this, X509CertificateU5BU5D_t3424334632* ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18527,8 +19844,6 @@ IL_002b:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator System.Security.Cryptography.X509Certificates.X509CertificateCollection::GetEnumerator()
-extern Il2CppClass* X509CertificateEnumerator_t1208230922_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateCollection_GetEnumerator_m1618085929_MetadataUsageId;
 extern "C"  X509CertificateEnumerator_t1208230922 * X509CertificateCollection_GetEnumerator_m1618085929 (X509CertificateCollection_t1197680765 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18554,8 +19869,6 @@ extern "C"  int32_t X509CertificateCollection_GetHashCode_m1639487537 (X509Certi
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::.ctor(System.Security.Cryptography.X509Certificates.X509CertificateCollection)
-extern Il2CppClass* IEnumerable_t2911409499_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator__ctor_m3485132152_MetadataUsageId;
 extern "C"  void X509CertificateEnumerator__ctor_m3485132152 (X509CertificateEnumerator_t1208230922 * __this, X509CertificateCollection_t1197680765 * ___mappings0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18574,8 +19887,6 @@ extern "C"  void X509CertificateEnumerator__ctor_m3485132152 (X509CertificateEnu
 	}
 }
 // System.Object System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::System.Collections.IEnumerator.get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_get_Current_m1432321028_MetadataUsageId;
 extern "C"  Il2CppObject * X509CertificateEnumerator_System_Collections_IEnumerator_get_Current_m1432321028 (X509CertificateEnumerator_t1208230922 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18592,8 +19903,6 @@ extern "C"  Il2CppObject * X509CertificateEnumerator_System_Collections_IEnumera
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::System.Collections.IEnumerator.MoveNext()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_MoveNext_m3708362145_MetadataUsageId;
 extern "C"  bool X509CertificateEnumerator_System_Collections_IEnumerator_MoveNext_m3708362145 (X509CertificateEnumerator_t1208230922 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18610,8 +19919,6 @@ extern "C"  bool X509CertificateEnumerator_System_Collections_IEnumerator_MoveNe
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::System.Collections.IEnumerator.Reset()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator_System_Collections_IEnumerator_Reset_m327358896_MetadataUsageId;
 extern "C"  void X509CertificateEnumerator_System_Collections_IEnumerator_Reset_m327358896 (X509CertificateEnumerator_t1208230922 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18628,9 +19935,6 @@ extern "C"  void X509CertificateEnumerator_System_Collections_IEnumerator_Reset_
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate_t283079845_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator_get_Current_m3202551321_MetadataUsageId;
 extern "C"  X509Certificate_t283079845 * X509CertificateEnumerator_get_Current_m3202551321 (X509CertificateEnumerator_t1208230922 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18647,8 +19951,6 @@ extern "C"  X509Certificate_t283079845 * X509CertificateEnumerator_get_Current_m
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::MoveNext()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator_MoveNext_m1691973768_MetadataUsageId;
 extern "C"  bool X509CertificateEnumerator_MoveNext_m1691973768 (X509CertificateEnumerator_t1208230922 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18665,8 +19967,6 @@ extern "C"  bool X509CertificateEnumerator_MoveNext_m1691973768 (X509Certificate
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509CertificateCollection/X509CertificateEnumerator::Reset()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509CertificateEnumerator_Reset_m2907979973_MetadataUsageId;
 extern "C"  void X509CertificateEnumerator_Reset_m2907979973 (X509CertificateEnumerator_t1208230922 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18691,9 +19991,6 @@ extern "C"  void X509Chain__ctor_m2243818698 (X509Chain_t777637347 * __this, con
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Chain::.ctor(System.Boolean)
-extern Il2CppClass* X509ChainElementCollection_t2081831987_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509ChainPolicy_t3452126517_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain__ctor_m3420342903_MetadataUsageId;
 extern "C"  void X509Chain__ctor_m3420342903 (X509Chain_t777637347 * __this, bool ___useMachineContext0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18742,9 +20039,6 @@ IL_0014:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Chain::.cctor()
-extern Il2CppClass* X509ChainStatusU5BU5D_t830390908_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Chain_t777637347_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain__cctor_m826131835_MetadataUsageId;
 extern "C"  void X509Chain__cctor_m826131835 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18767,15 +20061,6 @@ extern "C"  X509ChainPolicy_t3452126517 * X509Chain_get_ChainPolicy_m732957765 (
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::Build(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern const Il2CppType* X509ChainStatus_t4278378721_0_0_0_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509ChainStatus_t4278378721_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509ChainStatusU5BU5D_t830390908_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral99291529;
-extern const uint32_t X509Chain_Build_m1140429528_MetadataUsageId;
 extern "C"  bool X509Chain_Build_m1140429528 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18837,7 +20122,7 @@ IL_0017:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (CryptographicException_t3349726436_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (CryptographicException_t3349726436_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_002b;
 		throw e;
 	}
@@ -19322,8 +20607,6 @@ IL_0075:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Store System.Security.Cryptography.X509Certificates.X509Chain::get_Roots()
-extern Il2CppClass* X509Store_t1617430119_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain_get_Roots_m4104324715_MetadataUsageId;
 extern "C"  X509Store_t1617430119 * X509Chain_get_Roots_m4104324715 (X509Chain_t777637347 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19356,8 +20639,6 @@ IL_0029:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Store System.Security.Cryptography.X509Certificates.X509Chain::get_CertificateAuthorities()
-extern Il2CppClass* X509Store_t1617430119_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain_get_CertificateAuthorities_m3325663784_MetadataUsageId;
 extern "C"  X509Store_t1617430119 * X509Chain_get_CertificateAuthorities_m3325663784 (X509Chain_t777637347 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19390,8 +20671,6 @@ IL_0029:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509Chain::get_CertificateCollection()
-extern Il2CppClass* X509Certificate2Collection_t1108969367_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain_get_CertificateCollection_m324631835_MetadataUsageId;
 extern "C"  X509Certificate2Collection_t1108969367 * X509Chain_get_CertificateCollection_m324631835 (X509Chain_t777637347 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19550,9 +20829,6 @@ IL_0091:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate2 System.Security.Cryptography.X509Certificates.X509Chain::SelectBestFromCollection(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain_SelectBestFromCollection_m2712190957_MetadataUsageId;
 extern "C"  X509Certificate2_t4056456767 * X509Chain_SelectBestFromCollection_m2712190957 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___child0, X509Certificate2Collection_t1108969367 * ___c1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19799,8 +21075,6 @@ IL_005f:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::IsChainComplete(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain_IsChainComplete_m3393657586_MetadataUsageId;
 extern "C"  bool X509Chain_IsChainComplete_m3393657586 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19881,8 +21155,6 @@ IL_0046:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::IsSelfIssued(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain_IsSelfIssued_m2009755967_MetadataUsageId;
 extern "C"  bool X509Chain_IsSelfIssued_m2009755967 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19997,10 +21269,6 @@ IL_008c:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Chain::Process(System.Int32)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral186901249;
-extern const uint32_t X509Chain_Process_m2508784250_MetadataUsageId;
 extern "C"  void X509Chain_Process_m2508784250 (X509Chain_t777637347 * __this, int32_t ___n0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20259,11 +21527,6 @@ IL_0165:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Chain::PrepareForNextCertificate(System.Int32)
-extern Il2CppClass* X509BasicConstraintsExtension_t1562873317_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509KeyUsageExtension_t1038124237_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern const uint32_t X509Chain_PrepareForNextCertificate_m1967807089_MetadataUsageId;
 extern "C"  void X509Chain_PrepareForNextCertificate_m1967807089 (X509Chain_t777637347 * __this, int32_t ___n0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20527,14 +21790,6 @@ IL_004f:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Chain::ProcessCertificateExtensions(System.Security.Cryptography.X509Certificates.X509ChainElement)
-extern Il2CppClass* X509Chain_t777637347_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral1568864488;
-extern const uint32_t X509Chain_ProcessCertificateExtensions_m4191338420_MetadataUsageId;
 extern "C"  void X509Chain_ProcessCertificateExtensions_m4191338420 (X509Chain_t777637347 * __this, X509ChainElement_t528874471 * ___element0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20692,10 +21947,6 @@ IL_0008:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Chain::GetSubjectKeyIdentifier(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* X509SubjectKeyIdentifierExtension_t2508879999_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern const uint32_t X509Chain_GetSubjectKeyIdentifier_m4232927227_MetadataUsageId;
 extern "C"  String_t* X509Chain_GetSubjectKeyIdentifier_m4232927227 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20740,8 +21991,6 @@ IL_002c:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Chain::GetAuthorityKeyIdentifier(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppCodeGenString* _stringLiteral406065078;
-extern const uint32_t X509Chain_GetAuthorityKeyIdentifier_m2607407678_MetadataUsageId;
 extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m2607407678 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20763,8 +22012,6 @@ extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m2607407678 (X509Chain
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Chain::GetAuthorityKeyIdentifier(Mono.Security.X509.X509Crl)
-extern Il2CppCodeGenString* _stringLiteral406065078;
-extern const uint32_t X509Chain_GetAuthorityKeyIdentifier_m3712667872_MetadataUsageId;
 extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m3712667872 (X509Chain_t777637347 * __this, X509Crl_t1699034837 * ___crl0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20784,11 +22031,6 @@ extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m3712667872 (X509Chain
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Chain::GetAuthorityKeyIdentifier(Mono.Security.X509.X509Extension)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* AuthorityKeyIdentifierExtension_t795428182_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral104530040;
-extern const uint32_t X509Chain_GetAuthorityKeyIdentifier_m4246284366_MetadataUsageId;
 extern "C"  String_t* X509Chain_GetAuthorityKeyIdentifier_m4246284366 (X509Chain_t777637347 * __this, X509Extension_t1439760128 * ___ext0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20883,9 +22125,6 @@ IL_0056:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Chain::CheckRevocationOnChain(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
-extern Il2CppClass* InvalidOperationException_t721527559_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3663290860;
-extern const uint32_t X509Chain_CheckRevocationOnChain_m2441901351_MetadataUsageId;
 extern "C"  void X509Chain_CheckRevocationOnChain_m2441901351 (X509Chain_t777637347 * __this, int32_t ___flag0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20910,17 +22149,20 @@ extern "C"  void X509Chain_CheckRevocationOnChain_m2441901351 (X509Chain_t777637
 		int32_t L_2 = X509ChainPolicy_get_RevocationMode_m3875602137(L_1, /*hidden argument*/NULL);
 		V_6 = L_2;
 		int32_t L_3 = V_6;
-		if (L_3 == 0)
+		switch (L_3)
 		{
-			goto IL_0041;
-		}
-		if (L_3 == 1)
-		{
-			goto IL_0033;
-		}
-		if (L_3 == 2)
-		{
-			goto IL_003a;
+			case 0:
+			{
+				goto IL_0041;
+			}
+			case 1:
+			{
+				goto IL_0033;
+			}
+			case 2:
+			{
+				goto IL_003a;
+			}
 		}
 	}
 	{
@@ -20971,17 +22213,20 @@ IL_0067:
 		int32_t L_10 = X509ChainPolicy_get_RevocationFlag_m2635879545(L_9, /*hidden argument*/NULL);
 		V_7 = L_10;
 		int32_t L_11 = V_7;
-		if (L_11 == 0)
+		switch (L_11)
 		{
-			goto IL_008f;
-		}
-		if (L_11 == 1)
-		{
-			goto IL_009a;
-		}
-		if (L_11 == 2)
-		{
-			goto IL_00a2;
+			case 0:
+			{
+				goto IL_008f;
+			}
+			case 1:
+			{
+				goto IL_009a;
+			}
+			case 2:
+			{
+				goto IL_00a2;
+			}
 		}
 	}
 	{
@@ -21214,10 +22459,6 @@ IL_007d:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509ChainStatusFlags System.Security.Cryptography.X509Certificates.X509Chain::CheckRevocation(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Boolean)
-extern Il2CppClass* X509KeyUsageExtension_t1038124237_il2cpp_TypeInfo_var;
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern const uint32_t X509Chain_CheckRevocation_m2230738771_MetadataUsageId;
 extern "C"  int32_t X509Chain_CheckRevocation_m2230738771 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___certificate0, X509Certificate2_t4056456767 * ___ca_cert1, bool ___online2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21398,11 +22639,6 @@ IL_00d8:
 	}
 }
 // Mono.Security.X509.X509Crl System.Security.Cryptography.X509Certificates.X509Chain::FindCrl(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Crl_t1699034837_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern const uint32_t X509Chain_FindCrl_m544748869_MetadataUsageId;
 extern "C"  X509Crl_t1699034837 * X509Chain_FindCrl_m544748869 (X509Chain_t777637347 * __this, X509Certificate2_t4056456767 * ___caCertificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21690,17 +22926,6 @@ IL_0123:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::ProcessCrlExtensions(Mono.Security.X509.X509Crl)
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1439760128_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Chain_t777637347_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3134948436;
-extern Il2CppCodeGenString* _stringLiteral406065078;
-extern const uint32_t X509Chain_ProcessCrlExtensions_m1682068042_MetadataUsageId;
 extern "C"  bool X509Chain_ProcessCrlExtensions_m1682068042 (X509Chain_t777637347 * __this, X509Crl_t1699034837 * ___crl0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21896,16 +23121,6 @@ IL_00b6:
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509Chain::ProcessCrlEntryExtensions(Mono.Security.X509.X509Crl/X509CrlEntry)
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1439760128_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Chain_t777637347_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3134948437;
-extern const uint32_t X509Chain_ProcessCrlEntryExtensions_m919945006_MetadataUsageId;
 extern "C"  bool X509Chain_ProcessCrlEntryExtensions_m919945006 (X509Chain_t777637347 * __this, X509CrlEntry_t743353844 * ___entry0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22098,8 +23313,6 @@ IL_00aa:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainElement::.ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElement__ctor_m3644590622_MetadataUsageId;
 extern "C"  void X509ChainElement__ctor_m3644590622 (X509ChainElement_t528874471 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22237,8 +23450,6 @@ IL_0032:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainElement::UncompressFlags()
-extern Il2CppClass* X509ChainStatusU5BU5D_t830390908_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElement_UncompressFlags_m1688043618_MetadataUsageId;
 extern "C"  void X509ChainElement_UncompressFlags_m1688043618 (X509ChainElement_t528874471 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22343,8 +23554,6 @@ IL_0244:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainElementCollection::.ctor()
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementCollection__ctor_m2389346408_MetadataUsageId;
 extern "C"  void X509ChainElementCollection__ctor_m2389346408 (X509ChainElementCollection_t2081831987 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22374,8 +23583,6 @@ extern "C"  void X509ChainElementCollection_System_Collections_ICollection_CopyT
 	}
 }
 // System.Collections.IEnumerator System.Security.Cryptography.X509Certificates.X509ChainElementCollection::System.Collections.IEnumerable.GetEnumerator()
-extern Il2CppClass* X509ChainElementEnumerator_t3304975821_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementCollection_System_Collections_IEnumerable_GetEnumerator_m2559704689_MetadataUsageId;
 extern "C"  Il2CppObject * X509ChainElementCollection_System_Collections_IEnumerable_GetEnumerator_m2559704689 (X509ChainElementCollection_t2081831987 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22402,8 +23609,6 @@ extern "C"  int32_t X509ChainElementCollection_get_Count_m905965108 (X509ChainEl
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509ChainElement System.Security.Cryptography.X509Certificates.X509ChainElementCollection::get_Item(System.Int32)
-extern Il2CppClass* X509ChainElement_t528874471_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementCollection_get_Item_m1494130666_MetadataUsageId;
 extern "C"  X509ChainElement_t528874471 * X509ChainElementCollection_get_Item_m1494130666 (X509ChainElementCollection_t2081831987 * __this, int32_t ___index0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22431,8 +23636,6 @@ extern "C"  Il2CppObject * X509ChainElementCollection_get_SyncRoot_m579710009 (X
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator System.Security.Cryptography.X509Certificates.X509ChainElementCollection::GetEnumerator()
-extern Il2CppClass* X509ChainElementEnumerator_t3304975821_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementCollection_GetEnumerator_m3367250365_MetadataUsageId;
 extern "C"  X509ChainElementEnumerator_t3304975821 * X509ChainElementCollection_GetEnumerator_m3367250365 (X509ChainElementCollection_t2081831987 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22449,8 +23652,6 @@ extern "C"  X509ChainElementEnumerator_t3304975821 * X509ChainElementCollection_
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainElementCollection::Add(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* X509ChainElement_t528874471_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementCollection_Add_m1511936349_MetadataUsageId;
 extern "C"  void X509ChainElementCollection_Add_m1511936349 (X509ChainElementCollection_t2081831987 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22480,8 +23681,6 @@ extern "C"  void X509ChainElementCollection_Clear_m414681645 (X509ChainElementCo
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509ChainElementCollection::Contains(System.Security.Cryptography.X509Certificates.X509Certificate2)
-extern Il2CppClass* X509ChainElement_t528874471_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementCollection_Contains_m3599995067_MetadataUsageId;
 extern "C"  bool X509ChainElementCollection_Contains_m3599995067 (X509ChainElementCollection_t2081831987 * __this, X509Certificate2_t4056456767 * ___certificate0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22538,8 +23737,6 @@ IL_002e:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::.ctor(System.Collections.IEnumerable)
-extern Il2CppClass* IEnumerable_t2911409499_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementEnumerator__ctor_m2608504725_MetadataUsageId;
 extern "C"  void X509ChainElementEnumerator__ctor_m2608504725 (X509ChainElementEnumerator_t3304975821 * __this, Il2CppObject * ___enumerable0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22558,8 +23755,6 @@ extern "C"  void X509ChainElementEnumerator__ctor_m2608504725 (X509ChainElementE
 	}
 }
 // System.Object System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::System.Collections.IEnumerator.get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementEnumerator_System_Collections_IEnumerator_get_Current_m40744670_MetadataUsageId;
 extern "C"  Il2CppObject * X509ChainElementEnumerator_System_Collections_IEnumerator_get_Current_m40744670 (X509ChainElementEnumerator_t3304975821 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22576,9 +23771,6 @@ extern "C"  Il2CppObject * X509ChainElementEnumerator_System_Collections_IEnumer
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509ChainElement System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509ChainElement_t528874471_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementEnumerator_get_Current_m2232618221_MetadataUsageId;
 extern "C"  X509ChainElement_t528874471 * X509ChainElementEnumerator_get_Current_m2232618221 (X509ChainElementEnumerator_t3304975821 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22595,8 +23787,6 @@ extern "C"  X509ChainElement_t528874471 * X509ChainElementEnumerator_get_Current
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::MoveNext()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementEnumerator_MoveNext_m3157555152_MetadataUsageId;
 extern "C"  bool X509ChainElementEnumerator_MoveNext_m3157555152 (X509ChainElementEnumerator_t3304975821 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22613,8 +23803,6 @@ extern "C"  bool X509ChainElementEnumerator_MoveNext_m3157555152 (X509ChainEleme
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator::Reset()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainElementEnumerator_Reset_m3832280427_MetadataUsageId;
 extern "C"  void X509ChainElementEnumerator_Reset_m3832280427 (X509ChainElementEnumerator_t3304975821 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22680,11 +23868,6 @@ extern "C"  DateTime_t693205669  X509ChainPolicy_get_VerificationTime_m410035872
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainPolicy::Reset()
-extern Il2CppClass* OidCollection_t3790243618_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2Collection_t1108969367_il2cpp_TypeInfo_var;
-extern Il2CppClass* TimeSpan_t3430258949_il2cpp_TypeInfo_var;
-extern Il2CppClass* DateTime_t693205669_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainPolicy_Reset_m430244129_MetadataUsageId;
 extern "C"  void X509ChainPolicy_Reset_m430244129 (X509ChainPolicy_t3452126517 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22714,6 +23897,44 @@ extern "C"  void X509ChainPolicy_Reset_m430244129 (X509ChainPolicy_t3452126517 *
 		__this->set_vtime_7(L_4);
 		return;
 	}
+}
+// Conversion methods for marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
+extern "C" void X509ChainStatus_t4278378721_marshal_pinvoke(const X509ChainStatus_t4278378721& unmarshaled, X509ChainStatus_t4278378721_marshaled_pinvoke& marshaled)
+{
+	marshaled.___status_0 = unmarshaled.get_status_0();
+	marshaled.___info_1 = il2cpp_codegen_marshal_string(unmarshaled.get_info_1());
+}
+extern "C" void X509ChainStatus_t4278378721_marshal_pinvoke_back(const X509ChainStatus_t4278378721_marshaled_pinvoke& marshaled, X509ChainStatus_t4278378721& unmarshaled)
+{
+	int32_t unmarshaled_status_temp_0 = 0;
+	unmarshaled_status_temp_0 = marshaled.___status_0;
+	unmarshaled.set_status_0(unmarshaled_status_temp_0);
+	unmarshaled.set_info_1(il2cpp_codegen_marshal_string_result(marshaled.___info_1));
+}
+// Conversion method for clean up from marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
+extern "C" void X509ChainStatus_t4278378721_marshal_pinvoke_cleanup(X509ChainStatus_t4278378721_marshaled_pinvoke& marshaled)
+{
+	il2cpp_codegen_marshal_free(marshaled.___info_1);
+	marshaled.___info_1 = NULL;
+}
+// Conversion methods for marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
+extern "C" void X509ChainStatus_t4278378721_marshal_com(const X509ChainStatus_t4278378721& unmarshaled, X509ChainStatus_t4278378721_marshaled_com& marshaled)
+{
+	marshaled.___status_0 = unmarshaled.get_status_0();
+	marshaled.___info_1 = il2cpp_codegen_marshal_bstring(unmarshaled.get_info_1());
+}
+extern "C" void X509ChainStatus_t4278378721_marshal_com_back(const X509ChainStatus_t4278378721_marshaled_com& marshaled, X509ChainStatus_t4278378721& unmarshaled)
+{
+	int32_t unmarshaled_status_temp_0 = 0;
+	unmarshaled_status_temp_0 = marshaled.___status_0;
+	unmarshaled.set_status_0(unmarshaled_status_temp_0);
+	unmarshaled.set_info_1(il2cpp_codegen_marshal_bstring_result(marshaled.___info_1));
+}
+// Conversion method for clean up from marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
+extern "C" void X509ChainStatus_t4278378721_marshal_com_cleanup(X509ChainStatus_t4278378721_marshaled_com& marshaled)
+{
+	il2cpp_codegen_marshal_free_bstring(marshaled.___info_1);
+	marshaled.___info_1 = NULL;
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ChainStatus::.ctor(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
 extern "C"  void X509ChainStatus__ctor_m3628359961 (X509ChainStatus_t4278378721 * __this, int32_t ___flag0, const MethodInfo* method)
@@ -22774,9 +23995,6 @@ extern "C"  void X509ChainStatus_set_StatusInformation_m2903201015_AdjustorThunk
 	X509ChainStatus_set_StatusInformation_m2903201015(_thisAdjusted, ___value0, method);
 }
 // System.String System.Security.Cryptography.X509Certificates.X509ChainStatus::GetInformation(System.Security.Cryptography.X509Certificates.X509ChainStatusFlags)
-extern Il2CppClass* X509ChainStatusFlags_t480677120_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t X509ChainStatus_GetInformation_m2968620882_MetadataUsageId;
 extern "C"  String_t* X509ChainStatus_GetInformation_m2968620882 (Il2CppObject * __this /* static, unused */, int32_t ___flags0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22790,41 +24008,44 @@ extern "C"  String_t* X509ChainStatus_GetInformation_m2968620882 (Il2CppObject *
 		int32_t L_0 = ___flags0;
 		V_0 = L_0;
 		int32_t L_1 = V_0;
-		if (L_1 == 0)
+		switch (L_1)
 		{
-			goto IL_00ff;
-		}
-		if (L_1 == 1)
-		{
-			goto IL_00ee;
-		}
-		if (L_1 == 2)
-		{
-			goto IL_00ee;
-		}
-		if (L_1 == 3)
-		{
-			goto IL_002c;
-		}
-		if (L_1 == 4)
-		{
-			goto IL_00ee;
-		}
-		if (L_1 == 5)
-		{
-			goto IL_002c;
-		}
-		if (L_1 == 6)
-		{
-			goto IL_002c;
-		}
-		if (L_1 == 7)
-		{
-			goto IL_002c;
-		}
-		if (L_1 == 8)
-		{
-			goto IL_00ee;
+			case 0:
+			{
+				goto IL_00ff;
+			}
+			case 1:
+			{
+				goto IL_00ee;
+			}
+			case 2:
+			{
+				goto IL_00ee;
+			}
+			case 3:
+			{
+				goto IL_002c;
+			}
+			case 4:
+			{
+				goto IL_00ee;
+			}
+			case 5:
+			{
+				goto IL_002c;
+			}
+			case 6:
+			{
+				goto IL_002c;
+			}
+			case 7:
+			{
+				goto IL_002c;
+			}
+			case 8:
+			{
+				goto IL_00ee;
+			}
 		}
 	}
 
@@ -22977,49 +24198,7 @@ IL_00ff:
 		return L_25;
 	}
 }
-// Conversion methods for marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
-extern "C" void X509ChainStatus_t4278378721_marshal_pinvoke(const X509ChainStatus_t4278378721& unmarshaled, X509ChainStatus_t4278378721_marshaled_pinvoke& marshaled)
-{
-	marshaled.___status_0 = unmarshaled.get_status_0();
-	marshaled.___info_1 = il2cpp_codegen_marshal_string(unmarshaled.get_info_1());
-}
-extern "C" void X509ChainStatus_t4278378721_marshal_pinvoke_back(const X509ChainStatus_t4278378721_marshaled_pinvoke& marshaled, X509ChainStatus_t4278378721& unmarshaled)
-{
-	int32_t unmarshaled_status_temp_0 = 0;
-	unmarshaled_status_temp_0 = marshaled.___status_0;
-	unmarshaled.set_status_0(unmarshaled_status_temp_0);
-	unmarshaled.set_info_1(il2cpp_codegen_marshal_string_result(marshaled.___info_1));
-}
-// Conversion method for clean up from marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
-extern "C" void X509ChainStatus_t4278378721_marshal_pinvoke_cleanup(X509ChainStatus_t4278378721_marshaled_pinvoke& marshaled)
-{
-	il2cpp_codegen_marshal_free(marshaled.___info_1);
-	marshaled.___info_1 = NULL;
-}
-// Conversion methods for marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
-extern "C" void X509ChainStatus_t4278378721_marshal_com(const X509ChainStatus_t4278378721& unmarshaled, X509ChainStatus_t4278378721_marshaled_com& marshaled)
-{
-	marshaled.___status_0 = unmarshaled.get_status_0();
-	marshaled.___info_1 = il2cpp_codegen_marshal_bstring(unmarshaled.get_info_1());
-}
-extern "C" void X509ChainStatus_t4278378721_marshal_com_back(const X509ChainStatus_t4278378721_marshaled_com& marshaled, X509ChainStatus_t4278378721& unmarshaled)
-{
-	int32_t unmarshaled_status_temp_0 = 0;
-	unmarshaled_status_temp_0 = marshaled.___status_0;
-	unmarshaled.set_status_0(unmarshaled_status_temp_0);
-	unmarshaled.set_info_1(il2cpp_codegen_marshal_bstring_result(marshaled.___info_1));
-}
-// Conversion method for clean up from marshalling of: System.Security.Cryptography.X509Certificates.X509ChainStatus
-extern "C" void X509ChainStatus_t4278378721_marshal_com_cleanup(X509ChainStatus_t4278378721_marshaled_com& marshaled)
-{
-	il2cpp_codegen_marshal_free_bstring(marshaled.___info_1);
-	marshaled.___info_1 = NULL;
-}
 // System.Void System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral406065076;
-extern Il2CppCodeGenString* _stringLiteral1177941752;
-extern const uint32_t X509EnhancedKeyUsageExtension__ctor_m4050164330_MetadataUsageId;
 extern "C"  void X509EnhancedKeyUsageExtension__ctor_m4050164330 (X509EnhancedKeyUsageExtension_t2099881051 * __this, AsnEncodedData_t463456204 * ___encodedEnhancedKeyUsages0, bool ___critical1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23046,16 +24225,6 @@ extern "C"  void X509EnhancedKeyUsageExtension__ctor_m4050164330 (X509EnhancedKe
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension::CopyFrom(System.Security.Cryptography.AsnEncodedData)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2569869112;
-extern Il2CppCodeGenString* _stringLiteral3915869001;
-extern Il2CppCodeGenString* _stringLiteral2907895822;
-extern Il2CppCodeGenString* _stringLiteral406065076;
-extern Il2CppCodeGenString* _stringLiteral1177941752;
-extern const uint32_t X509EnhancedKeyUsageExtension_CopyFrom_m1426370958_MetadataUsageId;
 extern "C"  void X509EnhancedKeyUsageExtension_CopyFrom_m1426370958 (X509EnhancedKeyUsageExtension_t2099881051 * __this, AsnEncodedData_t463456204 * ___asnEncodedData0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23139,13 +24308,6 @@ IL_0069:
 	}
 }
 // System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension::Decode(System.Byte[])
-extern Il2CppClass* OidCollection_t3790243618_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2507192058;
-extern const uint32_t X509EnhancedKeyUsageExtension_Decode_m3866320499_MetadataUsageId;
 extern "C"  int32_t X509EnhancedKeyUsageExtension_Decode_m3866320499 (X509EnhancedKeyUsageExtension_t2099881051 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23280,7 +24442,7 @@ IL_008a:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_008f;
 		throw e;
 	}
@@ -23310,22 +24472,6 @@ IL_009e:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension::ToString(System.Boolean)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509EnhancedKeyUsageExtension_t2099881051_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral652014170;
-extern Il2CppCodeGenString* _stringLiteral406065076;
-extern Il2CppCodeGenString* _stringLiteral4000354433;
-extern Il2CppCodeGenString* _stringLiteral1888690766;
-extern Il2CppCodeGenString* _stringLiteral1280016077;
-extern Il2CppCodeGenString* _stringLiteral3019305696;
-extern Il2CppCodeGenString* _stringLiteral372029317;
-extern Il2CppCodeGenString* _stringLiteral811305474;
-extern const uint32_t X509EnhancedKeyUsageExtension_ToString_m1748333326_MetadataUsageId;
 extern "C"  String_t* X509EnhancedKeyUsageExtension_ToString_m1748333326 (X509EnhancedKeyUsageExtension_t2099881051 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23345,21 +24491,24 @@ extern "C"  String_t* X509EnhancedKeyUsageExtension_ToString_m1748333326 (X509En
 		int32_t L_0 = __this->get__status_5();
 		V_3 = L_0;
 		int32_t L_1 = V_3;
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 0)
+		switch (((int32_t)((int32_t)L_1-(int32_t)1)))
 		{
-			goto IL_0024;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 1)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 2)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 3)
-		{
-			goto IL_0037;
+			case 0:
+			{
+				goto IL_0024;
+			}
+			case 1:
+			{
+				goto IL_002a;
+			}
+			case 2:
+			{
+				goto IL_002a;
+			}
+			case 3:
+			{
+				goto IL_0037;
+			}
 		}
 	}
 	{
@@ -23606,12 +24755,6 @@ extern "C"  void X509Extension_set_Critical_m1247863465 (X509Extension_t13208961
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Extension::CopyFrom(System.Security.Cryptography.AsnEncodedData)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2569869112;
-extern Il2CppCodeGenString* _stringLiteral3967779605;
-extern const uint32_t X509Extension_CopyFrom_m2644634650_MetadataUsageId;
 extern "C"  void X509Extension_CopyFrom_m2644634650 (X509Extension_t1320896183 * __this, AsnEncodedData_t463456204 * ___asnEncodedData0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23663,10 +24806,6 @@ IL_002e:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509Extension::FormatUnkownData(System.Byte[])
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3231012752;
-extern const uint32_t X509Extension_FormatUnkownData_m4057132051_MetadataUsageId;
 extern "C"  String_t* X509Extension_FormatUnkownData_m4057132051 (X509Extension_t1320896183 * __this, ByteU5BU5D_t3397334013* ___data0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23740,16 +24879,6 @@ IL_003d:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ExtensionCollection::.ctor(Mono.Security.X509.X509Certificate)
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1439760128_il2cpp_TypeInfo_var;
-extern Il2CppClass* AsnEncodedData_t463456204_il2cpp_TypeInfo_var;
-extern Il2CppClass* Boolean_t3825574718_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptoConfig_t896479599_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionCollection__ctor_m1324282194_MetadataUsageId;
 extern "C"  void X509ExtensionCollection__ctor_m1324282194 (X509ExtensionCollection_t650873211 * __this, X509Certificate_t324051958 * ___cert0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23970,12 +25099,6 @@ IL_00fe:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ExtensionCollection::System.Collections.ICollection.CopyTo(System.Array,System.Int32)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1185213181;
-extern Il2CppCodeGenString* _stringLiteral769671005;
-extern Il2CppCodeGenString* _stringLiteral1082372484;
-extern const uint32_t X509ExtensionCollection_System_Collections_ICollection_CopyTo_m3421329346_MetadataUsageId;
 extern "C"  void X509ExtensionCollection_System_Collections_ICollection_CopyTo_m3421329346 (X509ExtensionCollection_t650873211 * __this, Il2CppArray * ___array0, int32_t ___index1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24039,8 +25162,6 @@ IL_003a:
 	}
 }
 // System.Collections.IEnumerator System.Security.Cryptography.X509Certificates.X509ExtensionCollection::System.Collections.IEnumerable.GetEnumerator()
-extern Il2CppClass* X509ExtensionEnumerator_t3763443773_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionCollection_System_Collections_IEnumerable_GetEnumerator_m1813422183_MetadataUsageId;
 extern "C"  Il2CppObject * X509ExtensionCollection_System_Collections_IEnumerable_GetEnumerator_m1813422183 (X509ExtensionCollection_t650873211 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24074,12 +25195,6 @@ extern "C"  Il2CppObject * X509ExtensionCollection_get_SyncRoot_m3539525515 (X50
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Extension System.Security.Cryptography.X509Certificates.X509ExtensionCollection::get_Item(System.String)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral339799274;
-extern const uint32_t X509ExtensionCollection_get_Item_m2392275793_MetadataUsageId;
 extern "C"  X509Extension_t1320896183 * X509ExtensionCollection_get_Item_m2392275793 (X509ExtensionCollection_t650873211 * __this, String_t* ___oid0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24244,8 +25359,6 @@ IL_008c:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator System.Security.Cryptography.X509Certificates.X509ExtensionCollection::GetEnumerator()
-extern Il2CppClass* X509ExtensionEnumerator_t3763443773_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionCollection_GetEnumerator_m3421097717_MetadataUsageId;
 extern "C"  X509ExtensionEnumerator_t3763443773 * X509ExtensionCollection_GetEnumerator_m3421097717 (X509ExtensionCollection_t650873211 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24274,8 +25387,6 @@ extern "C"  void X509ExtensionEnumerator__ctor_m1818832067 (X509ExtensionEnumera
 	}
 }
 // System.Object System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator::System.Collections.IEnumerator.get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionEnumerator_System_Collections_IEnumerator_get_Current_m1097473930_MetadataUsageId;
 extern "C"  Il2CppObject * X509ExtensionEnumerator_System_Collections_IEnumerator_get_Current_m1097473930 (X509ExtensionEnumerator_t3763443773 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24292,9 +25403,6 @@ extern "C"  Il2CppObject * X509ExtensionEnumerator_System_Collections_IEnumerato
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Extension System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator::get_Current()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionEnumerator_get_Current_m3926549773_MetadataUsageId;
 extern "C"  X509Extension_t1320896183 * X509ExtensionEnumerator_get_Current_m3926549773 (X509ExtensionEnumerator_t3763443773 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24311,8 +25419,6 @@ extern "C"  X509Extension_t1320896183 * X509ExtensionEnumerator_get_Current_m392
 	}
 }
 // System.Boolean System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator::MoveNext()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionEnumerator_MoveNext_m1715898942_MetadataUsageId;
 extern "C"  bool X509ExtensionEnumerator_MoveNext_m1715898942 (X509ExtensionEnumerator_t3763443773 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24329,8 +25435,6 @@ extern "C"  bool X509ExtensionEnumerator_MoveNext_m1715898942 (X509ExtensionEnum
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator::Reset()
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t X509ExtensionEnumerator_Reset_m3200687545_MetadataUsageId;
 extern "C"  void X509ExtensionEnumerator_Reset_m3200687545 (X509ExtensionEnumerator_t3763443773 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24347,10 +25451,6 @@ extern "C"  void X509ExtensionEnumerator_Reset_m3200687545 (X509ExtensionEnumera
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::.ctor()
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral949530922;
-extern const uint32_t X509KeyUsageExtension__ctor_m3849398360_MetadataUsageId;
 extern "C"  void X509KeyUsageExtension__ctor_m3849398360 (X509KeyUsageExtension_t1038124237 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24368,10 +25468,6 @@ extern "C"  void X509KeyUsageExtension__ctor_m3849398360 (X509KeyUsageExtension_
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral949530922;
-extern const uint32_t X509KeyUsageExtension__ctor_m1528821284_MetadataUsageId;
 extern "C"  void X509KeyUsageExtension__ctor_m1528821284 (X509KeyUsageExtension_t1038124237 * __this, AsnEncodedData_t463456204 * ___encodedKeyUsage0, bool ___critical1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24398,10 +25494,6 @@ extern "C"  void X509KeyUsageExtension__ctor_m1528821284 (X509KeyUsageExtension_
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::.ctor(System.Security.Cryptography.X509Certificates.X509KeyUsageFlags,System.Boolean)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral949530922;
-extern const uint32_t X509KeyUsageExtension__ctor_m2095655547_MetadataUsageId;
 extern "C"  void X509KeyUsageExtension__ctor_m2095655547 (X509KeyUsageExtension_t1038124237 * __this, int32_t ___keyUsages0, bool ___critical1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24426,9 +25518,6 @@ extern "C"  void X509KeyUsageExtension__ctor_m2095655547 (X509KeyUsageExtension_
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509KeyUsageFlags System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::get_KeyUsages()
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1874080883;
-extern const uint32_t X509KeyUsageExtension_get_KeyUsages_m4014806163_MetadataUsageId;
 extern "C"  int32_t X509KeyUsageExtension_get_KeyUsages_m4014806163 (X509KeyUsageExtension_t1038124237 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24472,15 +25561,6 @@ IL_0020:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::CopyFrom(System.Security.Cryptography.AsnEncodedData)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2569869112;
-extern Il2CppCodeGenString* _stringLiteral3915869001;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral949530922;
-extern const uint32_t X509KeyUsageExtension_CopyFrom_m931530012_MetadataUsageId;
 extern "C"  void X509KeyUsageExtension_CopyFrom_m931530012 (X509KeyUsageExtension_t1038124237 * __this, AsnEncodedData_t463456204 * ___encodedData0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24585,9 +25665,6 @@ IL_000f:
 	}
 }
 // System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::Decode(System.Byte[])
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern const uint32_t X509KeyUsageExtension_Decode_m3292847033_MetadataUsageId;
 extern "C"  int32_t X509KeyUsageExtension_Decode_m3292847033 (X509KeyUsageExtension_t1038124237 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24720,7 +25797,7 @@ IL_0060:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0072;
 		throw e;
 	}
@@ -24750,9 +25827,6 @@ IL_0081:
 	}
 }
 // System.Byte[] System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::Encode()
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern const uint32_t X509KeyUsageExtension_Encode_m3100824560_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* X509KeyUsageExtension_Encode_m3100824560 (X509KeyUsageExtension_t1038124237 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24770,7 +25844,7 @@ extern "C"  ByteU5BU5D_t3397334013* X509KeyUsageExtension_Encode_m3100824560 (X5
 		V_0 = (ASN1_t924533536 *)NULL;
 		int32_t L_0 = __this->get__keyUsages_7();
 		V_1 = L_0;
-		V_2 = 0;
+		V_2 = (uint8_t)0;
 		int32_t L_1 = V_1;
 		if (L_1)
 		{
@@ -24783,7 +25857,7 @@ extern "C"  ByteU5BU5D_t3397334013* X509KeyUsageExtension_Encode_m3100824560 (X5
 		NullCheck(L_2);
 		(L_2)->SetAt(static_cast<il2cpp_array_size_t>(0), (uint8_t)L_3);
 		ASN1_t924533536 * L_4 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3688855288(L_4, 3, L_2, /*hidden argument*/NULL);
+		ASN1__ctor_m3688855288(L_4, (uint8_t)3, L_2, /*hidden argument*/NULL);
 		V_0 = L_4;
 		goto IL_009c;
 	}
@@ -24817,7 +25891,7 @@ IL_003b:
 IL_0041:
 	{
 		uint8_t L_8 = V_2;
-		V_2 = (((int32_t)((uint8_t)((int32_t)((int32_t)L_8+(int32_t)1)))));
+		V_2 = (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)L_8+(int32_t)1)))));
 		int32_t L_9 = V_3;
 		V_3 = ((int32_t)((int32_t)L_9>>(int32_t)1));
 	}
@@ -24856,7 +25930,7 @@ IL_0059:
 		NullCheck(L_15);
 		(L_15)->SetAt(static_cast<il2cpp_array_size_t>(1), (uint8_t)(((int32_t)((uint8_t)L_16))));
 		ASN1_t924533536 * L_17 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3688855288(L_17, 3, L_15, /*hidden argument*/NULL);
+		ASN1__ctor_m3688855288(L_17, (uint8_t)3, L_15, /*hidden argument*/NULL);
 		V_0 = L_17;
 		goto IL_009c;
 	}
@@ -24876,7 +25950,7 @@ IL_007f:
 		NullCheck(L_22);
 		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(2), (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)L_23>>(int32_t)8))))));
 		ASN1_t924533536 * L_24 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3688855288(L_24, 3, L_22, /*hidden argument*/NULL);
+		ASN1__ctor_m3688855288(L_24, (uint8_t)3, L_22, /*hidden argument*/NULL);
 		V_0 = L_24;
 	}
 
@@ -24889,26 +25963,6 @@ IL_009c:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509KeyUsageExtension::ToString(System.Boolean)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral652014170;
-extern Il2CppCodeGenString* _stringLiteral1568864492;
-extern Il2CppCodeGenString* _stringLiteral4000354433;
-extern Il2CppCodeGenString* _stringLiteral2313173972;
-extern Il2CppCodeGenString* _stringLiteral811305474;
-extern Il2CppCodeGenString* _stringLiteral2059189150;
-extern Il2CppCodeGenString* _stringLiteral2032026915;
-extern Il2CppCodeGenString* _stringLiteral2765906018;
-extern Il2CppCodeGenString* _stringLiteral101761045;
-extern Il2CppCodeGenString* _stringLiteral2700970822;
-extern Il2CppCodeGenString* _stringLiteral2274341096;
-extern Il2CppCodeGenString* _stringLiteral1711665224;
-extern Il2CppCodeGenString* _stringLiteral805268368;
-extern Il2CppCodeGenString* _stringLiteral455075110;
-extern Il2CppCodeGenString* _stringLiteral3231012720;
-extern Il2CppCodeGenString* _stringLiteral372029310;
-extern Il2CppCodeGenString* _stringLiteral372029317;
-extern const uint32_t X509KeyUsageExtension_ToString_m1992050580_MetadataUsageId;
 extern "C"  String_t* X509KeyUsageExtension_ToString_m1992050580 (X509KeyUsageExtension_t1038124237 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24926,21 +25980,24 @@ extern "C"  String_t* X509KeyUsageExtension_ToString_m1992050580 (X509KeyUsageEx
 		int32_t L_0 = __this->get__status_8();
 		V_2 = L_0;
 		int32_t L_1 = V_2;
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 0)
+		switch (((int32_t)((int32_t)L_1-(int32_t)1)))
 		{
-			goto IL_0024;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 1)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 2)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 3)
-		{
-			goto IL_0037;
+			case 0:
+			{
+				goto IL_0024;
+			}
+			case 1:
+			{
+				goto IL_002a;
+			}
+			case 2:
+			{
+				goto IL_002a;
+			}
+			case 3:
+			{
+				goto IL_0037;
+			}
 		}
 	}
 	{
@@ -25265,7 +26322,7 @@ IL_0230:
 		StringBuilder_Append_m3636508479(L_56, _stringLiteral455075110, /*hidden argument*/NULL);
 		StringBuilder_t1221177846 * L_57 = V_0;
 		int32_t L_58 = V_1;
-		V_3 = (((int32_t)((uint8_t)L_58)));
+		V_3 = (uint8_t)(((int32_t)((uint8_t)L_58)));
 		String_t* L_59 = Byte_ToString_m1309661918((&V_3), _stringLiteral3231012720, /*hidden argument*/NULL);
 		NullCheck(L_57);
 		StringBuilder_Append_m3636508479(L_57, L_59, /*hidden argument*/NULL);
@@ -25281,7 +26338,7 @@ IL_0230:
 		StringBuilder_Append_m3636508479(L_61, _stringLiteral372029310, /*hidden argument*/NULL);
 		StringBuilder_t1221177846 * L_62 = V_0;
 		int32_t L_63 = V_1;
-		V_4 = (((int32_t)((uint8_t)((int32_t)((int32_t)L_63>>(int32_t)8)))));
+		V_4 = (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)L_63>>(int32_t)8)))));
 		String_t* L_64 = Byte_ToString_m1309661918((&V_4), _stringLiteral3231012720, /*hidden argument*/NULL);
 		NullCheck(L_62);
 		StringBuilder_Append_m3636508479(L_62, L_64, /*hidden argument*/NULL);
@@ -25314,12 +26371,6 @@ IL_02a7:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Store::.ctor(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation)
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* StoreName_t2183514610_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2808514808;
-extern Il2CppCodeGenString* _stringLiteral1054971240;
-extern Il2CppCodeGenString* _stringLiteral3560391898;
-extern const uint32_t X509Store__ctor_m1573680316_MetadataUsageId;
 extern "C"  void X509Store__ctor_m1573680316 (X509Store_t1617430119 * __this, int32_t ___storeName0, int32_t ___storeLocation1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25414,8 +26465,6 @@ IL_006c:
 	}
 }
 // System.Security.Cryptography.X509Certificates.X509Certificate2Collection System.Security.Cryptography.X509Certificates.X509Store::get_Certificates()
-extern Il2CppClass* X509Certificate2Collection_t1108969367_il2cpp_TypeInfo_var;
-extern const uint32_t X509Store_get_Certificates_m329642048_MetadataUsageId;
 extern "C"  X509Certificate2Collection_t1108969367 * X509Store_get_Certificates_m329642048 (X509Store_t1617430119 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25510,21 +26559,6 @@ IL_001d:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509Store::Open(System.Security.Cryptography.X509Certificates.OpenFlags)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Store_t1617430119_il2cpp_TypeInfo_var;
-extern Il2CppClass* Dictionary_2_t3986656710_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Certificate2_t4056456767_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern const MethodInfo* Dictionary_2__ctor_m2118310873_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_Add_m1209957957_MethodInfo_var;
-extern const MethodInfo* Dictionary_2_TryGetValue_m2977303364_MethodInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1997262885;
-extern Il2CppCodeGenString* _stringLiteral3430669166;
-extern Il2CppCodeGenString* _stringLiteral3060525540;
-extern Il2CppCodeGenString* _stringLiteral1990213415;
-extern const uint32_t X509Store_Open_m3416485546_MetadataUsageId;
 extern "C"  void X509Store_Open_m3416485546 (X509Store_t1617430119 * __this, int32_t ___flags0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25748,10 +26782,6 @@ IL_0132:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::.ctor()
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral2483521376;
-extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m2959112706_MetadataUsageId;
 extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m2959112706 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25769,10 +26799,6 @@ extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m2959112706 (X509Subjec
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::.ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral2483521376;
-extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m2412362046_MetadataUsageId;
 extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m2412362046 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, AsnEncodedData_t463456204 * ___encodedSubjectKeyIdentifier0, bool ___critical1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25799,14 +26825,6 @@ extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m2412362046 (X509Subjec
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::.ctor(System.Byte[],System.Boolean)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1896319514;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral2483521376;
-extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m3950351260_MetadataUsageId;
 extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m3950351260 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, ByteU5BU5D_t3397334013* ___subjectKeyIdentifier0, bool ___critical1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25861,13 +26879,6 @@ IL_002a:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::.ctor(System.String,System.Boolean)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1896319514;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral2483521376;
-extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m1109455121_MetadataUsageId;
 extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m1109455121 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, String_t* ___subjectKeyIdentifier0, bool ___critical1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25932,17 +26943,6 @@ extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m3887138480 (X509Subjec
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::.ctor(System.Security.Cryptography.X509Certificates.PublicKey,System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierHashAlgorithm,System.Boolean)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptoConfig_t896479599_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3021628599;
-extern Il2CppCodeGenString* _stringLiteral3249564939;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral2483521376;
-extern const uint32_t X509SubjectKeyIdentifierExtension__ctor_m3728672874_MetadataUsageId;
 extern "C"  void X509SubjectKeyIdentifierExtension__ctor_m3728672874 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, PublicKey_t870392 * ___key0, int32_t ___algorithm1, bool ___critical2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25982,17 +26982,20 @@ IL_0017:
 		int32_t L_5 = ___algorithm1;
 		V_5 = L_5;
 		int32_t L_6 = V_5;
-		if (L_6 == 0)
+		switch (L_6)
 		{
-			goto IL_003e;
-		}
-		if (L_6 == 1)
-		{
-			goto IL_0054;
-		}
-		if (L_6 == 2)
-		{
-			goto IL_0098;
+			case 0:
+			{
+				goto IL_003e;
+			}
+			case 1:
+			{
+				goto IL_0054;
+			}
+			case 2:
+			{
+				goto IL_0098;
+			}
 		}
 	}
 	{
@@ -26033,11 +27036,11 @@ IL_0054:
 IL_0098:
 	{
 		ASN1_t924533536 * L_19 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m32691595(L_19, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m32691595(L_19, (uint8_t)((int32_t)48), /*hidden argument*/NULL);
 		V_2 = L_19;
 		ASN1_t924533536 * L_20 = V_2;
 		ASN1_t924533536 * L_21 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m32691595(L_21, ((int32_t)48), /*hidden argument*/NULL);
+		ASN1__ctor_m32691595(L_21, (uint8_t)((int32_t)48), /*hidden argument*/NULL);
 		NullCheck(L_20);
 		ASN1_t924533536 * L_22 = ASN1_Add_m1528660622(L_20, L_21, /*hidden argument*/NULL);
 		V_3 = L_22;
@@ -26074,7 +27077,7 @@ IL_0098:
 		ASN1_t924533536 * L_38 = V_2;
 		ByteU5BU5D_t3397334013* L_39 = V_4;
 		ASN1_t924533536 * L_40 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3688855288(L_40, 3, L_39, /*hidden argument*/NULL);
+		ASN1__ctor_m3688855288(L_40, (uint8_t)3, L_39, /*hidden argument*/NULL);
 		NullCheck(L_38);
 		ASN1_Add_m1528660622(L_38, L_40, /*hidden argument*/NULL);
 		SHA1_t3336793149 * L_41 = SHA1_Create_m139442991(NULL /*static, unused*/, /*hidden argument*/NULL);
@@ -26107,9 +27110,6 @@ IL_012f:
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::get_SubjectKeyIdentifier()
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1874080883;
-extern const uint32_t X509SubjectKeyIdentifierExtension_get_SubjectKeyIdentifier_m1477640894_MetadataUsageId;
 extern "C"  String_t* X509SubjectKeyIdentifierExtension_get_SubjectKeyIdentifier_m1477640894 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26167,15 +27167,6 @@ IL_003c:
 	}
 }
 // System.Void System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::CopyFrom(System.Security.Cryptography.AsnEncodedData)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* X509Extension_t1320896183_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppClass* Oid_t3221867120_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2569869112;
-extern Il2CppCodeGenString* _stringLiteral3915869001;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral2483521376;
-extern const uint32_t X509SubjectKeyIdentifierExtension_CopyFrom_m136762226_MetadataUsageId;
 extern "C"  void X509SubjectKeyIdentifierExtension_CopyFrom_m136762226 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, AsnEncodedData_t463456204 * ___encodedData0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26277,7 +27268,7 @@ extern "C"  uint8_t X509SubjectKeyIdentifierExtension_FromHexChar_m4225129392 (I
 	}
 	{
 		Il2CppChar L_2 = ___c0;
-		return (((int32_t)((uint8_t)((int32_t)((int32_t)((int32_t)((int32_t)L_2-(int32_t)((int32_t)97)))+(int32_t)((int32_t)10))))));
+		return (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((int32_t)((int32_t)L_2-(int32_t)((int32_t)97)))+(int32_t)((int32_t)10))))));
 	}
 
 IL_0019:
@@ -26297,7 +27288,7 @@ IL_0019:
 	}
 	{
 		Il2CppChar L_5 = ___c0;
-		return (((int32_t)((uint8_t)((int32_t)((int32_t)((int32_t)((int32_t)L_5-(int32_t)((int32_t)65)))+(int32_t)((int32_t)10))))));
+		return (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((int32_t)((int32_t)L_5-(int32_t)((int32_t)65)))+(int32_t)((int32_t)10))))));
 	}
 
 IL_0032:
@@ -26317,12 +27308,12 @@ IL_0032:
 	}
 	{
 		Il2CppChar L_8 = ___c0;
-		return (((int32_t)((uint8_t)((int32_t)((int32_t)L_8-(int32_t)((int32_t)48))))));
+		return (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)L_8-(int32_t)((int32_t)48))))));
 	}
 
 IL_0048:
 	{
-		return ((int32_t)255);
+		return (uint8_t)((int32_t)255);
 	}
 }
 // System.Byte System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::FromHexChars(System.Char,System.Char)
@@ -26343,7 +27334,7 @@ extern "C"  uint8_t X509SubjectKeyIdentifierExtension_FromHexChars_m2515150420 (
 		uint8_t L_3 = V_0;
 		Il2CppChar L_4 = ___c21;
 		uint8_t L_5 = X509SubjectKeyIdentifierExtension_FromHexChar_m4225129392(NULL /*static, unused*/, L_4, /*hidden argument*/NULL);
-		V_0 = (((int32_t)((uint8_t)((int32_t)((int32_t)((int32_t)((int32_t)L_3<<(int32_t)4))|(int32_t)L_5)))));
+		V_0 = (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)((int32_t)((int32_t)L_3<<(int32_t)4))|(int32_t)L_5)))));
 	}
 
 IL_001e:
@@ -26353,8 +27344,6 @@ IL_001e:
 	}
 }
 // System.Byte[] System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::FromHex(System.String)
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern const uint32_t X509SubjectKeyIdentifierExtension_FromHex_m3272045013_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* X509SubjectKeyIdentifierExtension_FromHex_m3272045013 (Il2CppObject * __this /* static, unused */, String_t* ___hex0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26429,10 +27418,6 @@ IL_0043:
 	}
 }
 // System.Security.Cryptography.AsnDecodeStatus System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::Decode(System.Byte[])
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern Il2CppClass* Il2CppObject_il2cpp_TypeInfo_var;
-extern const uint32_t X509SubjectKeyIdentifierExtension_Decode_m4102819207_MetadataUsageId;
 extern "C"  int32_t X509SubjectKeyIdentifierExtension_Decode_m4102819207 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, ByteU5BU5D_t3397334013* ___extension0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26530,7 +27515,7 @@ IL_003c:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (Il2CppObject_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0054;
 		throw e;
 	}
@@ -26560,8 +27545,6 @@ IL_0063:
 	}
 }
 // System.Byte[] System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::Encode()
-extern Il2CppClass* ASN1_t924533536_il2cpp_TypeInfo_var;
-extern const uint32_t X509SubjectKeyIdentifierExtension_Encode_m4237278042_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* X509SubjectKeyIdentifierExtension_Encode_m4237278042 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26574,7 +27557,7 @@ extern "C"  ByteU5BU5D_t3397334013* X509SubjectKeyIdentifierExtension_Encode_m42
 	{
 		ByteU5BU5D_t3397334013* L_0 = __this->get__subjectKeyIdentifier_6();
 		ASN1_t924533536 * L_1 = (ASN1_t924533536 *)il2cpp_codegen_object_new(ASN1_t924533536_il2cpp_TypeInfo_var);
-		ASN1__ctor_m3688855288(L_1, 4, L_0, /*hidden argument*/NULL);
+		ASN1__ctor_m3688855288(L_1, (uint8_t)4, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		ASN1_t924533536 * L_2 = V_0;
 		NullCheck(L_2);
@@ -26583,14 +27566,6 @@ extern "C"  ByteU5BU5D_t3397334013* X509SubjectKeyIdentifierExtension_Encode_m42
 	}
 }
 // System.String System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension::ToString(System.Boolean)
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* StringBuilder_t1221177846_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral652014170;
-extern Il2CppCodeGenString* _stringLiteral1568864491;
-extern Il2CppCodeGenString* _stringLiteral4000354433;
-extern Il2CppCodeGenString* _stringLiteral3231012720;
-extern Il2CppCodeGenString* _stringLiteral372029310;
-extern const uint32_t X509SubjectKeyIdentifierExtension_ToString_m4073475390_MetadataUsageId;
 extern "C"  String_t* X509SubjectKeyIdentifierExtension_ToString_m4073475390 (X509SubjectKeyIdentifierExtension_t2508879999 * __this, bool ___multiLine0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26606,21 +27581,24 @@ extern "C"  String_t* X509SubjectKeyIdentifierExtension_ToString_m4073475390 (X5
 		int32_t L_0 = __this->get__status_8();
 		V_2 = L_0;
 		int32_t L_1 = V_2;
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 0)
+		switch (((int32_t)((int32_t)L_1-(int32_t)1)))
 		{
-			goto IL_0024;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 1)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 2)
-		{
-			goto IL_002a;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 3)
-		{
-			goto IL_0037;
+			case 0:
+			{
+				goto IL_0024;
+			}
+			case 1:
+			{
+				goto IL_002a;
+			}
+			case 2:
+			{
+				goto IL_002a;
+			}
+			case 3:
+			{
+				goto IL_0037;
+			}
 		}
 	}
 	{
@@ -26747,9 +27725,6 @@ extern "C"  void BaseMachine__ctor_m2327544039 (BaseMachine_t4008011478 * __this
 	}
 }
 // System.Text.RegularExpressions.Match System.Text.RegularExpressions.BaseMachine::Scan(System.Text.RegularExpressions.Regex,System.String,System.Int32,System.Int32)
-extern Il2CppClass* NotImplementedException_t2785117854_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2999892720;
-extern const uint32_t BaseMachine_Scan_m122450399_MetadataUsageId;
 extern "C"  Match_t3164245899 * BaseMachine_Scan_m122450399 (BaseMachine_t4008011478 * __this, Regex_t1803876613 * ___regex0, String_t* ___text1, int32_t ___start2, int32_t ___end3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26804,8 +27779,6 @@ extern "C"  int32_t Capture_get_Length_m1952322390 (Capture_t4157900610 * __this
 	}
 }
 // System.String System.Text.RegularExpressions.Capture::get_Value()
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t Capture_get_Value_m147072698_MetadataUsageId;
 extern "C"  String_t* Capture_get_Value_m147072698 (Capture_t4157900610 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26861,8 +27834,6 @@ extern "C"  String_t* Capture_get_Text_m3472127896 (Capture_t4157900610 * __this
 	}
 }
 // System.Void System.Text.RegularExpressions.CaptureCollection::.ctor(System.Int32)
-extern Il2CppClass* CaptureU5BU5D_t3470489975_il2cpp_TypeInfo_var;
-extern const uint32_t CaptureCollection__ctor_m629636494_MetadataUsageId;
 extern "C"  void CaptureCollection__ctor_m629636494 (CaptureCollection_t1671345504 * __this, int32_t ___n0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26931,15 +27902,6 @@ extern "C"  Il2CppObject * CaptureCollection_GetEnumerator_m4106707473 (CaptureC
 	}
 }
 // System.Text.RegularExpressions.Category System.Text.RegularExpressions.CategoryUtils::CategoryFromName(System.String)
-extern const Il2CppType* Category_t1984577050_0_0_0_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Enum_t2459695545_il2cpp_TypeInfo_var;
-extern Il2CppClass* UInt16_t986882611_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3110053210;
-extern Il2CppCodeGenString* _stringLiteral3505024847;
-extern const uint32_t CategoryUtils_CategoryFromName_m226887453_MetadataUsageId;
 extern "C"  uint16_t CategoryUtils_CategoryFromName_m226887453 (Il2CppObject * __this /* static, unused */, String_t* ___name0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26986,7 +27948,7 @@ IL_0019:
 			String_t* L_6 = String_Concat_m2596409543(NULL /*static, unused*/, _stringLiteral3505024847, L_5, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(Enum_t2459695545_il2cpp_TypeInfo_var);
 			Il2CppObject * L_7 = Enum_Parse_m982704874(NULL /*static, unused*/, L_4, L_6, (bool)0, /*hidden argument*/NULL);
-			V_0 = ((*(uint16_t*)((uint16_t*)UnBox (L_7, UInt16_t986882611_il2cpp_TypeInfo_var))));
+			V_0 = ((*(uint16_t*)((uint16_t*)UnBox(L_7, UInt16_t986882611_il2cpp_TypeInfo_var))));
 			goto IL_0051;
 		}
 
@@ -26998,7 +27960,7 @@ IL_003f:
 	catch(Il2CppExceptionWrapper& e)
 	{
 		__exception_local = (Exception_t1927440687 *)e.ex;
-		if(il2cpp_codegen_class_is_assignable_from (ArgumentException_t3259014390_il2cpp_TypeInfo_var, e.ex->object.klass))
+		if(il2cpp_codegen_class_is_assignable_from (ArgumentException_t3259014390_il2cpp_TypeInfo_var, e.ex->klass))
 			goto CATCH_0044;
 		throw e;
 	}
@@ -27023,8 +27985,6 @@ IL_0051:
 	}
 }
 // System.Boolean System.Text.RegularExpressions.CategoryUtils::IsCategory(System.Text.RegularExpressions.Category,System.Char)
-extern Il2CppClass* Char_t3454481338_il2cpp_TypeInfo_var;
-extern const uint32_t CategoryUtils_IsCategory_m1003669132_MetadataUsageId;
 extern "C"  bool CategoryUtils_IsCategory_m1003669132 (Il2CppObject * __this /* static, unused */, uint16_t ___cat0, Il2CppChar ___c1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27137,581 +28097,584 @@ extern "C"  bool CategoryUtils_IsCategory_m1003669132 (Il2CppObject * __this /* 
 		uint16_t L_0 = ___cat0;
 		V_0 = L_0;
 		uint16_t L_1 = V_0;
-		if (L_1 == 0)
-		{
-			goto IL_024d;
-		}
-		if (L_1 == 1)
-		{
-			goto IL_024f;
-		}
-		if (L_1 == 2)
-		{
-			goto IL_0258;
-		}
-		if (L_1 == 3)
-		{
-			goto IL_025a;
-		}
-		if (L_1 == 4)
-		{
-			goto IL_0271;
-		}
-		if (L_1 == 5)
-		{
-			goto IL_0278;
-		}
-		if (L_1 == 6)
-		{
-			goto IL_027f;
-		}
-		if (L_1 == 7)
-		{
-			goto IL_0288;
-		}
-		if (L_1 == 8)
-		{
-			goto IL_028a;
-		}
-		if (L_1 == 9)
-		{
-			goto IL_02c3;
-		}
-		if (L_1 == 10)
-		{
-			goto IL_02d7;
-		}
-		if (L_1 == 11)
-		{
-			goto IL_040d;
-		}
-		if (L_1 == 12)
-		{
-			goto IL_0448;
-		}
-		if (L_1 == 13)
-		{
-			goto IL_046b;
-		}
-		if (L_1 == 14)
-		{
-			goto IL_0490;
-		}
-		if (L_1 == 15)
-		{
-			goto IL_04b6;
-		}
-		if (L_1 == 16)
-		{
-			goto IL_0510;
-		}
-		if (L_1 == 17)
-		{
-			goto IL_0543;
-		}
-		if (L_1 == 18)
-		{
-			goto IL_0308;
-		}
-		if (L_1 == 19)
-		{
-			goto IL_0310;
-		}
-		if (L_1 == 20)
-		{
-			goto IL_0318;
-		}
-		if (L_1 == 21)
-		{
-			goto IL_0320;
-		}
-		if (L_1 == 22)
-		{
-			goto IL_0328;
-		}
-		if (L_1 == 23)
-		{
-			goto IL_0330;
-		}
-		if (L_1 == 24)
-		{
-			goto IL_0338;
-		}
-		if (L_1 == 25)
-		{
-			goto IL_0340;
-		}
-		if (L_1 == 26)
-		{
-			goto IL_0348;
-		}
-		if (L_1 == 27)
-		{
-			goto IL_0350;
-		}
-		if (L_1 == 28)
-		{
-			goto IL_0359;
-		}
-		if (L_1 == 29)
-		{
-			goto IL_0362;
-		}
-		if (L_1 == 30)
-		{
-			goto IL_036b;
-		}
-		if (L_1 == 31)
-		{
-			goto IL_0374;
-		}
-		if (L_1 == 32)
-		{
-			goto IL_037d;
-		}
-		if (L_1 == 33)
-		{
-			goto IL_0386;
-		}
-		if (L_1 == 34)
-		{
-			goto IL_038f;
-		}
-		if (L_1 == 35)
-		{
-			goto IL_0398;
-		}
-		if (L_1 == 36)
-		{
-			goto IL_03a1;
-		}
-		if (L_1 == 37)
-		{
-			goto IL_03aa;
-		}
-		if (L_1 == 38)
-		{
-			goto IL_03b3;
-		}
-		if (L_1 == 39)
-		{
-			goto IL_03bc;
-		}
-		if (L_1 == 40)
-		{
-			goto IL_03c5;
-		}
-		if (L_1 == 41)
-		{
-			goto IL_03ce;
-		}
-		if (L_1 == 42)
-		{
-			goto IL_03d7;
-		}
-		if (L_1 == 43)
-		{
-			goto IL_03e0;
-		}
-		if (L_1 == 44)
-		{
-			goto IL_03e9;
-		}
-		if (L_1 == 45)
-		{
-			goto IL_03f2;
-		}
-		if (L_1 == 46)
-		{
-			goto IL_03fb;
-		}
-		if (L_1 == 47)
-		{
-			goto IL_0404;
-		}
-		if (L_1 == 48)
-		{
-			goto IL_0583;
-		}
-		if (L_1 == 49)
-		{
-			goto IL_0596;
-		}
-		if (L_1 == 50)
-		{
-			goto IL_05b0;
-		}
-		if (L_1 == 51)
-		{
-			goto IL_05ca;
-		}
-		if (L_1 == 52)
-		{
-			goto IL_05e4;
-		}
-		if (L_1 == 53)
-		{
-			goto IL_05fe;
-		}
-		if (L_1 == 54)
-		{
-			goto IL_0618;
-		}
-		if (L_1 == 55)
-		{
-			goto IL_0632;
-		}
-		if (L_1 == 56)
-		{
-			goto IL_064c;
-		}
-		if (L_1 == 57)
-		{
-			goto IL_0666;
-		}
-		if (L_1 == 58)
-		{
-			goto IL_0680;
-		}
-		if (L_1 == 59)
-		{
-			goto IL_069a;
-		}
-		if (L_1 == 60)
-		{
-			goto IL_06b4;
-		}
-		if (L_1 == 61)
-		{
-			goto IL_06ce;
-		}
-		if (L_1 == 62)
-		{
-			goto IL_06e8;
-		}
-		if (L_1 == 63)
-		{
-			goto IL_0702;
-		}
-		if (L_1 == 64)
-		{
-			goto IL_071c;
-		}
-		if (L_1 == 65)
-		{
-			goto IL_0736;
-		}
-		if (L_1 == 66)
-		{
-			goto IL_0750;
-		}
-		if (L_1 == 67)
-		{
-			goto IL_076a;
-		}
-		if (L_1 == 68)
-		{
-			goto IL_0784;
-		}
-		if (L_1 == 69)
-		{
-			goto IL_079e;
-		}
-		if (L_1 == 70)
-		{
-			goto IL_07b8;
-		}
-		if (L_1 == 71)
-		{
-			goto IL_07d2;
-		}
-		if (L_1 == 72)
-		{
-			goto IL_07ec;
-		}
-		if (L_1 == 73)
-		{
-			goto IL_0806;
-		}
-		if (L_1 == 74)
-		{
-			goto IL_0820;
-		}
-		if (L_1 == 75)
-		{
-			goto IL_083a;
-		}
-		if (L_1 == 76)
-		{
-			goto IL_0854;
-		}
-		if (L_1 == 77)
-		{
-			goto IL_086e;
-		}
-		if (L_1 == 78)
-		{
-			goto IL_0888;
-		}
-		if (L_1 == 79)
-		{
-			goto IL_08a2;
-		}
-		if (L_1 == 80)
-		{
-			goto IL_08bc;
-		}
-		if (L_1 == 81)
-		{
-			goto IL_08d6;
-		}
-		if (L_1 == 82)
-		{
-			goto IL_08f0;
-		}
-		if (L_1 == 83)
-		{
-			goto IL_090a;
-		}
-		if (L_1 == 84)
-		{
-			goto IL_0924;
-		}
-		if (L_1 == 85)
-		{
-			goto IL_093e;
-		}
-		if (L_1 == 86)
-		{
-			goto IL_0958;
-		}
-		if (L_1 == 87)
-		{
-			goto IL_0972;
-		}
-		if (L_1 == 88)
-		{
-			goto IL_098c;
-		}
-		if (L_1 == 89)
-		{
-			goto IL_09a6;
-		}
-		if (L_1 == 90)
-		{
-			goto IL_09c0;
-		}
-		if (L_1 == 91)
-		{
-			goto IL_09da;
-		}
-		if (L_1 == 92)
-		{
-			goto IL_09f4;
-		}
-		if (L_1 == 93)
-		{
-			goto IL_0a0e;
-		}
-		if (L_1 == 94)
-		{
-			goto IL_0a28;
-		}
-		if (L_1 == 95)
-		{
-			goto IL_0a42;
-		}
-		if (L_1 == 96)
-		{
-			goto IL_0a5c;
-		}
-		if (L_1 == 97)
-		{
-			goto IL_0a76;
-		}
-		if (L_1 == 98)
-		{
-			goto IL_0a90;
-		}
-		if (L_1 == 99)
-		{
-			goto IL_0aaa;
-		}
-		if (L_1 == 100)
-		{
-			goto IL_0ac4;
-		}
-		if (L_1 == 101)
-		{
-			goto IL_0ade;
-		}
-		if (L_1 == 102)
-		{
-			goto IL_0af8;
-		}
-		if (L_1 == 103)
-		{
-			goto IL_0b12;
-		}
-		if (L_1 == 104)
-		{
-			goto IL_0b2c;
-		}
-		if (L_1 == 105)
-		{
-			goto IL_0b46;
-		}
-		if (L_1 == 106)
-		{
-			goto IL_0b60;
-		}
-		if (L_1 == 107)
-		{
-			goto IL_0b7a;
-		}
-		if (L_1 == 108)
-		{
-			goto IL_0b94;
-		}
-		if (L_1 == 109)
-		{
-			goto IL_0bae;
-		}
-		if (L_1 == 110)
-		{
-			goto IL_0bc8;
-		}
-		if (L_1 == 111)
-		{
-			goto IL_0be2;
-		}
-		if (L_1 == 112)
-		{
-			goto IL_0bfc;
-		}
-		if (L_1 == 113)
-		{
-			goto IL_0c16;
-		}
-		if (L_1 == 114)
-		{
-			goto IL_0c30;
-		}
-		if (L_1 == 115)
-		{
-			goto IL_0c4a;
-		}
-		if (L_1 == 116)
-		{
-			goto IL_0c64;
-		}
-		if (L_1 == 117)
-		{
-			goto IL_0c7e;
-		}
-		if (L_1 == 118)
-		{
-			goto IL_0c98;
-		}
-		if (L_1 == 119)
-		{
-			goto IL_0cb2;
-		}
-		if (L_1 == 120)
-		{
-			goto IL_0ccc;
-		}
-		if (L_1 == 121)
-		{
-			goto IL_0ce6;
-		}
-		if (L_1 == 122)
-		{
-			goto IL_0d00;
-		}
-		if (L_1 == 123)
-		{
-			goto IL_0d1a;
-		}
-		if (L_1 == 124)
-		{
-			goto IL_0d34;
-		}
-		if (L_1 == 125)
-		{
-			goto IL_0d4e;
-		}
-		if (L_1 == 126)
-		{
-			goto IL_0d68;
-		}
-		if (L_1 == 127)
-		{
-			goto IL_0d82;
-		}
-		if (L_1 == 128)
-		{
-			goto IL_0d9c;
-		}
-		if (L_1 == 129)
-		{
-			goto IL_0db6;
-		}
-		if (L_1 == 130)
-		{
-			goto IL_0dd0;
-		}
-		if (L_1 == 131)
-		{
-			goto IL_0dea;
-		}
-		if (L_1 == 132)
-		{
-			goto IL_0e04;
-		}
-		if (L_1 == 133)
-		{
-			goto IL_0e38;
-		}
-		if (L_1 == 134)
-		{
-			goto IL_0e1e;
-		}
-		if (L_1 == 135)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 136)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 137)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 138)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 139)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 140)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 141)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 142)
-		{
-			goto IL_0e6b;
-		}
-		if (L_1 == 143)
-		{
-			goto IL_0e6b;
+		switch (L_1)
+		{
+			case 0:
+			{
+				goto IL_024d;
+			}
+			case 1:
+			{
+				goto IL_024f;
+			}
+			case 2:
+			{
+				goto IL_0258;
+			}
+			case 3:
+			{
+				goto IL_025a;
+			}
+			case 4:
+			{
+				goto IL_0271;
+			}
+			case 5:
+			{
+				goto IL_0278;
+			}
+			case 6:
+			{
+				goto IL_027f;
+			}
+			case 7:
+			{
+				goto IL_0288;
+			}
+			case 8:
+			{
+				goto IL_028a;
+			}
+			case 9:
+			{
+				goto IL_02c3;
+			}
+			case 10:
+			{
+				goto IL_02d7;
+			}
+			case 11:
+			{
+				goto IL_040d;
+			}
+			case 12:
+			{
+				goto IL_0448;
+			}
+			case 13:
+			{
+				goto IL_046b;
+			}
+			case 14:
+			{
+				goto IL_0490;
+			}
+			case 15:
+			{
+				goto IL_04b6;
+			}
+			case 16:
+			{
+				goto IL_0510;
+			}
+			case 17:
+			{
+				goto IL_0543;
+			}
+			case 18:
+			{
+				goto IL_0308;
+			}
+			case 19:
+			{
+				goto IL_0310;
+			}
+			case 20:
+			{
+				goto IL_0318;
+			}
+			case 21:
+			{
+				goto IL_0320;
+			}
+			case 22:
+			{
+				goto IL_0328;
+			}
+			case 23:
+			{
+				goto IL_0330;
+			}
+			case 24:
+			{
+				goto IL_0338;
+			}
+			case 25:
+			{
+				goto IL_0340;
+			}
+			case 26:
+			{
+				goto IL_0348;
+			}
+			case 27:
+			{
+				goto IL_0350;
+			}
+			case 28:
+			{
+				goto IL_0359;
+			}
+			case 29:
+			{
+				goto IL_0362;
+			}
+			case 30:
+			{
+				goto IL_036b;
+			}
+			case 31:
+			{
+				goto IL_0374;
+			}
+			case 32:
+			{
+				goto IL_037d;
+			}
+			case 33:
+			{
+				goto IL_0386;
+			}
+			case 34:
+			{
+				goto IL_038f;
+			}
+			case 35:
+			{
+				goto IL_0398;
+			}
+			case 36:
+			{
+				goto IL_03a1;
+			}
+			case 37:
+			{
+				goto IL_03aa;
+			}
+			case 38:
+			{
+				goto IL_03b3;
+			}
+			case 39:
+			{
+				goto IL_03bc;
+			}
+			case 40:
+			{
+				goto IL_03c5;
+			}
+			case 41:
+			{
+				goto IL_03ce;
+			}
+			case 42:
+			{
+				goto IL_03d7;
+			}
+			case 43:
+			{
+				goto IL_03e0;
+			}
+			case 44:
+			{
+				goto IL_03e9;
+			}
+			case 45:
+			{
+				goto IL_03f2;
+			}
+			case 46:
+			{
+				goto IL_03fb;
+			}
+			case 47:
+			{
+				goto IL_0404;
+			}
+			case 48:
+			{
+				goto IL_0583;
+			}
+			case 49:
+			{
+				goto IL_0596;
+			}
+			case 50:
+			{
+				goto IL_05b0;
+			}
+			case 51:
+			{
+				goto IL_05ca;
+			}
+			case 52:
+			{
+				goto IL_05e4;
+			}
+			case 53:
+			{
+				goto IL_05fe;
+			}
+			case 54:
+			{
+				goto IL_0618;
+			}
+			case 55:
+			{
+				goto IL_0632;
+			}
+			case 56:
+			{
+				goto IL_064c;
+			}
+			case 57:
+			{
+				goto IL_0666;
+			}
+			case 58:
+			{
+				goto IL_0680;
+			}
+			case 59:
+			{
+				goto IL_069a;
+			}
+			case 60:
+			{
+				goto IL_06b4;
+			}
+			case 61:
+			{
+				goto IL_06ce;
+			}
+			case 62:
+			{
+				goto IL_06e8;
+			}
+			case 63:
+			{
+				goto IL_0702;
+			}
+			case 64:
+			{
+				goto IL_071c;
+			}
+			case 65:
+			{
+				goto IL_0736;
+			}
+			case 66:
+			{
+				goto IL_0750;
+			}
+			case 67:
+			{
+				goto IL_076a;
+			}
+			case 68:
+			{
+				goto IL_0784;
+			}
+			case 69:
+			{
+				goto IL_079e;
+			}
+			case 70:
+			{
+				goto IL_07b8;
+			}
+			case 71:
+			{
+				goto IL_07d2;
+			}
+			case 72:
+			{
+				goto IL_07ec;
+			}
+			case 73:
+			{
+				goto IL_0806;
+			}
+			case 74:
+			{
+				goto IL_0820;
+			}
+			case 75:
+			{
+				goto IL_083a;
+			}
+			case 76:
+			{
+				goto IL_0854;
+			}
+			case 77:
+			{
+				goto IL_086e;
+			}
+			case 78:
+			{
+				goto IL_0888;
+			}
+			case 79:
+			{
+				goto IL_08a2;
+			}
+			case 80:
+			{
+				goto IL_08bc;
+			}
+			case 81:
+			{
+				goto IL_08d6;
+			}
+			case 82:
+			{
+				goto IL_08f0;
+			}
+			case 83:
+			{
+				goto IL_090a;
+			}
+			case 84:
+			{
+				goto IL_0924;
+			}
+			case 85:
+			{
+				goto IL_093e;
+			}
+			case 86:
+			{
+				goto IL_0958;
+			}
+			case 87:
+			{
+				goto IL_0972;
+			}
+			case 88:
+			{
+				goto IL_098c;
+			}
+			case 89:
+			{
+				goto IL_09a6;
+			}
+			case 90:
+			{
+				goto IL_09c0;
+			}
+			case 91:
+			{
+				goto IL_09da;
+			}
+			case 92:
+			{
+				goto IL_09f4;
+			}
+			case 93:
+			{
+				goto IL_0a0e;
+			}
+			case 94:
+			{
+				goto IL_0a28;
+			}
+			case 95:
+			{
+				goto IL_0a42;
+			}
+			case 96:
+			{
+				goto IL_0a5c;
+			}
+			case 97:
+			{
+				goto IL_0a76;
+			}
+			case 98:
+			{
+				goto IL_0a90;
+			}
+			case 99:
+			{
+				goto IL_0aaa;
+			}
+			case 100:
+			{
+				goto IL_0ac4;
+			}
+			case 101:
+			{
+				goto IL_0ade;
+			}
+			case 102:
+			{
+				goto IL_0af8;
+			}
+			case 103:
+			{
+				goto IL_0b12;
+			}
+			case 104:
+			{
+				goto IL_0b2c;
+			}
+			case 105:
+			{
+				goto IL_0b46;
+			}
+			case 106:
+			{
+				goto IL_0b60;
+			}
+			case 107:
+			{
+				goto IL_0b7a;
+			}
+			case 108:
+			{
+				goto IL_0b94;
+			}
+			case 109:
+			{
+				goto IL_0bae;
+			}
+			case 110:
+			{
+				goto IL_0bc8;
+			}
+			case 111:
+			{
+				goto IL_0be2;
+			}
+			case 112:
+			{
+				goto IL_0bfc;
+			}
+			case 113:
+			{
+				goto IL_0c16;
+			}
+			case 114:
+			{
+				goto IL_0c30;
+			}
+			case 115:
+			{
+				goto IL_0c4a;
+			}
+			case 116:
+			{
+				goto IL_0c64;
+			}
+			case 117:
+			{
+				goto IL_0c7e;
+			}
+			case 118:
+			{
+				goto IL_0c98;
+			}
+			case 119:
+			{
+				goto IL_0cb2;
+			}
+			case 120:
+			{
+				goto IL_0ccc;
+			}
+			case 121:
+			{
+				goto IL_0ce6;
+			}
+			case 122:
+			{
+				goto IL_0d00;
+			}
+			case 123:
+			{
+				goto IL_0d1a;
+			}
+			case 124:
+			{
+				goto IL_0d34;
+			}
+			case 125:
+			{
+				goto IL_0d4e;
+			}
+			case 126:
+			{
+				goto IL_0d68;
+			}
+			case 127:
+			{
+				goto IL_0d82;
+			}
+			case 128:
+			{
+				goto IL_0d9c;
+			}
+			case 129:
+			{
+				goto IL_0db6;
+			}
+			case 130:
+			{
+				goto IL_0dd0;
+			}
+			case 131:
+			{
+				goto IL_0dea;
+			}
+			case 132:
+			{
+				goto IL_0e04;
+			}
+			case 133:
+			{
+				goto IL_0e38;
+			}
+			case 134:
+			{
+				goto IL_0e1e;
+			}
+			case 135:
+			{
+				goto IL_0e6b;
+			}
+			case 136:
+			{
+				goto IL_0e6b;
+			}
+			case 137:
+			{
+				goto IL_0e6b;
+			}
+			case 138:
+			{
+				goto IL_0e6b;
+			}
+			case 139:
+			{
+				goto IL_0e6b;
+			}
+			case 140:
+			{
+				goto IL_0e6b;
+			}
+			case 141:
+			{
+				goto IL_0e6b;
+			}
+			case 142:
+			{
+				goto IL_0e6b;
+			}
+			case 143:
+			{
+				goto IL_0e6b;
+			}
 		}
 	}
 	{
@@ -30575,8 +31538,6 @@ IL_0e6d:
 	}
 }
 // System.Boolean System.Text.RegularExpressions.CategoryUtils::IsCategory(System.Globalization.UnicodeCategory,System.Char)
-extern Il2CppClass* Char_t3454481338_il2cpp_TypeInfo_var;
-extern const uint32_t CategoryUtils_IsCategory_m932215390_MetadataUsageId;
 extern "C"  bool CategoryUtils_IsCategory_m932215390 (Il2CppObject * __this /* static, unused */, int32_t ___uc0, Il2CppChar ___c1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30605,9 +31566,6 @@ IL_000e:
 	}
 }
 // System.Void System.Text.RegularExpressions.FactoryCache::.ctor(System.Int32)
-extern Il2CppClass* Hashtable_t909839986_il2cpp_TypeInfo_var;
-extern Il2CppClass* MRUList_t33178162_il2cpp_TypeInfo_var;
-extern const uint32_t FactoryCache__ctor_m254400436_MetadataUsageId;
 extern "C"  void FactoryCache__ctor_m254400436 (FactoryCache_t2051534610 * __this, int32_t ___capacity0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30631,8 +31589,6 @@ extern "C"  void FactoryCache__ctor_m254400436 (FactoryCache_t2051534610 * __thi
 	}
 }
 // System.Void System.Text.RegularExpressions.FactoryCache::Add(System.String,System.Text.RegularExpressions.RegexOptions,System.Text.RegularExpressions.IMachineFactory)
-extern Il2CppClass* Key_t655155419_il2cpp_TypeInfo_var;
-extern const uint32_t FactoryCache_Add_m2602974721_MetadataUsageId;
 extern "C"  void FactoryCache_Add_m2602974721 (FactoryCache_t2051534610 * __this, String_t* ___pattern0, int32_t ___options1, Il2CppObject * ___factory2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30699,8 +31655,6 @@ IL_003b:
 	}
 }
 // System.Void System.Text.RegularExpressions.FactoryCache::Cleanup()
-extern Il2CppClass* Key_t655155419_il2cpp_TypeInfo_var;
-extern const uint32_t FactoryCache_Cleanup_m4130035987_MetadataUsageId;
 extern "C"  void FactoryCache_Cleanup_m4130035987 (FactoryCache_t2051534610 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30758,9 +31712,6 @@ IL_004a:
 	}
 }
 // System.Text.RegularExpressions.IMachineFactory System.Text.RegularExpressions.FactoryCache::Lookup(System.String,System.Text.RegularExpressions.RegexOptions)
-extern Il2CppClass* Key_t655155419_il2cpp_TypeInfo_var;
-extern Il2CppClass* IMachineFactory_t633643314_il2cpp_TypeInfo_var;
-extern const uint32_t FactoryCache_Lookup_m1681894361_MetadataUsageId;
 extern "C"  Il2CppObject * FactoryCache_Lookup_m1681894361 (FactoryCache_t2051534610 * __this, String_t* ___pattern0, int32_t ___options1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30876,8 +31827,6 @@ extern "C"  int32_t Key_GetHashCode_m345804220 (Key_t655155419 * __this, const M
 	}
 }
 // System.Boolean System.Text.RegularExpressions.FactoryCache/Key::Equals(System.Object)
-extern Il2CppClass* Key_t655155419_il2cpp_TypeInfo_var;
-extern const uint32_t Key_Equals_m2692934312_MetadataUsageId;
 extern "C"  bool Key_Equals_m2692934312 (Key_t655155419 * __this, Il2CppObject * ___o0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30943,13 +31892,6 @@ IL_003f:
 	}
 }
 // System.String System.Text.RegularExpressions.FactoryCache/Key::ToString()
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* RegexOptions_t2418259727_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral408020951;
-extern Il2CppCodeGenString* _stringLiteral4222904668;
-extern Il2CppCodeGenString* _stringLiteral3183958580;
-extern const uint32_t Key_ToString_m1129871742_MetadataUsageId;
 extern "C"  String_t* Key_ToString_m1129871742 (Key_t655155419 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30989,8 +31931,6 @@ extern "C"  String_t* Key_ToString_m1129871742 (Key_t655155419 * __this, const M
 	}
 }
 // System.Void System.Text.RegularExpressions.Group::.ctor(System.String,System.Int32,System.Int32,System.Int32)
-extern Il2CppClass* CaptureCollection_t1671345504_il2cpp_TypeInfo_var;
-extern const uint32_t Group__ctor_m1187945851_MetadataUsageId;
 extern "C"  void Group__ctor_m1187945851 (Group_t3761430853 * __this, String_t* ___text0, int32_t ___index1, int32_t ___length2, int32_t ___n_caps3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31029,9 +31969,6 @@ extern "C"  void Group__ctor_m4103922028 (Group_t3761430853 * __this, String_t* 
 	}
 }
 // System.Void System.Text.RegularExpressions.Group::.ctor()
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* CaptureCollection_t1671345504_il2cpp_TypeInfo_var;
-extern const uint32_t Group__ctor_m2264492664_MetadataUsageId;
 extern "C"  void Group__ctor_m2264492664 (Group_t3761430853 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31052,8 +31989,6 @@ extern "C"  void Group__ctor_m2264492664 (Group_t3761430853 * __this, const Meth
 	}
 }
 // System.Void System.Text.RegularExpressions.Group::.cctor()
-extern Il2CppClass* Group_t3761430853_il2cpp_TypeInfo_var;
-extern const uint32_t Group__cctor_m3460156167_MetadataUsageId;
 extern "C"  void Group__cctor_m3460156167 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31086,8 +32021,6 @@ extern "C"  bool Group_get_Success_m1068765996 (Group_t3761430853 * __this, cons
 	}
 }
 // System.Void System.Text.RegularExpressions.GroupCollection::.ctor(System.Int32,System.Int32)
-extern Il2CppClass* GroupU5BU5D_t2272681992_il2cpp_TypeInfo_var;
-extern const uint32_t GroupCollection__ctor_m3255346384_MetadataUsageId;
 extern "C"  void GroupCollection__ctor_m3255346384 (GroupCollection_t939014605 * __this, int32_t ___n0, int32_t ___gap1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31115,9 +32048,6 @@ extern "C"  int32_t GroupCollection_get_Count_m3713315052 (GroupCollection_t9390
 	}
 }
 // System.Text.RegularExpressions.Group System.Text.RegularExpressions.GroupCollection::get_Item(System.Int32)
-extern Il2CppClass* Match_t3164245899_il2cpp_TypeInfo_var;
-extern Il2CppClass* Group_t3761430853_il2cpp_TypeInfo_var;
-extern const uint32_t GroupCollection_get_Item_m3627349778_MetadataUsageId;
 extern "C"  Group_t3761430853 * GroupCollection_get_Item_m3627349778 (GroupCollection_t939014605 * __this, int32_t ___i0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31246,9 +32176,6 @@ extern "C"  Il2CppObject * GroupCollection_GetEnumerator_m4175569240 (GroupColle
 	}
 }
 // System.Void System.Text.RegularExpressions.Interpreter::.ctor(System.UInt16[])
-extern Il2CppClass* IntStack_t273560425_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter__ctor_m1139507339_MetadataUsageId;
 extern "C"  void Interpreter__ctor_m1139507339 (Interpreter_t3731288230 * __this, UInt16U5BU5D_t2527266722* ___program0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31302,8 +32229,6 @@ extern "C"  int32_t Interpreter_ReadProgramCount_m1520031325 (Interpreter_t37312
 	}
 }
 // System.Text.RegularExpressions.Match System.Text.RegularExpressions.Interpreter::Scan(System.Text.RegularExpressions.Regex,System.String,System.Int32,System.Int32)
-extern Il2CppClass* Match_t3164245899_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_Scan_m4259907439_MetadataUsageId;
 extern "C"  Match_t3164245899 * Interpreter_Scan_m4259907439 (Interpreter_t3731288230 * __this, Regex_t1803876613 * ___regex0, String_t* ___text1, int32_t ___start2, int32_t ___end3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31354,10 +32279,6 @@ extern "C"  void Interpreter_Reset_m316758268 (Interpreter_t3731288230 * __this,
 	}
 }
 // System.Boolean System.Text.RegularExpressions.Interpreter::Eval(System.Text.RegularExpressions.Interpreter/Mode,System.Int32&,System.Int32)
-extern Il2CppClass* QuickSearch_t1036078825_il2cpp_TypeInfo_var;
-extern Il2CppClass* Char_t3454481338_il2cpp_TypeInfo_var;
-extern Il2CppClass* RepeatContext_t1827616978_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_Eval_m1448443064_MetadataUsageId;
 extern "C"  bool Interpreter_Eval_m1448443064 (Interpreter_t3731288230 * __this, int32_t ___mode0, int32_t* ___ref_ptr1, int32_t ___pc2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31462,105 +32383,108 @@ IL_0008:
 		uint16_t L_7 = V_2;
 		V_52 = L_7;
 		uint16_t L_8 = V_52;
-		if (L_8 == 0)
+		switch (L_8)
 		{
-			goto IL_04b8;
-		}
-		if (L_8 == 1)
-		{
-			goto IL_04bd;
-		}
-		if (L_8 == 2)
-		{
-			goto IL_04c2;
-		}
-		if (L_8 == 3)
-		{
-			goto IL_04e7;
-		}
-		if (L_8 == 4)
-		{
-			goto IL_05ab;
-		}
-		if (L_8 == 5)
-		{
-			goto IL_06ef;
-		}
-		if (L_8 == 6)
-		{
-			goto IL_06ef;
-		}
-		if (L_8 == 7)
-		{
-			goto IL_06ef;
-		}
-		if (L_8 == 8)
-		{
-			goto IL_06ef;
-		}
-		if (L_8 == 9)
-		{
-			goto IL_06ef;
-		}
-		if (L_8 == 10)
-		{
-			goto IL_070a;
-		}
-		if (L_8 == 11)
-		{
-			goto IL_073c;
-		}
-		if (L_8 == 12)
-		{
-			goto IL_0757;
-		}
-		if (L_8 == 13)
-		{
-			goto IL_07db;
-		}
-		if (L_8 == 14)
-		{
-			goto IL_0772;
-		}
-		if (L_8 == 15)
-		{
-			goto IL_07e0;
-		}
-		if (L_8 == 16)
-		{
-			goto IL_0817;
-		}
-		if (L_8 == 17)
-		{
-			goto IL_0840;
-		}
-		if (L_8 == 18)
-		{
-			goto IL_088a;
-		}
-		if (L_8 == 19)
-		{
-			goto IL_08db;
-		}
-		if (L_8 == 20)
-		{
-			goto IL_08ee;
-		}
-		if (L_8 == 21)
-		{
-			goto IL_0957;
-		}
-		if (L_8 == 22)
-		{
-			goto IL_0c6f;
-		}
-		if (L_8 == 23)
-		{
-			goto IL_0096;
-		}
-		if (L_8 == 24)
-		{
-			goto IL_0fe9;
+			case 0:
+			{
+				goto IL_04b8;
+			}
+			case 1:
+			{
+				goto IL_04bd;
+			}
+			case 2:
+			{
+				goto IL_04c2;
+			}
+			case 3:
+			{
+				goto IL_04e7;
+			}
+			case 4:
+			{
+				goto IL_05ab;
+			}
+			case 5:
+			{
+				goto IL_06ef;
+			}
+			case 6:
+			{
+				goto IL_06ef;
+			}
+			case 7:
+			{
+				goto IL_06ef;
+			}
+			case 8:
+			{
+				goto IL_06ef;
+			}
+			case 9:
+			{
+				goto IL_06ef;
+			}
+			case 10:
+			{
+				goto IL_070a;
+			}
+			case 11:
+			{
+				goto IL_073c;
+			}
+			case 12:
+			{
+				goto IL_0757;
+			}
+			case 13:
+			{
+				goto IL_07db;
+			}
+			case 14:
+			{
+				goto IL_0772;
+			}
+			case 15:
+			{
+				goto IL_07e0;
+			}
+			case 16:
+			{
+				goto IL_0817;
+			}
+			case 17:
+			{
+				goto IL_0840;
+			}
+			case 18:
+			{
+				goto IL_088a;
+			}
+			case 19:
+			{
+				goto IL_08db;
+			}
+			case 20:
+			{
+				goto IL_08ee;
+			}
+			case 21:
+			{
+				goto IL_0957;
+			}
+			case 22:
+			{
+				goto IL_0c6f;
+			}
+			case 23:
+			{
+				goto IL_0096;
+			}
+			case 24:
+			{
+				goto IL_0fe9;
+			}
 		}
 	}
 	{
@@ -31638,17 +32562,20 @@ IL_00d2:
 		uint16_t L_35 = (L_32)->GetAt(static_cast<il2cpp_array_size_t>(L_34));
 		V_53 = L_35;
 		uint16_t L_36 = V_53;
-		if (((int32_t)((int32_t)L_36-(int32_t)2)) == 0)
+		switch (((int32_t)((int32_t)L_36-(int32_t)2)))
 		{
-			goto IL_0132;
-		}
-		if (((int32_t)((int32_t)L_36-(int32_t)2)) == 1)
-		{
-			goto IL_0165;
-		}
-		if (((int32_t)((int32_t)L_36-(int32_t)2)) == 2)
-		{
-			goto IL_0234;
+			case 0:
+			{
+				goto IL_0132;
+			}
+			case 1:
+			{
+				goto IL_0165;
+			}
+			case 2:
+			{
+				goto IL_0234;
+			}
 		}
 	}
 	{
@@ -34101,8 +35028,6 @@ IL_10b2:
 	}
 }
 // System.Boolean System.Text.RegularExpressions.Interpreter::EvalChar(System.Text.RegularExpressions.Interpreter/Mode,System.Int32&,System.Int32&,System.Boolean)
-extern Il2CppClass* Char_t3454481338_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_EvalChar_m1135512271_MetadataUsageId;
 extern "C"  bool Interpreter_EvalChar_m1135512271 (Interpreter_t3731288230 * __this, int32_t ___mode0, int32_t* ___ptr1, int32_t* ___pc2, bool ___multi3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -34241,45 +35166,48 @@ IL_00aa:
 		uint16_t L_30 = V_5;
 		V_14 = L_30;
 		uint16_t L_31 = V_14;
-		if (L_31 == 0)
+		switch (L_31)
 		{
-			goto IL_00f4;
-		}
-		if (L_31 == 1)
-		{
-			goto IL_00f2;
-		}
-		if (L_31 == 2)
-		{
-			goto IL_0221;
-		}
-		if (L_31 == 3)
-		{
-			goto IL_0221;
-		}
-		if (L_31 == 4)
-		{
-			goto IL_0221;
-		}
-		if (L_31 == 5)
-		{
-			goto IL_00f6;
-		}
-		if (L_31 == 6)
-		{
-			goto IL_0118;
-		}
-		if (L_31 == 7)
-		{
-			goto IL_013f;
-		}
-		if (L_31 == 8)
-		{
-			goto IL_0166;
-		}
-		if (L_31 == 9)
-		{
-			goto IL_01a8;
+			case 0:
+			{
+				goto IL_00f4;
+			}
+			case 1:
+			{
+				goto IL_00f2;
+			}
+			case 2:
+			{
+				goto IL_0221;
+			}
+			case 3:
+			{
+				goto IL_0221;
+			}
+			case 4:
+			{
+				goto IL_0221;
+			}
+			case 5:
+			{
+				goto IL_00f6;
+			}
+			case 6:
+			{
+				goto IL_0118;
+			}
+			case 7:
+			{
+				goto IL_013f;
+			}
+			case 8:
+			{
+				goto IL_0166;
+			}
+			case 9:
+			{
+				goto IL_01a8;
+			}
 		}
 	}
 	{
@@ -34576,41 +35504,44 @@ extern "C"  bool Interpreter_IsPosition_m1570996169 (Interpreter_t3731288230 * _
 		uint16_t L_0 = ___pos0;
 		V_0 = L_0;
 		uint16_t L_1 = V_0;
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 0)
+		switch (((int32_t)((int32_t)L_1-(int32_t)1)))
 		{
-			goto IL_0033;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 1)
-		{
-			goto IL_0033;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 2)
-		{
-			goto IL_0038;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 3)
-		{
-			goto IL_0054;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 4)
-		{
-			goto IL_005e;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 5)
-		{
-			goto IL_00af;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 6)
-		{
-			goto IL_008f;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 7)
-		{
-			goto IL_00b9;
-		}
-		if (((int32_t)((int32_t)L_1-(int32_t)1)) == 8)
-		{
-			goto IL_012c;
+			case 0:
+			{
+				goto IL_0033;
+			}
+			case 1:
+			{
+				goto IL_0033;
+			}
+			case 2:
+			{
+				goto IL_0038;
+			}
+			case 3:
+			{
+				goto IL_0054;
+			}
+			case 4:
+			{
+				goto IL_005e;
+			}
+			case 5:
+			{
+				goto IL_00af;
+			}
+			case 6:
+			{
+				goto IL_008f;
+			}
+			case 7:
+			{
+				goto IL_00b9;
+			}
+			case 8:
+			{
+				goto IL_012c;
+			}
 		}
 	}
 	{
@@ -34878,8 +35809,6 @@ extern "C"  bool Interpreter_IsWordChar_m296836120 (Interpreter_t3731288230 * __
 	}
 }
 // System.String System.Text.RegularExpressions.Interpreter::GetString(System.Int32)
-extern Il2CppClass* CharU5BU5D_t1328083999_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_GetString_m2427752964_MetadataUsageId;
 extern "C"  String_t* Interpreter_GetString_m2427752964 (Interpreter_t3731288230 * __this, int32_t ___pc0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -35157,8 +36086,6 @@ IL_003b:
 	}
 }
 // System.Void System.Text.RegularExpressions.Interpreter::ResetGroups()
-extern Il2CppClass* MarkU5BU5D_t3801731412_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_ResetGroups_m2279870744_MetadataUsageId;
 extern "C"  void Interpreter_ResetGroups_m2279870744 (Interpreter_t3731288230 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -35278,8 +36205,6 @@ IL_003d:
 	}
 }
 // System.Int32 System.Text.RegularExpressions.Interpreter::CreateMark(System.Int32)
-extern Il2CppClass* MarkU5BU5D_t3801731412_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_CreateMark_m603764609_MetadataUsageId;
 extern "C"  int32_t Interpreter_CreateMark_m603764609 (Interpreter_t3731288230 * __this, int32_t ___previous0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -35416,8 +36341,6 @@ IL_0052:
 	}
 }
 // System.Void System.Text.RegularExpressions.Interpreter::PopulateGroup(System.Text.RegularExpressions.Group,System.Int32,System.Int32)
-extern Il2CppClass* Capture_t4157900610_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_PopulateGroup_m4098755954_MetadataUsageId;
 extern "C"  void Interpreter_PopulateGroup_m4098755954 (Interpreter_t3731288230 * __this, Group_t3761430853 * ___g0, int32_t ___first_mark_index1, int32_t ___n_caps2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -35502,9 +36425,6 @@ IL_0089:
 	}
 }
 // System.Text.RegularExpressions.Match System.Text.RegularExpressions.Interpreter::GenerateMatch(System.Text.RegularExpressions.Regex)
-extern Il2CppClass* Match_t3164245899_il2cpp_TypeInfo_var;
-extern Il2CppClass* Group_t3761430853_il2cpp_TypeInfo_var;
-extern const uint32_t Interpreter_GenerateMatch_m4061336978_MetadataUsageId;
 extern "C"  Match_t3164245899 * Interpreter_GenerateMatch_m4061336978 (Interpreter_t3731288230 * __this, Regex_t1803876613 * ___regex0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -35636,6 +36556,108 @@ IL_0107:
 		return L_48;
 	}
 }
+// Conversion methods for marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
+extern "C" void IntStack_t273560425_marshal_pinvoke(const IntStack_t273560425& unmarshaled, IntStack_t273560425_marshaled_pinvoke& marshaled)
+{
+	if (unmarshaled.get_values_0() != NULL)
+	{
+		int32_t _unmarshaled_values_Length = (unmarshaled.get_values_0())->max_length;
+		marshaled.___values_0 = il2cpp_codegen_marshal_allocate_array<int32_t>(_unmarshaled_values_Length);
+		for (int32_t i = 0; i < _unmarshaled_values_Length; i++)
+		{
+			(marshaled.___values_0)[i] = (unmarshaled.get_values_0())->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i));
+		}
+	}
+	else
+	{
+		marshaled.___values_0 = NULL;
+	}
+	marshaled.___count_1 = unmarshaled.get_count_1();
+}
+extern "C" void IntStack_t273560425_marshal_pinvoke_back(const IntStack_t273560425_marshaled_pinvoke& marshaled, IntStack_t273560425& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (IntStack_t273560425_pinvoke_FromNativeMethodDefinition_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	if (marshaled.___values_0 != NULL)
+	{
+		if (unmarshaled.get_values_0() == NULL)
+		{
+			unmarshaled.set_values_0(reinterpret_cast<Int32U5BU5D_t3030399641*>(SZArrayNew(Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var, 1)));
+		}
+		int32_t _arrayLength = (unmarshaled.get_values_0())->max_length;
+		for (int32_t i = 0; i < _arrayLength; i++)
+		{
+			(unmarshaled.get_values_0())->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), (marshaled.___values_0)[i]);
+		}
+	}
+	int32_t unmarshaled_count_temp_1 = 0;
+	unmarshaled_count_temp_1 = marshaled.___count_1;
+	unmarshaled.set_count_1(unmarshaled_count_temp_1);
+}
+// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
+extern "C" void IntStack_t273560425_marshal_pinvoke_cleanup(IntStack_t273560425_marshaled_pinvoke& marshaled)
+{
+	if (marshaled.___values_0 != NULL)
+	{
+		il2cpp_codegen_marshal_free(marshaled.___values_0);
+		marshaled.___values_0 = NULL;
+	}
+}
+// Conversion methods for marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
+extern "C" void IntStack_t273560425_marshal_com(const IntStack_t273560425& unmarshaled, IntStack_t273560425_marshaled_com& marshaled)
+{
+	if (unmarshaled.get_values_0() != NULL)
+	{
+		int32_t _unmarshaled_values_Length = (unmarshaled.get_values_0())->max_length;
+		marshaled.___values_0 = il2cpp_codegen_marshal_allocate_array<int32_t>(_unmarshaled_values_Length);
+		for (int32_t i = 0; i < _unmarshaled_values_Length; i++)
+		{
+			(marshaled.___values_0)[i] = (unmarshaled.get_values_0())->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i));
+		}
+	}
+	else
+	{
+		marshaled.___values_0 = NULL;
+	}
+	marshaled.___count_1 = unmarshaled.get_count_1();
+}
+extern "C" void IntStack_t273560425_marshal_com_back(const IntStack_t273560425_marshaled_com& marshaled, IntStack_t273560425& unmarshaled)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (IntStack_t273560425_com_FromNativeMethodDefinition_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	if (marshaled.___values_0 != NULL)
+	{
+		if (unmarshaled.get_values_0() == NULL)
+		{
+			unmarshaled.set_values_0(reinterpret_cast<Int32U5BU5D_t3030399641*>(SZArrayNew(Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var, 1)));
+		}
+		int32_t _arrayLength = (unmarshaled.get_values_0())->max_length;
+		for (int32_t i = 0; i < _arrayLength; i++)
+		{
+			(unmarshaled.get_values_0())->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), (marshaled.___values_0)[i]);
+		}
+	}
+	int32_t unmarshaled_count_temp_1 = 0;
+	unmarshaled_count_temp_1 = marshaled.___count_1;
+	unmarshaled.set_count_1(unmarshaled_count_temp_1);
+}
+// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
+extern "C" void IntStack_t273560425_marshal_com_cleanup(IntStack_t273560425_marshaled_com& marshaled)
+{
+	if (marshaled.___values_0 != NULL)
+	{
+		il2cpp_codegen_marshal_free(marshaled.___values_0);
+		marshaled.___values_0 = NULL;
+	}
+}
 // System.Int32 System.Text.RegularExpressions.Interpreter/IntStack::Pop()
 extern "C"  int32_t IntStack_Pop_m2060782614 (IntStack_t273560425 * __this, const MethodInfo* method)
 {
@@ -35659,8 +36681,6 @@ extern "C"  int32_t IntStack_Pop_m2060782614_AdjustorThunk (Il2CppObject * __thi
 	return IntStack_Pop_m2060782614(_thisAdjusted, method);
 }
 // System.Void System.Text.RegularExpressions.Interpreter/IntStack::Push(System.Int32)
-extern Il2CppClass* Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var;
-extern const uint32_t IntStack_Push_m1259764820_MetadataUsageId;
 extern "C"  void IntStack_Push_m1259764820 (IntStack_t273560425 * __this, int32_t ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -35770,9 +36790,6 @@ extern "C"  int32_t IntStack_get_Count_m667249805_AdjustorThunk (Il2CppObject * 
 	return IntStack_get_Count_m667249805(_thisAdjusted, method);
 }
 // System.Void System.Text.RegularExpressions.Interpreter/IntStack::set_Count(System.Int32)
-extern Il2CppClass* SystemException_t3877406272_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral337649789;
-extern const uint32_t IntStack_set_Count_m2324758988_MetadataUsageId;
 extern "C"  void IntStack_set_Count_m2324758988 (IntStack_t273560425 * __this, int32_t ___value0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -35806,112 +36823,6 @@ extern "C"  void IntStack_set_Count_m2324758988_AdjustorThunk (Il2CppObject * __
 {
 	IntStack_t273560425 * _thisAdjusted = reinterpret_cast<IntStack_t273560425 *>(__this + 1);
 	IntStack_set_Count_m2324758988(_thisAdjusted, ___value0, method);
-}
-// Conversion methods for marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
-extern "C" void IntStack_t273560425_marshal_pinvoke(const IntStack_t273560425& unmarshaled, IntStack_t273560425_marshaled_pinvoke& marshaled)
-{
-	if (unmarshaled.get_values_0() != NULL)
-	{
-		int32_t _unmarshaled_values_Length = (unmarshaled.get_values_0())->max_length;
-		marshaled.___values_0 = il2cpp_codegen_marshal_allocate_array<int32_t>(_unmarshaled_values_Length);
-		for (int32_t i = 0; i < _unmarshaled_values_Length; i++)
-		{
-			(marshaled.___values_0)[i] = (unmarshaled.get_values_0())->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i));
-		}
-	}
-	else
-	{
-		marshaled.___values_0 = NULL;
-	}
-	marshaled.___count_1 = unmarshaled.get_count_1();
-}
-extern Il2CppClass* Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var;
-extern const uint32_t IntStack_t273560425_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
-extern "C" void IntStack_t273560425_marshal_pinvoke_back(const IntStack_t273560425_marshaled_pinvoke& marshaled, IntStack_t273560425& unmarshaled)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (IntStack_t273560425_pinvoke_FromNativeMethodDefinition_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	if (marshaled.___values_0 != NULL)
-	{
-		if (unmarshaled.get_values_0() == NULL)
-		{
-			unmarshaled.set_values_0(reinterpret_cast<Int32U5BU5D_t3030399641*>(SZArrayNew(Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var, 1)));
-		}
-		int32_t _arrayLength = (unmarshaled.get_values_0())->max_length;
-		for (int32_t i = 0; i < _arrayLength; i++)
-		{
-			(unmarshaled.get_values_0())->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), (marshaled.___values_0)[i]);
-		}
-	}
-	int32_t unmarshaled_count_temp_1 = 0;
-	unmarshaled_count_temp_1 = marshaled.___count_1;
-	unmarshaled.set_count_1(unmarshaled_count_temp_1);
-}
-// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
-extern "C" void IntStack_t273560425_marshal_pinvoke_cleanup(IntStack_t273560425_marshaled_pinvoke& marshaled)
-{
-	if (marshaled.___values_0 != NULL)
-	{
-		il2cpp_codegen_marshal_free(marshaled.___values_0);
-		marshaled.___values_0 = NULL;
-	}
-}
-// Conversion methods for marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
-extern "C" void IntStack_t273560425_marshal_com(const IntStack_t273560425& unmarshaled, IntStack_t273560425_marshaled_com& marshaled)
-{
-	if (unmarshaled.get_values_0() != NULL)
-	{
-		int32_t _unmarshaled_values_Length = (unmarshaled.get_values_0())->max_length;
-		marshaled.___values_0 = il2cpp_codegen_marshal_allocate_array<int32_t>(_unmarshaled_values_Length);
-		for (int32_t i = 0; i < _unmarshaled_values_Length; i++)
-		{
-			(marshaled.___values_0)[i] = (unmarshaled.get_values_0())->GetAtUnchecked(static_cast<il2cpp_array_size_t>(i));
-		}
-	}
-	else
-	{
-		marshaled.___values_0 = NULL;
-	}
-	marshaled.___count_1 = unmarshaled.get_count_1();
-}
-extern Il2CppClass* Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var;
-extern const uint32_t IntStack_t273560425_com_FromNativeMethodDefinition_MetadataUsageId;
-extern "C" void IntStack_t273560425_marshal_com_back(const IntStack_t273560425_marshaled_com& marshaled, IntStack_t273560425& unmarshaled)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (IntStack_t273560425_com_FromNativeMethodDefinition_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	if (marshaled.___values_0 != NULL)
-	{
-		if (unmarshaled.get_values_0() == NULL)
-		{
-			unmarshaled.set_values_0(reinterpret_cast<Int32U5BU5D_t3030399641*>(SZArrayNew(Int32U5BU5D_t3030399641_il2cpp_TypeInfo_var, 1)));
-		}
-		int32_t _arrayLength = (unmarshaled.get_values_0())->max_length;
-		for (int32_t i = 0; i < _arrayLength; i++)
-		{
-			(unmarshaled.get_values_0())->SetAtUnchecked(static_cast<il2cpp_array_size_t>(i), (marshaled.___values_0)[i]);
-		}
-	}
-	int32_t unmarshaled_count_temp_1 = 0;
-	unmarshaled_count_temp_1 = marshaled.___count_1;
-	unmarshaled.set_count_1(unmarshaled_count_temp_1);
-}
-// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interpreter/IntStack
-extern "C" void IntStack_t273560425_marshal_com_cleanup(IntStack_t273560425_marshaled_com& marshaled)
-{
-	if (marshaled.___values_0 != NULL)
-	{
-		il2cpp_codegen_marshal_free(marshaled.___values_0);
-		marshaled.___values_0 = NULL;
-	}
 }
 // System.Void System.Text.RegularExpressions.Interpreter/RepeatContext::.ctor(System.Text.RegularExpressions.Interpreter/RepeatContext,System.Int32,System.Int32,System.Boolean,System.Int32)
 extern "C"  void RepeatContext__ctor_m1528676798 (RepeatContext_t1827616978 * __this, RepeatContext_t1827616978 * ___previous0, int32_t ___min1, int32_t ___max2, bool ___lazy3, int32_t ___expr_pc4, const MethodInfo* method)
@@ -36020,8 +36931,6 @@ extern "C"  void InterpreterFactory__ctor_m3331468903 (InterpreterFactory_t55646
 	}
 }
 // System.Text.RegularExpressions.IMachine System.Text.RegularExpressions.InterpreterFactory::NewInstance()
-extern Il2CppClass* Interpreter_t3731288230_il2cpp_TypeInfo_var;
-extern const uint32_t InterpreterFactory_NewInstance_m1241029724_MetadataUsageId;
 extern "C"  Il2CppObject * InterpreterFactory_NewInstance_m1241029724 (InterpreterFactory_t556462562 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -36098,6 +37007,52 @@ extern "C"  void InterpreterFactory_set_NamesMapping_m3753353488 (InterpreterFac
 		__this->set_namesMapping_2(L_0);
 		return;
 	}
+}
+// Conversion methods for marshalling of: System.Text.RegularExpressions.Interval
+extern "C" void Interval_t2354235237_marshal_pinvoke(const Interval_t2354235237& unmarshaled, Interval_t2354235237_marshaled_pinvoke& marshaled)
+{
+	marshaled.___low_0 = unmarshaled.get_low_0();
+	marshaled.___high_1 = unmarshaled.get_high_1();
+	marshaled.___contiguous_2 = static_cast<int32_t>(unmarshaled.get_contiguous_2());
+}
+extern "C" void Interval_t2354235237_marshal_pinvoke_back(const Interval_t2354235237_marshaled_pinvoke& marshaled, Interval_t2354235237& unmarshaled)
+{
+	int32_t unmarshaled_low_temp_0 = 0;
+	unmarshaled_low_temp_0 = marshaled.___low_0;
+	unmarshaled.set_low_0(unmarshaled_low_temp_0);
+	int32_t unmarshaled_high_temp_1 = 0;
+	unmarshaled_high_temp_1 = marshaled.___high_1;
+	unmarshaled.set_high_1(unmarshaled_high_temp_1);
+	bool unmarshaled_contiguous_temp_2 = false;
+	unmarshaled_contiguous_temp_2 = static_cast<bool>(marshaled.___contiguous_2);
+	unmarshaled.set_contiguous_2(unmarshaled_contiguous_temp_2);
+}
+// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interval
+extern "C" void Interval_t2354235237_marshal_pinvoke_cleanup(Interval_t2354235237_marshaled_pinvoke& marshaled)
+{
+}
+// Conversion methods for marshalling of: System.Text.RegularExpressions.Interval
+extern "C" void Interval_t2354235237_marshal_com(const Interval_t2354235237& unmarshaled, Interval_t2354235237_marshaled_com& marshaled)
+{
+	marshaled.___low_0 = unmarshaled.get_low_0();
+	marshaled.___high_1 = unmarshaled.get_high_1();
+	marshaled.___contiguous_2 = static_cast<int32_t>(unmarshaled.get_contiguous_2());
+}
+extern "C" void Interval_t2354235237_marshal_com_back(const Interval_t2354235237_marshaled_com& marshaled, Interval_t2354235237& unmarshaled)
+{
+	int32_t unmarshaled_low_temp_0 = 0;
+	unmarshaled_low_temp_0 = marshaled.___low_0;
+	unmarshaled.set_low_0(unmarshaled_low_temp_0);
+	int32_t unmarshaled_high_temp_1 = 0;
+	unmarshaled_high_temp_1 = marshaled.___high_1;
+	unmarshaled.set_high_1(unmarshaled_high_temp_1);
+	bool unmarshaled_contiguous_temp_2 = false;
+	unmarshaled_contiguous_temp_2 = static_cast<bool>(marshaled.___contiguous_2);
+	unmarshaled.set_contiguous_2(unmarshaled_contiguous_temp_2);
+}
+// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interval
+extern "C" void Interval_t2354235237_marshal_com_cleanup(Interval_t2354235237_marshaled_com& marshaled)
+{
 }
 // System.Void System.Text.RegularExpressions.Interval::.ctor(System.Int32,System.Int32)
 extern "C"  void Interval__ctor_m160053574 (Interval_t2354235237 * __this, int32_t ___low0, int32_t ___high1, const MethodInfo* method)
@@ -36597,8 +37552,6 @@ extern "C"  void Interval_Merge_m1170166798_AdjustorThunk (Il2CppObject * __this
 	Interval_Merge_m1170166798(_thisAdjusted, ___i0, method);
 }
 // System.Int32 System.Text.RegularExpressions.Interval::CompareTo(System.Object)
-extern Il2CppClass* Interval_t2354235237_il2cpp_TypeInfo_var;
-extern const uint32_t Interval_CompareTo_m2909556284_MetadataUsageId;
 extern "C"  int32_t Interval_CompareTo_m2909556284 (Interval_t2354235237 * __this, Il2CppObject * ___o0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -36612,7 +37565,7 @@ extern "C"  int32_t Interval_CompareTo_m2909556284 (Interval_t2354235237 * __thi
 	{
 		int32_t L_0 = __this->get_low_0();
 		Il2CppObject * L_1 = ___o0;
-		V_0 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox (L_1, Interval_t2354235237_il2cpp_TypeInfo_var))));
+		V_0 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox(L_1, Interval_t2354235237_il2cpp_TypeInfo_var))));
 		int32_t L_2 = (&V_0)->get_low_0();
 		return ((int32_t)((int32_t)L_0-(int32_t)L_2));
 	}
@@ -36622,55 +37575,7 @@ extern "C"  int32_t Interval_CompareTo_m2909556284_AdjustorThunk (Il2CppObject *
 	Interval_t2354235237 * _thisAdjusted = reinterpret_cast<Interval_t2354235237 *>(__this + 1);
 	return Interval_CompareTo_m2909556284(_thisAdjusted, ___o0, method);
 }
-// Conversion methods for marshalling of: System.Text.RegularExpressions.Interval
-extern "C" void Interval_t2354235237_marshal_pinvoke(const Interval_t2354235237& unmarshaled, Interval_t2354235237_marshaled_pinvoke& marshaled)
-{
-	marshaled.___low_0 = unmarshaled.get_low_0();
-	marshaled.___high_1 = unmarshaled.get_high_1();
-	marshaled.___contiguous_2 = static_cast<int32_t>(unmarshaled.get_contiguous_2());
-}
-extern "C" void Interval_t2354235237_marshal_pinvoke_back(const Interval_t2354235237_marshaled_pinvoke& marshaled, Interval_t2354235237& unmarshaled)
-{
-	int32_t unmarshaled_low_temp_0 = 0;
-	unmarshaled_low_temp_0 = marshaled.___low_0;
-	unmarshaled.set_low_0(unmarshaled_low_temp_0);
-	int32_t unmarshaled_high_temp_1 = 0;
-	unmarshaled_high_temp_1 = marshaled.___high_1;
-	unmarshaled.set_high_1(unmarshaled_high_temp_1);
-	bool unmarshaled_contiguous_temp_2 = false;
-	unmarshaled_contiguous_temp_2 = static_cast<bool>(marshaled.___contiguous_2);
-	unmarshaled.set_contiguous_2(unmarshaled_contiguous_temp_2);
-}
-// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interval
-extern "C" void Interval_t2354235237_marshal_pinvoke_cleanup(Interval_t2354235237_marshaled_pinvoke& marshaled)
-{
-}
-// Conversion methods for marshalling of: System.Text.RegularExpressions.Interval
-extern "C" void Interval_t2354235237_marshal_com(const Interval_t2354235237& unmarshaled, Interval_t2354235237_marshaled_com& marshaled)
-{
-	marshaled.___low_0 = unmarshaled.get_low_0();
-	marshaled.___high_1 = unmarshaled.get_high_1();
-	marshaled.___contiguous_2 = static_cast<int32_t>(unmarshaled.get_contiguous_2());
-}
-extern "C" void Interval_t2354235237_marshal_com_back(const Interval_t2354235237_marshaled_com& marshaled, Interval_t2354235237& unmarshaled)
-{
-	int32_t unmarshaled_low_temp_0 = 0;
-	unmarshaled_low_temp_0 = marshaled.___low_0;
-	unmarshaled.set_low_0(unmarshaled_low_temp_0);
-	int32_t unmarshaled_high_temp_1 = 0;
-	unmarshaled_high_temp_1 = marshaled.___high_1;
-	unmarshaled.set_high_1(unmarshaled_high_temp_1);
-	bool unmarshaled_contiguous_temp_2 = false;
-	unmarshaled_contiguous_temp_2 = static_cast<bool>(marshaled.___contiguous_2);
-	unmarshaled.set_contiguous_2(unmarshaled_contiguous_temp_2);
-}
-// Conversion method for clean up from marshalling of: System.Text.RegularExpressions.Interval
-extern "C" void Interval_t2354235237_marshal_com_cleanup(Interval_t2354235237_marshaled_com& marshaled)
-{
-}
 // System.Void System.Text.RegularExpressions.IntervalCollection::.ctor()
-extern Il2CppClass* ArrayList_t4252133567_il2cpp_TypeInfo_var;
-extern const uint32_t IntervalCollection__ctor_m761408702_MetadataUsageId;
 extern "C"  void IntervalCollection__ctor_m761408702 (IntervalCollection_t4130821325 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -36688,8 +37593,6 @@ extern "C"  void IntervalCollection__ctor_m761408702 (IntervalCollection_t413082
 	}
 }
 // System.Text.RegularExpressions.Interval System.Text.RegularExpressions.IntervalCollection::get_Item(System.Int32)
-extern Il2CppClass* Interval_t2354235237_il2cpp_TypeInfo_var;
-extern const uint32_t IntervalCollection_get_Item_m1667788970_MetadataUsageId;
 extern "C"  Interval_t2354235237  IntervalCollection_get_Item_m1667788970 (IntervalCollection_t4130821325 * __this, int32_t ___i0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -36703,12 +37606,10 @@ extern "C"  Interval_t2354235237  IntervalCollection_get_Item_m1667788970 (Inter
 		int32_t L_1 = ___i0;
 		NullCheck(L_0);
 		Il2CppObject * L_2 = VirtFuncInvoker1< Il2CppObject *, int32_t >::Invoke(18 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_0, L_1);
-		return ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox (L_2, Interval_t2354235237_il2cpp_TypeInfo_var))));
+		return ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox(L_2, Interval_t2354235237_il2cpp_TypeInfo_var))));
 	}
 }
 // System.Void System.Text.RegularExpressions.IntervalCollection::Add(System.Text.RegularExpressions.Interval)
-extern Il2CppClass* Interval_t2354235237_il2cpp_TypeInfo_var;
-extern const uint32_t IntervalCollection_Add_m474325761_MetadataUsageId;
 extern "C"  void IntervalCollection_Add_m474325761 (IntervalCollection_t4130821325 * __this, Interval_t2354235237  ___i0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -36728,8 +37629,6 @@ extern "C"  void IntervalCollection_Add_m474325761 (IntervalCollection_t41308213
 	}
 }
 // System.Void System.Text.RegularExpressions.IntervalCollection::Normalize()
-extern Il2CppClass* Interval_t2354235237_il2cpp_TypeInfo_var;
-extern const uint32_t IntervalCollection_Normalize_m538796191_MetadataUsageId;
 extern "C"  void IntervalCollection_Normalize_m538796191 (IntervalCollection_t4130821325 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -36757,12 +37656,12 @@ IL_0012:
 		int32_t L_2 = V_0;
 		NullCheck(L_1);
 		Il2CppObject * L_3 = VirtFuncInvoker1< Il2CppObject *, int32_t >::Invoke(18 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_1, L_2);
-		V_1 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox (L_3, Interval_t2354235237_il2cpp_TypeInfo_var))));
+		V_1 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox(L_3, Interval_t2354235237_il2cpp_TypeInfo_var))));
 		ArrayList_t4252133567 * L_4 = __this->get_intervals_0();
 		int32_t L_5 = V_0;
 		NullCheck(L_4);
 		Il2CppObject * L_6 = VirtFuncInvoker1< Il2CppObject *, int32_t >::Invoke(18 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_4, ((int32_t)((int32_t)L_5+(int32_t)1)));
-		V_2 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox (L_6, Interval_t2354235237_il2cpp_TypeInfo_var))));
+		V_2 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox(L_6, Interval_t2354235237_il2cpp_TypeInfo_var))));
 		Interval_t2354235237  L_7 = V_2;
 		bool L_8 = Interval_IsDisjoint_m2165873260((&V_1), L_7, /*hidden argument*/NULL);
 		if (!L_8)
@@ -36819,8 +37718,6 @@ IL_0083:
 	}
 }
 // System.Text.RegularExpressions.IntervalCollection System.Text.RegularExpressions.IntervalCollection::GetMetaCollection(System.Text.RegularExpressions.IntervalCollection/CostDelegate)
-extern Il2CppClass* IntervalCollection_t4130821325_il2cpp_TypeInfo_var;
-extern const uint32_t IntervalCollection_GetMetaCollection_m3859513527_MetadataUsageId;
 extern "C"  IntervalCollection_t4130821325 * IntervalCollection_GetMetaCollection_m3859513527 (IntervalCollection_t4130821325 * __this, CostDelegate_t1824458113 * ___cost_del0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -37073,10 +37970,6 @@ extern "C"  Il2CppObject * IntervalCollection_get_SyncRoot_m1793599803 (Interval
 	}
 }
 // System.Void System.Text.RegularExpressions.IntervalCollection::CopyTo(System.Array,System.Int32)
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern Il2CppClass* Interval_t2354235237_il2cpp_TypeInfo_var;
-extern Il2CppClass* IDisposable_t2427283555_il2cpp_TypeInfo_var;
-extern const uint32_t IntervalCollection_CopyTo_m3977468795_MetadataUsageId;
 extern "C"  void IntervalCollection_CopyTo_m3977468795 (IntervalCollection_t4130821325 * __this, Il2CppArray * ___array0, int32_t ___index1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -37114,7 +38007,7 @@ IL_0011:
 			Il2CppObject * L_2 = V_1;
 			NullCheck(L_2);
 			Il2CppObject * L_3 = InterfaceFuncInvoker0< Il2CppObject * >::Invoke(0 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t1466026749_il2cpp_TypeInfo_var, L_2);
-			V_0 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox (L_3, Interval_t2354235237_il2cpp_TypeInfo_var))));
+			V_0 = ((*(Interval_t2354235237 *)((Interval_t2354235237 *)UnBox(L_3, Interval_t2354235237_il2cpp_TypeInfo_var))));
 			int32_t L_4 = ___index1;
 			Il2CppArray * L_5 = ___array0;
 			NullCheck(L_5);
@@ -37202,8 +38095,6 @@ IL_0062:
 	}
 }
 // System.Collections.IEnumerator System.Text.RegularExpressions.IntervalCollection::GetEnumerator()
-extern Il2CppClass* Enumerator_t1928086041_il2cpp_TypeInfo_var;
-extern const uint32_t IntervalCollection_GetEnumerator_m1653952170_MetadataUsageId;
 extern "C"  Il2CppObject * IntervalCollection_GetEnumerator_m1653952170 (IntervalCollection_t4130821325 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -37218,6 +38109,25 @@ extern "C"  Il2CppObject * IntervalCollection_GetEnumerator_m1653952170 (Interva
 		Enumerator__ctor_m3782962052(L_1, L_0, /*hidden argument*/NULL);
 		return L_1;
 	}
+}
+extern "C"  double DelegatePInvokeWrapper_CostDelegate_t1824458113 (CostDelegate_t1824458113 * __this, Interval_t2354235237  ___i0, const MethodInfo* method)
+{
+
+
+	typedef double (STDCALL *PInvokeFunc)(Interval_t2354235237_marshaled_pinvoke);
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(((Il2CppDelegate*)__this)->method->methodPointer);
+
+	// Marshaling of parameter '___i0' to native representation
+	Interval_t2354235237_marshaled_pinvoke ____i0_marshaled = {};
+	Interval_t2354235237_marshal_pinvoke(___i0, ____i0_marshaled);
+
+	// Native function invocation
+	double returnValue = il2cppPInvokeFunc(____i0_marshaled);
+
+	// Marshaling cleanup of parameter '___i0' native representation
+	Interval_t2354235237_marshal_pinvoke_cleanup(____i0_marshaled);
+
+	return returnValue;
 }
 // System.Void System.Text.RegularExpressions.IntervalCollection/CostDelegate::.ctor(System.Object,System.IntPtr)
 extern "C"  void CostDelegate__ctor_m80452417 (CostDelegate_t1824458113 * __this, Il2CppObject * ___object0, IntPtr_t ___method1, const MethodInfo* method)
@@ -37246,26 +38156,7 @@ extern "C"  double CostDelegate_Invoke_m2580283336 (CostDelegate_t1824458113 * _
 		return ((FunctionPointerType)__this->get_method_ptr_0())(__this->get_m_target_2(),___i0,(MethodInfo*)(__this->get_method_3().get_m_value_0()));
 	}
 }
-extern "C"  double DelegatePInvokeWrapper_CostDelegate_t1824458113 (CostDelegate_t1824458113 * __this, Interval_t2354235237  ___i0, const MethodInfo* method)
-{
-	typedef double (STDCALL *PInvokeFunc)(Interval_t2354235237_marshaled_pinvoke);
-	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(((Il2CppDelegate*)__this)->method->methodPointer);
-
-	// Marshaling of parameter '___i0' to native representation
-	Interval_t2354235237_marshaled_pinvoke ____i0_marshaled = { };
-	Interval_t2354235237_marshal_pinvoke(___i0, ____i0_marshaled);
-
-	// Native function invocation
-	double returnValue = il2cppPInvokeFunc(____i0_marshaled);
-
-	// Marshaling cleanup of parameter '___i0' native representation
-	Interval_t2354235237_marshal_pinvoke_cleanup(____i0_marshaled);
-
-	return returnValue;
-}
 // System.IAsyncResult System.Text.RegularExpressions.IntervalCollection/CostDelegate::BeginInvoke(System.Text.RegularExpressions.Interval,System.AsyncCallback,System.Object)
-extern Il2CppClass* Interval_t2354235237_il2cpp_TypeInfo_var;
-extern const uint32_t CostDelegate_BeginInvoke_m1628968398_MetadataUsageId;
 extern "C"  Il2CppObject * CostDelegate_BeginInvoke_m1628968398 (CostDelegate_t1824458113 * __this, Interval_t2354235237  ___i0, AsyncCallback_t163412349 * ___callback1, Il2CppObject * ___object2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;

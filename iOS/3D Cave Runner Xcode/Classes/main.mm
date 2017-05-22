@@ -1,5 +1,6 @@
 #include "RegisterMonoModules.h"
 #include "RegisterFeatures.h"
+#include <mach/mach_time.h>
 #include <csignal>
 
 // Hack to work around iOS SDK 4.3 linker problem
@@ -14,25 +15,27 @@ const char* AppControllerClassName = "UnityAppController";
 
 int main(int argc, char* argv[])
 {
-	@autoreleasepool
-	{
-		UnityInitTrampoline();
-		UnityInitRuntime(argc, argv);
+    signed long long startTime = mach_absolute_time();
+    @autoreleasepool
+    {
+        UnitySetStartupTime(startTime);
+        UnityInitTrampoline();
+        UnityInitRuntime(argc, argv);
 
-		RegisterMonoModules();
-		NSLog(@"-> registered mono modules %p\n", &constsection);
-		RegisterFeatures();
+        RegisterMonoModules();
+        NSLog(@"-> registered mono modules %p\n", &constsection);
+        RegisterFeatures();
 
-		// iOS terminates open sockets when an application enters background mode.
-		// The next write to any of such socket causes SIGPIPE signal being raised,
-		// even if the request has been done from scripting side. This disables the
-		// signal and allows Mono to throw a proper C# exception.
-		std::signal(SIGPIPE, SIG_IGN);
+        // iOS terminates open sockets when an application enters background mode.
+        // The next write to any of such socket causes SIGPIPE signal being raised,
+        // even if the request has been done from scripting side. This disables the
+        // signal and allows Mono to throw a proper C# exception.
+        std::signal(SIGPIPE, SIG_IGN);
 
-		UIApplicationMain(argc, argv, nil, [NSString stringWithUTF8String:AppControllerClassName]);
-	}
+        UIApplicationMain(argc, argv, nil, [NSString stringWithUTF8String: AppControllerClassName]);
+    }
 
-	return 0;
+    return 0;
 }
 
 #if TARGET_IPHONE_SIMULATOR && TARGET_TVOS_SIMULATOR
@@ -46,7 +49,7 @@ extern "C" int pthread_cond_destroy$UNIX2003(pthread_cond_t *cond)
 extern "C" int pthread_cond_wait$UNIX2003(pthread_cond_t *cond, pthread_mutex_t *mutex)
 { return pthread_cond_wait(cond, mutex); }
 extern "C" int pthread_cond_timedwait$UNIX2003(pthread_cond_t *cond, pthread_mutex_t *mutex,
-											   const struct timespec *abstime)
+    const struct timespec *abstime)
 { return pthread_cond_timedwait(cond, mutex, abstime); }
 
 #endif // TARGET_IPHONE_SIMULATOR && TARGET_TVOS_SIMULATOR

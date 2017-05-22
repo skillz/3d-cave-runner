@@ -10,9 +10,12 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System_Enum2459695545.h"
 #include "UnityEngine_UnityEngineInternal_TypeInferenceRules1810425448.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

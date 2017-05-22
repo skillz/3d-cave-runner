@@ -13,7 +13,7 @@ var SpeedEffect:Transform; //The Speed effect that is displayed when running ver
 
 var JumpPower:float = 10; //The player's jump power
 
-var TurningSpeed:float = 0.04; //The player's turning speed, how quickly he moves left and right
+var TurningSpeed:float = 0.5; //The player's turning speed, how quickly he moves left and right
 var TurnDamping:float = 0; //A slowdown value for the turning speed. At 1, it doesn't affect his speed, lower than that will make him rotate slowly
 
 var HitAnimation:String = "Lava"; //The player's hit animation, which plays when the palyer hits an obstacle
@@ -70,9 +70,9 @@ private var imgUrl:String = "http://d28zxvxhwlv2wk.cloudfront.net/ad.jpg";
 
 function CalibrateAccelerometer () {
     var accelerationSnapshot : Vector3 = new Vector3(0.0,0.0,-1.0);
-    
+
     var fromVector = new Vector3 (0.0, 0.0, -1.0);
-    
+
     var rotateQuaternion : Quaternion = Quaternion.FromToRotation (fromVector, accelerationSnapshot);
     calibrationQuaternion = Quaternion.Inverse (rotateQuaternion);
 }
@@ -88,22 +88,22 @@ function Start()
 	GameController = GameObject.FindWithTag("GameController"); //Find the Game Controller in the scene and put it in a variable, for later use
 	gController = GameController.GetComponent("GameController") as GameController;
 	pCreator = PlatformCreator.GetComponent("PlatformCreator") as PlatformCreator;
-	
+
 	InitPos = transform.position; //Set the initial position of the player
-	
+
 	GetComponent.<Animation>().CrossFade("Fall"); //Start playing the fall animation
-	
+
 	(Camera.main.GetComponent("Shake") as Shake).Shake = (GameController.GetComponent("GameController") as GameController).LevelUpRumble; //shake the camera
 	CalibrateAccelerometer();
 }
 
-function Update() 
+function Update()
 {
 	if (Time.timeScale>0)
 	{
 		//Make the camera follow the player
 		GetComponent.<Camera>().main.transform.position.x -= (GetComponent.<Camera>().main.transform.position.x - transform.position.x) * CameraFollowSpeed;
-		
+
 		if ( FellOff == false ) //If we haven't fallen off yet, keep running
 		{
 			//Increase speed based on acceleration
@@ -114,10 +114,10 @@ function Update()
 			//Debug.Log("Speed: " + Speed);
 			//Add to the distance value in the game controller
 			gController.TotalDistance += Speed* Time.deltaTime;
-			
+
 			//If turning speed is being damped by the value of TurnDamping, gradually taking it back to normal ( 1 )
 			if ( TurnDamping < 1 )    TurnDamping += 0.5 * Time.deltaTime;
-			
+
 			if ( JumpChangeTime > 0 ) //As long as the value of JumpChangeTime is larger than 0, keep the change
 			{
 				JumpChangeTime -= Time.deltaTime; //reduce the change time
@@ -126,7 +126,7 @@ function Update()
 			{
 				JumpChange = 1;
 			}
-			
+
 			if ( Input.GetButtonDown("Jump") && JumpState == 0 ) //If we press the jump button, give the player a velocity up
 			{
 				JumpState = 1; //Set the jump state to 1, Jumping
@@ -138,12 +138,12 @@ function Update()
 				JumpState = 2; //fall after jump
 				GetComponent.<Rigidbody>().velocity.y *= 0.3; //Reduce the up velocity to third its power
 			}
-			
-			if ( GetComponent.<Rigidbody>().velocity.y < 0 && JumpState == 1 ) //If we've fallen after jumping, change the animation to falling 
+
+			if ( GetComponent.<Rigidbody>().velocity.y < 0 && JumpState == 1 ) //If we've fallen after jumping, change the animation to falling
 			{
 				JumpState = 2; //fall after jump
 			}
-			
+
 			if ( Input.GetButtonDown("Jump") && JumpState == 2 ) //If we press the jump button while falling the first time, perform a double jump
 			{
 				JumpState = 3; //double jump
@@ -155,19 +155,19 @@ function Update()
 				GetComponent.<Rigidbody>().velocity.y *= 0.3; //Reduce the up velocity to third its power
 				JumpState = 4; //fall after double jump
 			}
-			
-			if ( GetComponent.<Rigidbody>().velocity.y < 0 && JumpState == 3 ) //If we've fallen after double jumping, change the animation to falling 
+
+			if ( GetComponent.<Rigidbody>().velocity.y < 0 && JumpState == 3 ) //If we've fallen after double jumping, change the animation to falling
 			{
 				JumpState = 4; //fall after double jump
 			}
-			
+
 			playerRotate();
-		
+
 		}
 		else //If we've fallen off the platform...
 		{
 			FellOffTime += Time.deltaTime;
-			
+
 			//Decrease speed based on acceleration
 			if ( Speed > 0.01 )
 			{
@@ -177,26 +177,26 @@ function Update()
 					GetComponent.<AudioSource>().PlayOneShot(FallSound);
 					playedFallSound = true;
 				}
-				
+
 			}
 			else if ( Speed != 0 && (transform.position.y < -3 || FellOffTime > 2) ) //if we fell low enough and our speed is not yet 0
 			{
 				Speed = 0; //set the speed to 0
 				(Camera.main.GetComponent("Shake") as Shake).Shake = 200; //shake the camera
-				
+
 				GetComponent.<AudioSource>().PlayOneShot(CrashSound); //play a crash sound
 				isDead = true;
 				//gController.showScoreOnScreen = true;
 				EndGameRun();
 			}
 		}
-		
+
 		//Player falls off a platform
 		if ( transform.position.y < pCreator.PlatformHeightRange.x - 0.5 && FellOff == false ) {
 			FellOff = true;
 			//Debug.LogWarning("Player fell!!!!!!!!");
 		}
-		
+
 		//High speed effect
 		if ( Speed > 22 )
 		{
@@ -206,15 +206,15 @@ function Update()
 		{
 			SpeedEffect.GetComponent.<ParticleEmitter>().emit = false; //turn off the high speed effect
 		}
-	
+
 		//Lava, walk, run, jump, and fall animations
 		if ( HitAnimation != "" && HitAnimationTime > 0 ) //If we have a hit animation set, play it
 		{
 			GetComponent.<Animation>().CrossFade(HitAnimation); //play the hti animation
-			
+
 			HitAnimationTime -= Time.deltaTime; //reduce from the hit animation time
-			
-			if ( HitAnimation == "Lava" ) //If the hit animation happens to be lava, create a trail effect at the player's position 
+
+			if ( HitAnimation == "Lava" ) //If the hit animation happens to be lava, create a trail effect at the player's position
 			{
 				Instantiate(TrailEffect , transform.position + Vector3.up * 0.5, Quaternion.identity);
 			}
@@ -223,9 +223,9 @@ function Update()
 		{
 			if ( JumpState == 0 ) //if we haven't jumped, play the run animations
 			{
-				if ( Speed > 22 ) //if speed is above 0.5, play the fast run animation 
+				if ( Speed > 22 ) //if speed is above 0.5, play the fast run animation
 				{
-					GetComponent.<Animation>().CrossFade("Run"); 
+					GetComponent.<Animation>().CrossFade("Run");
 					//animation["Run"].speed = Speed * 3; //set animation speed be based on the player's actual speed
 				}
 				else //otherwise, play the normal run animation
@@ -255,39 +255,39 @@ private function playerRotate()
 		var acceleration : Vector3 = Input.acceleration;
 		var fixedAcceleration : Vector3 = FixAcceleration (acceleration);
 		currentAcc = Vector3.Lerp(currentAcc, fixedAcceleration, accSpeed);
-		
+
 		var rawThrust : float = currentAcc.x;
-		
+
 		// Generate a plane that intersects the transform's position. We use this to make the aiming cursor so the player can run in the direction of the cursor
 		var playerPlane = new Plane(Vector3.forward, InitPos + Vector3(0,0,6)); //Create an invisible "wall" we can then intersect the mouse with
 		var RayCast = Camera.main.ScreenPointToRay (Input.mousePosition);	// Generate a ray from the mouse cursor position
 		var HitDist:float = 0; // Determine the point where the cursor ray intersects the plane.
-		
+
 		//Check if we hit the plane
-		if ( playerPlane.Raycast (RayCast, HitDist) ) //&& DisableMouse == false ) 
+		if ( playerPlane.Raycast (RayCast, HitDist) ) //&& DisableMouse == false )
 		{
 			var TargetPoint = RayCast.GetPoint(HitDist); // Get the point along the ray that hits the calculated distance.
 		}
-		
+
 		//Limit player movement, so he doesn't go too far left or right
 		if ( TargetPoint.x > MovementLimits )    TargetPoint.x = MovementLimits;
 		if ( TargetPoint.x < -MovementLimits )    TargetPoint.x = -MovementLimits;
-		
+
 		if (Application.platform != RuntimePlatform.WindowsEditor) TargetPoint.x = MovementLimits * rawThrust;
-		
+
 		transform.LookAt(TargetPoint); //Make the player look in the direction of the cursor
-		
+
 		PlayerPos.x = TargetPoint.x; //Set the desired horizontal player position to be the same as TargetPoint
-		PlayerPos.z = InitPos.z; //Keep the player at his initial forward position 
-		
+		PlayerPos.z = InitPos.z; //Keep the player at his initial forward position
+
 		if ( CustomCursor ) //If we have a custom cursor defined
 		{
 			CustomCursor.LookAt(transform.position); //make the cursor look at the player
-			
+
 			CustomCursor.position = TargetPoint; //move the cursor to the position of intersection with the plane
 			CustomCursor.position.y = transform.position.y; //keep the cursor at the vertical position of the player
 		}
-		
+
 		//Move the player towards the value of player position based on TurningSpeed, and taking into account TurnDamping which will make turning slower
 		transform.position.x -= (transform.position.x - PlayerPos.x) * TurningSpeed * TurnDamping;
 		transform.position.z -= (transform.position.z - InitPos.z) * 0.1;
@@ -305,10 +305,10 @@ function OnCollisionEnter(collision : Collision)
 		JumpState = 0;
 		if (collision.gameObject.transform.parent.GetComponent("Platform") as Platform != null)
 			lastTouchedPlatform = collision.gameObject.transform.parent.gameObject;
-			
+
 		GetComponent.<AudioSource>().PlayOneShot(StepSound); //play a step sound
-		
-		if ( PuffEffect )   
+
+		if ( PuffEffect )
 			Instantiate(PuffEffect, transform.position, Quaternion.identity); //if there is a puff effect, create it at the player's feet
 	}
 }
@@ -329,7 +329,7 @@ function OnDrawGizmos()
 //Right limit of movement
 	Gizmos.color = Color.blue;
 	Gizmos.DrawLine (Vector3(MovementLimits,0,0), Vector3(MovementLimits,10,0));
-	
+
 //Left limit of movement
 	Gizmos.color = Color.blue;
 	Gizmos.DrawLine (Vector3(-MovementLimits,0,0), Vector3(-MovementLimits,10,0));
@@ -337,6 +337,6 @@ function OnDrawGizmos()
 
 private function EndGameRun()
 {
-	gController.EndLevel(); //Run the end level function which is inside the GameController script			
+	gController.EndLevel(); //Run the end level function which is inside the GameController script
 	Destroy(gameObject); //remove the player
 }

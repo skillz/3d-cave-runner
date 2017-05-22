@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Collections.Generic.List`1<System.String>
 struct List_1_t1398341365;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

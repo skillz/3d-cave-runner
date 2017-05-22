@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Char[]
 struct CharU5BU5D_t1328083999;
 // Mono.Globalization.Unicode.TailoringInfo[]
@@ -21,7 +23,8 @@ struct Dictionary_2_t3986656710;
 // System.Byte
 struct Byte_t3683104436;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+
 // System.Reflection.MemberInfo
 struct MemberInfo_t;
 // System.Object
@@ -19,7 +21,8 @@ struct IAsyncResult_t1999651008;
 // System.AsyncCallback
 struct AsyncCallback_t163412349;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

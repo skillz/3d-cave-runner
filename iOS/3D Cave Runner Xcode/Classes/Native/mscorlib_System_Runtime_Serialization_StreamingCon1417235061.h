@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_Runtime_Serialization_StreamingCon4264247603.h"
+
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_Runtime_Serialization_StreamingCon4264247603.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

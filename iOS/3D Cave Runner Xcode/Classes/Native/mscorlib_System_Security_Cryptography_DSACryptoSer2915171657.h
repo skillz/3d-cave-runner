@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_DSA903174880.h"
+
 // Mono.Security.Cryptography.KeyPairPersistence
 struct KeyPairPersistence_t3637935872;
 // Mono.Security.Cryptography.DSAManaged
 struct DSAManaged_t892502321;
 
-#include "mscorlib_System_Security_Cryptography_DSA903174880.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

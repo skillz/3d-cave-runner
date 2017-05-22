@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_Mono_Xml_SmallXmlParser3549787957.h"
+
 // System.Security.SecurityElement
 struct SecurityElement_t2325568386;
 // System.Collections.Stack
 struct Stack_t1043988394;
 
-#include "mscorlib_Mono_Xml_SmallXmlParser3549787957.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

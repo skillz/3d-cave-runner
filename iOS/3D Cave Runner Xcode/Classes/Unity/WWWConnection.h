@@ -10,14 +10,14 @@
 
 + (NSMutableURLRequest*)newRequestForHTTPMethod:(NSString*)method url:(NSURL*)url headers:(NSDictionary*)headers;
 
-@property (readonly, retain, nonatomic) NSURL*				url;
-@property (readonly, retain, nonatomic) NSString*			user;
-@property (readonly, retain, nonatomic) NSString*			password;
-@property (readonly, retain, nonatomic) NSData*				data;
-@property (readonly, retain, nonatomic) NSURLConnection*	connection;
+@property (readonly, retain, nonatomic) NSURL*              url;
+@property (readonly, retain, nonatomic) NSString*           user;
+@property (readonly, retain, nonatomic) NSString*           password;
+@property (readonly, retain, nonatomic) NSData*             data;
+@property (readonly, retain, nonatomic) NSURLConnection*    connection;
 
-@property (readonly, nonatomic)			void*				udata;
-@property (nonatomic)					BOOL				shouldAbort;
+@property (readonly, nonatomic)         void*               udata;
+@property (nonatomic)                   BOOL                shouldAbort;
 
 @end
 
@@ -41,31 +41,31 @@
 // pass subclass name to define
 
 // in case you want custom authentication mecanism, you need to subclass unity WWW delegate
-#define IMPL_WWW_DELEGATE_SUBCLASS(ClassName)		\
-@interface ClassName(OverrideWWWDelegate)			\
-{													\
-}													\
-+(void)load;										\
-@end												\
-@implementation ClassName(OverrideWWWDelegate)		\
-+(void)load											\
-{													\
-	extern const char* WWWDelegateClassName;		\
-	WWWDelegateClassName = #ClassName;				\
-}													\
-@end												\
+#define IMPL_WWW_DELEGATE_SUBCLASS(ClassName)       \
+@interface ClassName(OverrideWWWDelegate)           \
+{                                                   \
+}                                                   \
++(void)load;                                        \
+@end                                                \
+@implementation ClassName(OverrideWWWDelegate)      \
++(void)load                                         \
+{                                                   \
+    extern const char* WWWDelegateClassName;        \
+    WWWDelegateClassName = #ClassName;              \
+}                                                   \
+@end                                                \
 
 // in case you want to tweak URL request settings you need to implement UnityWWWRequestProvider protocol
-#define IMPL_WWW_REQUEST_PROVIDER(ClassName)		\
-@interface ClassName(OverrideRequestProvider)		\
-{													\
-}													\
-+(void)load;										\
-@end												\
-@implementation ClassName(OverrideRequestProvider)	\
-+(void)load											\
-{													\
-	extern const char* WWWRequestProviderClassName;	\
-	WWWRequestProviderClassName = #ClassName;		\
-}													\
-@end												\
+#define IMPL_WWW_REQUEST_PROVIDER(ClassName)        \
+@interface ClassName(OverrideRequestProvider)       \
+{                                                   \
+}                                                   \
++(void)load;                                        \
+@end                                                \
+@implementation ClassName(OverrideRequestProvider)  \
++(void)load                                         \
+{                                                   \
+    extern const char* WWWRequestProviderClassName; \
+    WWWRequestProviderClassName = #ClassName;       \
+}                                                   \
+@end                                                \

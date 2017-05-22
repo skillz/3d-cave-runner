@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Collections_ArrayList4252133567.h"
+
 // System.Collections.ArrayList
 struct ArrayList_t4252133567;
 
-#include "mscorlib_System_Collections_ArrayList4252133567.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

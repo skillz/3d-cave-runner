@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "System_System_Net_SecurityProtocolType3099771628.h"
+
 // System.Collections.Specialized.HybridDictionary
 struct HybridDictionary_t290043810;
 // System.Net.ICertificatePolicy
@@ -17,8 +20,8 @@ struct ICertificatePolicy_t1916536542;
 // System.Net.Security.RemoteCertificateValidationCallback
 struct RemoteCertificateValidationCallback_t2756269959;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "System_System_Net_SecurityProtocolType3099771628.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Collections.Generic.List`1<System.Security.Policy.StrongName>
 struct List_1_t2357868402;
 // System.Security.Policy.StrongName
 struct StrongName_t2988747270;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

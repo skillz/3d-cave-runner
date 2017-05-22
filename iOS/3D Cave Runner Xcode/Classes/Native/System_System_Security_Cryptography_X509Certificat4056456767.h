@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_X509Certifica283079845.h"
+
 // System.Security.Cryptography.X509Certificates.X509ExtensionCollection
 struct X509ExtensionCollection_t650873211;
 // System.String
@@ -25,7 +27,8 @@ struct X509Certificate_t324051958;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_Security_Cryptography_X509Certifica283079845.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

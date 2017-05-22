@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_EventArgs3289624707.h"
+
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_EventArgs3289624707.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

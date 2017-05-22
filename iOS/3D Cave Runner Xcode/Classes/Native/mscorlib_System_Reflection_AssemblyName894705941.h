@@ -10,6 +10,12 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Reflection_AssemblyNameFlags1794031440.h"
+#include "mscorlib_System_Configuration_Assemblies_AssemblyH4147282775.h"
+#include "mscorlib_System_Configuration_Assemblies_AssemblyV1223556284.h"
+#include "mscorlib_System_Reflection_ProcessorArchitecture1620065459.h"
+
 // System.String
 struct String_t;
 // System.Globalization.CultureInfo
@@ -21,11 +27,8 @@ struct ByteU5BU5D_t3397334013;
 // System.Version
 struct Version_t1755874712;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Reflection_AssemblyNameFlags1794031440.h"
-#include "mscorlib_System_Configuration_Assemblies_AssemblyH4147282775.h"
-#include "mscorlib_System_Configuration_Assemblies_AssemblyV1223556284.h"
-#include "mscorlib_System_Reflection_ProcessorArchitecture1620065459.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

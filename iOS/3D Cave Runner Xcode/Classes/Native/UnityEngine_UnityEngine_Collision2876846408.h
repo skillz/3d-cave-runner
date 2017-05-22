@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
 // UnityEngine.Rigidbody
 struct Rigidbody_t4233889191;
 // UnityEngine.Collider
@@ -18,8 +21,8 @@ struct Collider_t3497673348;
 struct ContactPointU5BU5D_t1084937515;
 struct ContactPoint_t1376425630 ;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

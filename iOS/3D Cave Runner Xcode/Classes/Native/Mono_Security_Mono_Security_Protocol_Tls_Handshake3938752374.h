@@ -10,14 +10,17 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_TlsStream4089752859.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake2540099417.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_ContentTyp859870085.h"
+
 // Mono.Security.Protocol.Tls.Context
 struct Context_t4285182719;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_TlsStream4089752859.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake2540099417.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_ContentTyp859870085.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Reflection_MemberTypes3343038963.h"
+
 // System.String
 struct String_t;
 // System.Type
@@ -17,8 +20,8 @@ struct Type_t;
 // System.Type[]
 struct TypeU5BU5D_t1664964607;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Reflection_MemberTypes3343038963.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

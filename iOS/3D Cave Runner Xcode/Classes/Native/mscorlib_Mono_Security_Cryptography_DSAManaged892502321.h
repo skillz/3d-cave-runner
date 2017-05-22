@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_DSA903174880.h"
+
 // Mono.Math.BigInteger
 struct BigInteger_t925946152;
 // System.Security.Cryptography.RandomNumberGenerator
@@ -17,7 +19,8 @@ struct RandomNumberGenerator_t2510243513;
 // Mono.Security.Cryptography.DSAManaged/KeyGeneratedEventHandler
 struct KeyGeneratedEventHandler_t2001522803;
 
-#include "mscorlib_System_Security_Cryptography_DSA903174880.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

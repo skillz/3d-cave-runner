@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_StreamReader2360341767.h"
+
 // System.Boolean[]
 struct BooleanU5BU5D_t3568034315;
 
-#include "mscorlib_System_IO_StreamReader2360341767.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

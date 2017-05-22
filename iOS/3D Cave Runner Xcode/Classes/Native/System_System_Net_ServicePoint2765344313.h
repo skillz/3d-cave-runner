@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_DateTime693205669.h"
+
 // System.Uri
 struct Uri_t19570940;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_DateTime693205669.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Type
 struct Type_t;
 // System.Array
@@ -29,7 +31,8 @@ struct IntComparer_t1754594706;
 // System.MonoEnumInfo/LongComparer
 struct LongComparer_t3923115571;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

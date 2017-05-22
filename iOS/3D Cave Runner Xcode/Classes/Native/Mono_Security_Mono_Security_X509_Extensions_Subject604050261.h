@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_X509_X509Extension1439760127.h"
+
 // Mono.Security.X509.Extensions.GeneralNames
 struct GeneralNames_t2355256240;
 
-#include "Mono_Security_Mono_Security_X509_X509Extension1439760127.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

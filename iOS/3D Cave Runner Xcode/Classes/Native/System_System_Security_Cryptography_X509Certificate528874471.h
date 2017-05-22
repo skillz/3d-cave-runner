@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "System_System_Security_Cryptography_X509Certificate480677120.h"
+
 // System.Security.Cryptography.X509Certificates.X509Certificate2
 struct X509Certificate2_t4056456767;
 // System.Security.Cryptography.X509Certificates.X509ChainStatus[]
@@ -17,8 +20,8 @@ struct X509ChainStatusU5BU5D_t830390908;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "System_System_Security_Cryptography_X509Certificate480677120.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

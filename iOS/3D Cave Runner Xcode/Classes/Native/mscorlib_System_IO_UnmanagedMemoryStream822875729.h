@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
-// System.EventHandler
-struct EventHandler_t277755526;
-
 #include "mscorlib_System_IO_Stream3255436806.h"
 #include "mscorlib_System_IO_FileAccess4282042064.h"
 #include "mscorlib_System_IntPtr2504060609.h"
+
+// System.EventHandler
+struct EventHandler_t277755526;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

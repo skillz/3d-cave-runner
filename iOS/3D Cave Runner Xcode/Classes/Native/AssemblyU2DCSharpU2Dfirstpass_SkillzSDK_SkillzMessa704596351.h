@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+
 // SkillzSDK.SkillzDelegateBase
 struct SkillzDelegateBase_t2433258543;
 // SkillzSDK.SkillzDelegateStandard
@@ -17,7 +19,8 @@ struct SkillzDelegateStandard_t2914650099;
 // SkillzSDK.SkillzDelegateTurnBased
 struct SkillzDelegateTurnBased_t3217995174;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

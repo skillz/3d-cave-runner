@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
-// System.Void
-struct Void_t1841601450;
-
 #include "mscorlib_System_ValueType3507792607.h"
 #include "mscorlib_System_Void1841601450.h"
 #include "mscorlib_System_IntPtr2504060609.h"
+
+// System.Void
+struct Void_t1841601450;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
 // UnityEngine.GameObject
 struct GameObject_t1756533147;
 // PlayerControls
@@ -25,8 +28,8 @@ struct StringU5BU5D_t1642385972;
 // System.String
 struct String_t;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
-#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

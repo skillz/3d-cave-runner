@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "System_System_Net_WebRequest1365124353.h"
+
 // System.Uri
 struct Uri_t19570940;
 // System.Net.IWebProxy
@@ -23,7 +25,8 @@ struct StringU5BU5D_t1642385972;
 // System.Net.Security.RemoteCertificateValidationCallback
 struct RemoteCertificateValidationCallback_t2756269959;
 
-#include "System_System_Net_WebRequest1365124353.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Runtime.Remoting.Messaging.MethodDictionary
 struct MethodDictionary_t1742974787;
 // System.Collections.IDictionaryEnumerator
 struct IDictionaryEnumerator_t259680273;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

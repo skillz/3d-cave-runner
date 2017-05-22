@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_DateTime693205669.h"
+
 // System.String
 struct String_t;
 // System.Collections.ArrayList
@@ -21,8 +24,8 @@ struct X509ExtensionCollection_t1640144840;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_DateTime693205669.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

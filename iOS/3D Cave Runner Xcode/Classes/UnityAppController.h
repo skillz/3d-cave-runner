@@ -10,24 +10,24 @@
 
 @interface UnityAppController : NSObject<UIApplicationDelegate>
 {
-	UnityView*			_unityView;
-	CADisplayLink*		_displayLink;
+    UnityView*          _unityView;
+    CADisplayLink*      _displayLink;
 
-	UIWindow*			_window;
-	UIView*				_rootView;
-	UIViewController*	_rootController;
-	UIView*				_snapshotView;
+    UIWindow*           _window;
+    UIView*             _rootView;
+    UIViewController*   _rootController;
+    UIView*             _snapshotView;
 
-	DisplayConnection*	_mainDisplay;
+    DisplayConnection*  _mainDisplay;
 
-	// we will cache view controllers for fixed orientation
-	// auto-rotation view contoller goes to index=0
-	UIViewController*	_viewControllerForOrientation[5];
+    // we will cache view controllers for fixed orientation
+    // auto-rotation view contoller goes to index=0
+    UIViewController*   _viewControllerForOrientation[5];
 #if !UNITY_TVOS
-	UIInterfaceOrientation	_curOrientation;
+    UIInterfaceOrientation  _curOrientation;
 #endif
 
-	id<RenderPluginDelegate>	_renderDelegate;
+    id<RenderPluginDelegate>    _renderDelegate;
 }
 
 // override it to add your render plugin delegate
@@ -45,60 +45,59 @@
 
 // this is a part of UIApplicationDelegate protocol starting with ios5
 // setter will be generated empty
-@property (retain, nonatomic) UIWindow*	window;
+@property (retain, nonatomic) UIWindow* window;
 
-@property (readonly, copy, nonatomic) UnityView*			unityView;
-@property (readonly, copy, nonatomic) CADisplayLink*		unityDisplayLink;
+@property (readonly, copy, nonatomic) UnityView*            unityView;
+@property (readonly, copy, nonatomic) CADisplayLink*        unityDisplayLink;
 
-@property (readonly, copy, nonatomic) UIView*				rootView;
-@property (readonly, copy, nonatomic) UIViewController*		rootViewController;
-@property (readonly, copy, nonatomic) DisplayConnection*	mainDisplay;
+@property (readonly, copy, nonatomic) UIView*               rootView;
+@property (readonly, copy, nonatomic) UIViewController*     rootViewController;
+@property (readonly, copy, nonatomic) DisplayConnection*    mainDisplay;
 
 #if !UNITY_TVOS
-@property (readonly, nonatomic) UIInterfaceOrientation		interfaceOrientation;
+@property (readonly, nonatomic) UIInterfaceOrientation      interfaceOrientation;
 #endif
 
-@property (nonatomic, retain) id							renderDelegate;
-@property (nonatomic, copy)									void(^quitHandler)();
+@property (nonatomic, retain) id                            renderDelegate;
+@property (nonatomic, copy)                                 void(^quitHandler)();
 
 @end
 
 // Put this into mm file with your subclass implementation
 // pass subclass name to define
 
-#define IMPL_APP_CONTROLLER_SUBCLASS(ClassName)	\
-@interface ClassName(OverrideAppDelegate)		\
-{												\
-}												\
-+(void)load;									\
-@end											\
-@implementation ClassName(OverrideAppDelegate)	\
-+(void)load										\
-{												\
-	extern const char* AppControllerClassName;	\
-	AppControllerClassName = #ClassName;		\
-}												\
-@end											\
+#define IMPL_APP_CONTROLLER_SUBCLASS(ClassName) \
+@interface ClassName(OverrideAppDelegate)       \
+{                                               \
+}                                               \
++(void)load;                                    \
+@end                                            \
+@implementation ClassName(OverrideAppDelegate)  \
++(void)load                                     \
+{                                               \
+    extern const char* AppControllerClassName;  \
+    AppControllerClassName = #ClassName;        \
+}                                               \
+@end                                            \
 
-inline UnityAppController*	GetAppController()
+inline UnityAppController*  GetAppController()
 {
-	return (UnityAppController*)[UIApplication sharedApplication].delegate;
+    return (UnityAppController*)[UIApplication sharedApplication].delegate;
 }
 
-#define APP_CONTROLLER_RENDER_PLUGIN_METHOD(method)							\
-do {																		\
-	id<RenderPluginDelegate> delegate = GetAppController().renderDelegate;	\
-	if([delegate respondsToSelector:@selector(method)])						\
-		[delegate method];													\
+#define APP_CONTROLLER_RENDER_PLUGIN_METHOD(method)                         \
+do {                                                                        \
+    id<RenderPluginDelegate> delegate = GetAppController().renderDelegate;  \
+    if([delegate respondsToSelector:@selector(method)])                     \
+        [delegate method];                                                  \
 } while(0)
 
-#define APP_CONTROLLER_RENDER_PLUGIN_METHOD_ARG(method, arg)				\
-do {																		\
-	id<RenderPluginDelegate> delegate = GetAppController().renderDelegate;	\
-	if([delegate respondsToSelector:@selector(method:)])					\
-		[delegate method:arg];												\
+#define APP_CONTROLLER_RENDER_PLUGIN_METHOD_ARG(method, arg)                \
+do {                                                                        \
+    id<RenderPluginDelegate> delegate = GetAppController().renderDelegate;  \
+    if([delegate respondsToSelector:@selector(method:)])                    \
+        [delegate method:arg];                                              \
 } while(0)
-
 
 
 // these are simple wrappers about ios api, added for convenience

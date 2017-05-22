@@ -10,14 +10,17 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+#include "mscorlib_System_Security_Principal_WindowsAccountT4179100204.h"
+
 // System.String
 struct String_t;
 // System.Runtime.Serialization.SerializationInfo
 struct SerializationInfo_t228987430;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_IntPtr2504060609.h"
-#include "mscorlib_System_Security_Principal_WindowsAccountT4179100204.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

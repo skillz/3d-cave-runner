@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_CipherSuit491456551.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.Object
 struct Il2CppObject;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_CipherSuit491456551.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

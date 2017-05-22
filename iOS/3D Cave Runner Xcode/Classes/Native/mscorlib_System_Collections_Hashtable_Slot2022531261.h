@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -56,12 +59,12 @@ public:
 // Native definition for P/Invoke marshalling of System.Collections.Hashtable/Slot
 struct Slot_t2022531261_marshaled_pinvoke
 {
-	Il2CppObject * ___key_0;
-	Il2CppObject * ___value_1;
+	Il2CppIUnknown* ___key_0;
+	Il2CppIUnknown* ___value_1;
 };
 // Native definition for COM marshalling of System.Collections.Hashtable/Slot
 struct Slot_t2022531261_marshaled_com
 {
-	Il2CppObject * ___key_0;
-	Il2CppObject * ___value_1;
+	Il2CppIUnknown* ___key_0;
+	Il2CppIUnknown* ___value_1;
 };

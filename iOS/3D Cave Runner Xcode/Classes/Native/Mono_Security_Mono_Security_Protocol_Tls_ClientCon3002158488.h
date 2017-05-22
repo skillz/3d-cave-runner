@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_Context4285182719.h"
+
 // Mono.Security.Protocol.Tls.SslClientStream
 struct SslClientStream_t3918817353;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_Context4285182719.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

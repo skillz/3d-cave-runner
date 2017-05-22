@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake3938752374.h"
+
 // System.Security.Cryptography.X509Certificates.X509Certificate
 struct X509Certificate_t283079845;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake3938752374.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

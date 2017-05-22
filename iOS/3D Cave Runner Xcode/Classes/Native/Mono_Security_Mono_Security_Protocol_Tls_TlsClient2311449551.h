@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.String
 struct String_t;
 // System.Security.Cryptography.X509Certificates.X509CertificateCollection
@@ -19,7 +21,8 @@ struct X509Certificate_t283079845;
 // Mono.Security.Cryptography.RSAManaged
 struct RSAManaged_t3034748748;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

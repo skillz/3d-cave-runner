@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Reflection_BindingFlags1082350898.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+
 // System.Reflection.TypeFilter
 struct TypeFilter_t2905709404;
 // System.Reflection.Assembly
@@ -17,9 +21,8 @@ struct Assembly_t4268412390;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Reflection_BindingFlags1082350898.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

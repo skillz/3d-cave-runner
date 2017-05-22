@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // UnityEngine.GameObject
 struct GameObject_t1756533147;
 // UnityEngine.Camera
 struct Camera_t189460977;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

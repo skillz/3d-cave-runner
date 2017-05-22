@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_Proxies_RealProxy298428346.h"
+
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
 // System.Runtime.Remoting.Messaging.IMessageSink
@@ -17,7 +19,8 @@ struct IMessageSink_t2189618969;
 // System.Runtime.Remoting.Messaging.ConstructionCall
 struct ConstructionCall_t1254994451;
 
-#include "mscorlib_System_Runtime_Remoting_Proxies_RealProxy298428346.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

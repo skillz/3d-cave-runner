@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Security_Cryptography_RSAParameter1462703416.h"
+
 // Mono.Security.X509.X509CertificateCollection
 struct X509CertificateCollection_t3592472866;
 // System.Security.Cryptography.RSA
@@ -21,8 +24,8 @@ struct StringU5BU5D_t1642385972;
 // Mono.Security.Protocol.Tls.Handshake.ClientCertificateType[]
 struct ClientCertificateTypeU5BU5D_t2397899623;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Security_Cryptography_RSAParameter1462703416.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

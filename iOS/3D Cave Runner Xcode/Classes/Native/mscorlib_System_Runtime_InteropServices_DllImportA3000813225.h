@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
-// System.String
-struct String_t;
-
 #include "mscorlib_System_Attribute542643598.h"
 #include "mscorlib_System_Runtime_InteropServices_CallingCon3354538265.h"
 #include "mscorlib_System_Runtime_InteropServices_CharSet2778376310.h"
+
+// System.String
+struct String_t;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

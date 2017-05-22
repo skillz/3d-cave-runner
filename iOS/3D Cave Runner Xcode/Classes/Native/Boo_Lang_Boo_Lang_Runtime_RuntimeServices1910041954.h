@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Object[]
 struct ObjectU5BU5D_t3614634134;
 // System.Type
@@ -21,7 +23,8 @@ struct ExtensionRegistry_t1402255936;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_HashAlgorith2624936259.h"
+
 // System.Security.Cryptography.HashAlgorithm
 struct HashAlgorithm_t2624936259;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_Security_Cryptography_HashAlgorith2624936259.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -13,10 +13,51 @@
 #include <limits>
 #include <assert.h>
 
+#include "class-internals.h"
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Array3829468939.h"
+#include "System_Core_U3CModuleU3E3783534214.h"
+#include "System_Core_U3CPrivateImplementationDetailsU3E1486305137.h"
+#include "System_Core_U3CPrivateImplementationDetailsU3E_U242672183894.h"
+#include "System_Core_U3CPrivateImplementationDetailsU3E_U24A116038562.h"
+#include "System_Core_U3CPrivateImplementationDetailsU3E_U242038352954.h"
+#include "System_Core_Locale4255929014.h"
+#include "mscorlib_System_String2029220233.h"
+#include "mscorlib_System_Object2689449295.h"
+#include "System_Core_Mono_Security_Cryptography_KeyBuilder3965881084.h"
+#include "mscorlib_System_Security_Cryptography_RandomNumber2510243513.h"
+#include "mscorlib_System_Byte3683104436.h"
+#include "mscorlib_System_Int322071877448.h"
+#include "mscorlib_System_Void1841601450.h"
+#include "System_Core_Mono_Security_Cryptography_SymmetricTr1394030013.h"
+#include "mscorlib_System_Security_Cryptography_SymmetricAlg1108166522.h"
+#include "mscorlib_System_Boolean3825574718.h"
+#include "mscorlib_System_Security_Cryptography_Cryptographi3349726436.h"
+#include "mscorlib_System_Security_Cryptography_CipherMode162592484.h"
+#include "mscorlib_System_Enum2459695545.h"
+#include "mscorlib_System_NotImplementedException2785117854.h"
+#include "mscorlib_System_ArgumentNullException628810857.h"
+#include "mscorlib_System_ArgumentOutOfRangeException279959794.h"
+#include "mscorlib_System_ArgumentException3259014390.h"
+#include "mscorlib_System_ObjectDisposedException2695136451.h"
+#include "mscorlib_System_Security_Cryptography_PaddingMode3032142640.h"
+#include "System_Core_System_Linq_Check578192424.h"
+#include "System_Core_System_Linq_Enumerable2148412300.h"
+#include "System_Core_System_Runtime_CompilerServices_Extens1840441203.h"
+#include "mscorlib_System_Attribute542643598.h"
+#include "System_Core_System_Security_Cryptography_Aes2354947465.h"
+#include "mscorlib_System_Security_Cryptography_KeySizes3144736271.h"
+#include "System_Core_System_Security_Cryptography_AesManage3721278648.h"
+#include "System_Core_System_Security_Cryptography_AesTransf3733702461.h"
+#include "mscorlib_System_UInt322149682021.h"
+#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
+
 // System.String
 struct String_t;
 // System.Object[]
 struct ObjectU5BU5D_t3614634134;
+// System.Object
+struct Il2CppObject;
 // System.Security.Cryptography.RandomNumberGenerator
 struct RandomNumberGenerator_t2510243513;
 // System.Byte[]
@@ -25,10 +66,28 @@ struct ByteU5BU5D_t3397334013;
 struct SymmetricTransform_t1394030014;
 // System.Security.Cryptography.SymmetricAlgorithm
 struct SymmetricAlgorithm_t1108166522;
+// System.Array
+struct Il2CppArray;
+// System.Security.Cryptography.CryptographicException
+struct CryptographicException_t3349726436;
+// System.NotImplementedException
+struct NotImplementedException_t2785117854;
+// System.ArgumentNullException
+struct ArgumentNullException_t628810857;
+// System.ArgumentOutOfRangeException
+struct ArgumentOutOfRangeException_t279959794;
+// System.ArgumentException
+struct ArgumentException_t3259014390;
+// System.ObjectDisposedException
+struct ObjectDisposedException_t2695136451;
 // System.Runtime.CompilerServices.ExtensionAttribute
 struct ExtensionAttribute_t1840441203;
+// System.Attribute
+struct Attribute_t542643598;
 // System.Security.Cryptography.Aes
 struct Aes_t2354947465;
+// System.Security.Cryptography.KeySizes
+struct KeySizes_t3144736271;
 // System.Security.Cryptography.AesManaged
 struct AesManaged_t3721278648;
 // System.Security.Cryptography.ICryptoTransform
@@ -37,74 +96,332 @@ struct ICryptoTransform_t281704372;
 struct AesTransform_t3733702461;
 // System.UInt32[]
 struct UInt32U5BU5D_t59386216;
+extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
+extern const uint32_t Locale_GetText_m512920887_MetadataUsageId;
+extern Il2CppClass* KeyBuilder_t3965881086_il2cpp_TypeInfo_var;
+extern const uint32_t KeyBuilder_get_Rng_m587346233_MetadataUsageId;
+extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
+extern const uint32_t KeyBuilder_Key_m4049966884_MetadataUsageId;
+extern const uint32_t KeyBuilder_IV_m3179063262_MetadataUsageId;
+extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
+extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
+extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral4082131765;
+extern const uint32_t SymmetricTransform__ctor_m4253316482_MetadataUsageId;
+extern Il2CppClass* CipherMode_t162592484_il2cpp_TypeInfo_var;
+extern Il2CppClass* NotImplementedException_t2785117854_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral242518878;
+extern const uint32_t SymmetricTransform_Transform_m2796657329_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2422384174;
+extern const uint32_t SymmetricTransform_OFB_m397918932_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral2322410599;
+extern const uint32_t SymmetricTransform_CTS_m4257703857_MetadataUsageId;
+extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
+extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral609194916;
+extern Il2CppCodeGenString* _stringLiteral3110660963;
+extern Il2CppCodeGenString* _stringLiteral816987394;
+extern Il2CppCodeGenString* _stringLiteral2737893205;
+extern Il2CppCodeGenString* _stringLiteral5961480;
+extern const uint32_t SymmetricTransform_CheckInput_m1287204652_MetadataUsageId;
+extern Il2CppClass* ObjectDisposedException_t2695136451_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral4158020802;
+extern Il2CppCodeGenString* _stringLiteral2553810003;
+extern Il2CppCodeGenString* _stringLiteral106791344;
+extern const uint32_t SymmetricTransform_TransformBlock_m2733481667_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral936694437;
+extern const uint32_t SymmetricTransform_InternalTransformBlock_m2049959094_MetadataUsageId;
+extern const uint32_t SymmetricTransform_Random_m3912330177_MetadataUsageId;
+extern Il2CppClass* PaddingMode_t3032142640_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral4084030132;
+extern Il2CppCodeGenString* _stringLiteral3305000113;
+extern Il2CppCodeGenString* _stringLiteral1380876512;
+extern const uint32_t SymmetricTransform_ThrowBadPaddingException_m2553969731_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral1965455840;
+extern const uint32_t SymmetricTransform_FinalEncrypt_m952048093_MetadataUsageId;
+extern const uint32_t SymmetricTransform_FinalDecrypt_m1391053911_MetadataUsageId;
+extern const uint32_t SymmetricTransform_TransformFinalBlock_m631349995_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral4211174801;
+extern const uint32_t Check_Source_m3385315029_MetadataUsageId;
+extern Il2CppCodeGenString* _stringLiteral744571857;
+extern const uint32_t Check_SourceAndPredicate_m2063478409_MetadataUsageId;
+extern Il2CppClass* KeySizesU5BU5D_t1153004758_il2cpp_TypeInfo_var;
+extern Il2CppClass* KeySizes_t3144736271_il2cpp_TypeInfo_var;
+extern const uint32_t Aes__ctor_m4020215067_MetadataUsageId;
+extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
+extern const uint32_t AesManaged_CreateDecryptor_m1136566004_MetadataUsageId;
+extern const uint32_t AesManaged_CreateEncryptor_m1729287824_MetadataUsageId;
+extern Il2CppClass* UInt32U5BU5D_t59386216_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral2618172828;
+extern Il2CppCodeGenString* _stringLiteral4238098139;
+extern Il2CppCodeGenString* _stringLiteral3083772989;
+extern const uint32_t AesTransform__ctor_m3304222252_MetadataUsageId;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D1_0_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D2_1_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D3_2_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D4_3_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D5_4_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D6_5_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D7_6_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D8_7_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D9_8_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D10_9_FieldInfo_var;
+extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D11_10_FieldInfo_var;
+extern const uint32_t AesTransform__cctor_m619532760_MetadataUsageId;
+extern const uint32_t AesTransform_SubByte_m3508318874_MetadataUsageId;
+extern const uint32_t AesTransform_Encrypt128_m617981965_MetadataUsageId;
+extern const uint32_t AesTransform_Decrypt128_m3067379519_MetadataUsageId;
 
-#include "class-internals.h"
-#include "codegen/il2cpp-codegen.h"
-#include "mscorlib_System_Array3829468939.h"
-#include "System_Core_U3CModuleU3E3783534214.h"
-#include "System_Core_U3CModuleU3E3783534214MethodDeclarations.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E1486305137.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E1486305137MethodDeclarations.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E_U242672183894.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E_U242672183894MethodDeclarations.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E_U24A116038562.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E_U24A116038562MethodDeclarations.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E_U242038352954.h"
-#include "System_Core_U3CPrivateImplementationDetailsU3E_U242038352954MethodDeclarations.h"
-#include "System_Core_Locale4255929014.h"
-#include "System_Core_Locale4255929014MethodDeclarations.h"
-#include "mscorlib_System_String2029220233.h"
-#include "mscorlib_ArrayTypes.h"
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_String2029220233MethodDeclarations.h"
-#include "System_Core_Mono_Security_Cryptography_KeyBuilder3965881084.h"
-#include "System_Core_Mono_Security_Cryptography_KeyBuilder3965881084MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_RandomNumber2510243513.h"
-#include "mscorlib_System_Security_Cryptography_RandomNumber2510243513MethodDeclarations.h"
-#include "mscorlib_System_Byte3683104436.h"
-#include "mscorlib_System_Int322071877448.h"
-#include "mscorlib_System_Void1841601450.h"
-#include "System_Core_Mono_Security_Cryptography_SymmetricTr1394030013.h"
-#include "System_Core_Mono_Security_Cryptography_SymmetricTr1394030013MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_SymmetricAlg1108166522.h"
-#include "mscorlib_System_Boolean3825574718.h"
-#include "mscorlib_System_Object2689449295MethodDeclarations.h"
-#include "mscorlib_System_Array3829468939MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_Cryptographi3349726436MethodDeclarations.h"
-#include "mscorlib_System_Math2022911894MethodDeclarations.h"
-#include "mscorlib_System_Buffer3497320070MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_SymmetricAlg1108166522MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_Cryptographi3349726436.h"
-#include "mscorlib_System_GC2902933594MethodDeclarations.h"
-#include "mscorlib_System_NotImplementedException2785117854MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_CipherMode162592484.h"
-#include "mscorlib_System_Enum2459695545MethodDeclarations.h"
-#include "mscorlib_System_Enum2459695545.h"
-#include "mscorlib_System_NotImplementedException2785117854.h"
-#include "mscorlib_System_ArgumentNullException628810857MethodDeclarations.h"
-#include "mscorlib_System_ArgumentOutOfRangeException279959794MethodDeclarations.h"
-#include "mscorlib_System_ArgumentException3259014390MethodDeclarations.h"
-#include "mscorlib_System_ArgumentNullException628810857.h"
-#include "mscorlib_System_ArgumentOutOfRangeException279959794.h"
-#include "mscorlib_System_ArgumentException3259014390.h"
-#include "mscorlib_System_ObjectDisposedException2695136451MethodDeclarations.h"
-#include "mscorlib_System_ObjectDisposedException2695136451.h"
-#include "mscorlib_System_Security_Cryptography_PaddingMode3032142640.h"
-#include "System_Core_System_Runtime_CompilerServices_Extens1840441203.h"
-#include "System_Core_System_Runtime_CompilerServices_Extens1840441203MethodDeclarations.h"
-#include "mscorlib_System_Attribute542643598MethodDeclarations.h"
-#include "System_Core_System_Security_Cryptography_Aes2354947465.h"
-#include "System_Core_System_Security_Cryptography_Aes2354947465MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_KeySizes3144736271MethodDeclarations.h"
-#include "mscorlib_System_Security_Cryptography_KeySizes3144736271.h"
-#include "System_Core_System_Security_Cryptography_AesManage3721278648.h"
-#include "System_Core_System_Security_Cryptography_AesManage3721278648MethodDeclarations.h"
-#include "System_Core_System_Security_Cryptography_AesTransf3733702461MethodDeclarations.h"
-#include "System_Core_System_Security_Cryptography_AesTransf3733702461.h"
-#include "mscorlib_System_UInt322149682021.h"
-#include "mscorlib_System_Runtime_CompilerServices_RuntimeHel266230107MethodDeclarations.h"
-#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
+// System.Object[]
+struct ObjectU5BU5D_t3614634134  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Il2CppObject * m_Items[1];
 
+public:
+	inline Il2CppObject * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Il2CppObject ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Il2CppObject * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline Il2CppObject * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Il2CppObject ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Il2CppObject * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+// System.Byte[]
+struct ByteU5BU5D_t3397334013  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) uint8_t m_Items[1];
+
+public:
+	inline uint8_t GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline uint8_t* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, uint8_t value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline uint8_t GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline uint8_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, uint8_t value)
+	{
+		m_Items[index] = value;
+	}
+};
+// System.Security.Cryptography.KeySizes[]
+struct KeySizesU5BU5D_t1153004758  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) KeySizes_t3144736271 * m_Items[1];
+
+public:
+	inline KeySizes_t3144736271 * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline KeySizes_t3144736271 ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, KeySizes_t3144736271 * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline KeySizes_t3144736271 * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline KeySizes_t3144736271 ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, KeySizes_t3144736271 * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+// System.UInt32[]
+struct UInt32U5BU5D_t59386216  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) uint32_t m_Items[1];
+
+public:
+	inline uint32_t GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline uint32_t* GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, uint32_t value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+	}
+	inline uint32_t GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline uint32_t* GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, uint32_t value)
+	{
+		m_Items[index] = value;
+	}
+};
+
+
+
+// System.String System.String::Format(System.String,System.Object[])
+extern "C"  String_t* String_Format_m1263743648 (Il2CppObject * __this /* static, unused */, String_t* p0, ObjectU5BU5D_t3614634134* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.RandomNumberGenerator System.Security.Cryptography.RandomNumberGenerator::Create()
+extern "C"  RandomNumberGenerator_t2510243513 * RandomNumberGenerator_Create_m2275686895 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.RandomNumberGenerator Mono.Security.Cryptography.KeyBuilder::get_Rng()
+extern "C"  RandomNumberGenerator_t2510243513 * KeyBuilder_get_Rng_m587346233 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Object::.ctor()
+extern "C"  void Object__ctor_m2551263788 (Il2CppObject * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] Mono.Security.Cryptography.KeyBuilder::IV(System.Int32)
+extern "C"  ByteU5BU5D_t3397334013* KeyBuilder_IV_m3179063262 (Il2CppObject * __this /* static, unused */, int32_t ___size0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object System.Array::Clone()
+extern "C"  Il2CppObject * Array_Clone_m768574314 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Locale::GetText(System.String,System.Object[])
+extern "C"  String_t* Locale_GetText_m512920887 (Il2CppObject * __this /* static, unused */, String_t* ___fmt0, ObjectU5BU5D_t3614634134* ___args1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.CryptographicException::.ctor(System.String)
+extern "C"  void CryptographicException__ctor_m2415891459 (CryptographicException_t3349726436 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Math::Min(System.Int32,System.Int32)
+extern "C"  int32_t Math_Min_m4290821911 (Il2CppObject * __this /* static, unused */, int32_t p0, int32_t p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Buffer::BlockCopy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
+extern "C"  void Buffer_BlockCopy_m1586717258 (Il2CppObject * __this /* static, unused */, Il2CppArray * p0, int32_t p1, Il2CppArray * p2, int32_t p3, int32_t p4, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.GC::SuppressFinalize(System.Object)
+extern "C"  void GC_SuppressFinalize_m953228702 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Object::Finalize()
+extern "C"  void Object_Finalize_m4087144328 (Il2CppObject * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Array::Clear(System.Array,System.Int32,System.Int32)
+extern "C"  void Array_Clear_m782967417 (Il2CppObject * __this /* static, unused */, Il2CppArray * p0, int32_t p1, int32_t p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Concat(System.String,System.String)
+extern "C"  String_t* String_Concat_m2596409543 (Il2CppObject * __this /* static, unused */, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.NotImplementedException::.ctor(System.String)
+extern "C"  void NotImplementedException__ctor_m1795163961 (NotImplementedException_t2785117854 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentNullException::.ctor(System.String)
+extern "C"  void ArgumentNullException__ctor_m3380712306 (ArgumentNullException_t628810857 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentOutOfRangeException::.ctor(System.String,System.String)
+extern "C"  void ArgumentOutOfRangeException__ctor_m4234257711 (ArgumentOutOfRangeException_t279959794 * __this, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Locale::GetText(System.String)
+extern "C"  String_t* Locale_GetText_m3480617287 (Il2CppObject * __this /* static, unused */, String_t* ___msg0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentException::.ctor(System.String,System.String)
+extern "C"  void ArgumentException__ctor_m544251339 (ArgumentException_t3259014390 * __this, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ObjectDisposedException::.ctor(System.String)
+extern "C"  void ObjectDisposedException__ctor_m3156784572 (ObjectDisposedException_t2695136451 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.Cryptography.SymmetricTransform::CheckInput(System.Byte[],System.Int32,System.Int32)
+extern "C"  void SymmetricTransform_CheckInput_m1287204652 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.CryptographicException::.ctor(System.String,System.String)
+extern "C"  void CryptographicException__ctor_m406825529 (CryptographicException_t3349726436 * __this, String_t* p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean Mono.Security.Cryptography.SymmetricTransform::get_KeepLastBlock()
+extern "C"  bool SymmetricTransform_get_KeepLastBlock_m2750346332 (SymmetricTransform_t1394030014 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 Mono.Security.Cryptography.SymmetricTransform::InternalTransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)
+extern "C"  int32_t SymmetricTransform_InternalTransformBlock_m2049959094 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, ByteU5BU5D_t3397334013* ___outputBuffer3, int32_t ___outputOffset4, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String System.String::Format(System.String,System.Object)
+extern "C"  String_t* String_Format_m2024975688 (Il2CppObject * __this /* static, unused */, String_t* p0, Il2CppObject * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.Cryptography.SymmetricTransform::Random(System.Byte[],System.Int32,System.Int32)
+extern "C"  void SymmetricTransform_Random_m3912330177 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___buffer0, int32_t ___start1, int32_t ___length2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.Cryptography.SymmetricTransform::ThrowBadPaddingException(System.Security.Cryptography.PaddingMode,System.Int32,System.Int32)
+extern "C"  void SymmetricTransform_ThrowBadPaddingException_m2553969731 (SymmetricTransform_t1394030014 * __this, int32_t ___padding0, int32_t ___length1, int32_t ___position2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] Mono.Security.Cryptography.SymmetricTransform::FinalEncrypt(System.Byte[],System.Int32,System.Int32)
+extern "C"  ByteU5BU5D_t3397334013* SymmetricTransform_FinalEncrypt_m952048093 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] Mono.Security.Cryptography.SymmetricTransform::FinalDecrypt(System.Byte[],System.Int32,System.Int32)
+extern "C"  ByteU5BU5D_t3397334013* SymmetricTransform_FinalDecrypt_m1391053911 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Attribute::.ctor()
+extern "C"  void Attribute__ctor_m1730479323 (Attribute_t542643598 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.SymmetricAlgorithm::.ctor()
+extern "C"  void SymmetricAlgorithm__ctor_m851603055 (SymmetricAlgorithm_t1108166522 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.KeySizes::.ctor(System.Int32,System.Int32,System.Int32)
+extern "C"  void KeySizes__ctor_m3526899007 (KeySizes_t3144736271 * __this, int32_t p0, int32_t p1, int32_t p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.Aes::.ctor()
+extern "C"  void Aes__ctor_m4020215067 (Aes_t2354947465 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] Mono.Security.Cryptography.KeyBuilder::Key(System.Int32)
+extern "C"  ByteU5BU5D_t3397334013* KeyBuilder_Key_m4049966884 (Il2CppObject * __this /* static, unused */, int32_t ___size0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AesTransform::.ctor(System.Security.Cryptography.Aes,System.Boolean,System.Byte[],System.Byte[])
+extern "C"  void AesTransform__ctor_m3304222252 (AesTransform_t3733702461 * __this, Aes_t2354947465 * ___algo0, bool ___encryption1, ByteU5BU5D_t3397334013* ___key2, ByteU5BU5D_t3397334013* ___iv3, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.SymmetricAlgorithm::get_IV()
+extern "C"  ByteU5BU5D_t3397334013* SymmetricAlgorithm_get_IV_m1608154021 (SymmetricAlgorithm_t1108166522 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.SymmetricAlgorithm::set_IV(System.Byte[])
+extern "C"  void SymmetricAlgorithm_set_IV_m4262655606 (SymmetricAlgorithm_t1108166522 * __this, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.SymmetricAlgorithm::get_Key()
+extern "C"  ByteU5BU5D_t3397334013* SymmetricAlgorithm_get_Key_m1408548977 (SymmetricAlgorithm_t1108166522 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.SymmetricAlgorithm::set_Key(System.Byte[])
+extern "C"  void SymmetricAlgorithm_set_Key_m2973350820 (SymmetricAlgorithm_t1108166522 * __this, ByteU5BU5D_t3397334013* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Security.Cryptography.SymmetricAlgorithm::get_KeySize()
+extern "C"  int32_t SymmetricAlgorithm_get_KeySize_m4259485468 (SymmetricAlgorithm_t1108166522 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.SymmetricAlgorithm::set_KeySize(System.Int32)
+extern "C"  void SymmetricAlgorithm_set_KeySize_m270664177 (SymmetricAlgorithm_t1108166522 * __this, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.AesManaged::get_Key()
+extern "C"  ByteU5BU5D_t3397334013* AesManaged_get_Key_m1100519798 (AesManaged_t3721278648 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Byte[] System.Security.Cryptography.AesManaged::get_IV()
+extern "C"  ByteU5BU5D_t3397334013* AesManaged_get_IV_m560133634 (AesManaged_t3721278648 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.AesManaged::CreateDecryptor(System.Byte[],System.Byte[])
+extern "C"  Il2CppObject * AesManaged_CreateDecryptor_m1136566004 (AesManaged_t3721278648 * __this, ByteU5BU5D_t3397334013* ___rgbKey0, ByteU5BU5D_t3397334013* ___rgbIV1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.AesManaged::CreateEncryptor(System.Byte[],System.Byte[])
+extern "C"  Il2CppObject * AesManaged_CreateEncryptor_m1729287824 (AesManaged_t3721278648 * __this, ByteU5BU5D_t3397334013* ___rgbKey0, ByteU5BU5D_t3397334013* ___rgbIV1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.SymmetricAlgorithm::Dispose(System.Boolean)
+extern "C"  void SymmetricAlgorithm_Dispose_m120666995 (SymmetricAlgorithm_t1108166522 * __this, bool p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Mono.Security.Cryptography.SymmetricTransform::.ctor(System.Security.Cryptography.SymmetricAlgorithm,System.Boolean,System.Byte[])
+extern "C"  void SymmetricTransform__ctor_m4253316482 (SymmetricTransform_t1394030014 * __this, SymmetricAlgorithm_t1108166522 * ___symmAlgo0, bool ___encryption1, ByteU5BU5D_t3397334013* ___rgbIV2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.UInt32 System.Security.Cryptography.AesTransform::SubByte(System.UInt32)
+extern "C"  uint32_t AesTransform_SubByte_m3508318874 (AesTransform_t3733702461 * __this, uint32_t ___a0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(System.Array,System.RuntimeFieldHandle)
+extern "C"  void RuntimeHelpers_InitializeArray_m3920580167 (Il2CppObject * __this /* static, unused */, Il2CppArray * p0, RuntimeFieldHandle_t2331729674  p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AesTransform::Encrypt128(System.Byte[],System.Byte[],System.UInt32[])
+extern "C"  void AesTransform_Encrypt128_m617981965 (AesTransform_t3733702461 * __this, ByteU5BU5D_t3397334013* ___indata0, ByteU5BU5D_t3397334013* ___outdata1, UInt32U5BU5D_t59386216* ___ekey2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Security.Cryptography.AesTransform::Decrypt128(System.Byte[],System.Byte[],System.UInt32[])
+extern "C"  void AesTransform_Decrypt128_m3067379519 (AesTransform_t3733702461 * __this, ByteU5BU5D_t3397334013* ___indata0, ByteU5BU5D_t3397334013* ___outdata1, UInt32U5BU5D_t59386216* ___ekey2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -119,8 +436,6 @@ extern "C"  String_t* Locale_GetText_m3480617287 (Il2CppObject * __this /* stati
 	}
 }
 // System.String Locale::GetText(System.String,System.Object[])
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern const uint32_t Locale_GetText_m512920887_MetadataUsageId;
 extern "C"  String_t* Locale_GetText_m512920887 (Il2CppObject * __this /* static, unused */, String_t* ___fmt0, ObjectU5BU5D_t3614634134* ___args1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -138,8 +453,6 @@ extern "C"  String_t* Locale_GetText_m512920887 (Il2CppObject * __this /* static
 	}
 }
 // System.Security.Cryptography.RandomNumberGenerator Mono.Security.Cryptography.KeyBuilder::get_Rng()
-extern Il2CppClass* KeyBuilder_t3965881086_il2cpp_TypeInfo_var;
-extern const uint32_t KeyBuilder_get_Rng_m587346233_MetadataUsageId;
 extern "C"  RandomNumberGenerator_t2510243513 * KeyBuilder_get_Rng_m587346233 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -167,8 +480,6 @@ IL_0014:
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.KeyBuilder::Key(System.Int32)
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern const uint32_t KeyBuilder_Key_m4049966884_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* KeyBuilder_Key_m4049966884 (Il2CppObject * __this /* static, unused */, int32_t ___size0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -190,8 +501,6 @@ extern "C"  ByteU5BU5D_t3397334013* KeyBuilder_Key_m4049966884 (Il2CppObject * _
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.KeyBuilder::IV(System.Int32)
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern const uint32_t KeyBuilder_IV_m3179063262_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* KeyBuilder_IV_m3179063262 (Il2CppObject * __this /* static, unused */, int32_t ___size0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -213,12 +522,6 @@ extern "C"  ByteU5BU5D_t3397334013* KeyBuilder_IV_m3179063262 (Il2CppObject * __
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::.ctor(System.Security.Cryptography.SymmetricAlgorithm,System.Boolean,System.Byte[])
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral4082131765;
-extern const uint32_t SymmetricTransform__ctor_m4253316482_MetadataUsageId;
 extern "C"  void SymmetricTransform__ctor_m4253316482 (SymmetricTransform_t1394030014 * __this, SymmetricAlgorithm_t1108166522 * ___symmAlgo0, bool ___encryption1, ByteU5BU5D_t3397334013* ___rgbIV2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -424,11 +727,6 @@ extern "C"  bool SymmetricTransform_get_CanReuseTransform_m1428518336 (Symmetric
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::Transform(System.Byte[],System.Byte[])
-extern Il2CppClass* CipherMode_t162592484_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* NotImplementedException_t2785117854_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral242518878;
-extern const uint32_t SymmetricTransform_Transform_m2796657329_MetadataUsageId;
 extern "C"  void SymmetricTransform_Transform_m2796657329 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___input0, ByteU5BU5D_t3397334013* ___output1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -444,25 +742,28 @@ extern "C"  void SymmetricTransform_Transform_m2796657329 (SymmetricTransform_t1
 		int32_t L_1 = VirtFuncInvoker0< int32_t >::Invoke(16 /* System.Security.Cryptography.CipherMode System.Security.Cryptography.SymmetricAlgorithm::get_Mode() */, L_0);
 		V_0 = L_1;
 		int32_t L_2 = V_0;
-		if (((int32_t)((int32_t)L_2-(int32_t)1)) == 0)
+		switch (((int32_t)((int32_t)L_2-(int32_t)1)))
 		{
-			goto IL_003a;
-		}
-		if (((int32_t)((int32_t)L_2-(int32_t)1)) == 1)
-		{
-			goto IL_002d;
-		}
-		if (((int32_t)((int32_t)L_2-(int32_t)1)) == 2)
-		{
-			goto IL_0054;
-		}
-		if (((int32_t)((int32_t)L_2-(int32_t)1)) == 3)
-		{
-			goto IL_0047;
-		}
-		if (((int32_t)((int32_t)L_2-(int32_t)1)) == 4)
-		{
-			goto IL_0061;
+			case 0:
+			{
+				goto IL_003a;
+			}
+			case 1:
+			{
+				goto IL_002d;
+			}
+			case 2:
+			{
+				goto IL_0054;
+			}
+			case 3:
+			{
+				goto IL_0047;
+			}
+			case 4:
+			{
+				goto IL_0061;
+			}
 		}
 	}
 	{
@@ -805,9 +1106,6 @@ IL_0150:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::OFB(System.Byte[],System.Byte[])
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2422384174;
-extern const uint32_t SymmetricTransform_OFB_m397918932_MetadataUsageId;
 extern "C"  void SymmetricTransform_OFB_m397918932 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___input0, ByteU5BU5D_t3397334013* ___output1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -823,9 +1121,6 @@ extern "C"  void SymmetricTransform_OFB_m397918932 (SymmetricTransform_t13940300
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::CTS(System.Byte[],System.Byte[])
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2322410599;
-extern const uint32_t SymmetricTransform_CTS_m4257703857_MetadataUsageId;
 extern "C"  void SymmetricTransform_CTS_m4257703857 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___input0, ByteU5BU5D_t3397334013* ___output1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -841,15 +1136,6 @@ extern "C"  void SymmetricTransform_CTS_m4257703857 (SymmetricTransform_t1394030
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::CheckInput(System.Byte[],System.Int32,System.Int32)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentException_t3259014390_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral609194916;
-extern Il2CppCodeGenString* _stringLiteral3110660963;
-extern Il2CppCodeGenString* _stringLiteral816987394;
-extern Il2CppCodeGenString* _stringLiteral2737893205;
-extern Il2CppCodeGenString* _stringLiteral5961480;
-extern const uint32_t SymmetricTransform_CheckInput_m1287204652_MetadataUsageId;
 extern "C"  void SymmetricTransform_CheckInput_m1287204652 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -923,16 +1209,6 @@ IL_005f:
 	}
 }
 // System.Int32 Mono.Security.Cryptography.SymmetricTransform::TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)
-extern Il2CppClass* ObjectDisposedException_t2695136451_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ArgumentOutOfRangeException_t279959794_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral4158020802;
-extern Il2CppCodeGenString* _stringLiteral2553810003;
-extern Il2CppCodeGenString* _stringLiteral106791344;
-extern Il2CppCodeGenString* _stringLiteral816987394;
-extern Il2CppCodeGenString* _stringLiteral5961480;
-extern const uint32_t SymmetricTransform_TransformBlock_m2733481667_MetadataUsageId;
 extern "C"  int32_t SymmetricTransform_TransformBlock_m2733481667 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, ByteU5BU5D_t3397334013* ___outputBuffer3, int32_t ___outputOffset4, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1148,9 +1424,6 @@ IL_0030:
 	}
 }
 // System.Int32 Mono.Security.Cryptography.SymmetricTransform::InternalTransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral936694437;
-extern const uint32_t SymmetricTransform_InternalTransformBlock_m2049959094_MetadataUsageId;
 extern "C"  int32_t SymmetricTransform_InternalTransformBlock_m2049959094 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, ByteU5BU5D_t3397334013* ___outputBuffer3, int32_t ___outputOffset4, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1306,8 +1579,6 @@ IL_0126:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::Random(System.Byte[],System.Int32,System.Int32)
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern const uint32_t SymmetricTransform_Random_m3912330177_MetadataUsageId;
 extern "C"  void SymmetricTransform_Random_m3912330177 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___buffer0, int32_t ___start1, int32_t ___length2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1346,14 +1617,6 @@ IL_0016:
 	}
 }
 // System.Void Mono.Security.Cryptography.SymmetricTransform::ThrowBadPaddingException(System.Security.Cryptography.PaddingMode,System.Int32,System.Int32)
-extern Il2CppClass* PaddingMode_t3032142640_il2cpp_TypeInfo_var;
-extern Il2CppClass* String_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral4084030132;
-extern Il2CppCodeGenString* _stringLiteral3305000113;
-extern Il2CppCodeGenString* _stringLiteral1380876512;
-extern const uint32_t SymmetricTransform_ThrowBadPaddingException_m2553969731_MetadataUsageId;
 extern "C"  void SymmetricTransform_ThrowBadPaddingException_m2553969731 (SymmetricTransform_t1394030014 * __this, int32_t ___padding0, int32_t ___length1, int32_t ___position2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1418,10 +1681,6 @@ IL_005c:
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.SymmetricTransform::FinalEncrypt(System.Byte[],System.Int32,System.Int32)
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral1965455840;
-extern const uint32_t SymmetricTransform_FinalEncrypt_m952048093_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* SymmetricTransform_FinalEncrypt_m952048093 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1454,21 +1713,24 @@ extern "C"  ByteU5BU5D_t3397334013* SymmetricTransform_FinalEncrypt_m952048093 (
 		int32_t L_7 = VirtFuncInvoker0< int32_t >::Invoke(18 /* System.Security.Cryptography.PaddingMode System.Security.Cryptography.SymmetricAlgorithm::get_Padding() */, L_6);
 		V_8 = L_7;
 		int32_t L_8 = V_8;
-		if (((int32_t)((int32_t)L_8-(int32_t)2)) == 0)
+		switch (((int32_t)((int32_t)L_8-(int32_t)2)))
 		{
-			goto IL_0041;
-		}
-		if (((int32_t)((int32_t)L_8-(int32_t)2)) == 1)
-		{
-			goto IL_004f;
-		}
-		if (((int32_t)((int32_t)L_8-(int32_t)2)) == 2)
-		{
-			goto IL_0041;
-		}
-		if (((int32_t)((int32_t)L_8-(int32_t)2)) == 3)
-		{
-			goto IL_0041;
+			case 0:
+			{
+				goto IL_0041;
+			}
+			case 1:
+			{
+				goto IL_004f;
+			}
+			case 2:
+			{
+				goto IL_0041;
+			}
+			case 3:
+			{
+				goto IL_0041;
+			}
 		}
 	}
 	{
@@ -1582,27 +1844,30 @@ IL_00e9:
 	{
 		int32_t L_39 = __this->get_BlockSizeByte_2();
 		int32_t L_40 = V_1;
-		V_6 = (((int32_t)((uint8_t)((int32_t)((int32_t)L_39-(int32_t)L_40)))));
+		V_6 = (uint8_t)(((int32_t)((uint8_t)((int32_t)((int32_t)L_39-(int32_t)L_40)))));
 		SymmetricAlgorithm_t1108166522 * L_41 = __this->get_algo_0();
 		NullCheck(L_41);
 		int32_t L_42 = VirtFuncInvoker0< int32_t >::Invoke(18 /* System.Security.Cryptography.PaddingMode System.Security.Cryptography.SymmetricAlgorithm::get_Padding() */, L_41);
 		V_8 = L_42;
 		int32_t L_43 = V_8;
-		if (((int32_t)((int32_t)L_43-(int32_t)2)) == 0)
+		switch (((int32_t)((int32_t)L_43-(int32_t)2)))
 		{
-			goto IL_019a;
-		}
-		if (((int32_t)((int32_t)L_43-(int32_t)2)) == 1)
-		{
-			goto IL_01e2;
-		}
-		if (((int32_t)((int32_t)L_43-(int32_t)2)) == 2)
-		{
-			goto IL_012b;
-		}
-		if (((int32_t)((int32_t)L_43-(int32_t)2)) == 3)
-		{
-			goto IL_0159;
+			case 0:
+			{
+				goto IL_019a;
+			}
+			case 1:
+			{
+				goto IL_01e2;
+			}
+			case 2:
+			{
+				goto IL_012b;
+			}
+			case 3:
+			{
+				goto IL_0159;
+			}
 		}
 	}
 	{
@@ -1725,10 +1990,6 @@ IL_01fa:
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.SymmetricTransform::FinalDecrypt(System.Byte[],System.Int32,System.Int32)
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral936694437;
-extern const uint32_t SymmetricTransform_FinalDecrypt_m1391053911_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* SymmetricTransform_FinalDecrypt_m1391053911 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1860,31 +2121,34 @@ IL_00bf:
 
 IL_00c0:
 	{
-		V_4 = G_B12_0;
+		V_4 = (uint8_t)G_B12_0;
 		SymmetricAlgorithm_t1108166522 * L_35 = __this->get_algo_0();
 		NullCheck(L_35);
 		int32_t L_36 = VirtFuncInvoker0< int32_t >::Invoke(18 /* System.Security.Cryptography.PaddingMode System.Security.Cryptography.SymmetricAlgorithm::get_Padding() */, L_35);
 		V_8 = L_36;
 		int32_t L_37 = V_8;
-		if (((int32_t)((int32_t)L_37-(int32_t)1)) == 0)
+		switch (((int32_t)((int32_t)L_37-(int32_t)1)))
 		{
-			goto IL_01fd;
-		}
-		if (((int32_t)((int32_t)L_37-(int32_t)1)) == 1)
-		{
-			goto IL_018f;
-		}
-		if (((int32_t)((int32_t)L_37-(int32_t)1)) == 2)
-		{
-			goto IL_01fd;
-		}
-		if (((int32_t)((int32_t)L_37-(int32_t)1)) == 3)
-		{
-			goto IL_00f1;
-		}
-		if (((int32_t)((int32_t)L_37-(int32_t)1)) == 4)
-		{
-			goto IL_015d;
+			case 0:
+			{
+				goto IL_01fd;
+			}
+			case 1:
+			{
+				goto IL_018f;
+			}
+			case 2:
+			{
+				goto IL_01fd;
+			}
+			case 3:
+			{
+				goto IL_00f1;
+			}
+			case 4:
+			{
+				goto IL_015d;
+			}
 		}
 	}
 	{
@@ -2110,9 +2374,6 @@ IL_0229:
 	}
 }
 // System.Byte[] Mono.Security.Cryptography.SymmetricTransform::TransformFinalBlock(System.Byte[],System.Int32,System.Int32)
-extern Il2CppClass* ObjectDisposedException_t2695136451_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral4158020802;
-extern const uint32_t SymmetricTransform_TransformFinalBlock_m631349995_MetadataUsageId;
 extern "C"  ByteU5BU5D_t3397334013* SymmetricTransform_TransformFinalBlock_m631349995 (SymmetricTransform_t1394030014 * __this, ByteU5BU5D_t3397334013* ___inputBuffer0, int32_t ___inputOffset1, int32_t ___inputCount2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2163,6 +2424,74 @@ IL_0034:
 		return L_13;
 	}
 }
+// System.Void System.Linq.Check::Source(System.Object)
+extern "C"  void Check_Source_m3385315029 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source0, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Check_Source_m3385315029_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Il2CppObject * L_0 = ___source0;
+		if (L_0)
+		{
+			goto IL_0011;
+		}
+	}
+	{
+		ArgumentNullException_t628810857 * L_1 = (ArgumentNullException_t628810857 *)il2cpp_codegen_object_new(ArgumentNullException_t628810857_il2cpp_TypeInfo_var);
+		ArgumentNullException__ctor_m3380712306(L_1, _stringLiteral4211174801, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
+	}
+
+IL_0011:
+	{
+		return;
+	}
+}
+// System.Void System.Linq.Check::SourceAndPredicate(System.Object,System.Object)
+extern "C"  void Check_SourceAndPredicate_m2063478409 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___source0, Il2CppObject * ___predicate1, const MethodInfo* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Check_SourceAndPredicate_m2063478409_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Il2CppObject * L_0 = ___source0;
+		if (L_0)
+		{
+			goto IL_0011;
+		}
+	}
+	{
+		ArgumentNullException_t628810857 * L_1 = (ArgumentNullException_t628810857 *)il2cpp_codegen_object_new(ArgumentNullException_t628810857_il2cpp_TypeInfo_var);
+		ArgumentNullException__ctor_m3380712306(L_1, _stringLiteral4211174801, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1);
+	}
+
+IL_0011:
+	{
+		Il2CppObject * L_2 = ___predicate1;
+		if (L_2)
+		{
+			goto IL_0022;
+		}
+	}
+	{
+		ArgumentNullException_t628810857 * L_3 = (ArgumentNullException_t628810857 *)il2cpp_codegen_object_new(ArgumentNullException_t628810857_il2cpp_TypeInfo_var);
+		ArgumentNullException__ctor_m3380712306(L_3, _stringLiteral744571857, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_3);
+	}
+
+IL_0022:
+	{
+		return;
+	}
+}
 // System.Void System.Runtime.CompilerServices.ExtensionAttribute::.ctor()
 extern "C"  void ExtensionAttribute__ctor_m1028297080 (ExtensionAttribute_t1840441203 * __this, const MethodInfo* method)
 {
@@ -2172,9 +2501,6 @@ extern "C"  void ExtensionAttribute__ctor_m1028297080 (ExtensionAttribute_t18404
 	}
 }
 // System.Void System.Security.Cryptography.Aes::.ctor()
-extern Il2CppClass* KeySizesU5BU5D_t1153004758_il2cpp_TypeInfo_var;
-extern Il2CppClass* KeySizes_t3144736271_il2cpp_TypeInfo_var;
-extern const uint32_t Aes__ctor_m4020215067_MetadataUsageId;
 extern "C"  void Aes__ctor_m4020215067 (Aes_t2354947465 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2233,8 +2559,6 @@ extern "C"  void AesManaged_GenerateKey_m2925191332 (AesManaged_t3721278648 * __
 	}
 }
 // System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.AesManaged::CreateDecryptor(System.Byte[],System.Byte[])
-extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
-extern const uint32_t AesManaged_CreateDecryptor_m1136566004_MetadataUsageId;
 extern "C"  Il2CppObject * AesManaged_CreateDecryptor_m1136566004 (AesManaged_t3721278648 * __this, ByteU5BU5D_t3397334013* ___rgbKey0, ByteU5BU5D_t3397334013* ___rgbIV1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2252,8 +2576,6 @@ extern "C"  Il2CppObject * AesManaged_CreateDecryptor_m1136566004 (AesManaged_t3
 	}
 }
 // System.Security.Cryptography.ICryptoTransform System.Security.Cryptography.AesManaged::CreateEncryptor(System.Byte[],System.Byte[])
-extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
-extern const uint32_t AesManaged_CreateEncryptor_m1729287824_MetadataUsageId;
 extern "C"  Il2CppObject * AesManaged_CreateEncryptor_m1729287824 (AesManaged_t3721278648 * __this, ByteU5BU5D_t3397334013* ___rgbKey0, ByteU5BU5D_t3397334013* ___rgbIV1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2351,15 +2673,6 @@ extern "C"  void AesManaged_Dispose_m2144430298 (AesManaged_t3721278648 * __this
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::.ctor(System.Security.Cryptography.Aes,System.Boolean,System.Byte[],System.Byte[])
-extern Il2CppClass* CryptographicException_t3349726436_il2cpp_TypeInfo_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* Int32_t2071877448_il2cpp_TypeInfo_var;
-extern Il2CppClass* UInt32U5BU5D_t59386216_il2cpp_TypeInfo_var;
-extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral2618172828;
-extern Il2CppCodeGenString* _stringLiteral4238098139;
-extern Il2CppCodeGenString* _stringLiteral3083772989;
-extern const uint32_t AesTransform__ctor_m3304222252_MetadataUsageId;
 extern "C"  void AesTransform__ctor_m3304222252 (AesTransform_t3733702461 * __this, Aes_t2354947465 * ___algo0, bool ___encryption1, ByteU5BU5D_t3397334013* ___key2, ByteU5BU5D_t3397334013* ___iv3, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2853,21 +3166,6 @@ IL_02ef:
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::.cctor()
-extern Il2CppClass* UInt32U5BU5D_t59386216_il2cpp_TypeInfo_var;
-extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
-extern Il2CppClass* ByteU5BU5D_t3397334013_il2cpp_TypeInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D1_0_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D2_1_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D3_2_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D4_3_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D5_4_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D6_5_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D7_6_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D8_7_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D9_8_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D10_9_FieldInfo_var;
-extern FieldInfo* U3CPrivateImplementationDetailsU3E_t1486305140____U24U24fieldU2D11_10_FieldInfo_var;
-extern const uint32_t AesTransform__cctor_m619532760_MetadataUsageId;
 extern "C"  void AesTransform__cctor_m619532760 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2945,8 +3243,6 @@ IL_002c:
 	}
 }
 // System.UInt32 System.Security.Cryptography.AesTransform::SubByte(System.UInt32)
-extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
-extern const uint32_t AesTransform_SubByte_m3508318874_MetadataUsageId;
 extern "C"  uint32_t AesTransform_SubByte_m3508318874 (AesTransform_t3733702461 * __this, uint32_t ___a0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2997,8 +3293,6 @@ extern "C"  uint32_t AesTransform_SubByte_m3508318874 (AesTransform_t3733702461 
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::Encrypt128(System.Byte[],System.Byte[],System.UInt32[])
-extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
-extern const uint32_t AesTransform_Encrypt128_m617981965_MetadataUsageId;
 extern "C"  void AesTransform_Encrypt128_m617981965 (AesTransform_t3733702461 * __this, ByteU5BU5D_t3397334013* ___indata0, ByteU5BU5D_t3397334013* ___outdata1, UInt32U5BU5D_t59386216* ___ekey2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4646,8 +4940,6 @@ IL_0b08:
 	}
 }
 // System.Void System.Security.Cryptography.AesTransform::Decrypt128(System.Byte[],System.Byte[],System.UInt32[])
-extern Il2CppClass* AesTransform_t3733702461_il2cpp_TypeInfo_var;
-extern const uint32_t AesTransform_Decrypt128_m3067379519_MetadataUsageId;
 extern "C"  void AesTransform_Decrypt128_m3067379519 (AesTransform_t3733702461 * __this, ByteU5BU5D_t3397334013* ___indata0, ByteU5BU5D_t3397334013* ___outdata1, UInt32U5BU5D_t59386216* ___ekey2, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;

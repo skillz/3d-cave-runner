@@ -10,9 +10,12 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System_Enum2459695545.h"
 #include "UnityEngine_UnityEngine_TextAnchor112990806.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

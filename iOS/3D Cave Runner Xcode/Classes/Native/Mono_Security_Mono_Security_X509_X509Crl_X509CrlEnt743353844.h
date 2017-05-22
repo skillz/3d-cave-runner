@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_DateTime693205669.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // Mono.Security.X509.X509ExtensionCollection
 struct X509ExtensionCollection_t1640144840;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_DateTime693205669.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

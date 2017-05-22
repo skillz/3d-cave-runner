@@ -13,7 +13,7 @@ namespace SkillzSDK
 
 
 		public int GameID = 0;
-		public SkillzSDK.Environment SkillzEnvironment = SkillzSDK.Environment.Sandbox;
+		public SkillzSDK.Environment SkillzEnvironment = SkillzSDK.Environment.Production;
 
 
 		/// <summary>

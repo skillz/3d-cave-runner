@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+#include "mscorlib_System_Void1841601450.h"
+
 // UnityEngine.SocialPlatforms.IScore[]
 struct IScoreU5BU5D_t3237304636;
 // System.IAsyncResult
@@ -19,8 +22,8 @@ struct AsyncCallback_t163412349;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
-#include "mscorlib_System_Void1841601450.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

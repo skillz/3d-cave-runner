@@ -10,8 +10,11 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System_StringComparer1574862926.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

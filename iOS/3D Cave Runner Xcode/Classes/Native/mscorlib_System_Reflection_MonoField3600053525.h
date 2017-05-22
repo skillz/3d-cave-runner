@@ -10,15 +10,18 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_FieldInfo255040150.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
+#include "mscorlib_System_Reflection_FieldAttributes1122705193.h"
+
 // System.String
 struct String_t;
 // System.Type
 struct Type_t;
 
-#include "mscorlib_System_Reflection_FieldInfo255040150.h"
-#include "mscorlib_System_IntPtr2504060609.h"
-#include "mscorlib_System_RuntimeFieldHandle2331729674.h"
-#include "mscorlib_System_Reflection_FieldAttributes1122705193.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

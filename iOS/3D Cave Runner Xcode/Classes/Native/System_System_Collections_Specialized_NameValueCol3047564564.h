@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "System_System_Collections_Specialized_NameObjectCo2034248631.h"
+
 // System.String[]
 struct StringU5BU5D_t1642385972;
 
-#include "System_System_Collections_Specialized_NameObjectCo2034248631.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

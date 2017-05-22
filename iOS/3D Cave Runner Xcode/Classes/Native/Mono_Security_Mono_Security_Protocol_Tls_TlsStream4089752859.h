@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_Stream3255436806.h"
+
 // System.IO.MemoryStream
 struct MemoryStream_t743994179;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_IO_Stream3255436806.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

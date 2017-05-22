@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // CompilerGenerated.__Skillz$callable0$71_31__
 struct __SkillzU24callable0U2471_31___t3114146286;
 // UnityEngine.AndroidJavaClass
 struct AndroidJavaClass_t2973420583;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

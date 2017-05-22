@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "System_System_Text_RegularExpressions_Syntax_Expres368137076.h"
+
 // System.Text.RegularExpressions.Syntax.CapturingGroup
 struct CapturingGroup_t3690174926;
 
-#include "System_System_Text_RegularExpressions_Syntax_Expres368137076.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

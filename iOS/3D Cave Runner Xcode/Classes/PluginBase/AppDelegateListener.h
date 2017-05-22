@@ -42,8 +42,8 @@
 void UnityRegisterAppDelegateListener(id<AppDelegateListener> obj);
 void UnityUnregisterAppDelegateListener(id<AppDelegateListener> obj);
 
-extern "C" __attribute__((visibility ("default"))) NSString* const kUnityDidRegisterForRemoteNotificationsWithDeviceToken;
-extern "C" __attribute__((visibility ("default"))) NSString* const kUnityDidFailToRegisterForRemoteNotificationsWithError;
-extern "C" __attribute__((visibility ("default"))) NSString* const kUnityDidReceiveRemoteNotification;
-extern "C" __attribute__((visibility ("default"))) NSString* const kUnityDidReceiveLocalNotification;
-extern "C" __attribute__((visibility ("default"))) NSString* const kUnityOnOpenURL;
+extern "C" __attribute__((visibility("default"))) NSString* const kUnityDidRegisterForRemoteNotificationsWithDeviceToken;
+extern "C" __attribute__((visibility("default"))) NSString* const kUnityDidFailToRegisterForRemoteNotificationsWithError;
+extern "C" __attribute__((visibility("default"))) NSString* const kUnityDidReceiveRemoteNotification;
+extern "C" __attribute__((visibility("default"))) NSString* const kUnityDidReceiveLocalNotification;
+extern "C" __attribute__((visibility("default"))) NSString* const kUnityOnOpenURL;

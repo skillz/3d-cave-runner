@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Void1841601450.h"
+
 // System.Type
 struct Type_t;
 // System.Void
 struct Void_t1841601450;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Void1841601450.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

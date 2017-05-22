@@ -12,3 +12,34 @@ Android/3D Cave Runner - Android Studio/app/build
 Android/3D Cave Runner - Android Studio/build
 Android/.idea
 fabric.properties
+libiPhone-lib.a
+
+# Xcode
+.DS_Store
+Skillz*.zip
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+profile
+*.moved-aside
+**/DerivedData/
+.idea/
+SkillzTestWorkspace.xcworkspace/xcshareddata/**
+*.swp
+SkillzSDK-iOS/version_info.txt
+version_info.txt
+SKZVersionInfo.h
+props.txt
+test-output/
+node_modules
+*.gcno
+*.xcscmblueprint
+*.xccheckout
+**/Reveal.framework/

@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Cryptography_RC42789934315.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "Mono_Security_Mono_Security_Cryptography_RC42789934315.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

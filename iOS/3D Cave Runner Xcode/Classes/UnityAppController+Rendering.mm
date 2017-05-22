@@ -18,10 +18,10 @@
 #define ENABLE_RUNLOOP_ACCEPT_INPUT 1
 
 // _glesContextCreated was renamed to _renderingInited
-extern bool	_renderingInited;
-extern bool	_unityAppReady;
-extern bool	_skipPresent;
-extern bool	_didResignActive;
+extern bool _renderingInited;
+extern bool _unityAppReady;
+extern bool _skipPresent;
+extern bool _didResignActive;
 
 static int _renderingAPI = 0;
 static int SelectRenderingAPIImpl();
@@ -33,112 +33,110 @@ static bool _enableRunLoopAcceptInput = false;
 
 - (void)createDisplayLink
 {
-	_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(repaintDisplayLink)];
-	[self callbackFramerateChange:UnityGetTargetFPS()];
-	[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    _displayLink = [CADisplayLink displayLinkWithTarget: self selector: @selector(repaintDisplayLink)];
+    [self callbackFramerateChange: UnityGetTargetFPS()];
+    [_displayLink addToRunLoop: [NSRunLoop currentRunLoop] forMode: NSRunLoopCommonModes];
 }
 
 - (void)destroyDisplayLink
 {
-	[_displayLink invalidate];
-	_displayLink = nil;
+    [_displayLink invalidate];
+    _displayLink = nil;
 }
 
-- (void)processTouchEvents 
-{	
-
-	// On multicore devices running at 60 FPS some touch event delivery isn't properly interleaved with graphical frames.
-	// Running additional run loop here improves event handling in those cases.
-	// Passing here an NSDate from the past invokes run loop only once.
+- (void)processTouchEvents
+{
+    // On multicore devices running at 60 FPS some touch event delivery isn't properly interleaved with graphical frames.
+    // Running additional run loop here improves event handling in those cases.
+    // Passing here an NSDate from the past invokes run loop only once.
 #if ENABLE_RUNLOOP_ACCEPT_INPUT
-	// We get "NSInternalInconsistencyException: unexpected start state" exception if there are events queued and app is
-	// going to background at the same time. This happens when we render additional frame after receiving
-	// applicationWillResignActive. So check if we are supposed to ignore input.
-	bool ignoreInput = [[UIApplication sharedApplication] isIgnoringInteractionEvents];
-	if (!ignoreInput && _enableRunLoopAcceptInput)
-	{
-		// Additional acceptInput call crashes on iOS8- unless using invalid NSRunLoopCommonModes, while on iOS10 that mode
-		// produces warnings and does not improve touch event delivery, so we need to differentiate by iOS version.
-		// Note: Starting with iOS 10 there's a typedef NSRunLoopMode used instead of NSString
-		static NSString* inputMode = (_ios90orNewer ? NSDefaultRunLoopMode : NSRunLoopCommonModes);
-		static NSDate* past = [NSDate date];
+    // We get "NSInternalInconsistencyException: unexpected start state" exception if there are events queued and app is
+    // going to background at the same time. This happens when we render additional frame after receiving
+    // applicationWillResignActive. So check if we are supposed to ignore input.
+    bool ignoreInput = [[UIApplication sharedApplication] isIgnoringInteractionEvents];
+    if (!ignoreInput && _enableRunLoopAcceptInput)
+    {
+        // Additional acceptInput call crashes on iOS8- unless using invalid NSRunLoopCommonModes, while on iOS10 that mode
+        // produces warnings and does not improve touch event delivery, so we need to differentiate by iOS version.
+        // Note: Starting with iOS 10 there's a typedef NSRunLoopMode used instead of NSString
+        static NSString* inputMode = (_ios90orNewer ? NSDefaultRunLoopMode : NSRunLoopCommonModes);
+        static NSDate* past = [NSDate date];
 
-		[[NSRunLoop currentRunLoop] acceptInputForMode: inputMode beforeDate: past];
-	}
+        [[NSRunLoop currentRunLoop] acceptInputForMode: inputMode beforeDate: past];
+    }
 #endif
-
 }
 
 - (void)repaintDisplayLink
 {
 #if ENABLE_DISPLAY_LINK_PAUSING
-	_displayLink.paused = YES;
+    _displayLink.paused = YES;
 #endif
-	if(!_didResignActive) 
-	{
-		[self repaint];
-		[self processTouchEvents];
-	}
+    if (!_didResignActive)
+    {
+        [self repaint];
+        [self processTouchEvents];
+    }
 
 #if ENABLE_DISPLAY_LINK_PAUSING
-	_displayLink.paused = NO;
+    _displayLink.paused = NO;
 #endif
 }
 
 - (void)repaint
 {
-	[self checkOrientationRequest];
-	[_unityView recreateGLESSurfaceIfNeeded];
-	UnityDeliverUIEvents();
+    [self checkOrientationRequest];
+    [_unityView recreateGLESSurfaceIfNeeded];
+    UnityDeliverUIEvents();
 
-	if (!UnityIsPaused())
-		UnityRepaint();
+    if (!UnityIsPaused())
+        UnityRepaint();
 }
 
 - (void)callbackGfxInited
 {
-	InitRendering();
-	_renderingInited = true;
+    InitRendering();
+    _renderingInited = true;
 
-	[self shouldAttachRenderDelegate];
-	[_renderDelegate mainDisplayInited:_mainDisplay.surface];
-	[_unityView recreateGLESSurface];
+    [self shouldAttachRenderDelegate];
+    [_renderDelegate mainDisplayInited: _mainDisplay.surface];
+    [_unityView recreateGLESSurface];
 
-	_mainDisplay.surface->allowScreenshot = 1;
+    _mainDisplay.surface->allowScreenshot = 1;
 }
 
 - (void)callbackPresent:(const UnityFrameStats*)frameStats
 {
-	if(_skipPresent || _didResignActive)
-		return;
+    if (_skipPresent || _didResignActive)
+        return;
 
-	[[DisplayManager Instance] present];
-	Profiler_FramePresent(frameStats);
+    [[DisplayManager Instance] present];
+    Profiler_FramePresent(frameStats);
 }
 
 - (void)callbackFramerateChange:(int)targetFPS
 {
-	if(targetFPS <= 0)
-		targetFPS = 60;
+    if (targetFPS <= 0)
+        targetFPS = 60;
 
-	int animationFrameInterval = (60.0f / targetFPS);
-	if (animationFrameInterval < 1)
-		animationFrameInterval = 1;
-	_enableRunLoopAcceptInput = (animationFrameInterval == 1 && UnityDeviceCPUCount() > 1);
+    int animationFrameInterval = (60.0f / targetFPS);
+    if (animationFrameInterval < 1)
+        animationFrameInterval = 1;
+    _enableRunLoopAcceptInput = (animationFrameInterval == 1 && UnityDeviceCPUCount() > 1);
 
-	[_displayLink setFrameInterval:animationFrameInterval];
+    [_displayLink setFrameInterval: animationFrameInterval];
 }
 
 - (void)selectRenderingAPI
 {
-	NSAssert(_renderingAPI == 0, @"[UnityAppController selectRenderingApi] called twice");
-	_renderingAPI = SelectRenderingAPIImpl();
+    NSAssert(_renderingAPI == 0, @"[UnityAppController selectRenderingApi] called twice");
+    _renderingAPI = SelectRenderingAPIImpl();
 }
 
 - (UnityRenderingAPI)renderingAPI
 {
-	NSAssert(_renderingAPI != 0, @"[UnityAppController renderingAPI] called before [UnityAppController selectRenderingApi]");
-	return (UnityRenderingAPI)_renderingAPI;
+    NSAssert(_renderingAPI != 0, @"[UnityAppController renderingAPI] called before [UnityAppController selectRenderingApi]");
+    return (UnityRenderingAPI)_renderingAPI;
 }
 
 @end
@@ -146,47 +144,47 @@ static bool _enableRunLoopAcceptInput = false;
 
 extern "C" void UnityGfxInitedCallback()
 {
-	[GetAppController() callbackGfxInited];
+    [GetAppController() callbackGfxInited];
 }
+
 extern "C" void UnityPresentContextCallback(struct UnityFrameStats const* unityFrameStats)
 {
-	[GetAppController() callbackPresent:unityFrameStats];
+    [GetAppController() callbackPresent: unityFrameStats];
 }
+
 extern "C" void UnityFramerateChangeCallback(int targetFPS)
 {
-	[GetAppController() callbackFramerateChange:targetFPS];
+    [GetAppController() callbackFramerateChange: targetFPS];
 }
 
 extern "C" void UnityInitMainScreenRenderingCallback()
 {
-	[GetAppController().mainDisplay initRendering];
+    [GetAppController().mainDisplay initRendering];
 }
 
-
-
-static NSBundle*		_MetalBundle	= nil;
-static id<MTLDevice>	_MetalDevice	= nil;
-static EAGLContext*		_GlesContext	= nil;
+static NSBundle*        _MetalBundle    = nil;
+static id<MTLDevice>    _MetalDevice    = nil;
+static EAGLContext*     _GlesContext    = nil;
 
 static bool IsMetalSupported(int /*api*/)
 {
-	_MetalBundle = [NSBundle bundleWithPath:@"/System/Library/Frameworks/Metal.framework"];
-	if(_MetalBundle)
-	{
-		[_MetalBundle load];
-		_MetalDevice = ((MTLCreateSystemDefaultDeviceFunc)::dlsym(dlopen(0, RTLD_LOCAL|RTLD_LAZY), "MTLCreateSystemDefaultDevice"))();
-		if(_MetalDevice)
-			return true;
-	}
+    _MetalBundle = [NSBundle bundleWithPath: @"/System/Library/Frameworks/Metal.framework"];
+    if (_MetalBundle)
+    {
+        [_MetalBundle load];
+        _MetalDevice = ((MTLCreateSystemDefaultDeviceFunc)::dlsym(dlopen(0, RTLD_LOCAL | RTLD_LAZY), "MTLCreateSystemDefaultDevice"))();
+        if (_MetalDevice)
+            return true;
+    }
 
-	[_MetalBundle unload];
-	return false;
+    [_MetalBundle unload];
+    return false;
 }
 
 static bool IsGlesSupported(int api)
 {
-	_GlesContext = [[EAGLContext alloc] initWithAPI:(EAGLRenderingAPI)api];
-	return _GlesContext != nil;
+    _GlesContext = [[EAGLContext alloc] initWithAPI: (EAGLRenderingAPI)api];
+    return _GlesContext != nil;
 }
 
 typedef bool(*CheckSupportedFunc)(int);
@@ -195,77 +193,80 @@ typedef bool(*CheckSupportedFunc)(int);
 static int SelectRenderingAPIImpl()
 {
 #if UNITY_CAN_USE_METAL
-	const bool	canSupportMetal = _ios80orNewer;
+    const bool  canSupportMetal = _ios80orNewer;
 #else
-	const bool	canSupportMetal = false;
+    const bool  canSupportMetal = false;
 #endif
 
-	// Get list of graphics APIs to try from player settings
-	const int kMaxAPIs = 3;
-	int apis[kMaxAPIs];
-	const int apiCount = UnityGetRenderingAPIs (kMaxAPIs, apis);
+    // Get list of graphics APIs to try from player settings
+    const int kMaxAPIs = 3;
+    int apis[kMaxAPIs];
+    const int apiCount = UnityGetRenderingAPIs(kMaxAPIs, apis);
 
-	// Go over them and try each
-	for (int i = 0; i < apiCount; ++i)
-	{
-		int api = apis[i];
-		// Metal
-		if (api == apiMetal)
-		{
-			if (!canSupportMetal)
-				continue;
-			if (!IsMetalSupported(0))
-				continue;
-			return api;
-		}
-		// GLES3
-		if (api == apiOpenGLES3)
-		{
-			if (!_ios70orNewer)
-				continue;
-			if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES3))
-				continue;
-			return api;
-		}
-		// GLES2
-		if (api == apiOpenGLES2)
-		{
-			if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES2))
-				continue;
-			return api;
-		}
-	}
+    // Go over them and try each
+    for (int i = 0; i < apiCount; ++i)
+    {
+        int api = apis[i];
+        // Metal
+        if (api == apiMetal)
+        {
+            if (!canSupportMetal)
+                continue;
+            if (!IsMetalSupported(0))
+                continue;
+            return api;
+        }
+        // GLES3
+        if (api == apiOpenGLES3)
+        {
+            if (!_ios70orNewer)
+                continue;
+            if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES3))
+                continue;
+            return api;
+        }
+        // GLES2
+        if (api == apiOpenGLES2)
+        {
+            if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES2))
+                continue;
+            return api;
+        }
+    }
 
-	return 0;
+    return 0;
 }
 
-extern "C" NSBundle*			UnityGetMetalBundle()		{ return _MetalBundle; }
-extern "C" MTLDeviceRef			UnityGetMetalDevice()		{ return _MetalDevice; }
-extern "C" MTLCommandQueueRef	UnityGetMetalCommandQueue()	{ return  ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->commandQueue; }
+extern "C" NSBundle*            UnityGetMetalBundle()       {
+    return _MetalBundle;
+}
+extern "C" MTLDeviceRef         UnityGetMetalDevice()       { return _MetalDevice; }
+extern "C" MTLCommandQueueRef   UnityGetMetalCommandQueue() { return ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->commandQueue; }
 
-extern "C" EAGLContext*			UnityGetDataContextEAGL()	{ return _GlesContext; }
-extern "C" int					UnitySelectedRenderingAPI()	{ return _renderingAPI; }
+extern "C" EAGLContext*         UnityGetDataContextEAGL()   {
+    return _GlesContext;
+}
+extern "C" int                  UnitySelectedRenderingAPI() { return _renderingAPI; }
 
-extern "C" UnityRenderBufferHandle	UnityBackbufferColor()		{ return GetMainDisplaySurface()->unityColorBuffer; }
-extern "C" UnityRenderBufferHandle	UnityBackbufferDepth()		{ return GetMainDisplaySurface()->unityDepthBuffer; }
+extern "C" UnityRenderBufferHandle  UnityBackbufferColor()      { return GetMainDisplaySurface()->unityColorBuffer; }
+extern "C" UnityRenderBufferHandle  UnityBackbufferDepth()      { return GetMainDisplaySurface()->unityDepthBuffer; }
 
-extern "C" void					DisplayManagerEndFrameRendering() { [[DisplayManager Instance] endFrameRendering]; }
+extern "C" void                 DisplayManagerEndFrameRendering() { [[DisplayManager Instance] endFrameRendering]; }
 
-extern "C" void					UnityPrepareScreenshot()	{ UnitySetRenderTarget(GetMainDisplaySurface()->unityColorBuffer, GetMainDisplaySurface()->unityDepthBuffer); }
+extern "C" void                 UnityPrepareScreenshot()    { UnitySetRenderTarget(GetMainDisplaySurface()->unityColorBuffer, GetMainDisplaySurface()->unityDepthBuffer); }
 
 extern "C" void UnityRepaint()
 {
-	@autoreleasepool
-	{
-		// this will handle running on metal just fine (nop)
-		EAGLContextSetCurrentAutoRestore autorestore(GetMainDisplaySurface());
+    @autoreleasepool
+    {
+        // this will handle running on metal just fine (nop)
+        EAGLContextSetCurrentAutoRestore autorestore(GetMainDisplaySurface());
 
-		Profiler_FrameStart();
+        Profiler_FrameStart();
 
-		UnityInputProcess();
-		UnityPlayerLoop();
+        UnityInputProcess();
+        UnityPlayerLoop();
 
-		Profiler_FrameEnd();
-
-	}
+        Profiler_FrameEnd();
+    }
 }

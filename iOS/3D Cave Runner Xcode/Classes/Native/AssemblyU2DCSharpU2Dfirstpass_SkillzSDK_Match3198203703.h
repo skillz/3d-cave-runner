@@ -10,17 +10,20 @@
 
 #include <stdint.h>
 
-// System.String
-struct String_t;
-// System.Collections.Generic.Dictionary`2<System.String,System.String>
-struct Dictionary_2_t3943999495;
-
 #include "mscorlib_System_Object2689449295.h"
 #include "mscorlib_System_Nullable_1_gen334943763.h"
 #include "mscorlib_System_Nullable_1_gen412748336.h"
 #include "AssemblyU2DCSharpU2Dfirstpass_SkillzSDK_Player4162098741.h"
 #include "mscorlib_System_Nullable_1_gen2088641033.h"
 #include "mscorlib_System_Nullable_1_gen339576247.h"
+
+// System.String
+struct String_t;
+// System.Collections.Generic.Dictionary`2<System.String,System.String>
+struct Dictionary_2_t3943999495;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

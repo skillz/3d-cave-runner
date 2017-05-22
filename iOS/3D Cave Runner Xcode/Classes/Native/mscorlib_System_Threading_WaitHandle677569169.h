@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MarshalByRefObject1285298191.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+
 // Microsoft.Win32.SafeHandles.SafeWaitHandle
 struct SafeWaitHandle_t481461830;
 
-#include "mscorlib_System_MarshalByRefObject1285298191.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.IO.BinaryReader
 struct BinaryReader_t2491843768;
 // System.Object
@@ -25,7 +27,8 @@ struct ResourceInfoU5BU5D_t1013133725;
 // System.Resources.ResourceReader/ResourceCacheItem[]
 struct ResourceCacheItemU5BU5D_t2265014744;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

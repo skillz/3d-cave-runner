@@ -10,9 +10,12 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System_Enum2459695545.h"
 #include "UnityEngine_UnityEngine_TextEditor_DblClickSnappin1119726228.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

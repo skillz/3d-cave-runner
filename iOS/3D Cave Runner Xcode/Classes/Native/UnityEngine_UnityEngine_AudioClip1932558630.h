@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_Object1021602117.h"
+
 // UnityEngine.AudioClip/PCMReaderCallback
 struct PCMReaderCallback_t3007145346;
 // UnityEngine.AudioClip/PCMSetPositionCallback
 struct PCMSetPositionCallback_t421863554;
 
-#include "UnityEngine_UnityEngine_Object1021602117.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

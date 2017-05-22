@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Byte
 struct Byte_t3683104436;
 // System.Double
@@ -17,7 +19,8 @@ struct Double_t4078015681;
 // System.UInt16
 struct UInt16_t986882611;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

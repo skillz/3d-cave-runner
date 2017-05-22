@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_Reflection_PropertyAttributes883448530.h"
+
 // System.Type
 struct Type_t;
 // System.String
@@ -17,8 +20,8 @@ struct String_t;
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_Reflection_PropertyAttributes883448530.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Runtime_Remoting_Messaging_MethodC2461541281.h"
+
 // System.Runtime.Remoting.Activation.IActivator
 struct IActivator_t1538980900;
 // System.Object[]
@@ -23,7 +25,8 @@ struct String_t;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "mscorlib_System_Runtime_Remoting_Messaging_MethodC2461541281.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

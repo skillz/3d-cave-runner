@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "System_System_Text_RegularExpressions_Syntax_Expres368137076.h"
+#include "System_System_Text_RegularExpressions_Interval2354235237.h"
+
 // System.Collections.BitArray
 struct BitArray_t4180138994;
 // System.Text.RegularExpressions.IntervalCollection
 struct IntervalCollection_t4130821325;
 
-#include "System_System_Text_RegularExpressions_Syntax_Expres368137076.h"
-#include "System_System_Text_RegularExpressions_Interval2354235237.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

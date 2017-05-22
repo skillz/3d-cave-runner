@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.Collections.Generic.List`1<UnityEngine.Events.PersistentCall>
 struct List_1_t3162557601;
 // UnityEngine.Events.PersistentCall
 struct PersistentCall_t3793436469;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

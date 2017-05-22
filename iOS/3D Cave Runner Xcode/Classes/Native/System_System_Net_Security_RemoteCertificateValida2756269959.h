@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+#include "System_System_Net_Security_SslPolicyErrors1928581431.h"
+
 // System.Object
 struct Il2CppObject;
 // System.Security.Cryptography.X509Certificates.X509Certificate
@@ -21,8 +24,8 @@ struct IAsyncResult_t1999651008;
 // System.AsyncCallback
 struct AsyncCallback_t163412349;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
-#include "System_System_Net_Security_SslPolicyErrors1928581431.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

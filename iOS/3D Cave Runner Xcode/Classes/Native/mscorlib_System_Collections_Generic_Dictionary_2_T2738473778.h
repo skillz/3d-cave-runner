@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+#include "mscorlib_System_Collections_DictionaryEntry3048875398.h"
+
 // System.String
 struct String_t;
 // System.Object
@@ -19,8 +22,8 @@ struct IAsyncResult_t1999651008;
 // System.AsyncCallback
 struct AsyncCallback_t163412349;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
-#include "mscorlib_System_Collections_DictionaryEntry3048875398.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

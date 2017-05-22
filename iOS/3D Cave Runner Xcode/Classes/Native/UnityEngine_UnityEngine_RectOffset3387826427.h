@@ -10,13 +10,14 @@
 
 #include <stdint.h>
 
-// UnityEngine.GUIStyle
-struct GUIStyle_t1799908754;
-struct GUIStyle_t1799908754_marshaled_pinvoke;
-struct GUIStyle_t1799908754_marshaled_com;
-
 #include "mscorlib_System_Object2689449295.h"
 #include "mscorlib_System_IntPtr2504060609.h"
+
+// System.Object
+struct Il2CppObject;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
@@ -30,8 +31,8 @@ struct  RectOffset_t3387826427  : public Il2CppObject
 public:
 	// System.IntPtr UnityEngine.RectOffset::m_Ptr
 	IntPtr_t ___m_Ptr_0;
-	// UnityEngine.GUIStyle UnityEngine.RectOffset::m_SourceStyle
-	GUIStyle_t1799908754 * ___m_SourceStyle_1;
+	// System.Object UnityEngine.RectOffset::m_SourceStyle
+	Il2CppObject * ___m_SourceStyle_1;
 
 public:
 	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(RectOffset_t3387826427, ___m_Ptr_0)); }
@@ -43,9 +44,9 @@ public:
 	}
 
 	inline static int32_t get_offset_of_m_SourceStyle_1() { return static_cast<int32_t>(offsetof(RectOffset_t3387826427, ___m_SourceStyle_1)); }
-	inline GUIStyle_t1799908754 * get_m_SourceStyle_1() const { return ___m_SourceStyle_1; }
-	inline GUIStyle_t1799908754 ** get_address_of_m_SourceStyle_1() { return &___m_SourceStyle_1; }
-	inline void set_m_SourceStyle_1(GUIStyle_t1799908754 * value)
+	inline Il2CppObject * get_m_SourceStyle_1() const { return ___m_SourceStyle_1; }
+	inline Il2CppObject ** get_address_of_m_SourceStyle_1() { return &___m_SourceStyle_1; }
+	inline void set_m_SourceStyle_1(Il2CppObject * value)
 	{
 		___m_SourceStyle_1 = value;
 		Il2CppCodeGenWriteBarrier(&___m_SourceStyle_1, value);
@@ -59,11 +60,11 @@ public:
 struct RectOffset_t3387826427_marshaled_pinvoke
 {
 	intptr_t ___m_Ptr_0;
-	GUIStyle_t1799908754_marshaled_pinvoke* ___m_SourceStyle_1;
+	Il2CppIUnknown* ___m_SourceStyle_1;
 };
 // Native definition for COM marshalling of UnityEngine.RectOffset
 struct RectOffset_t3387826427_marshaled_com
 {
 	intptr_t ___m_Ptr_0;
-	GUIStyle_t1799908754_marshaled_com* ___m_SourceStyle_1;
+	Il2CppIUnknown* ___m_SourceStyle_1;
 };

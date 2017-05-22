@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.String
 struct String_t;
 // UnityEngine.Texture
@@ -17,7 +19,8 @@ struct Texture_t2243626319;
 // UnityEngine.GUIContent
 struct GUIContent_t4210063000;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

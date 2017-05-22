@@ -36,7 +36,7 @@ android {
         }
     }
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.skillzgames.caverun"
         minSdkVersion 19
@@ -98,11 +98,11 @@ dependencies {
     compile files('libs/unity-classes.jar')
     //Skillz SDK
 
-    compile 'com.skillz.sdk:skillz-sdk-android:3.2-SNAPSHOT'
+    compile 'com.skillz.sdk:skillz-sdk-android:3.2.1'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }
-    compile 'com.google.android.gms:play-services-gcm:10.2.1'
+    compile 'com.google.android.gms:play-services-gcm:10.2.4'
 }
 
 repositories {

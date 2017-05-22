@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_Module4282841206.h"
+
 // System.Reflection.Emit.TypeBuilder[]
 struct TypeBuilderU5BU5D_t4254476946;
 // System.Reflection.Emit.AssemblyBuilder
@@ -21,7 +23,8 @@ struct ModuleBuilderTokenGenerator_t578872653;
 // System.Char[]
 struct CharU5BU5D_t1328083999;
 
-#include "mscorlib_System_Reflection_Module4282841206.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

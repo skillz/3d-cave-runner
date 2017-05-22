@@ -10,16 +10,19 @@
 
 #include <stdint.h>
 
-// System.Runtime.Serialization.SerializationBinder
-struct SerializationBinder_t3985864818;
-// System.Runtime.Serialization.ISurrogateSelector
-struct ISurrogateSelector_t1912587528;
-
 #include "mscorlib_System_Object2689449295.h"
 #include "mscorlib_System_Runtime_Serialization_Formatters_Fo999493661.h"
 #include "mscorlib_System_Runtime_Serialization_StreamingCon1417235061.h"
 #include "mscorlib_System_Runtime_Serialization_Formatters_Fo943306207.h"
 #include "mscorlib_System_Runtime_Serialization_Formatters_T1182459634.h"
+
+// System.Runtime.Serialization.SerializationBinder
+struct SerializationBinder_t3985864818;
+// System.Runtime.Serialization.ISurrogateSelector
+struct ISurrogateSelector_t1912587528;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

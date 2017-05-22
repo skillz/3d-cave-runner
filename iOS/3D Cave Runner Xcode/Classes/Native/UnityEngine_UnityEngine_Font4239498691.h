@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_Object1021602117.h"
+
 // System.Action`1<UnityEngine.Font>
 struct Action_1_t4041298073;
 // UnityEngine.Font/FontTextureRebuildCallback
 struct FontTextureRebuildCallback_t1272078033;
 
-#include "UnityEngine_UnityEngine_Object1021602117.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

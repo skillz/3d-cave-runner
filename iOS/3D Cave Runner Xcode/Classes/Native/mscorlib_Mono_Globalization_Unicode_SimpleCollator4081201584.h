@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // Mono.Globalization.Unicode.SimpleCollator
 struct SimpleCollator_t4081201584;
 // System.Globalization.TextInfo
@@ -25,7 +27,8 @@ struct ByteU5BU5D_t3397334013;
 // System.Byte
 struct Byte_t3683104436;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.String
 struct String_t;
 // System.Byte[]
@@ -17,7 +19,8 @@ struct ByteU5BU5D_t3397334013;
 // System.Collections.ArrayList
 struct ArrayList_t4252133567;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

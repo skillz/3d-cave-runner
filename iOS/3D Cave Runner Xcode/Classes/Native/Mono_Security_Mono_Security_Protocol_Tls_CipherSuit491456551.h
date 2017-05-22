@@ -10,6 +10,12 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_CipherAlg4212518094.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_HashAlgor1654661965.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_ExchangeAl954949548.h"
+#include "mscorlib_System_Security_Cryptography_CipherMode162592484.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.String
@@ -23,11 +29,8 @@ struct ICryptoTransform_t281704372;
 // System.Security.Cryptography.KeyedHashAlgorithm
 struct KeyedHashAlgorithm_t1374150027;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_CipherAlg4212518094.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_HashAlgor1654661965.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_ExchangeAl954949548.h"
-#include "mscorlib_System_Security_Cryptography_CipherMode162592484.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+
 // Mono.Security.Protocol.Tls.ValidationResult
 struct ValidationResult_t1782558132;
 // Mono.Security.X509.X509CertificateCollection
@@ -21,7 +23,8 @@ struct AsyncCallback_t163412349;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

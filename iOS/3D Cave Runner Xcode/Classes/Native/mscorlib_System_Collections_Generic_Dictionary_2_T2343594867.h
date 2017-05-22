@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MulticastDelegate3201952435.h"
+#include "mscorlib_System_Collections_Generic_KeyValuePair_23716250094.h"
+#include "mscorlib_System_Int322071877448.h"
+
 // System.Object
 struct Il2CppObject;
 // System.IAsyncResult
@@ -17,9 +21,8 @@ struct IAsyncResult_t1999651008;
 // System.AsyncCallback
 struct AsyncCallback_t163412349;
 
-#include "mscorlib_System_MulticastDelegate3201952435.h"
-#include "mscorlib_System_Collections_Generic_KeyValuePair_23716250094.h"
-#include "mscorlib_System_Int322071877448.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

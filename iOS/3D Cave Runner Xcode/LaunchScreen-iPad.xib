@@ -19,7 +19,7 @@
                 <constraint firstAttribute="bottom" secondItem="6pd-fU-b9y" secondAttribute="bottom" id="Y0U-Pe-L4d"/>
                 <constraint firstItem="6pd-fU-b9y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oOc-bh-ihE"/>
                 <constraint firstItem="6pd-fU-b9y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="q2g-Vy-0kF"/>
-                <constraint firstAttribute="trailing" secondItem="6pd-fU-b9y" secondAttribute="trailing" constant="8" id="rHJ-TI-xEc"/>
+                <constraint firstAttribute="trailing" secondItem="6pd-fU-b9y" secondAttribute="trailing" id="rHJ-TI-xEc"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="315" y="378"/>

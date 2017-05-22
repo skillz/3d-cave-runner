@@ -10,6 +10,11 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_SocialPlatforms_UserScope3775842435.h"
+#include "UnityEngine_UnityEngine_SocialPlatforms_Range3455291607.h"
+#include "UnityEngine_UnityEngine_SocialPlatforms_TimeScope2583939667.h"
+
 // UnityEngine.SocialPlatforms.IScore
 struct IScore_t513966369;
 // UnityEngine.SocialPlatforms.IScore[]
@@ -19,10 +24,8 @@ struct String_t;
 // System.String[]
 struct StringU5BU5D_t1642385972;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_SocialPlatforms_UserScope3775842435.h"
-#include "UnityEngine_UnityEngine_SocialPlatforms_Range3455291607.h"
-#include "UnityEngine_UnityEngine_SocialPlatforms_TimeScope2583939667.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

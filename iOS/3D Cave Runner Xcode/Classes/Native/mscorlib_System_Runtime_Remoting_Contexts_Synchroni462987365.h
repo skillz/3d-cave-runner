@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Runtime.Remoting.Messaging.IMessageSink
 struct IMessageSink_t2189618969;
 // System.Runtime.Remoting.Contexts.SynchronizationAttribute
 struct SynchronizationAttribute_t3073724998;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

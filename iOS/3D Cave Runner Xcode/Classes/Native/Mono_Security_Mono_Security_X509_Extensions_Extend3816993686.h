@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_X509_X509Extension1439760127.h"
+
 // System.Collections.ArrayList
 struct ArrayList_t4252133567;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "Mono_Security_Mono_Security_X509_X509Extension1439760127.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

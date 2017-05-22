@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_FileSystemInfo2360991899.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_IO_FileSystemInfo2360991899.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

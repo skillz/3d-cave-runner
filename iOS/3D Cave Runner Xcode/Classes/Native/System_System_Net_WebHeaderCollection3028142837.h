@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "System_System_Collections_Specialized_NameValueCol3047564564.h"
+
 // System.Collections.Hashtable
 struct Hashtable_t909839986;
 // System.Collections.Generic.Dictionary`2<System.String,System.Boolean>
@@ -17,7 +19,8 @@ struct Dictionary_2_t1445386684;
 // System.Boolean[]
 struct BooleanU5BU5D_t3568034315;
 
-#include "System_System_Collections_Specialized_NameValueCol3047564564.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

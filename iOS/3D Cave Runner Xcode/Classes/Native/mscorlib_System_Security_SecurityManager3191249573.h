@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Object
 struct Il2CppObject;
 // System.Collections.Hashtable
@@ -17,7 +19,8 @@ struct Hashtable_t909839986;
 // System.Security.Permissions.SecurityPermission
 struct SecurityPermission_t502442079;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

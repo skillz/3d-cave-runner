@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_LoaderOptimization1143026982.h"
+
 // System.String
 struct String_t;
 // System.Runtime.Hosting.ActivationArguments
@@ -25,8 +28,8 @@ struct SecurityElement_t2325568386;
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_LoaderOptimization1143026982.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

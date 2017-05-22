@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Reflection.Assembly
 struct Assembly_t4268412390;
 // System.Type
@@ -17,7 +19,8 @@ struct Type_t;
 // System.AttributeUsageAttribute
 struct AttributeUsageAttribute_t1057435127;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

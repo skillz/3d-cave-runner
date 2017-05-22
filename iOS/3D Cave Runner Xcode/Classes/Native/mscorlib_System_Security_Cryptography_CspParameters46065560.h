@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Security_Cryptography_CspProviderFl105264000.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Security_Cryptography_CspProviderFl105264000.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

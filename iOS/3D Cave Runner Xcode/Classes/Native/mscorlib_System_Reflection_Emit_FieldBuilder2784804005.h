@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_FieldInfo255040150.h"
+#include "mscorlib_System_Reflection_FieldAttributes1122705193.h"
+
 // System.Type
 struct Type_t;
 // System.String
@@ -19,8 +22,8 @@ struct TypeBuilder_t3308873219;
 // System.Reflection.Emit.UnmanagedMarshal
 struct UnmanagedMarshal_t4270021860;
 
-#include "mscorlib_System_Reflection_FieldInfo255040150.h"
-#include "mscorlib_System_Reflection_FieldAttributes1122705193.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

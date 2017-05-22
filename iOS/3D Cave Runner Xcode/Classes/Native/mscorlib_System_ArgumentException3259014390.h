@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_SystemException3877406272.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_SystemException3877406272.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

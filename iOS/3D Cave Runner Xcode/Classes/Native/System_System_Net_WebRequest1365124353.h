@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MarshalByRefObject1285298191.h"
+#include "System_System_Net_Security_AuthenticationLevel2424130044.h"
+
 // System.Collections.Specialized.HybridDictionary
 struct HybridDictionary_t290043810;
 // System.Net.IWebProxy
@@ -17,8 +20,8 @@ struct IWebProxy_t3916853445;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_MarshalByRefObject1285298191.h"
-#include "System_System_Net_Security_AuthenticationLevel2424130044.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

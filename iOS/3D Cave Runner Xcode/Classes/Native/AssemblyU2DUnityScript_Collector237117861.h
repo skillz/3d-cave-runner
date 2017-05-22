@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+
 // UnityScript.Lang.Array
 struct Array_t1396575355;
 // PlatformCreator
@@ -17,7 +19,8 @@ struct PlatformCreator_t1903924313;
 // UnityEngine.GameObject
 struct GameObject_t1756533147;
 
-#include "UnityEngine_UnityEngine_MonoBehaviour1158329972.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

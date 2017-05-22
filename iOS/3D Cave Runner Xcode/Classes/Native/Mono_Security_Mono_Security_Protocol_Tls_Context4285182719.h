@@ -10,6 +10,12 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityPr155967584.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityC3722381418.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake2540099417.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake1820731088.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // Mono.Security.Protocol.Tls.TlsServerSettings
@@ -27,11 +33,8 @@ struct RandomNumberGenerator_t2510243513;
 // Mono.Security.Protocol.Tls.RecordProtocol
 struct RecordProtocol_t3166895267;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityPr155967584.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityC3722381418.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake2540099417.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake1820731088.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

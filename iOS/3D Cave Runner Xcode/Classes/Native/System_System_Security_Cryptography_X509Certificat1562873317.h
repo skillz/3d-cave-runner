@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "System_System_Security_Cryptography_X509Certificat1320896183.h"
+#include "System_System_Security_Cryptography_AsnDecodeStatu1962003286.h"
+
 // System.String
 struct String_t;
 
-#include "System_System_Security_Cryptography_X509Certificat1320896183.h"
-#include "System_System_Security_Cryptography_AsnDecodeStatu1962003286.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -3,11 +3,11 @@
 // small helper for getting texture from CMSampleBuffer
 
 typedef struct
-CMVideoSampling
+    CMVideoSampling
 {
-	void*	cvTextureCache;
-	void*	cvTextureCacheTexture;
-	void*	cvImageBuffer;
+    void*   cvTextureCache;
+    void*   cvTextureCacheTexture;
+    void*   cvImageBuffer;
 }
 CMVideoSampling;
 

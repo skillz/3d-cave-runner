@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Text_Encoding663144255.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.SByte[]
 struct SByteU5BU5D_t3472287392;
 
-#include "mscorlib_System_Text_Encoding663144255.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

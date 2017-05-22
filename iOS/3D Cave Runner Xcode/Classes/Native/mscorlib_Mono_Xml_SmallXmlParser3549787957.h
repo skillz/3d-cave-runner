@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // Mono.Xml.SmallXmlParser/IContentHandler
 struct IContentHandler_t3823912562;
 // System.IO.TextReader
@@ -27,7 +29,8 @@ struct AttrListImpl_t4015491015;
 // System.Collections.Generic.Dictionary`2<System.String,System.Int32>
 struct Dictionary_2_t3986656710;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

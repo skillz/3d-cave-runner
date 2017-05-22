@@ -10,14 +10,17 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_IO_Stream3255436806.h"
+#include "mscorlib_System_IO_FileAccess4282042064.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_IO_Stream3255436806.h"
-#include "mscorlib_System_IO_FileAccess4282042064.h"
-#include "mscorlib_System_IntPtr2504060609.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

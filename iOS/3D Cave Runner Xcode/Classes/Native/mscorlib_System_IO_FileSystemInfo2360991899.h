@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MarshalByRefObject1285298191.h"
+#include "mscorlib_System_IO_MonoIOStat1621921065.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_MarshalByRefObject1285298191.h"
-#include "mscorlib_System_IO_MonoIOStat1621921065.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

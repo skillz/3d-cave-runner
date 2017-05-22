@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_AsymmetricKe3339648384.h"
+
 // System.Security.Cryptography.RSA
 struct RSA_t3719518354;
 // System.Security.Cryptography.RandomNumberGenerator
 struct RandomNumberGenerator_t2510243513;
 
-#include "mscorlib_System_Security_Cryptography_AsymmetricKe3339648384.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

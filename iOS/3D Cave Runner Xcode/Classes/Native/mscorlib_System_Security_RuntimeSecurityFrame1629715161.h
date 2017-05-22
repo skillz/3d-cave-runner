@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Security_RuntimeDeclSecurityEntry1853010450.h"
+
 // System.AppDomain
 struct AppDomain_t2719102437;
 // System.Reflection.MethodInfo
 struct MethodInfo_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Security_RuntimeDeclSecurityEntry1853010450.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

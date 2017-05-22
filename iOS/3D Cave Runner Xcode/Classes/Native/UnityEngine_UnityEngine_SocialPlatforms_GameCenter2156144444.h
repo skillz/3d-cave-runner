@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Action`2<System.Boolean,System.String>
 struct Action_2_t1865222972;
 // UnityEngine.SocialPlatforms.Impl.AchievementDescription[]
@@ -23,7 +25,8 @@ struct LocalUser_t3019851150;
 // System.Collections.Generic.List`1<UnityEngine.SocialPlatforms.GameCenter.GcLeaderboard>
 struct List_1_t4117976357;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

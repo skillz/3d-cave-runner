@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_SslClient3918817353.h"
+
 // System.Net.HttpWebRequest
 struct HttpWebRequest_t1951404513;
 // Mono.Security.Protocol.Tls.CertificateSelectionCallback
@@ -17,7 +19,8 @@ struct CertificateSelectionCallback_t3721235490;
 // Mono.Security.Protocol.Tls.PrivateKeySelectionCallback
 struct PrivateKeySelectionCallback_t1663566523;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_SslClient3918817353.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

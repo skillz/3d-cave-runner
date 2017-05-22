@@ -13,16 +13,41 @@
 #include <limits>
 #include <assert.h>
 
+#include "class-internals.h"
+#include "codegen/il2cpp-codegen.h"
+#include "mscorlib_System_Array3829468939.h"
+#include "UnityScript_Lang_U3CModuleU3E3783534214.h"
+#include "UnityScript_Lang_UnityScript_Lang_Array1396575355.h"
+#include "mscorlib_System_Void1841601450.h"
+#include "mscorlib_System_Collections_CollectionBase1101587467.h"
+#include "mscorlib_System_Int322071877448.h"
+#include "mscorlib_System_Type1303803226.h"
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Boolean3825574718.h"
+#include "mscorlib_System_Collections_ArrayList4252133567.h"
+#include "mscorlib_System_String2029220233.h"
+#include "UnityScript_Lang_UnityScript_Lang_Extensions2406697300.h"
+#include "UnityScript_Lang_UnityScript_Lang_ListUpdateableEn2462779323.h"
+#include "UnityScript_Lang_UnityScript_Lang_UnityRuntimeServ3303336867.h"
+#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
+#include "mscorlib_System_ArgumentNullException628810857.h"
+
 // UnityScript.Lang.Array
 struct Array_t1396575355;
+// System.Collections.CollectionBase
+struct CollectionBase_t1101587467;
 // System.Object
 struct Il2CppObject;
 // System.Type
 struct Type_t;
 // System.Array
 struct Il2CppArray;
+// System.Collections.ArrayList
+struct ArrayList_t4252133567;
 // System.String
 struct String_t;
+// System.Collections.IEnumerable
+struct IEnumerable_t2911409499;
 // UnityScript.Lang.ListUpdateableEnumerator
 struct ListUpdateableEnumerator_t2462779323;
 // System.Collections.IList
@@ -31,40 +56,119 @@ struct IList_t3321498491;
 struct UnityRuntimeServices_t3303336867;
 // System.Collections.IEnumerator
 struct IEnumerator_t1466026749;
+// System.ArgumentNullException
+struct ArgumentNullException_t628810857;
+extern Il2CppCodeGenString* _stringLiteral372029314;
+extern const uint32_t Array_ToString_m1547520517_MetadataUsageId;
+extern Il2CppClass* ICollection_t91669223_il2cpp_TypeInfo_var;
+extern const uint32_t ListUpdateableEnumerator_MoveNext_m1727071326_MetadataUsageId;
+extern Il2CppClass* IList_t3321498491_il2cpp_TypeInfo_var;
+extern const uint32_t ListUpdateableEnumerator_get_Current_m1239640447_MetadataUsageId;
+extern const uint32_t ListUpdateableEnumerator_Update_m670620225_MetadataUsageId;
+extern const Il2CppType* Extensions_t2406697300_0_0_0_var;
+extern Il2CppClass* UnityRuntimeServices_t3303336867_il2cpp_TypeInfo_var;
+extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
+extern Il2CppClass* RuntimeServices_t1910041954_il2cpp_TypeInfo_var;
+extern const uint32_t UnityRuntimeServices__cctor_m277244785_MetadataUsageId;
+extern const Il2CppType* IList_t3321498491_0_0_0_var;
+extern Il2CppClass* Array_t1396575355_il2cpp_TypeInfo_var;
+extern Il2CppClass* ListUpdateableEnumerator_t2462779323_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerable_t2911409499_il2cpp_TypeInfo_var;
+extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
+extern const uint32_t UnityRuntimeServices_GetEnumerator_m1135949016_MetadataUsageId;
+extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
+extern Il2CppCodeGenString* _stringLiteral372029369;
+extern const uint32_t UnityRuntimeServices_Update_m1436857700_MetadataUsageId;
+extern Il2CppClass* Il2CppArray_il2cpp_TypeInfo_var;
+extern const uint32_t UnityRuntimeServices_IsValueTypeArray_m651527436_MetadataUsageId;
+extern const Il2CppType* IEnumerator_t1466026749_0_0_0_var;
+extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
+extern const uint32_t UnityRuntimeServices_U24static_initializerU24_m2178156047_MetadataUsageId;
 
-#include "class-internals.h"
-#include "codegen/il2cpp-codegen.h"
-#include "mscorlib_System_Array3829468939.h"
-#include "UnityScript_Lang_U3CModuleU3E3783534214.h"
-#include "UnityScript_Lang_U3CModuleU3E3783534214MethodDeclarations.h"
-#include "UnityScript_Lang_UnityScript_Lang_Array1396575355.h"
-#include "UnityScript_Lang_UnityScript_Lang_Array1396575355MethodDeclarations.h"
-#include "mscorlib_System_Void1841601450.h"
-#include "mscorlib_System_Collections_CollectionBase1101587467MethodDeclarations.h"
-#include "mscorlib_System_Int322071877448.h"
-#include "mscorlib_System_Collections_CollectionBase1101587467.h"
-#include "mscorlib_System_Type1303803226.h"
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Type1303803226MethodDeclarations.h"
-#include "mscorlib_System_Boolean3825574718.h"
-#include "mscorlib_System_Collections_ArrayList4252133567.h"
-#include "mscorlib_System_Collections_ArrayList4252133567MethodDeclarations.h"
-#include "mscorlib_System_String2029220233.h"
-#include "Boo_Lang_Boo_Lang_Builtins3763248930MethodDeclarations.h"
-#include "UnityScript_Lang_UnityScript_Lang_Extensions2406697300.h"
-#include "UnityScript_Lang_UnityScript_Lang_Extensions2406697300MethodDeclarations.h"
-#include "mscorlib_System_Array3829468939MethodDeclarations.h"
-#include "UnityScript_Lang_UnityScript_Lang_ListUpdateableEn2462779323.h"
-#include "UnityScript_Lang_UnityScript_Lang_ListUpdateableEn2462779323MethodDeclarations.h"
-#include "mscorlib_System_Object2689449295MethodDeclarations.h"
-#include "UnityScript_Lang_UnityScript_Lang_UnityRuntimeServ3303336867.h"
-#include "UnityScript_Lang_UnityScript_Lang_UnityRuntimeServ3303336867MethodDeclarations.h"
-#include "Boo_Lang_Boo_Lang_Runtime_RuntimeServices1910041954MethodDeclarations.h"
-#include "mscorlib_System_RuntimeTypeHandle2330101084.h"
-#include "mscorlib_System_ArgumentNullException628810857MethodDeclarations.h"
-#include "mscorlib_System_ArgumentNullException628810857.h"
-#include "mscorlib_ArrayTypes.h"
+// System.Object[]
+struct ObjectU5BU5D_t3614634134  : public Il2CppArray
+{
+public:
+	ALIGN_FIELD (8) Il2CppObject * m_Items[1];
 
+public:
+	inline Il2CppObject * GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline Il2CppObject ** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, Il2CppObject * value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+	inline Il2CppObject * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Il2CppObject ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Il2CppObject * value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier(m_Items + index, value);
+	}
+};
+
+
+
+// System.Void System.Collections.CollectionBase::.ctor()
+extern "C"  void CollectionBase__ctor_m2525885291 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Collections.CollectionBase::get_Count()
+extern "C"  int32_t CollectionBase_get_Count_m740218359 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Type::get_IsArray()
+extern "C"  bool Type_get_IsArray_m811277129 (Type_t * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Array UnityScript.Lang.Array::ToBuiltin(System.Type)
+extern "C"  Il2CppArray * Array_ToBuiltin_m3086745688 (Array_t1396575355 * __this, Type_t * ___type0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.ArrayList System.Collections.CollectionBase::get_InnerList()
+extern "C"  ArrayList_t4252133567 * CollectionBase_get_InnerList_m44314156 (CollectionBase_t1101587467 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object UnityScript.Lang.Array::Pop()
+extern "C"  Il2CppObject * Array_Pop_m3820345758 (Array_t1396575355 * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String UnityScript.Lang.Array::Join(System.String)
+extern "C"  String_t* Array_Join_m140080931 (Array_t1396575355 * __this, String_t* ___seperator0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.String Boo.Lang.Builtins::join(System.Collections.IEnumerable,System.String)
+extern "C"  String_t* Builtins_join_m2036613869 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, String_t* p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Array::get_Length()
+extern "C"  int32_t Array_get_Length_m1498215565 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.Object::.ctor()
+extern "C"  void Object__ctor_m2551263788 (Il2CppObject * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityScript.Lang.UnityRuntimeServices::$static_initializer$()
+extern "C"  void UnityRuntimeServices_U24static_initializerU24_m2178156047 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
+extern "C"  Type_t * Type_GetTypeFromHandle_m432505302 (Il2CppObject * __this /* static, unused */, RuntimeTypeHandle_t2330101084  p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void Boo.Lang.Runtime.RuntimeServices::RegisterExtensions(System.Type)
+extern "C"  void RuntimeServices_RegisterExtensions_m3796711317 (Il2CppObject * __this /* static, unused */, Type_t * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityScript.Lang.UnityRuntimeServices::IsValueTypeArray(System.Object)
+extern "C"  bool UnityRuntimeServices_IsValueTypeArray_m651527436 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___obj0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Object Boo.Lang.Runtime.RuntimeServices::Coerce(System.Object,System.Type)
+extern "C"  Il2CppObject * RuntimeServices_Coerce_m43784504 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, Type_t * p1, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityScript.Lang.ListUpdateableEnumerator::.ctor(System.Collections.IList)
+extern "C"  void ListUpdateableEnumerator__ctor_m2483709717 (ListUpdateableEnumerator_t2462779323 * __this, Il2CppObject * ___list0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerable Boo.Lang.Runtime.RuntimeServices::GetEnumerable(System.Object)
+extern "C"  Il2CppObject * RuntimeServices_GetEnumerable_m664169683 (Il2CppObject * __this /* static, unused */, Il2CppObject * p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void System.ArgumentNullException::.ctor(System.String)
+extern "C"  void ArgumentNullException__ctor_m3380712306 (ArgumentNullException_t628810857 * __this, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityScript.Lang.ListUpdateableEnumerator::Update(System.Object)
+extern "C"  void ListUpdateableEnumerator_Update_m670620225 (ListUpdateableEnumerator_t2462779323 * __this, Il2CppObject * ___newValue0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Type System.Object::GetType()
+extern "C"  Type_t * Object_GetType_m191970594 (Il2CppObject * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Boolean System.Type::get_IsValueType()
+extern "C"  bool Type_get_IsValueType_m1733572463 (Type_t * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Collections.IEnumerator System.Array::GetEnumerator()
+extern "C"  Il2CppObject * Array_GetEnumerator_m2284404958 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -174,8 +278,6 @@ extern "C"  Il2CppObject * Array_pop_m4075941118 (Array_t1396575355 * __this, co
 	}
 }
 // System.String UnityScript.Lang.Array::ToString()
-extern Il2CppCodeGenString* _stringLiteral372029314;
-extern const uint32_t Array_ToString_m1547520517_MetadataUsageId;
 extern "C"  String_t* Array_ToString_m1547520517 (Array_t1396575355 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -247,8 +349,6 @@ extern "C"  void ListUpdateableEnumerator_Reset_m4186908375 (ListUpdateableEnume
 	}
 }
 // System.Boolean UnityScript.Lang.ListUpdateableEnumerator::MoveNext()
-extern Il2CppClass* ICollection_t91669223_il2cpp_TypeInfo_var;
-extern const uint32_t ListUpdateableEnumerator_MoveNext_m1727071326_MetadataUsageId;
 extern "C"  bool ListUpdateableEnumerator_MoveNext_m1727071326 (ListUpdateableEnumerator_t2462779323 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -270,8 +370,6 @@ extern "C"  bool ListUpdateableEnumerator_MoveNext_m1727071326 (ListUpdateableEn
 	}
 }
 // System.Object UnityScript.Lang.ListUpdateableEnumerator::get_Current()
-extern Il2CppClass* IList_t3321498491_il2cpp_TypeInfo_var;
-extern const uint32_t ListUpdateableEnumerator_get_Current_m1239640447_MetadataUsageId;
 extern "C"  Il2CppObject * ListUpdateableEnumerator_get_Current_m1239640447 (ListUpdateableEnumerator_t2462779323 * __this, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -289,8 +387,6 @@ extern "C"  Il2CppObject * ListUpdateableEnumerator_get_Current_m1239640447 (Lis
 	}
 }
 // System.Void UnityScript.Lang.ListUpdateableEnumerator::Update(System.Object)
-extern Il2CppClass* IList_t3321498491_il2cpp_TypeInfo_var;
-extern const uint32_t ListUpdateableEnumerator_Update_m670620225_MetadataUsageId;
 extern "C"  void ListUpdateableEnumerator_Update_m670620225 (ListUpdateableEnumerator_t2462779323 * __this, Il2CppObject * ___newValue0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -309,11 +405,6 @@ extern "C"  void ListUpdateableEnumerator_Update_m670620225 (ListUpdateableEnume
 	}
 }
 // System.Void UnityScript.Lang.UnityRuntimeServices::.cctor()
-extern const Il2CppType* Extensions_t2406697300_0_0_0_var;
-extern Il2CppClass* UnityRuntimeServices_t3303336867_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* RuntimeServices_t1910041954_il2cpp_TypeInfo_var;
-extern const uint32_t UnityRuntimeServices__cctor_m277244785_MetadataUsageId;
 extern "C"  void UnityRuntimeServices__cctor_m277244785 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -341,16 +432,6 @@ extern "C"  void UnityRuntimeServices__ctor_m1066678718 (UnityRuntimeServices_t3
 	}
 }
 // System.Collections.IEnumerator UnityScript.Lang.UnityRuntimeServices::GetEnumerator(System.Object)
-extern const Il2CppType* IList_t3321498491_0_0_0_var;
-extern Il2CppClass* UnityRuntimeServices_t3303336867_il2cpp_TypeInfo_var;
-extern Il2CppClass* Array_t1396575355_il2cpp_TypeInfo_var;
-extern Il2CppClass* IList_t3321498491_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern Il2CppClass* RuntimeServices_t1910041954_il2cpp_TypeInfo_var;
-extern Il2CppClass* ListUpdateableEnumerator_t2462779323_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerable_t2911409499_il2cpp_TypeInfo_var;
-extern Il2CppClass* IEnumerator_t1466026749_il2cpp_TypeInfo_var;
-extern const uint32_t UnityRuntimeServices_GetEnumerator_m1135949016_MetadataUsageId;
 extern "C"  Il2CppObject * UnityRuntimeServices_GetEnumerator_m1135949016 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___obj0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -473,10 +554,6 @@ IL_0086:
 	}
 }
 // System.Void UnityScript.Lang.UnityRuntimeServices::Update(System.Collections.IEnumerator,System.Object)
-extern Il2CppClass* ArgumentNullException_t628810857_il2cpp_TypeInfo_var;
-extern Il2CppClass* ListUpdateableEnumerator_t2462779323_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral372029369;
-extern const uint32_t UnityRuntimeServices_Update_m1436857700_MetadataUsageId;
 extern "C"  void UnityRuntimeServices_Update_m1436857700 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___e0, Il2CppObject * ___newValue1, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -524,8 +601,6 @@ IL_002d:
 	}
 }
 // System.Boolean UnityScript.Lang.UnityRuntimeServices::IsValueTypeArray(System.Object)
-extern Il2CppClass* Il2CppArray_il2cpp_TypeInfo_var;
-extern const uint32_t UnityRuntimeServices_IsValueTypeArray_m651527436_MetadataUsageId;
 extern "C"  bool UnityRuntimeServices_IsValueTypeArray_m651527436 (Il2CppObject * __this /* static, unused */, Il2CppObject * ___obj0, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;
@@ -565,11 +640,6 @@ IL_0021:
 	}
 }
 // System.Void UnityScript.Lang.UnityRuntimeServices::$static_initializer$()
-extern const Il2CppType* IEnumerator_t1466026749_0_0_0_var;
-extern Il2CppClass* ObjectU5BU5D_t3614634134_il2cpp_TypeInfo_var;
-extern Il2CppClass* UnityRuntimeServices_t3303336867_il2cpp_TypeInfo_var;
-extern Il2CppClass* Type_t_il2cpp_TypeInfo_var;
-extern const uint32_t UnityRuntimeServices_U24static_initializerU24_m2178156047_MetadataUsageId;
 extern "C"  void UnityRuntimeServices_U24static_initializerU24_m2178156047 (Il2CppObject * __this /* static, unused */, const MethodInfo* method)
 {
 	static bool s_Il2CppMethodInitialized;

@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Security_Cryptography_RSA3719518354.h"
+
 // Mono.Security.Cryptography.KeyPairPersistence
 struct KeyPairPersistence_t3637935872;
 // Mono.Security.Cryptography.RSAManaged
 struct RSAManaged_t3034748747;
 
-#include "mscorlib_System_Security_Cryptography_RSA3719518354.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Attribute542643598.h"
+#include "mscorlib_System_Runtime_InteropServices_UnmanagedT2550630890.h"
+
 // System.String
 struct String_t;
 // System.Type
 struct Type_t;
 
-#include "mscorlib_System_Attribute542643598.h"
-#include "mscorlib_System_Runtime_InteropServices_UnmanagedT2550630890.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

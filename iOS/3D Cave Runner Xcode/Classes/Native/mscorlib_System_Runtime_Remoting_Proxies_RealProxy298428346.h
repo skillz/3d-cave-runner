@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Type
 struct Type_t;
 // System.String
@@ -19,7 +21,8 @@ struct Identity_t3647548000;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

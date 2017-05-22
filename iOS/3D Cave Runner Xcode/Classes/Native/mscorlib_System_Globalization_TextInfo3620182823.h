@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Globalization_TextInfo_Data1649773944.h"
+
 // System.String
 struct String_t;
 // System.Globalization.CultureInfo
 struct CultureInfo_t3500843524;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Globalization_TextInfo_Data1649773944.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

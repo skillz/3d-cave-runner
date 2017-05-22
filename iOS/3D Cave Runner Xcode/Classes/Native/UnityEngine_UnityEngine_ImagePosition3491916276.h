@@ -10,9 +10,12 @@
 
 #include <stdint.h>
 
-
 #include "mscorlib_System_Enum2459695545.h"
 #include "UnityEngine_UnityEngine_ImagePosition3491916276.h"
+
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

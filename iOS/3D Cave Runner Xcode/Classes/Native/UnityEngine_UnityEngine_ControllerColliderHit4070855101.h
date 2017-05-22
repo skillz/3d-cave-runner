@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
 // UnityEngine.CharacterController
 struct CharacterController_t4094781467;
 // UnityEngine.Collider
 struct Collider_t3497673348;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_Vector32243707580.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

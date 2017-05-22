@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "System_System_Security_Cryptography_X509Certificate480677120.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "System_System_Security_Cryptography_X509Certificate480677120.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

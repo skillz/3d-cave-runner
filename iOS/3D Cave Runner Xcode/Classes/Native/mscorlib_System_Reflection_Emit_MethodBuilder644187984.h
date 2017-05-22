@@ -10,6 +10,11 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Reflection_MethodInfo3330546337.h"
+#include "mscorlib_System_Reflection_MethodAttributes790385034.h"
+#include "mscorlib_System_Reflection_MethodImplAttributes1541361196.h"
+#include "mscorlib_System_Reflection_CallingConventions1097349142.h"
+
 // System.Type
 struct Type_t;
 // System.Type[]
@@ -29,10 +34,8 @@ struct MethodInfo_t;
 // System.Reflection.Emit.GenericTypeParameterBuilder[]
 struct GenericTypeParameterBuilderU5BU5D_t358971386;
 
-#include "mscorlib_System_Reflection_MethodInfo3330546337.h"
-#include "mscorlib_System_Reflection_MethodAttributes790385034.h"
-#include "mscorlib_System_Reflection_MethodImplAttributes1541361196.h"
-#include "mscorlib_System_Reflection_CallingConventions1097349142.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

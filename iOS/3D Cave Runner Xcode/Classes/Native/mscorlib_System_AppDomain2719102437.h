@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_MarshalByRefObject1285298191.h"
+#include "mscorlib_System_IntPtr2504060609.h"
+#include "mscorlib_System_Security_Principal_PrincipalPolicy289802916.h"
+
 // System.String
 struct String_t;
 // System.Collections.Hashtable
@@ -37,9 +41,8 @@ struct EventHandler_t277755526;
 // System.UnhandledExceptionEventHandler
 struct UnhandledExceptionEventHandler_t1916531888;
 
-#include "mscorlib_System_MarshalByRefObject1285298191.h"
-#include "mscorlib_System_IntPtr2504060609.h"
-#include "mscorlib_System_Security_Principal_PrincipalPolicy289802916.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

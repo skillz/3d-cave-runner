@@ -1,4 +1,3 @@
-
 #define SIMULATE_ATTITUDE_FROM_GRAVITY 1
 
 #import "iPhone_Sensors.h"
@@ -19,6 +18,8 @@ typedef void (^ControllerPausedHandler)(GCController *controller);
 static NSArray* QueryControllerCollection();
 
 static bool gTVRemoteTouchesEnabled = true;
+static bool gTVRemoteAllowRotationInitialValue = false;
+static bool gTVRemoteReportsAbsoluteDpadValuesInitialValue = false;
 
 static bool gCompensateSensors = true;
 bool gEnableGyroscope = false;
@@ -31,109 +32,108 @@ int gMaxQueuedAccelerationEvents = 2 * 60; // 120 events or 2 seconds at 60Hz re
 
 static ControllerPausedHandler gControllerHandler = ^(GCController *controller)
 {
-	NSArray* list = QueryControllerCollection();
-	if (list != nil)
-	{
-		NSUInteger idx = [list indexOfObject:controller];
-		if (idx < MAX_JOYSTICKS)
-		{
-			gPausedJoysticks[idx] = !gPausedJoysticks[idx];
-		}
-	}
+    NSArray* list = QueryControllerCollection();
+    if (list != nil)
+    {
+        NSUInteger idx = [list indexOfObject: controller];
+        if (idx < MAX_JOYSTICKS)
+        {
+            gPausedJoysticks[idx] = !gPausedJoysticks[idx];
+        }
+    }
 };
 
 bool IsCompensatingSensors() { return gCompensateSensors; }
-void SetCompensatingSensors(bool val) { gCompensateSensors = val;}
+void SetCompensatingSensors(bool val) { gCompensateSensors = val; }
 
 inline float UnityReorientHeading(float heading)
 {
-	if (IsCompensatingSensors())
-	{
-		float rotateBy = 0.f;
-		switch (UnityCurrentOrientation())
-		{
-			case portraitUpsideDown:
-				rotateBy = -180.f;
-				break;
-			case landscapeLeft:
-				rotateBy = -270.f;
-				break;
-			case landscapeRight:
-				rotateBy = -90.f;
-				break;
-			default:
-				break;
-		}
+    if (IsCompensatingSensors())
+    {
+        float rotateBy = 0.f;
+        switch (UnityCurrentOrientation())
+        {
+            case portraitUpsideDown:
+                rotateBy = -180.f;
+                break;
+            case landscapeLeft:
+                rotateBy = -270.f;
+                break;
+            case landscapeRight:
+                rotateBy = -90.f;
+                break;
+            default:
+                break;
+        }
 
-		return fmodf((360.f + heading + rotateBy), 360.f);
-	}
-	else
-	{
-		return heading;
-	}
+        return fmodf((360.f + heading + rotateBy), 360.f);
+    }
+    else
+    {
+        return heading;
+    }
 }
 
 inline Vector3f UnityReorientVector3(float x, float y, float z)
 {
-	if (IsCompensatingSensors())
-	{
-		Vector3f res;
-		switch (UnityCurrentOrientation())
-		{
-			case portraitUpsideDown:
-				{ res = (Vector3f){-x, -y, z}; }
-				break;
-			case landscapeLeft:
-				{ res = (Vector3f){-y, x, z}; }
-				break;
-			case landscapeRight:
-				{ res = (Vector3f){y, -x, z}; }
-				break;
-			default:
-				{ res = (Vector3f){x, y, z}; }
-		}
-		return res;
-	}
-	else
-	{
-		return (Vector3f){x, y, z};
-	}
+    if (IsCompensatingSensors())
+    {
+        Vector3f res;
+        switch (UnityCurrentOrientation())
+        {
+            case portraitUpsideDown:
+            { res = (Vector3f) {-x, -y, z}; }
+                                            break;
+            case landscapeLeft:
+            { res = (Vector3f) {-y, x, z}; }
+                                           break;
+            case landscapeRight:
+            { res = (Vector3f) {y, -x, z}; }
+                                           break;
+            default:
+            { res = (Vector3f) {x, y, z}; }
+        }
+        return res;
+    }
+    else
+    {
+        return (Vector3f) {x, y, z};
+    }
 }
 
 inline Quaternion4f UnityReorientQuaternion(float x, float y, float z, float w)
 {
-	if (IsCompensatingSensors())
-	{
-		Quaternion4f res, inp = {x, y, z, w};
-		switch (UnityCurrentOrientation())
-		{
-			case landscapeLeft:
-				QuatMultiply(res, inp, gQuatRot[1]);
-				break;
-			case portraitUpsideDown:
-				QuatMultiply(res, inp, gQuatRot[2]);
-				break;
-			case landscapeRight:
-				QuatMultiply(res, inp, gQuatRot[3]);
-				break;
-			default:
-				res = inp;
-		}
-		return res;
-	}
-	else
-	{
-		return (Quaternion4f){x, y, z, w};
-	}
+    if (IsCompensatingSensors())
+    {
+        Quaternion4f res, inp = {x, y, z, w};
+        switch (UnityCurrentOrientation())
+        {
+            case landscapeLeft:
+                QuatMultiply(res, inp, gQuatRot[1]);
+                break;
+            case portraitUpsideDown:
+                QuatMultiply(res, inp, gQuatRot[2]);
+                break;
+            case landscapeRight:
+                QuatMultiply(res, inp, gQuatRot[3]);
+                break;
+            default:
+                res = inp;
+        }
+        return res;
+    }
+    else
+    {
+        return (Quaternion4f) {x, y, z, w};
+    }
 }
-
 
 #if UNITY_TVOS
 static bool sGCMotionForwardingEnabled = false;
 static bool sGCMotionForwardedForCurrentFrame = false;
 #else
-static CMMotionManager*		sMotionManager	= nil;
-static NSOperationQueue*	sMotionQueue	= nil;
+static CMMotionManager*     sMotionManager  = nil;
+static NSOperationQueue*    sMotionQueue    = nil;
 #endif
 
 // Current update interval or 0.0f if not initialized. This is returned
@@ -152,166 +152,167 @@ static float sUserUpdateInterval = 1.0f / 30.0f;
 void SensorsCleanup()
 {
 #if !UNITY_TVOS
-	if (sMotionManager != nil)
-	{
-		[sMotionManager stopGyroUpdates];
-		[sMotionManager stopDeviceMotionUpdates];
-		[sMotionManager stopAccelerometerUpdates];
-		sMotionManager = nil;
-	}
+    if (sMotionManager != nil)
+    {
+        [sMotionManager stopGyroUpdates];
+        [sMotionManager stopDeviceMotionUpdates];
+        [sMotionManager stopAccelerometerUpdates];
+        sMotionManager = nil;
+    }
 
-	sMotionQueue = nil;
+    sMotionQueue = nil;
 #endif
 }
 
 extern "C" void UnityCoreMotionStart()
 {
 #if UNITY_TVOS
-	sGCMotionForwardingEnabled = true;
+    sGCMotionForwardingEnabled = true;
 #else
-	if(sMotionQueue == nil)
-		sMotionQueue = [[NSOperationQueue alloc] init];
+    if (sMotionQueue == nil)
+        sMotionQueue = [[NSOperationQueue alloc] init];
 
-	bool initMotionManager = (sMotionManager == nil);
-	if(initMotionManager)
-		sMotionManager = [[CMMotionManager alloc] init];
+    bool initMotionManager = (sMotionManager == nil);
+    if (initMotionManager)
+        sMotionManager = [[CMMotionManager alloc] init];
 
-	if(gEnableGyroscope && sMotionManager.gyroAvailable)
-	{
-		[sMotionManager startGyroUpdates];
-		[sMotionManager setGyroUpdateInterval: sUpdateInterval];
-	}
+    if (gEnableGyroscope && sMotionManager.gyroAvailable)
+    {
+        [sMotionManager startGyroUpdates];
+        [sMotionManager setGyroUpdateInterval: sUpdateInterval];
+    }
 
-	if(gEnableGyroscope && sMotionManager.deviceMotionAvailable)
-	{
-		[sMotionManager startDeviceMotionUpdates];
-		[sMotionManager setDeviceMotionUpdateInterval: sUpdateInterval];
-	}
+    if (gEnableGyroscope && sMotionManager.deviceMotionAvailable)
+    {
+        [sMotionManager startDeviceMotionUpdates];
+        [sMotionManager setDeviceMotionUpdateInterval: sUpdateInterval];
+    }
 
-	if(initMotionManager && sMotionManager.accelerometerAvailable)
-	{
-		int frequency = UnityGetAccelerometerFrequency();
-		if (frequency > 0)
-		{
-			[sMotionManager startAccelerometerUpdatesToQueue: sMotionQueue withHandler:^( CMAccelerometerData* data, NSError* error){
-				Vector3f res = UnityReorientVector3(data.acceleration.x, data.acceleration.y, data.acceleration.z);
-				UnityDidAccelerate(res.x, res.y, res.z, data.timestamp);
-			}];
-			[sMotionManager setAccelerometerUpdateInterval:1.0f/frequency];
-		}
-	}
+    if (initMotionManager && sMotionManager.accelerometerAvailable)
+    {
+        int frequency = UnityGetAccelerometerFrequency();
+        if (frequency > 0)
+        {
+            [sMotionManager startAccelerometerUpdatesToQueue: sMotionQueue withHandler:^(CMAccelerometerData* data, NSError* error) {
+                Vector3f res = UnityReorientVector3(data.acceleration.x, data.acceleration.y, data.acceleration.z);
+                UnityDidAccelerate(res.x, res.y, res.z, data.timestamp);
+            }];
+            [sMotionManager setAccelerometerUpdateInterval: 1.0f / frequency];
+        }
+    }
 #endif
 }
 
 extern "C" void UnityCoreMotionStop()
 {
 #if UNITY_TVOS
-	sGCMotionForwardingEnabled = false;
+    sGCMotionForwardingEnabled = false;
 #else
-	if(sMotionManager != nil)
-	{
-		[sMotionManager stopGyroUpdates];
-		[sMotionManager stopDeviceMotionUpdates];
-	}
+    if (sMotionManager != nil)
+    {
+        [sMotionManager stopGyroUpdates];
+        [sMotionManager stopDeviceMotionUpdates];
+    }
 #endif
 }
-
 
 extern "C" void UnitySetGyroUpdateInterval(int idx, float interval)
 {
 #if !UNITY_TVOS
-	static const float _MinUpdateInterval = 1.0f/60.0f;
-	static const float _MaxUpdateInterval = 1.0f;
+    static const float _MinUpdateInterval = 1.0f / 60.0f;
+    static const float _MaxUpdateInterval = 1.0f;
 
-	if(interval < _MinUpdateInterval)		interval = _MinUpdateInterval;
-	else if(interval > _MaxUpdateInterval)	interval = _MaxUpdateInterval;
+    if (interval < _MinUpdateInterval)
+        interval = _MinUpdateInterval;
+    else if (interval > _MaxUpdateInterval)
+        interval = _MaxUpdateInterval;
 
-	sUserUpdateInterval = interval;
+    sUserUpdateInterval = interval;
 
-	if(sMotionManager)
-	{
-		sUpdateInterval = interval;
+    if (sMotionManager)
+    {
+        sUpdateInterval = interval;
 
-		[sMotionManager setGyroUpdateInterval:interval];
-		[sMotionManager setDeviceMotionUpdateInterval:interval];
-	}
+        [sMotionManager setGyroUpdateInterval: interval];
+        [sMotionManager setDeviceMotionUpdateInterval: interval];
+    }
 #endif
 }
 
 extern "C" float UnityGetGyroUpdateInterval(int idx)
 {
-	return sUpdateInterval;
+    return sUpdateInterval;
 }
 
 extern "C" void UnityUpdateGyroData()
 {
 #if !UNITY_TVOS
-	CMRotationRate rotationRate = { 0.0, 0.0, 0.0 };
-	CMRotationRate rotationRateUnbiased = { 0.0, 0.0, 0.0 };
-	CMAcceleration userAcceleration = { 0.0, 0.0, 0.0 };
-	CMAcceleration gravity = { 0.0, 0.0, 0.0 };
-	CMQuaternion attitude = { 0.0, 0.0, 0.0, 1.0 };
+    CMRotationRate rotationRate = { 0.0, 0.0, 0.0 };
+    CMRotationRate rotationRateUnbiased = { 0.0, 0.0, 0.0 };
+    CMAcceleration userAcceleration = { 0.0, 0.0, 0.0 };
+    CMAcceleration gravity = { 0.0, 0.0, 0.0 };
+    CMQuaternion attitude = { 0.0, 0.0, 0.0, 1.0 };
 
-	if (sMotionManager != nil)
-	{
-		CMGyroData *gyroData = sMotionManager.gyroData;
-		CMDeviceMotion *motionData = sMotionManager.deviceMotion;
+    if (sMotionManager != nil)
+    {
+        CMGyroData *gyroData = sMotionManager.gyroData;
+        CMDeviceMotion *motionData = sMotionManager.deviceMotion;
 
-		if (gyroData != nil)
-		{
-			rotationRate = gyroData.rotationRate;
-		}
+        if (gyroData != nil)
+        {
+            rotationRate = gyroData.rotationRate;
+        }
 
-		if (motionData != nil)
-		{
-			CMAttitude *att = motionData.attitude;
+        if (motionData != nil)
+        {
+            CMAttitude *att = motionData.attitude;
 
-			attitude = att.quaternion;
-			rotationRateUnbiased = motionData.rotationRate;
-			userAcceleration = motionData.userAcceleration;
-			gravity = motionData.gravity;
-		}
-	}
+            attitude = att.quaternion;
+            rotationRateUnbiased = motionData.rotationRate;
+            userAcceleration = motionData.userAcceleration;
+            gravity = motionData.gravity;
+        }
+    }
 
-	Vector3f reorientedRotRate = UnityReorientVector3(rotationRate.x, rotationRate.y, rotationRate.z);
-	UnitySensorsSetGyroRotationRate(0, reorientedRotRate.x, reorientedRotRate.y, reorientedRotRate.z);
+    Vector3f reorientedRotRate = UnityReorientVector3(rotationRate.x, rotationRate.y, rotationRate.z);
+    UnitySensorsSetGyroRotationRate(0, reorientedRotRate.x, reorientedRotRate.y, reorientedRotRate.z);
 
-	Vector3f reorientedRotRateUnbiased = UnityReorientVector3(rotationRateUnbiased.x, rotationRateUnbiased.y, rotationRateUnbiased.z);
-	UnitySensorsSetGyroRotationRateUnbiased(0, reorientedRotRateUnbiased.x, reorientedRotRateUnbiased.y, reorientedRotRateUnbiased.z);
+    Vector3f reorientedRotRateUnbiased = UnityReorientVector3(rotationRateUnbiased.x, rotationRateUnbiased.y, rotationRateUnbiased.z);
+    UnitySensorsSetGyroRotationRateUnbiased(0, reorientedRotRateUnbiased.x, reorientedRotRateUnbiased.y, reorientedRotRateUnbiased.z);
 
-	Vector3f reorientedUserAcc = UnityReorientVector3(userAcceleration.x, userAcceleration.y, userAcceleration.z);
-	UnitySensorsSetUserAcceleration(0, reorientedUserAcc.x, reorientedUserAcc.y, reorientedUserAcc.z);
+    Vector3f reorientedUserAcc = UnityReorientVector3(userAcceleration.x, userAcceleration.y, userAcceleration.z);
+    UnitySensorsSetUserAcceleration(0, reorientedUserAcc.x, reorientedUserAcc.y, reorientedUserAcc.z);
 
-	Vector3f reorientedG = UnityReorientVector3(gravity.x, gravity.y, gravity.z);
-	UnitySensorsSetGravity(0, reorientedG.x, reorientedG.y, reorientedG.z);
+    Vector3f reorientedG = UnityReorientVector3(gravity.x, gravity.y, gravity.z);
+    UnitySensorsSetGravity(0, reorientedG.x, reorientedG.y, reorientedG.z);
 
-	Quaternion4f reorientedAtt = UnityReorientQuaternion(attitude.x, attitude.y, attitude.z, attitude.w);
-	UnitySensorsSetAttitude(0, reorientedAtt.x, reorientedAtt.y, reorientedAtt.z, reorientedAtt.w);
+    Quaternion4f reorientedAtt = UnityReorientQuaternion(attitude.x, attitude.y, attitude.z, attitude.w);
+    UnitySensorsSetAttitude(0, reorientedAtt.x, reorientedAtt.y, reorientedAtt.z, reorientedAtt.w);
 #endif
 }
 
 extern "C" int UnityIsGyroEnabled(int idx)
 {
 #if UNITY_TVOS
-	return sGCMotionForwardingEnabled;
+    return sGCMotionForwardingEnabled;
 #else
-	if (sMotionManager == nil)
-		return 0;
+    if (sMotionManager == nil)
+        return 0;
 
-	return sMotionManager.gyroAvailable && sMotionManager.gyroActive;
+    return sMotionManager.gyroAvailable && sMotionManager.gyroActive;
 #endif
 }
 
 extern "C" int UnityIsGyroAvailable()
 {
 #if UNITY_TVOS
-	return true;
+    return true;
 #else
-	if (sMotionManager != nil)
-		return sMotionManager.gyroAvailable;
+    if (sMotionManager != nil)
+        return sMotionManager.gyroAvailable;
 #endif
 
-	return 0;
+    return 0;
 }
 
 // -- Joystick stuff --
@@ -319,27 +320,27 @@ extern "C" int UnityIsGyroAvailable()
 #pragma clang diagnostic ignored "-Wobjc-method-access"
 enum JoystickButtonNumbers
 {
-	BTN_PAUSE = 0,
-	BTN_DPAD_UP = 4,
-	BTN_DPAD_RIGHT = 5,
-	BTN_DPAD_DOWN = 6,
-	BTN_DPAD_LEFT = 7,
-	BTN_Y = 12,
-	BTN_B = 13,
-	BTN_A = 14,
-	BTN_X = 15,
-	BTN_L1 = 8,
-	BTN_L2 = 10,
-	BTN_R1 = 9,
-	BTN_R2 = 11,
-	BTN_MENU = 16,
-	BTN_COUNT
+    BTN_PAUSE = 0,
+    BTN_DPAD_UP = 4,
+    BTN_DPAD_RIGHT = 5,
+    BTN_DPAD_DOWN = 6,
+    BTN_DPAD_LEFT = 7,
+    BTN_Y = 12,
+    BTN_B = 13,
+    BTN_A = 14,
+    BTN_X = 15,
+    BTN_L1 = 8,
+    BTN_L2 = 10,
+    BTN_R1 = 9,
+    BTN_R2 = 11,
+    BTN_MENU = 16,
+    BTN_COUNT
 };
 
 typedef struct
 {
-	int buttonCode;
-	bool state;
+    int buttonCode;
+    bool state;
 } JoystickButtonState;
 
 JoystickButtonState gAggregatedJoystickState[BTN_COUNT];
@@ -347,182 +348,186 @@ JoystickButtonState gAggregatedJoystickState[BTN_COUNT];
 
 static float GetAxisValue(GCControllerAxisInput* axis)
 {
-	return axis.value;
+    return axis.value;
 }
 
 static BOOL GetButtonPressed(GCControllerButtonInput* button)
 {
-	return button.pressed;
+    return button.pressed;
 }
 
 static BOOL GetButtonValue(GCControllerButtonInput* button)
 {
-	return button.value;
+    return button.value;
 }
 
 extern "C" void UnityInitJoysticks()
 {
-	if (!gJoysticksInited)
-	{
-		NSBundle* bundle = [NSBundle bundleWithPath:@"/System/Library/Frameworks/GameController.framework"];
-		if(bundle)
-		{
-			[bundle load];
-			Class retClass = [bundle classNamed:@"GCController"];
-			if( retClass &&	[retClass respondsToSelector:@selector(controllers)] )
-				gGameControllerClass = retClass;
-		}
+    if (!gJoysticksInited)
+    {
+        NSBundle* bundle = [NSBundle bundleWithPath: @"/System/Library/Frameworks/GameController.framework"];
+        if (bundle)
+        {
+            [bundle load];
+            Class retClass = [bundle classNamed: @"GCController"];
+            if (retClass && [retClass respondsToSelector: @selector(controllers)])
+                gGameControllerClass = retClass;
 
-		for (int i = 0; i < BTN_COUNT; i++)
-		{
-			char buf[128];
-			sprintf (buf, "joystick button %d", i);
+            //Apply settings that could have been set by user scripts before controller initialization
+            UnitySetAppleTVRemoteAllowRotation(gTVRemoteAllowRotationInitialValue);
+            UnitySetAppleTVRemoteReportAbsoluteDpadValues(gTVRemoteReportsAbsoluteDpadValuesInitialValue);
+        }
 
-			gAggregatedJoystickState[i].buttonCode = UnityStringToKey(buf);
-			gAggregatedJoystickState[i].state = false;
-		}
+        for (int i = 0; i < BTN_COUNT; i++)
+        {
+            char buf[128];
+            sprintf(buf, "joystick button %d", i);
 
-		gJoysticksInited = true;
-	}
+            gAggregatedJoystickState[i].buttonCode = UnityStringToKey(buf);
+            gAggregatedJoystickState[i].state = false;
+        }
+
+        gJoysticksInited = true;
+    }
 }
 
 static NSArray* QueryControllerCollection()
 {
-	return gGameControllerClass != nil ? (NSArray*)[gGameControllerClass performSelector:@selector(controllers)] : nil;
+    return gGameControllerClass != nil ? (NSArray*)[gGameControllerClass performSelector: @selector(controllers)] : nil;
 }
 
 static void ResetAggregatedJoystickState()
 {
-	for (int i = 0; i < BTN_COUNT; i++)
-	{
-		gAggregatedJoystickState[i].state = false;
-	}
+    for (int i = 0; i < BTN_COUNT; i++)
+    {
+        gAggregatedJoystickState[i].state = false;
+    }
 }
 
 static void SetAggregatedJoystickState()
 {
-	for (int i = 0; i < BTN_COUNT; i++)
-	{
-		UnitySetKeyState (gAggregatedJoystickState[i].buttonCode, gAggregatedJoystickState[i].state);
-	}
+    for (int i = 0; i < BTN_COUNT; i++)
+    {
+        UnitySetKeyState(gAggregatedJoystickState[i].buttonCode, gAggregatedJoystickState[i].state);
+    }
 }
 
 // Mirror button input into virtual joystick 0
-static void ReportAggregatedJoystickButton (int buttonNum, int state)
+static void ReportAggregatedJoystickButton(int buttonNum, int state)
 {
-	assert(buttonNum < BTN_COUNT);
-	gAggregatedJoystickState[buttonNum].state |= (bool)state;
+    assert(buttonNum < BTN_COUNT);
+    gAggregatedJoystickState[buttonNum].state |= (bool)state;
 }
 
-static void SetJoystickButtonState (int joyNum, int buttonNum, int state)
+static void SetJoystickButtonState(int joyNum, int buttonNum, int state)
 {
-	char buf[128];
-	sprintf (buf, "joystick %d button %d", joyNum, buttonNum);
-	UnitySetKeyState (UnityStringToKey (buf), state);
+    char buf[128];
+    sprintf(buf, "joystick %d button %d", joyNum, buttonNum);
+    UnitySetKeyState(UnityStringToKey(buf), state);
 
-	ReportAggregatedJoystickButton(buttonNum, state);
+    ReportAggregatedJoystickButton(buttonNum, state);
 }
 
 static void ReportJoystickButton(int idx, JoystickButtonNumbers num, GCControllerButtonInput* button)
 {
-	SetJoystickButtonState(idx + 1, num, GetButtonPressed(button));
-	UnitySetJoystickPosition(idx + 1, num, GetButtonValue(button));
+    SetJoystickButtonState(idx + 1, num, GetButtonPressed(button));
+    UnitySetJoystickPosition(idx + 1, num, GetButtonValue(button));
 }
 
 template<class ClassXYZ>
 static void ReportJoystickXYZAxes(int idx, int xaxis, int yaxis, int zaxis, const ClassXYZ& xyz)
 {
-	UnitySetJoystickPosition(idx + 1, xaxis, xyz.x);
-	UnitySetJoystickPosition(idx + 1, yaxis, xyz.y);
-	UnitySetJoystickPosition(idx + 1, zaxis, xyz.z);
+    UnitySetJoystickPosition(idx + 1, xaxis, xyz.x);
+    UnitySetJoystickPosition(idx + 1, yaxis, xyz.y);
+    UnitySetJoystickPosition(idx + 1, zaxis, xyz.z);
 }
 
 template<class ClassXYZW>
 static void ReportJoystickXYZWAxes(int idx, int xaxis, int yaxis, int zaxis, int waxis,
-								   const ClassXYZW& xyzw)
+    const ClassXYZW& xyzw)
 {
-	UnitySetJoystickPosition(idx + 1, xaxis, xyzw.x);
-	UnitySetJoystickPosition(idx + 1, yaxis, xyzw.y);
-	UnitySetJoystickPosition(idx + 1, zaxis, xyzw.z);
-	UnitySetJoystickPosition(idx + 1, waxis, xyzw.w);
+    UnitySetJoystickPosition(idx + 1, xaxis, xyzw.x);
+    UnitySetJoystickPosition(idx + 1, yaxis, xyzw.y);
+    UnitySetJoystickPosition(idx + 1, zaxis, xyzw.z);
+    UnitySetJoystickPosition(idx + 1, waxis, xyzw.w);
 }
 
 #if UNITY_TVOS
 static void ReportJoystickMicro(int idx, GCMicroGamepad* gamepad)
 {
-	GCControllerDirectionPad* dpad = [gamepad dpad];
+    GCControllerDirectionPad* dpad = [gamepad dpad];
 
-	UnitySetJoystickPosition(idx + 1, 0, GetAxisValue([dpad xAxis]));
-	UnitySetJoystickPosition(idx + 1, 1, -GetAxisValue([dpad yAxis]));
+    UnitySetJoystickPosition(idx + 1, 0, GetAxisValue([dpad xAxis]));
+    UnitySetJoystickPosition(idx + 1, 1, -GetAxisValue([dpad yAxis]));
 
-	ReportJoystickButton(idx, BTN_DPAD_UP, [dpad up]);
-	ReportJoystickButton(idx, BTN_DPAD_RIGHT, [dpad right]);
-	ReportJoystickButton(idx, BTN_DPAD_DOWN, [dpad down]);
-	ReportJoystickButton(idx, BTN_DPAD_LEFT, [dpad left]);
+    ReportJoystickButton(idx, BTN_DPAD_UP, [dpad up]);
+    ReportJoystickButton(idx, BTN_DPAD_RIGHT, [dpad right]);
+    ReportJoystickButton(idx, BTN_DPAD_DOWN, [dpad down]);
+    ReportJoystickButton(idx, BTN_DPAD_LEFT, [dpad left]);
 
-	ReportJoystickButton(idx, BTN_A, [gamepad buttonA]);
-	ReportJoystickButton(idx, BTN_X, [gamepad buttonX]);
+    ReportJoystickButton(idx, BTN_A, [gamepad buttonA]);
+    ReportJoystickButton(idx, BTN_X, [gamepad buttonX]);
 }
+
 #endif
 
 static void ReportJoystickBasic(int idx, GCGamepad* gamepad)
 {
-	GCControllerDirectionPad* dpad = [gamepad dpad];
+    GCControllerDirectionPad* dpad = [gamepad dpad];
 
-	UnitySetJoystickPosition(idx + 1, 0, GetAxisValue([dpad xAxis]));
-	UnitySetJoystickPosition(idx + 1, 1, -GetAxisValue([dpad yAxis]));
-	ReportJoystickButton(idx, BTN_DPAD_UP, [dpad up]);
-	ReportJoystickButton(idx, BTN_DPAD_RIGHT, [dpad right]);
-	ReportJoystickButton(idx, BTN_DPAD_DOWN, [dpad down]);
-	ReportJoystickButton(idx, BTN_DPAD_LEFT, [dpad left]);
+    UnitySetJoystickPosition(idx + 1, 0, GetAxisValue([dpad xAxis]));
+    UnitySetJoystickPosition(idx + 1, 1, -GetAxisValue([dpad yAxis]));
+    ReportJoystickButton(idx, BTN_DPAD_UP, [dpad up]);
+    ReportJoystickButton(idx, BTN_DPAD_RIGHT, [dpad right]);
+    ReportJoystickButton(idx, BTN_DPAD_DOWN, [dpad down]);
+    ReportJoystickButton(idx, BTN_DPAD_LEFT, [dpad left]);
 
-	ReportJoystickButton(idx, BTN_A, [gamepad buttonA]);
-	ReportJoystickButton(idx, BTN_B, [gamepad buttonB]);
-	ReportJoystickButton(idx, BTN_Y, [gamepad buttonY]);
-	ReportJoystickButton(idx, BTN_X, [gamepad buttonX]);
+    ReportJoystickButton(idx, BTN_A, [gamepad buttonA]);
+    ReportJoystickButton(idx, BTN_B, [gamepad buttonB]);
+    ReportJoystickButton(idx, BTN_Y, [gamepad buttonY]);
+    ReportJoystickButton(idx, BTN_X, [gamepad buttonX]);
 
-	ReportJoystickButton(idx, BTN_L1, [gamepad leftShoulder]);
-	ReportJoystickButton(idx, BTN_R1, [gamepad rightShoulder]);
+    ReportJoystickButton(idx, BTN_L1, [gamepad leftShoulder]);
+    ReportJoystickButton(idx, BTN_R1, [gamepad rightShoulder]);
 }
 
 static void ReportJoystickExtended(int idx, GCExtendedGamepad* gamepad)
 {
-	GCControllerDirectionPad* dpad = [gamepad dpad];
-	GCControllerDirectionPad* leftStick = [gamepad leftThumbstick];
-	GCControllerDirectionPad* rightStick = [gamepad rightThumbstick];
+    GCControllerDirectionPad* dpad = [gamepad dpad];
+    GCControllerDirectionPad* leftStick = [gamepad leftThumbstick];
+    GCControllerDirectionPad* rightStick = [gamepad rightThumbstick];
 
-	UnitySetJoystickPosition(idx + 1, 0, GetAxisValue([leftStick xAxis]));
-	UnitySetJoystickPosition(idx + 1, 1, -GetAxisValue([leftStick yAxis]));
+    UnitySetJoystickPosition(idx + 1, 0, GetAxisValue([leftStick xAxis]));
+    UnitySetJoystickPosition(idx + 1, 1, -GetAxisValue([leftStick yAxis]));
 
-	UnitySetJoystickPosition(idx + 1, 2, GetAxisValue([rightStick xAxis]));
-	UnitySetJoystickPosition(idx + 1, 3, -GetAxisValue([rightStick yAxis]));
-	ReportJoystickButton(idx, BTN_DPAD_UP, [dpad up]);
-	ReportJoystickButton(idx, BTN_DPAD_RIGHT, [dpad right]);
-	ReportJoystickButton(idx, BTN_DPAD_DOWN, [dpad down]);
-	ReportJoystickButton(idx, BTN_DPAD_LEFT, [dpad left]);
+    UnitySetJoystickPosition(idx + 1, 2, GetAxisValue([rightStick xAxis]));
+    UnitySetJoystickPosition(idx + 1, 3, -GetAxisValue([rightStick yAxis]));
+    ReportJoystickButton(idx, BTN_DPAD_UP, [dpad up]);
+    ReportJoystickButton(idx, BTN_DPAD_RIGHT, [dpad right]);
+    ReportJoystickButton(idx, BTN_DPAD_DOWN, [dpad down]);
+    ReportJoystickButton(idx, BTN_DPAD_LEFT, [dpad left]);
 
-	ReportJoystickButton(idx, BTN_A, [gamepad buttonA]);
-	ReportJoystickButton(idx, BTN_B, [gamepad buttonB]);
-	ReportJoystickButton(idx, BTN_Y, [gamepad buttonY]);
-	ReportJoystickButton(idx, BTN_X, [gamepad buttonX]);
+    ReportJoystickButton(idx, BTN_A, [gamepad buttonA]);
+    ReportJoystickButton(idx, BTN_B, [gamepad buttonB]);
+    ReportJoystickButton(idx, BTN_Y, [gamepad buttonY]);
+    ReportJoystickButton(idx, BTN_X, [gamepad buttonX]);
 
-	ReportJoystickButton(idx, BTN_L1, [gamepad leftShoulder]);
-	ReportJoystickButton(idx, BTN_R1, [gamepad rightShoulder]);
-	ReportJoystickButton(idx, BTN_L2, [gamepad leftTrigger]);
-	ReportJoystickButton(idx, BTN_R2, [gamepad rightTrigger]);
+    ReportJoystickButton(idx, BTN_L1, [gamepad leftShoulder]);
+    ReportJoystickButton(idx, BTN_R1, [gamepad rightShoulder]);
+    ReportJoystickButton(idx, BTN_L2, [gamepad leftTrigger]);
+    ReportJoystickButton(idx, BTN_R2, [gamepad rightTrigger]);
 }
 
-
-static void SimulateAttitudeViaGravityVector (const Vector3f& gravity, Quaternion4f& currentAttitude, Vector3f& rotationRate)
+static void SimulateAttitudeViaGravityVector(const Vector3f& gravity, Quaternion4f& currentAttitude, Vector3f& rotationRate)
 {
-	static Quaternion4f lastAttitude = QuatIdentity();
-	static double lastTime = 0.0;
-	double currentTime = [NSDate timeIntervalSinceReferenceDate];
-	double deltaTime = lastTime - currentTime;
-	currentAttitude = QuatRotationFromTo(gravity, VecMake(0.0f, 0.0f, -1.0f));
-	rotationRate = VecScale(1.0f/deltaTime, QuatToEuler(QuatDifference(currentAttitude, lastAttitude)));
-	lastAttitude = currentAttitude;
-	lastTime = currentTime;
+    static Quaternion4f lastAttitude = QuatIdentity();
+    static double lastTime = 0.0;
+    double currentTime = [NSDate timeIntervalSinceReferenceDate];
+    double deltaTime = lastTime - currentTime;
+    currentAttitude = QuatRotationFromTo(gravity, VecMake(0.0f, 0.0f, -1.0f));
+    rotationRate = VecScale(1.0f / deltaTime, QuatToEuler(QuatDifference(currentAttitude, lastAttitude)));
+    lastAttitude = currentAttitude;
+    lastTime = currentTime;
 }
 
 // Note that joystick axis numbers in documentation are shifted
@@ -530,69 +535,69 @@ static void SimulateAttitudeViaGravityVector (const Vector3f& gravity, Quaternio
 static void ReportJoystickMotion(int idx, GCMotion* motion)
 {
 #if UNITY_TVOS
-	Vector3f rotationRate = VecMake(0.0f, 0.0f, 0.0f);
-	Quaternion4f attitude = QuatMake(0.0f, 0.0f, 0.0f, 1.0f);
+    Vector3f rotationRate = VecMake(0.0f, 0.0f, 0.0f);
+    Quaternion4f attitude = QuatMake(0.0f, 0.0f, 0.0f, 1.0f);
 #else
-	Vector3f rotationRate = {(float)motion.rotationRate.x, (float)motion.rotationRate.y, (float)motion.rotationRate.z};
-	Quaternion4f attitude = {(float)motion.attitude.x, (float)motion.attitude.y, (float)motion.attitude.z, (float)motion.attitude.w};
+    Vector3f rotationRate = {(float)motion.rotationRate.x, (float)motion.rotationRate.y, (float)motion.rotationRate.z};
+    Quaternion4f attitude = {(float)motion.attitude.x, (float)motion.attitude.y, (float)motion.attitude.z, (float)motion.attitude.w};
 #endif
-	
+
 #if SIMULATE_ATTITUDE_FROM_GRAVITY
-	SimulateAttitudeViaGravityVector(VecMake((float)motion.gravity.x, (float)motion.gravity.y, (float)motion.gravity.z), attitude, rotationRate);
+    SimulateAttitudeViaGravityVector(VecMake((float)motion.gravity.x, (float)motion.gravity.y, (float)motion.gravity.z), attitude, rotationRate);
 #endif
-	
-	// From docs:
-	// gravity (x,y,z) : 16, 17, 18
-	// user acceleration: 19, 20, 21
-	// rotation rate: 22, 23, 24
-	// attitude quaternion (x,y,z,w): 25, 26, 27, 28
-	ReportJoystickXYZAxes(idx, 15, 16, 17, motion.gravity);
-	ReportJoystickXYZAxes(idx, 18, 19, 20, motion.userAcceleration);
+
+    // From docs:
+    // gravity (x,y,z) : 16, 17, 18
+    // user acceleration: 19, 20, 21
+    // rotation rate: 22, 23, 24
+    // attitude quaternion (x,y,z,w): 25, 26, 27, 28
+    ReportJoystickXYZAxes(idx, 15, 16, 17, motion.gravity);
+    ReportJoystickXYZAxes(idx, 18, 19, 20, motion.userAcceleration);
 
 #if !UNITY_TVOS
-	ReportJoystickXYZAxes(idx, 21, 22, 23, motion.rotationRate);
-	ReportJoystickXYZWAxes(idx, 24, 25, 26, 27, motion.attitude);
+    ReportJoystickXYZAxes(idx, 21, 22, 23, motion.rotationRate);
+    ReportJoystickXYZWAxes(idx, 24, 25, 26, 27, motion.attitude);
 #endif
 
 #if UNITY_TVOS
-	if (sGCMotionForwardingEnabled && !sGCMotionForwardedForCurrentFrame)
-	{
-		UnitySensorsSetGravity(0, motion.gravity.x, motion.gravity.y, motion.gravity.z);
-		UnitySensorsSetUserAcceleration(0, motion.userAcceleration.x, motion.userAcceleration.y, motion.userAcceleration.z);
-		UnitySensorsSetGyroRotationRate(0, rotationRate.y, rotationRate.x, rotationRate.z);
-		UnitySensorsSetAttitude(0, attitude.x, attitude.y, attitude.z, attitude.w);
-		UnityDidAccelerate(motion.userAcceleration.x + motion.gravity.x, motion.userAcceleration.y + motion.gravity.y, motion.userAcceleration.z + motion.gravity.z, [[NSDate date] timeIntervalSince1970]);
-		sGCMotionForwardedForCurrentFrame = true;
-	}
+    if (sGCMotionForwardingEnabled && !sGCMotionForwardedForCurrentFrame)
+    {
+        UnitySensorsSetGravity(0, motion.gravity.x, motion.gravity.y, motion.gravity.z);
+        UnitySensorsSetUserAcceleration(0, motion.userAcceleration.x, motion.userAcceleration.y, motion.userAcceleration.z);
+        UnitySensorsSetGyroRotationRate(0, rotationRate.y, rotationRate.x, rotationRate.z);
+        UnitySensorsSetAttitude(0, attitude.x, attitude.y, attitude.z, attitude.w);
+        UnityDidAccelerate(motion.userAcceleration.x + motion.gravity.x, motion.userAcceleration.y + motion.gravity.y, motion.userAcceleration.z + motion.gravity.z, [[NSDate date] timeIntervalSince1970]);
+        sGCMotionForwardedForCurrentFrame = true;
+    }
 #endif
 }
 
 static void ReportJoystick(GCController* controller, int idx)
 {
-	if (controller.controllerPausedHandler == nil)
-		controller.controllerPausedHandler = gControllerHandler;
+    if (controller.controllerPausedHandler == nil)
+        controller.controllerPausedHandler = gControllerHandler;
 
-	if ([controller extendedGamepad] != nil)
-		ReportJoystickExtended(idx, [controller extendedGamepad]);
-	else if ([controller gamepad] != nil)
-		ReportJoystickBasic(idx, [controller gamepad]);
+    if ([controller extendedGamepad] != nil)
+        ReportJoystickExtended(idx, [controller extendedGamepad]);
+    else if ([controller gamepad] != nil)
+        ReportJoystickBasic(idx, [controller gamepad]);
 #if UNITY_TVOS
-	else if ([controller microGamepad] != nil)
-		ReportJoystickMicro(idx, [controller microGamepad]);
+    else if ([controller microGamepad] != nil)
+        ReportJoystickMicro(idx, [controller microGamepad]);
 #endif
-	else
-	{
-		// TODO: do something with not supported gamepad profiles
-	}
+    else
+    {
+        // TODO: do something with not supported gamepad profiles
+    }
 
-	if (controller.motion != nil)
-		ReportJoystickMotion(idx, controller.motion);
+    if (controller.motion != nil)
+        ReportJoystickMotion(idx, controller.motion);
 
-	// Map pause button
-	SetJoystickButtonState(idx + 1, BTN_PAUSE, gPausedJoysticks[idx]);
+    // Map pause button
+    SetJoystickButtonState(idx + 1, BTN_PAUSE, gPausedJoysticks[idx]);
 
-	// Reset pause button
-	gPausedJoysticks[idx] = false;
+    // Reset pause button
+    gPausedJoysticks[idx] = false;
 }
 
 // On tvOS simulator we implement a fake remote as tvOS simulator
@@ -600,299 +605,298 @@ static void ReportJoystick(GCController* controller, int idx)
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
 struct FakeRemoteState
 {
-	bool pressedX, pressedA;
-	bool pressedUp, pressedDown, pressedLeft, pressedRight;
-	float xAxis, yAxis;
+    bool pressedX, pressedA;
+    bool pressedUp, pressedDown, pressedLeft, pressedRight;
+    float xAxis, yAxis;
 
-	FakeRemoteState() :
-		pressedX(false),
-		pressedA(false),
-		pressedUp(false),
-		pressedDown(false),
-		pressedLeft(false),
-		pressedRight(false),
-		xAxis(0),
-		yAxis(0)
-	{}
+    FakeRemoteState() :
+        pressedX(false),
+        pressedA(false),
+        pressedUp(false),
+        pressedDown(false),
+        pressedLeft(false),
+        pressedRight(false),
+        xAxis(0),
+        yAxis(0)
+    {}
 };
 
 static FakeRemoteState gFakeRemoteState;
 
 static void ReportFakeRemoteButton(int idx, JoystickButtonNumbers num, bool pressed)
 {
-	SetJoystickButtonState(idx + 1, num, pressed);
-	UnitySetJoystickPosition(idx + 1, num, pressed);
+    SetJoystickButtonState(idx + 1, num, pressed);
+    UnitySetJoystickPosition(idx + 1, num, pressed);
 }
 
 void ReportFakeRemote(int idx)
 {
-	UnitySetJoystickPosition(idx + 1, 0, gFakeRemoteState.xAxis);
-	UnitySetJoystickPosition(idx + 1, 1, -gFakeRemoteState.yAxis);
+    UnitySetJoystickPosition(idx + 1, 0, gFakeRemoteState.xAxis);
+    UnitySetJoystickPosition(idx + 1, 1, -gFakeRemoteState.yAxis);
 
-	ReportFakeRemoteButton(idx, BTN_DPAD_UP, gFakeRemoteState.pressedUp);
-	ReportFakeRemoteButton(idx, BTN_DPAD_RIGHT, gFakeRemoteState.pressedRight);
-	ReportFakeRemoteButton(idx, BTN_DPAD_DOWN, gFakeRemoteState.pressedDown);
-	ReportFakeRemoteButton(idx, BTN_DPAD_LEFT, gFakeRemoteState.pressedLeft);
+    ReportFakeRemoteButton(idx, BTN_DPAD_UP, gFakeRemoteState.pressedUp);
+    ReportFakeRemoteButton(idx, BTN_DPAD_RIGHT, gFakeRemoteState.pressedRight);
+    ReportFakeRemoteButton(idx, BTN_DPAD_DOWN, gFakeRemoteState.pressedDown);
+    ReportFakeRemoteButton(idx, BTN_DPAD_LEFT, gFakeRemoteState.pressedLeft);
 
-	ReportFakeRemoteButton(idx, BTN_A, gFakeRemoteState.pressedA);
-	ReportFakeRemoteButton(idx, BTN_X, gFakeRemoteState.pressedX);
+    ReportFakeRemoteButton(idx, BTN_A, gFakeRemoteState.pressedA);
+    ReportFakeRemoteButton(idx, BTN_X, gFakeRemoteState.pressedX);
 }
+
 #endif
 
 extern "C" void UnityUpdateJoystickData()
 {
-	UnityInitJoysticks();
-	
-	NSArray* list = QueryControllerCollection();
+    UnityInitJoysticks();
+
+    NSArray* list = QueryControllerCollection();
 #if UNITY_TVOS
-	sGCMotionForwardedForCurrentFrame = false;
+    sGCMotionForwardedForCurrentFrame = false;
 #endif
 
-	// Clear aggregated joystick state
-	ResetAggregatedJoystickState();
+    // Clear aggregated joystick state
+    ResetAggregatedJoystickState();
 
-	if (list != nil)
-	{
-		for (int i = 0; i < [list count]; i++)
-		{
-			id controller = [list objectAtIndex:i];
-			ReportJoystick(controller, i);
-		}
-	}
+    if (list != nil)
+    {
+        for (int i = 0; i < [list count]; i++)
+        {
+            id controller = [list objectAtIndex: i];
+            ReportJoystick(controller, i);
+        }
+    }
 
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-	int remoteIndex = list != nil ? (int)[list count] : 0;
-	ReportFakeRemote(remoteIndex);
+    int remoteIndex = list != nil ? (int)[list count] : 0;
+    ReportFakeRemote(remoteIndex);
 #endif
 
-	// Report all aggregated joystick button in bulk
-	SetAggregatedJoystickState();
+    // Report all aggregated joystick button in bulk
+    SetAggregatedJoystickState();
 }
 
-extern "C" int	UnityGetJoystickCount()
+extern "C" int  UnityGetJoystickCount()
 {
-	NSArray* list = QueryControllerCollection();
-	int count = list != nil ? (int)[list count] : 0;
+    NSArray* list = QueryControllerCollection();
+    int count = list != nil ? (int)[list count] : 0;
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-	count++;
-#endif 
-	return count;
+    count++;
+#endif
+    return count;
 }
 
 static void PrintJoystickIdentifier(int idx, char* buffer, int maxLen, const char* typeString,
-									const char* attachment, const char* vendorName)
+    const char* attachment, const char* vendorName)
 {
-	snprintf(buffer, maxLen, "[%s,%s] joystick %d by %s",
-			 typeString, attachment, idx + 1, vendorName);
+    snprintf(buffer, maxLen, "[%s,%s] joystick %d by %s",
+        typeString, attachment, idx + 1, vendorName);
 }
 
 extern "C" void UnityGetJoystickName(int idx, char* buffer, int maxLen)
 {
-	GCController* controller = [QueryControllerCollection() objectAtIndex:idx];
+    GCController* controller = [QueryControllerCollection() objectAtIndex: idx];
 
-	if (controller != nil)
-	{
-		// iOS 8 has bug, which is encountered when controller is being attached
-		// while app is still running. It creates two instances of controller object:
-		// one original and one "Forwarded", accesing later properties are causing crashes
-		const char* attached = "unknown";
+    if (controller != nil)
+    {
+        // iOS 8 has bug, which is encountered when controller is being attached
+        // while app is still running. It creates two instances of controller object:
+        // one original and one "Forwarded", accesing later properties are causing crashes
+        const char* attached = "unknown";
 
-		// Controller is good one
-		if ([[controller vendorName] rangeOfString:@"Forwarded"].location == NSNotFound)
-			attached = (controller.attachedToDevice ? "wired" : "wireless");
+        // Controller is good one
+        if ([[controller vendorName] rangeOfString: @"Forwarded"].location == NSNotFound)
+            attached = (controller.attachedToDevice ? "wired" : "wireless");
 
-		const char* typeString = [controller extendedGamepad] != nil ? "extended" : "basic";
+        const char* typeString = [controller extendedGamepad] != nil ? "extended" : "basic";
 
-		PrintJoystickIdentifier(idx, buffer, maxLen, typeString, attached,
-								[[controller vendorName] UTF8String]);
-	}
-	else
-	{
+        PrintJoystickIdentifier(idx, buffer, maxLen, typeString, attached,
+            [[controller vendorName] UTF8String]);
+    }
+    else
+    {
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-		if (idx == [QueryControllerCollection() count])
-		{
-			PrintJoystickIdentifier(idx, buffer, maxLen, "basic", "wireless", "Unity");
-			return;
-		}
+        if (idx == [QueryControllerCollection() count])
+        {
+            PrintJoystickIdentifier(idx, buffer, maxLen, "basic", "wireless", "Unity");
+            return;
+        }
 #endif
-		strncpy(buffer, "unknown", maxLen);
-	}
+        strncpy(buffer, "unknown", maxLen);
+    }
 }
 
 extern "C" void UnityGetJoystickAxisName(int idx, int axis, char* buffer, int maxLen)
 {
-
 }
 
 extern "C" void UnityGetNiceKeyname(int key, char* buffer, int maxLen)
 {
-
 }
+
 #pragma clang diagnostic pop
 
 
-@interface LocationServiceDelegate : NSObject <CLLocationManagerDelegate>
+@interface LocationServiceDelegate : NSObject<CLLocationManagerDelegate>
 @end
 
 void
 UnitySetLastLocation(double timestamp,
-					 float latitude,
-					 float longitude,
-					 float altitude,
-					 float horizontalAccuracy,
-					 float verticalAccuracy);
+    float latitude,
+    float longitude,
+    float altitude,
+    float horizontalAccuracy,
+    float verticalAccuracy);
 
 void
 UnitySetLastHeading(float magneticHeading,
-					float trueHeading,
-					float rawX, float rawY, float rawZ,
-					double timestamp);
+    float trueHeading,
+    float rawX, float rawY, float rawZ,
+    double timestamp);
 
 struct LocationServiceInfo
 {
 private:
-	LocationServiceDelegate* delegate;
-	CLLocationManager* locationManager;
+    LocationServiceDelegate* delegate;
+    CLLocationManager* locationManager;
 public:
-	LocationServiceStatus locationStatus;
-	LocationServiceStatus headingStatus;
+    LocationServiceStatus locationStatus;
+    LocationServiceStatus headingStatus;
 
-	float desiredAccuracy;
-	float distanceFilter;
+    float desiredAccuracy;
+    float distanceFilter;
 
-	LocationServiceInfo();
-	CLLocationManager* GetLocationManager();
+    LocationServiceInfo();
+    CLLocationManager* GetLocationManager();
 };
 
 LocationServiceInfo::LocationServiceInfo()
 {
-	locationStatus = kLocationServiceStopped;
-	desiredAccuracy = kCLLocationAccuracyKilometer;
-	distanceFilter = 500;
+    locationStatus = kLocationServiceStopped;
+    desiredAccuracy = kCLLocationAccuracyKilometer;
+    distanceFilter = 500;
 
-	headingStatus = kLocationServiceStopped;
+    headingStatus = kLocationServiceStopped;
 }
 
 static LocationServiceInfo gLocationServiceStatus;
 
 CLLocationManager* LocationServiceInfo::GetLocationManager()
 {
-	if (locationManager == nil)
-	{
-		locationManager = [[CLLocationManager alloc] init];
-		delegate = [LocationServiceDelegate alloc];
+    if (locationManager == nil)
+    {
+        locationManager = [[CLLocationManager alloc] init];
+        delegate = [LocationServiceDelegate alloc];
 
-		locationManager.delegate = delegate;
-	}
+        locationManager.delegate = delegate;
+    }
 
-	return locationManager;
+    return locationManager;
 }
 
 bool LocationService::IsServiceEnabledByUser()
 {
-	return [CLLocationManager locationServicesEnabled];
+    return [CLLocationManager locationServicesEnabled];
 }
-
 
 void LocationService::SetDesiredAccuracy(float val)
 {
-	gLocationServiceStatus.desiredAccuracy = val;
+    gLocationServiceStatus.desiredAccuracy = val;
 }
 
 float LocationService::GetDesiredAccuracy()
 {
-	return gLocationServiceStatus.desiredAccuracy;
+    return gLocationServiceStatus.desiredAccuracy;
 }
 
 void LocationService::SetDistanceFilter(float val)
 {
-	gLocationServiceStatus.distanceFilter = val;
+    gLocationServiceStatus.distanceFilter = val;
 }
 
 float LocationService::GetDistanceFilter()
 {
-	return gLocationServiceStatus.distanceFilter;
+    return gLocationServiceStatus.distanceFilter;
 }
 
 void LocationService::StartUpdatingLocation()
 {
-	if (gLocationServiceStatus.locationStatus != kLocationServiceRunning)
-	{
-		CLLocationManager* locationManager = gLocationServiceStatus.GetLocationManager();
+    if (gLocationServiceStatus.locationStatus != kLocationServiceRunning)
+    {
+        CLLocationManager* locationManager = gLocationServiceStatus.GetLocationManager();
 
-		// request authorization on ios8
-		if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-			[locationManager performSelector:@selector(requestWhenInUseAuthorization)];
+        // request authorization on ios8
+        if ([locationManager respondsToSelector: @selector(requestWhenInUseAuthorization)])
+            [locationManager performSelector: @selector(requestWhenInUseAuthorization)];
 
-		locationManager.desiredAccuracy = gLocationServiceStatus.desiredAccuracy;
-		// Set a movement threshold for new events
-		locationManager.distanceFilter = gLocationServiceStatus.distanceFilter;
+        locationManager.desiredAccuracy = gLocationServiceStatus.desiredAccuracy;
+        // Set a movement threshold for new events
+        locationManager.distanceFilter = gLocationServiceStatus.distanceFilter;
 
 #if UNITY_IOS
-		[locationManager startUpdatingLocation];
+        [locationManager startUpdatingLocation];
 #else
-		[locationManager requestLocation];
+        [locationManager requestLocation];
 #endif
 
-		gLocationServiceStatus.locationStatus = kLocationServiceInitializing;
-	}
+        gLocationServiceStatus.locationStatus = kLocationServiceInitializing;
+    }
 }
 
 void LocationService::StopUpdatingLocation()
 {
-	if (gLocationServiceStatus.locationStatus != kLocationServiceStopped)
-	{
-		[gLocationServiceStatus.GetLocationManager() stopUpdatingLocation];
-		gLocationServiceStatus.locationStatus = kLocationServiceStopped;
-	}
+    if (gLocationServiceStatus.locationStatus != kLocationServiceStopped)
+    {
+        [gLocationServiceStatus.GetLocationManager() stopUpdatingLocation];
+        gLocationServiceStatus.locationStatus = kLocationServiceStopped;
+    }
 }
 
 void LocationService::SetHeadingUpdatesEnabled(bool enabled)
 {
 #if UNITY_IOS
-	if (enabled)
-	{
-		if (gLocationServiceStatus.headingStatus != kLocationServiceRunning &&
-			IsHeadingAvailable())
-		{
-			CLLocationManager* locationManager = gLocationServiceStatus.GetLocationManager();
+    if (enabled)
+    {
+        if (gLocationServiceStatus.headingStatus != kLocationServiceRunning &&
+            IsHeadingAvailable())
+        {
+            CLLocationManager* locationManager = gLocationServiceStatus.GetLocationManager();
 
-			[locationManager startUpdatingHeading];
-			gLocationServiceStatus.headingStatus = kLocationServiceInitializing;
-		}
-	}
-	else
-	{
-		if (gLocationServiceStatus.headingStatus != kLocationServiceStopped)
-		{
-			[gLocationServiceStatus.GetLocationManager() stopUpdatingHeading];
-			gLocationServiceStatus.headingStatus = kLocationServiceStopped;
-		}
-	}
+            [locationManager startUpdatingHeading];
+            gLocationServiceStatus.headingStatus = kLocationServiceInitializing;
+        }
+    }
+    else
+    {
+        if (gLocationServiceStatus.headingStatus != kLocationServiceStopped)
+        {
+            [gLocationServiceStatus.GetLocationManager() stopUpdatingHeading];
+            gLocationServiceStatus.headingStatus = kLocationServiceStopped;
+        }
+    }
 #endif
 }
 
 bool LocationService::IsHeadingUpdatesEnabled()
 {
-	return (gLocationServiceStatus.headingStatus == kLocationServiceRunning);
+    return (gLocationServiceStatus.headingStatus == kLocationServiceRunning);
 }
 
 int UnityGetLocationStatus()
 {
-	return gLocationServiceStatus.locationStatus;
+    return gLocationServiceStatus.locationStatus;
 }
 
 int UnityGetHeadingStatus()
 {
-	return gLocationServiceStatus.headingStatus;
+    return gLocationServiceStatus.headingStatus;
 }
 
 bool LocationService::IsHeadingAvailable()
 {
 #if UNITY_TVOS
-	return false;
+    return false;
 #else
-	return [CLLocationManager headingAvailable];
+    return [CLLocationManager headingAvailable];
 #endif
 }
 
@@ -900,39 +904,40 @@ bool LocationService::IsHeadingAvailable()
 
 - (void)locationManager:(CLLocationManager*)manager didUpdateLocations:(NSArray*)locations
 {
-	CLLocation* lastLocation = locations.lastObject;
+    CLLocation* lastLocation = locations.lastObject;
 
-	gLocationServiceStatus.locationStatus = kLocationServiceRunning;
+    gLocationServiceStatus.locationStatus = kLocationServiceRunning;
 
-	UnitySetLastLocation([lastLocation.timestamp timeIntervalSince1970],
-						 lastLocation.coordinate.latitude, lastLocation.coordinate.longitude, lastLocation.altitude,
-						 lastLocation.horizontalAccuracy, lastLocation.verticalAccuracy
-						);
+    UnitySetLastLocation([lastLocation.timestamp timeIntervalSince1970],
+        lastLocation.coordinate.latitude, lastLocation.coordinate.longitude, lastLocation.altitude,
+        lastLocation.horizontalAccuracy, lastLocation.verticalAccuracy
+        );
 }
 
 #if UNITY_IOS
 - (void)locationManager:(CLLocationManager*)manager didUpdateHeading:(CLHeading*)newHeading
 {
-	gLocationServiceStatus.headingStatus = kLocationServiceRunning;
+    gLocationServiceStatus.headingStatus = kLocationServiceRunning;
 
-	Vector3f reorientedRawHeading = UnityReorientVector3(newHeading.x, newHeading.y, newHeading.z);
+    Vector3f reorientedRawHeading = UnityReorientVector3(newHeading.x, newHeading.y, newHeading.z);
 
-	UnitySetLastHeading(UnityReorientHeading(newHeading.magneticHeading),
-						UnityReorientHeading(newHeading.trueHeading),
-						reorientedRawHeading.x, reorientedRawHeading.y, reorientedRawHeading.z,
-						[newHeading.timestamp timeIntervalSince1970]);
+    UnitySetLastHeading(UnityReorientHeading(newHeading.magneticHeading),
+        UnityReorientHeading(newHeading.trueHeading),
+        reorientedRawHeading.x, reorientedRawHeading.y, reorientedRawHeading.z,
+        [newHeading.timestamp timeIntervalSince1970]);
 }
+
 #endif
 
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager*)manager
 {
-	return NO;
+    return NO;
 }
 
 - (void)locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error;
 {
-	gLocationServiceStatus.locationStatus = kLocationServiceFailed;
-	gLocationServiceStatus.headingStatus = kLocationServiceFailed;
+    gLocationServiceStatus.locationStatus = kLocationServiceFailed;
+    gLocationServiceStatus.headingStatus = kLocationServiceFailed;
 }
 
 @end
@@ -940,138 +945,145 @@ bool LocationService::IsHeadingAvailable()
 #if UNITY_TVOS
 GCMicroGamepad* QueryMicroController()
 {
-	NSArray* list = QueryControllerCollection();
-	for (GCController* controller in list)
-	{
-		if (controller.microGamepad != nil)
-			return controller.microGamepad;
-	}
+    NSArray* list = QueryControllerCollection();
+    for (GCController* controller in list)
+    {
+        if (controller.microGamepad != nil)
+            return controller.microGamepad;
+    }
 
-	return nil;
+    return nil;
 }
+
 #endif
 
 extern "C" int UnityGetAppleTVRemoteTouchesEnabled()
 {
-	return gTVRemoteTouchesEnabled;
+    return gTVRemoteTouchesEnabled;
 }
 
 extern "C" void UnitySetAppleTVRemoteTouchesEnabled(int val)
 {
-	gTVRemoteTouchesEnabled = val;
+    gTVRemoteTouchesEnabled = val;
 }
 
 extern "C" int UnityGetAppleTVRemoteAllowExitToMenu()
 {
 #if UNITY_TVOS
-	return ((GCEventViewController*)UnityGetGLViewController()).controllerUserInteractionEnabled;
+    return ((GCEventViewController*)UnityGetGLViewController()).controllerUserInteractionEnabled;
 #else
-	return false;
+    return false;
 #endif
 }
+
 extern "C" void UnitySetAppleTVRemoteAllowExitToMenu(int val)
 {
 #if UNITY_TVOS
-	((GCEventViewController*)UnityGetGLViewController()).controllerUserInteractionEnabled = val;
+    ((GCEventViewController*)UnityGetGLViewController()).controllerUserInteractionEnabled = val;
 #endif
 }
 
 extern "C" int UnityGetAppleTVRemoteAllowRotation()
 {
 #if UNITY_TVOS
-	GCMicroGamepad* controller = QueryMicroController();
-	if (controller != nil)
-		return controller.allowsRotation;
-	else
-		return false;
+    GCMicroGamepad* controller = QueryMicroController();
+    if (controller != nil)
+        return controller.allowsRotation;
+    else
+        return false;
 #else
-	return false;
+    return false;
 #endif
 }
 
-extern "C" void		UnitySetAppleTVRemoteAllowRotation(int val)
+extern "C" void     UnitySetAppleTVRemoteAllowRotation(int val)
 {
 #if UNITY_TVOS
-	GCMicroGamepad* controller = QueryMicroController();
-	if (controller != nil)
-		controller.allowsRotation = val;
+    GCMicroGamepad* controller = QueryMicroController();
+    if (controller != nil)
+        controller.allowsRotation = val;
+    else
+        gTVRemoteAllowRotationInitialValue = val;
 #endif
 }
 
-extern "C" int		UnityGetAppleTVRemoteReportAbsoluteDpadValues()
+extern "C" int      UnityGetAppleTVRemoteReportAbsoluteDpadValues()
 {
 #if UNITY_TVOS
-	GCMicroGamepad* controller = QueryMicroController();
-	if (controller != nil)
-		return controller.reportsAbsoluteDpadValues;
-	else
-		return false;
+    GCMicroGamepad* controller = QueryMicroController();
+    if (controller != nil)
+        return controller.reportsAbsoluteDpadValues;
+    else
+        return false;
 #else
-	return false;
+    return false;
 #endif
 }
 
-extern "C" void		UnitySetAppleTVRemoteReportAbsoluteDpadValues(int val)
+extern "C" void     UnitySetAppleTVRemoteReportAbsoluteDpadValues(int val)
 {
 #if UNITY_TVOS
-	NSArray* list = QueryControllerCollection();
-	for (GCController* controller in list)
-	{
-		if (controller.microGamepad != nil)
-			controller.microGamepad.reportsAbsoluteDpadValues = val;
-	}
+    NSArray* list = QueryControllerCollection();
+    for (GCController* controller in list)
+    {
+        if (controller.microGamepad != nil)
+            controller.microGamepad.reportsAbsoluteDpadValues = val;
+        else
+            gTVRemoteReportsAbsoluteDpadValuesInitialValue = val;
+    }
 #endif
 }
 
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
 static void FakeRemoteStateSetButton(UIPressType type, bool state)
 {
-	switch (type)
-	{
-	case UIPressTypeUpArrow: gFakeRemoteState.pressedUp = state; return;
-	case UIPressTypeDownArrow: gFakeRemoteState.pressedDown = state; return;
-	case UIPressTypeLeftArrow: gFakeRemoteState.pressedLeft = state; return;
-	case UIPressTypeRightArrow: gFakeRemoteState.pressedRight = state; return;
-	case UIPressTypeSelect: gFakeRemoteState.pressedA = state; return;
-	case UIPressTypePlayPause: gFakeRemoteState.pressedX = state; return;
-	}
+    switch (type)
+    {
+        case UIPressTypeUpArrow: gFakeRemoteState.pressedUp = state; return;
+        case UIPressTypeDownArrow: gFakeRemoteState.pressedDown = state; return;
+        case UIPressTypeLeftArrow: gFakeRemoteState.pressedLeft = state; return;
+        case UIPressTypeRightArrow: gFakeRemoteState.pressedRight = state; return;
+        case UIPressTypeSelect: gFakeRemoteState.pressedA = state; return;
+        case UIPressTypePlayPause: gFakeRemoteState.pressedX = state; return;
+    }
 }
 
 void ReportSimulatedRemoteButtonPress(UIPressType type)
 {
-	FakeRemoteStateSetButton(type, true);
+    FakeRemoteStateSetButton(type, true);
 }
 
 void ReportSimulatedRemoteButtonRelease(UIPressType type)
 {
-	FakeRemoteStateSetButton(type, false);
+    FakeRemoteStateSetButton(type, false);
 }
 
 static float FakeRemoteMapTouchToAxis(float pos, float bounds)
 {
-	float halfRange = bounds / 2;
-	return (pos - halfRange) / halfRange;
+    float halfRange = bounds / 2;
+    return (pos - halfRange) / halfRange;
 }
 
 void ReportSimulatedRemoteTouchesBegan(UIView* view, NSSet* touches)
 {
-	ReportSimulatedRemoteTouchesMoved(view, touches);
+    ReportSimulatedRemoteTouchesMoved(view, touches);
 }
 
 void ReportSimulatedRemoteTouchesMoved(UIView* view, NSSet* touches)
 {
-	for (UITouch* touch in touches)
-	{
-		gFakeRemoteState.xAxis = FakeRemoteMapTouchToAxis([touch locationInView:view].x, view.bounds.size.width);
-		gFakeRemoteState.yAxis = FakeRemoteMapTouchToAxis([touch locationInView:view].y, view.bounds.size.height);
-		// We assume that at most single touch is received.
-		break;
-	}
+    for (UITouch* touch in touches)
+    {
+        gFakeRemoteState.xAxis = FakeRemoteMapTouchToAxis([touch locationInView: view].x, view.bounds.size.width);
+        gFakeRemoteState.yAxis = FakeRemoteMapTouchToAxis([touch locationInView: view].y, view.bounds.size.height);
+        // We assume that at most single touch is received.
+        break;
+    }
 }
 
 void ReportSimulatedRemoteTouchesEnded(UIView* view, NSSet* touches)
 {
-	gFakeRemoteState.xAxis = 0;
-	gFakeRemoteState.yAxis = 0;
+    gFakeRemoteState.xAxis = 0;
+    gFakeRemoteState.yAxis = 0;
 }
+
 #endif

@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+
 // System.String
 struct String_t;
 // System.Type
@@ -17,7 +19,8 @@ struct Type_t;
 // System.Object
 struct Il2CppObject;
 
-#include "mscorlib_System_ValueType3507792607.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

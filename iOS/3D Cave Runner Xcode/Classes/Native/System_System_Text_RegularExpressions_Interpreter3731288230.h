@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "System_System_Text_RegularExpressions_BaseMachine4008011478.h"
+#include "System_System_Text_RegularExpressions_Interpreter_I273560425.h"
+
 // System.UInt16[]
 struct UInt16U5BU5D_t2527266722;
 // System.String
@@ -23,8 +26,8 @@ struct MarkU5BU5D_t3801731412;
 // System.Int32[]
 struct Int32U5BU5D_t3030399641;
 
-#include "System_System_Text_RegularExpressions_BaseMachine4008011478.h"
-#include "System_System_Text_RegularExpressions_Interpreter_I273560425.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

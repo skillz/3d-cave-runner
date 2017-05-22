@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_Runtime_Serialization_StreamingCon1417235061.h"
+
 // System.Runtime.Serialization.ObjectRecord
 struct ObjectRecord_t4134110382;
 // System.Collections.ArrayList
@@ -19,8 +22,8 @@ struct Hashtable_t909839986;
 // System.Runtime.Serialization.ISurrogateSelector
 struct ISurrogateSelector_t1912587528;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_Runtime_Serialization_StreamingCon1417235061.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

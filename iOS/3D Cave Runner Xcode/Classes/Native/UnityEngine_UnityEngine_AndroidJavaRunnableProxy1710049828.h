@@ -10,10 +10,13 @@
 
 #include <stdint.h>
 
+#include "UnityEngine_UnityEngine_AndroidJavaProxy4274989947.h"
+
 // UnityEngine.AndroidJavaRunnable
 struct AndroidJavaRunnable_t3501776228;
 
-#include "UnityEngine_UnityEngine_AndroidJavaProxy4274989947.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

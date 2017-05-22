@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_PlatformID1006634368.h"
+
 // System.Version
 struct Version_t1755874712;
 // System.String
 struct String_t;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_PlatformID1006634368.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

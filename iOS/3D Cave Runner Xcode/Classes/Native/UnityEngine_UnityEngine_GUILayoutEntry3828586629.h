@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "UnityEngine_UnityEngine_Rect3681755626.h"
+
 // UnityEngine.GUIStyle
 struct GUIStyle_t1799908754;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "UnityEngine_UnityEngine_Rect3681755626.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

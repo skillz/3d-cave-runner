@@ -10,13 +10,16 @@
 
 #include <stdint.h>
 
+#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake3938752374.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityC3722381418.h"
+
 // System.Byte[]
 struct ByteU5BU5D_t3397334013;
 // Mono.Security.Protocol.Tls.CipherSuite
 struct CipherSuite_t491456551;
 
-#include "Mono_Security_Mono_Security_Protocol_Tls_Handshake3938752374.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityC3722381418.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

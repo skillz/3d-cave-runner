@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_ValueType3507792607.h"
+#include "mscorlib_System_IO_FileAttributes3843045335.h"
+
 // System.String
 struct String_t;
 
-#include "mscorlib_System_ValueType3507792607.h"
-#include "mscorlib_System_IO_FileAttributes3843045335.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

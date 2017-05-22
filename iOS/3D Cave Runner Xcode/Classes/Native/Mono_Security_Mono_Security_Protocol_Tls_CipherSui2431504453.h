@@ -10,11 +10,14 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityPr155967584.h"
+
 // System.Collections.ArrayList
 struct ArrayList_t4252133567;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "Mono_Security_Mono_Security_Protocol_Tls_SecurityPr155967584.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

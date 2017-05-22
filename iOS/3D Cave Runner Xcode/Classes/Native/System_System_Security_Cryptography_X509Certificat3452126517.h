@@ -10,17 +10,20 @@
 
 #include <stdint.h>
 
-// System.Security.Cryptography.OidCollection
-struct OidCollection_t3790243618;
-// System.Security.Cryptography.X509Certificates.X509Certificate2Collection
-struct X509Certificate2Collection_t1108969367;
-
 #include "mscorlib_System_Object2689449295.h"
 #include "System_System_Security_Cryptography_X509Certificat2166064554.h"
 #include "System_System_Security_Cryptography_X509Certificat2065307963.h"
 #include "mscorlib_System_TimeSpan3430258949.h"
 #include "System_System_Security_Cryptography_X509Certificat2169036324.h"
 #include "mscorlib_System_DateTime693205669.h"
+
+// System.Security.Cryptography.OidCollection
+struct OidCollection_t3790243618;
+// System.Security.Cryptography.X509Certificates.X509Certificate2Collection
+struct X509Certificate2Collection_t1108969367;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

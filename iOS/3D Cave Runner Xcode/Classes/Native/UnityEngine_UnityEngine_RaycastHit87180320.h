@@ -10,12 +10,15 @@
 
 #include <stdint.h>
 
-// UnityEngine.Collider
-struct Collider_t3497673348;
-
 #include "mscorlib_System_ValueType3507792607.h"
 #include "UnityEngine_UnityEngine_Vector32243707580.h"
 #include "UnityEngine_UnityEngine_Vector22243707579.h"
+
+// UnityEngine.Collider
+struct Collider_t3497673348;
+
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

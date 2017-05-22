@@ -13,7 +13,7 @@
 - (void)repaint;
 
 - (void)selectRenderingAPI;
-@property (readonly, nonatomic) UnityRenderingAPI	renderingAPI;
+@property (readonly, nonatomic) UnityRenderingAPI   renderingAPI;
 
 @end
 

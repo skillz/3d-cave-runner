@@ -10,6 +10,9 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+#include "mscorlib_System_UIntPtr1549717846.h"
+
 // System.Runtime.Remoting.Messaging.IMessageSink
 struct IMessageSink_t2189618969;
 // System.Object[]
@@ -23,8 +26,8 @@ struct DynamicPropertyCollection_t2282532998;
 // System.Runtime.Remoting.Contexts.ContextCallbackObject
 struct ContextCallbackObject_t3978189709;
 
-#include "mscorlib_System_Object2689449295.h"
-#include "mscorlib_System_UIntPtr1549717846.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push

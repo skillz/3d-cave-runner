@@ -10,6 +10,8 @@
 
 #include <stdint.h>
 
+#include "mscorlib_System_Object2689449295.h"
+
 // System.Security.Permissions.StrongNamePublicKeyBlob
 struct StrongNamePublicKeyBlob_t2860422703;
 // System.String
@@ -17,7 +19,8 @@ struct String_t;
 // System.Version
 struct Version_t1755874712;
 
-#include "mscorlib_System_Object2689449295.h"
+
+
 
 #ifdef __clang__
 #pragma clang diagnostic push
