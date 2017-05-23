@@ -28,6 +28,7 @@
 #include "mscorlib_System_String2029220233.h"
 #include "UnityScript_Lang_UnityScript_Lang_Extensions2406697300.h"
 #include "UnityScript_Lang_UnityScript_Lang_ListUpdateableEn2462779323.h"
+#include "UnityScript_Lang_UnityScript_Lang_UnityBuiltins1429886615.h"
 #include "UnityScript_Lang_UnityScript_Lang_UnityRuntimeServ3303336867.h"
 #include "mscorlib_System_RuntimeTypeHandle2330101084.h"
 #include "mscorlib_System_ArgumentNullException628810857.h"
@@ -145,6 +146,8 @@ extern "C"  String_t* Builtins_join_m2036613869 (Il2CppObject * __this /* static
 extern "C"  int32_t Array_get_Length_m1498215565 (Il2CppArray * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Object::.ctor()
 extern "C"  void Object__ctor_m2551263788 (Il2CppObject * __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
+// System.Int32 System.Int32::Parse(System.String)
+extern "C"  int32_t Int32_Parse_m3683414232 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityScript.Lang.UnityRuntimeServices::$static_initializer$()
 extern "C"  void UnityRuntimeServices_U24static_initializerU24_m2178156047 (Il2CppObject * __this /* static, unused */, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
@@ -402,6 +405,15 @@ extern "C"  void ListUpdateableEnumerator_Update_m670620225 (ListUpdateableEnume
 		NullCheck(L_0);
 		InterfaceActionInvoker2< int32_t, Il2CppObject * >::Invoke(1 /* System.Void System.Collections.IList::set_Item(System.Int32,System.Object) */, IList_t3321498491_il2cpp_TypeInfo_var, L_0, L_1, L_2);
 		return;
+	}
+}
+// System.Int32 UnityScript.Lang.UnityBuiltins::parseInt(System.String)
+extern "C"  int32_t UnityBuiltins_parseInt_m2481732514 (Il2CppObject * __this /* static, unused */, String_t* ___value0, const MethodInfo* method)
+{
+	{
+		String_t* L_0 = ___value0;
+		int32_t L_1 = Int32_Parse_m3683414232(NULL /*static, unused*/, L_0, /*hidden argument*/NULL);
+		return L_1;
 	}
 }
 // System.Void UnityScript.Lang.UnityRuntimeServices::.cctor()

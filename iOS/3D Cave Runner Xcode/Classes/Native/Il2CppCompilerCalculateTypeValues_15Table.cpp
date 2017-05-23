@@ -26,6 +26,7 @@
 #include "UnityScript_Lang_UnityScript_Lang_Array1396575355.h"
 #include "UnityScript_Lang_UnityScript_Lang_Extensions2406697300.h"
 #include "UnityScript_Lang_UnityScript_Lang_ListUpdateableEn2462779323.h"
+#include "UnityScript_Lang_UnityScript_Lang_UnityBuiltins1429886615.h"
 #include "UnityScript_Lang_UnityScript_Lang_UnityRuntimeServ3303336867.h"
 #include "AssemblyU2DCSharpU2Dfirstpass_U3CModuleU3E3783534214.h"
 #include "AssemblyU2DCSharpU2Dfirstpass_GameSceneManager277739717.h"
@@ -135,38 +136,39 @@ extern const int32_t g_FieldOffsetTable1510[2] =
 	ListUpdateableEnumerator_t2462779323::get_offset_of__list_0(),
 	ListUpdateableEnumerator_t2462779323::get_offset_of__current_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1511 = { sizeof (UnityRuntimeServices_t3303336867), -1, sizeof(UnityRuntimeServices_t3303336867_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable1511[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1511 = { sizeof (UnityBuiltins_t1429886615), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1512 = { sizeof (UnityRuntimeServices_t3303336867), -1, sizeof(UnityRuntimeServices_t3303336867_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable1512[3] = 
 {
 	UnityRuntimeServices_t3303336867_StaticFields::get_offset_of_EmptyEnumerator_0(),
 	UnityRuntimeServices_t3303336867_StaticFields::get_offset_of_EnumeratorType_1(),
 	UnityRuntimeServices_t3303336867_StaticFields::get_offset_of_Initialized_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1512 = { sizeof (U3CModuleU3E_t3783534221), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1513 = { sizeof (GameSceneManager_t277739717), -1, sizeof(GameSceneManager_t277739717_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable1513[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1513 = { sizeof (U3CModuleU3E_t3783534221), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1514 = { sizeof (GameSceneManager_t277739717), -1, sizeof(GameSceneManager_t277739717_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable1514[4] = 
 {
 	GameSceneManager_t277739717_StaticFields::get_offset_of_PREV_SCENE_2(),
 	GameSceneManager_t277739717_StaticFields::get_offset_of_TIMER_LENGTH_3(),
 	GameSceneManager_t277739717::get_offset_of_startTimer_4(),
 	GameSceneManager_t277739717::get_offset_of_timer_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1514 = { sizeof (Orientation_t1012746788)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable1514[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1515 = { sizeof (Orientation_t1012746788)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable1515[3] = 
 {
 	Orientation_t1012746788::get_offset_of_value___1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1515 = { sizeof (Environment_t4039601343)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable1515[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1516 = { sizeof (Environment_t4039601343)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable1516[3] = 
 {
 	Environment_t4039601343::get_offset_of_value___1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1516 = { sizeof (TurnBasedRoundOutcome_t4169257086)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable1516[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1517 = { sizeof (TurnBasedRoundOutcome_t4169257086)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable1517[5] = 
 {
 	TurnBasedRoundOutcome_t4169257086::get_offset_of_value___1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	0,
@@ -174,8 +176,8 @@ extern const int32_t g_FieldOffsetTable1516[5] =
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1517 = { sizeof (TurnBasedMatchOutcome_t3014500315)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable1517[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1518 = { sizeof (TurnBasedMatchOutcome_t3014500315)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable1518[5] = 
 {
 	TurnBasedMatchOutcome_t3014500315::get_offset_of_value___1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	0,
@@ -183,25 +185,25 @@ extern const int32_t g_FieldOffsetTable1517[5] =
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1518 = { sizeof (Api_t1442529210), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1518[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1519 = { sizeof (Api_t1442529210), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1519[2] = 
 {
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1519 = { sizeof (Random_t1396361203), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1520 = { sizeof (SkillzDelegateBase_t2433258543), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1521 = { sizeof (SkillzDelegateStandard_t2914650099), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1522 = { sizeof (SkillzDelegateTurnBased_t3217995174), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1523 = { sizeof (Json_t3912181816), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1524 = { sizeof (Parser_t3266458908), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1524[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1520 = { sizeof (Random_t1396361203), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1521 = { sizeof (SkillzDelegateBase_t2433258543), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1522 = { sizeof (SkillzDelegateStandard_t2914650099), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1523 = { sizeof (SkillzDelegateTurnBased_t3217995174), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1524 = { sizeof (Json_t3912181816), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1525 = { sizeof (Parser_t3266458908), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1525[2] = 
 {
 	0,
 	Parser_t3266458908::get_offset_of_json_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1525 = { sizeof (TOKEN_t1424013098)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
-extern const int32_t g_FieldOffsetTable1525[13] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1526 = { sizeof (TOKEN_t1424013098)+ sizeof (Il2CppObject), sizeof(int32_t), 0, 0 };
+extern const int32_t g_FieldOffsetTable1526[13] = 
 {
 	TOKEN_t1424013098::get_offset_of_value___1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	0,
@@ -217,37 +219,37 @@ extern const int32_t g_FieldOffsetTable1525[13] =
 	0,
 	0,
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1526 = { sizeof (Serializer_t2315747485), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1526[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1527 = { sizeof (Serializer_t2315747485), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1527[1] = 
 {
 	Serializer_t2315747485::get_offset_of_builder_0(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1527 = { sizeof (SkillzExtensions_t1725192953), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1528 = { sizeof (Helpers_t3373042127), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1529 = { sizeof (SkillzMessageReceiver_t704596351), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1529[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1528 = { sizeof (SkillzExtensions_t1725192953), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1529 = { sizeof (Helpers_t3373042127), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1530 = { sizeof (SkillzMessageReceiver_t704596351), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1530[3] = 
 {
 	SkillzMessageReceiver_t704596351::get_offset_of_DelBase_2(),
 	SkillzMessageReceiver_t704596351::get_offset_of_DelStandard_3(),
 	SkillzMessageReceiver_t704596351::get_offset_of_DelTurnBased_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1530 = { sizeof (SkillzDelegateInit_t4059693480), -1, sizeof(SkillzDelegateInit_t4059693480_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable1530[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1531 = { sizeof (SkillzDelegateInit_t4059693480), -1, sizeof(SkillzDelegateInit_t4059693480_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable1531[3] = 
 {
 	SkillzDelegateInit_t4059693480_StaticFields::get_offset_of_initializedYet_2(),
 	SkillzDelegateInit_t4059693480::get_offset_of_GameID_3(),
 	SkillzDelegateInit_t4059693480::get_offset_of_SkillzEnvironment_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1531 = { sizeof (Player_t4162098741)+ sizeof (Il2CppObject), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1531[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1532 = { sizeof (Player_t4162098741)+ sizeof (Il2CppObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1532[4] = 
 {
 	Player_t4162098741::get_offset_of_DisplayName_0() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	Player_t4162098741::get_offset_of_ID_1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	Player_t4162098741::get_offset_of_AvatarURL_2() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	Player_t4162098741::get_offset_of_FlagURL_3() + static_cast<int32_t>(sizeof(Il2CppObject)),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1532 = { sizeof (Match_t3198203703), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1532[10] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1533 = { sizeof (Match_t3198203703), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1533[10] = 
 {
 	Match_t3198203703::get_offset_of_Name_0(),
 	Match_t3198203703::get_offset_of_Description_1(),
@@ -260,15 +262,15 @@ extern const int32_t g_FieldOffsetTable1532[10] =
 	Match_t3198203703::get_offset_of_EntryPoints_8(),
 	Match_t3198203703::get_offset_of_EntryCash_9(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1533 = { sizeof (TurnBasedRound_t994668268)+ sizeof (Il2CppObject), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1533[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1534 = { sizeof (TurnBasedRound_t994668268)+ sizeof (Il2CppObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1534[3] = 
 {
 	TurnBasedRound_t994668268::get_offset_of_Outcome_0() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	TurnBasedRound_t994668268::get_offset_of_OpponentRoundScore_1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	TurnBasedRound_t994668268::get_offset_of_MyRoundScore_2() + static_cast<int32_t>(sizeof(Il2CppObject)),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1534 = { sizeof (TurnBasedMatch_t1669686419), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1534[8] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1535 = { sizeof (TurnBasedMatch_t1669686419), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1535[8] = 
 {
 	TurnBasedMatch_t1669686419::get_offset_of_PrizeZ_10(),
 	TurnBasedMatch_t1669686419::get_offset_of_PrizeCash_11(),
@@ -279,25 +281,25 @@ extern const int32_t g_FieldOffsetTable1534[8] =
 	TurnBasedMatch_t1669686419::get_offset_of_CurrentTurnIndex_16(),
 	TurnBasedMatch_t1669686419::get_offset_of_ContinueMatchData_17(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1535 = { sizeof (ContinuedTurnBasedMatch_t105333180)+ sizeof (Il2CppObject), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1535[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1536 = { sizeof (ContinuedTurnBasedMatch_t105333180)+ sizeof (Il2CppObject), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1536[4] = 
 {
 	ContinuedTurnBasedMatch_t105333180::get_offset_of_GameData_0() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	ContinuedTurnBasedMatch_t105333180::get_offset_of_Opponent_1() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	ContinuedTurnBasedMatch_t105333180::get_offset_of_MyCurrentTotalScore_2() + static_cast<int32_t>(sizeof(Il2CppObject)),
 	ContinuedTurnBasedMatch_t105333180::get_offset_of_OpponentCurrentTotalScore_3() + static_cast<int32_t>(sizeof(Il2CppObject)),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1536 = { sizeof (U3CModuleU3E_t3783534222), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1537 = { sizeof (MyDelegateBase_t1053717880), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1538 = { sizeof (MyDelegateStandard_t1766615652), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1539 = { sizeof (U3CModuleU3E_t3783534223), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1540 = { sizeof (AndroidBackButton_t248831936), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1540[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1537 = { sizeof (U3CModuleU3E_t3783534222), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1538 = { sizeof (MyDelegateBase_t1053717880), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1539 = { sizeof (MyDelegateStandard_t1766615652), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1540 = { sizeof (U3CModuleU3E_t3783534223), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1541 = { sizeof (AndroidBackButton_t248831936), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1541[1] = 
 {
 	AndroidBackButton_t248831936::get_offset_of_SceneIndex_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1541 = { sizeof (Bat_t4262919249), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1541[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1542 = { sizeof (Bat_t4262919249), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1542[5] = 
 {
 	Bat_t4262919249::get_offset_of_OrbitDistanceRange_2(),
 	Bat_t4262919249::get_offset_of_OrbitSpeedRange_3(),
@@ -305,8 +307,8 @@ extern const int32_t g_FieldOffsetTable1541[5] =
 	Bat_t4262919249::get_offset_of_FlightDirection_5(),
 	Bat_t4262919249::get_offset_of_PrevPos_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1542 = { sizeof (Collector_t237117861), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1542[7] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1543 = { sizeof (Collector_t237117861), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1543[7] = 
 {
 	Collector_t237117861::get_offset_of_gems_2(),
 	Collector_t237117861::get_offset_of_gemKinds_3(),
@@ -316,8 +318,8 @@ extern const int32_t g_FieldOffsetTable1542[7] =
 	Collector_t237117861::get_offset_of_kPC_7(),
 	Collector_t237117861::get_offset_of_Shadow_8(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1543 = { sizeof (Disperse_t2592024773), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1543[5] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1544 = { sizeof (Disperse_t2592024773), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1544[5] = 
 {
 	Disperse_t2592024773::get_offset_of_RemoveAfter_2(),
 	Disperse_t2592024773::get_offset_of_ShouldUseGravity_3(),
@@ -325,16 +327,16 @@ extern const int32_t g_FieldOffsetTable1543[5] =
 	Disperse_t2592024773::get_offset_of_DisperseRangeY_5(),
 	Disperse_t2592024773::get_offset_of_DisperseRangeZ_6(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1544 = { sizeof (FramesPerSecond_t2297840879), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1544[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1545 = { sizeof (FramesPerSecond_t2297840879), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1545[4] = 
 {
 	FramesPerSecond_t2297840879::get_offset_of_updateInterval_2(),
 	FramesPerSecond_t2297840879::get_offset_of_accum_3(),
 	FramesPerSecond_t2297840879::get_offset_of_frames_4(),
 	FramesPerSecond_t2297840879::get_offset_of_timeleft_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1545 = { sizeof (FallingObjects_t779914331), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1545[9] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1546 = { sizeof (FallingObjects_t779914331), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1546[9] = 
 {
 	FallingObjects_t779914331::get_offset_of_Objects_2(),
 	FallingObjects_t779914331::get_offset_of_ObjectCopy_3(),
@@ -346,16 +348,16 @@ extern const int32_t g_FieldOffsetTable1545[9] =
 	FallingObjects_t779914331::get_offset_of_CurrentDestroyAfter_9(),
 	FallingObjects_t779914331::get_offset_of_CreationArea_10(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1546 = { sizeof (Float_t4180579018), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1546[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1547 = { sizeof (Float_t4180579018), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1547[4] = 
 {
 	Float_t4180579018::get_offset_of_height_2(),
 	Float_t4180579018::get_offset_of_speed_3(),
 	Float_t4180579018::get_offset_of_originalPosition_4(),
 	Float_t4180579018::get_offset_of_Phase_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1547 = { sizeof (GameController_t3607102586), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1547[30] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1548 = { sizeof (GameController_t3607102586), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1548[30] = 
 {
 	GameController_t3607102586::get_offset_of_originalWidth_2(),
 	GameController_t3607102586::get_offset_of_originalHeight_3(),
@@ -388,8 +390,8 @@ extern const int32_t g_FieldOffsetTable1547[30] =
 	GameController_t3607102586::get_offset_of_TotalGems_30(),
 	GameController_t3607102586::get_offset_of_showScoreOnScreen_31(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1548 = { sizeof (Gem_t2293550681), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1548[9] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1549 = { sizeof (Gem_t2293550681), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1549[9] = 
 {
 	Gem_t2293550681::get_offset_of_GameController_2(),
 	Gem_t2293550681::get_offset_of_Player_3(),
@@ -401,21 +403,21 @@ extern const int32_t g_FieldOffsetTable1548[9] =
 	Gem_t2293550681::get_offset_of_PickupEffect_9(),
 	Gem_t2293550681::get_offset_of_PickUpEffectCopy_10(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1549 = { sizeof (Instructions_t610297277), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1549[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1550 = { sizeof (Instructions_t610297277), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1550[4] = 
 {
 	Instructions_t610297277::get_offset_of_GUIskin_2(),
 	Instructions_t610297277::get_offset_of_originalWidth_3(),
 	Instructions_t610297277::get_offset_of_originalHeight_4(),
 	Instructions_t610297277::get_offset_of_scale_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1550 = { sizeof (LoadLevel_t2625531918), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1550[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1551 = { sizeof (LoadLevel_t2625531918), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1551[1] = 
 {
 	LoadLevel_t2625531918::get_offset_of_LevelName_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1551 = { sizeof (Menu_t4261767481), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1551[12] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1552 = { sizeof (Menu_t4261767481), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1552[12] = 
 {
 	Menu_t4261767481::get_offset_of_originalWidth_2(),
 	Menu_t4261767481::get_offset_of_originalHeight_3(),
@@ -430,8 +432,8 @@ extern const int32_t g_FieldOffsetTable1551[12] =
 	Menu_t4261767481::get_offset_of_MenuItems_12(),
 	Menu_t4261767481::get_offset_of_MenuIndex_13(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1552 = { sizeof (MenuItem__t923294267), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1552[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1553 = { sizeof (MenuItem__t923294267), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1553[6] = 
 {
 	MenuItem__t923294267::get_offset_of_MenuItemName_2(),
 	MenuItem__t923294267::get_offset_of_LoadLevel_3(),
@@ -440,8 +442,8 @@ extern const int32_t g_FieldOffsetTable1552[6] =
 	MenuItem__t923294267::get_offset_of_LoadedComponent_6(),
 	MenuItem__t923294267::get_offset_of_StartSkillz_7(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1553 = { sizeof (Obstacle_t1396786087), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1553[20] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1554 = { sizeof (Obstacle_t1396786087), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1554[20] = 
 {
 	Obstacle_t1396786087::get_offset_of_Player_2(),
 	Obstacle_t1396786087::get_offset_of_SpeedChange_3(),
@@ -464,8 +466,8 @@ extern const int32_t g_FieldOffsetTable1553[20] =
 	Obstacle_t1396786087::get_offset_of_Offset_20(),
 	Obstacle_t1396786087::get_offset_of_kPlayerControls_21(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1554 = { sizeof (Platform_t358478341), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1554[9] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1555 = { sizeof (Platform_t358478341), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1555[9] = 
 {
 	Platform_t358478341::get_offset_of_Player_2(),
 	Platform_t358478341::get_offset_of_PlatformCreator_3(),
@@ -477,8 +479,8 @@ extern const int32_t g_FieldOffsetTable1554[9] =
 	Platform_t358478341::get_offset_of_kPlatformCreator_9(),
 	Platform_t358478341::get_offset_of_kPlayerControls_10(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1555 = { sizeof (PlatformCreator_t1903924313), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1555[35] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1556 = { sizeof (PlatformCreator_t1903924313), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1556[35] = 
 {
 	PlatformCreator_t1903924313::get_offset_of_Player_2(),
 	PlatformCreator_t1903924313::get_offset_of_NumberOfPlatforms_3(),
@@ -516,8 +518,8 @@ extern const int32_t g_FieldOffsetTable1555[35] =
 	PlatformCreator_t1903924313::get_offset_of_GemTrailRange_35(),
 	PlatformCreator_t1903924313::get_offset_of_collector_36(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1556 = { sizeof (PlayerControls_t1008173349), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1556[47] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1557 = { sizeof (PlayerControls_t1008173349), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1557[47] = 
 {
 	PlayerControls_t1008173349::get_offset_of_PlatformCreator_2(),
 	PlayerControls_t1008173349::get_offset_of_GameController_3(),
@@ -567,8 +569,8 @@ extern const int32_t g_FieldOffsetTable1556[47] =
 	PlayerControls_t1008173349::get_offset_of_adImage_47(),
 	PlayerControls_t1008173349::get_offset_of_imgUrl_48(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1557 = { sizeof (ScoreScreen_t3175080590), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1557[17] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1558 = { sizeof (ScoreScreen_t3175080590), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1558[17] = 
 {
 	ScoreScreen_t3175080590::get_offset_of_GUIskin_2(),
 	ScoreScreen_t3175080590::get_offset_of_originalWidth_3(),
@@ -588,18 +590,18 @@ extern const int32_t g_FieldOffsetTable1557[17] =
 	ScoreScreen_t3175080590::get_offset_of_TotalScoreCurrent_17(),
 	ScoreScreen_t3175080590::get_offset_of_HasSubmittedScore_18(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1558 = { sizeof (U24SubmitScoreU2476_t1192051830), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1558[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1559 = { sizeof (U24SubmitScoreU2476_t1192051830), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1559[1] = 
 {
 	U24SubmitScoreU2476_t1192051830::get_offset_of_U24self_U2478_0(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1559 = { sizeof (U24_t3528317699), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1559[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1560 = { sizeof (U24_t3528317699), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1560[1] = 
 {
 	U24_t3528317699::get_offset_of_U24self_U2477_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1560 = { sizeof (Shake_t3938682490), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1560[8] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1561 = { sizeof (Shake_t3938682490), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1561[8] = 
 {
 	Shake_t3938682490::get_offset_of_Player_2(),
 	Shake_t3938682490::get_offset_of_InitPos_3(),
@@ -610,16 +612,16 @@ extern const int32_t g_FieldOffsetTable1560[8] =
 	Shake_t3938682490::get_offset_of_ShakeDecay_8(),
 	Shake_t3938682490::get_offset_of_shaking_9(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1561 = { sizeof (Skillz_t715390677), -1, sizeof(Skillz_t715390677_StaticFields), 0 };
-extern const int32_t g_FieldOffsetTable1561[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1562 = { sizeof (Skillz_t715390677), -1, sizeof(Skillz_t715390677_StaticFields), 0 };
+extern const int32_t g_FieldOffsetTable1562[2] = 
 {
 	Skillz_t715390677_StaticFields::get_offset_of_currentActivity_0(),
 	Skillz_t715390677_StaticFields::get_offset_of_SkillzClass_1(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1562 = { sizeof (Random_t76614357), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1563 = { sizeof (SkillzDelegate_t1703455198), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1564 = { sizeof (Step_t3105875202), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1564[9] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1563 = { sizeof (Random_t76614357), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1564 = { sizeof (SkillzDelegate_t1703455198), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1565 = { sizeof (Step_t3105875202), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1565[9] = 
 {
 	Step_t3105875202::get_offset_of_StepSound_2(),
 	Step_t3105875202::get_offset_of_TrailEffect_3(),
@@ -631,8 +633,8 @@ extern const int32_t g_FieldOffsetTable1564[9] =
 	Step_t3105875202::get_offset_of_StepState_9(),
 	Step_t3105875202::get_offset_of_CameraShake_10(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1565 = { sizeof (Tunnel_t3920944030), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1565[7] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1566 = { sizeof (Tunnel_t3920944030), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1566[7] = 
 {
 	Tunnel_t3920944030::get_offset_of_InitialSpeed_2(),
 	Tunnel_t3920944030::get_offset_of_TunnelLength_3(),
@@ -642,8 +644,8 @@ extern const int32_t g_FieldOffsetTable1565[7] =
 	Tunnel_t3920944030::get_offset_of_InitPos_7(),
 	Tunnel_t3920944030::get_offset_of_DistancePassed_8(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1566 = { sizeof (TutorialController_t4038411994), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1566[52] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1567 = { sizeof (TutorialController_t4038411994), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1567[52] = 
 {
 	TutorialController_t4038411994::get_offset_of_originalWidth_2(),
 	TutorialController_t4038411994::get_offset_of_originalHeight_3(),
@@ -698,36 +700,36 @@ extern const int32_t g_FieldOffsetTable1566[52] =
 	TutorialController_t4038411994::get_offset_of_lastFinishScreenStep_52(),
 	TutorialController_t4038411994::get_offset_of_inactivePlatforms_53(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1567 = { sizeof (U24WaitU2479_t1236144996), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1567[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1568 = { sizeof (U24WaitU2479_t1236144996), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1568[3] = 
 {
 	U24WaitU2479_t1236144996::get_offset_of_U24timeU2483_0(),
 	U24WaitU2479_t1236144996::get_offset_of_U24nextStateU2484_1(),
 	U24WaitU2479_t1236144996::get_offset_of_U24self_U2485_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1568 = { sizeof (U24_t1494993999), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1568[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1569 = { sizeof (U24_t1494993999), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1569[3] = 
 {
 	U24_t1494993999::get_offset_of_U24timeU2480_2(),
 	U24_t1494993999::get_offset_of_U24nextStateU2481_3(),
 	U24_t1494993999::get_offset_of_U24self_U2482_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1569 = { sizeof (U24SetDeferredU2486_t4038220094), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1569[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1570 = { sizeof (U24SetDeferredU2486_t4038220094), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1570[3] = 
 {
 	U24SetDeferredU2486_t4038220094::get_offset_of_U24timeU2490_0(),
 	U24SetDeferredU2486_t4038220094::get_offset_of_U24indexU2491_1(),
 	U24SetDeferredU2486_t4038220094::get_offset_of_U24self_U2492_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1570 = { sizeof (U24_t2841630445), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1570[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1571 = { sizeof (U24_t2841630445), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1571[3] = 
 {
 	U24_t2841630445::get_offset_of_U24timeU2487_2(),
 	U24_t2841630445::get_offset_of_U24indexU2488_3(),
 	U24_t2841630445::get_offset_of_U24self_U2489_4(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1571 = { sizeof (Decoration_t2353105122), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1571[6] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1572 = { sizeof (Decoration_t2353105122), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1572[6] = 
 {
 	Decoration_t2353105122::get_offset_of_DecorObject_2(),
 	Decoration_t2353105122::get_offset_of_DecorObjectCopy_3(),
@@ -736,14 +738,14 @@ extern const int32_t g_FieldOffsetTable1571[6] =
 	Decoration_t2353105122::get_offset_of_RotationRangeZ_6(),
 	Decoration_t2353105122::get_offset_of_EmptyChance_7(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1572 = { sizeof (Flow_t4087105484), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1572[2] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1573 = { sizeof (Flow_t4087105484), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1573[2] = 
 {
 	Flow_t4087105484::get_offset_of_Offset_2(),
 	Flow_t4087105484::get_offset_of_CurrentOffset_3(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1573 = { sizeof (Shooter_t3051933708), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable1573[9] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1574 = { sizeof (Shooter_t3051933708), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable1574[9] = 
 {
 	Shooter_t3051933708::get_offset_of_Player_2(),
 	Shooter_t3051933708::get_offset_of_ShotObject_3(),
@@ -755,8 +757,8 @@ extern const int32_t g_FieldOffsetTable1573[9] =
 	Shooter_t3051933708::get_offset_of_ShotOffset_9(),
 	Shooter_t3051933708::get_offset_of_DestroyAfter_10(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1574 = { sizeof (__SkillzU24callable0U2471_31___t3114146286), sizeof(Il2CppMethodPointer), 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1575 = { sizeof (__SkillzU24callable1U2431_81___t2108200718), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1575 = { sizeof (__SkillzU24callable0U2471_31___t3114146286), sizeof(Il2CppMethodPointer), 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize1576 = { sizeof (__SkillzU24callable1U2431_81___t2108200718), sizeof(Il2CppMethodPointer), 0, 0 };
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

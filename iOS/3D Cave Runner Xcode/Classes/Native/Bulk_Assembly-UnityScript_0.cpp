@@ -268,9 +268,8 @@ struct U24_t2841630445;
 struct U24_t1494993999;
 extern Il2CppClass* Input_t1785128008_il2cpp_TypeInfo_var;
 extern Il2CppClass* Debug_t1368543263_il2cpp_TypeInfo_var;
-extern Il2CppCodeGenString* _stringLiteral3128425931;
-extern Il2CppCodeGenString* _stringLiteral2858725202;
 extern Il2CppCodeGenString* _stringLiteral619717225;
+extern Il2CppCodeGenString* _stringLiteral2858725202;
 extern const uint32_t AndroidBackButton_FixedUpdate_m1624235695_MetadataUsageId;
 extern const MethodInfo* Component_GetComponent_TisAnimation_t2068071072_m911931835_MethodInfo_var;
 extern Il2CppCodeGenString* _stringLiteral4231482759;
@@ -336,6 +335,7 @@ extern Il2CppClass* GUI_t4082743951_il2cpp_TypeInfo_var;
 extern Il2CppClass* GUIStyle_t1799908754_il2cpp_TypeInfo_var;
 extern Il2CppCodeGenString* _stringLiteral3188272222;
 extern Il2CppCodeGenString* _stringLiteral3990055475;
+extern Il2CppCodeGenString* _stringLiteral98844844;
 extern Il2CppCodeGenString* _stringLiteral2186152960;
 extern const uint32_t GameController_OnGUI_m1405528008_MetadataUsageId;
 extern Il2CppClass* GameController_t3607102586_il2cpp_TypeInfo_var;
@@ -393,6 +393,7 @@ extern Il2CppCodeGenString* _stringLiteral1857678062;
 extern Il2CppCodeGenString* _stringLiteral2059853458;
 extern const uint32_t ScoreScreen_Start_m1981810302_MetadataUsageId;
 extern Il2CppCodeGenString* _stringLiteral3249753657;
+extern Il2CppCodeGenString* _stringLiteral2827728199;
 extern Il2CppCodeGenString* _stringLiteral372029409;
 extern Il2CppCodeGenString* _stringLiteral4063465942;
 extern Il2CppCodeGenString* _stringLiteral3779247620;
@@ -905,8 +906,6 @@ extern "C"  void Api_UpdatePlayerScore_m1618566087 (Il2CppObject * __this /* sta
 extern "C"  GUIStyle_t1799908754 * GUIStyle_op_Implicit_m781448948 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.GUI::Label(UnityEngine.Rect,System.String,UnityEngine.GUIStyle)
 extern "C"  void GUI_Label_m2231582000 (Il2CppObject * __this /* static, unused */, Rect_t3681755626  p0, String_t* p1, GUIStyle_t1799908754 * p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
-// System.String System.Int32::ToString()
-extern "C"  String_t* Int32_ToString_m2960866144 (int32_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Transform::Rotate(UnityEngine.Vector3,System.Single,UnityEngine.Space)
 extern "C"  void Transform_Rotate_m4292615347 (Transform_t3275118058 * __this, Vector3_t2243707580  p0, float p1, int32_t p2, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Single Gem::DistanceSquared(UnityEngine.Vector3,UnityEngine.Vector3)
@@ -1003,6 +1002,8 @@ extern "C"  float PlayerPrefs_GetFloat_m980016674 (Il2CppObject * __this /* stat
 extern "C"  int32_t PlayerPrefs_GetInt_m2889062785 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::.ctor()
 #define Dictionary_2__ctor_m2768501952(__this, method) ((  void (*) (Dictionary_2_t3943999495 *, const MethodInfo*))Dictionary_2__ctor_m584589095_gshared)(__this, method)
+// System.String System.Int32::ToString()
+extern "C"  String_t* Int32_ToString_m2960866144 (int32_t* __this, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void System.Collections.Generic.Dictionary`2<System.String,System.String>::set_Item(!0,!1)
 #define Dictionary_2_set_Item_m3594715710(__this, p0, p1, method) ((  void (*) (Dictionary_2_t3943999495 *, String_t*, String_t*, const MethodInfo*))Dictionary_2_set_Item_m1004257024_gshared)(__this, p0, p1, method)
 // UnityEngine.Coroutine UnityEngine.MonoBehaviour::StartCoroutine(System.Collections.IEnumerator)
@@ -1021,6 +1022,8 @@ extern "C"  void U24__ctor_m2622768219 (U24_t3528317699 * __this, ScoreScreen_t3
 extern "C"  void WaitForSeconds__ctor_m1990515539 (WaitForSeconds_t3839502067 * __this, float p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Boo.Lang.GenericGeneratorEnumerator`1<UnityEngine.WaitForSeconds>::Yield(System.Int32,!0)
 #define GenericGeneratorEnumerator_1_Yield_m1415833518(__this, p0, p1, method) ((  bool (*) (GenericGeneratorEnumerator_1_t300505933 *, int32_t, WaitForSeconds_t3839502067 *, const MethodInfo*))GenericGeneratorEnumerator_1_Yield_m3714621347_gshared)(__this, p0, p1, method)
+// System.Int32 UnityScript.Lang.UnityBuiltins::parseInt(System.String)
+extern "C"  int32_t UnityBuiltins_parseInt_m2481732514 (Il2CppObject * __this /* static, unused */, String_t* p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Void SkillzSDK.Api::FinishTournament(System.Int32)
 extern "C"  void Api_FinishTournament_m613936183 (Il2CppObject * __this /* static, unused */, int32_t p0, const MethodInfo* method) IL2CPP_METHOD_ATTR;
 // System.Boolean Boo.Lang.GenericGeneratorEnumerator`1<UnityEngine.WaitForSeconds>::YieldDefault(System.Int32)
@@ -1149,7 +1152,7 @@ extern "C"  void AndroidBackButton_FixedUpdate_m1624235695 (AndroidBackButton_t2
 		int32_t L_0 = Application_get_platform_m3989224144(NULL /*static, unused*/, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_0) == ((uint32_t)((int32_t)11)))))
 		{
-			goto IL_0078;
+			goto IL_0064;
 		}
 	}
 	{
@@ -1157,52 +1160,49 @@ extern "C"  void AndroidBackButton_FixedUpdate_m1624235695 (AndroidBackButton_t2
 		bool L_1 = Input_GetKeyUp_m1008512962(NULL /*static, unused*/, ((int32_t)27), /*hidden argument*/NULL);
 		if (!L_1)
 		{
-			goto IL_0078;
+			goto IL_0064;
 		}
 	}
 	{
 		int32_t L_2 = __this->get_SceneIndex_2();
 		if ((!(((uint32_t)L_2) == ((uint32_t)2))))
 		{
-			goto IL_003d;
+			goto IL_0029;
 		}
 	}
 	{
-		IL2CPP_RUNTIME_CLASS_INIT(Debug_t1368543263_il2cpp_TypeInfo_var);
-		Debug_Log_m920475918(NULL /*static, unused*/, _stringLiteral3128425931, /*hidden argument*/NULL);
-		SceneManager_LoadScene_m1619949821(NULL /*static, unused*/, _stringLiteral2858725202, /*hidden argument*/NULL);
-		goto IL_0078;
+		goto IL_0064;
 	}
 
-IL_003d:
+IL_0029:
 	{
 		int32_t L_3 = __this->get_SceneIndex_2();
 		if ((!(((uint32_t)L_3) == ((uint32_t)3))))
 		{
-			goto IL_0062;
+			goto IL_004e;
 		}
 	}
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t1368543263_il2cpp_TypeInfo_var);
 		Debug_Log_m920475918(NULL /*static, unused*/, _stringLiteral619717225, /*hidden argument*/NULL);
 		SceneManager_LoadScene_m1619949821(NULL /*static, unused*/, _stringLiteral2858725202, /*hidden argument*/NULL);
-		goto IL_0078;
+		goto IL_0064;
 	}
 
-IL_0062:
+IL_004e:
 	{
 		int32_t L_4 = __this->get_SceneIndex_2();
 		if ((!(((uint32_t)L_4) == ((uint32_t)1))))
 		{
-			goto IL_0078;
+			goto IL_0064;
 		}
 	}
 	{
 		Application_Quit_m3885595876(NULL /*static, unused*/, /*hidden argument*/NULL);
-		goto IL_0078;
+		goto IL_0064;
 	}
 
-IL_0078:
+IL_0064:
 	{
 		return;
 	}
@@ -3128,26 +3128,23 @@ extern "C"  void GameController_Update_m2980041265 (GameController_t3607102586 *
 		bool L_0 = Input_GetKeyUp_m1952023453(NULL /*static, unused*/, _stringLiteral1110997421, /*hidden argument*/NULL);
 		if (!L_0)
 		{
-			goto IL_0015;
+			goto IL_000f;
 		}
 	}
-	{
-		VirtActionInvoker0::Invoke(6 /* System.Void GameController::EndLevel() */, __this);
-	}
 
-IL_0015:
+IL_000f:
 	{
 		float L_1 = Time_get_timeScale_m3151482970(NULL /*static, unused*/, /*hidden argument*/NULL);
 		if ((((float)L_1) <= ((float)(((float)((float)0))))))
 		{
-			goto IL_02e1;
+			goto IL_02db;
 		}
 	}
 	{
 		bool L_2 = __this->get_LevelUp_16();
 		if (L_2)
 		{
-			goto IL_02e1;
+			goto IL_02db;
 		}
 	}
 	{
@@ -3157,7 +3154,7 @@ IL_0015:
 		float L_6 = __this->get_LastLevelDistance_29();
 		if ((((float)L_3) < ((float)((float)((float)(((float)((float)((int32_t)((int32_t)L_4*(int32_t)L_5)))))+(float)L_6)))))
 		{
-			goto IL_02e1;
+			goto IL_02db;
 		}
 	}
 	{
@@ -3313,7 +3310,7 @@ IL_0015:
 		L_99->set_GemRate_29(((float)((float)L_101+(float)L_102)));
 	}
 
-IL_02e1:
+IL_02db:
 	{
 		return;
 	}
@@ -3359,12 +3356,12 @@ extern "C"  void GameController_OnGUI_m1405528008 (GameController_t3607102586 * 
 	}
 	Matrix4x4_t2933234003  V_0;
 	memset(&V_0, 0, sizeof(V_0));
-	int32_t V_1 = 0;
+	float V_1 = 0.0f;
 	{
 		bool L_0 = __this->get_showScoreOnScreen_31();
 		if (!L_0)
 		{
-			goto IL_01cf;
+			goto IL_01d2;
 		}
 	}
 	{
@@ -3390,7 +3387,7 @@ extern "C"  void GameController_OnGUI_m1405528008 (GameController_t3607102586 * 
 		GUI_set_skin_m3391676555(NULL /*static, unused*/, L_13, /*hidden argument*/NULL);
 		float L_14 = __this->get_TotalDistance_28();
 		float L_15 = __this->get_TotalGems_30();
-		V_1 = (((int32_t)((int32_t)((float)((float)((float)((float)L_14*(float)(((float)((float)((int32_t)10))))))+(float)((float)((float)L_15*(float)(((float)((float)((int32_t)100)))))))))));
+		V_1 = ((float)((float)((float)((float)L_14*(float)(((float)((float)((int32_t)10))))))+(float)((float)((float)L_15*(float)(((float)((float)((int32_t)100))))))));
 		float L_16 = __this->get_originalWidth_2();
 		float L_17 = __this->get_originalHeight_3();
 		Rect_t3681755626  L_18;
@@ -3411,20 +3408,20 @@ extern "C"  void GameController_OnGUI_m1405528008 (GameController_t3607102586 * 
 		bool L_26 = Api_get_IsTournamentInProgress_m2422544872(NULL /*static, unused*/, /*hidden argument*/NULL);
 		if (!L_26)
 		{
-			goto IL_0104;
+			goto IL_0102;
 		}
 	}
 	{
-		int32_t L_27 = V_1;
-		Api_UpdatePlayerScore_m1618566087(NULL /*static, unused*/, (((float)((float)L_27))), /*hidden argument*/NULL);
+		float L_27 = V_1;
+		Api_UpdatePlayerScore_m1618566087(NULL /*static, unused*/, L_27, /*hidden argument*/NULL);
 	}
 
-IL_0104:
+IL_0102:
 	{
 		bool L_28 = __this->get_LevelUp_16();
 		if (L_28)
 		{
-			goto IL_0174;
+			goto IL_0172;
 		}
 	}
 	{
@@ -3432,7 +3429,7 @@ IL_0104:
 		float L_30 = __this->get_originalWidth_2();
 		if ((((float)L_29) <= ((float)((-L_30)))))
 		{
-			goto IL_0174;
+			goto IL_0172;
 		}
 	}
 	{
@@ -3449,22 +3446,22 @@ IL_0104:
 		float L_36 = __this->get_LevelUpPosX_27();
 		float L_37 = Time_get_deltaTime_m2233168104(NULL /*static, unused*/, /*hidden argument*/NULL);
 		__this->set_LevelUpPosX_27(((float)((float)L_36-(float)((float)((float)(((float)((float)((int32_t)200))))*(float)L_37)))));
-		goto IL_0187;
+		goto IL_0185;
 	}
 
-IL_0174:
+IL_0172:
 	{
 		bool L_38 = __this->get_LevelUp_16();
 		if ((!(((uint32_t)L_38) == ((uint32_t)1))))
 		{
-			goto IL_0187;
+			goto IL_0185;
 		}
 	}
 	{
 		__this->set_LevelUp_16((bool)0);
 	}
 
-IL_0187:
+IL_0185:
 	{
 		GUISkin_t1436893342 * L_39 = __this->get_GUIskinLarge_10();
 		IL2CPP_RUNTIME_CLASS_INIT(GUI_t4082743951_il2cpp_TypeInfo_var);
@@ -3474,7 +3471,7 @@ IL_0187:
 		Rect_t3681755626  L_42;
 		memset(&L_42, 0, sizeof(L_42));
 		Rect__ctor_m1220545469(&L_42, ((float)((float)L_40*(float)(0.83f))), ((float)((float)L_41*(float)(0.02f))), (((float)((float)0))), (((float)((float)0))), /*hidden argument*/NULL);
-		String_t* L_43 = Int32_ToString_m2960866144((&V_1), /*hidden argument*/NULL);
+		String_t* L_43 = Single_ToString_m2359963436((&V_1), _stringLiteral98844844, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(RuntimeServices_t1910041954_il2cpp_TypeInfo_var);
 		String_t* L_44 = RuntimeServices_op_Addition_m1630013314(NULL /*static, unused*/, L_43, _stringLiteral2186152960, /*hidden argument*/NULL);
 		GUI_Label_m2412846501(NULL /*static, unused*/, L_42, L_44, /*hidden argument*/NULL);
@@ -3482,7 +3479,7 @@ IL_0187:
 		GUI_set_matrix_m3701966918(NULL /*static, unused*/, L_45, /*hidden argument*/NULL);
 	}
 
-IL_01cf:
+IL_01d2:
 	{
 		return;
 	}
@@ -7032,14 +7029,14 @@ extern "C"  void ScoreScreen_Start_m1981810302 (ScoreScreen_t3175080590 * __this
 	Dictionary_2_t3943999495 * V_0 = NULL;
 	{
 		float L_0 = PlayerPrefs_GetFloat_m980016674(NULL /*static, unused*/, _stringLiteral1393389589, /*hidden argument*/NULL);
-		__this->set_TotalDistance_12((((int32_t)((int32_t)L_0))));
+		__this->set_TotalDistance_12(L_0);
 		int32_t L_1 = PlayerPrefs_GetInt_m2889062785(NULL /*static, unused*/, _stringLiteral3165438820, /*hidden argument*/NULL);
 		__this->set_TotalGems_14(L_1);
-		int32_t L_2 = __this->get_TotalDistance_12();
+		float L_2 = __this->get_TotalDistance_12();
 		int32_t L_3 = __this->get_DistanceValue_11();
 		int32_t L_4 = __this->get_TotalGems_14();
 		int32_t L_5 = __this->get_GemValue_10();
-		__this->set_TotalScore_16(((int32_t)((int32_t)((int32_t)((int32_t)L_2*(int32_t)L_3))+(int32_t)((int32_t)((int32_t)L_4*(int32_t)L_5)))));
+		__this->set_TotalScore_16(((float)((float)((float)((float)L_2*(float)(((float)((float)L_3)))))+(float)(((float)((float)((int32_t)((int32_t)L_4*(int32_t)L_5))))))));
 		Dictionary_2_t3943999495 * L_6 = (Dictionary_2_t3943999495 *)il2cpp_codegen_object_new(Dictionary_2_t3943999495_il2cpp_TypeInfo_var);
 		Dictionary_2__ctor_m2768501952(L_6, /*hidden argument*/Dictionary_2__ctor_m2768501952_MethodInfo_var);
 		V_0 = L_6;
@@ -7049,13 +7046,13 @@ extern "C"  void ScoreScreen_Start_m1981810302 (ScoreScreen_t3175080590 * __this
 		NullCheck(L_7);
 		Dictionary_2_set_Item_m3594715710(L_7, _stringLiteral1857678062, L_9, /*hidden argument*/Dictionary_2_set_Item_m3594715710_MethodInfo_var);
 		Dictionary_2_t3943999495 * L_10 = V_0;
-		int32_t* L_11 = __this->get_address_of_TotalDistance_12();
-		String_t* L_12 = Int32_ToString_m2960866144(L_11, /*hidden argument*/NULL);
+		float* L_11 = __this->get_address_of_TotalDistance_12();
+		String_t* L_12 = Single_ToString_m1813392066(L_11, /*hidden argument*/NULL);
 		NullCheck(L_10);
 		Dictionary_2_set_Item_m3594715710(L_10, _stringLiteral1393389589, L_12, /*hidden argument*/Dictionary_2_set_Item_m3594715710_MethodInfo_var);
 		Dictionary_2_t3943999495 * L_13 = V_0;
-		int32_t* L_14 = __this->get_address_of_TotalScore_16();
-		String_t* L_15 = Int32_ToString_m2960866144(L_14, /*hidden argument*/NULL);
+		float* L_14 = __this->get_address_of_TotalScore_16();
+		String_t* L_15 = Single_ToString_m1813392066(L_14, /*hidden argument*/NULL);
 		NullCheck(L_13);
 		Dictionary_2_set_Item_m3594715710(L_13, _stringLiteral2059853458, L_15, /*hidden argument*/Dictionary_2_set_Item_m3594715710_MethodInfo_var);
 		__this->set_HasSubmittedScore_18((bool)0);
@@ -7074,7 +7071,7 @@ extern "C"  void ScoreScreen_OnGUI_m791567246 (ScoreScreen_t3175080590 * __this,
 	Matrix4x4_t2933234003  V_0;
 	memset(&V_0, 0, sizeof(V_0));
 	int32_t V_1 = 0;
-	int32_t V_2 = 0;
+	float V_2 = 0.0f;
 	int32_t V_3 = 0;
 	Rect_t3681755626  V_4;
 	memset(&V_4, 0, sizeof(V_4));
@@ -7142,54 +7139,54 @@ IL_009e:
 
 IL_00bb:
 	{
-		int32_t L_22 = __this->get_TotalDistanceCurrent_13();
-		int32_t L_23 = __this->get_TotalDistance_12();
-		if ((((int32_t)L_22) >= ((int32_t)L_23)))
+		float L_22 = __this->get_TotalDistanceCurrent_13();
+		float L_23 = __this->get_TotalDistance_12();
+		if ((((float)L_22) >= ((float)L_23)))
 		{
-			goto IL_00f1;
+			goto IL_00f2;
 		}
 	}
 	{
-		int32_t L_24 = __this->get_TotalDistance_12();
-		V_2 = (((int32_t)((int32_t)((float)((float)(0.01f)*(float)(((float)((float)L_24))))))));
-		int32_t L_25 = V_2;
-		if (L_25)
+		float L_24 = __this->get_TotalDistance_12();
+		V_2 = ((float)((float)(0.01f)*(float)L_24));
+		float L_25 = V_2;
+		if ((!(((float)L_25) == ((float)(((float)((float)0)))))))
 		{
-			goto IL_00e3;
+			goto IL_00e4;
 		}
 	}
 	{
-		V_2 = 1;
+		V_2 = (((float)((float)1)));
 	}
 
-IL_00e3:
+IL_00e4:
 	{
-		int32_t L_26 = __this->get_TotalDistanceCurrent_13();
-		int32_t L_27 = V_2;
-		__this->set_TotalDistanceCurrent_13(((int32_t)((int32_t)L_26+(int32_t)L_27)));
+		float L_26 = __this->get_TotalDistanceCurrent_13();
+		float L_27 = V_2;
+		__this->set_TotalDistanceCurrent_13(((float)((float)L_26+(float)L_27)));
 	}
 
-IL_00f1:
+IL_00f2:
 	{
-		int32_t L_28 = __this->get_TotalDistanceCurrent_13();
-		int32_t L_29 = __this->get_TotalDistance_12();
-		if ((((int32_t)L_28) < ((int32_t)L_29)))
+		float L_28 = __this->get_TotalDistanceCurrent_13();
+		float L_29 = __this->get_TotalDistance_12();
+		if ((((float)L_28) < ((float)L_29)))
 		{
-			goto IL_010e;
+			goto IL_010f;
 		}
 	}
 	{
-		int32_t L_30 = __this->get_TotalDistance_12();
+		float L_30 = __this->get_TotalDistance_12();
 		__this->set_TotalDistanceCurrent_13(L_30);
 	}
 
-IL_010e:
+IL_010f:
 	{
-		int32_t L_31 = __this->get_TotalDistanceCurrent_13();
-		int32_t L_32 = __this->get_TotalDistance_12();
-		if ((!(((uint32_t)L_31) == ((uint32_t)L_32))))
+		float L_31 = __this->get_TotalDistanceCurrent_13();
+		float L_32 = __this->get_TotalDistance_12();
+		if ((!(((float)L_31) == ((float)L_32))))
 		{
-			goto IL_013d;
+			goto IL_013e;
 		}
 	}
 	{
@@ -7197,7 +7194,7 @@ IL_010e:
 		int32_t L_34 = __this->get_TotalGems_14();
 		if ((!(((uint32_t)L_33) == ((uint32_t)L_34))))
 		{
-			goto IL_013d;
+			goto IL_013e;
 		}
 	}
 	{
@@ -7205,13 +7202,13 @@ IL_010e:
 		MonoBehaviour_StartCoroutine_m2470621050(__this, L_35, /*hidden argument*/NULL);
 	}
 
-IL_013d:
+IL_013e:
 	{
-		int32_t L_36 = __this->get_TotalDistanceCurrent_13();
+		float L_36 = __this->get_TotalDistanceCurrent_13();
 		int32_t L_37 = __this->get_DistanceValue_11();
 		int32_t L_38 = __this->get_TotalGemsCurrent_15();
 		int32_t L_39 = __this->get_GemValue_10();
-		__this->set_TotalScoreCurrent_17(((int32_t)((int32_t)((int32_t)((int32_t)L_36*(int32_t)L_37))+(int32_t)((int32_t)((int32_t)L_38*(int32_t)L_39)))));
+		__this->set_TotalScoreCurrent_17(((float)((float)((float)((float)L_36*(float)(((float)((float)L_37)))))+(float)(((float)((float)((int32_t)((int32_t)L_38*(int32_t)L_39))))))));
 		V_3 = ((int32_t)70);
 		float L_40 = __this->get_originalWidth_3();
 		int32_t L_41 = __this->get_smallBoxWidth_7();
@@ -7222,8 +7219,8 @@ IL_013d:
 		Rect_t3681755626  L_46;
 		memset(&L_46, 0, sizeof(L_46));
 		Rect__ctor_m1220545469(&L_46, ((float)((float)((float)((float)L_40-(float)((float)((float)(((float)((float)L_41)))*(float)(0.85f)))))/(float)(((float)((float)2))))), ((float)((float)((float)((float)L_42-(float)(((float)((float)((int32_t)900))))))+(float)(((float)((float)L_43))))), ((float)((float)(((float)((float)L_44)))*(float)(0.85f))), ((float)((float)(((float)((float)L_45)))*(float)(0.85f))), /*hidden argument*/NULL);
-		int32_t* L_47 = __this->get_address_of_TotalDistanceCurrent_13();
-		String_t* L_48 = Int32_ToString_m2960866144(L_47, /*hidden argument*/NULL);
+		float* L_47 = __this->get_address_of_TotalDistanceCurrent_13();
+		String_t* L_48 = Single_ToString_m2359963436(L_47, _stringLiteral2827728199, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(RuntimeServices_t1910041954_il2cpp_TypeInfo_var);
 		String_t* L_49 = RuntimeServices_op_Addition_m1630013314(NULL /*static, unused*/, _stringLiteral3249753657, L_48, /*hidden argument*/NULL);
 		String_t* L_50 = RuntimeServices_op_Addition_m1630013314(NULL /*static, unused*/, L_49, _stringLiteral372029409, /*hidden argument*/NULL);
@@ -7259,8 +7256,8 @@ IL_013d:
 		Rect_t3681755626  L_75;
 		memset(&L_75, 0, sizeof(L_75));
 		Rect__ctor_m1220545469(&L_75, ((float)((float)((float)((float)L_69-(float)((float)((float)(((float)((float)L_70)))*(float)(0.85f)))))/(float)(((float)((float)2))))), ((float)((float)((float)((float)L_71-(float)(((float)((float)((int32_t)455))))))+(float)(((float)((float)L_72))))), ((float)((float)(((float)((float)L_73)))*(float)(0.85f))), ((float)((float)(((float)((float)L_74)))*(float)(0.85f))), /*hidden argument*/NULL);
-		int32_t* L_76 = __this->get_address_of_TotalScoreCurrent_17();
-		String_t* L_77 = Int32_ToString_m2960866144(L_76, /*hidden argument*/NULL);
+		float* L_76 = __this->get_address_of_TotalScoreCurrent_17();
+		String_t* L_77 = Single_ToString_m2359963436(L_76, _stringLiteral98844844, /*hidden argument*/NULL);
 		String_t* L_78 = RuntimeServices_op_Addition_m1630013314(NULL /*static, unused*/, _stringLiteral61890780, L_77, /*hidden argument*/NULL);
 		GUI_Box_m2739364838(NULL /*static, unused*/, L_75, L_78, /*hidden argument*/NULL);
 		float L_79 = __this->get_originalWidth_3();
@@ -7277,7 +7274,7 @@ IL_013d:
 		bool L_87 = GUI_Button_m3054448581(NULL /*static, unused*/, L_86, _stringLiteral92599612, /*hidden argument*/NULL);
 		if (!L_87)
 		{
-			goto IL_0317;
+			goto IL_0324;
 		}
 	}
 	{
@@ -7285,7 +7282,7 @@ IL_013d:
 		MonoBehaviour_StartCoroutine_m2470621050(__this, L_88, /*hidden argument*/NULL);
 	}
 
-IL_0317:
+IL_0324:
 	{
 		return;
 	}
@@ -7382,7 +7379,7 @@ extern "C"  bool U24_MoveNext_m3716854013 (U24_t3528317699 * __this, const Metho
 			}
 			case 1:
 			{
-				goto IL_005e;
+				goto IL_006d;
 			}
 			case 2:
 			{
@@ -7397,7 +7394,7 @@ IL_0017:
 		WaitForSeconds__ctor_m1990515539(L_1, (((float)((float)2))), /*hidden argument*/NULL);
 		bool L_2 = GenericGeneratorEnumerator_1_Yield_m1415833518(__this, 2, L_1, /*hidden argument*/GenericGeneratorEnumerator_1_Yield_m1415833518_MethodInfo_var);
 		G_B6_0 = ((int32_t)(L_2));
-		goto IL_005f;
+		goto IL_006e;
 	}
 
 IL_002a:
@@ -7407,7 +7404,7 @@ IL_002a:
 		bool L_4 = L_3->get_HasSubmittedScore_18();
 		if (L_4)
 		{
-			goto IL_0056;
+			goto IL_0065;
 		}
 	}
 	{
@@ -7416,21 +7413,23 @@ IL_002a:
 		L_5->set_HasSubmittedScore_18((bool)1);
 		ScoreScreen_t3175080590 * L_6 = __this->get_U24self_U2477_2();
 		NullCheck(L_6);
-		int32_t L_7 = L_6->get_TotalScore_16();
-		Api_FinishTournament_m613936183(NULL /*static, unused*/, L_7, /*hidden argument*/NULL);
+		float* L_7 = L_6->get_address_of_TotalScore_16();
+		String_t* L_8 = Single_ToString_m2359963436(L_7, _stringLiteral98844844, /*hidden argument*/NULL);
+		int32_t L_9 = UnityBuiltins_parseInt_m2481732514(NULL /*static, unused*/, L_8, /*hidden argument*/NULL);
+		Api_FinishTournament_m613936183(NULL /*static, unused*/, L_9, /*hidden argument*/NULL);
 	}
 
-IL_0056:
+IL_0065:
 	{
 		GenericGeneratorEnumerator_1_YieldDefault_m3507348778(__this, 1, /*hidden argument*/GenericGeneratorEnumerator_1_YieldDefault_m3507348778_MethodInfo_var);
 	}
 
-IL_005e:
+IL_006d:
 	{
 		G_B6_0 = 0;
 	}
 
-IL_005f:
+IL_006e:
 	{
 		return (bool)G_B6_0;
 	}
