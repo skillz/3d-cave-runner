@@ -49,18 +49,18 @@ public:
 	int32_t ___GemValue_10;
 	// System.Int32 ScoreScreen::DistanceValue
 	int32_t ___DistanceValue_11;
-	// System.Int32 ScoreScreen::TotalDistance
-	int32_t ___TotalDistance_12;
-	// System.Int32 ScoreScreen::TotalDistanceCurrent
-	int32_t ___TotalDistanceCurrent_13;
+	// System.Single ScoreScreen::TotalDistance
+	float ___TotalDistance_12;
+	// System.Single ScoreScreen::TotalDistanceCurrent
+	float ___TotalDistanceCurrent_13;
 	// System.Int32 ScoreScreen::TotalGems
 	int32_t ___TotalGems_14;
 	// System.Int32 ScoreScreen::TotalGemsCurrent
 	int32_t ___TotalGemsCurrent_15;
-	// System.Int32 ScoreScreen::TotalScore
-	int32_t ___TotalScore_16;
-	// System.Int32 ScoreScreen::TotalScoreCurrent
-	int32_t ___TotalScoreCurrent_17;
+	// System.Single ScoreScreen::TotalScore
+	float ___TotalScore_16;
+	// System.Single ScoreScreen::TotalScoreCurrent
+	float ___TotalScoreCurrent_17;
 	// System.Boolean ScoreScreen::HasSubmittedScore
 	bool ___HasSubmittedScore_18;
 
@@ -147,17 +147,17 @@ public:
 	}
 
 	inline static int32_t get_offset_of_TotalDistance_12() { return static_cast<int32_t>(offsetof(ScoreScreen_t3175080590, ___TotalDistance_12)); }
-	inline int32_t get_TotalDistance_12() const { return ___TotalDistance_12; }
-	inline int32_t* get_address_of_TotalDistance_12() { return &___TotalDistance_12; }
-	inline void set_TotalDistance_12(int32_t value)
+	inline float get_TotalDistance_12() const { return ___TotalDistance_12; }
+	inline float* get_address_of_TotalDistance_12() { return &___TotalDistance_12; }
+	inline void set_TotalDistance_12(float value)
 	{
 		___TotalDistance_12 = value;
 	}
 
 	inline static int32_t get_offset_of_TotalDistanceCurrent_13() { return static_cast<int32_t>(offsetof(ScoreScreen_t3175080590, ___TotalDistanceCurrent_13)); }
-	inline int32_t get_TotalDistanceCurrent_13() const { return ___TotalDistanceCurrent_13; }
-	inline int32_t* get_address_of_TotalDistanceCurrent_13() { return &___TotalDistanceCurrent_13; }
-	inline void set_TotalDistanceCurrent_13(int32_t value)
+	inline float get_TotalDistanceCurrent_13() const { return ___TotalDistanceCurrent_13; }
+	inline float* get_address_of_TotalDistanceCurrent_13() { return &___TotalDistanceCurrent_13; }
+	inline void set_TotalDistanceCurrent_13(float value)
 	{
 		___TotalDistanceCurrent_13 = value;
 	}
@@ -179,17 +179,17 @@ public:
 	}
 
 	inline static int32_t get_offset_of_TotalScore_16() { return static_cast<int32_t>(offsetof(ScoreScreen_t3175080590, ___TotalScore_16)); }
-	inline int32_t get_TotalScore_16() const { return ___TotalScore_16; }
-	inline int32_t* get_address_of_TotalScore_16() { return &___TotalScore_16; }
-	inline void set_TotalScore_16(int32_t value)
+	inline float get_TotalScore_16() const { return ___TotalScore_16; }
+	inline float* get_address_of_TotalScore_16() { return &___TotalScore_16; }
+	inline void set_TotalScore_16(float value)
 	{
 		___TotalScore_16 = value;
 	}
 
 	inline static int32_t get_offset_of_TotalScoreCurrent_17() { return static_cast<int32_t>(offsetof(ScoreScreen_t3175080590, ___TotalScoreCurrent_17)); }
-	inline int32_t get_TotalScoreCurrent_17() const { return ___TotalScoreCurrent_17; }
-	inline int32_t* get_address_of_TotalScoreCurrent_17() { return &___TotalScoreCurrent_17; }
-	inline void set_TotalScoreCurrent_17(int32_t value)
+	inline float get_TotalScoreCurrent_17() const { return ___TotalScoreCurrent_17; }
+	inline float* get_address_of_TotalScoreCurrent_17() { return &___TotalScoreCurrent_17; }
+	inline void set_TotalScoreCurrent_17(float value)
 	{
 		___TotalScoreCurrent_17 = value;
 	}
