@@ -201,6 +201,7 @@ extern "C" void UnityRequestQuit()
 
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation
 {
+    NSLog(@"This is a new fingerprint");
     NSMutableArray* keys    = [NSMutableArray arrayWithCapacity: 3];
     NSMutableArray* values  = [NSMutableArray arrayWithCapacity: 3];
 

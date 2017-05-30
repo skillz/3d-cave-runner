@@ -12,14 +12,14 @@ private var ButtonWidth: int = 420;
 var GemValue:int = 100; //The value of a single gem in points
 var DistanceValue:int = 10; //The value of a single meter of distance in points
 
-private var TotalDistance:int = 0; //The total distance passed
-private var TotalDistanceCurrent:int = 0; //The current total score, used to animate the score rising from 0 to TotalScore
+private var TotalDistance:float = 0; //The total distance passed
+private var TotalDistanceCurrent:float = 0; //The current total score, used to animate the score rising from 0 to TotalScore
 
 private var TotalGems:int = 0; //The total gems collected
 private var TotalGemsCurrent:int = 0; //The current total score, used to animate the score rising from 0 to TotalScore
 
-private var TotalScore:int = 0; //The total score calculated from both distance and gems collected
-private var TotalScoreCurrent:int = 0; //The current total score, used to animate the score rising from 0 to TotalScore
+private var TotalScore:float = 0; //The total score calculated from both distance and gems collected
+private var TotalScoreCurrent:float = 0; //The current total score, used to animate the score rising from 0 to TotalScore
 
 var HasSubmittedScore:boolean = false;
 
@@ -76,7 +76,7 @@ function OnGUI()
 
 	if ( TotalDistanceCurrent < TotalDistance ) //If we haven't reached the TotalScore, keep counting up to it
 	{
-		var addD:int = 0.01*TotalDistance;
+		var addD:float = 0.01*TotalDistance;
 		if (addD== 0)
 			addD = 1;
 		TotalDistanceCurrent+=addD; //Count up from 0 to the value of TotalScore smoothly
@@ -95,9 +95,9 @@ function OnGUI()
 	//Display 3 boxes, the first showing total distance passed and multiplied by the value of each meter, the second showing total gems collected and multiplied by the value of a gem, and finally a bigger box showing the
   //total score.
   var offset:int = 70;
-	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -900 + offset , smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Distance:\n" + TotalDistanceCurrent.ToString() + "M" + " X " + DistanceValue.ToString() );
+	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -900 + offset , smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Distance:\n" + TotalDistanceCurrent.ToString("F1") + "M" + " X " + DistanceValue.ToString() );
 	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -675 + offset , smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Gems: \n" + TotalGemsCurrent.ToString() + " X " + GemValue.ToString() );
-	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -455 + offset, smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Score \n" + TotalScoreCurrent.ToString());
+	GUI.Box ( Rect((originalWidth - smallBoxWidth*0.85)/2 ,originalHeight -455 + offset, smallBoxWidth*0.85, smallBoxHeight*0.85), "Total Score \n" + TotalScoreCurrent.ToString("F0"));
 
 	var buttonRect = Rect((originalWidth/2) - (ButtonWidth/2), originalHeight - ButtonHeight -25, ButtonWidth, ButtonHeight );
   //Debug.Log("button Rect: " + buttonRect.ToString());
@@ -115,10 +115,10 @@ function SubmitScore()
 		HasSubmittedScore = true;
 	#if UNITY_ANDROID
 		var metrics = new Dictionary.<String,String>();
-		metrics["score"] = TotalScore.ToString();
+		metrics["score"] = TotalScore.ToString("F0");
 		Skillz.ReportScore(metrics["score"]);
 	#elif UNITY_IOS
-		SkillzSDK.Api.FinishTournament(TotalScore);
+		SkillzSDK.Api.FinishTournament(parseInt(TotalScore.ToString("F0")));
 	#endif
 	}
 }

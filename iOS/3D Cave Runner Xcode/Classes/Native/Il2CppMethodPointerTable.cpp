@@ -9340,6 +9340,7 @@ extern "C" void ListUpdateableEnumerator_Reset_m4186908375 ();
 extern "C" void ListUpdateableEnumerator_MoveNext_m1727071326 ();
 extern "C" void ListUpdateableEnumerator_get_Current_m1239640447 ();
 extern "C" void ListUpdateableEnumerator_Update_m670620225 ();
+extern "C" void UnityBuiltins_parseInt_m2481732514 ();
 extern "C" void UnityRuntimeServices__cctor_m277244785 ();
 extern "C" void UnityRuntimeServices__ctor_m1066678718 ();
 extern "C" void UnityRuntimeServices_GetEnumerator_m1135949016 ();
@@ -9656,7 +9657,7 @@ extern "C" void U24WaitU2479__ctor_m2924670044 ();
 extern "C" void U24WaitU2479_GetEnumerator_m3984991652 ();
 extern "C" void U24__ctor_m2839011527 ();
 extern "C" void U24_MoveNext_m986971977 ();
-extern const Il2CppMethodPointer g_MethodPointers[9642] = 
+extern const Il2CppMethodPointer g_MethodPointers[9643] = 
 {
 	Locale_GetText_m1954433032,
 	Locale_GetText_m2553164138,
@@ -18984,6 +18985,7 @@ extern const Il2CppMethodPointer g_MethodPointers[9642] =
 	ListUpdateableEnumerator_MoveNext_m1727071326,
 	ListUpdateableEnumerator_get_Current_m1239640447,
 	ListUpdateableEnumerator_Update_m670620225,
+	UnityBuiltins_parseInt_m2481732514,
 	UnityRuntimeServices__cctor_m277244785,
 	UnityRuntimeServices__ctor_m1066678718,
 	UnityRuntimeServices_GetEnumerator_m1135949016,
