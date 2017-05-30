@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:585510961627:android:c8dfbcd75a6acca2",
         "android_client_info": {
-          "package_name": "com.skillz.android.shellgame.pinky"
+          "package_name": "com.skillz.android.shellgame.playtest"
         }
       },
       "oauth_client": [
@@ -100,7 +100,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:585510961627:android:5506b145239c9029",
         "android_client_info": {
-          "package_name": "com.skillzgames.caverun"
+          "package_name": "com.skillz.android.shellgame.playtest"
         }
       },
       "oauth_client": [

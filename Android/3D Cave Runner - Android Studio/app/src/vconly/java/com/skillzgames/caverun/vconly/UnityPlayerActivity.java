@@ -1,4 +1,4 @@
-package com.skillzgames.caverun.vconly;
+package com.skillz.android.shellgame.playtest.vconly;
 
 import com.unity3d.player.*;
 import android.app.Activity;

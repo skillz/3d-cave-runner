@@ -1,4 +1,4 @@
-package com.skillzgames.caverun;
+package com.skillz.android.shellgame.playtest;
 
 import android.os.Bundle;
 import android.util.Log;

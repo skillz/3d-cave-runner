@@ -1,4 +1,4 @@
-package com.skillzgames.caverun;
+package com.skillz.android.shellgame.playtest;
 
 import android.app.Activity;
 import android.content.Intent;

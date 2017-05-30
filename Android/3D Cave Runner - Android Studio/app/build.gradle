@@ -1,7 +1,7 @@
 def versionMajor = 3
 def versionMinor = 2
 def versionPatch = 1
-def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.getenv('BUILD_NUMBER')) : 1
+def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.getenv('BUILD_NUMBER')) : 2
 
 buildscript {
     repositories {
@@ -38,7 +38,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
-        applicationId "com.skillzgames.caverun"
+        applicationId "com.skillz.android.shellgame.playtest"
         minSdkVersion 19
         targetSdkVersion 22
         ndk {
@@ -50,7 +50,7 @@ android {
     }
     buildTypes {
         release {
-            debuggable=project.debuggable
+            debuggable false
             minifyEnabled true
             shrinkResources false
 
@@ -98,11 +98,11 @@ dependencies {
     compile files('libs/unity-classes.jar')
     //Skillz SDK
 
-    compile 'com.skillz.sdk:skillz-sdk-android:3.2.1'
+    compile 'com.skillz.sdk:skillz-sdk-android:4.0-SNAPSHOT'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }
-    compile 'com.google.android.gms:play-services-gcm:10.2.4'
+    compile 'com.google.android.gms:play-services-gcm:10.2.6'
 }
 
 repositories {
