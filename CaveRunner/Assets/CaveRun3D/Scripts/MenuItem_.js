@@ -9,6 +9,8 @@ var LevelName:String = ""; //The name of the level it loads
 var LoadComponent:boolean = false; //Does it create a component
 private var LoadedComponent:GameObject; //a copy of the created component
 
+var StartSkillz:boolean = false; //start Skillz
+
 function RunMenuItem()
 {
 	if ( LoadLevel == true && LevelName != "" )
@@ -26,5 +28,7 @@ function RunMenuItem()
 			var trans : Transform= Instantiate(transform, Vector3.zero, Quaternion.identity); //create an instance of this object
 			LoadedComponent = trans.gameObject;
 		}
-	} 
+	} else if (StartSkillz) {
+		Skillz.Launch();
+	}
 }

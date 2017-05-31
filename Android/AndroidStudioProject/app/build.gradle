@@ -8,6 +8,11 @@ android {
         applicationId "com.skillzgames.caverun"
         minSdkVersion 19
         targetSdkVersion 22
+        multiDexEnabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 
     buildTypes {
@@ -18,6 +23,14 @@ android {
     }
 }
 
+repositories {
+     maven {
+         url 'http://nexus.skillz.com/content/groups/public/'
+     }
+}
+
 dependencies {
     compile files('libs/unity-classes.jar')
+    compile 'com.skillz.sdk:skillz-sdk-android:3.2.1'
+    compile 'com.android.support:multidex:1.0.1'
 }

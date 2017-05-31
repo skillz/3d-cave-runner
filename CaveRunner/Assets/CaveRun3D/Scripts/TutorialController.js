@@ -92,7 +92,7 @@ function Start () {
 
 	//Check to see if this is the first run of the game...
 	var finishedTutorial = PlayerPrefs.GetInt("FinishedTutorial");
-	if (finishedTutorial != 1)
+	if (finishedTutorial != 1 && PlayerPrefs.GetInt("SkillzGame") != 1)
 	{
 		//show welcome popup, ask if he wants to go through the tutorial...
 		tutorialState = 1;
