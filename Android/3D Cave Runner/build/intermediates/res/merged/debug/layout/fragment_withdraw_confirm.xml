@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/password_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/inner_content_cell_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:text="@string/skz_warning"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_bold_cond" />
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:autoText="false"
+            android:textColor="#000000"
+            android:text="@string/skz_withdraw_confirm_warning_you_will_lose"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="21sp"
+            app:font="@string/skz_neue_bold" />
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="BONUS CASH"
+            android:textColor="#58B542"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_bold" />
+
+        <com.skillz.widget.FontTextView
+            android:id="@+id/bonusValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="$15.50"
+            android:textColor="#58B542"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/cancel"
+            style="@style/Button.Dialog.CancelBlack"
+            android:layout_marginRight="3dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/skz_cancel" />
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/confirm"
+            style="@style/Button.Dialog.ContinueOrange"
+            android:layout_marginLeft="3dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/skz_continue2" />
+    </LinearLayout>
+</LinearLayout>

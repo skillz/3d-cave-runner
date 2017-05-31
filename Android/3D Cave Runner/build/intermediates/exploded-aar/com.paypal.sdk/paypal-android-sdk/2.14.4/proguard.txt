@@ -1,0 +1,22 @@
+# -------- PayPal SDK ----------
+# (does not include card.io)
+
+-dontwarn com.google.android.gms.**
+# -- Ignoring warnings from okio based on https://github.com/square/okio/issues/60
+-dontwarn okio.*
+
+# This is added for okhttp 3.1.2 bug fix as shown at https://github.com/square/okhttp/issues/2323
+-keepclassmembers class * implements javax.net.ssl.SSLSocketFactory {
+    private javax.net.ssl.SSLSocketFactory delegate;
+}
+
+# See https://github.com/paypal/PayPal-Android-SDK/issues/299
+-keep class org.json.* {
+    *;
+}
+-keep interface org.json.* {
+    *;
+}
+-keep enum org.json.* {
+    *;
+}

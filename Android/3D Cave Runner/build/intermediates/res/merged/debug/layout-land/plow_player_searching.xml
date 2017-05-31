@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:paddingTop="5dp">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/inner_content_dark">
+
+        <com.skillz.widget.FontTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="62dp"
+            android:gravity="start"
+            android:text="@string/skz_plow_search_opponent"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:font="fonts/HelveticaNeue-CondensedBlack.otf"/>
+
+        <com.skillz.widget.AvatarImageView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/search_icon"/>
+
+    </RelativeLayout>
+
+    <com.skillz.widget.AvatarImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/avatar_unknown_plow"
+        android:padding="4dp"/>
+
+</RelativeLayout>

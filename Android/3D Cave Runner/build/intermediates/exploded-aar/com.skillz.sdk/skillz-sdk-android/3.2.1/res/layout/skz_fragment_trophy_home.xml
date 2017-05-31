@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F4660"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/skz_trophy_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/bg_app" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/skz_trophy_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_banner"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="3dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingTop="1dp">
+
+            <LinearLayout
+                android:id="@+id/skz_trophy_progress"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="3dp"
+                android:background="#313141"
+                android:orientation="horizontal">
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:shadowColor="#33000000"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="2.0"
+                    android:text="@string/skz_trophies_earned"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="TROPHIES" />
+
+                <ProgressBar
+                    android:id="@+id/skz_trophy_progressbar"
+                    style="@style/ProgressBar.Trophy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    tools:progress="67" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_weight="2"
+                    android:background="#313141"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.skillz.widget.FontTextView
+                        android:id="@+id/skz_trophy_progress_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="0dp"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        tools:text="45/60" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/skz_trophy_controls"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/skz_trophy_progress"
+                android:layout_gravity="center_horizontal">
+
+                <com.skillz.widget.FontButton
+                    android:id="@+id/skz_trophy_upcoming_btn"
+                    style="@style/Button.Primary.Trophy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/primary_button_with_states"
+                    android:padding="0dp"
+                    android:text="@string/skz_trophies_upcoming" />
+
+                <com.skillz.widget.FontButton
+                    android:id="@+id/skz_trophy_completed_btn"
+                    style="@style/Button.Primary.Trophy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/primary_button_with_states"
+                    android:padding="0dp"
+                    android:text="@string/skz_trophies_completed" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/skz_trophy_header"
+            android:layout_margin="0dp"
+            android:background="@drawable/dialog_bg_drk">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/skz_trophy_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+</FrameLayout>

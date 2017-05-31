@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F4660">
+
+    <ImageView
+        android:id="@+id/skz_capture_age_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/bg_unlocked" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/skz_rounded_bg">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/skz_capture_go_pro"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/capture_age_dollar" />
+
+                <com.skillz.widget.FontTextView
+                    android:id="@+id/skz_capture_go_pro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/skz_capture_age_play"
+                    android:gravity="center"
+                    android:shadowColor="@color/capture_drop_shadow"
+                    android:shadowRadius="4"
+                    android:text="@string/skz_capture_age_go_pro"
+                    android:textSize="72sp"
+                    app:font="@string/skz_neue_black_cond" />
+
+                <com.skillz.widget.FontTextView
+                    android:id="@+id/skz_capture_age_play"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="-10dp"
+                    android:gravity="center_horizontal"
+                    android:shadowColor="@color/capture_drop_shadow"
+                    android:shadowRadius="2"
+                    android:text="@string/skz_capture_age_play"
+                    android:textColor="#ffffff"
+                    android:textSize="36dp"
+                    app:font="@string/skz_neue_black_cond" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/skz_rounded_bg"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="#181C25"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <com.skillz.widget.FontTextView
+                        android:id="@+id/capture_age_terms"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="35dp"
+                        android:clickable="true"
+                        android:gravity="left"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/skz_capture_age_users_must"
+                        android:textColor="#ffffff"
+                        android:textSize="10dp"
+                        app:font="@string/skz_neue_light" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/select_birth_date"
+                            style="@style/Input"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_weight="2"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:text="@string/skz_capture_age_date_hint"
+                            android:textColor="@color/input_hint"
+                            android:textSize="16dp"
+
+                            app:font="@string/skz_neue_light" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp">
+
+                        <CheckBox
+                            android:id="@+id/capture_age_checkBox"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:button="@drawable/capture_checkbox_selector"
+                            android:checked="false" />
+
+                        <com.skillz.widget.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/capture_age_checkBox"
+                            android:text="@string/skz_capture_age_terms_agree"
+                            android:textColor="#ffffff"
+                            android:textSize="12dp"
+                            app:font="@string/skz_neue_light" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:src="@drawable/img_geotrust_logo" />
+                    </RelativeLayout>
+
+                    <com.skillz.widget.FontButton
+                        android:id="@+id/capture_age_submit"
+                        style="@style/Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/skz_submit"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/skz_capture_age_enter_birthday"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp"
+                    app:font="@string/skz_neue_bold" />
+            </RelativeLayout>
+
+            <com.skillz.widget.FontTextView
+                android:id="@+id/capture_age_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:paddingBottom="4dp"
+                android:text="@string/skz_capture_existing_user_sign_in"
+                android:textColor="@color/z_bottom"
+                android:textSize="18dp"
+                app:font="@string/skz_neue_light" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

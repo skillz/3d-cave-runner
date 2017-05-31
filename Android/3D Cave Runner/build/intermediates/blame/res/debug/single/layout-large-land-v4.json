@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-land-v4/skz_trophies_tutorial.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-land-v4/skz_trophies_tutorial.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-land-v4/fragment_plow.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-land-v4/fragment_plow.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-land-v4/fragment_friends_invitation.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-land-v4/fragment_friends_invitation.xml"
+    }
+]

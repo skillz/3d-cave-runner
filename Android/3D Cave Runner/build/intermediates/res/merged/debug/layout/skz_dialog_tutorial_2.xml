@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:weightSum="4">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:background="@drawable/dialog_bg">
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:font="@string/skz_neue_black_cond"
+            android:text="@string/skz_ticketz_tut2_header"
+            android:textSize="23sp"
+            android:textColor="@color/skz_ticketz_tut_header"
+            />
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/skz_ticketz_tut2_text"
+            android:gravity="center"
+            app:font="@string/skz_neue_light"
+            android:textSize="16sp"
+            android:textColor="@color/skz_ticketz_tut_text"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <com.skillz.widget.FontButton
+                android:id="@+id/skz_ticketz_tut2_skip_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Button.Dialog.Cancel"
+                android:text="@string/skz_skip"
+                android:paddingLeft="@dimen/skz_ticketz_tut_skip_btn_pad"
+                android:paddingRight="@dimen/skz_ticketz_tut_skip_btn_pad"
+                />
+
+            <com.skillz.widget.FontButton
+                android:id="@+id/skz_ticketz_tut2_next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Button.Dialog.Next"
+                android:text="@string/skz_next"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/skz_ticketz_tut2_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_anim_arrow_right"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>

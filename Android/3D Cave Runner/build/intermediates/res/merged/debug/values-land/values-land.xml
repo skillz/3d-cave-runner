@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="abc_action_bar_default_height_material">48dp</dimen>
+    <dimen name="abc_action_bar_progress_bar_size">32dp</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">12dp</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">14dp</dimen>
+    <dimen name="skz_home_footer_text_padding">4dp</dimen>
+    <dimen name="skz_trophies_next_button_title">28sp</dimen>
+    <dimen name="skz_trophies_title">20sp</dimen>
+    <style name="Button.Blue">
+        <item name="android:background">@drawable/blue_button</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Button.Primary">
+        <item name="android:background">@drawable/primary_button_small</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Button.Secondary">
+        <item name="android:background">@drawable/secondary_button_small</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Widget.Design.TabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">center</item>
+        <item name="tabMode">fixed</item>
+    </style>
+</resources>

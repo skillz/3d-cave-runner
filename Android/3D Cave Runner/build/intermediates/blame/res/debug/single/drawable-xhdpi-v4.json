@@ -1,0 +1,530 @@
+[
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/app_banner.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/src/main/res/drawable-xhdpi/app_banner.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/loading_dots_0.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/loading_dots_0.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_anim_arrow_down.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_anim_arrow_down.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_play.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_media_play.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_light.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_orange_med_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_orange_med_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/welcome_txt_only.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/welcome_txt_only.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/design_ic_visibility.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/drawable-xhdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notification_bg_low_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notification_bg_normal.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_pencil_field.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_pencil_field.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/replay_central_item_land.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/replay_central_item_land.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_menu_help.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_menu_help.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.1/res/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/loading_dots_2.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/loading_dots_2.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_z_small_white.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_z_small_white.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/inner_content_cell_bg.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/inner_content_cell_bg.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_grey_med_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_grey_med_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/googleg_standard_color_18.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.1/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_welcome_back_prize_top_skz.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_welcome_back_prize_top_skz.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_welcome_back_prize_bottom_skz.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_welcome_back_prize_bottom_skz.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_black_16dp.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/app_icon.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/src/main/res/drawable-xhdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cell_menu_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/cell_menu_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_menu_profile.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_menu_profile.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_light.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/entry_field.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/entry_field.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_menu_trophies.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_menu_trophies.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_drawable_close.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_drawable_close.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_dark.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_orange_small.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_orange_small.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_small_close_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_small_close_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_menu_home.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_menu_home.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.1/res/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_menu_exit.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_menu_exit.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/stream_bg_header.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/stream_bg_header.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_welcome_back_prize_skz.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_welcome_back_prize_skz.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_small_action_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_small_action_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/close_button_vertical.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/close_button_vertical.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/stream_bg_footer.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/stream_bg_footer.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_welcome_back_prize_glow_skz.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_welcome_back_prize_glow_skz.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/skillz_logo_dialog_p.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/skillz_logo_dialog_p.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_grey_med.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_grey_med.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_add_avatar.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_add_avatar.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_small_action.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_small_action.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/design_ic_visibility_off.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/drawable-xhdpi-v4/design_ic_visibility_off.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_pointer_skz.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_pointer_skz.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/replay_title.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/replay_title.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/loading_dots_1.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/loading_dots_1.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_focused_holo.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_light.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_grey_small.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_grey_small.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/loading_background.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/loading_background.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_black_36dp.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_pause.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_media_pause.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/googleg_disabled_color_18.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.1/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_menu_ticketz.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_menu_ticketz.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/select_container_gametile_bg.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/select_container_gametile_bg.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/dialog_bg.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/dialog_bg.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_arrow_pressed.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_arrow_pressed.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/skills_pickname_divider.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/skills_pickname_divider.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_menu_account.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_menu_account.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/avatar_bg.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/avatar_bg.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/bg_account.jpg",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/bg_account.jpg"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/bg_modal_content_box.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/bg_modal_content_box.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/gfx_tutorial_arrow_skz_2x.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/gfx_tutorial_arrow_skz_2x.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/stream_bg_divider.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/stream_bg_divider.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_small_close.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_small_close.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.1/res/drawable-xhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_orange_med.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_orange_med.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.1/res/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/notification_bg_low_normal.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_grey_small_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_grey_small_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_medal_blank_lrg.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_medal_blank_lrg.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_stretch.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_media_stretch.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/bottom_bar.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/bottom_bar.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_shrink.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_media_shrink.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/loading_dots.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/loading_dots.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/dialog_account_bg.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/dialog_account_bg.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_black_48dp.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/drawer_shadow.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/drawer_shadow.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cell_list_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/cell_list_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/skillz_pickname_logo.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/skillz_pickname_logo.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/skillz_logo_replay_vertical.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/skillz_logo_replay_vertical.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_bg_orange_small_pressed.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/btn_bg_orange_small_pressed.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/bottom_bar_account.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/bottom_bar_account.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_full_open_on_phone.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.1/res/drawable-xhdpi-v4/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/capture_age_dollar.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/capture_age_dollar.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cell_list.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/cell_list.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/dialog_account_banner.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/dialog_account_banner.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_arrow.png",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/drawable-xhdpi-v4/ic_arrow.png"
+    }
+]

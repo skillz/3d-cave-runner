@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_height="75dp"
+    android:layout_width="match_parent"
+    android:layout_alignParentTop="true"
+    android:background="#232645"
+    >
+
+    <FrameLayout
+    android:id="@+id/ftue_game_logo_layout"
+    android:layout_width="55dp"
+    android:layout_height="55dp"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="10dp"
+    android:bottomRightRadius="10dp"
+    >
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:id="@+id/ftue_game_logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0.5dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/skz_ftue_grey_border"
+        />
+    </FrameLayout>
+
+    <com.skillz.widget.FontTextView
+        android:id="@+id/ftue_game_name"
+        android:layout_width="100dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/balance_item_white"
+        android:textSize="26sp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/ftue_skillz_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="skillz"
+            android:textColor="@color/balance_item_white"
+            android:textSize="28sp"
+            android:layout_marginBottom="-5dp"
+            android:layout_gravity="center|right"/>
+        <TextView
+            android:id="@+id/ftue_powered_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="powered"
+            android:textColor="@color/balance_item_white"
+            android:layout_marginTop="-5dp"
+            android:textSize="16dp"
+            android:layout_gravity="center|right"/>
+    </LinearLayout>
+
+</LinearLayout>

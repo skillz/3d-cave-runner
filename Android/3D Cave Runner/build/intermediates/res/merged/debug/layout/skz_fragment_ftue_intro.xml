@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/ftue_intro_container">
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/background_container_ftue"
+    />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#BB232645"
+        android:id="@+id/skz_fragment_ftue_background">
+
+        <include
+            android:id="@+id/skz_fragment_ftue_intro_header"
+            layout="@layout/skz_fragment_ftue_intro_header" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/skz_content_divider"
+            android:layout_below="@id/skz_fragment_ftue_intro_header"/>
+        <include
+            android:id="@+id/skz_fragment_ftue_intro_footer"
+            layout="@layout/skz_fragment_ftue_intro_footer" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/skz_content_divider"
+            android:layout_above="@id/skz_fragment_ftue_intro_footer"/>
+        <FrameLayout
+            android:id="@+id/skz_fragment_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/skz_fragment_ftue_intro_footer"
+            android:layout_below="@id/skz_fragment_ftue_intro_header"
+            android:alpha="1">
+
+        </FrameLayout>
+    </RelativeLayout>
+</FrameLayout>

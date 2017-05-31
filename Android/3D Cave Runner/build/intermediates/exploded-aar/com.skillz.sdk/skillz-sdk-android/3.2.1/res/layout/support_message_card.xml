@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/bg_tournament_card"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/balance_item_white"
+    tools:context=".activity.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/leaderboard_dark">
+        <LinearLayout
+            android:id="@+id/skz_message_skillz_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="1dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/balance_item_white">
+
+                <com.skillz.widget.FontTextView
+                    android:id="@+id/skz_message_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+                    tools:text="1/1/16"
+                    android:textColor="@color/leaderboard_dark"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"/>
+
+                <com.skillz.widget.FontTextView
+                    android:id="@+id/skz_message_subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="80dp"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+                    tools:text="Subject here"
+                    android:textColor="@color/leaderboard_dark" />
+
+                <ImageView
+                    android:id="@+id/skz_message_unread_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="right"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_help_new_message"/>
+
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

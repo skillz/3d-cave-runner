@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-v4/skz_trophies_tutorial.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-v4/skz_trophies_tutorial.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-v4/fragment_tournament_list.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-v4/fragment_tournament_list.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-v4/tournament_bouncy_arrow.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-v4/tournament_bouncy_arrow.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-v4/skz_fragment_ticketz_info.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-v4/skz_fragment_ticketz_info.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-v4/skz_fragment_deposit.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-v4/skz_fragment_deposit.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-v4/fragment_plow.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-v4/fragment_plow.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-large-v4/fragment_friends_invitation.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-large-v4/fragment_friends_invitation.xml"
+    }
+]

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:padding="0dp">
+
+    <com.skillz.widget.FontButton
+        android:id="@+id/watchReplayButton"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="14sp"
+        android:text="@string/skz_watch_replay"
+        style="@style/Button.ShareReplayNewPLOW"
+        android:layout_marginLeft="10dp"/>
+
+    <com.skillz.widget.FontButton
+        android:id="@+id/shareReplayButton"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="5dp"
+        android:textSize="14sp"
+        android:text="@string/skz_share"
+        style="@style/Button.ShareReplayNewPLOW"
+        android:layout_marginRight="4dp"/>
+
+</LinearLayout>

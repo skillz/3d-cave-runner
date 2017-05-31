@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    }
+]

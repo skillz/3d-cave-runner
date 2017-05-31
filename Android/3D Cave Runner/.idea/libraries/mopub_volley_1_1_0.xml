@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mopub-volley-1.1.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/com.mopub.volley/mopub-volley/1.1.0/res" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.mopub.volley/mopub-volley/1.1.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mopub.volley/mopub-volley/1.1.0/dc85c3faa1d4c29ec66b5e3f0d5d8d9398522272/mopub-volley-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

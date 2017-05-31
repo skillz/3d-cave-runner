@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/contents_container"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#254762">
+
+    <ImageView
+            android:id="@+id/skz_fragment_welcome_existing_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:scaleType="fitXY"
+            tools:src="@drawable/bg_unlocked"
+            />
+
+    <RelativeLayout
+        android:id="@+id/logo_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg"
+        android:layout_gravity="center">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:background="@drawable/inner_content_cell_bg"
+            android:src="@drawable/skillz_logo_dialog_p"
+            android:scaleType="center"
+            android:padding="10dp"
+            android:minWidth="320dp"
+            android:contentDescription="@string/skz_logo_desc"
+                />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:background="@drawable/inner_content_cell_bg"
+            android:minWidth="320dp"
+            android:gravity="center"
+            android:padding="10dp"
+                >
+
+            <com.skillz.widget.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/skz_welcome_back"
+                android:id="@+id/welcome"
+                style="@style/SecondaryText"
+                android:layout_gravity="center_horizontal" />
+
+            <com.skillz.widget.FontTextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/skz_placeholder_username"
+                style="@style/PrimaryText"
+                android:layout_gravity="center_horizontal" />
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:background="@drawable/avatar_bg"
+                android:layout_gravity="center_horizontal"
+                tools:src="@drawable/avatar_unknown"
+                android:contentDescription="@string/skz_avatar_desc" />
+
+            <com.skillz.widget.FontButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/skz_play_now"
+                android:id="@+id/button"
+                android:padding="4dp"
+                android:minWidth="200dp"
+                android:layout_gravity="center_horizontal"
+                style="@style/Button.Primary"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <com.skillz.widget.FontTextView
+        style="@style/SecondaryText"
+        android:id="@+id/different_user_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Not TastyBarbarian? Click Here to Sign In"
+        android:clickable="true"
+        android:background="@drawable/bottom_bar"
+        android:textColor="@drawable/welcome_existing_sign_in_text_color"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        />
+</FrameLayout>

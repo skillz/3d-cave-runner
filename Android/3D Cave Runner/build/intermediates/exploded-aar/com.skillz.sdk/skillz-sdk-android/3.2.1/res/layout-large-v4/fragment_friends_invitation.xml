@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#384959">
+
+    <FrameLayout
+        android:id="@+id/skz_store_cash_bonus_tutorial_bottom"
+        android:layout_width="550dp"
+        android:layout_height="450dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/friends_board_background"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom|top"
+            android:layout_marginTop="30dp">
+
+            <com.skillz.widget.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/skz_friend_invitation_get"
+                android:textSize="80dp"
+                android:textStyle="bold"
+                app:font="@string/skz_neue_black_cond" />
+
+            <com.skillz.widget.FontTextView
+                android:id="@+id/rewardValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/skz_friend_invitation_reward_value"
+                android:textColor="#58B542"
+                android:textSize="80dp"
+                android:textStyle="bold"
+                app:font="@string/skz_neue_black_cond" />
+        </LinearLayout>
+
+        <com.skillz.widget.FontButton
+            android:id="@+id/inviteButton"
+            android:layout_width="460dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="45dp"
+            android:background="@drawable/blue_button"
+            android:text="@string/skz_friend_invitation_invite_share"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_black_cond" />
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="150dp"
+            android:singleLine="false"
+            android:text="@string/skz_friend_invitation_invite_your_friends"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="43dp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_bold_cond" />
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="115dp"
+            android:singleLine="false"
+            android:text="@string/skz_friend_invitation_in_bonus_cash"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_bold" />
+
+        <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="165dp"
+            android:singleLine="false"
+            android:text="@string/skz_friend_invitation_for_each_friend"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="21dp"
+            android:textStyle="bold"
+            app:font="@string/skz_neue_roman" />
+    </FrameLayout>
+
+</RelativeLayout>

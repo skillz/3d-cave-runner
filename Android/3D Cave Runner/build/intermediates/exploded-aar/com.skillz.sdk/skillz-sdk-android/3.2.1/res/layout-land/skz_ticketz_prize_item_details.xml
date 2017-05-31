@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/stream_list_item"
+        android:orientation="vertical"
+        android:paddingBottom="7dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="5dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_container_prizes_glare"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/skz_ticketz_prize_image"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_weight="3"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    />
+
+                <com.skillz.util.AutoResizeTextView
+                    android:id="@+id/skz_ticketz_prize_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:shadowColor="#59000000"
+                    android:shadowDy="2.0"
+                    android:shadowRadius="3.0"
+                    android:textSize="24sp"
+                    app:font="@string/skz_neue_black_cond"
+                    app:gradientColors="@array/ticketz_prize_title_gradient"
+                    tools:text="$10 BONUS BUCKS"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/skz_ticketz_details_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/btn_close_code"
+                />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/decore_anglez_ticketz"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.skillz.widget.FontTextView
+                    android:id="@+id/szk_ticketz_prize_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:textColor="@color/skz_ticketz_price"
+                    android:textSize="16sp"
+                    app:font="@string/skz_neue_black_cond"
+                    tools:text="110k"/>
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/skz_ticketz_color"
+                    android:textSize="14sp"
+                    app:font="@string/skz_neue_black_cond"
+                    tools:text="@string/skz_ticketz"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/skz_ticketz_confirm_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/btn_bg_ticketz_redeem"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="33dp"
+                    android:src="@drawable/ic_redeemcheck_large_white"/>
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="6dp"
+                    android:shadowColor="#33000000"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="2.0"
+                    android:text="@string/skz_ticketz_confirm"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/skz_ticketz_details_divider"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/skz_ticketz_details_email_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    >
+
+                    <com.skillz.widget.FontTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/skz_ticketz_details_sent_to"
+                        android:textColor="@color/skz_ticketz_color"
+                        android:textSize="12sp"
+                        app:font="@string/skz_neue_black_cond"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_ticketz_details_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/skz_ticketz_price"
+                            android:textSize="18sp"
+                            app:font="@string/skz_neue_light"
+                            tools:text="somebody@email.com"
+                            />
+
+                        <com.skillz.widget.FontTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="@string/skz_ticketz_email_change_notice"
+                            android:textColor="@color/skz_ticketz_color"
+                            android:textSize="12sp"
+                            app:font="@string/skz_neue_roman"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.skillz.widget.FontTextView
+                    android:id="@+id/skz_ticketz_detail_copy_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/skz_ticketz_color"
+                    android:textSize="18sp"
+                    app:font="@string/skz_neue_black_cond"
+                    tools:text="Trade in your ticketz for $100 Bonus Cash!"
+                    />
+
+
+                <com.skillz.widget.FontTextView
+                    android:id="@+id/skz_ticketz_detail_copy_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/skz_ticketz_color"
+                    android:textSize="12sp"
+                    app:font="@string/skz_neue_roman"
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</FrameLayout>

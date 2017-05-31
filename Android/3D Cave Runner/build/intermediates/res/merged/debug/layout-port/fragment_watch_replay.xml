@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:clickable="true"
+    android:background="@drawable/replay_bg_land">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/leftPart"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/centerPart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="40dp">
+
+            <LinearLayout
+                android:id="@+id/my_video_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_replay_item"
+                android:orientation="vertical"
+                android:layout_above="@+id/centerMenu"
+                android:backgroundTint="#000000">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/myAvatarImage"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:background="#fff"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:background="@drawable/replay_username_bg"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center_vertical">
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/myNameTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_centerVertical="true"
+                            android:text="@string/skz_username_cap"
+                            android:textColor="#000"
+                            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/my_video_frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <SurfaceView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/my_video_surface_view"
+                        android:layout_gravity="center"
+                        android:backgroundTint="#000000" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/centerMenu"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/winnerGetsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/btn_bg_black_med">
+
+                    <com.skillz.widget.FontTextView
+                        android:id="@+id/winnerGetsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/skz_winner_gets_short"
+                        app:font="fonts/HelveticaNeue-CondensedBlack.otf"
+                        android:layout_centerVertical="true"/>
+
+                    <com.skillz.widget.FontTextView
+                        android:id="@+id/winnerGetValue"
+                        android:layout_toRightOf="@+id/winnerGetsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/skz_prize_cap"
+                        android:textColor="@color/cash_top"
+                        app:font="fonts/HelveticaNeue-CondensedBlack.otf"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/shareLayout"
+                    android:layout_toRightOf="@id/winnerGetsLayout"
+                    android:layout_toEndOf="@+id/winnerGetsLayout"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/btn_bg_black_med">
+
+                    <com.skillz.widget.FontButton
+                        android:id="@+id/shareButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="@string/skz_share"
+                        style="@style/Button.Primary"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/opponent_video_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_replay_item"
+                android:orientation="vertical"
+                android:layout_below="@+id/centerMenu"
+                android:backgroundTint="#000000">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/opponentAvatarImage"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:background="#fff"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:background="@drawable/replay_username_bg"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_gravity="center_vertical">
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/opponentNameTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_centerVertical="true"
+                            android:textColor="#000"
+                            android:text="@string/skz_username_cap"
+                            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/opponent_video_frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <SurfaceView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/opponent_video_surface_view"
+                        android:layout_gravity="center"
+                        android:backgroundTint="#000000" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightPart"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp">
+
+            <com.skillz.widget.FontButton
+                android:id="@+id/closeButton"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"
+                style="@style/Button.Close.Port"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/skillz_logo_replay_vertical"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/closeButton"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

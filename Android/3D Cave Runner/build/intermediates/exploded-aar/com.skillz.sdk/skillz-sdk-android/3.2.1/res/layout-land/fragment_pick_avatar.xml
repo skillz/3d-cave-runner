@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5186ae"
+    android:id="@+id/container"
+    android:theme="@style/Theme.AppCompat"
+    >
+
+    <ImageView
+        android:id="@+id/skz_pick_avatar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/bg_unlocked"
+        />
+
+    <ScrollView
+        android:id="@+id/contents_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        >
+
+        <android.support.design.widget.CoordinatorLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center">
+            <LinearLayout
+              android:id="@+id/skz_ftue_modal_bg"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:minWidth="434dp"
+              android:background="@drawable/dialog_bg"
+              android:layout_gravity="center"
+              android:orientation="vertical"
+              >
+
+                <com.skillz.widget.FontTextView
+                  android:id="@+id/skz_pick_name_and_avatar"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/skz_pick_avatar"
+                  android:gravity="center"
+                  app:font="@string/skz_neue_light"
+                  android:textSize="20sp"
+                  android:textColor="@color/input_text"
+                  />
+
+                <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  >
+
+                    <FrameLayout
+                      android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:minWidth="434dp"
+                      android:layout_weight="1"
+                      android:layout_marginTop="6dp"
+                      android:layout_marginBottom="10dp"
+                      android:layout_marginRight="-15dp"
+                      android:layout_gravity="center"
+                      >
+
+                        <FrameLayout
+                          android:layout_width="98dp"
+                          android:layout_height="98dp"
+                          android:layout_gravity="center"
+                          android:background="@drawable/avatar_bg_shadow"
+                          android:id="@+id/skz_avatar_choose"
+                          >
+
+                            <ImageView
+                              android:layout_width="90dp"
+                              android:layout_height="90dp"
+                              android:layout_gravity="center"
+                              android:contentDescription="@string/skz_avatar_desc"
+                              android:src="@drawable/avatar_unknown"
+                              android:id="@+id/skz_avatar"
+                              />
+
+                            <ImageView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="right"
+                              android:layout_margin="2dp"
+                              android:id="@+id/add_avatar"
+                              android:src="@drawable/btn_add_avatar"
+                              android:contentDescription="@string/skz_avatar_desc"
+                              />
+
+                        </FrameLayout>
+                    </FrameLayout>
+
+                    <LinearLayout
+                      android:layout_width="242dp"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:orientation="vertical"
+                      >
+
+                        <com.skillz.widget.FontEditText
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:inputType="text"
+                          android:maxLines="1"
+                          style="@style/Input"
+                          android:hint="@string/skz_placeholder_username"
+                          android:id="@+id/skz_username"
+                          />
+
+                        <com.skillz.widget.FontTextView
+                          android:id="@+id/you_can_always_change"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="6dp"
+                          app:font="@string/skz_neue_light"
+                          android:textSize="14sp"
+                          android:textColor="@color/ftue_sub_copy"
+                          android:text="@string/skz_can_change_later"
+                          />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:layout_marginBottom="6dp"
+                  android:background="@drawable/skills_pickname_divider"
+                  />
+
+                <com.skillz.widget.FontButton
+                  android:layout_width="250dp"
+                  android:layout_height="34dp"
+                  android:layout_marginBottom="6dp"
+                  android:layout_gravity="center_horizontal"
+                  android:text="@string/skz_next"
+                  style="@style/Button.PlayAgainNewPLOW"
+                  android:id="@+id/skz_btn_next"
+                  />
+            </LinearLayout>
+            <ImageView
+              android:layout_width="50dp"
+              android:layout_height="50dp"
+              android:paddingBottom="10dp"
+              android:id="@+id/arrow_ftue"
+              android:src="@drawable/ic_pointer_skz"
+              app:layout_anchor="@id/skz_btn_next"
+              app:layout_anchorGravity="center|top"/>
+        </android.support.design.widget.CoordinatorLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3F4660"
+        android:clickable="true"
+    >
+
+    <ImageView
+            android:id="@+id/skz_profile_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/bg_app"
+            />
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxWidth="@dimen/match_stream_width"
+            >
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/skz_profile_banner_bg"
+                android:id="@+id/skz_profile_top_banner">
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/skz_profile_avatar_container"
+                    >
+
+                <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:padding="4dp"
+                        tools:src="@drawable/avatar_unknown"
+                        android:background="@drawable/avatar_bg_shadow"
+                        android:id="@+id/skz_profile_avatar"
+                    />
+
+                <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_gravity="right"
+                        android:src="@drawable/btn_add_avatar"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:id="@+id/skz_profile_avatar_add_btn"/>
+            </FrameLayout>
+
+            <com.skillz.widget.FontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/skz_profile_avatar_container"
+                    android:layout_alignTop="@id/skz_profile_avatar_container"
+                    tools:text="EnormousClock"
+                    app:font="@string/skz_neue_black_cond"
+                    android:textSize="22sp"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/skz_profile_username"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-2dp"
+                    android:src="@drawable/ic_edit_crayon_profile"
+                    android:padding="4dp"
+                    android:layout_toRightOf="@id/skz_profile_username"
+                    android:layout_alignBottom="@id/skz_profile_username"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    android:id="@+id/skz_profile_username_edit"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_toRightOf="@id/skz_profile_avatar_container">
+
+                        <ImageView
+                            android:id="@+id/skz_profile_flag"
+                            android:layout_width="23dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/skz_profile_username"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_flag_unknown" />
+
+                        <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_profile_joined"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/skz_profile_username"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="13sp"
+                            app:font="@string/skz_neue_light"
+                            tools:text="Joined 3/22/13"
+                            android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-7dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_below="@id/skz_profile_avatar_container"
+                    android:background="@drawable/blimp_taunt_profile"
+                    android:clickable="true"
+                    android:id="@+id/skz_profile_taunt_bar">
+
+                <com.skillz.widget.FontTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        tools:text="Click here to try Easy Mode"
+                        app:font="@string/skz_neue_black_cond"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
+                        android:id="@+id/skz_profile_taunt_text"/>
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:src="@drawable/btn_add_avatar"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:id="@+id/skz_profile_taunt_bar_plus"/>
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:fillViewport="true"
+                android:scrollbarStyle="outsideOverlay"
+                >
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                <!-- Ticketz Progress-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ticketz_layer"
+                    android:visibility="gone">
+
+                    <include layout="@layout/layout_ticketz_progress"/>
+
+                </RelativeLayout>
+
+                <!-- Leaderboard Rank -->
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/stream_bg_header"
+                        android:gravity="center_vertical"
+                        android:id="@+id/skz_profile_rank_header">
+
+                    <com.skillz.widget.FontTextView
+                            android:id="@+id/skz_profile_rank_header_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/skz_profile_your_rank"
+                            android:drawableLeft="@drawable/ic_streamtype_rank"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="4dp"
+                            style="@style/Tournament.HeaderTitle"
+                            />
+
+                    <com.skillz.widget.FontButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="-3dp"
+                            android:clickable="false"
+                            style="@style/Tournament.MoreButton"
+                            android:text="@string/skz_profile_view_leagues"
+                            android:id="@+id/skz_profile_view_leaderboards_btn"
+                            />
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toLeftOf="@id/skz_profile_view_leaderboards_btn"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:src="@drawable/stream_container_decor"
+                            />
+                </RelativeLayout>
+
+                <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:background="@drawable/stream_bg_divider"
+                        android:id="@+id/skz_profile_rank_body">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:background="@drawable/bg_containter_profile"
+                            android:gravity="center_vertical"
+                            >
+
+                        <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                >
+
+                            <ImageView
+                                    android:layout_width="48dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:scaleType="centerCrop"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/score_bg_stream_circle"
+                                    android:id="@+id/skz_profile_rank_medal"/>
+
+                            <com.skillz.widget.FontTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:textSize="25sp"
+                                    app:font="@string/skz_neue_black_cond"
+                                    android:textColor="@android:color/white"
+                                    tools:text="888"
+                                    android:id="@+id/skz_profile_rank_text"/>
+
+                        </FrameLayout>
+
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"/>
+
+                        <com.skillz.widget.FontTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_z_med"
+                                android:textSize="40sp"
+                                android:textColor="@android:color/white"
+                                app:gradientColors="@array/z_gradient_colors"
+                                tools:text="1000"
+                                app:font="@string/skz_neue_black_cond"
+                                android:id="@+id/skz_leader_winner_user_winnings"/>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/stream_bg_footer"
+                        android:scaleType="fitXY"
+                        android:id="@+id/skz_profile_rank_footer"/>
+
+
+                <!-- Trophies Earned-->
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/stream_bg_header"
+                        android:gravity="center_vertical"
+                        android:id="@+id/skz_profile_trophies_header">
+
+                    <com.skillz.widget.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/skz_profile_trophies_earned"
+                            android:drawableLeft="@drawable/ic_streamtype_trophies"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="4dp"
+                            style="@style/Tournament.HeaderTitle"
+                            />
+
+                    <com.skillz.widget.FontButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="-3dp"
+                            android:clickable="false"
+                            style="@style/Tournament.MoreButton"
+                            android:text="@string/skz_profile_view_trophies"
+                            android:id="@+id/skz_profile_view_trophies_btn"
+                            />
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toLeftOf="@id/skz_profile_view_trophies_btn"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:src="@drawable/stream_container_decor"
+                            />
+                </RelativeLayout>
+
+                <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:background="@drawable/stream_bg_divider"
+                        android:id="@+id/skz_profile_trophies_body">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_container_profile_flat"
+                            android:gravity="center_vertical"
+                            >
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="25dp"
+                                android:paddingRight="25dp"
+                                android:background="@drawable/bg_gametile_trophies"
+                                android:gravity="bottom"
+                                >
+
+                            <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="6dp"
+                                    android:paddingTop="4dp"
+                                    android:scaleType="fitEnd"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/img_light_trophydecor"
+                                    android:id="@+id/skz_profile_trophy_1"/>
+
+                            <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="6dp"
+                                    android:paddingTop="4dp"
+                                    android:scaleType="fitEnd"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/img_light_trophydecor"
+                                    android:id="@+id/skz_profile_trophy_2"/>
+
+                            <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="6dp"
+                                    android:paddingTop="4dp"
+                                    android:scaleType="fitEnd"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/img_light_trophydecor"
+                                    android:id="@+id/skz_profile_trophy_3"/>
+
+                            <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="6dp"
+                                    android:paddingTop="4dp"
+                                    android:scaleType="fitEnd"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/img_light_trophydecor"
+                                    android:id="@+id/skz_profile_trophy_4"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginRight="4dp"
+                                android:gravity="center_vertical">
+
+                            <ProgressBar
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    style="@style/ProgressBar"
+                                    tools:progress="33"
+                                    android:id="@+id/skz_profile_trophies_progress"/>
+
+                            <com.skillz.widget.FontTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="2dp"
+                                    android:paddingBottom="2dp"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:background="@android:color/black"
+                                    tools:text="20/60"
+                                    app:font="@string/skz_neue_black_cond"
+                                    android:textSize="11sp"
+                                    android:id="@+id/skz_profile_trophies_progress_text"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/stream_bg_footer"
+                        android:scaleType="fitXY"
+                        android:id="@+id/skz_profile_trophies_footer"/>
+
+
+                <!-- Win Ratio/Streak -->
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/stream_bg_header"
+                        android:paddingRight="4dp"
+                        android:gravity="center_vertical"
+                        android:id="@+id/skz_profile_wins_header">
+
+                    <com.skillz.widget.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/skz_profile_wins_streak"
+                            android:drawableLeft="@drawable/ic_streamtype_stats"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="4dp"
+                            style="@style/Tournament.HeaderTitle"
+                            />
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/stream_container_decor"
+                            />
+                </RelativeLayout>
+
+                <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:background="@drawable/stream_bg_divider"
+                        android:id="@+id/skz_profile_wins_body">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:background="@drawable/bg_containter_profile"
+                            android:gravity="center_vertical"
+                            >
+
+                        <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                            <com.skillz.widget.FontTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/skz_profile_stats_text"
+                                    android:textSize="32sp"
+                                    app:font="@string/skz_neue_black_cond"
+                                    tools:text="1,554"
+                                    android:id="@+id/skz_profile_wins"/>
+
+                            <com.skillz.widget.FontTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/skz_profile_stats_text"
+                                    android:textSize="16sp"
+                                    app:font="@string/skz_neue_black_cond"
+                                    android:text="@string/skz_profile_wins"
+                                    />
+                        </LinearLayout>
+
+                        <View
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@color/skz_profile_divider"/>
+
+                        <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                            <com.skillz.widget.FontTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/skz_profile_stats_text"
+                                    android:textSize="32sp"
+                                    app:font="@string/skz_neue_black_cond"
+                                    tools:text="13"
+                                    android:id="@+id/skz_profile_win_streak"/>
+
+                            <com.skillz.widget.FontTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/skz_profile_stats_text"
+                                    android:textSize="16sp"
+                                    app:font="@string/skz_neue_black_cond"
+                                    android:text="@string/skz_profile_win_streak"
+                                    />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/stream_bg_footer"
+                        android:scaleType="fitXY"
+                        android:id="@+id/skz_profile_wins_footer"/>
+
+
+                <!-- Win/Loss Record -->
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/stream_bg_header"
+                        android:gravity="center_vertical"
+                        android:id="@+id/skz_profile_record_header">
+
+                    <com.skillz.widget.FontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/skz_profile_vs_everyone"
+                            android:drawableLeft="@drawable/ic_streamtype_vs"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="4dp"
+                            style="@style/Tournament.HeaderTitle"
+                            android:id="@+id/skz_profile_record_title"/>
+
+                    <com.skillz.widget.FontButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="-3dp"
+                            android:clickable="false"
+                            style="@style/Tournament.MoreButton"
+                            android:text="@string/skz_profile_view_vs_you"
+                            android:id="@+id/skz_profile_view_vs_you_btn"
+                            />
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toLeftOf="@id/skz_profile_view_vs_you_btn"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:src="@drawable/stream_container_decor"
+                            />
+                </RelativeLayout>
+
+                <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:background="@drawable/stream_bg_divider"
+                        android:id="@+id/skz_profile_record_body">
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:background="@drawable/bg_containter_profile"
+                            android:gravity="center_vertical"
+                            >
+
+                        <View
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_centerVertical="true"
+                                android:background="@color/skz_profile_divider"
+                                android:id="@+id/skz_profile_record_divider"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:gravity="center_horizontal"
+                                    android:id="@+id/skz_profile_record_labels">
+
+                                <com.skillz.widget.FontTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="8dp"
+                                        android:textSize="22dp"
+                                        android:text="W"
+                                        android:textColor="@color/skz_profile_win_bottom"
+                                        app:gradientColors="@array/skz_profile_win_gradient"
+                                        app:font="@string/skz_neue_black_cond"
+                                        android:shadowColor="@color/skz_profile_shadow"
+                                        android:shadowRadius="1.0"
+                                        android:shadowDy="3.0"
+                                        />
+
+                                <com.skillz.widget.FontTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="8dp"
+                                        android:textSize="22dp"
+                                        android:text="L"
+                                        android:textColor="@color/skz_profile_loss_top"
+                                        app:gradientColors="@array/skz_profile_loss_gradient"
+                                        app:font="@string/skz_neue_black_cond"
+                                        android:shadowColor="@color/skz_profile_shadow"
+                                        android:shadowRadius="1.0"
+                                        android:shadowDy="3.0"
+                                        />
+                            </LinearLayout>
+
+                            <com.skillz.widget.ProfileRecordView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="10dp"
+                                    android:id="@+id/skz_profile_record_view"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/report_layer"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:gravity="end"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <TextView
+                        android:id="@+id/skz_profile_report_player"
+                        android:text="@string/skz_report_player"
+                        android:clickable="true"
+                        android:paddingRight="35dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/stream_bg_footer"
+                        android:scaleType="fitXY"
+                        android:id="@+id/skz_profile_record_footer"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

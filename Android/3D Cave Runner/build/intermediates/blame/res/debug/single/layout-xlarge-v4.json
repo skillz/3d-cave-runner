@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/fragment_capture_age.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/fragment_capture_age.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/fragment_plow.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/fragment_plow.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/skz_fragment_ftue_intro_header.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/skz_fragment_ftue_intro_header.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/fragment_image_slide.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/fragment_image_slide.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/fragment_leaderboard.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/fragment_leaderboard.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/layout_ticketz_progress.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/layout_ticketz_progress.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/stream_header.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/stream_header.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/stream_match_completed.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/stream_match_completed.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/stream_match_rematch.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/stream_match_rematch.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/skz_fragment_ftue_intro_footer.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/skz_fragment_ftue_intro_footer.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/skz_ticketz_prize_item.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/skz_ticketz_prize_item.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/stream_match_cancelled.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/stream_match_cancelled.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/fragment_friends_invitation.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/fragment_friends_invitation.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/stream_match_pending.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/stream_match_pending.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/fragment_leaderboard_congrats.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/fragment_leaderboard_congrats.xml"
+    },
+    {
+        "merged": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/res/merged/debug/layout-xlarge-v4/skz_fragment_ticketz_info.xml",
+        "source": "/Users/Gabriel/Deskktop/3d-cave-runner/Android/3D Cave Runner/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res/layout-xlarge-v4/skz_fragment_ticketz_info.xml"
+    }
+]

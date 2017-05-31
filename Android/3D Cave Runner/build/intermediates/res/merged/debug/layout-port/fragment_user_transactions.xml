@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#131"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerTransactions"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:spinnerMode="dialog"
+            android:background="@drawable/spinner_user_balance"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#111100"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skz_title_banner_game"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"/>
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skz_title_banner_event"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"/>
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skz_title_banner_date_time"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"/>
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skz_title_banner_plus_minus"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"/>
+
+                <com.skillz.widget.FontTextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skz_title_banner_balance"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_horizontal"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ListView android:id="@+id/balanceListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#eee"
+            android:layout_weight="1">
+
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/skz_home_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_bar_footer"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/skz_home_footer_avatar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="2dp"
+                android:background="@drawable/avatar_bg_shadow_grey"
+                android:scaleType="centerCrop"/>
+
+            <com.skillz.widget.FontTextView
+                android:id="@+id/skz_home_footer_ticketz"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:padding="@dimen/skz_home_footer_text_padding"
+                android:gravity="center_vertical|right"
+                android:drawableLeft="@drawable/ic_ticketz_footer"
+                android:background="@drawable/container_footer_dk"
+                app:font="@string/skz_neue_black_cond"
+                app:gradientColors="@array/ticketz_gradient_colors"
+                tools:text="10,000"
+                android:text="0"
+                android:textSize="18sp"/>
+
+            <com.skillz.widget.FontTextView
+                android:id="@+id/skz_home_footer_z"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:padding="@dimen/skz_home_footer_text_padding"
+                android:gravity="center_vertical|right"
+                android:drawableLeft="@drawable/ic_z_footer"
+                android:background="@drawable/container_footer_dk"
+                app:font="@string/skz_neue_black_cond"
+                app:gradientColors="@array/z_gradient_colors"
+                android:textSize="18sp"
+                tools:text="9999"/>
+
+            <com.skillz.widget.FontTextView
+                android:id="@+id/skz_home_footer_cash"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"
+                android:padding="@dimen/skz_home_footer_text_padding"
+                android:gravity="center_vertical|right"
+                android:drawableLeft="@drawable/ic_cash_footer"
+                android:background="@drawable/container_footer_dk"
+                app:font="@string/skz_neue_black_cond"
+                app:gradientColors="@array/cash_gradient_colors"
+                android:textSize="18sp"
+                tools:text="500.00"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

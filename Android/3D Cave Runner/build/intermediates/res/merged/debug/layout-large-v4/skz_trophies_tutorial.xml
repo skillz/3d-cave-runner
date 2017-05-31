@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:theme="@style/Theme.AppCompat">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="0dp">
+
+        <ImageView
+            android:id="@+id/skz_trophy_tutorial_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trophy_tutorial_transparent_bg"
+            android:scaleType="fitXY"/>
+    </RelativeLayout>
+
+
+    <android.support.design.widget.CoordinatorLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+        <RelativeLayout
+          android:id="@+id/skz_trophy_tutorial_main_view"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+            <com.skillz.widget.FontTextView
+              android:id="@+id/skz_trophy_tutorial_congr"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="left"
+              android:paddingLeft="50dp"
+              android:paddingTop="35dp"
+              android:text="@string/skz_trophies_congratulations"
+              android:textColor="@color/skz_ticketz_info_color"
+              android:textSize="44dp"
+              android:textStyle="bold"
+              app:font="@string/skz_neue_black_cond"
+              app:gradientColors="@array/skz_trophy_tutorial_gradient"
+              tools:text="CONGRATULATIONS!"
+              android:layout_alignParentLeft="true"
+              android:layout_alignParentStart="true"/>
+
+            <com.skillz.widget.FontTextView
+              android:id="@+id/skz_trophy_tutorial_descr"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/skz_trophy_tutorial_descr_text"
+              android:text="@string/skz_trophies_tutorial_description"
+              android:textSize="34dp"
+              android:paddingLeft="50dp"
+              android:paddingTop="25dp"
+              tools:text="@string/skz_trophies_tutorial_description"
+              android:layout_below="@+id/skz_trophy_tutorial_congr"
+              android:paddingRight="20dp"/>
+
+        </RelativeLayout>
+        <ImageView
+          android:id="@+id/skz_trophies_tutorial_arrow"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/gfx_tutorial_arrow_skz_2x"
+          app:layout_anchor="@id/skz_trophy_tutorial_congr"
+          app:layout_anchorGravity="bottom|right"
+          android:layout_marginRight="25dp"/>
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

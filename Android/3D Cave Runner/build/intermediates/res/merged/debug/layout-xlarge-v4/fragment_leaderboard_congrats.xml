@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_unlocked"
+        android:gravity="center_horizontal"
+        >
+
+    <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="32sp"
+            android:textColor="@android:color/white"
+            android:shadowColor="#73000000"
+            android:shadowDy="3.0"
+            android:shadowRadius="3.0"
+            app:font="@string/skz_neue_black_cond"
+            android:text="@string/skz_congratulations"
+            android:id="@+id/skz_leaderboard_congrats_header"/>
+
+    <com.skillz.widget.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/skz_leaderboard_congrats_header"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:shadowColor="#73000000"
+            android:shadowDy="2.0"
+            android:shadowRadius="3.0"
+            app:font="@string/skz_neue_light"
+            android:text="@string/skz_you_ranked"
+            android:textStyle="bold"
+            android:id="@+id/skz_leaderboard_congrats_header2"
+            />
+
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/skz_leaderboard_congrats_header2"
+            android:layout_above="@+id/skz_leaderboard_congrats_footer">
+
+        <ImageView
+                android:layout_width="320dp"
+                android:layout_height="370dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_medal_blank_lrg"
+                android:id="@+id/skz_leaderboard_congrats_medal" android:layout_marginBottom="60dp"/>
+
+        <com.skillz.widget.FontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="100sp"
+                app:font="@string/skz_neue_black_cond"
+                app:gradientColors="@array/leaderboard_rank_gradient"
+                app:gradientAngle="20.0"
+                app:strokeColor="@android:color/black"
+                app:strokeWidth="1dp"
+                android:textColor="@android:color/white"
+                tools:text="888"
+                android:id="@+id/skz_leaderboard_congrats_rank" android:layout_marginBottom="100dp" android:layout_marginLeft="38dp" android:layout_marginTop="40dp" android:layout_marginRight="40dp"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/skz_leaderboard_congrats_footer">
+
+        <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/skz_leaderboard_cograts_prize_bg"
+                android:gravity="center"
+                android:id="@+id/skz_leaderboard_congrats_winnings_frame">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_z_med"
+                    android:id="@+id/skz_leaderboard_congrats_winnings_z"
+                    />
+
+            <com.skillz.widget.FontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="$150.00"
+                    android:gravity="center"
+                    android:textSize="36dp"
+                    app:font="@string/skz_neue_black_cond"
+                    app:gradientColors="@array/cash_gradient_colors"
+                    android:id="@+id/skz_leaderboard_congrats_winnings"/>
+        </LinearLayout>
+
+        <com.skillz.widget.FontButton
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                style="@style/Button.Primary"
+                android:text="@string/skz_next"
+                android:id="@+id/skz_leaderboard_congrats_next"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

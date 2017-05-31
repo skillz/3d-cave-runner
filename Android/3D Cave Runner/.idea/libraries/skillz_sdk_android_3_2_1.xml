@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="skillz-sdk-android-3.2.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/jars/libs/mopub-sdk-interstitial.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/jars/libs/KochavaSDK.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/jars/libs/mopub-sdk-base.jar!/" />
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/res" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/jars/libs/mopub-sdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.skillz.sdk/skillz-sdk-android/3.2.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
