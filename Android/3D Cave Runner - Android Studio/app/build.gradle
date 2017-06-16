@@ -30,7 +30,7 @@ android {
         config {
             keyAlias 'CaveRunnerKeystore'
             keyPassword 'password'
-            storeFile file('~/android.jks')
+            storeFile file('/etc/android.jks')
             storePassword 'password'
             // make sure to update the .jks file pointing to your machine
         }
