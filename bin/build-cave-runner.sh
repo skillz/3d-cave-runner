@@ -19,7 +19,7 @@ unzip -q 'Skillz.framework.zip' -d "./iOS/3D Cave Runner Xcode/Skillz.framework"
 
 cd "iOS/3D Cave Runner Xcode"
 
-export SDKVERSION=/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/Info.plist"
+export SDKVERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/Info.plist")
 export NEW_TAG=`TZ=America/New_York date '+%y-%m-%d-%H:%M'`-${BUILD_NUMBER}
 
 export SDKVERSION=${SDKVERSION}
