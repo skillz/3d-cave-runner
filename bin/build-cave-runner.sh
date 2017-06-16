@@ -11,20 +11,20 @@ printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455
 # Build VC and Full for iOS Crashlytics, and .xcarchives
 #####
 
-cd ${WORKSPACE}
+cd "${WORKSPACE}"
 
 rm -rf "./iOS/3D Cave Runner Xcode/Skillz.framework"
 unzip -q 'Skillz.framework.zip' -d './iOS/3D Cave Runner Xcode/Skillz.framework'
 
 cd "iOS/3D Cave Runner Xcode"
 
-export GITVERSION=`git describe  --abbrev=0 --match '*.*.*'`
+export SDKVERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "./Skillz.framework/Info.plist")
 export NEW_TAG=`TZ=America/New_York date '+%y-%m-%d-%H:%M'`-${BUILD_NUMBER}
 
-export GITVERSION=${GITVERSION}
+export SDKVERSION=${SDKVERSION}
 
 # Set Version numbers
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion \"${GITVERSION}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion \"${SDKVERSION}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString \"${NEW_TAG}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 
 # Build VC for Crashlytics
@@ -48,7 +48,7 @@ zip -y -r VC-CaveRunner.xcarchive.zip VC-CaveRunner.xcarchive
 
 zip -y -r Full-CaveRunner.xcarchive.zip Full-CaveRunner.xcarchive
 
-cd ${WORKSPACE}
+cd "${WORKSPACE}"
 
 # Package VC Release Build
 mkdir -p "${WORKSPACE}/Payload/"
@@ -66,12 +66,12 @@ rm -rf "${WORKSPACE}/Payload/"
 unzip -q Skillz.framework.dSYM.zip -d "iOS/3D Cave Runner Xcode/build/Release-iphoneos"
 unzip -q Skillz_DEBUG.framework.dSYM.zip -d "iOS/3D Cave Runner Xcode/build/Debug-iphoneos"
 
-${WORKSPACE}/SkillzTestApps/Crashlytics.framework/submit 267045208f4b1d9fdcbf019068b81096fe16475a \
+"${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
 bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
--ipaPath ${WORKSPACE}/3DCaveRunner.ipa \
+-ipaPath "${WORKSPACE}/3DCaveRunner.ipa" \
 -groupAliases SDK,qa-2,tournament-server,product
 
-${WORKSPACE}/SkillzTestApps/Crashlytics.framework/submit 267045208f4b1d9fdcbf019068b81096fe16475a \
+"${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
 bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
--ipaPath ${WORKSPACE}/CaveRunnerZ.ipa \
+-ipaPath "${WORKSPACE}/CaveRunnerZ.ipa" \
 -groupAliases SDK,qa-2,tournament-server,product
