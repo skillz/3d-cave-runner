@@ -32,7 +32,7 @@ set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release cl
 ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Build VC .xcarchive
-set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release archive \
+set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
 -archivePath ./VC-CaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Build Full for Crashlytics
@@ -40,7 +40,7 @@ set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release 
 ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Build Full .xcarchive
-set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release archive \
+set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
 -archivePath ./Full-CaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Zip Archive for storing on Jenkins artifacts
