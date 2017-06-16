@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
-   version = "2.0">
+   LastUpgradeVersion = "0830"
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "3dCaveRun.app"
-               BlueprintName = "Unity-iPhone"
+               BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+               BuildableName = "CaveRunnerZ.app"
+               BlueprintName = "CaveRunnerZ"
                ReferencedContainer = "container:Unity-iPhone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,34 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5623C57217FDCB0800090B9E"
-               BuildableName = "3dCaveRun.xctest"
-               BlueprintName = "Unity-iPhone Tests"
-               ReferencedContainer = "container:Unity-iPhone.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "3dCaveRun.app"
-            BlueprintName = "Unity-iPhone"
+            BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+            BuildableName = "CaveRunnerZ.app"
+            BlueprintName = "CaveRunnerZ"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-waitForPlayerConnection 30"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -65,17 +49,15 @@
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      debugXPCServices = "NO"
       debugServiceExtension = "internal"
-      enableGPUValidationMode = "1"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "3dCaveRun.app"
-            BlueprintName = "Unity-iPhone"
+            BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+            BuildableName = "CaveRunnerZ.app"
+            BlueprintName = "CaveRunnerZ"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -83,7 +65,7 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "ReleaseForProfiling"
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -92,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "3dCaveRun.app"
-            BlueprintName = "Unity-iPhone"
+            BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+            BuildableName = "CaveRunnerZ.app"
+            BlueprintName = "CaveRunnerZ"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

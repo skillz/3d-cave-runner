@@ -315,8 +315,25 @@ extern "C" int _getRandomNumberWithMinAndMax(int min, int max)
 // C-style wrapper for skillzInitForGameId:AndEnvironment: so that it can be accessed by Unity in C#
 extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const char *environment)
 {
-    NSString *gameIdString = [[NSString alloc] initWithUTF8String:gameId];
-    NSString *environmentString = [[NSString alloc] initWithUTF8String:environment];
+    /*************
+     * File has been modified for internal build creation for multiple SKUs
+     * VCOnly - 2204 on Staging, 3299 on Production
+     * Full - on Staging, 1410 on Production
+     *************/
+
+#if VCONLY
+    NSString *gameIdString = @"2204";
+    NSString *environmentString = @"SkillzProduction";
+#else
+    NSString *gameIdString = @"2204"
+    NSString *environmentString = @"SkillzProduction";
+#endif
+    
+    /*************
+    * Temporarily point to Staging
+    *************/
+    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
+    
     SkillzEnvironment skillzEnvironment;
     
     // Initialize the game in either sandbox or production based on the input
