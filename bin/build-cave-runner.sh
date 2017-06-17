@@ -6,7 +6,7 @@ cd "${WORKSPACE}/Android/3D Cave Runner - Android Studio"
 printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1\n" >> app/fabric.properties
 
 ./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
-./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease 
+./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
 
 #####
 # Build VC and Full for iOS Crashlytics, and .xcarchives
@@ -15,7 +15,7 @@ printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455
 cd "${WORKSPACE}"
 
 rm -rf "./iOS/3D Cave Runner Xcode/Skillz.framework"
-unzip -q 'Skillz.framework.zip' -d "./iOS/3D Cave Runner Xcode/Skillz.framework"
+unzip -q 'Skillz.framework.zip' -d "./iOS/3D Cave Runner Xcode/"
 
 cd "iOS/3D Cave Runner Xcode"
 
