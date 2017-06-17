@@ -325,7 +325,7 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
     NSString *gameIdString = @"2205";
     NSString *environmentString = @"SkillzProduction";
 #else
-    NSString *gameIdString = @"2204"
+    NSString *gameIdString = @"2204";
     NSString *environmentString = @"SkillzProduction";
 #endif
     
