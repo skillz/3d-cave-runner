@@ -68,18 +68,21 @@ rm -rf "./iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive"
 rm -rf "./iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
 
 cd "${WORKSPACE}"
+rm -rf "./3DCaveRunner.ipa"
+rm -rf "./CaveRunnerZ.ipa"
 
 # Package VC Release Build
-mkdir -p "${WORKSPACE}/Payload/"
-mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app" "${WORKSPACE}/Payload/"
-zip -r "CaveRunnerZ.ipa" "Payload"
-rm -rf "${WORKSPACE}/Payload/"
+mkdir -p "${WORKSPACE}/PayloadVC/"
+cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app" "${WORKSPACE}/PayloadVC/"
+zip -r "CaveRunnerZ.ipa" "PayloadVC"
+rm -rf "${WORKSPACE}/PayloadVC/"
 
 # Package Full Release Build
-mkdir -p "${WORKSPACE}/Payload/"
-mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3dCaveRun.app" "${WORKSPACE}/Payload/"
-zip -r "3DCaveRunner.ipa" "Payload"
-rm -rf "${WORKSPACE}/Payload/"
+rm -rf "${WORKSPACE}/PayloadFull/"
+mkdir -p "${WORKSPACE}/PayloadFull/"
+cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3dCaveRun.app" "${WORKSPACE}/PayloadFull/"
+zip -r "3DCaveRunner.ipa" "PayloadFull"
+
 
 # Store Dsym files
 unzip -q Skillz.framework.dSYM.zip -d "iOS/3D Cave Runner Xcode/build/Release-iphoneos"
