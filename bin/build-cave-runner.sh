@@ -49,7 +49,7 @@ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: S
 # Package VC Release Build
 rm -rf "${WORKSPACE}/PayloadVC/"
 mkdir -p "${WORKSPACE}/PayloadVC/"
-cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app" "${WORKSPACE}/PayloadVC/"
+mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app" "${WORKSPACE}/PayloadVC/"
 
 # Build VC .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
@@ -62,7 +62,7 @@ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: S
 # Package Full Release Build
 rm -rf "${WORKSPACE}/PayloadFull/"
 mkdir -p "${WORKSPACE}/PayloadFull/"
-cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3dCaveRun.app" "${WORKSPACE}/PayloadFull/"
+mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3dCaveRun.app" "${WORKSPACE}/PayloadFull/"
 
 # Build Full .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
@@ -73,14 +73,14 @@ zip -y -r CaveRunnerZ.xcarchive.zip CaveRunnerZ.xcarchive
 zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
 # Remove archives
-rm -rf "./iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive"
-rm -rf "./iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
+rm -rf "iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive"
+rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
 
 cd "${WORKSPACE}"
 
 # Create IPAs
-rm -rf "./3DCaveRunner.ipa"
-rm -rf "./CaveRunnerZ.ipa"
+rm -rf "3DCaveRunner.ipa"
+rm -rf "CaveRunnerZ.ipa"
 
 zip -r "CaveRunnerZ.ipa" "PayloadVC"
 zip -r "3DCaveRunner.ipa" "PayloadFull"
