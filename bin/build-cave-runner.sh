@@ -77,7 +77,7 @@ rm -rf "${WORKSPACE}/Payload/"
 
 # Package Full Release Build
 mkdir -p "${WORKSPACE}/Payload/"
-mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3DCaveRunner.app" "${WORKSPACE}/Payload/"
+mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3dCaveRun.app" "${WORKSPACE}/Payload/"
 zip -r "3DCaveRunner.ipa" "Payload"
 rm -rf "${WORKSPACE}/Payload/"
 
