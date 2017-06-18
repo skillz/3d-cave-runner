@@ -46,6 +46,11 @@ export SDKVERSION=${SDKVERSION}
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean build \
 ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
+# Package VC Release Build
+rm -rf "${WORKSPACE}/PayloadVC/"
+mkdir -p "${WORKSPACE}/PayloadVC/"
+cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app" "${WORKSPACE}/PayloadVC/"
+
 # Build VC .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
 -archivePath ./CaveRunnerZ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
@@ -53,6 +58,11 @@ set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release cl
 # Build Full for Crashlytics
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean build \
 ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+
+# Package Full Release Build
+rm -rf "${WORKSPACE}/PayloadFull/"
+mkdir -p "${WORKSPACE}/PayloadFull/"
+cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3dCaveRun.app" "${WORKSPACE}/PayloadFull/"
 
 # Build Full .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
@@ -63,24 +73,16 @@ zip -y -r CaveRunnerZ.xcarchive.zip CaveRunnerZ.xcarchive
 zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
 # Remove archives
-
 rm -rf "./iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive"
 rm -rf "./iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
 
 cd "${WORKSPACE}"
+
+# Create IPAs
 rm -rf "./3DCaveRunner.ipa"
 rm -rf "./CaveRunnerZ.ipa"
 
-# Package VC Release Build
-mkdir -p "${WORKSPACE}/PayloadVC/"
-cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app" "${WORKSPACE}/PayloadVC/"
 zip -r "CaveRunnerZ.ipa" "PayloadVC"
-rm -rf "${WORKSPACE}/PayloadVC/"
-
-# Package Full Release Build
-rm -rf "${WORKSPACE}/PayloadFull/"
-mkdir -p "${WORKSPACE}/PayloadFull/"
-cp "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/3dCaveRun.app" "${WORKSPACE}/PayloadFull/"
 zip -r "3DCaveRunner.ipa" "PayloadFull"
 
 
