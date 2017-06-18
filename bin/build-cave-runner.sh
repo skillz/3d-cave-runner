@@ -2,9 +2,15 @@
 #####
 # Build VC and Full for Android
 #####
+
 cd "${WORKSPACE}/Android/3D Cave Runner - Android Studio"
+rm -rf "./build"
+
 printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1\n" >> app/fabric.properties
 
+# Link Sidious location for Android SDK
+sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
+# Compile Apps
 ./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
 ./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
 
@@ -14,7 +20,15 @@ printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455
 
 cd "${WORKSPACE}"
 
+# Link Sidious stored location for Unity lib.
+sudo ln -sf "/opt/sdk-integrations/CaveRunnerUnityLib/libiPhone-lib.a"  "/Users/Shared/jenkins-slave/workspace/SDK/Production Apps/Cave Runner Spyro/iOS/3D Cave Runner Xcode/Libraries/libiPhone-lib.a"
+
+# Clean old artifacts
+rm -rf "./iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive.zip"
+rm -rf "./iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive.zip"
 rm -rf "./iOS/3D Cave Runner Xcode/Skillz.framework"
+rm -rf "./iOS/3D Cave Runner Xcode/build"
+
 unzip -q 'Skillz.framework.zip' -d "./iOS/3D Cave Runner Xcode/"
 
 cd "iOS/3D Cave Runner Xcode"
@@ -34,7 +48,7 @@ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: S
 
 # Build VC .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
--archivePath ./VC-CaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+-archivePath ./CaveRunnerZ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Build Full for Crashlytics
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean build \
@@ -42,12 +56,16 @@ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: S
 
 # Build Full .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
--archivePath ./Full-CaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+-archivePath ./3DCaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Zip Archive for storing on Jenkins artifacts
-zip -y -r VC-CaveRunner.xcarchive.zip VC-CaveRunner.xcarchive
+zip -y -r CaveRunnerZ.xcarchive.zip CaveRunnerZ.xcarchive
+zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
-zip -y -r Full-CaveRunner.xcarchive.zip Full-CaveRunner.xcarchive
+# Remove archives
+
+rm -rf "./iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive"
+rm -rf "./iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
 
 cd "${WORKSPACE}"
 
