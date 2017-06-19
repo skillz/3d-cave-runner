@@ -190,6 +190,8 @@
 		6B6457651EF45F6A00206C5E /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DF4572A229FEDF9DA93DFE /* Skillz.framework */; };
 		6B6457701EF4663D00206C5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C56C9717D6015100616839 /* Images.xcassets */; };
 		6B6457711EF4664400206C5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C56C9717D6015100616839 /* Images.xcassets */; };
+		6BDD089F1EF75FB0002A3A6F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDD089E1EF75FB0002A3A6F /* Security.framework */; };
+		6BDD08A01EF75FB0002A3A6F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDD089E1EF75FB0002A3A6F /* Security.framework */; };
 		72F94FACB9B34F76AD65A8BB /* Il2CppInvokerTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F42F5AA280104C2D1E44A /* Il2CppInvokerTable.cpp */; };
 		73814E13A04E85BC694E9EE8 /* Il2CppCodeRegistration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2FD4A0D995A42B04134FF6D /* Il2CppCodeRegistration.cpp */; };
 		74A8460F850BBD4076D69AE4 /* LaunchScreen-iPhonePortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD43ACB555D9FB2429EAAA /* LaunchScreen-iPhonePortrait.png */; };
@@ -358,6 +360,7 @@
 		6B2C80731ED396D600402317 /* 3dCaveRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = 3dCaveRun.entitlements; path = "Unity-iPhone/3dCaveRun.entitlements"; sourceTree = "<group>"; };
 		6B64576D1EF45F6A00206C5E /* CaveRunnerZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaveRunnerZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B64576E1EF45F6B00206C5E /* Unity-iPhone copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Unity-iPhone copy-Info.plist"; path = "/Users/tjfallon/Code/3d-cave-runner/iOS/3D Cave Runner Xcode/Unity-iPhone copy-Info.plist"; sourceTree = "<absolute>"; };
+		6BDD089E1EF75FB0002A3A6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6C894DF4B9854CB19B1AB774 /* Bulk_Generics_1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_Generics_1.cpp; path = Classes/Native/Bulk_Generics_1.cpp; sourceTree = SOURCE_ROOT; };
 		70874D968EDBE702B7782E0A /* Bulk_mscorlib_7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_mscorlib_7.cpp; path = Classes/Native/Bulk_mscorlib_7.cpp; sourceTree = SOURCE_ROOT; };
 		78934173823D32108E69CDF1 /* Il2CppGenericComDefinitions0.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppGenericComDefinitions0.cpp; path = Classes/Native/Il2CppGenericComDefinitions0.cpp; sourceTree = SOURCE_ROOT; };
@@ -519,6 +522,7 @@
 				830B5C110E5ED4C100C7819F /* UIKit.framework in Frameworks */,
 				83B2574F0E63025400468741 /* libiconv.2.dylib in Frameworks */,
 				3CAE44CEB7360683EA75117D /* Metal.framework in Frameworks */,
+				6BDD089F1EF75FB0002A3A6F /* Security.framework in Frameworks */,
 				826140E98ECD6B1681B3F9E2 /* Skillz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +563,7 @@
 				6B6457621EF45F6A00206C5E /* UIKit.framework in Frameworks */,
 				6B6457631EF45F6A00206C5E /* libiconv.2.dylib in Frameworks */,
 				6B6457641EF45F6A00206C5E /* Metal.framework in Frameworks */,
+				6BDD08A01EF75FB0002A3A6F /* Security.framework in Frameworks */,
 				6B6457651EF45F6A00206C5E /* Skillz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +618,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6BDD089E1EF75FB0002A3A6F /* Security.framework */,
 				6B2C80731ED396D600402317 /* 3dCaveRun.entitlements */,
 				AA31BF961B55660D0013FB1B /* Data */,
 				56C56C9717D6015100616839 /* Images.xcassets */,
