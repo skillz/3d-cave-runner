@@ -82,8 +82,13 @@ cd "${WORKSPACE}"
 rm -rf "3DCaveRunner.ipa"
 rm -rf "CaveRunnerZ.ipa"
 
-zip -r "CaveRunnerZ.ipa" "PayloadVC"
-zip -r "3DCaveRunner.ipa" "PayloadFull"
+rm -rf "Payload"
+mv "PayloadVC" "Payload"
+zip -r "CaveRunnerZ.ipa" "Payload"
+
+rm -rf "Payload"
+mv "PayloadFull" "Payload"
+zip -r "3DCaveRunner.ipa" "Payload"
 
 
 # Store Dsym files
