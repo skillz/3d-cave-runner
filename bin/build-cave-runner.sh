@@ -44,8 +44,8 @@ echo ${SDKVERSION}
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion \"${SDKVERSION}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString \"${NEW_TAG}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion \"${SDKVERSION}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Unity-iPhone copy-Info"
-/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString \"${NEW_TAG}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Unity-iPhone copy-Info"
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion \"${SDKVERSION}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/VCInfo.plist"
+/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString \"${NEW_TAG}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/VCInfo.plist"
 
 # Build VC for Crashlytics
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean build \

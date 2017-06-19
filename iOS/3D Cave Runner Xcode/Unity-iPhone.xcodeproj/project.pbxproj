@@ -359,7 +359,7 @@
 		5EF144C6B08ACB1A8C9B1DF8 /* Il2CppCompilerCalculateTypeValues_1Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_1Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_1Table.cpp; sourceTree = SOURCE_ROOT; };
 		6B2C80731ED396D600402317 /* 3dCaveRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = 3dCaveRun.entitlements; path = "Unity-iPhone/3dCaveRun.entitlements"; sourceTree = "<group>"; };
 		6B64576D1EF45F6A00206C5E /* CaveRunnerZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaveRunnerZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B64576E1EF45F6B00206C5E /* Unity-iPhone copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Unity-iPhone copy-Info.plist"; path = "/Users/tjfallon/Code/3d-cave-runner/iOS/3D Cave Runner Xcode/Unity-iPhone copy-Info.plist"; sourceTree = "<absolute>"; };
+		6B64576E1EF45F6B00206C5E /* VCInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = VCInfo.plist; path = "/Users/tjfallon/Code/3d-cave-runner/iOS/3D Cave Runner Xcode/VCInfo.plist"; sourceTree = "<absolute>"; };
 		6BDD089E1EF75FB0002A3A6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6C894DF4B9854CB19B1AB774 /* Bulk_Generics_1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_Generics_1.cpp; path = Classes/Native/Bulk_Generics_1.cpp; sourceTree = SOURCE_ROOT; };
 		70874D968EDBE702B7782E0A /* Bulk_mscorlib_7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_mscorlib_7.cpp; path = Classes/Native/Bulk_mscorlib_7.cpp; sourceTree = SOURCE_ROOT; };
@@ -635,7 +635,7 @@
 				D7794F7A9E1BC7A4773AFD9B /* LaunchScreen-iPhoneLandscape.png */,
 				E154482F80A6E56E8B87C68A /* LaunchScreen-iPad.xib */,
 				48274CD59CF3943B4C939832 /* LaunchScreen-iPad.png */,
-				6B64576E1EF45F6B00206C5E /* Unity-iPhone copy-Info.plist */,
+				6B64576E1EF45F6B00206C5E /* VCInfo.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -2025,7 +2025,7 @@
 					"$(SRCROOT)/Libraries/bdwgc/include",
 					"$(SRCROOT)/Libraries/libil2cpp/include",
 				);
-				INFOPLIST_FILE = "Unity-iPhone copy-Info.plist";
+				INFOPLIST_FILE = VCInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "\"$(inherited) @executable_path/Frameworks/**\"";
@@ -2103,7 +2103,7 @@
 					"$(SRCROOT)/Libraries/bdwgc/include",
 					"$(SRCROOT)/Libraries/libil2cpp/include",
 				);
-				INFOPLIST_FILE = "Unity-iPhone copy-Info.plist";
+				INFOPLIST_FILE = VCInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "\"$(inherited) @executable_path/Frameworks/**\"";
@@ -2182,7 +2182,7 @@
 					"$(SRCROOT)/Libraries/bdwgc/include",
 					"$(SRCROOT)/Libraries/libil2cpp/include",
 				);
-				INFOPLIST_FILE = "Unity-iPhone copy-Info.plist";
+				INFOPLIST_FILE = VCInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "\"$(inherited) @executable_path/Frameworks/**\"";
@@ -2263,7 +2263,7 @@
 					"$(SRCROOT)/Libraries/bdwgc/include",
 					"$(SRCROOT)/Libraries/libil2cpp/include",
 				);
-				INFOPLIST_FILE = "Unity-iPhone copy-Info.plist";
+				INFOPLIST_FILE = VCInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "\"$(inherited) @executable_path/Frameworks/**\"";
