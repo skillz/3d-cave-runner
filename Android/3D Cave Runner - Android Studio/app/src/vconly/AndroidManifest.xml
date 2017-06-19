@@ -6,8 +6,19 @@
   android:installLocation="preferExternal"
   tools:replace="android:versionName,android:versionCode">
   <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
-  <application android:theme="@style/UnityThemeSelector" android:icon="@drawable/app_icon" android:label="@string/app_name" android:banner="@drawable/app_banner">
-    <activity android:label="@string/app_name" android:screenOrientation="portrait" android:launchMode="singleTop" android:clearTaskOnLaunch="false" android:alwaysRetainTaskState="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:name="com.skillzgames.caverun.vconly.UnityPlayerActivity">
+  <application android:theme="@style/UnityThemeSelector"
+               android:icon="@drawable/ic_launcher"
+               android:label="@string/app_name"
+               android:banner="@drawable/app_banner"
+               tools:replace="android:icon, android:label">
+    <activity android:label="@string/app_name"
+              tools:replace="android:label"
+              android:screenOrientation="portrait"
+              android:launchMode="singleTop"
+              android:clearTaskOnLaunch="false"
+              android:alwaysRetainTaskState="true"
+              android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+              android:name="com.skillzgames.caverun.UnityPlayerActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
@@ -20,7 +31,7 @@
     <meta-data
       tools:replace="android:value"
       android:name="skillz_game_id"
-      android:value="3299" />
+      android:value="2205" />
     <meta-data
       android:name="skillz_production"
       android:value="true" />

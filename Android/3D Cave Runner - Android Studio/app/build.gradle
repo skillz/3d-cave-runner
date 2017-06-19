@@ -71,9 +71,10 @@ android {
     }
     productFlavors {
         main {
-
+            resValue "string", "app_name", "CaveRunner"
         }
         vconly {
+            resValue "string", "app_name", "CaveRunner Z"
             applicationIdSuffix ".vconly"
         }
     }
@@ -98,7 +99,7 @@ dependencies {
     compile files('libs/unity-classes.jar')
     //Skillz SDK
 
-    compile 'com.skillz.sdk:skillz-sdk-android:3.2.2-SNAPSHOT'
+    compile 'com.skillz.sdk:skillz-sdk-android:4.0-SNAPSHOT'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }

@@ -225,7 +225,7 @@ extern "C" void UnityRequestQuit()
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-	::printf("-> applicationDidFinishLaunching()\n");
+	::printf ("-> applicationDidFinishLaunching()\n");
     [Fabric with:@[[Crashlytics class]]];
 
     // send notfications
