@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="gcm_sender">407229223867</string>
+  <string name="SKILLZ_GOOGLE_PLAY_LICENSE_KEY">
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy3tTriPm40OhR0nyvu0bMY0v2lQ0JwwZ/6cpZudgpT1zNKt5dIdMV+xjQSL2O+1LrojuBzQohi1LflYUfCPaGM8zqmqXwYiatGJESZI8t0oWWPhbLUjqm50E3FUm3OKvRhzYLW5DsQheSsbCE8MjE7sgpOwTscNk05AwxoeBfx2RhU0klCmdutJktW8LuXPneHoyoRVsJzVx64+b+xr9T140YEyHcT1n/UQoRWc6N4k7zaXMWqzUwn+6fE4o3Ex4Lxb7bj/m5Mc3tMlZJ9IIQKyQYWKsPEkuoozRGW/7cvrl42WuxyaQOpRmZE0Ay36PvrtVlLU9Q8KQ9sU6U6BF0wIDAQAB
+  </string>
+
 </resources>
