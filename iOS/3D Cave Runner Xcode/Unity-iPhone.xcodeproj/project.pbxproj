@@ -898,7 +898,8 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				033966F41B18B03000ECD701 /* ShellScript */,
-				4395423FA4EB27BE667CEC49 /* ShellScript */,
+				4395423FA4EB27BE667CEC49 /* Run Skillz Post Process */,
+				6B64578B1EF7445E00206C5E /* Run Fabric Post Process */,
 			);
 			buildRules = (
 			);
@@ -934,8 +935,9 @@
 				6B6456E51EF45F6A00206C5E /* Embed Frameworks */,
 				6B6456E71EF45F6A00206C5E /* Sources */,
 				6B64574E1EF45F6A00206C5E /* Frameworks */,
-				6B6457661EF45F6A00206C5E /* ShellScript */,
-				6B6457671EF45F6A00206C5E /* ShellScript */,
+				6B6457661EF45F6A00206C5E /* Run Script */,
+				6B6457671EF45F6A00206C5E /* Run Skillz Post Process */,
+				6B64578A1EF7444C00206C5E /* Run Fabric Post Process */,
 			);
 			buildRules = (
 			);
@@ -1055,44 +1057,75 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PROJECT_DIR/MapFileParser.sh\"";
 		};
-		4395423FA4EB27BE667CEC49 /* ShellScript */ = {
+		4395423FA4EB27BE667CEC49 /* Run Skillz Post Process */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Skillz Post Process";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -e \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Skillz.framework/postprocess.sh\" ]; then\n    /bin/sh \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Skillz.framework/postprocess.sh\"\nfi";
 		};
-		6B6457661EF45F6A00206C5E /* ShellScript */ = {
+		6B6457661EF45F6A00206C5E /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PROJECT_DIR/MapFileParser.sh\"";
 		};
-		6B6457671EF45F6A00206C5E /* ShellScript */ = {
+		6B6457671EF45F6A00206C5E /* Run Skillz Post Process */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Skillz Post Process";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -e \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Skillz.framework/postprocess.sh\" ]; then\n    /bin/sh \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Skillz.framework/postprocess.sh\"\nfi";
+		};
+		6B64578A1EF7444C00206C5E /* Run Fabric Post Process */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric Post Process";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 267045208f4b1d9fdcbf019068b81096fe16475a bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1";
+		};
+		6B64578B1EF7445E00206C5E /* Run Fabric Post Process */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric Post Process";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 267045208f4b1d9fdcbf019068b81096fe16475a bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1";
 		};
 /* End PBXShellScriptBuildPhase section */
 
