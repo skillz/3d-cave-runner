@@ -317,22 +317,22 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
 {
     /*************
      * File has been modified for internal build creation for multiple SKUs
-     * VCOnly - 2205 on Staging, 3299 on Production
+     * VCOnly - 2205 on Staging, 3616 on Production
      * Full - 2204 on Staging, 1410 on Production
      *************/
 
 #if VCONLY
-    NSString *gameIdString = @"2205";
+    NSString *gameIdString = @"3616";
     NSString *environmentString = @"SkillzProduction";
 #else
-    NSString *gameIdString = @"2204";
+    NSString *gameIdString = @"1410";
     NSString *environmentString = @"SkillzProduction";
 #endif
     
     /*************
     * Temporarily point to Staging
     *************/
-    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
+    //[[Skillz skillzInstance] performSelector:@selector(setStaging)];
     
     SkillzEnvironment skillzEnvironment;
     
