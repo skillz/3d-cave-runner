@@ -29,6 +29,6 @@ function RunMenuItem()
 			LoadedComponent = trans.gameObject;
 		}
 	} else if (StartSkillz) {
-		Skillz.Launch();
+		SkillzCrossPlatform.LaunchSkillz();
 	}
 }

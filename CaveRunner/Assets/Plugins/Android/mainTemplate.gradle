@@ -1,0 +1,61 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		classpath 'com.android.tools.build:gradle:2.3.2'
+	}
+}
+
+allprojects {
+   repositories {
+      flatDir {
+        dirs 'libs'
+      }
+   }
+}
+
+
+apply plugin: 'com.android.application'
+
+dependencies {
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+	compile 'com.skillz.sdk:skillz-sdk-android:3.2.1'
+}
+
+android {
+	compileSdkVersion 25
+	buildToolsVersion '25.0.3'
+
+	defaultConfig {
+		minSdkVersion 19
+		targetSdkVersion 22
+		multiDexEnabled true
+	}
+
+	dexOptions {
+		javaMaxHeapSize "4g"
+	}
+
+	lintOptions {
+		abortOnError false
+	}
+
+	buildTypes {
+		debug {
+			jniDebuggable true
+		}
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+
+		}
+	}
+
+    repositories {
+        maven {
+            url 'http://nexus.skillz.com/content/groups/public/'
+        }
+    }
+}
