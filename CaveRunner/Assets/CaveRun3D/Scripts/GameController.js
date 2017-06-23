@@ -106,7 +106,7 @@ function WaitThenFinish() {
 
 	var TotalScore:int = TotalDistance * 10 + TotalGems * 100;
 	
-	if (PlayerPrefs.GetInt("SkillzGame") == 1) { //Skillz game: report score to Skillz
+	if (SkillzCrossPlatform.IsMatchInProgress()) { //Skillz game: report score to Skillz
 
 		/*
 		CaveRunner doesn't use any Match Rules. If it did, we might implement them here.
@@ -125,7 +125,7 @@ function WaitThenFinish() {
 		metrics["score"] = TotalScore.ToString();
 		
 		Application.LoadLevel("start"); 
-		Skillz.ReportScore(metrics["score"]);
+		SkillzCrossPlatform.ReportFinalScore(metrics["score"]);
 		PlayerPrefs.SetInt("SkillzGame", 0);
 
 	} else { //single player game: exit
@@ -154,8 +154,8 @@ function OnGUI()
 		GUI.DrawTexture (Rect(originalWidth  * 0.945,originalHeight * 0.037 ,32 ,32 ), Gems); //Place the gem image beside the gems count on the top right of the screen
 
 		//Skillz heartbeat
-		if (PlayerPrefs.GetInt("SkillzGame") == 1) {
-			Skillz.UpdatePlayersCurrentScore(TotalScore);
+		if (SkillzCrossPlatform.IsMatchInProgress()) {
+			SkillzCrossPlatform.UpdatePlayersCurrentScore(TotalScore);
 		}
 				
 		//Animate the level up text by passing it from the right side of the screen to the left side

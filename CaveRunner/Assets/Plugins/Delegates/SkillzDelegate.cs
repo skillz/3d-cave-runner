@@ -7,11 +7,14 @@ public class SkillzDelegate : MonoBehaviour
 	// This method is called when a user starts a match from Skillz
 	public void OnMatchWillBegin() {
 		// implement me
+		PlayerPrefs.SetInt("SkillzGame",1);
+		Application.LoadLevel("game");
 	}
 
 	// This method is called when a user exits the Skillz experience (via Menu -> Exit)
 	public void OnSkillzWillExit() {
 		// implement me
+		Application.LoadLevel("start");
 	}
 
 	public int GameID = 0;
