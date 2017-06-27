@@ -30,6 +30,7 @@ rm -rf "iOS/3D Cave Runner Xcode/Skillz.framework"
 rm -rf "iOS/3D Cave Runner Xcode/build"
 
 unzip -q 'Skillz.framework.zip' -d "./iOS/3D Cave Runner Xcode/"
+mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
 cd "iOS/3D Cave Runner Xcode"
 
