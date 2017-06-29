@@ -54,11 +54,11 @@
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
 	<key>UILaunchStoryboardName~ipad</key>
-	<string>LaunchScreen-iPad</string>
+	<string>LaunchScreenZ</string>
 	<key>UILaunchStoryboardName~iphone</key>
-	<string>LaunchScreen-iPhone</string>
+	<string>LaunchScreenZ</string>
 	<key>UILaunchStoryboardName~ipod</key>
-	<string>LaunchScreen-iPhone</string>
+	<string>LaunchScreenZ</string>
 	<key>UIPrerenderedIcon</key>
 	<false/>
 	<key>UIRequiredDeviceCapabilities</key>

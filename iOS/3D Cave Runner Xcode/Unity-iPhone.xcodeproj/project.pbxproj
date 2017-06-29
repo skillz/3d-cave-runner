@@ -33,6 +33,10 @@
 		30134ED896C6794493847DF3 /* Il2CppTypeDefinitions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C34F13BC630533557708A5 /* Il2CppTypeDefinitions.cpp */; };
 		311B44C51ECF781E00E5E639 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311B44C41ECF781E00E5E639 /* Crashlytics.framework */; };
 		311B44C71ECF782500E5E639 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311B44C61ECF782500E5E639 /* Fabric.framework */; };
+		313BED251F05C1E500FD2572 /* LaunchScreenZ.xib in Resources */ = {isa = PBXBuildFile; fileRef = 313BED241F05C1E500FD2572 /* LaunchScreenZ.xib */; };
+		313BED261F05C1E500FD2572 /* LaunchScreenZ.xib in Resources */ = {isa = PBXBuildFile; fileRef = 313BED241F05C1E500FD2572 /* LaunchScreenZ.xib */; };
+		313BED281F05C23B00FD2572 /* LaunchScreenZ.png in Resources */ = {isa = PBXBuildFile; fileRef = 313BED271F05C23B00FD2572 /* LaunchScreenZ.png */; };
+		313BED291F05C23B00FD2572 /* LaunchScreenZ.png in Resources */ = {isa = PBXBuildFile; fileRef = 313BED271F05C23B00FD2572 /* LaunchScreenZ.png */; };
 		361E4D008BB24D2663D14C31 /* Bulk_Assembly-UnityScript_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 819F4C88BE7A7F68769B70BC /* Bulk_Assembly-UnityScript_0.cpp */; };
 		374A454B9382C11A93EB1E87 /* Bulk_mscorlib_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 99664468811C17FB3D354574 /* Bulk_mscorlib_2.cpp */; };
 		3CAE44CEB7360683EA75117D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34894C708188E6C42EB78904 /* Metal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -59,7 +63,6 @@
 		6B6456DE1EF45F6A00206C5E /* Data in Resources */ = {isa = PBXBuildFile; fileRef = AA31BF961B55660D0013FB1B /* Data */; };
 		6B6456E01EF45F6A00206C5E /* LaunchScreen-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3234055A56B90DE6CF3DD1B /* LaunchScreen-iPhone.xib */; };
 		6B6456E11EF45F6A00206C5E /* LaunchScreen-iPhonePortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD43ACB555D9FB2429EAAA /* LaunchScreen-iPhonePortrait.png */; };
-		6B6456E21EF45F6A00206C5E /* LaunchScreen-iPhoneLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = D7794F7A9E1BC7A4773AFD9B /* LaunchScreen-iPhoneLandscape.png */; };
 		6B6456E31EF45F6A00206C5E /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E154482F80A6E56E8B87C68A /* LaunchScreen-iPad.xib */; };
 		6B6456E41EF45F6A00206C5E /* LaunchScreen-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 48274CD59CF3943B4C939832 /* LaunchScreen-iPad.png */; };
 		6B6456E61EF45F6A00206C5E /* Skillz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13DF4572A229FEDF9DA93DFE /* Skillz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -262,7 +265,6 @@
 		C0084F9E8B21156AB7A78A28 /* Bulk_mscorlib_1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C004540A5B09BB86090A0C9 /* Bulk_mscorlib_1.cpp */; };
 		C5E64845BD6E7CF9C5C0F339 /* Bulk_mscorlib_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81DA4B5B892E23F31E19DBA0 /* Bulk_mscorlib_5.cpp */; };
 		C81640AF87AF846C1B067301 /* Bulk_Generics_3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 959D49C8923FAA7908029023 /* Bulk_Generics_3.cpp */; };
-		C83F437F839401128910CF01 /* LaunchScreen-iPhoneLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = D7794F7A9E1BC7A4773AFD9B /* LaunchScreen-iPhoneLandscape.png */; };
 		C90B404C9D47A22F36F55376 /* Bulk_Generics_0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3ECD431E84B26AE1B92B8395 /* Bulk_Generics_0.cpp */; };
 		D5DD464A995197B731B06152 /* Bulk_Generics_4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2FE4865AD3810EA73B7085E /* Bulk_Generics_4.cpp */; };
 		D79C4DA8A76CE0C6296EE1C1 /* LaunchScreen-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3234055A56B90DE6CF3DD1B /* LaunchScreen-iPhone.xib */; };
@@ -328,6 +330,8 @@
 		2FB7415C913B18438B8143CC /* Bulk_UnityEngine_1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_UnityEngine_1.cpp; path = Classes/Native/Bulk_UnityEngine_1.cpp; sourceTree = SOURCE_ROOT; };
 		311B44C41ECF781E00E5E639 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		311B44C61ECF782500E5E639 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		313BED241F05C1E500FD2572 /* LaunchScreenZ.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenZ.xib; sourceTree = "<group>"; };
+		313BED271F05C23B00FD2572 /* LaunchScreenZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenZ.png; sourceTree = "<group>"; };
 		34894C708188E6C42EB78904 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		38B64B13B2F91B423168D64F /* Il2CppGenericMethodDefinitions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppGenericMethodDefinitions.cpp; path = Classes/Native/Il2CppGenericMethodDefinitions.cpp; sourceTree = SOURCE_ROOT; };
 		3BC84C3B9F352A8A9FF617D1 /* Il2CppGenericMethodPointerTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppGenericMethodPointerTable.cpp; path = Classes/Native/Il2CppGenericMethodPointerTable.cpp; sourceTree = SOURCE_ROOT; };
@@ -476,7 +480,6 @@
 		CE8342548AB56C05DFC037A8 /* Il2CppCompilerCalculateTypeValues_9Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_9Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_9Table.cpp; sourceTree = SOURCE_ROOT; };
 		D11E4500875FBB3ED8F64B39 /* Bulk_mscorlib_6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_mscorlib_6.cpp; path = Classes/Native/Bulk_mscorlib_6.cpp; sourceTree = SOURCE_ROOT; };
 		D4324958AF0C61928E4CF325 /* Il2CppCompilerCalculateTypeValues_5Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_5Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_5Table.cpp; sourceTree = SOURCE_ROOT; };
-		D7794F7A9E1BC7A4773AFD9B /* LaunchScreen-iPhoneLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchScreen-iPhoneLandscape.png"; sourceTree = SOURCE_ROOT; };
 		D82DCFBB0E8000A5005D6AD8 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = Classes/main.mm; sourceTree = SOURCE_ROOT; };
 		D8A1C7240E80637F000160D3 /* RegisterMonoModules.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RegisterMonoModules.cpp; path = Libraries/RegisterMonoModules.cpp; sourceTree = SOURCE_ROOT; };
 		D8A1C7250E80637F000160D3 /* RegisterMonoModules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterMonoModules.h; path = Libraries/RegisterMonoModules.h; sourceTree = SOURCE_ROOT; };
@@ -630,10 +633,11 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				83B2574E0E63025400468741 /* libiconv.2.dylib */,
 				120D4B88BE9BC90B46BBC7B1 /* Embed Frameworks */,
+				313BED241F05C1E500FD2572 /* LaunchScreenZ.xib */,
+				313BED271F05C23B00FD2572 /* LaunchScreenZ.png */,
 				B3234055A56B90DE6CF3DD1B /* LaunchScreen-iPhone.xib */,
-				E5DD43ACB555D9FB2429EAAA /* LaunchScreen-iPhonePortrait.png */,
-				D7794F7A9E1BC7A4773AFD9B /* LaunchScreen-iPhoneLandscape.png */,
 				E154482F80A6E56E8B87C68A /* LaunchScreen-iPad.xib */,
+				E5DD43ACB555D9FB2429EAAA /* LaunchScreen-iPhonePortrait.png */,
 				48274CD59CF3943B4C939832 /* LaunchScreen-iPad.png */,
 				6B64576E1EF45F6B00206C5E /* VCInfo.plist */,
 			);
@@ -1018,11 +1022,12 @@
 			files = (
 				AA31BF971B55660D0013FB1B /* Data in Resources */,
 				D79C4DA8A76CE0C6296EE1C1 /* LaunchScreen-iPhone.xib in Resources */,
+				313BED281F05C23B00FD2572 /* LaunchScreenZ.png in Resources */,
 				6B6457701EF4663D00206C5E /* Images.xcassets in Resources */,
 				74A8460F850BBD4076D69AE4 /* LaunchScreen-iPhonePortrait.png in Resources */,
-				C83F437F839401128910CF01 /* LaunchScreen-iPhoneLandscape.png in Resources */,
 				03F24F3E97A136BE20A753A7 /* LaunchScreen-iPad.xib in Resources */,
 				B9C947DE85A3CA0D2041AB39 /* LaunchScreen-iPad.png in Resources */,
+				313BED251F05C1E500FD2572 /* LaunchScreenZ.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1039,11 +1044,12 @@
 			files = (
 				6B6456DE1EF45F6A00206C5E /* Data in Resources */,
 				6B6456E01EF45F6A00206C5E /* LaunchScreen-iPhone.xib in Resources */,
+				313BED291F05C23B00FD2572 /* LaunchScreenZ.png in Resources */,
 				6B6457711EF4664400206C5E /* Images.xcassets in Resources */,
 				6B6456E11EF45F6A00206C5E /* LaunchScreen-iPhonePortrait.png in Resources */,
-				6B6456E21EF45F6A00206C5E /* LaunchScreen-iPhoneLandscape.png in Resources */,
 				6B6456E31EF45F6A00206C5E /* LaunchScreen-iPad.xib in Resources */,
 				6B6456E41EF45F6A00206C5E /* LaunchScreen-iPad.png in Resources */,
+				313BED261F05C1E500FD2572 /* LaunchScreenZ.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
