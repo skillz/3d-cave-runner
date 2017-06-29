@@ -358,7 +358,7 @@
 		58E440278F024B3DD6815E79 /* Bulk_System_0.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_System_0.cpp; path = Classes/Native/Bulk_System_0.cpp; sourceTree = SOURCE_ROOT; };
 		5EF144C6B08ACB1A8C9B1DF8 /* Il2CppCompilerCalculateTypeValues_1Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_1Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_1Table.cpp; sourceTree = SOURCE_ROOT; };
 		6B2C80731ED396D600402317 /* 3dCaveRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = 3dCaveRun.entitlements; path = "Unity-iPhone/3dCaveRun.entitlements"; sourceTree = "<group>"; };
-		6B64576D1EF45F6A00206C5E /* CaveRunnerZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaveRunnerZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B64576D1EF45F6A00206C5E /* Cave Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cave Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B64576E1EF45F6B00206C5E /* VCInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = VCInfo.plist; path = "/Users/tjfallon/Code/3d-cave-runner/iOS/3D Cave Runner Xcode/VCInfo.plist"; sourceTree = "<absolute>"; };
 		6BDD089E1EF75FB0002A3A6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6C894DF4B9854CB19B1AB774 /* Bulk_Generics_1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_Generics_1.cpp; path = Classes/Native/Bulk_Generics_1.cpp; sourceTree = SOURCE_ROOT; };
@@ -602,7 +602,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* 3dCaveRun.app */,
 				5623C57317FDCB0800090B9E /* caverun.xctest */,
-				6B64576D1EF45F6A00206C5E /* CaveRunnerZ.app */,
+				6B64576D1EF45F6A00206C5E /* Cave Runner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -933,9 +933,9 @@
 			productReference = 5623C57317FDCB0800090B9E /* caverun.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6B6456DC1EF45F6A00206C5E /* CaveRunnerZ */ = {
+		6B6456DC1EF45F6A00206C5E /* Cave Runner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B6457681EF45F6A00206C5E /* Build configuration list for PBXNativeTarget "CaveRunnerZ" */;
+			buildConfigurationList = 6B6457681EF45F6A00206C5E /* Build configuration list for PBXNativeTarget "Cave Runner" */;
 			buildPhases = (
 				6B6456DD1EF45F6A00206C5E /* Resources */,
 				6B6456E51EF45F6A00206C5E /* Embed Frameworks */,
@@ -949,9 +949,9 @@
 			);
 			dependencies = (
 			);
-			name = CaveRunnerZ;
+			name = "Cave Runner";
 			productName = "iPhone-target";
-			productReference = 6B64576D1EF45F6A00206C5E /* CaveRunnerZ.app */;
+			productReference = 6B64576D1EF45F6A00206C5E /* Cave Runner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1006,7 +1006,7 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* 3DCaveRunner */,
 				5623C57217FDCB0800090B9E /* Unity-iPhone Tests */,
-				6B6456DC1EF45F6A00206C5E /* CaveRunnerZ */,
+				6B6456DC1EF45F6A00206C5E /* Cave Runner */,
 			);
 		};
 /* End PBXProject section */
@@ -2402,7 +2402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B6457681EF45F6A00206C5E /* Build configuration list for PBXNativeTarget "CaveRunnerZ" */ = {
+		6B6457681EF45F6A00206C5E /* Build configuration list for PBXNativeTarget "Cave Runner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B6457691EF45F6A00206C5E /* Release */,

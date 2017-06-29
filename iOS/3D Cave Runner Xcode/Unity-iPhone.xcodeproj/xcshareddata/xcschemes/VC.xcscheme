@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
-               BuildableName = "CaveRunnerZ.app"
-               BlueprintName = "CaveRunnerZ"
+               BuildableName = "Cave Runner.app"
+               BlueprintName = "Cave Runner"
                ReferencedContainer = "container:Unity-iPhone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
-            BuildableName = "CaveRunnerZ.app"
-            BlueprintName = "CaveRunnerZ"
+            BuildableName = "Cave Runner.app"
+            BlueprintName = "Cave Runner"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
-            BuildableName = "CaveRunnerZ.app"
-            BlueprintName = "CaveRunnerZ"
+            BuildableName = "Cave Runner.app"
+            BlueprintName = "Cave Runner"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
-            BuildableName = "CaveRunnerZ.app"
-            BlueprintName = "CaveRunnerZ"
+            BuildableName = "Cave Runner.app"
+            BlueprintName = "Cave Runner"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
