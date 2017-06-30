@@ -57,7 +57,7 @@ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: S
 # Package VC Release Build
 rm -rf "${WORKSPACE}/PayloadVC/"
 mkdir -p "${WORKSPACE}/PayloadVC/"
-mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app" "${WORKSPACE}/PayloadVC/"
+mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/Cave Runner.app" "${WORKSPACE}/PayloadVC/"
 
 # Build VC .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
@@ -80,11 +80,11 @@ set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release 
 -archivePath ./3DCaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Zip Archive for storing on Jenkins artifacts
-zip -y -r CaveRunnerZ.xcarchive.zip CaveRunnerZ.xcarchive
+zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
 zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
 # Remove archives
-rm -rf "iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive"
+rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive"
 rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
 
 cd "${WORKSPACE}"
@@ -95,7 +95,7 @@ rm -rf "CaveRunnerZ.ipa"
 
 rm -rf "Payload"
 mv "PayloadVC" "Payload"
-zip -r "CaveRunnerZ.ipa" "Payload"
+zip -r "Cave Runner.ipa" "Payload"
 
 rm -rf "Payload"
 mv "PayloadFull" "Payload"
@@ -113,5 +113,5 @@ bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
 
 "${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
 bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
--ipaPath "${WORKSPACE}/CaveRunnerZ.ipa" \
+-ipaPath "${WORKSPACE}/Cave Runner.ipa" \
 -groupAliases SDK,qa-2,tournament-server,product
