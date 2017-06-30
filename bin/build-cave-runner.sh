@@ -61,7 +61,7 @@ mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/Cave Runner.app
 
 # Build VC .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
--archivePath ./CaveRunnerZ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+-archivePath "./Cave Runner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Move Custom theme for Full into Skillz Framework
 mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
