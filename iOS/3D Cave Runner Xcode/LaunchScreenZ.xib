@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenZ-iPhonePortrait.png" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-fU-b9y" userLabel="Image">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenZ.png" translatesAutoresizingMaskIntoConstraints="NO" id="6pd-fU-b9y" userLabel="Image">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
             </subviews>
@@ -30,6 +30,6 @@
         </view>
     </objects>
     <resources>
-        <image name="LaunchScreenZ-iPhonePortrait.png" width="1338" height="2005"/>
+        <image name="LaunchScreenZ.png" width="1338" height="2005"/>
     </resources>
 </document>
