@@ -24,7 +24,7 @@ cd "${WORKSPACE}"
 sudo ln -sf "/opt/sdk-integrations/CaveRunnerUnityLib/libiPhone-lib.a"  "/Users/Shared/jenkins-slave/workspace/SDK/Production Apps/Cave Runner Spyro/iOS/3D Cave Runner Xcode/Libraries/libiPhone-lib.a"
 
 # Clean old artifacts
-rm -rf "iOS/3D Cave Runner Xcode/CaveRunnerZ.xcarchive.zip"
+rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive.zip"
 rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive.zip"
 rm -rf "iOS/3D Cave Runner Xcode/Skillz.framework"
 rm -rf "iOS/3D Cave Runner Xcode/build"
@@ -91,7 +91,7 @@ cd "${WORKSPACE}"
 
 # Create IPAs
 rm -rf "3DCaveRunner.ipa"
-rm -rf "CaveRunnerZ.ipa"
+rm -rf "Cave Runner.ipa"
 
 rm -rf "Payload"
 mv "PayloadVC" "Payload"
