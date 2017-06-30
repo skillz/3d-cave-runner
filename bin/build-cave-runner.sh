@@ -30,7 +30,6 @@ rm -rf "iOS/3D Cave Runner Xcode/Skillz.framework"
 rm -rf "iOS/3D Cave Runner Xcode/build"
 
 unzip -q 'Skillz.framework.zip' -d "./iOS/3D Cave Runner Xcode/"
-mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
 cd "iOS/3D Cave Runner Xcode"
 
@@ -48,6 +47,9 @@ echo ${SDKVERSION}
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion \"${SDKVERSION}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/VCInfo.plist"
 /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString \"${NEW_TAG}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/VCInfo.plist"
 
+# Move Custom theme for VC into Skillz Framework
+mv "${WORKSPACE}/themes/themeVirtual.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
+
 # Build VC for Crashlytics
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean build \
 ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
@@ -60,6 +62,9 @@ mv "${WORKSPACE}/iOS/3D Cave Runner Xcode/build/Release-iphoneos/CaveRunnerZ.app
 # Build VC .xcarchive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
 -archivePath ./CaveRunnerZ ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+
+# Move Custom theme for Full into Skillz Framework
+mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
 # Build Full for Crashlytics
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean build \
