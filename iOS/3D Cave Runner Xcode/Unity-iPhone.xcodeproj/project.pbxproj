@@ -332,6 +332,7 @@
 		311B44C61ECF782500E5E639 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		313BED241F05C1E500FD2572 /* LaunchScreenZ.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenZ.xib; sourceTree = "<group>"; };
 		313BED271F05C23B00FD2572 /* LaunchScreenZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenZ.png; sourceTree = "<group>"; };
+		318322FE1F13D55C00747F1D /* VCInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = VCInfo.plist; sourceTree = "<group>"; };
 		34894C708188E6C42EB78904 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		38B64B13B2F91B423168D64F /* Il2CppGenericMethodDefinitions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppGenericMethodDefinitions.cpp; path = Classes/Native/Il2CppGenericMethodDefinitions.cpp; sourceTree = SOURCE_ROOT; };
 		3BC84C3B9F352A8A9FF617D1 /* Il2CppGenericMethodPointerTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppGenericMethodPointerTable.cpp; path = Classes/Native/Il2CppGenericMethodPointerTable.cpp; sourceTree = SOURCE_ROOT; };
@@ -363,7 +364,6 @@
 		5EF144C6B08ACB1A8C9B1DF8 /* Il2CppCompilerCalculateTypeValues_1Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_1Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_1Table.cpp; sourceTree = SOURCE_ROOT; };
 		6B2C80731ED396D600402317 /* 3dCaveRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = 3dCaveRun.entitlements; path = "Unity-iPhone/3dCaveRun.entitlements"; sourceTree = "<group>"; };
 		6B64576D1EF45F6A00206C5E /* Cave Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cave Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B64576E1EF45F6B00206C5E /* VCInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = VCInfo.plist; path = "/Users/tjfallon/Code/3d-cave-runner/iOS/3D Cave Runner Xcode/VCInfo.plist"; sourceTree = "<absolute>"; };
 		6BDD089E1EF75FB0002A3A6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6C894DF4B9854CB19B1AB774 /* Bulk_Generics_1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_Generics_1.cpp; path = Classes/Native/Bulk_Generics_1.cpp; sourceTree = SOURCE_ROOT; };
 		70874D968EDBE702B7782E0A /* Bulk_mscorlib_7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Bulk_mscorlib_7.cpp; path = Classes/Native/Bulk_mscorlib_7.cpp; sourceTree = SOURCE_ROOT; };
@@ -639,7 +639,7 @@
 				E154482F80A6E56E8B87C68A /* LaunchScreen-iPad.xib */,
 				E5DD43ACB555D9FB2429EAAA /* LaunchScreen-iPhonePortrait.png */,
 				48274CD59CF3943B4C939832 /* LaunchScreen-iPad.png */,
-				6B64576E1EF45F6B00206C5E /* VCInfo.plist */,
+				318322FE1F13D55C00747F1D /* VCInfo.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
