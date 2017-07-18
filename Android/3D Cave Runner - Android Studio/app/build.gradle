@@ -74,7 +74,7 @@ android {
             resValue "string", "app_name", "CaveRunner"
         }
         vconly {
-            resValue "string", "app_name", "CaveRunner Z"
+            resValue "string", "app_name", "Cave Runner Multiplayer"
             applicationIdSuffix ".vconly"
         }
     }
