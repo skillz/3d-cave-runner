@@ -36,7 +36,7 @@
       android:value="3616" />
     <meta-data
       android:name="skillz_production"
-      android:value="false" />
+      android:value="true" />
 
     <meta-data android:name="skillz_orientation" android:value="portrait" />
     <meta-data android:name="skillz_allow_exit" android:value="true" />
