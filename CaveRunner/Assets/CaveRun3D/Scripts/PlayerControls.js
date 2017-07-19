@@ -84,6 +84,14 @@ function FixAcceleration (acceleration : Vector3) {
 
 function Start()
 {
+#if UNITY_ANDROID
+	MovementLimits = 16;
+	TurningSpeed = 0.06;
+#elif UNITY_IOS
+	MovementLimits = 18;
+	TurningSpeed = 0.07;
+#endif
+
 	PlatformCreator = GameObject.FindWithTag("PlatformCreator"); //Find the Platform Creator in the scene and put it in a variable, for later use
 	GameController = GameObject.FindWithTag("GameController"); //Find the Game Controller in the scene and put it in a variable, for later use
 	gController = GameController.GetComponent("GameController") as GameController;

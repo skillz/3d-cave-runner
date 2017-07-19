@@ -114,18 +114,42 @@ public var showScoreOnScreen : boolean = true;
 function OnGUI()
 {
   if (showScoreOnScreen) {
-    scale.x = Screen.width/originalWidth; // calculate hor scale
-      scale.y = Screen.height/originalHeight; // calculate vert scale
-      scale.z = 1;
-     var svMat = GUI.matrix; // save current matrix
-      // substitute matrix - only scale is altered from standard
-      GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
+	scale.x = Screen.width/originalWidth; // calculate hor scale
+    scale.y = Screen.height/originalHeight; // calculate vert scale
+    scale.z = 1;
+    var svMat = GUI.matrix; // save current matrix
+    // substitute matrix - only scale is altered from standard
+    GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 
     GUI.skin = GUIskin; //The skin gui we'll use
 
+    var fontStyle = new GUIStyle( GUI.skin.label );
+ 	fontStyle.alignment = TextAnchor.UpperRight;
+
+    GUI.skin = GUIskin; //Smaller font for gems
+
+    GUI.Label (Rect(0, 48, Screen.width / scale.x - 52, 0), TotalGems.ToString() + " Gems", fontStyle); //Place the gems count on the top right of the screen
+    GUI.DrawTexture (Rect(Screen.width / scale.x - 44, 44, 32, 32), Gems); //Place the gem image beside the gems count on the top right of the screen
+
+    GUI.skin = GUIskinLarge; //Large font for Score
+
+    fontStyle = new GUIStyle( GUI.skin.label );
+ 	fontStyle.alignment = TextAnchor.UpperRight;
+
     var TotalScore:float = TotalDistance * 10 + TotalGems * 100;
-    GUI.Label (Rect(originalWidth  * 0.85,originalHeight * 0.055 ,0,0 ), TotalGems.ToString() + " Gems"); //Place the gems count on the top right of the screen
-    GUI.DrawTexture (Rect(originalWidth  * 0.945,originalHeight * 0.037 ,32 ,32 ), Gems); //Place the gem image beside the gems count on the top right of the screen
+    GUI.Label (Rect(0, 14, Screen.width / scale.x - 14, 0), TotalScore.ToString("F0") + " Score", fontStyle); //Place the distance count on the top right of the screen
+
+    GUI.skin = GUIskin; //Smaller font for gems
+    //Animate the level up text by passing it from the right side of the screen to the left side
+    if ( LevelUp == false && LevelUpPosX > -originalWidth )
+    {
+      GUI.Label(Rect(LevelUpPosX, originalWidth * 0.85,200 ,50), CurrentLevelUpText, "LevelUp"); //Display the text
+      LevelUpPosX -= 200 * Time.deltaTime; //move the text to the left
+    }
+    else if ( LevelUp == true )
+    {
+      LevelUp = false; //We ended the level up animation
+    }
 
     //Skillz heartbeat
 	#if UNITY_IOS
@@ -138,22 +162,6 @@ function OnGUI()
 	}
 	#endif
 
-
-    //Animate the level up text by passing it from the right side of the screen to the left side
-    if ( LevelUp == false && LevelUpPosX > -originalWidth )
-    {
-      GUI.Label(Rect(LevelUpPosX,originalWidth * 0.85,200 ,50), CurrentLevelUpText, "LevelUp"); //Display the text
-      LevelUpPosX -= 200*Time.deltaTime; //move the text to the left
-    }
-    else if ( LevelUp == true )
-    {
-      LevelUp = false; //We ended the level up animation
-    }
-
-
-    GUI.skin = GUIskinLarge; //The skin gui we'll use
-    GUI.Label (Rect(originalWidth  * 0.83,originalHeight * 0.020 ,0,0 ), TotalScore.ToString("F0") + " Score"); //Place the distance count on the top right of the screen
-
-    GUI.matrix = svMat; // restore matrix
+	GUI.matrix = svMat; // restore matrix
   }
 }
