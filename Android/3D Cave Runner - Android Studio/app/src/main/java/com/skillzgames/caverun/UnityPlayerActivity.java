@@ -13,8 +13,9 @@ import android.view.WindowManager;
 
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
+import com.skillz.SkillzActivity;
 
-public class UnityPlayerActivity extends Activity
+public class UnityPlayerActivity extends SkillzActivity
 {
 	protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
 
