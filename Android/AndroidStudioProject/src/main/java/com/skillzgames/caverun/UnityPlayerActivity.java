@@ -11,13 +11,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import com.skillz.SkillzActivity;
 
-public class UnityPlayerActivity extends Activity
+public class UnityPlayerActivity extends SkillzActivity
 {
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
 
     // Setup activity layout
-    @Override protected void onCreate (Bundle savedInstanceState)
+    @Override public void onCreate (Bundle savedInstanceState)
     {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class UnityPlayerActivity extends Activity
         mUnityPlayer.requestFocus();
     }
 
-    @Override protected void onNewIntent(Intent intent)
+    @Override public void onNewIntent(Intent intent)
     {
         // To support deep linking, we need to make sure that the client can get access to
         // the last sent intent. The clients access this through a JNI api that allows them
@@ -39,21 +40,21 @@ public class UnityPlayerActivity extends Activity
     }
 
     // Quit Unity
-    @Override protected void onDestroy ()
+    @Override public void onDestroy ()
     {
         mUnityPlayer.quit();
         super.onDestroy();
     }
 
     // Pause Unity
-    @Override protected void onPause()
+    @Override public void onPause()
     {
         super.onPause();
         mUnityPlayer.pause();
     }
 
     // Resume Unity
-    @Override protected void onResume()
+    @Override public void onResume()
     {
         super.onResume();
         mUnityPlayer.resume();
