@@ -39,7 +39,7 @@ android {
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.skillzgames.caverun"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 22
         ndk {
             abiFilters "armeabi-v7a", "x86"
@@ -60,6 +60,8 @@ android {
         }
         debug {
             minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+
             debuggable true
         }
     }
@@ -99,11 +101,44 @@ dependencies {
     compile files('libs/unity-classes.jar')
     //Skillz SDK
 
-    compile 'com.skillz.sdk:skillz-sdk-android:4.1-SNAPSHOT'
+    compile(name: 'sdk-live-debug', ext:'aar')
+
+    // compile 'com.skillz.sdk:skillz-sdk-android:4.1-SNAPSHOT'
+   // compile('live-sdk-debug')
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }
-    compile 'com.google.android.gms:play-services-gcm:10.2.4'
+    compile 'net.bytebuddy:byte-buddy-android:1.7.4'
+
+   // compile 'com.android.support:multidex:1.0.1'
+    compile 'com.paypal.sdk:paypal-android-sdk:2.14.4'
+    compile 'com.mopub.volley:mopub-volley:1.1.0'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.google.android.gms:play-services-base:11.0.4'
+    compile 'com.google.android.gms:play-services-gcm:11.0.4'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.google.firebase:firebase-core:10.2.1'
+    compile 'com.google.firebase:firebase-messaging:10.2.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup:otto:1.3.7'
+    compile 'com.facebook.react:react-native:0.41.2'
+    compile 'com.BV:react-native-linear-gradient:2.0.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.anjlab.android.iab.v3:library:1.0.36'
+    compile 'com.amazonaws:aws-android-sdk-core:2.2.22'
+    compile 'com.amazonaws:aws-android-sdk-s3:2.2.22'
+    compile 'com.amazonaws:aws-android-sdk-ddb:2.2.22'
+    compile 'com.amazonaws:aws-android-sdk-mobileanalytics:2.2.22'
+    compile 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.22'
+    compile 'com.amazonaws:aws-android-sdk-cognito:2.2.22'
+    compile 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.0'
+    compile 'me.leolin:ShortcutBadger:1.1.17'
+    compile 'com.facebook.fresco:animated-base-support:0.11.0'
+    compile 'com.facebook.fresco:animated-gif:0.11.0'
+
 }
 
 repositories {

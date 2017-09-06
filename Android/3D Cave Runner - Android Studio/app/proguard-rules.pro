@@ -1,4 +1,5 @@
 -dontwarn **
+-dontwarn com.squareup.okhttp.**
 
 -keep class bitter.jnibridge.** { *; }
 -keep class com.unity3d.** { *; }
@@ -10,6 +11,7 @@
 }
 -dontwarn com.google.android.gms.**
 
+-keep class java.math.BigDecimal.** { *; }
 -keep class com.amazonaws.** { *; }
 -keep public class com.skillzgames.** { *; }
 -keep public class com.facebook.react.** { *; }
