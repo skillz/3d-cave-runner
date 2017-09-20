@@ -31,10 +31,7 @@ function RunMenuItem()
     }
   } else if (StartSkillz) {
     Debug.Log('Launch Skillz');
-  #if UNITY_IOS
-  	SkillzSDK.Api.LaunchSkillz(SkillzSDK.Orientation.Portrait);
-  #elif UNITY_ANDROID
-  	Skillz.Launch();
-  #endif
+	SkillzCrossPlatform.LaunchSkillz();
+	
   }
 }
