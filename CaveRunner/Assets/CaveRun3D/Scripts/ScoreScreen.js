@@ -113,12 +113,8 @@ function SubmitScore()
 
 	if (!HasSubmittedScore) {
 		HasSubmittedScore = true;
-	#if UNITY_ANDROID
 		var metrics = new Dictionary.<String,String>();
 		metrics["score"] = TotalScore.ToString("F0");
-		Skillz.ReportScore(metrics["score"]);
-	#elif UNITY_IOS
-		SkillzSDK.Api.FinishTournament(parseInt(TotalScore.ToString("F0")));
-	#endif
+		SkillzCrossPlatform.ReportFinalScore(metrics["score"]);
 	}
 }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+               BlueprintIdentifier = "6B1677491F79B99B008783F5"
                BuildableName = "Cave Runner.app"
                BlueprintName = "Cave Runner"
                ReferencedContainer = "container:Unity-iPhone.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+            BlueprintIdentifier = "6B1677491F79B99B008783F5"
             BuildableName = "Cave Runner.app"
             BlueprintName = "Cave Runner"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+            BlueprintIdentifier = "6B1677491F79B99B008783F5"
             BuildableName = "Cave Runner.app"
             BlueprintName = "Cave Runner"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6B6456DC1EF45F6A00206C5E"
+            BlueprintIdentifier = "6B1677491F79B99B008783F5"
             BuildableName = "Cave Runner.app"
             BlueprintName = "Cave Runner"
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">

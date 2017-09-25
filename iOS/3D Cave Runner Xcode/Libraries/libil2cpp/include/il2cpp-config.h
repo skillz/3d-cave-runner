@@ -207,15 +207,11 @@
 
 #if IL2CPP_COMPILER_MSVC || defined(__ARMCC_VERSION)
 #define NORETURN __declspec(noreturn)
-#elif IL2CPP_TARGET_IOS
-#define NORETURN
-#elif IL2CPP_TARGET_DARWIN
-#define NORETURN __attribute__ ((noreturn))
 #else
 #define NORETURN
 #endif
 
-#if IL2CPP_TARGET_IOS
+#if IL2CPP_TARGET_IOS || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_DARWIN
 #define REAL_NORETURN __attribute__ ((noreturn))
 #else
 #define REAL_NORETURN NORETURN
@@ -450,7 +446,7 @@ typedef uint32_t Il2CppMethodSlot;
 
 #define IL2CPP_USE_GENERIC_COM  (!IL2CPP_TARGET_WINDOWS)
 #define IL2CPP_USE_GENERIC_COM_SAFEARRAYS   (!IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE)
-#define IL2CPP_USE_GENERIC_WINDOWSRUNTIME (!IL2CPP_TARGET_WINDOWS)
+#define IL2CPP_USE_GENERIC_WINDOWSRUNTIME (!IL2CPP_TARGET_WINDOWS || RUNTIME_MONO || RUNTIME_NONE)
 
 #ifndef IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE
 #define IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE (IL2CPP_TARGET_XBOXONE || (!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_POSIX))
@@ -577,4 +573,11 @@ const Il2CppChar kIl2CppNewLine[] = { '\n', '\0' };
 // not matter, as we assume these two bits are always zero because the pointer
 // will be aligned.
 #define IL2CPP_POINTER_SPARE_BITS 3
+#endif
+
+#define MAXIMUM_NESTED_GENERICS_EXCEPTION_MESSAGE "IL2CPP encountered a managed type which it cannot convert ahead-of-time. The type uses generic or array types which are nested beyond the maximum depth which can be converted."
+#if IL2CPP_COMPILER_MSVC
+#define IL2CPP_ATTRIBUTE_WEAK
+#else
+#define IL2CPP_ATTRIBUTE_WEAK __attribute__((weak))
 #endif

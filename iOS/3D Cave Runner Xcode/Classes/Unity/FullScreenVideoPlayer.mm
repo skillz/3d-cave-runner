@@ -22,7 +22,7 @@ typedef void (^OnTouchBlock)();
 - (id)initWithOnTouchBlock:(OnTouchBlock)onTouch;
 @end
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 @interface MPVideoPlayback : NSObject<UnityViewControllerListener>
 {
     MPMoviePlayerController*    moviePlayer;
@@ -63,13 +63,13 @@ typedef void (^OnTouchBlock)();
 - (void)finish;
 @end
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 static MPVideoPlayback*     _MPVideoPlayback    = nil;
 #endif
 static AVKitVideoPlayback*  _AVKitVideoPlayback = nil;
 
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 @implementation MPVideoPlayback
 - (id)initAndPlay:(NSURL*)url bgColor:(UIColor*)color controls:(MPMovieControlStyle)control scaling:(MPMovieScalingMode)scaling cancelOnTouch:(BOOL)cot
 {
@@ -223,7 +223,7 @@ static Class _AVPlayerViewControllerClass = nil;
         avPlayer.allowsPictureInPicturePlayback = allowsPictureInPicturePlayback;
 }
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 static NSUInteger supportedInterfaceOrientations_DefaultImpl(id self_, SEL _cmd)
 {
     return GetAppController().rootViewController.supportedInterfaceOrientations;
@@ -248,7 +248,7 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
                 [avKitBundle unload];
                 return;
             }
-#if UNITY_IOS
+#if PLATFORM_IOS
             ObjCSetKnownInstanceMethod(_AVPlayerViewControllerClass, @selector(supportedInterfaceOrientations), (IMP)&supportedInterfaceOrientations_DefaultImpl);
             ObjCSetKnownInstanceMethod(_AVPlayerViewControllerClass, @selector(prefersStatusBarHidden), (IMP)&prefersStatusBarHidden_DefaultImpl);
 #endif
@@ -295,7 +295,7 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
 
         self.allowsPictureInPicturePlayback = NO;
 
-#if UNITY_TVOS
+#if PLATFORM_TVOS
         // In tvOS clicking Menu button while video is playing will exit the app. So when
         // app disables exiting to menu behavior, we need to catch the click and ignore it.
         if (!UnityGetAppleTVRemoteAllowExitToMenu())
@@ -339,7 +339,7 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
     }
 
     [videoPlayer playVideoPlayer];
-#if UNITY_TVOS
+#if PLATFORM_TVOS
     GetAppController().window.rootViewController = videoViewController;
 #else
     UIViewController *viewController = [GetAppController() topMostController];
@@ -374,7 +374,7 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
 {
     @synchronized(self)
     {
-#if UNITY_TVOS
+#if PLATFORM_TVOS
         GetAppController().window.rootViewController = GetAppController().rootViewController;
 #else
         UIViewController *viewController = [GetAppController() topMostController];
@@ -393,7 +393,7 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
 
         _AVKitVideoPlayback = nil;
 
-#if UNITY_TVOS
+#if PLATFORM_TVOS
         UnityCancelTouches();
 #endif
 
@@ -484,7 +484,7 @@ extern "C" void UnityPlayFullScreenVideo(const char* path, const float* color, u
     }
 
     // MediaPlayer only if AVKit is not supported (old ios)
-#if UNITY_IOS
+#if PLATFORM_IOS
     {
         const MPMovieControlStyle controlMode[] =
         {
@@ -515,7 +515,7 @@ extern "C" void UnityStopFullScreenVideoIfPlaying()
     if (_AVKitVideoPlayback)
         [_AVKitVideoPlayback finish];
 
-#if UNITY_IOS
+#if PLATFORM_IOS
     if (_MPVideoPlayback)
         [_MPVideoPlayback finish];
 #endif
@@ -523,7 +523,7 @@ extern "C" void UnityStopFullScreenVideoIfPlaying()
 
 extern "C" int UnityIsFullScreenPlaying()
 {
-#if UNITY_IOS
+#if PLATFORM_IOS
     return _MPVideoPlayback || _AVKitVideoPlayback ? 1 : 0;
 #else
     return _AVKitVideoPlayback ? 1 : 0;

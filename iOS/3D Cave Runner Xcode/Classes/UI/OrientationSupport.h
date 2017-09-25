@@ -2,7 +2,7 @@
 
 #include <CoreGraphics/CGAffineTransform.h>
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 ScreenOrientation       ConvertToUnityScreenOrientation(UIInterfaceOrientation hwOrient);
 UIInterfaceOrientation  ConvertToIosScreenOrientation(ScreenOrientation orient);
 #endif

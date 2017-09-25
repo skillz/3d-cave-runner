@@ -141,6 +141,7 @@ OBJC_OBJECT_PTR MTLDeviceRef        device;
 OBJC_OBJECT_PTR MTLCommandQueueRef  commandQueue;
 OBJC_OBJECT_PTR CAMetalDrawableRef  drawable;
 
+OBJC_OBJECT_PTR MTLTextureRef       drawableProxyRT;
 OBJC_OBJECT_PTR MTLTextureRef       systemColorRB;
 OBJC_OBJECT_PTR MTLTextureRef       targetColorRT;
 OBJC_OBJECT_PTR MTLTextureRef       targetAAColorRT;
@@ -217,6 +218,10 @@ void EndFrameRenderingMTL(UnityDisplaySurfaceMTL* surface);
 void PreparePresentMTL(UnityDisplaySurfaceMTL* surface);
 void PresentMTL(UnityDisplaySurfaceMTL* surface);
 
+// Acquires CAMetal​Drawable resource for the surface and returns the drawable texture
+MTLTextureRef AcquireDrawableMTL(UnityDisplaySurfaceMTL* surface);
+
+
 #ifdef __cplusplus
 } // extern "C"
 #endif
@@ -230,7 +235,8 @@ extern "C" {
 // metal: resolveTex should be non-nil only if tex have AA
 UnityRenderBufferHandle UnityCreateExternalSurfaceGLES(UnityRenderBufferHandle surf, int isColor, unsigned texid, unsigned rbid, unsigned glesFormat, const UnityRenderBufferDesc* desc);
 UnityRenderBufferHandle UnityCreateExternalSurfaceMTL(UnityRenderBufferHandle surf, int isColor, MTLTextureRef tex, const UnityRenderBufferDesc* desc);
-UnityRenderBufferHandle UnityCreateExternalColorSurfaceMTL(UnityRenderBufferHandle surf, MTLTextureRef tex, MTLTextureRef resolveTex, const UnityRenderBufferDesc* desc);
+// Passing non-nil displaySurface will mark render surface as proxy and will do a delayed drawable acquisition when setting up framebuffer
+UnityRenderBufferHandle UnityCreateExternalColorSurfaceMTL(UnityRenderBufferHandle surf, MTLTextureRef tex, MTLTextureRef resolveTex, const UnityRenderBufferDesc* desc, UnityDisplaySurfaceMTL* displaySurface);
 UnityRenderBufferHandle UnityCreateExternalDepthSurfaceMTL(UnityRenderBufferHandle surf, MTLTextureRef tex, MTLTextureRef stencilTex, const UnityRenderBufferDesc* desc);
 // creates "dummy" surface - will indicate "missing" buffer (e.g. depth-only RT will have color as dummy)
 UnityRenderBufferHandle UnityCreateDummySurface(UnityRenderBufferHandle surf, int isColor, const UnityRenderBufferDesc* desc);

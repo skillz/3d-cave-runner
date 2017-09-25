@@ -152,15 +152,9 @@ function OnGUI()
     }
 
     //Skillz heartbeat
-	#if UNITY_IOS
-	if (SkillzSDK.Api.IsTournamentInProgress) {
-		SkillzSDK.Api.UpdatePlayerScore(TotalScore);
+	if (SkillzCrossPlatform.IsMatchInProgress()) {
+		SkillzCrossPlatform.UpdatePlayersCurrentScore(TotalScore);
 	}
-	#elif UNITY_ANDROID
-	if (PlayerPrefs.GetInt("SkillzGame") == 1) {
-		Skillz.UpdatePlayersCurrentScore(TotalScore);
-	}
-	#endif
 
 	GUI.matrix = svMat; // restore matrix
   }

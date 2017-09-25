@@ -23,7 +23,7 @@ CGAffineTransform TransformBetweenOrientations(ScreenOrientation fromOrient, Scr
     return CGAffineTransformConcat(CGAffineTransformInvert(fromTransform), toTransform);
 }
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 UIInterfaceOrientation ConvertToIosScreenOrientation(ScreenOrientation orient)
 {
     switch (orient)
@@ -67,8 +67,8 @@ ScreenOrientation ConvertToUnityScreenOrientation(UIInterfaceOrientation orient)
 
 ScreenOrientation UIViewControllerOrientation(UIViewController* controller)
 {
-#if UNITY_TVOS
-    return portrait;
+#if PLATFORM_TVOS
+    return UNITY_TVOS_ORIENTATION;
 #else
     return ConvertToUnityScreenOrientation(controller.interfaceOrientation);
 #endif

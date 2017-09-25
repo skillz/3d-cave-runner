@@ -1,4 +1,4 @@
-#if UNITY_IOS
+#if PLATFORM_IOS
 
 #include "UnityViewControllerBaseiOS.h"
 #include "OrientationSupport.h"
@@ -65,7 +65,7 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
     if (!_PreferredStatusBarStyleInited)
     {
         NSString* style = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"UIStatusBarStyle"];
-        if (style && ([style isEqualToString: @"UIStatusBarStyleBlackOpaque"] || [style isEqualToString: @"UIStatusBarStyleBlackTranslucent"]))
+        if (style && [style isEqualToString: @"UIStatusBarStyleLightContent"])
             _PreferredStatusBarStyle = UIStatusBarStyleLightContent;
 
         _PreferredStatusBarStyleInited = true;
@@ -271,4 +271,4 @@ extern "C" void AddViewControllerDefaultRotationHandling(Class class_)
         );
 }
 
-#endif // UNITY_IOS
+#endif // PLATFORM_IOS
