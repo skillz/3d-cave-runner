@@ -2,7 +2,7 @@
 All Assemblies
 ---------------------------------------------------
 Summary:
-  Total Type Removals = 2613
+  Total Type Removals = 2614
     Nested = 183
     Interfaces = 167
     Abstract Classes = 195
@@ -11,7 +11,7 @@ Summary:
     Generic Abstract Classes = 4
     Attributes = 189
   Total Field Removals = 802
-  Total Method Removals = 11036
+  Total Method Removals = 11037
 ---------------------------------------------------
 ---------------------------------------------------
 Assembly: Boo.Lang
@@ -9823,7 +9823,7 @@ Summary:
 Assembly: UnityEngine
 ---------------------------------------------------
 Summary:
-  Total Type Removals = 902
+  Total Type Removals = 903
     Nested = 25
     Interfaces = 28
     Abstract Classes = 56
@@ -9832,7 +9832,7 @@ Summary:
     Generic Abstract Classes = 0
     Attributes = 57
   Total Field Removals = 51
-  Total Method Removals = 4424
+  Total Method Removals = 4425
   References Removed = 0
 ---------------------------------------------------
     <PrivateImplementationDetails>
@@ -14486,10 +14486,12 @@ Summary:
         set_autorotateToPortraitUpsideDown(System.Boolean)
         set_fullScreen(System.Boolean)
         set_lockCursor(System.Boolean)
+        set_orientation(UnityEngine.ScreenOrientation)
         set_sleepTimeout(System.Int32)
         SetResolution(System.Int32,System.Int32,System.Boolean)
         SetResolution(System.Int32,System.Int32,System.Boolean,System.Int32)
     UnityEngine.ScreenCapture
+    UnityEngine.ScreenOrientation
     UnityEngine.Scripting.APIUpdating.MovedFromAttribute
         .ctor(System.String)
         get_IsInDifferentAssembly()

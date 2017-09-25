@@ -2178,10 +2178,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Screen_get_width();
 		Register_UnityEngine_Screen_get_width();
 
-		//System.Void UnityEngine.Screen::set_orientation(UnityEngine.ScreenOrientation)
-		void Register_UnityEngine_Screen_set_orientation();
-		Register_UnityEngine_Screen_set_orientation();
-
 	//End Registrations for type : UnityEngine.Screen
 
 	//Start Registrations for type : UnityEngine.ScriptableObject
