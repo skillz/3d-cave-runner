@@ -236,6 +236,16 @@ extern "C" int UnityDeviceGeneration()
                 _DeviceGeneration = deviceiPadPro1Gen;
             else if (rev == 3 || rev == 4)
                 _DeviceGeneration = deviceiPadPro10Inch1Gen;
+            else if (rev == 11 || rev == 12)
+                _DeviceGeneration = deviceiPad5Gen;
+        }
+        else if (!strncmp(model, "iPad7,", 6))
+        {
+            int rev = atoi(model + 6);
+            if (rev == 1 || rev == 2)
+                _DeviceGeneration = deviceiPadPro2Gen;
+            else if (rev == 3 || rev == 4)
+                _DeviceGeneration = deviceiPadPro10Inch2Gen;
         }
 
         // completely unknown hw - just determine form-factor
@@ -257,7 +267,10 @@ extern "C" int UnityDeviceGeneration()
 extern "C" int UnityDeviceIsStylusTouchSupported()
 {
     int deviceGen = UnityDeviceGeneration();
-    return (deviceGen == deviceiPadPro1Gen || deviceGen == deviceiPadPro10Inch1Gen) ? 1 : 0;
+    return (deviceGen == deviceiPadPro1Gen ||
+            deviceGen == deviceiPadPro10Inch1Gen ||
+            deviceGen == deviceiPadPro2Gen ||
+            deviceGen == deviceiPadPro10Inch2Gen) ? 1 : 0;
 }
 
 extern "C" float UnityDeviceDPI()
@@ -295,6 +308,9 @@ extern "C" float UnityDeviceDPI()
             case deviceiPadAir2:
             case deviceiPadPro1Gen:
             case deviceiPadPro10Inch1Gen:
+            case deviceiPadPro2Gen:
+            case deviceiPadPro10Inch2Gen:
+            case deviceiPad5Gen:
                 _DeviceDPI = 264.0f; break;
 
             // iPad mini

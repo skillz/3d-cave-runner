@@ -1,6 +1,6 @@
 #pragma once
 
-#if UNITY_TVOS
+#if PLATFORM_TVOS
 
 #import <UIKit/UIKit.h>
 #import <GameController/GCController.h>
@@ -13,7 +13,6 @@
 @end
 
 // this is default view controller implementation
-//
 @interface UnityDefaultTVViewController : UnityViewControllerBase
 {
 }

@@ -35,7 +35,7 @@ extern "C" {
 
 // life cycle management
 
-void    UnitySetStartupTime(signed long long startTime);
+void    UnityInitStartupTime();
 void    UnityInitRuntime(int argc, char* argv[]);
 void    UnityInitApplicationNoGraphics(const char* appPathName);
 void    UnityInitApplicationGraphics(int forceDirectRendering);
@@ -130,7 +130,7 @@ int     UnityGetAppBackgroundBehavior();
 
 
 // push notifications
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 void    UnitySendLocalNotification(UILocalNotification* notification);
 #endif
 void    UnitySendRemoteNotification(NSDictionary* notification);
@@ -139,7 +139,8 @@ void    UnitySendRemoteNotificationError(NSError* error);
 
 // native events
 
-void    UnityUpdateDisplayList();
+void    UnityInvalidateDisplayDataCache(void* screen);
+void    UnityUpdateDisplayList(void** screens, int screenCount);
 
 
 // profiler
@@ -165,6 +166,7 @@ void    UnitySetKeyState(int key, int /*bool*/ state);
 // WWW connection handling
 
 void    UnityReportWWWStatusError(void* udata, int status, const char* error);
+void    UnityReportWWWNetworkError(void* udata, int status, const char* error);
 
 void    UnityReportWWWReceivedResponse(void* udata, int status, unsigned expectedDataLength, const char* respHeader);
 void    UnityReportWWWReceivedData(void* udata, const void* buffer, unsigned totalRead, unsigned expectedTotal);

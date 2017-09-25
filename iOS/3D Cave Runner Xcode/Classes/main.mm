@@ -1,6 +1,5 @@
 #include "RegisterMonoModules.h"
 #include "RegisterFeatures.h"
-#include <mach/mach_time.h>
 #include <csignal>
 
 // Hack to work around iOS SDK 4.3 linker problem
@@ -15,10 +14,9 @@ const char* AppControllerClassName = "UnityAppController";
 
 int main(int argc, char* argv[])
 {
-    signed long long startTime = mach_absolute_time();
+    UnityInitStartupTime();
     @autoreleasepool
     {
-        UnitySetStartupTime(startTime);
         UnityInitTrampoline();
         UnityInitRuntime(argc, argv);
 

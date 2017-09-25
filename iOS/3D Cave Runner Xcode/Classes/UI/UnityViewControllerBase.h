@@ -1,7 +1,7 @@
 #pragma once
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 #include "UnityViewControllerBaseiOS.h"
-#elif UNITY_TVOS
+#elif PLATFORM_TVOS
 #include "UnityViewControllerBaseTV.h"
 #endif

@@ -17,7 +17,7 @@
 @interface UnitySkillzSDKDelegate : NSObject<SkillzTurnBasedDelegate, SkillzDelegate>
 
 @property SkillzOrientation orientation;
-@property BOOL shouldLaunchFromURL;
+@property (nonatomic) NSString* matchRules;
 
 @end
 
@@ -31,7 +31,7 @@ static void ResumeApp()
 {
     UnityPause(false);
     UnitySetPlayerFocus(1);
-
+    
     [GetAppController().rootView layoutSubviews];
 }
 
@@ -124,16 +124,19 @@ NSString *unitySkillzDelegateName = @"SkillzDelegate";
     NSString *json = [matchInfo performSelector:@selector(JSONStringRepresentation:)
                                      withObject:gameParameters];
 #pragma GCC diagnostic pop
-
+    
+    [self updateCurrentMatchParams:gameParameters];
+    
+    // There are two sendMessageToUnityObject calls here, one of them will silently fail and should not cause a crash.
+    // This sends a message to call the Unity iOS only skillzTournamentWillBegin method
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"skillzTournamentWillBegin"
                     withParamMessage:json];
-}
-
-
-- (SkillzOrientation)preferredSkillzInterfaceOrientation
-{
-    return self.orientation;
+    
+    // This sends a message to call the Cross Platform OnMatchWillBegin method
+    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                       callingMethod:@"OnMatchWillBegin"
+                    withParamMessage:json];
 }
 
 - (void)skillzWillExit
@@ -185,7 +188,9 @@ NSString *unitySkillzDelegateName = @"SkillzDelegate";
     NSString *json = [currentGameStateInfo performSelector:@selector(JSONStringRepresentation:)
                                                 withObject:gameParameters];
 #pragma GCC diagnostic pop
-
+    
+    [self updateCurrentMatchParams:gameParameters];
+    
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"skillzTurnBasedTournamentWillBegin"
                     withParamMessage:json];
@@ -203,17 +208,27 @@ NSString *unitySkillzDelegateName = @"SkillzDelegate";
     NSString *json = [currentGameStateInfo performSelector:@selector(JSONStringRepresentation:)
                                                 withObject:gameParameters];
 #pragma GCC diagnostic pop
-
+    
+    [self updateCurrentMatchParams:gameParameters];
+    
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"skillzReviewCurrentGameState"
                     withParamMessage:json];
 }
 
-#pragma mark User Engagement
-
-- (BOOL)shouldSkillzLaunchFromURL
+- (void)updateCurrentMatchParams:(NSDictionary *)gameParameters
 {
-    return self.shouldLaunchFromURL;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:gameParameters
+                                                       options:0
+                                                         error:&error];
+    
+    if (jsonData) {
+        NSString *JSONString = [[NSString alloc] initWithBytes:[jsonData bytes]
+                                                        length:[jsonData length]
+                                                      encoding:NSUTF8StringEncoding];
+        self.matchRules = JSONString;
+    }
 }
 
 @end
@@ -315,12 +330,6 @@ extern "C" int _getRandomNumberWithMinAndMax(int min, int max)
 // C-style wrapper for skillzInitForGameId:AndEnvironment: so that it can be accessed by Unity in C#
 extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const char *environment)
 {
-    /*************
-     * File has been modified for internal build creation for multiple SKUs
-     * VCOnly - 2205 on Staging, 3616 on Production
-     * Full - 2204 on Staging, 1410 on Production
-     *************/
-
 #if VCONLY
     NSString *gameIdString = @"3616";
     NSString *environmentString = @"SkillzProduction";
@@ -330,8 +339,8 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
 #endif
     
     /*************
-    * Temporarily point to Staging
-    *************/
+     * Temporarily point to Staging
+     *************/
     //[[Skillz skillzInstance] performSelector:@selector(setStaging)];
     
     SkillzEnvironment skillzEnvironment;
@@ -359,14 +368,14 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
 // C-style wrapper for exposing a user's data to Unity in C#
 extern "C" const char *_player()
 {
-
+    
     SKZPlayer *player = [Skillz player];
     if (player) {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wundeclared-selector"
         NSString *json = [[Skillz player] performSelector:@selector(JSONStringRepresentation)];
 #pragma GCC diagnostic pop
-
+        
         if (json) {
             return [json UTF8String];
         } else {
@@ -399,42 +408,18 @@ extern "C" void _showSDKVersionInfo()
     [Skillz showSDKVersionInfo];
 }
 
-// Parent method for handling launching the various Skillz options. Do not use, may change in the future.
-extern "C" void _launchSkillzInternalHandler(const char *orientation)
+//Launches basic Skillz implementation for single match play.
+extern "C" void _launchSkillz()
 {
     PauseApp();
-    
-    // Parse the input string in to a SkillzOrientation
-    NSString *orientationString = [[NSString alloc] initWithUTF8String:orientation];
-    SkillzOrientation skillzOrientation;
-    if ([orientationString isEqualToString:@"SkillzLandscape"]) {
-        skillzOrientation = SkillzLandscape;
-    } else if ([orientationString isEqualToString:@"SkillzPortrait"]) {
-        skillzOrientation = SkillzPortrait;
-    } else {
-        // If the orientation is not SkillzLandscape or SkillzPortrait, throw an error
-        NSString *exceptionReason = [@"Invalid value for orientation: " stringByAppendingString:orientationString];
-        NSException *badEnvironmentException = [NSException exceptionWithName:@"InvalidArgumentException"
-                                                                       reason:exceptionReason
-                                                                     userInfo:nil];
-        [badEnvironmentException raise];
-    }
-    
-    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).orientation = skillzOrientation;
     [[Skillz skillzInstance] launchSkillz];
-}
-
-//Launches basic Skillz implementation for single match play.
-extern "C" void _launchSkillz(const char *orientation)
-{
-    _launchSkillzInternalHandler(orientation);
 }
 
 // C-style wrapper for displayTournamentResultsWithScore so that it can be accessed by Unity in C#
 extern "C" void _displayTournamentResultsWithScore(int score)
 {
     PauseApp();
-
+    
     [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
                                                 withCompletion:^{
                                                     // Send message to Unity object to call C# method
@@ -449,8 +434,26 @@ extern "C" void _displayTournamentResultsWithScore(int score)
 extern "C" void _displayTournamentResultsWithFloatScore(float score)
 {
     PauseApp();
-
+    
     [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
+                                                withCompletion:^{
+                                                    // Send message to Unity object to call C# method
+                                                    // SkillzDelegate.skillzWithTournamentCompletion, implemented by publisher
+                                                    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                                                                       callingMethod:@"skillzWithTournamentCompletion"
+                                                                    withParamMessage:@""];
+                                                }];
+}
+
+extern "C" void _displayTournamentResultsWithStringScore(const char *score)
+{
+    PauseApp();
+    
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *playerScore = [f numberFromString:@(score)];
+    
+    [[Skillz skillzInstance] displayTournamentResultsWithScore:playerScore
                                                 withCompletion:^{
                                                     // Send message to Unity object to call C# method
                                                     // SkillzDelegate.skillzWithTournamentCompletion, implemented by publisher
@@ -466,11 +469,24 @@ extern "C" void _updatePlayersCurrentScore(float score)
     [[Skillz skillzInstance] updatePlayersCurrentScore:@(score)];
 }
 
+extern "C" void _updatePlayersCurrentStringScore(const char *score)
+{
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *playerScore = [f numberFromString:@(score)];
+    [[Skillz skillzInstance] updatePlayersCurrentScore:playerScore];
+}
+
+extern "C" void _updatePlayersCurrentIntScore(int score)
+{
+    [[Skillz skillzInstance] updatePlayersCurrentScore:@(score)];
+}
+
 // C-style wrapper for notifyPlayerAbortWithCompletion so that it can be accessed by Unity in C#
 extern "C" void _notifyPlayerAbortWithCompletion()
 {
     PauseApp();
-
+    
     [[Skillz skillzInstance] notifyPlayerAbortWithCompletion:^() {
         // Send message to Unity object to call C# method
         // SkillzDelegate.skillzWithPlayerAbort, implemented by publisher
@@ -484,7 +500,7 @@ extern "C" void _notifyPlayerAbortWithCompletion()
 extern "C" void _completeTurnWithGameData(const char *gameData, const char *score, float playerCurrentTotalScore, float opponentCurrentTotalScore, const char * roundOutcome, const char * matchOutcome)
 {
     PauseApp();
-
+    
     NSString * roundOutcomeString = [[NSString alloc] initWithUTF8String:roundOutcome];
     NSString * matchOutcomeString = [[NSString alloc] initWithUTF8String:matchOutcome];
     
@@ -512,12 +528,12 @@ extern "C" void _completeTurnWithGameData(const char *gameData, const char *scor
     {
         opponentCurrentTotal = [NSNumber numberWithFloat:opponentCurrentTotalScore];
     }
-
+    
     if (score == NULL)
     {
         score = "";
     }
-
+    
     [[Skillz skillzInstance] completeTurnWithGameData:[[NSString alloc] initWithUTF8String:gameData]
                                           playerScore:[[NSString alloc] initWithUTF8String:score]
                               playerCurrentTotalScore:playerCurrentTotal
@@ -538,7 +554,7 @@ extern "C" void _completeTurnWithGameData(const char *gameData, const char *scor
 extern "C" void _finishReviewingCurrentGameState()
 {
     PauseApp();
-
+    
     [[Skillz skillzInstance] finishReviewingCurrentGameState:^(){
         // Send message to Unity object to call C# method
         // SkillzDelegate.skillzFinishReviewingCurrentGameState, implemented by publisher
@@ -548,13 +564,15 @@ extern "C" void _finishReviewingCurrentGameState()
     }];
 }
 
-// C-style wrapper for shouldSkillzLaunch so that it can be access by Unity in C#
-extern "C" void _setShouldSkillzLaunchFromURL(const bool allowLaunch) {
-    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).shouldLaunchFromURL = allowLaunch;
-}
-
+// C-style wrapper for getRandomFloat so that it can be accessed by Unity in C#
 extern "C" float _getRandomFloat() {
     return (float) [Skillz getRandomFloat];
+}
+
+// C-style wrapper for getMatchRules so that it can be accessed by Unity in C#
+extern "C" const char *_getMatchRules() {
+    return [((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).matchRules UTF8String];
+    
 }
 
 //################################################################################
@@ -562,4 +580,3 @@ extern "C" float _getRandomFloat() {
 //##### End of C wrappers
 //#####
 //################################################################################
-
