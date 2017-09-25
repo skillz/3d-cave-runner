@@ -236,6 +236,8 @@ extern "C" int UnityDeviceGeneration()
                 _DeviceGeneration = deviceiPadPro1Gen;
             else if (rev == 3 || rev == 4)
                 _DeviceGeneration = deviceiPadPro10Inch1Gen;
+            else if (rev == 11 || rev == 12)
+                _DeviceGeneration = deviceiPad5Gen;
         }
 
         // completely unknown hw - just determine form-factor
@@ -295,6 +297,7 @@ extern "C" float UnityDeviceDPI()
             case deviceiPadAir2:
             case deviceiPadPro1Gen:
             case deviceiPadPro10Inch1Gen:
+            case deviceiPad5Gen:
                 _DeviceDPI = 264.0f; break;
 
             // iPad mini

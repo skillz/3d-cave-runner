@@ -79,7 +79,7 @@ static NSOperationQueue *fileOperationQueue;
         self.udata  = udata;
 
         if ([url.scheme caseInsensitiveCompare: @"http"] == NSOrderedSame)
-            NSLog(@"You are using download over http. Currently unity adds NSAllowsArbitraryLoads to Info.plist to simplify transition, but it will be removed soon. Please consider updating to https.");
+            NSLog(@"You are using download over http. Currently Unity adds NSAllowsArbitraryLoads to Info.plist to simplify transition, but it will be removed soon. Please consider updating to https.");
     }
 
     return self;
@@ -228,7 +228,7 @@ static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
 
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
 {
-    UnityReportWWWStatusError(self.udata, (int)[error code], [[error localizedDescription] UTF8String]);
+    UnityReportWWWNetworkError(self.udata, (int)[error code], [[error localizedDescription] UTF8String]);
     UnityReportWWWFinishedLoadingData(self.udata);
     SignalConnection(self);
 }
@@ -316,7 +316,7 @@ static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
 // unity interface
 //
 
-extern "C" void UnitySendWWWConnection(void* connection, const void* data, unsigned length, bool blockImmediately)
+extern "C" void UnitySendWWWConnection(void* connection, const void* data, unsigned length, bool blockImmediately, unsigned long timeoutSec)
 {
     UnityWWWConnectionDelegate* delegate = (__bridge UnityWWWConnectionDelegate*)connection;
 
@@ -327,6 +327,8 @@ extern "C" void UnitySendWWWConnection(void* connection, const void* data, unsig
         [request setHTTPBody: [NSData dataWithBytes: data length: length]];
         [request setValue: [NSString stringWithFormat: @"%d", length] forHTTPHeaderField: @"Content-Length"];
     }
+
+    [request setTimeoutInterval: timeoutSec];
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -344,16 +346,10 @@ extern "C" void UnitySendWWWConnection(void* connection, const void* data, unsig
     {
         queueToUse = fileOperationQueue;
     }
-    // Start connection on non-main thread
-    // This is important because didReceiveData handler may stall in case a target buffer is not ready.
-    // We have limited accumulator buffer pretty much for everything (assetbundles, downloadhandler) and stall until the data is consumed.
-    [queueToUse addOperation: [NSBlockOperation blockOperationWithBlock:^{
-        NSRunLoop *loop = [NSRunLoop currentRunLoop];
-        delegate.connection = [[NSURLConnection alloc] initWithRequest: request delegate: delegate startImmediately: NO];
-        [delegate.connection scheduleInRunLoop: loop forMode: NSRunLoopCommonModes];
-        [delegate.connection start];
-        [loop run];
-    }]];
+
+    delegate.connection = [[NSURLConnection alloc] initWithRequest: request delegate: delegate startImmediately: NO];
+    [delegate.connection setDelegateQueue: queueToUse];
+    [delegate.connection start];
 
     if (blockImmediately)
     {

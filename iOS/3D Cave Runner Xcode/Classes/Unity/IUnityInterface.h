@@ -194,3 +194,7 @@ void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API UnityPluginUnload();
 #ifdef __cplusplus
 }
 #endif
+
+struct RenderSurfaceBase;
+typedef struct RenderSurfaceBase* UnityRenderBuffer;
+typedef unsigned int UnityTextureID;

@@ -12,8 +12,6 @@
 #import <OpenGLES/EAGLDrawable.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 
 #include <mach/mach_time.h>
 
@@ -33,6 +31,9 @@
 #include "Unity/EAGLContextHelper.h"
 #include "Unity/GlesHelper.h"
 #include "PluginBase/AppDelegateListener.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 // Set this to 1 to force single threaded rendering
 #define UNITY_FORCE_DIRECT_RENDERING 0
@@ -84,7 +85,7 @@ bool    _supportsMSAA           = false;
 @synthesize renderDelegate          = _renderDelegate;
 @synthesize quitHandler             = _quitHandler;
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 @synthesize interfaceOrientation    = _curOrientation;
 #endif
 
@@ -148,15 +149,23 @@ extern "C" void UnityRequestQuit()
         exit(0);
 }
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 - (NSUInteger)application:(UIApplication*)application supportedInterfaceOrientationsForWindow:(UIWindow*)window
 {
-	return UIInterfaceOrientationMaskPortrait;
+    // UIInterfaceOrientationMaskAll
+    // it is the safest way of doing it:
+    // - GameCenter and some other services might have portrait-only variant
+    //     and will throw exception if portrait is not supported here
+    // - When you change allowed orientations if you end up forbidding current one
+    //     exception will be thrown
+    // Anyway this is intersected with values provided from UIViewController, so we are good
+    return (1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationPortraitUpsideDown)
+        | (1 << UIInterfaceOrientationLandscapeRight) | (1 << UIInterfaceOrientationLandscapeLeft);
 }
 
 #endif
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 - (void)application:(UIApplication*)application didReceiveLocalNotification:(UILocalNotification*)notification
 {
     AppController_SendNotificationWithArg(kUnityDidReceiveLocalNotification, notification);
@@ -178,7 +187,7 @@ extern "C" void UnityRequestQuit()
     UnitySendDeviceToken(deviceToken);
 }
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler
 {
     AppController_SendNotificationWithArg(kUnityDidReceiveRemoteNotification, userInfo);
@@ -201,7 +210,6 @@ extern "C" void UnityRequestQuit()
 
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation
 {
-    NSLog(@"This is a new fingerprint");
     NSMutableArray* keys    = [NSMutableArray arrayWithCapacity: 3];
     NSMutableArray* values  = [NSMutableArray arrayWithCapacity: 3];
 
@@ -211,7 +219,7 @@ extern "C" void UnityRequestQuit()
     ADD_ITEM(sourceApplication);
     ADD_ITEM(annotation);
 
-    #undef ADD_ITEM
+    #undef ADD_ITEMz		
 
     NSDictionary* notifData = [NSDictionary dictionaryWithObjects: values forKeys: keys];
     AppController_SendNotificationWithArg(kUnityOnOpenURL, notifData);
@@ -225,11 +233,11 @@ extern "C" void UnityRequestQuit()
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-	::printf ("-> applicationDidFinishLaunching()\n");
-    [Fabric with:@[[Crashlytics class]]];
+
+    ::printf("-> applicationDidFinishLaunching()\n");
 
     // send notfications
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
     if (UILocalNotification* notification = [launchOptions objectForKey: UIApplicationLaunchOptionsLocalNotificationKey])
         UnitySendLocalNotification(notification);
 
@@ -254,6 +262,11 @@ extern "C" void UnityRequestQuit()
 
     // if you wont use keyboard you may comment it out at save some memory
     [KeyboardDelegate Initialize];
+    
+    NSString * someString = @"Make fingerprint change";
+    NSLog(@"%@", someString);
+    
+    [Fabric with:@[[Crashlytics class]]];
 
     return YES;
 }

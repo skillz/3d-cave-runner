@@ -30,7 +30,7 @@ void UnityRegisterAppDelegateListener(id<AppDelegateListener> obj)
 
     REGISTER_SELECTOR(@selector(applicationDidReceiveMemoryWarning:), UIApplicationDidReceiveMemoryWarningNotification);
     REGISTER_SELECTOR(@selector(applicationSignificantTimeChange:), UIApplicationSignificantTimeChangeNotification);
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
     REGISTER_SELECTOR(@selector(applicationWillChangeStatusBarFrame:), UIApplicationWillChangeStatusBarFrameNotification);
     REGISTER_SELECTOR(@selector(applicationWillChangeStatusBarOrientation:), UIApplicationWillChangeStatusBarOrientationNotification);
 #endif
@@ -50,7 +50,7 @@ void UnityUnregisterAppDelegateListener(id<AppDelegateListener> obj)
 
     [[NSNotificationCenter defaultCenter] removeObserver: obj name: UIApplicationDidReceiveMemoryWarningNotification object: nil];
     [[NSNotificationCenter defaultCenter] removeObserver: obj name: UIApplicationSignificantTimeChangeNotification object: nil];
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
     [[NSNotificationCenter defaultCenter] removeObserver: obj name: UIApplicationWillChangeStatusBarFrameNotification object: nil];
     [[NSNotificationCenter defaultCenter] removeObserver: obj name: UIApplicationWillChangeStatusBarOrientationNotification object: nil];
 #endif

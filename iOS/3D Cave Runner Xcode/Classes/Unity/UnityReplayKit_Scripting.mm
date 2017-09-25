@@ -8,6 +8,7 @@
 extern "C"
 {
 #if UNITY_REPLAY_KIT_AVAILABLE
+
 int UnityReplayKitAPIAvailable()
 {
     return [UnityReplayKit sharedInstance].apiAvailable ? 1 : 0;
@@ -16,6 +17,30 @@ int UnityReplayKitAPIAvailable()
 int UnityReplayKitRecordingAvailable()
 {
     return [UnityReplayKit sharedInstance].recordingPreviewAvailable ? 1 : 0;
+}
+
+int UnityReplayKitIsCameraEnabled()
+{
+    return [UnityReplayKit sharedInstance].cameraEnabled != NO ? 1 : 0;
+}
+
+int UnityReplayKitSetCameraEnabled(bool yes)
+{
+    BOOL value = yes ? YES : NO;
+    [UnityReplayKit sharedInstance].cameraEnabled = value;
+    return [UnityReplayKit sharedInstance].cameraEnabled == value;
+}
+
+int UnityReplayKitIsMicrophoneEnabled()
+{
+    return [UnityReplayKit sharedInstance].microphoneEnabled != NO ? 1 : 0;
+}
+
+int UnityReplayKitSetMicrophoneEnabled(bool yes)
+{
+    BOOL value = yes ? YES : NO;
+    [UnityReplayKit sharedInstance].microphoneEnabled = value;
+    return [UnityReplayKit sharedInstance].microphoneEnabled == value;
 }
 
 const char* UnityReplayKitLastError()
@@ -44,8 +69,24 @@ int UnityReplayKitIsRecording()
     return [UnityReplayKit sharedInstance].isRecording ? 1 : 0;
 }
 
+int UnityReplayKitShowCameraPreviewAt(float x, float y)
+{
+    float q = 1.0f / UnityScreenScaleFactor([UIScreen mainScreen]);
+    float h = [[UIScreen mainScreen] bounds].size.height;
+    return [[UnityReplayKit sharedInstance] showCameraPreviewAt: CGPointMake(x * q, h - y * q)] ? 1 : 0;
+}
+
+void UnityReplayKitHideCameraPreview()
+{
+    [[UnityReplayKit sharedInstance] hideCameraPreview];
+}
+
 int UnityReplayKitStopRecording()
 {
+#if !PLATFORM_TVOS
+    UnityReplayKitHideCameraPreview();
+    UnityReplayKitSetCameraEnabled(false);
+#endif
     return [[UnityReplayKit sharedInstance] stopRecording] ? 1 : 0;
 }
 
@@ -71,6 +112,9 @@ void UnityReplayKitStartBroadcasting(void* callback)
 
 void UnityReplayKitStopBroadcasting()
 {
+#if !PLATFORM_TVOS
+    UnityReplayKitHideCameraPreview();
+#endif
     [[UnityReplayKit sharedInstance] stopBroadcasting];
 }
 
@@ -89,43 +133,7 @@ const char* UnityReplayKitGetBroadcastURL()
     return nullptr;
 }
 
-int UnityReplayKitIsCameraEnabled()
-{
-    return [UnityReplayKit sharedInstance].cameraEnabled != NO ? 1 : 0;
-}
-
-int UnityReplayKitSetCameraEnabled(bool yes)
-{
-    BOOL value = yes ? YES : NO;
-    [UnityReplayKit sharedInstance].cameraEnabled = value;
-    return [UnityReplayKit sharedInstance].cameraEnabled == value;
-}
-
-int UnityReplayKitIsMicrophoneEnabled()
-{
-    return [UnityReplayKit sharedInstance].microphoneEnabled != NO ? 1 : 0;
-}
-
-int UnityReplayKitSetMicrophoneEnabled(bool yes)
-{
-    BOOL value = yes ? YES : NO;
-    [UnityReplayKit sharedInstance].microphoneEnabled = value;
-    return [UnityReplayKit sharedInstance].microphoneEnabled == value;
-}
-
 extern "C" float UnityScreenScaleFactor(UIScreen* screen);
-
-int UnityReplayKitShowCameraPreviewAt(float x, float y)
-{
-    float q = 1.0f / UnityScreenScaleFactor([UIScreen mainScreen]);
-    float h = [[UIScreen mainScreen] bounds].size.height;
-    return [[UnityReplayKit sharedInstance] showCameraPreviewAt: CGPointMake(x * q, h - y * q)] ? 1 : 0;
-}
-
-void UnityReplayKitHideCameraPreview()
-{
-    [[UnityReplayKit sharedInstance] hideCameraPreview];
-}
 
 #else
 

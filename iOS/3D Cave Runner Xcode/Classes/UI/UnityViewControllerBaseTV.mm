@@ -1,4 +1,4 @@
-#if UNITY_TVOS
+#if PLATFORM_TVOS
 
 #include "UnityViewControllerBaseTV.h"
 #include "OrientationSupport.h"
@@ -51,4 +51,4 @@ extern "C" void UnityNotifyAutoOrientationChange()
 {
 }
 
-#endif // UNITY_TVOS
+#endif // PLATFORM_TVOS

@@ -31,6 +31,12 @@ if (!length($locationInUse)) {
    `PlistBuddy -c \'Add :NSLocationWhenInUseUsageDescription string \"Due to legal requirements we require your location in games that can be played for cash.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 }
 
+my $contactsInUse = `PlistBuddy -c \'Print NSContactsUsageDescription\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
+
+if (!length($contactsInUse)) {
+`PlistBuddy -c \'Add :NSContactsUsageDescription string \"Find friends to chat with from your phone contacts. Skillz will never contact anyone without your permission.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
+}
+
 my $bluetoothInUse = `PlistBuddy -c \'Print NSBluetoothPeripheralUsageDescription\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 
 if (!length($bluetoothInUse)) {

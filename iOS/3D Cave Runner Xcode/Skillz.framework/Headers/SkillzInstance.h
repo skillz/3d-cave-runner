@@ -74,15 +74,6 @@ typedef NS_ENUM (NSInteger, SkillzOrientation) {
  */
 @protocol SkillzBaseDelegate <NSObject>
 
-@required
-/**
- * Skillz will only query for this value upon display of the Skillz UI, either via completion of game, or initial launch.
- *
- * @return The orientation that will be used to construct the Skillz UI. The Skillz UI will then be locked to this orientation
- *         until it is dismissed.
- */
-- (SkillzOrientation)preferredSkillzInterfaceOrientation;
-
 @optional
 /**
  * This method will be called when the Skillz SDK will exit. It will NOT be called when a Skillz Tournament is launched.
@@ -100,26 +91,6 @@ typedef NS_ENUM (NSInteger, SkillzOrientation) {
 - (void)skillzHasFinishedLaunching;
 
 #pragma mark User Engagement
-
-/**
- * This method must be overridden to allow your game to launch into Skillz from sources external to your application
- * (e.g. from Skillz-run advertisements). By default, this method returns FALSE and this functionality is disabled.
- *
- * Implementation:
- *
- *     - Return TRUE to signify that your application is in a state where it is safe for Skillz to launch.
- *     - Return FALSE to signify that it is NOT safe for Skillz to launch at this time.
- *
- * For example:
- *
- *     - If the user is mid-gameplay, return FALSE. This ensures that gameplay is not interrupted.
- *     - If the user is at a splash screen or in an options menu, return TRUE. This is a safe place to launch into Skillz from.
- *
- * When returning TRUE, be sure that any relevant state is cleaned up in the skillzWillLaunch method.
- *
- * @return If FALSE is returned, Skillz will not launch.
- */
-- (BOOL)shouldSkillzLaunchFromURL;
 
 /**
  *  This method will be called when a user has successfully made a cash deposit with Skillz. You may use this method for recording
@@ -161,6 +132,7 @@ typedef NS_ENUM (NSInteger, SkillzOrientation) {
               withMatchInfo:(SKZMatchInfo *)matchInfo;
 
 @optional
+
 
 /**
  *  Deprecated, use tournamentWillBegin:withMatchInfo:
@@ -251,6 +223,15 @@ NS_AVAILABLE_IOS(8_0)
  * @return The singleton instance of the Skillz SDK object
  */
 + (Skillz *)skillzInstance;
+
+/**
+ * Returns a Dictionary of Game Parameters that you set in each tournament in Developer Portal.
+ * 
+ * You can set or edit these game parameters by clicking Tournaments > Edit in your Developer Portal (https://developers.skillz.com/dashboard)
+ *
+ * You can use these game parameters to provide a different user experience for each tournament that you have. 
+ */
++ (NSDictionary *)getMatchRules;
 
 /**
  * Returns a random integer supplied by the Skillz SDK to ensure fairness across competition games.
@@ -367,6 +348,8 @@ NS_AVAILABLE_IOS(8_0)
  */
 - (void)setGameHasBackgroundMusic:(BOOL)hasBackgroundMusic;
 
+- (BOOL)gameCanReviewTurn;
+
 #pragma mark - Sklillz SDK Information
 
 ///----------------------------------------------------
@@ -407,6 +390,7 @@ NS_AVAILABLE_IOS(8_0)
  * player currently logged in, will return nil.
  */
 + (SKZPlayer *)player;
+
 
 /**
  *  DEPRECATED: Use the player method instead.
