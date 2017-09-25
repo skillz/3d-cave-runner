@@ -281,9 +281,9 @@ static UnityReplayKit* _replayKit = nil;
         return;
     }
 
-    [class_BroadcastActivityViewController performSelector: @selector(loadBroadcastActivityViewControllerWithHandler:) withObject:^(UnityReplayKit_RPBroadcastActivityViewController* vc, NSError* error)
+    [class_BroadcastActivityViewController performSelector: @selector(loadBroadcastActivityViewControllerWithHandler:) withObject:^(UnityReplayKit_RPBroadcastActivityViewController* sBroadcastActivityViewController, NSError* error)
     {
-        if (vc == nil || error != nil)
+        if (sBroadcastActivityViewController == nil || error != nil)
         {
             _lastError = [error description];
             UnityReplayKitTriggerBroadcastStatusCallback(callback, false, [_lastError UTF8String]);
@@ -298,21 +298,10 @@ static UnityReplayKit* _replayKit = nil;
         self->overlayWindow.rootViewController = rootViewController;
 
         UnityPause(1);
-        vc.delegate = self;
+        sBroadcastActivityViewController.delegate = self;
         broadcastStartStatusCallback = callback;
-
-    #if PLATFORM_TVOS
-        vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    #else
-        vc.modalPresentationStyle = UIModalPresentationPopover;
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        {
-            vc.popoverPresentationController.sourceRect = CGRectMake(GetAppController().rootView.bounds.size.width / 2, 0, 0, 0);
-            vc.popoverPresentationController.sourceView = GetAppController().rootView;
-        }
-    #endif
-
-        [UnityGetGLViewController() presentViewController: vc animated: YES completion: nil];
+        sBroadcastActivityViewController.modalPresentationStyle = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ? UIModalPresentationFormSheet : UIModalPresentationPopover;
+        [UnityGetGLViewController() presentViewController: sBroadcastActivityViewController animated: YES completion: nil];
     }];
     return;
 }

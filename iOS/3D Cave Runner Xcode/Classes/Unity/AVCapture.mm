@@ -18,7 +18,7 @@ extern "C" int UnityGetAVCapturePermission(int captureType)
     if (mediaType == nil)
         return avCapturePermissionDenied;
 
-#if !PLATFORM_TVOS && (UNITY_USES_WEBCAM || UNITY_USES_MICROPHONE)
+#if !UNITY_TVOS && UNITY_USES_WEBCAM
     NSInteger status = AVAuthorizationStatusAuthorized;
     if ([AVCaptureDevice respondsToSelector: @selector(authorizationStatusForMediaType:)])
         status = [AVCaptureDevice authorizationStatusForMediaType: mediaType];
@@ -34,7 +34,7 @@ extern "C" int UnityGetAVCapturePermission(int captureType)
 
 extern "C" void UnityRequestAVCapturePermission(int captureType)
 {
-#if !PLATFORM_TVOS && (UNITY_USES_WEBCAM || UNITY_USES_MICROPHONE)
+#if !UNITY_TVOS && UNITY_USES_WEBCAM
     if ([AVCaptureDevice respondsToSelector: @selector(requestAccessForMediaType:completionHandler:)])
     {
         NSString* mediaType = MediaTypeFromEnum(captureType);

@@ -1,4 +1,4 @@
-#if !PLATFORM_TVOS && UNITY_USES_WEBCAM
+#if !UNITY_TVOS && UNITY_USES_WEBCAM
 
 #include "CameraCapture.h"
 #include "AVCapture.h"

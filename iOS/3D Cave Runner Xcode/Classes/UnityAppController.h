@@ -23,7 +23,7 @@
     // we will cache view controllers for fixed orientation
     // auto-rotation view contoller goes to index=0
     UIViewController*   _viewControllerForOrientation[5];
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
     UIInterfaceOrientation  _curOrientation;
 #endif
 
@@ -54,7 +54,7 @@
 @property (readonly, copy, nonatomic) UIViewController*     rootViewController;
 @property (readonly, copy, nonatomic) DisplayConnection*    mainDisplay;
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 @property (readonly, nonatomic) UIInterfaceOrientation      interfaceOrientation;
 #endif
 

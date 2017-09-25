@@ -53,7 +53,7 @@ extern bool _ios80orNewer;
     {
         self->_screen = targetScreen;
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
         targetScreen.currentMode = targetScreen.preferredMode;
 #endif
 
@@ -415,7 +415,7 @@ static void EnsureDisplayIsInited(DisplayConnection* conn)
     }
 }
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 extern "C" int UnityDisplayManager_DisplayCount()
 {
     return (int)[DisplayManager Instance].displayCount;
@@ -480,11 +480,6 @@ extern "C" void UnityDisplayManager_ShouldShowWindowOnDisplay(void* nativeDispla
 
     if (screen != [UIScreen mainScreen])
         [conn shouldShowWindow: show];
-}
-
-extern "C" int UnityDisplayManager_PrimaryDisplayIndex()
-{
-    return 0;
 }
 
 #endif

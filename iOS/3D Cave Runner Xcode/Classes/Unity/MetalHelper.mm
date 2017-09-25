@@ -62,9 +62,6 @@ extern "C" void CreateSystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
     surface->layer.pixelFormat = colorFormat;
     surface->layer.framebufferOnly = NO;
     surface->colorFormat = colorFormat;
-
-    MTLTextureDescriptor* txDesc = [MTLTextureDescriptorClass texture2DDescriptorWithPixelFormat: colorFormat width: surface->targetW height: surface->targetH mipmapped: NO];
-    surface->drawableProxyRT = [surface->device newTextureWithDescriptor: txDesc];
 }
 
 extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
@@ -75,7 +72,7 @@ extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
 
     if (w != surface->systemW || h != surface->systemH || surface->useCVTextureCache)
     {
-#if PLATFORM_IOS || PLATFORM_TVOS
+#if UNITY_IOS || UNITY_TVOS
         if (surface->useCVTextureCache)
             surface->cvTextureCache = CreateCVTextureCache();
 
@@ -95,7 +92,7 @@ extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
             txDesc.pixelFormat = surface->srgb ? MTLPixelFormatBGRA8Unorm_sRGB : MTLPixelFormatBGRA8Unorm;
             txDesc.arrayLength = 1;
             txDesc.mipmapLevelCount = 1;
-#if PLATFORM_OSX
+#if UNITY_OSX
             txDesc.resourceOptions = MTLResourceCPUCacheModeDefaultCache | MTLResourceStorageModeManaged;
 #endif
 #if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
@@ -119,7 +116,7 @@ extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
         txDesc.arrayLength = 1;
         txDesc.mipmapLevelCount = 1;
         txDesc.sampleCount = surface->msaaSamples;
-#if PLATFORM_OSX
+#if UNITY_OSX
         txDesc.resourceOptions = MTLResourceCPUCacheModeDefaultCache | MTLResourceStorageModePrivate;
 #endif
 #if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
@@ -151,14 +148,14 @@ extern "C" void CreateSharedDepthbufferMTL(UnityDisplaySurfaceMTL* surface)
 {
     DestroySharedDepthbufferMTL(surface);
 
-#if PLATFORM_OSX
+#if UNITY_OSX
     MTLPixelFormat pixelFormat = MTLPixelFormatDepth32Float_Stencil8;
 #else
     MTLPixelFormat pixelFormat = MTLPixelFormatDepth32Float;
 #endif
 
     MTLTextureDescriptor* depthTexDesc = [MTLTextureDescriptorClass texture2DDescriptorWithPixelFormat: pixelFormat width: surface->targetW height: surface->targetH mipmapped: NO];
-#if PLATFORM_OSX
+#if UNITY_OSX
     depthTexDesc.resourceOptions = MTLResourceCPUCacheModeDefaultCache | MTLResourceStorageModePrivate;
 #endif
 #if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
@@ -174,7 +171,7 @@ extern "C" void CreateSharedDepthbufferMTL(UnityDisplaySurfaceMTL* surface)
     }
     surface->depthRB = [surface->device newTextureWithDescriptor: depthTexDesc];
 
-#if PLATFORM_OSX
+#if UNITY_OSX
     surface->stencilRB = surface->depthRB;
 #else
     MTLTextureDescriptor* stencilTexDesc = [MTLTextureDescriptorClass texture2DDescriptorWithPixelFormat: MTLPixelFormatStencil8 width: surface->targetW height: surface->targetH mipmapped: NO];
@@ -204,9 +201,9 @@ extern "C" void CreateUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface)
     // in case of rendering to native + AA, we will also update native target every frame
 
     if (surface->targetAAColorRT)
-        surface->unityColorBuffer   = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetAAColorRT, surface->targetColorRT, &tgt_desc, nil);
+        surface->unityColorBuffer   = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetAAColorRT, surface->targetColorRT, &tgt_desc);
     else if (surface->targetColorRT)
-        surface->unityColorBuffer   = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetColorRT, nil, &tgt_desc, nil);
+        surface->unityColorBuffer   = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetColorRT, nil, &tgt_desc);
     else
         surface->unityColorBuffer   = UnityCreateDummySurface(surface->unityColorBuffer, true, &sys_desc);
 
@@ -247,26 +244,17 @@ extern "C" void PresentMTL(UnityDisplaySurfaceMTL* surface)
         [UnityCurrentMTLCommandBuffer() presentDrawable: surface->drawable];
 }
 
-extern "C" MTLTextureRef AcquireDrawableMTL(UnityDisplaySurfaceMTL* surface)
+extern "C" void StartFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
 {
-    if (!surface)
-        return nil;
-
-    surface->drawable = [surface->layer nextDrawable];
+    // in case of skipping present we want to nullify prev drawable explicitly to poke ARC
+    surface->drawable       = nil;
+    surface->drawable       = [surface->layer nextDrawable];
 
     // on A7 SoC nextDrawable may be nil before locking the screen
     if (!surface->drawable)
-        return nil;
+        return;
 
-    surface->systemColorRB = [surface->drawable texture];
-    return surface->systemColorRB;
-}
-
-extern "C" void StartFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
-{
-    // we will acquire drawable lazily in AcquireDrawableMTL
-    surface->drawable = nil;
-    surface->systemColorRB  = surface->drawableProxyRT;
+    surface->systemColorRB  = [surface->drawable texture];
 
     // screen disconnect notification comes asynchronously
     // even better when preparing render we might still have [UIScreen screens].count == 2, but drawable would be nil already
@@ -275,13 +263,13 @@ extern "C" void StartFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
         UnityRenderBufferDesc sys_desc = { surface->systemW, surface->systemH, 1, 1, 1};
         UnityRenderBufferDesc tgt_desc = { surface->targetW, surface->targetH, 1, (unsigned int)surface->msaaSamples, 1};
 
-        surface->systemColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->systemColorBuffer, surface->systemColorRB, nil, &sys_desc, surface);
+        surface->systemColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->systemColorBuffer, surface->systemColorRB, nil, &sys_desc);
         if (surface->targetColorRT == nil)
         {
             if (surface->targetAAColorRT)
-                surface->unityColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetAAColorRT, surface->systemColorRB, &tgt_desc, surface);
+                surface->unityColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetAAColorRT, surface->systemColorRB, &tgt_desc);
             else
-                surface->unityColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->systemColorRB, nil, &tgt_desc, surface);
+                surface->unityColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->systemColorRB, nil, &tgt_desc);
         }
     }
     else

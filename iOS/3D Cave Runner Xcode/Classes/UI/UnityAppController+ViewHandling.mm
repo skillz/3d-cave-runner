@@ -18,7 +18,7 @@ extern bool _unityAppReady;
 
 @implementation UnityAppController (ViewHandling)
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 // special case for when we DO know the app orientation, but dont get it through normal mechanism (UIViewController orientation handling)
 // how can this happen:
 // 1. On startup: ios is not sending "change orientation" notifications on startup (but rather we "start" in correct one already)
@@ -38,7 +38,7 @@ extern bool _unityAppReady;
     return [[UnityView alloc] initFromMainScreen];
 }
 
-#if PLATFORM_TVOS
+#if UNITY_TVOS
 - (UIViewController*)createUnityViewControllerForTVOS
 {
     UnityDefaultTVViewController* controller = [[UnityDefaultTVViewController alloc] init];
@@ -87,7 +87,7 @@ extern bool _unityAppReady;
 
 - (UIViewController*)createRootViewController
 {
-#if PLATFORM_TVOS
+#if UNITY_TVOS
     return [self createUnityViewControllerForTVOS];
 #else
     UIViewController* ret = nil;
@@ -116,13 +116,18 @@ extern bool _unityAppReady;
     _unityView.autoresizingMask     = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
     _rootController.view = _rootView = _unityView;
+#if !UNITY_TVOS
+    _rootController.wantsFullScreenLayout = TRUE;
+#endif
 }
 
 - (void)willTransitionToViewController:(UIViewController*)toController fromViewController:(UIViewController*)fromController
 {
+    fromController.view = nil;
+    toController.view   = _rootView;
 }
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 - (void)interfaceWillChangeOrientationTo:(UIInterfaceOrientation)toInterfaceOrientation
 {
     UIInterfaceOrientation fromInterfaceOrientation = _curOrientation;
@@ -218,16 +223,13 @@ extern bool _unityAppReady;
 - (void)transitionToViewController:(UIViewController*)vc
 {
     [self willTransitionToViewController: vc fromViewController: _rootController];
+    _rootController = vc;
+    _window.rootViewController = vc;
 
-    // first hide window and remove view hierarchy
-    _window.hidden = YES; _rootController.view = nil; _window.rootViewController = nil;
-    // second assign new root controller (and view hierarchy with that) and show it
-    _rootController = _window.rootViewController = vc; _rootController.view = _rootView; _window.hidden = NO;
-    // third layout subviews to finalize size changes
-    [_window layoutSubviews];
+    [_rootView layoutSubviews];
 }
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 - (void)orientInterface:(UIInterfaceOrientation)orient
 {
     if (_curOrientation == orient && _rootController != _viewControllerForOrientation[0])
@@ -262,7 +264,7 @@ extern bool _unityAppReady;
 
 #endif
 
-#if PLATFORM_IOS
+#if UNITY_IOS
 - (void)checkOrientationRequest
 {
     if (UnityHasOrientationRequest())

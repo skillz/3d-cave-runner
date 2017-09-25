@@ -1,10 +1,8 @@
 #pragma once
-
-#include <stdint.h>
-#include "os/Process.h"
-
-#include <vector>
 #include <string>
+#include <stdint.h>
+#include <vector>
+#include "os/Process.h"
 
 namespace il2cpp
 {

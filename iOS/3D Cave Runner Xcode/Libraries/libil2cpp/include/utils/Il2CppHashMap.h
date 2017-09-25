@@ -37,9 +37,4 @@ public:
         Base::set_empty_key(key_type(key_type::KeyType_Empty));
         Base::set_deleted_key(key_type(key_type::KeyType_Deleted));
     }
-
-    void add(const key_type& key, const T& value)
-    {
-        Base::insert(std::make_pair(key, value));
-    }
 };

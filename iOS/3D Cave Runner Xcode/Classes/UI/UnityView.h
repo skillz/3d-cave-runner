@@ -23,7 +23,7 @@
 // that allows to handle simple overlay child view layout without doing view controller magic
 - (void)layoutSubviews;
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 // will simply update content orientation (it might be tweaked in layoutSubviews, due to disagreement between unity and view controller)
 - (void)willRotateToOrientation:(UIInterfaceOrientation)toOrientation fromOrientation:(UIInterfaceOrientation)fromOrientation;
 #endif

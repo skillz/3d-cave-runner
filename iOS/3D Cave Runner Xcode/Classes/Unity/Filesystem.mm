@@ -78,7 +78,6 @@ extern "C" const char* const* UnityFontFallbacks()
             "Kohinoor Bangla",      // Bengali since 9.0
             "Kohinoor Telugu",      // Telugu since 9.0
             "Lao Sangam MN",        // Lao
-            "Geeza Pro",            // Arabic
             ".LastResort",
             NULL
         };

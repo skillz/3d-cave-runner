@@ -22,14 +22,5 @@ namespace utils
             return (size_t)value;
         }
     };
-
-    template<class T>
-    struct PassThroughHash
-    {
-        size_t operator()(T value) const
-        {
-            return (size_t)value;
-        }
-    };
 } /* namespace vm */
 } /* namespace il2cpp */

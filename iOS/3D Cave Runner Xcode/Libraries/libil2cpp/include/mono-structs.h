@@ -9,7 +9,7 @@ struct GPtrArray
     unsigned int len;
 };
 
-typedef il2cpp::utils::dynamic_array<void*> VoidPtrArray;
+typedef dynamic_array<void*> VoidPtrArray;
 
 GPtrArray* void_ptr_array_to_gptr_array(const VoidPtrArray& array);
 GPtrArray* empty_gptr_array();
@@ -42,7 +42,7 @@ struct  PublicKeyTokenFixedBuffer
     };
 };
 
-struct  Il2CppMonoAssemblyName
+struct  MonoAssemblyName
 {
     // System.IntPtr Mono.MonoAssemblyName::name
     Il2CppIntPtr name;

@@ -130,7 +130,7 @@ int     UnityGetAppBackgroundBehavior();
 
 
 // push notifications
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 void    UnitySendLocalNotification(UILocalNotification* notification);
 #endif
 void    UnitySendRemoteNotification(NSDictionary* notification);
@@ -165,7 +165,6 @@ void    UnitySetKeyState(int key, int /*bool*/ state);
 // WWW connection handling
 
 void    UnityReportWWWStatusError(void* udata, int status, const char* error);
-void    UnityReportWWWNetworkError(void* udata, int status, const char* error);
 
 void    UnityReportWWWReceivedResponse(void* udata, int status, unsigned expectedDataLength, const char* respHeader);
 void    UnityReportWWWReceivedData(void* udata, const void* buffer, unsigned totalRead, unsigned expectedTotal);

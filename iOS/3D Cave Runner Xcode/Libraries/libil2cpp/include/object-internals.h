@@ -3,7 +3,6 @@
 #include "il2cpp-config.h"
 #include <stdint.h>
 #include <stddef.h>
-#include "class-internals.h"
 
 struct Il2CppClass;
 struct MethodInfo;
@@ -21,6 +20,7 @@ struct Il2CppAsyncCall;
 struct Il2CppIUnknown;
 struct Il2CppWaitHandle;
 struct MonitorData;
+struct VirtualInvokeData;
 
 namespace il2cpp
 {
@@ -586,15 +586,9 @@ struct Il2CppDelegate
     /* The compiled code of the target method */
     Il2CppMethodPointer method_ptr;
     /* The invoke code */
-    InvokerMethod invoke_impl;
+    void* (*invoke_impl)(const MethodInfo*, void*, void**);
     Il2CppObject *target;
-
-#if RUNTIME_MONO
-    const MonoMethod *method;
-#else
     const MethodInfo *method;
-#endif
-
     void* delegate_trampoline;
 
 #if NET_4_0
@@ -1054,13 +1048,9 @@ struct Il2CppAsyncCall
 
 struct Il2CppExceptionWrapper
 {
-#if RUNTIME_MONO
-    MonoException* ex;
-    Il2CppExceptionWrapper(MonoException* ex) : ex(ex) {}
-#else
     Il2CppException* ex;
+
     Il2CppExceptionWrapper(Il2CppException* ex) : ex(ex) {}
-#endif
 };
 
 #if NET_4_0

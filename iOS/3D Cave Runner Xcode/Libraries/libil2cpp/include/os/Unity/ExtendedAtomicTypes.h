@@ -83,7 +83,7 @@ union atomic_word2
 #       define ATOMIC_HAS_LDR
 #   endif
 
-#elif PLATFORM_PSVITA
+#elif UNITY_PSP2
 
 typedef int32_t atomic_word;
 union atomic_word2

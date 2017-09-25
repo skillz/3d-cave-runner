@@ -20,7 +20,7 @@ static bool _canRotateToPortraitUpsideDown  = false;
 static bool _canRotateToLandscapeLeft       = false;
 static bool _canRotateToLandscapeRight      = false;
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 typedef id (*WillRotateToInterfaceOrientationSendFunc)(struct objc_super*, SEL, UIInterfaceOrientation, NSTimeInterval);
 typedef id (*DidRotateFromInterfaceOrientationSendFunc)(struct objc_super*, SEL, UIInterfaceOrientation);
 #endif
@@ -239,7 +239,7 @@ static NSString* GetLaunchImageFileName(UIUserInterfaceIdiom idiom, const CGSize
 
 @implementation SplashScreenController
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 static void WillRotateToInterfaceOrientation_DefaultImpl(id self_, SEL _cmd, UIInterfaceOrientation toInterfaceOrientation, NSTimeInterval duration)
 {
     if (_isOrientable)
@@ -279,7 +279,7 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 {
     if ((self = [super init]))
     {
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
         AddViewControllerRotationHandling(
             [SplashScreenController class],
             (IMP)&WillRotateToInterfaceOrientation_DefaultImpl, (IMP)&DidRotateFromInterfaceOrientation_DefaultImpl,
@@ -309,7 +309,7 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 
     // Launch screens are used only on iOS8+ iPhones
     const char* xib = UnityGetLaunchScreenXib();
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
     _usesLaunchscreen = false;
     if (_ios80orNewer && xib != NULL)
     {
@@ -350,6 +350,10 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
     }
 
     self.view = _splash;
+
+#if !UNITY_TVOS
+    self.wantsFullScreenLayout = TRUE;
+#endif
 
     [window addSubview: _splash];
     window.rootViewController = self;

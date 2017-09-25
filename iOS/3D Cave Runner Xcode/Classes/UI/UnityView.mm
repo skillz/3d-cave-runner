@@ -35,17 +35,13 @@ extern bool _skipPresent;
 
 - (void)initImpl:(CGRect)frame scaleFactor:(CGFloat)scale
 {
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
     self.multipleTouchEnabled   = YES;
     self.exclusiveTouch         = YES;
 #endif
     self.contentScaleFactor     = scale;
     self.isAccessibilityElement = TRUE;
     self.accessibilityTraits    = UIAccessibilityTraitAllowsDirectInteraction;
-
-#if UNITY_TVOS
-    _curOrientation = UNITY_TVOS_ORIENTATION;
-#endif
 
     [self onUpdateSurfaceSize: frame.size];
 
@@ -92,7 +88,7 @@ extern bool _skipPresent;
     [super layoutSubviews];
 }
 
-#if !PLATFORM_TVOS
+#if !UNITY_TVOS
 - (void)willRotateToOrientation:(UIInterfaceOrientation)toOrientation fromOrientation:(UIInterfaceOrientation)fromOrientation;
 {
     // to support the case of interface and unity content orientation being different
@@ -184,7 +180,7 @@ extern bool _skipPresent;
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
     ReportSimulatedRemoteTouchesBegan(self, touches);
 #endif
-#if PLATFORM_TVOS
+#if UNITY_TVOS
     if (UnityGetAppleTVRemoteTouchesEnabled())
 #endif
     UnitySendTouchesBegin(touches, event);
@@ -195,7 +191,7 @@ extern bool _skipPresent;
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
     ReportSimulatedRemoteTouchesEnded(self, touches);
 #endif
-#if PLATFORM_TVOS
+#if UNITY_TVOS
     if (UnityGetAppleTVRemoteTouchesEnabled())
 #endif
     UnitySendTouchesEnded(touches, event);
@@ -206,7 +202,7 @@ extern bool _skipPresent;
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
     ReportSimulatedRemoteTouchesEnded(self, touches);
 #endif
-#if PLATFORM_TVOS
+#if UNITY_TVOS
     if (UnityGetAppleTVRemoteTouchesEnabled())
 #endif
     UnitySendTouchesCancelled(touches, event);
@@ -217,7 +213,7 @@ extern bool _skipPresent;
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
     ReportSimulatedRemoteTouchesMoved(self, touches);
 #endif
-#if PLATFORM_TVOS
+#if UNITY_TVOS
     if (UnityGetAppleTVRemoteTouchesEnabled())
 #endif
     UnitySendTouchesMoved(touches, event);

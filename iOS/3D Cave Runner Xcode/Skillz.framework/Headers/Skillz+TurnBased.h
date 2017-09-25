@@ -105,5 +105,6 @@ typedef NS_ENUM(NSUInteger, SKZTurnBasedMatchOutcome) {
  *
  */
 - (BOOL)gameCanReviewTurn;
-- (BOOL)delegateCanReviewTurn;
+
+
 @end

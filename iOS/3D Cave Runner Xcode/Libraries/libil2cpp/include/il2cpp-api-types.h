@@ -1,7 +1,6 @@
 #pragma once
 
 #include <stdint.h>
-#include <stddef.h>
 
 struct Il2CppClass;
 struct Il2CppType;
@@ -120,12 +119,6 @@ struct Il2CppStackFrameInfo
 #endif
 };
 
-#if defined(RUNTIME_MONO)
-
-#include "mono-api.h"
-
-#endif // defined(RUNTIME_MONO)
-
 typedef struct
 {
     void* (*malloc_func)(size_t size);
@@ -161,6 +154,7 @@ typedef char Il2CppNativeChar;
 
 typedef void (*il2cpp_register_object_callback)(Il2CppObject** arr, int size, void* userdata);
 typedef void (*il2cpp_WorldChangedCallback)();
+
 typedef void (*Il2CppFrameWalkFunc) (const Il2CppStackFrameInfo *info, void *user_data);
 typedef void (*Il2CppProfileFunc) (Il2CppProfiler* prof);
 typedef void (*Il2CppProfileMethodFunc) (Il2CppProfiler* prof, const MethodInfo *method);
