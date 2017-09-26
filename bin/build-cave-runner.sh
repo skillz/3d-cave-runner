@@ -13,7 +13,11 @@ sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
 # Compile Apps
 # Clean dependencies so latest Skillz SDK is fetched
 ./gradlew --refresh-dependencies
+# Move theme for VC
+mv "${WORKSPACE}/themes/custom_theme-cr-vc.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
 ./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
+# Move theme for Full
+mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
 ./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
 
 #####
