@@ -20,7 +20,7 @@
               android:clearTaskOnLaunch="false"
               android:alwaysRetainTaskState="true"
               android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
-              android:name="com.skillzgames.caverun.UnityPlayerActivity">
+              android:name="com.skillzgames.caverun.UnityGameActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

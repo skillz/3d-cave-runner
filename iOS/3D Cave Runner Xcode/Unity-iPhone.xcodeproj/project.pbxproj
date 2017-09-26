@@ -187,6 +187,10 @@
 		6B1677D11F79B99B008783F5 /* libil2cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420A41D0AC6C680BBB18213F /* libil2cpp.a */; };
 		6B1677D21F79B99B008783F5 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2048289866770E07F4779D /* Metal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6B1677D31F79B99B008783F5 /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DA487EA73B2C86D4890FBB /* Skillz.framework */; };
+		6B1677E21F79D00C008783F5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1677E01F79D00C008783F5 /* Crashlytics.framework */; };
+		6B1677E31F79D00C008783F5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1677E01F79D00C008783F5 /* Crashlytics.framework */; };
+		6B1677E41F79D00C008783F5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1677E11F79D00C008783F5 /* Fabric.framework */; };
+		6B1677E51F79D00C008783F5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1677E11F79D00C008783F5 /* Fabric.framework */; };
 		6BFD4B0B875396F849429B91 /* Il2CppCompilerCalculateTypeValuesTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DC243F8BD8817EDFB9ED829 /* Il2CppCompilerCalculateTypeValuesTable.cpp */; };
 		6D564F5B81E661FC418C043D /* Bulk_Generics_2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C83545E4967EFDAB0C3F5E9B /* Bulk_Generics_2.cpp */; };
 		708A4EA381C02E91940C6CF6 /* Bulk_Generics_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA18434F8D2A5B935894E1CD /* Bulk_Generics_5.cpp */; };
@@ -364,6 +368,8 @@
 		6B1677481F79B93D008783F5 /* 3dCaveRun.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 3dCaveRun.entitlements; sourceTree = "<group>"; };
 		6B1677DB1F79B99B008783F5 /* Cave Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cave Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1677DD1F79BA23008783F5 /* VCInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VCInfo.plist; sourceTree = "<group>"; };
+		6B1677E01F79D00C008783F5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		6B1677E11F79D00C008783F5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		71AD4C2DB2889EA1335A6672 /* Il2CppCompilerCalculateTypeValues_14Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_14Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_14Table.cpp; sourceTree = SOURCE_ROOT; };
 		784F49399A9C8482E2B547D8 /* IUnityGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IUnityGraphics.h; path = Classes/Unity/IUnityGraphics.h; sourceTree = SOURCE_ROOT; };
 		7C6D4BF998D7AC3BC3EDBB03 /* Il2CppCompilerCalculateTypeValues_11Table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Il2CppCompilerCalculateTypeValues_11Table.cpp; path = Classes/Native/Il2CppCompilerCalculateTypeValues_11Table.cpp; sourceTree = SOURCE_ROOT; };
@@ -504,12 +510,14 @@
 				00000000008063A1000160D3 /* libiPhone-lib.a in Frameworks */,
 				AA5D99871AFAD3C800B27605 /* CoreText.framework in Frameworks */,
 				8358D1B80ED1CC3700E3A684 /* AudioToolbox.framework in Frameworks */,
+				6B1677E21F79D00C008783F5 /* Crashlytics.framework in Frameworks */,
 				7F36C11313C5C673007FBDD9 /* AVFoundation.framework in Frameworks */,
 				56FD43960ED4745200FE3770 /* CFNetwork.framework in Frameworks */,
 				56B7959B1442E0F20026B3DD /* CoreGraphics.framework in Frameworks */,
 				5692F3DD0FA9D8E500EBA2F1 /* CoreLocation.framework in Frameworks */,
 				7F36C11113C5C673007FBDD9 /* CoreMedia.framework in Frameworks */,
 				56B7960F1442E1770026B3DD /* CoreMotion.framework in Frameworks */,
+				6B1677E41F79D00C008783F5 /* Fabric.framework in Frameworks */,
 				7F36C11213C5C673007FBDD9 /* CoreVideo.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				5682F4B20F3B34FF007A219C /* MediaPlayer.framework in Frameworks */,
@@ -543,12 +551,14 @@
 				6B1677BF1F79B99B008783F5 /* libiPhone-lib.a in Frameworks */,
 				6B1677C01F79B99B008783F5 /* CoreText.framework in Frameworks */,
 				6B1677C11F79B99B008783F5 /* AudioToolbox.framework in Frameworks */,
+				6B1677E31F79D00C008783F5 /* Crashlytics.framework in Frameworks */,
 				6B1677C21F79B99B008783F5 /* AVFoundation.framework in Frameworks */,
 				6B1677C31F79B99B008783F5 /* CFNetwork.framework in Frameworks */,
 				6B1677C41F79B99B008783F5 /* CoreGraphics.framework in Frameworks */,
 				6B1677C51F79B99B008783F5 /* CoreLocation.framework in Frameworks */,
 				6B1677C61F79B99B008783F5 /* CoreMedia.framework in Frameworks */,
 				6B1677C71F79B99B008783F5 /* CoreMotion.framework in Frameworks */,
+				6B1677E51F79D00C008783F5 /* Fabric.framework in Frameworks */,
 				6B1677C81F79B99B008783F5 /* CoreVideo.framework in Frameworks */,
 				6B1677C91F79B99B008783F5 /* Foundation.framework in Frameworks */,
 				6B1677CA1F79B99B008783F5 /* MediaPlayer.framework in Frameworks */,
@@ -604,6 +614,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B1677E01F79D00C008783F5 /* Crashlytics.framework */,
+				6B1677E11F79D00C008783F5 /* Fabric.framework */,
 				960391211D6CE46E003BF157 /* MediaToolbox.framework */,
 				AA5D99861AFAD3C800B27605 /* CoreText.framework */,
 				8358D1B70ED1CC3700E3A684 /* AudioToolbox.framework */,
@@ -901,6 +913,7 @@
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				033966F41B18B03000ECD701 /* ShellScript */,
 				DC694D1F9128509529537570 /* ShellScript */,
+				6B1677E61F79D026008783F5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -938,6 +951,7 @@
 				6B1677BD1F79B99B008783F5 /* Frameworks */,
 				6B1677D41F79B99B008783F5 /* ShellScript */,
 				6B1677D51F79B99B008783F5 /* ShellScript */,
+				6B1677E71F79D039008783F5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1081,6 +1095,32 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -e \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Skillz.framework/postprocess.sh\" ]; then\n    /bin/sh \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Skillz.framework/postprocess.sh\"\nfi";
+		};
+		6B1677E61F79D026008783F5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 267045208f4b1d9fdcbf019068b81096fe16475a bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1";
+		};
+		6B1677E71F79D039008783F5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 267045208f4b1d9fdcbf019068b81096fe16475a bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1";
 		};
 		DC694D1F9128509529537570 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1350,7 +1390,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1430,7 +1473,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
@@ -1669,7 +1715,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
@@ -1839,7 +1888,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
@@ -1978,7 +2030,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
@@ -2056,7 +2111,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
@@ -2135,7 +2193,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Classes/Prefix.pch;
@@ -2213,7 +2274,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = DF8VM75V3Q;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
