@@ -39,6 +39,7 @@ UNITY_DECLARE_INTERFACE(IUnityGraphics)
     // when the graphics device is already created.
     void(UNITY_INTERFACE_API * RegisterDeviceEventCallback)(IUnityGraphicsDeviceEventCallback callback);
     void(UNITY_INTERFACE_API * UnregisterDeviceEventCallback)(IUnityGraphicsDeviceEventCallback callback);
+    int(UNITY_INTERFACE_API * ReserveEventIDRange)(int count);  // reserves 'count' event IDs. Plugins should use the result as a base index when issuing events back and forth to avoid event id clashes.
 };
 UNITY_REGISTER_INTERFACE_GUID(0x7CBA0A9CA4DDB544ULL, 0x8C5AD4926EB17B11ULL, IUnityGraphics)
 
@@ -46,3 +47,4 @@ UNITY_REGISTER_INTERFACE_GUID(0x7CBA0A9CA4DDB544ULL, 0x8C5AD4926EB17B11ULL, IUni
 // Certain Unity APIs (GL.IssuePluginEvent, CommandBuffer.IssuePluginEvent) can callback into native plugins.
 // Provide them with an address to a function of this signature.
 typedef void (UNITY_INTERFACE_API * UnityRenderingEvent)(int eventId);
+typedef void (UNITY_INTERFACE_API * UnityRenderingEventAndData)(int eventId, void* data);

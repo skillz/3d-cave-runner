@@ -17,12 +17,16 @@ typedef MTLDeviceRef (*MTLCreateSystemDefaultDeviceFunc)();
 
 #else
 
+#if !(TARGET_IPHONE_SIMULATOR && defined(__IPHONE_11_0)) && !(TARGET_TVOS_SIMULATOR && defined(__TVOS_11_0))
+
 typedef NSUInteger MTLPixelFormat;
 enum
 {
     MTLPixelFormatBGRA8Unorm,
     MTLPixelFormatBGRA8Unorm_sRGB,
 };
+
+#endif
 
 @interface CAMetalLayer : CALayer
 @property (readwrite) BOOL framebufferOnly;

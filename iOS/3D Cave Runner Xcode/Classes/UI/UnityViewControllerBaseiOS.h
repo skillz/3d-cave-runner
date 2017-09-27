@@ -1,6 +1,6 @@
 #pragma once
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 
 #import <UIKit/UIKit.h>
 

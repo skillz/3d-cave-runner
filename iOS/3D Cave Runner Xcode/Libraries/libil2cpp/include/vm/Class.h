@@ -73,6 +73,7 @@ namespace vm
         static bool IsInflated(const Il2CppClass *klass);
         static bool IsSubclassOf(Il2CppClass *klass, Il2CppClass *klassc, bool check_interfaces);
         static bool IsValuetype(const Il2CppClass *klass);
+        static bool IsBlittable(const Il2CppClass *klass);
         static bool HasDefaultConstructor(Il2CppClass* klass);
         static int GetFlags(const Il2CppClass *klass);
         static bool IsAbstract(const Il2CppClass *klass);
@@ -115,6 +116,7 @@ namespace vm
         static Il2CppClass* GetArrayClass(Il2CppClass *element_class, uint32_t rank);
         static Il2CppClass* GetBoundedArrayClass(Il2CppClass *element_class, uint32_t rank, bool bounded);
         static Il2CppClass* GetInflatedGenericInstanceClass(Il2CppClass* klass, const metadata::Il2CppTypeVector& types);
+        static Il2CppClass* GetInflatedGenericInstanceClass(Il2CppClass* klass, const Il2CppGenericInst* genericInst);
         static Il2CppClass* InflateGenericClass(Il2CppClass* klass, Il2CppGenericContext *context);
         static const Il2CppType* InflateGenericType(const Il2CppType* type, Il2CppGenericContext *context);
 
@@ -138,7 +140,7 @@ namespace vm
         static void SetupTypeHierarchy(Il2CppClass *klass);
         static void SetupInterfaces(Il2CppClass *klass);
 
-        static const dynamic_array<Il2CppClass*>& GetStaticFieldData();
+        static const il2cpp::utils::dynamic_array<Il2CppClass*>& GetStaticFieldData();
 
         static size_t GetBitmapSize(const Il2CppClass* klass);
         static void GetBitmap(Il2CppClass* klass, size_t* bitmap, size_t& maxSetBit);

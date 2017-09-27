@@ -21,7 +21,7 @@ static const unsigned       kToolBarHeight = 40;
     // in case of multi-line input we use UITextView with UIToolbar as accessory view
     // toolbar buttons are kept around to prevent releasing them
     // tvOS does not support multiline input thus only UITextField option is implemented
-#if UNITY_IOS
+#if PLATFORM_IOS
     UITextView*     textView;
 
     UIToolbar*      viewToolbar;
@@ -31,7 +31,7 @@ static const unsigned       kToolBarHeight = 40;
     UITextField*    textField;
 
     // keep toolbar items for both single- and multi- line edit in NSArray to make sure they are kept around
-#if UNITY_IOS
+#if PLATFORM_IOS
     UIToolbar*      fieldToolbar;
     NSArray*        fieldToolbarItems;
 #endif
@@ -84,13 +84,13 @@ static const unsigned       kToolBarHeight = 40;
 
 - (BOOL)textViewShouldBeginEditing:(UITextView*)view
 {
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
     view.inputAccessoryView = viewToolbar;
 #endif
     return YES;
 }
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 - (void)keyboardDidShow:(NSNotification*)notification
 {
     if (notification.userInfo == nil || inputView == nil)
@@ -138,7 +138,7 @@ static const unsigned       kToolBarHeight = 40;
     return _keyboard;
 }
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 struct CreateToolbarResult
 {
     UIToolbar*  toolbar;
@@ -173,7 +173,7 @@ struct CreateToolbarResult
     self = [super init];
     if (self)
     {
-#if UNITY_IOS
+#if PLATFORM_IOS
         textView = [[UITextView alloc] initWithFrame: CGRectMake(0, 480, 480, 30)];
         textView.delegate = self;
         textView.font = [UIFont systemFontOfSize: 18.0];
@@ -193,14 +193,14 @@ struct CreateToolbarResult
             i = res.items;                                              \
         } while(0)
 
-#if UNITY_IOS
+#if PLATFORM_IOS
         CREATE_TOOLBAR(viewToolbar, viewToolbarItems, nil);
         CREATE_TOOLBAR(fieldToolbar, fieldToolbarItems, textField);
 #endif
 
         #undef CREATE_TOOLBAR
 
-#if UNITY_IOS
+#if PLATFORM_IOS
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardDidShow:) name: UIKeyboardDidShowNotification object: nil];
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardWillHide:) name: UIKeyboardWillHideNotification object: nil];
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardDidChangeFrame:) name: UIKeyboardDidChangeFrameNotification object: nil];
@@ -231,10 +231,10 @@ struct CreateToolbarResult
     initialText = param.text ? [[NSString alloc] initWithUTF8String: param.text] : @"";
 
     UITextAutocapitalizationType capitalization = UITextAutocapitalizationTypeSentences;
-    if (param.keyboardType == UIKeyboardTypeURL || param.keyboardType == UIKeyboardTypeEmailAddress)
+    if (param.keyboardType == UIKeyboardTypeURL || param.keyboardType == UIKeyboardTypeEmailAddress || param.keyboardType == UIKeyboardTypeWebSearch)
         capitalization = UITextAutocapitalizationTypeNone;
 
-#if UNITY_IOS
+#if PLATFORM_IOS
     _multiline = param.multiline;
     if (_multiline)
     {
@@ -258,7 +258,7 @@ struct CreateToolbarResult
     inputView = _multiline ? textView : textField;
     editView = _multiline ? textView : fieldToolbar;
 
-#else // UNITY_TVOS
+#else // PLATFORM_TVOS
     textField.text = initialText;
     [self setTextInputTraits: textField withParam: param withCap: capitalization];
     textField.placeholder = [NSString stringWithUTF8String: param.placeholder];
@@ -335,7 +335,7 @@ struct CreateToolbarResult
     inputView.hidden    = _inputHidden ? YES : NO;
 }
 
-#if UNITY_IOS
+#if PLATFORM_IOS
 - (void)positionInput:(CGRect)kbRect x:(float)x y:(float)y
 {
     if (_multiline)
@@ -369,7 +369,7 @@ struct CreateToolbarResult
 {
     UIView<UITextInput>* textInput;
 
-#if UNITY_TVOS
+#if PLATFORM_TVOS
     textInput = textField;
 #else
     textInput = _multiline ? textView : textField;
@@ -405,7 +405,7 @@ struct CreateToolbarResult
         return initialText;
     else
     {
-#if UNITY_TVOS
+#if PLATFORM_TVOS
         return [textField text];
 #else
         return _multiline ? [textView text] : [textField text];
@@ -424,7 +424,7 @@ struct CreateToolbarResult
 
 - (void)setText:(NSString*)newText
 {
-#if UNITY_IOS
+#if PLATFORM_IOS
     // We can't use setText on iOS7 because it does not update the undo stack.
     // We still prefer setText on other iOSes, because an undo operation results
     // in a smaller selection shown on the UI
@@ -454,6 +454,8 @@ struct CreateToolbarResult
             case UIKeyboardTypePhonePad:                hide = NO;  break;
             case UIKeyboardTypeNamePhonePad:            hide = NO;  break;
             case UIKeyboardTypeEmailAddress:            hide = YES; break;
+            case UIKeyboardTypeTwitter:                 hide = YES; break;
+            case UIKeyboardTypeWebSearch:               hide = YES; break;
             default:                                    hide = NO;  break;
         }
     }
@@ -485,7 +487,7 @@ static bool StringContainsEmoji(NSString *string);
 
 extern "C" void UnityKeyboard_Create(unsigned keyboardType, int autocorrection, int multiline, int secure, int alert, const char* text, const char* placeholder)
 {
-#if UNITY_TVOS
+#if PLATFORM_TVOS
     // Not supported. The API for showing keyboard for editing multi-line text
     // is not available on tvOS
     multiline = false;
@@ -501,6 +503,9 @@ extern "C" void UnityKeyboard_Create(unsigned keyboardType, int autocorrection, 
         UIKeyboardTypePhonePad,
         UIKeyboardTypeNamePhonePad,
         UIKeyboardTypeEmailAddress,
+        UIKeyboardTypeDefault, // Default is used in case Wii U specific NintendoNetworkAccount type is selected (indexed at 8 in UnityEngine.TouchScreenKeyboardType)
+        UIKeyboardTypeTwitter,
+        UIKeyboardTypeWebSearch
     };
 
     static const UITextAutocorrectionType autocorrectionTypes[] =

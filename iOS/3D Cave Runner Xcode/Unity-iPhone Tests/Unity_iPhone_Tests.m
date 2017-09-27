@@ -23,7 +23,7 @@
 
     // When Apple TV device doesn't have attached monitor or TV it doesn't run display link. So we force
     // player loop here.
-#ifdef UNITY_TVOS
+#ifdef PLATFORM_TVOS
     UnityAppController* unityApp = [(UIApplication*)[UIApplication sharedApplication] delegate];
     while (running)
     {

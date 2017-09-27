@@ -53,7 +53,7 @@ extern bool _ios80orNewer;
     {
         self->_screen = targetScreen;
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
         targetScreen.currentMode = targetScreen.preferredMode;
 #endif
 
@@ -184,6 +184,8 @@ extern bool _ios80orNewer;
         CreateSharedDepthbuffer(_surface);
     if (recreateSystemSurface || recreateRenderingSurface)
         CreateUnityRenderBuffers(_surface);
+
+    UnityInvalidateDisplayDataCache((__bridge void*)_screen);
 }
 
 - (void)dealloc
@@ -305,7 +307,26 @@ extern bool _ios80orNewer;
 
 - (void)updateDisplayListInUnity
 {
-    UnityUpdateDisplayList();
+    // [UIScreen screens] might be out of sync to what is indicated to the
+    // application via UIScreenDidConnectNotification and UIScreenDidDisconnectNotification
+    // notifications. For example, on disconnection [UIScreen screens] might still
+    // have the screen that the display manager no longer knows about.
+
+    const unsigned MAX_DISPLAYS_SUPPORTED = 8; // sync this to the value on Unity side
+    void* screens[MAX_DISPLAYS_SUPPORTED];
+    unsigned screenCount = 0;
+
+    UIScreen* mainScreen = [UIScreen mainScreen];
+    screens[screenCount++] = (__bridge void*)mainScreen;
+
+    for (UIScreen* screen in _displayConnection)
+    {
+        if (screen == mainScreen)
+            continue;
+        screens[screenCount++] = (__bridge void*)screen;
+    }
+
+    UnityUpdateDisplayList(screens, screenCount);
 }
 
 - (void)enumerateDisplaysWithBlock:(void (^)(DisplayConnection* conn))block
@@ -415,7 +436,7 @@ static void EnsureDisplayIsInited(DisplayConnection* conn)
     }
 }
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 extern "C" int UnityDisplayManager_DisplayCount()
 {
     return (int)[DisplayManager Instance].displayCount;
@@ -480,6 +501,11 @@ extern "C" void UnityDisplayManager_ShouldShowWindowOnDisplay(void* nativeDispla
 
     if (screen != [UIScreen mainScreen])
         [conn shouldShowWindow: show];
+}
+
+extern "C" int UnityDisplayManager_PrimaryDisplayIndex()
+{
+    return 0;
 }
 
 #endif

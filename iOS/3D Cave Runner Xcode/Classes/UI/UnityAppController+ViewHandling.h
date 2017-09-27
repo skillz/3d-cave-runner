@@ -32,7 +32,7 @@
 // _unityView will be inited at the point of calling any of these methods
 // please note that these are actual "create" methods: there is no need to tweak hierarchy right away
 
-#if UNITY_TVOS
+#if PLATFORM_TVOS
 - (UIViewController*)createUnityViewControllerForTVOS;
 #else
 - (UIViewController*)createAutorotatingUnityViewController;
@@ -52,7 +52,7 @@
 - (void)willTransitionToViewController:(UIViewController*)toController fromViewController:(UIViewController*)fromController;
 
 
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 // if you override these you need to call super
 
 // if your root controller is not subclassed from UnityViewControllerBase, call these when rotation is happening
@@ -79,7 +79,7 @@
 
 // will create or return from cache correct view controller for requested orientation
 - (UIViewController*)createRootViewController;
-#if !UNITY_TVOS
+#if !PLATFORM_TVOS
 // will create or return from cache correct view controller for given orientation
 - (UIViewController*)createRootViewControllerForOrientation:(UIInterfaceOrientation)orientation;
 
