@@ -1,0 +1,14 @@
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "1Qr-fz-b8K"; */
+"1Qr-fz-b8K.normalTitle" = "送信";
+
+/* Class = "UIButton"; normalTitle = "MM/DD/YYYY"; ObjectID = "6gc-Ov-eq4"; */
+"6gc-Ov-eq4.normalTitle" = "月/日/西暦";
+
+/* Class = "UILabel"; text = "Age Verification"; ObjectID = "Nds-Jj-gE1"; */
+"Nds-Jj-gE1.text" = "年齢確認";
+
+/* Class = "UILabel"; text = "Enter your date of birth to continue"; ObjectID = "tGf-pc-x4C"; */
+"tGf-pc-x4C.text" = "続行するには生年月日を入力してください";
+
+/* Class = "UILabel"; text = "I agree to the Terms of Service and Privacy Policy"; ObjectID = "CSQ-Wq-h0h"; */
+"CSQ-Wq-h0h.text" = "利用条件およびプライバシーポリシーに同意します";

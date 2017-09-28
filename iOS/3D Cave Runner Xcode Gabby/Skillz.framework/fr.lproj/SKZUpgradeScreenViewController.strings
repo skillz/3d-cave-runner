@@ -1,0 +1,14 @@
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "1Qr-fz-b8K"; */
+"1Qr-fz-b8K.normalTitle" = "SOUMETTRE";
+
+/* Class = "UIButton"; normalTitle = "MM/DD/YYYY"; ObjectID = "6gc-Ov-eq4"; */
+"6gc-Ov-eq4.normalTitle" = "MM/JJ/AAAA";
+
+/* Class = "UILabel"; text = "Age Verification"; ObjectID = "Nds-Jj-gE1"; */
+"Nds-Jj-gE1.text" = "Vérification de l'âge";
+
+/* Class = "UILabel"; text = "Enter your date of birth to continue"; ObjectID = "tGf-pc-x4C"; */
+"tGf-pc-x4C.text" = "Entrez votre date de naissance pour continuer.";
+
+/* Class = "UILabel"; text = "I agree to the Terms of Service and Privacy Policy"; ObjectID = "CSQ-Wq-h0h"; */
+"CSQ-Wq-h0h.text" = "J'accepte les Conditions générales d'utilisation et la Politique de confidentialité";

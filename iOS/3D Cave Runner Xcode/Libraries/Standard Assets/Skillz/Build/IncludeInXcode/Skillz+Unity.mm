@@ -361,7 +361,7 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
     
     [[Skillz skillzInstance] initWithGameId:gameIdString
                                 forDelegate:[[UnitySkillzSDKDelegate alloc] init]
-                            withEnvironment:skillzEnvironment
+                            withEnvironment:SkillzSandbox
                                   allowExit:YES];
 }
 
