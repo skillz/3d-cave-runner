@@ -14,7 +14,7 @@
         <activity android:label="@string/home_name" android:screenOrientation="portrait" android:launchMode="singleTop"
                   android:clearTaskOnLaunch="false" android:alwaysRetainTaskState="true"
                   android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
-                  android:name="com.skillz.activity.UnityGameActivity">
+                  android:name="com.skillzgames.caverun.SkillzUnityPlayerActivity">
             <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
@@ -32,7 +32,7 @@
             android:value="true" />
 
         <meta-data android:name="skillz_orientation" android:value="portrait" />
-    <meta-data android:name="skillz_game_activity" android:value="com.skillz.activity.UnityGameActivity"/>
+    <meta-data android:name="skillz_game_activity" android:value="com.skillzgames.caverun.SkillzUnityPlayerActivity"/>
     <meta-data android:name="skillz_allow_exit" android:value="true" />
     <meta-data android:name="skillz_is_unity" android:value="true" />
     <meta-data
