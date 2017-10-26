@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:replace="android:versionName,android:versionCode"
+<manifest tools:replace="android:versionName,android:versionCode"
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.skillzgames.caverun"
   android:versionName="1.0.0"
@@ -30,7 +28,7 @@
             android:name="skillz_game_id"
             android:value="1410" />
         <meta-data
-            android:name="skillz_production" tools:node="replace"
+            android:name="skillz_production"
             android:value="true" />
 
         <meta-data android:name="skillz_orientation" android:value="portrait" />
