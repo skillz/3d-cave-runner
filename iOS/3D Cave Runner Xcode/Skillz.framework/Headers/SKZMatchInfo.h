@@ -42,14 +42,19 @@ __attribute__ ((visibility("default")))
 @property (readonly) BOOL isCash;
 
 /**
+ * Signifies that the match to be played is a synchronous match, and should use your synchronous game flow.
+ */
+@property (readonly) BOOL isSynchronous;
+
+/**
  *  Match name as configured in the Skillz Developer Portal
  */
 @property (readonly, nonnull) NSString *name;
 
 /**
- * Current player in match
+ * An array of the players in the match
  */
-@property (readonly, nonnull) SKZPlayer *player;
+@property (readonly, nonnull) NSArray *players;
 
 /**
  * Template id for the template that the match is based on. These templates are

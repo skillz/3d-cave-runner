@@ -5,11 +5,12 @@
 //  Copyright (c) 2014 Skillz. All rights reserved.
 //  http://skillz.com/
 //
-//  Version: 18.0.0.396-2-g03c31d115
+//  Version: 19.0.0.582
 
 #import <Skillz/SkillzInstance.h>
 #import <Skillz/Skillz+Analytics.h>
 #import <Skillz/Skillz+Turnbased.h>
+#import <Skillz/Skillz+SyncPlay.h>
 #import <Skillz/SKZRoundResults.h>
 #import <Skillz/SKZTurnBasedPlayer.h>
 #import <Skillz/SKZTurnBasedMatchInfo.h>

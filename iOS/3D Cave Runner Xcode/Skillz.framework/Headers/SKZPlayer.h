@@ -21,6 +21,16 @@ __attribute__ ((visibility("default")))
 @property (readonly, nonnull) NSString *id;
 
 /**
+ * Player's id for the match
+ */
+@property (readonly, nullable) NSString *playerMatchId;
+
+/**
+ * Flag for if the player is the current player
+ */
+@property (readonly) bool isCurrentPlayer;
+
+/**
  * Player's profile picture (or avatar) URL
  */
 @property (readonly, nullable) NSString *avatarURL;

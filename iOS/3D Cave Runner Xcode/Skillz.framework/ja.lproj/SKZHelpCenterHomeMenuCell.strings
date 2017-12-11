@@ -1,5 +1,8 @@
-/* Class = "UILabel"; text = "Blah"; ObjectID = "4O4-7h-mzc"; */
-"4O4-7h-mzc.text" = "Blah";
+/* Class = "UILabel"; text = "Match Notifications"; ObjectID = "dJP-b3-4lI"; */
+"dJP-b3-4lI.text" = "マッチ通知";
+
+/* Class = "UILabel"; text = "Chat Notifications"; ObjectID = "jG4-6R-OXl"; */
+"jG4-6R-OXl.text" = "チャットの通知";
 
 /* Class = "UIButton"; normalTitle = "Send me a notification for every match"; ObjectID = "5lR-gh-RSy"; */
 "5lR-gh-RSy.normalTitle" = "各マッチについて通知してください";
@@ -9,4 +12,10 @@
 
 /* Class = "UIButton"; normalTitle = "Automatic based on my activity"; ObjectID = "uLd-oN-mGa"; */
 "uLd-oN-mGa.normalTitle" = "私の活動に基づいて自動で";
+
+/* Class = "UIButton"; normalTitle = "Notify me when I receive a direct message"; ObjectID = "82I-27-cWz"; */
+"82I-27-cWz.normalTitle" = "ダイレクトメッセージを受信したら通知する";
+
+/* Class = "UIButton"; normalTitle = "Do not send me direct message notifications"; ObjectID = "YTi-pq-Uue"; */
+"YTi-pq-Uue.normalTitle" = "ダイレクトメッセージに関する通知を送らないでください";
 

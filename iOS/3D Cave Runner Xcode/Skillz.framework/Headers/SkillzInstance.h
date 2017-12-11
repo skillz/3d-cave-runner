@@ -303,6 +303,13 @@ NS_AVAILABLE_IOS(8_0)
 - (void)launchSkillz;
 
 /**
+ *  Use this method to fetch the match information of the current match.
+ *
+ *  @return A SKZMatchInfo containing information identifying the match and players within the match.
+ */
+- (SKZMatchInfo *)getMatchInfo;
+
+/**
  * This method must be called each time the current player's score changes during a Skillz match.
  *
  * For example, in many games this method is called when the player scores points, when the player is penalized, and whenever a

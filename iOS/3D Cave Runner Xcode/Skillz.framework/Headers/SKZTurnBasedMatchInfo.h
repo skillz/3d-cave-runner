@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SKZMatchInfo.h"
 #import "SKZTurnBasedPlayer.h"
 
 __attribute__ ((visibility("default")))
@@ -15,7 +14,43 @@ __attribute__ ((visibility("default")))
 /**
  *  SKZTurnInformation is used to pass data about a turn based match between the Skillz SDK and a publisher's game.
  */
-@interface SKZTurnBasedMatchInfo : SKZMatchInfo
+@interface SKZTurnBasedMatchInfo : NSObject
+
+/**
+ * Unique match id
+ */
+@property (readonly) NSInteger id;
+
+/**
+ * Match description as configured in the Skillz Developer Portal
+ */
+@property (readonly, nullable) NSString *matchDescription;
+
+/**
+ * Cash entry fee, nil if there is none
+ */
+@property (readonly, nullable) NSNumber *entryCash;
+
+/**
+ * Z points entry fee, nil if there is none
+ */
+@property (readonly, nullable) NSNumber *entryPoints;
+
+/**
+ * Signifies a cash match
+ */
+@property (readonly) BOOL isCash;
+
+/**
+ *  Match name as configured in the Skillz Developer Portal
+ */
+@property (readonly, nonnull) NSString *name;
+
+/**
+ * Template id for the template that the match is based on. These templates are
+ * configured in the Skillz Developer Portal
+ */
+@property (readonly, nonnull) NSNumber *templateId;
 
 /**
  *  Date that this tournament began
