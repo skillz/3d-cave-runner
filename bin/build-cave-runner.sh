@@ -94,7 +94,7 @@ rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive"
 cd "${WORKSPACE}"
 
 # Create IPAs
-#rm -rf "3DCaveRunner.ipa"
+rm -rf "3DCaveRunner.ipa"
 rm -rf "Cave Runner.ipa"
 
 rm -rf "Payload"
