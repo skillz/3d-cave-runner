@@ -84,12 +84,12 @@ set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release cl
 #-archivePath ./3DCaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 #
 ## Zip Archive for storing on Jenkins artifacts
-#zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
+zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
 #zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
 # Remove archives
 rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive"
-#rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
+rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
 
 cd "${WORKSPACE}"
 
