@@ -63,6 +63,7 @@ android {
             debuggable true
         }
         local {
+            signingConfig signingConfigs.config
             minifyEnabled false
             debuggable true
         }
@@ -105,8 +106,8 @@ dependencies {
     //Skillz SDK
 
 
-    releaseCompile 'com.skillz.sdk:skillz-sdk-android:18.0.7'
-    debugCompile 'com.skillz.sdk:skillz-sdk-android:18.0.7'
+    releaseCompile 'com.skillz.sdk:skillz-sdk-android:19.0.1-SNAPSHOT'
+    debugCompile 'com.skillz.sdk:skillz-sdk-android:19.0.1-SNAPSHOT'
 
     releaseCompile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
@@ -126,7 +127,7 @@ dependencies {
 
         THen uncomment the following line to link in the locally built copy
     */
-    // localCompile(name: 'sdk-live-debug', ext:'aar')
+    localCompile(name: 'sdk-live-debug', ext:'aar')
 
     localCompile 'com.android.support:multidex:1.0.1'
     localCompile 'com.paypal.sdk:paypal-android-sdk:2.14.4'
@@ -159,7 +160,9 @@ dependencies {
     localCompile 'com.kochava.base:tracker:3.1.1'
     localCompile 'com.google.android.gms:play-services-location:11.2.2'
     localCompile 'com.google.android.instantapps:instantapps:1.0.0'
-
+    localCompile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
+        transitive = true
+    }
 }
 
 repositories {
