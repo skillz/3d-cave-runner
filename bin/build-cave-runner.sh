@@ -63,7 +63,7 @@ set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release cl
 -archivePath "./Cave Runner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Build VC IPA for Crashlytics
-xcodebuild -exportArchive -archivePath ./Cave Runner.xcarchive -exportOptionsPlist "${WORKSPACE}/iOS/VCAdHocArchive.plist" \
+xcodebuild -exportArchive -archivePath "./Cave Runner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/VCAdHocArchive.plist" \
 -exportPath "${WORKSPACE}/VCOnly/" | xcpretty
 
 zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
@@ -74,11 +74,11 @@ zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
 #mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
 #set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
-#-archivePath ./3DCaveRunner ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+#-archivePath "./3DCaveRunner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 #Build Full IPA for Crashlytics
 
-#xcodebuild -exportArchive -archivePath ./3DCaveRunner.xcarchive -exportOptionsPlist "${WORKSPACE}/iOS/FullAdHocArchive.plist" \
+#xcodebuild -exportArchive -archivePath "./3DCaveRunner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/FullAdHocArchive.plist" \
 #-exportPath "${WORKSPACE}/FullAdhoc/" | xcpretty
 
 ## Zip Archive for storing on Jenkins artifacts
