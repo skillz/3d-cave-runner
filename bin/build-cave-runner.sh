@@ -19,8 +19,8 @@ mv "${WORKSPACE}/themes/custom_theme-cr-vc.json" "${WORKSPACE}/Android/3D Cave R
 ./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
 
 # Move theme for Full, and compile
-#mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
-#./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
+mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
+./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
 
 #####
 # Build VC and Full for iOS Crashlytics, and .xcarchives
@@ -71,25 +71,25 @@ zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
 ## Build Full .xcarchive
 
 ## Move Custom theme for Full into Skillz Framework
-#mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
+mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
-#set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
-#-archivePath "./3DCaveRunner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
+-archivePath "./3DCaveRunner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 #Build Full IPA for Crashlytics
 
-#xcodebuild -exportArchive -archivePath "./3DCaveRunner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/FullAdHocArchive.plist" \
-#-exportPath "${WORKSPACE}/FullAdhoc/" | xcpretty
+xcodebuild -exportArchive -archivePath "./3DCaveRunner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/FullAdHocArchive.plist" \
+-exportPath "${WORKSPACE}/FullAdhoc/" | xcpretty
 
 ## Zip Archive for storing on Jenkins artifacts
-#zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
+zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
 cd "${WORKSPACE}"
 
-#"${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
-#bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
-#-ipaPath "${WORKSPACE}/FullAdhoc/3DCaveRunner.ipa" \
-#-groupAliases SDK,qa-2,tournament-server,product
+"${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
+bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
+-ipaPath "${WORKSPACE}/FullAdhoc/3DCaveRunner.ipa" \
+-groupAliases SDK,qa-2,tournament-server,product
 
 "${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
 bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
