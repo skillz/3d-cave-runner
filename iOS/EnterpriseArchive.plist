@@ -13,7 +13,7 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.skillz.enterprise.3Dcaverunner</key>
-		<string>3D Cave Runner Full - Enterprise</string>
+		<string>3D Cave Runner Enterprise</string>
 	</dict>
 </dict>
 </plist>
