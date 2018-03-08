@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>teamID</key>
-	<string>DF8VM75V3Q</string>
+	<string>ST3D4JRYHA</string>
 	<key>method</key>
-	<string>ad-hoc</string>
+	<string>enterprise</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>signingCertificate</key>
-	<string>iPhone Distribution: Skillz Inc. (DF8VM75V3Q)</string>
+	<string>iPhone Distribution: Skillz Inc</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.skillz.enterprise.3Dcaverunner</key>
