@@ -58,8 +58,10 @@ echo ${SDKVERSION}
 # Move Custom theme for VC into Skillz Framework
 mv "${WORKSPACE}/themes/themeVirtual.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
+xcodebuild clean -project Unity-iPhone.xcodeproj -alltargets | xcpretty
+
 # Build VC .xcarchive
-set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release clean archive \
+set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release archive \
 -archivePath "./Cave Runner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 # Build VC IPA for Crashlytics
@@ -73,7 +75,7 @@ zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
 ## Move Custom theme for Full into Skillz Framework
 mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
-set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
+set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release archive \
 -archivePath "./3DCaveRunner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
 
 #Build Full IPA for Crashlytics
@@ -89,10 +91,8 @@ zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 # Set bundle identifier
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier \"com.skillz.enterprise.3Dcaverunner\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 
-rm -rf ./build
-
 # Compile Enterprise Archive
-set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
+set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release archive \
 -archivePath "./3DCaveRunnerEnterpise" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc" | xcpretty
 
 # Build Enterprise IPA for Crashlytics
