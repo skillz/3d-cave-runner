@@ -89,9 +89,11 @@ zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 # Set bundle identifier
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier \"com.skillz.enterprise.3Dcaverunner\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 
+rm -rf ./build
+
 # Compile Enterprise Archive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
--archivePath "./3DCaveRunnerEnterpise" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc" | xcpretty
+-archivePath "./3DCaveRunnerEnterpise" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc" | xcpretty
 
 # Build Enterprise IPA for Crashlytics
 xcodebuild -exportArchive -archivePath "./3DCaveRunnerEnterpise.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/EnterpriseArchive.plist" \
