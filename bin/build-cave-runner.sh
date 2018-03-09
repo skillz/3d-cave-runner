@@ -91,7 +91,7 @@ zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
 # Compile Enterprise Archive
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release clean archive \
--archivePath "./3DCaveRunnerEnterpise" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc" | xcpretty
+-archivePath "./3DCaveRunnerEnterpise" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc" | xcpretty
 
 # Build Enterprise IPA for Crashlytics
 xcodebuild -exportArchive -archivePath "./3DCaveRunnerEnterpise.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/EnterpriseArchive.plist" \
