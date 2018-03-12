@@ -56,7 +56,7 @@ echo ${SDKVERSION}
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion \"${NEW_TAG}\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/VCInfo.plist"
 
 # Move Custom theme for VC into Skillz Framework
-mv "${WORKSPACE}/themes/themeVirtual.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
+cp "${WORKSPACE}/themes/themeVirtual.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
 xcodebuild clean -project Unity-iPhone.xcodeproj -alltargets | xcpretty
 
@@ -73,7 +73,7 @@ zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
 ## Build Full .xcarchive
 
 ## Move Custom theme for Full into Skillz Framework
-mv "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
+cp "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
 set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release archive \
 -archivePath "./3DCaveRunner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
