@@ -6,21 +6,21 @@
 cd "${WORKSPACE}/Android/3D Cave Runner - Android Studio"
 rm -rf "./build"
 
-#printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1\n" >> app/fabric.properties
-#
-## Link Sidious location for Android SDK
-#sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
-## Compile Apps
-## Clean dependencies so latest Skillz SDK is fetched
-#./gradlew --refresh-dependencies
+printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1\n" >> app/fabric.properties
+
+# Link Sidious location for Android SDK
+sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
+# Compile Apps
+# Clean dependencies so latest Skillz SDK is fetched
+./gradlew --refresh-dependencies
 #
 ## Move theme for VC, and compile
 #mv "${WORKSPACE}/themes/custom_theme-cr-vc.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
 #./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
 #
-## Move theme for Full, and compile
-#mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
-#./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
+# Move theme for Full, and compile
+mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
+./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
 
 #####
 # Build VC and Full for iOS Crashlytics, and .xcarchives
@@ -75,12 +75,12 @@ xcodebuild clean -project Unity-iPhone.xcodeproj -alltargets | xcpretty
 # Move Custom theme for Full into Skillz Framework
 cp "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
-xcodebuild archive -project Unity-iPhone.xcodeproj -configuration Release -scheme Full -archivePath "./3DCaveRunner"
+xcodebuild archive -project Unity-iPhone.xcodeproj -configuration Release -scheme Full -archivePath "./3DCaveRunner" | xcpretty
 
 #Build Full IPA for Crashlytics
 
 xcodebuild -exportArchive -archivePath "./3DCaveRunner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/FullAdHocArchive.plist" \
--exportPath "${WORKSPACE}/FullAdhoc/"
+-exportPath "${WORKSPACE}/FullAdhoc/" | xcpretty
 
 ## Build Enterprise
 
@@ -88,11 +88,11 @@ xcodebuild -exportArchive -archivePath "./3DCaveRunner.xcarchive" -exportOptions
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier \"com.skillz.enterprise.3Dcaverunner\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 
 # Compile Enterprise Archive
-xcodebuild archive -project Unity-iPhone.xcodeproj -configuration Enterprise -scheme Full -archivePath "./3DCaveRunnerEnterpise"
+xcodebuild archive -project Unity-iPhone.xcodeproj -configuration Enterprise -scheme Full -archivePath "./3DCaveRunnerEnterpise" | xcpretty
 
 # Build Enterprise IPA for Crashlytics
 xcodebuild -exportArchive -archivePath "./3DCaveRunnerEnterpise.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/EnterpriseArchive.plist" \
--exportPath "${WORKSPACE}/Enterprise/"
+-exportPath "${WORKSPACE}/Enterprise/" | xcpretty
 
 ## Zip Archive for storing on Jenkins artifacts
 zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
