@@ -1461,6 +1461,7 @@
 					"-framework",
 					Skillz,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skillz.3dCaveRun;
 				PRODUCT_NAME = 3dCaveRun;
 				PROVISIONING_PROFILE = "65cc6ec8-768d-4148-a0c0-041380436671";
 				PROVISIONING_PROFILE_SPECIFIER = "3D Cave Runner Full - AdHoc";
@@ -1541,6 +1542,7 @@
 					"-framework",
 					Skillz,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skillz.3dCaveRun;
 				PRODUCT_NAME = 3dCaveRun;
 				PROVISIONING_PROFILE = "65cc6ec8-768d-4148-a0c0-041380436671";
 				PROVISIONING_PROFILE_SPECIFIER = "3D Cave Runner Full - AdHoc";
@@ -1783,6 +1785,7 @@
 					"-framework",
 					Skillz,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skillz.3dCaveRun;
 				PRODUCT_NAME = 3dCaveRun;
 				PROVISIONING_PROFILE = "65cc6ec8-768d-4148-a0c0-041380436671";
 				PROVISIONING_PROFILE_SPECIFIER = "3D Cave Runner Full - AdHoc";
@@ -1956,6 +1959,7 @@
 					"-framework",
 					Skillz,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skillz.3dCaveRun;
 				PRODUCT_NAME = 3dCaveRun;
 				PROVISIONING_PROFILE = "65cc6ec8-768d-4148-a0c0-041380436671";
 				PROVISIONING_PROFILE_SPECIFIER = "3D Cave Runner Full - AdHoc";
@@ -2525,6 +2529,7 @@
 					"-framework",
 					Skillz,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skillz.enterprise.3Dcaverunner;
 				PRODUCT_NAME = 3dCaveRun;
 				PROVISIONING_PROFILE = "8e48382d-0011-4904-ae84-500576723aa0";
 				PROVISIONING_PROFILE_SPECIFIER = "3D Cave Runner - in house";
