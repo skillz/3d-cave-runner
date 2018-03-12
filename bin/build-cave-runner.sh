@@ -6,21 +6,21 @@
 cd "${WORKSPACE}/Android/3D Cave Runner - Android Studio"
 rm -rf "./build"
 
-printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1\n" >> app/fabric.properties
-
-# Link Sidious location for Android SDK
-sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
-# Compile Apps
-# Clean dependencies so latest Skillz SDK is fetched
-./gradlew --refresh-dependencies
-
-# Move theme for VC, and compile
-mv "${WORKSPACE}/themes/custom_theme-cr-vc.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
-./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
-
-# Move theme for Full, and compile
-mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
-./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
+#printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1\n" >> app/fabric.properties
+#
+## Link Sidious location for Android SDK
+#sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
+## Compile Apps
+## Clean dependencies so latest Skillz SDK is fetched
+#./gradlew --refresh-dependencies
+#
+## Move theme for VC, and compile
+#mv "${WORKSPACE}/themes/custom_theme-cr-vc.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
+#./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
+#
+## Move theme for Full, and compile
+#mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
+#./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
 
 #####
 # Build VC and Full for iOS Crashlytics, and .xcarchives
@@ -60,31 +60,27 @@ cp "${WORKSPACE}/themes/themeVirtual.json" "${WORKSPACE}/iOS/3D Cave Runner Xcod
 
 xcodebuild clean -project Unity-iPhone.xcodeproj -alltargets | xcpretty
 
-# Build VC .xcarchive
-set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release archive \
--archivePath "./Cave Runner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
-
-# Build VC IPA for Crashlytics
-xcodebuild -exportArchive -archivePath "./Cave Runner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/VCAdHocArchive.plist" \
--exportPath "${WORKSPACE}/VCOnly/" | xcpretty
-
-zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
+## Build VC .xcarchive
+#set -o pipefail && xcodebuild -sdk iphoneos -scheme VC -configuration Release archive \
+#-archivePath "./Cave Runner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+#
+## Build VC IPA for Crashlytics
+#xcodebuild -exportArchive -archivePath "./Cave Runner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/VCAdHocArchive.plist" \
+#-exportPath "${WORKSPACE}/VCOnly/" | xcpretty
+#
+#zip -y -r "Cave Runner.xcarchive.zip" "Cave Runner.xcarchive"
 
 # Build Full .xcarchive
 
 # Move Custom theme for Full into Skillz Framework
 cp "${WORKSPACE}/themes/theme.json" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Skillz.framework/theme.json"
 
-set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Release archive \
--archivePath "./3DCaveRunner" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc." | xcpretty
+xcodebuild archive -project Unity-iPhone.xcodeproj -configuration Release -scheme Full -archivePath "./3DCaveRunner"
 
 #Build Full IPA for Crashlytics
 
 xcodebuild -exportArchive -archivePath "./3DCaveRunner.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/FullAdHocArchive.plist" \
--exportPath "${WORKSPACE}/FullAdhoc/" | xcpretty
-
-## Zip Archive for storing on Jenkins artifacts
-zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
+-exportPath "${WORKSPACE}/FullAdhoc/"
 
 ## Build Enterprise
 
@@ -92,12 +88,14 @@ zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier \"com.skillz.enterprise.3Dcaverunner\"" -c "Save" "${WORKSPACE}/iOS/3D Cave Runner Xcode/Info.plist"
 
 # Compile Enterprise Archive
-set -o pipefail && xcodebuild -sdk iphoneos -scheme Full -configuration Enterprise archive \
--archivePath "./3DCaveRunnerEnterpise" ONLY_ACTIVE_ARCH=NO BUILD_DIR=./build CODE_SIGN_IDENTITY="iPhone Distribution: Skillz Inc" | xcpretty
+xcodebuild archive -project Unity-iPhone.xcodeproj -configuration Enterprise -scheme Full -archivePath "./3DCaveRunnerEnterpise"
 
 # Build Enterprise IPA for Crashlytics
 xcodebuild -exportArchive -archivePath "./3DCaveRunnerEnterpise.xcarchive" -exportOptionsPlist "${WORKSPACE}/iOS/EnterpriseArchive.plist" \
--exportPath "${WORKSPACE}/Enterprise/" | xcpretty
+-exportPath "${WORKSPACE}/Enterprise/"
+
+## Zip Archive for storing on Jenkins artifacts
+zip -y -r 3DCaveRunner.xcarchive.zip 3DCaveRunner.xcarchive
 
 # Zip Enterprise Archive for storing on Jenkins artifacts
 zip -y -r 3DCaveRunnerEnterpise.xcarchive.zip 3DCaveRunnerEnterpise.xcarchive
@@ -109,10 +107,10 @@ bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
 -ipaPath "${WORKSPACE}/FullAdhoc/Full.ipa" \
 -groupAliases SDK,qa-2,tournament-server,product
 
-"${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
-bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
--ipaPath "${WORKSPACE}/VCOnly/VC.ipa" \
--groupAliases SDK,qa-2,tournament-server,product
+#"${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
+#bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
+#-ipaPath "${WORKSPACE}/VCOnly/VC.ipa" \
+#-groupAliases SDK,qa-2,tournament-server,product
 
 "${WORKSPACE}/iOS/3D Cave Runner Xcode/Crashlytics.framework/submit" 267045208f4b1d9fdcbf019068b81096fe16475a \
 bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455e1 \
