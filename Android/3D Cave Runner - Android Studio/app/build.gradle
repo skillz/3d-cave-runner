@@ -17,7 +17,6 @@ buildscript {
         classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.7.0'
         classpath 'io.fabric.tools:gradle:1.22.0'
         classpath 'com.google.gms:google-services:3.0.0'
-        compile 'com.android.support:design:25.0.0'
 
     }
 }
@@ -105,6 +104,7 @@ dependencies {
         transitive = true
     }
     compile 'com.google.android.gms:play-services-gcm:11.0.4'
+    compile 'com.android.support:design:25.4.0'
 }
 
 repositories {
