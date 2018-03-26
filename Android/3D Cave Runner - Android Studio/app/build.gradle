@@ -104,6 +104,7 @@ dependencies {
         transitive = true
     }
     compile 'com.google.android.gms:play-services-gcm:11.0.4'
+    compile 'com.android.support:appcompat-v7:25.4.0'
     compile 'com.android.support:design:25.4.0'
 }
 
