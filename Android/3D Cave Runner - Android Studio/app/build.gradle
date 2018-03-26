@@ -35,8 +35,8 @@ android {
             // make sure to update the .jks file pointing to your machine
         }
     }
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 26
+//    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.skillzgames.caverun"
         minSdkVersion 19
@@ -48,6 +48,7 @@ android {
         versionCode versionMajor * 10000000 + versionMinor * 100000 + versionPatch * 1000 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
     }
+    flavorDimensions "currency"
     buildTypes {
         release {
             debuggable=false
@@ -72,10 +73,12 @@ android {
     productFlavors {
         main {
             resValue "string", "app_name", "3D Cave Runner"
+            dimension "currency"
         }
         vconly {
             resValue "string", "app_name", "Cave Runner"
             applicationIdSuffix ".vconly"
+            dimension "currency"
         }
     }
     sourceSets {
@@ -104,8 +107,7 @@ dependencies {
         transitive = true
     }
     compile 'com.google.android.gms:play-services-gcm:11.0.4'
-    compile 'com.android.support:appcompat-v7:25.4.0'
-    compile 'com.android.support:design:25.4.0'
+    compile 'com.android.support:design:26.1.0'
 }
 
 repositories {
