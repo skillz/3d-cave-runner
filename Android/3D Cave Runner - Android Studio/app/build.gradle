@@ -36,7 +36,7 @@ android {
         }
     }
     compileSdkVersion 26
-    buildToolsVersion "26.0.3"
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.skillzgames.caverun"
         minSdkVersion 19
@@ -114,6 +114,7 @@ dependencies {
     api 'com.android.support:recyclerview-v7:26.1.0'
 
     implementation 'com.mopub.volley:mopub-volley:1.1.0@aar'
+    implementation 'com.kochava.base:tracker:3.1.1@aar'
 
 }
 
