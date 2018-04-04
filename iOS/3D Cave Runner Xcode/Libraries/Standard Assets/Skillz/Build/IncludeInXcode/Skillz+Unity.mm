@@ -360,7 +360,7 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
     }
     
 //    [[Skillz skillzInstance] performSelector:@selector(setDevTS) withObject:nil];
-    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
+//    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
     [[Skillz skillzInstance] initWithGameId:gameIdString
                                 forDelegate:[[UnitySkillzSDKDelegate alloc] init]
                             withEnvironment:skillzEnvironment
