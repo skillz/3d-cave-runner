@@ -1,6 +1,6 @@
 def versionMajor = 4
 def versionMinor = 3
-def versionPatch = 14
+def versionPatch = 15
 def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.getenv('BUILD_NUMBER')) : 1
 
 buildscript {
@@ -101,7 +101,7 @@ dependencies {
     compile files('libs/unity-classes.jar')
     //Skillz SDK
 
-    compile 'com.skillz.sdk:skillz-sdk-android:20.0.2-SNAPSHOT'
+    compile 'com.skillz.sdk:skillz-sdk-android:20.0.3-SNAPSHOT'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }
