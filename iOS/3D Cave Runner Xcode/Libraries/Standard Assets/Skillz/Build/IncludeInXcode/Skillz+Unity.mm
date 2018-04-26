@@ -150,6 +150,11 @@ NSString *unitySkillzDelegateName = @"SkillzDelegate";
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"skillzWillExit"
                     withParamMessage:@""];
+    
+    // This sends a message to call the Cross Platform OnSkillzWillExit method
+    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                       callingMethod:@"OnSkillzWillExit"
+                    withParamMessage:@""];
 }
 
 - (void)skillzWillLaunch
