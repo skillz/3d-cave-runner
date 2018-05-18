@@ -43,3 +43,5 @@ node_modules
 *.xcscmblueprint
 *.xccheckout
 **/Reveal.framework/
+3D Cave Runner- android/captures
+**/.gradle/

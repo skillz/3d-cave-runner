@@ -40,6 +40,19 @@ android {
 		ndk {
 			abiFilters "armeabi-v7a", "x86"
 		}
+		buildTypes {
+			debug {
+				debuggable true
+				jniDebuggable true
+				minSdkVersion 22
+
+			}
+			release {
+				minifyEnabled false
+				proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+
+			}
+		}
 	}
 
 	dexOptions {
@@ -50,17 +63,7 @@ android {
 		abortOnError false
 	}
 
-	buildTypes {
-		debug {
-			debuggable true
-			jniDebuggable true
-		}
-		release {
-			minifyEnabled false
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
 
-		}
-	}
 
     repositories {
 		google()
