@@ -1,1 +1,2 @@
+include ':react-native-haptic-feedback'
 include ':sdk'
