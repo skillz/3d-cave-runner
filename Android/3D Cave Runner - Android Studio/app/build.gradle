@@ -5,6 +5,7 @@ def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.geten
 
 buildscript {
     repositories {
+        google()
         jcenter()
         mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
