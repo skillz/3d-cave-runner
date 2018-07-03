@@ -63,6 +63,7 @@ android {
             }
             release {
                 minifyEnabled false
+                signingConfig signingConfigs.config
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
 
             }
