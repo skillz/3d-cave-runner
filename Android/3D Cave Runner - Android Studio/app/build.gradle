@@ -62,8 +62,33 @@ android {
     lintOptions {
         abortOnError false
     }
+    flavorDimensions 'currency'
 
-
+    productFlavors {
+        main {
+            dimension 'currency'
+            resValue "string", "app_name", "3D Cave Runner"
+        }
+        vconly {
+            dimension 'currency'
+            resValue "string", "app_name", "Cave Runner"
+            applicationIdSuffix ".vconly"
+        }
+    }
+    sourceSets {
+        vconly {
+            manifest.srcFile "src/vconly/AndroidManifest.xml"
+            assets.srcDir "src/main/assets"
+            res.srcDir "src/main/res"
+            jniLibs.srcDir "src/main/jniLibs"
+        }
+        main {
+            manifest.srcFile "src/main/AndroidManifest.xml"
+            assets.srcDir "src/main/assets"
+            res.srcDir "src/main/res"
+            jniLibs.srcDir "src/main/jniLibs"
+        }
+    }
 
     repositories {
         google()
