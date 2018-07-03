@@ -140,6 +140,7 @@
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-common-15.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:okhttp3-integration:1.5.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:crashlytics-core-2.6.3" level="project" />
     <orderEntry type="library" name="Gradle: com.react-native-image-picker:rn-image-picker-android-0.26.7-skillz" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-ins:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-27.1.1" level="project" />
@@ -155,6 +156,8 @@
     <orderEntry type="library" name="Gradle: android.arch.core:runtime-1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7-27.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.fabric.sdk.android:fabric-1.4.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:beta-1.2.9" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-dash-2.7.3" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.22@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-urlconnection:3.6.0@jar" level="project" />
@@ -249,6 +252,7 @@
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-smoothstreaming-2.7.3" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.4.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:answers-1.4.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-measurement-connector-impl-15.0.0" level="project" />
   </component>
 </module>
