@@ -2,13 +2,17 @@
 <manifest tools:replace="android:versionName,android:versionCode"
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.skillzgames.caverun"
-  android:versionName="1.0.0"
-  android:versionCode="1"
   android:installLocation="preferExternal"
   xmlns:tools="http://schemas.android.com/tools">
     <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:glEsVersion="0x00020000" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
 
     <application android:theme="@style/UnityThemeSelector" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:banner="@drawable/app_banner">
         <activity android:label="@string/home_name" android:screenOrientation="portrait" android:launchMode="singleTop"
@@ -43,11 +47,6 @@
         android:name="io.fabric.ApiKey"
         android:value="267045208f4b1d9fdcbf019068b81096fe16475a"
         />
-  </application>
-  <uses-feature android:glEsVersion="0x00020000" />
-  <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
-  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-  <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
-  <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
-  <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    </application>
+
 </manifest>
