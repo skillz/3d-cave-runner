@@ -2,6 +2,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
+#import <UIKit/UIGestureRecognizerSubclass.h>
 
 #include "UnityAppController.h"
 #include "UI/UnityView.h"
@@ -12,21 +13,12 @@
 #include "Unity/VideoPlayer.h"
 #include "PluginBase/UnityViewControllerListener.h"
 
-
-typedef void (^OnTouchBlock)();
-
-@interface CancelOnTouchView : UIView
-{
-    OnTouchBlock    onTouch;
-}
-- (id)initWithOnTouchBlock:(OnTouchBlock)onTouch;
+@interface UICancelGestureRecognizer : UITapGestureRecognizer
 @end
-
 #if PLATFORM_IOS
-@interface MPVideoPlayback : NSObject<UnityViewControllerListener>
+@interface MPVideoPlayback : NSObject<UnityViewControllerListener, UIGestureRecognizerDelegate>
 {
     MPMoviePlayerController*    moviePlayer;
-    CancelOnTouchView*          cancelOnTouchView;
 
     UIColor*                    bgColor;
     MPMovieControlStyle         controlMode;
@@ -41,11 +33,10 @@ typedef void (^OnTouchBlock)();
 @end
 #endif
 
-@interface AVKitVideoPlayback : NSObject<VideoPlayerDelegate, UIViewControllerTransitioningDelegate>
+@interface AVKitVideoPlayback : NSObject<VideoPlayerDelegate, UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate>
 {
     AVPlayerViewController*     videoViewController;
     VideoPlayer*                videoPlayer;
-    CancelOnTouchView*          cancelOnTouchView;
 
     UIColor*                    bgColor;
     const NSString*             videoGravity;
@@ -120,11 +111,9 @@ static AVKitVideoPlayback*  _AVKitVideoPlayback = nil;
         UIView* videoView = moviePlayer.view;
         if (cancelOnTouch)
         {
-            videoView = cancelOnTouchView = [[CancelOnTouchView alloc] initWithOnTouchBlock:^() {
-                if (_MPVideoPlayback)
-                    [_MPVideoPlayback finish];
-            }];
-            [cancelOnTouchView addSubview: moviePlayer.view];
+            UICancelGestureRecognizer *cancelTouch = [[UICancelGestureRecognizer alloc] initWithTarget: self action: @selector(handleTap:)];
+            cancelTouch.delegate = self;
+            [moviePlayer.view addGestureRecognizer: cancelTouch];
         }
         [GetAppController().rootView addSubview: videoView];
     }
@@ -176,6 +165,12 @@ static AVKitVideoPlayback*  _AVKitVideoPlayback = nil;
     moviePlayer.view.frame = GetAppController().rootView.bounds;
 }
 
+- (void)handleTap:(UIGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateEnded)
+        [self finish];
+}
+
 - (void)finish
 {
     @synchronized(self)
@@ -187,8 +182,6 @@ static AVKitVideoPlayback*  _AVKitVideoPlayback = nil;
         }
 
         [moviePlayer.view removeFromSuperview];
-        [cancelOnTouchView removeFromSuperview];
-        cancelOnTouchView = nil;
 
         [moviePlayer pause];
         [moviePlayer stop];
@@ -208,22 +201,11 @@ static AVKitVideoPlayback*  _AVKitVideoPlayback = nil;
 @end
 #endif
 
-@protocol AVKitVideoPlayback_PictureInPicture<NSObject>
-- (void)setAllowsPictureInPicturePlayback:(BOOL)value;
-@property (nonatomic, setter = setAllowsPictureInPicturePlayback:) BOOL allowsPictureInPicturePlayback;
-@end
-
 @implementation AVKitVideoPlayback
 static Class _AVPlayerViewControllerClass = nil;
 
-- (void)setAllowsPictureInPicturePlayback:(BOOL)allowsPictureInPicturePlayback
-{
-    id<AVKitVideoPlayback_PictureInPicture> avPlayer = (id)videoViewController;
-    if ([avPlayer respondsToSelector: @selector(setAllowsPictureInPicturePlayback:)])
-        avPlayer.allowsPictureInPicturePlayback = allowsPictureInPicturePlayback;
-}
-
 #if PLATFORM_IOS
+static void AVPlayerViewController_SetAllowsPictureInPicturePlayback_OldIOSImpl(id self_, SEL _cmd, BOOL allow) {}
 static NSUInteger supportedInterfaceOrientations_DefaultImpl(id self_, SEL _cmd)
 {
     return GetAppController().rootViewController.supportedInterfaceOrientations;
@@ -231,7 +213,10 @@ static NSUInteger supportedInterfaceOrientations_DefaultImpl(id self_, SEL _cmd)
 
 static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
 {
-    return _AVKitVideoPlayback->videoViewController.showsPlaybackControls ? NO : YES;
+    if (_AVKitVideoPlayback) // video is still playing
+        return _AVKitVideoPlayback->videoViewController.showsPlaybackControls ? NO : YES;
+    else                    // video has beed stopped
+        return GetAppController().rootViewController.prefersStatusBarHidden;
 }
 
 #endif
@@ -240,19 +225,20 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
 {
     if (self == [AVKitVideoPlayback class])
     {
-        NSBundle* avKitBundle = [NSBundle bundleWithPath: @"/System/Library/Frameworks/AVKit.framework"];
-        if (avKitBundle)
-        {
-            if ((_AVPlayerViewControllerClass = [avKitBundle classNamed: @"AVPlayerViewController"]) == nil)
-            {
-                [avKitBundle unload];
-                return;
-            }
+        // NB: AVPlayerViewController was added along with AVKit so we dont need to handle "bundle loaded but class is not there"
+        _AVPlayerViewControllerClass = [[NSBundle bundleWithPath: @"/System/Library/Frameworks/AVKit.framework"] classNamed: @"AVPlayerViewController"];
+        if (!_AVPlayerViewControllerClass)
+            return;
+
 #if PLATFORM_IOS
-            ObjCSetKnownInstanceMethod(_AVPlayerViewControllerClass, @selector(supportedInterfaceOrientations), (IMP)&supportedInterfaceOrientations_DefaultImpl);
-            ObjCSetKnownInstanceMethod(_AVPlayerViewControllerClass, @selector(prefersStatusBarHidden), (IMP)&prefersStatusBarHidden_DefaultImpl);
-#endif
+        if (![_AVPlayerViewControllerClass instancesRespondToSelector: @selector(setAllowsPictureInPicturePlayback:)])
+        {
+            class_replaceMethod(_AVPlayerViewControllerClass, @selector(setAllowsPictureInPicturePlayback:),
+                (IMP)&AVPlayerViewController_SetAllowsPictureInPicturePlayback_OldIOSImpl, AVPlayerViewController_setAllowsPictureInPicturePlayback_Enc);
         }
+        class_replaceMethod(_AVPlayerViewControllerClass, @selector(supportedInterfaceOrientations), (IMP)&supportedInterfaceOrientations_DefaultImpl, UIViewController_supportedInterfaceOrientations_Enc);
+        class_replaceMethod(_AVPlayerViewControllerClass, @selector(prefersStatusBarHidden), (IMP)&prefersStatusBarHidden_DefaultImpl, UIViewController_prefersStatusBarHidden_Enc);
+#endif
     }
 }
 
@@ -293,8 +279,9 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
         videoViewController.videoGravity = (NSString*)videoGravity;
         videoViewController.transitioningDelegate = self;
 
-        self.allowsPictureInPicturePlayback = NO;
-
+#if PLATFORM_IOS
+        videoViewController.allowsPictureInPicturePlayback = NO;
+#endif
 #if PLATFORM_TVOS
         // In tvOS clicking Menu button while video is playing will exit the app. So when
         // app disables exiting to menu behavior, we need to catch the click and ignore it.
@@ -308,11 +295,9 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
 
         if (cancelOnTouch)
         {
-            cancelOnTouchView = [[CancelOnTouchView alloc] initWithOnTouchBlock:^() {
-                if (_AVKitVideoPlayback)
-                    [_AVKitVideoPlayback finish];
-            }];
-            [videoViewController.view addSubview: cancelOnTouchView];
+            UICancelGestureRecognizer *cancelTouch = [[UICancelGestureRecognizer alloc] initWithTarget: self action: @selector(handleTap:)];
+            cancelTouch.delegate = self;
+            [videoViewController.view addGestureRecognizer: cancelTouch];
         }
 
         videoPlayer = [[VideoPlayer alloc] init];
@@ -355,6 +340,12 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
     [self finish];
 }
 
+- (void)onPlayerTryResume
+{
+    if (![videoPlayer isPlaying])
+        [videoPlayer resume];
+}
+
 - (void)onPlayerError:(NSError*)error
 {
     [self finish];
@@ -384,10 +375,8 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
         }
 #endif
 
-        [cancelOnTouchView removeFromSuperview];
         [videoPlayer unloadPlayer];
 
-        cancelOnTouchView = nil;
         videoPlayer = nil;
         videoViewController = nil;
 
@@ -404,41 +393,11 @@ static bool prefersStatusBarHidden_DefaultImpl(id self_, SEL _cmd)
 
 @end
 
-@implementation CancelOnTouchView
-- (id)initWithOnTouchBlock:(OnTouchBlock)onTouch_
+@implementation UICancelGestureRecognizer
+//instead of having lots of UITapGestureRecognizers with different finger numbers
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    UIView* rootView = GetAppController().rootView;
-    if ((self = [super initWithFrame: rootView.bounds]))
-    {
-        self->onTouch = [onTouch_ copy];
-        self.backgroundColor = [UIColor clearColor];
-    }
-    return self;
-}
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
-{
-}
-
-- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
-{
-    onTouch();
-}
-
-- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event
-{
-}
-
-- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
-{
-}
-
-- (void)onUnityUpdateViewLayout
-{
-    CGRect bounds = GetAppController().rootView.bounds;
-    self.frame = bounds;
-    for (UIView* view in self.subviews)
-        view.frame = bounds;
+    [self setState: UIGestureRecognizerStateRecognized];
 }
 
 @end
@@ -528,4 +487,10 @@ extern "C" int UnityIsFullScreenPlaying()
 #else
     return _AVKitVideoPlayback ? 1 : 0;
 #endif
+}
+
+extern "C" void TryResumeFullScreenVideo()
+{
+    if (_AVKitVideoPlayback)
+        [_AVKitVideoPlayback onPlayerTryResume];
 }

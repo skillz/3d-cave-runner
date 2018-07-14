@@ -3,15 +3,6 @@
 
 #include <AdSupport/ASIdentifierManager.h>
 
-#if UNITY_PRE_IOS7_TARGET
-    #include <sys/socket.h>
-    #include <net/if.h>
-    #include <net/if_dl.h>
-    #include <CommonCrypto/CommonDigest.h>
-
-static const char* _GetDeviceIDPreIOS7();
-#endif
-
 #include "DisplayManager.h"
 
 // ad/vendor ids
@@ -23,15 +14,7 @@ static id QueryASIdentifierManager()
     {
         [bundle load];
         Class retClass = [bundle classNamed: @"ASIdentifierManager"];
-        if (
-            retClass
-            && [retClass respondsToSelector: @selector(sharedManager)]
-            && [retClass instancesRespondToSelector: @selector(advertisingIdentifier)]
-            && [retClass instancesRespondToSelector: @selector(isAdvertisingTrackingEnabled)]
-            )
-        {
-            return [retClass performSelector: @selector(sharedManager)];
-        }
+        return [retClass performSelector: @selector(sharedManager)];
     }
 
     return nil;
@@ -189,6 +172,12 @@ extern "C" int UnityDeviceGeneration()
             _DeviceGeneration = deviceiPhone7;
         else if (!strncmp(model, "iPhone9,2", 9) || !strncmp(model, "iPhone9,4", 9))
             _DeviceGeneration = deviceiPhone7Plus;
+        else if (!strncmp(model, "iPhone10,1", 10) || !strncmp(model, "iPhone10,4", 10))
+            _DeviceGeneration = deviceiPhone8;
+        else if (!strncmp(model, "iPhone10,2", 10) || !strncmp(model, "iPhone10,5", 10))
+            _DeviceGeneration = deviceiPhone8Plus;
+        else if (!strncmp(model, "iPhone10,3", 10) || !strncmp(model, "iPhone10,6", 10))
+            _DeviceGeneration = deviceiPhoneX;
         else if (!strcmp(model, "iPod4,1"))
             _DeviceGeneration = deviceiPodTouch4Gen;
         else if (!strncmp(model, "iPod5,", 6))
@@ -273,6 +262,23 @@ extern "C" int UnityDeviceIsStylusTouchSupported()
             deviceGen == deviceiPadPro10Inch2Gen) ? 1 : 0;
 }
 
+extern "C" int UnityDeviceIsWideColorSupported()
+{
+    UIScreen* mainScreen = [UIScreen mainScreen];
+    if (![mainScreen respondsToSelector: @selector(traitCollection)])
+        return false;
+
+    UITraitCollection* traits = mainScreen.traitCollection;
+    if (![traits respondsToSelector: @selector(displayGamut)])
+        return false;
+
+#if UNITY_HAS_IOSSDK_10_0 || UNITY_HAS_TVOSSDK_10_0
+    return traits.displayGamut == UIDisplayGamutP3;
+#else
+    return false;
+#endif
+}
+
 extern "C" float UnityDeviceDPI()
 {
     static float _DeviceDPI = -1.0f;
@@ -293,11 +299,15 @@ extern "C" float UnityDeviceDPI()
             case deviceiPhone6S:
             case deviceiPhoneSE1Gen:
             case deviceiPhone7:
+            case deviceiPhone8:
                 _DeviceDPI = 326.0f; break;
             case deviceiPhone6Plus:
             case deviceiPhone6SPlus:
             case deviceiPhone7Plus:
+            case deviceiPhone8Plus:
                 _DeviceDPI = 401.0f; break;
+            case deviceiPhoneX:
+                _DeviceDPI = 458.0f; break;
 
             // iPad
             case deviceiPad2Gen:
@@ -351,49 +361,7 @@ extern "C" const char* UnityDeviceUniqueIdentifier()
     static const char* _DeviceID = NULL;
 
     if (_DeviceID == NULL)
-    {
-    #if UNITY_PRE_IOS7_TARGET
-        if (!_ios70orNewer)
-            _DeviceID = _GetDeviceIDPreIOS7();
-    #endif
+        _DeviceID = UnityVendorIdentifier();
 
-        // first check vendor id
-        if (_DeviceID == NULL)
-            _DeviceID = UnityVendorIdentifier();
-    }
     return _DeviceID;
 }
-
-#if UNITY_PRE_IOS7_TARGET
-static const char* _GetDeviceIDPreIOS7()
-{
-    static const int MD5_DIGEST_LENGTH = 16;
-
-    // macaddr: courtesy of FreeBSD hackers email list
-    int mib[6] = { CTL_NET, AF_ROUTE, 0, AF_LINK, NET_RT_IFLIST, 0 };
-    mib[5] = ::if_nametoindex("en0");
-
-    size_t len = 0;
-    ::sysctl(mib, 6, NULL, &len, NULL, 0);
-
-    char* buf = (char*)::malloc(len);
-    ::sysctl(mib, 6, buf, &len, NULL, 0);
-
-    sockaddr_dl*   sdl = (sockaddr_dl*)((if_msghdr*)buf + 1);
-    unsigned char* mac = (unsigned char*)LLADDR(sdl);
-
-    char macaddr_str[18] = {0};
-    ::sprintf(macaddr_str, "%02X:%02X:%02X:%02X:%02X:%02X", *mac, *(mac + 1), *(mac + 2), *(mac + 3), *(mac + 4), *(mac + 5));
-    ::free(buf);
-
-    unsigned char hash_buf[MD5_DIGEST_LENGTH];
-    CC_MD5(macaddr_str, sizeof(macaddr_str) - 1, hash_buf);
-
-    char uid_str[MD5_DIGEST_LENGTH * 2 + 1] = {0};
-    for (int i = 0; i < MD5_DIGEST_LENGTH; ++i)
-        ::sprintf(uid_str + 2 * i, "%02x", hash_buf[i]);
-
-    return strdup(uid_str);
-}
-
-#endif

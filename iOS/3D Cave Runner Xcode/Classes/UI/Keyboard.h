@@ -11,6 +11,7 @@ typedef struct
 
     BOOL multiline;
     BOOL secure;
+    int characterLimit;
 }
 KeyboardShowParam;
 
@@ -21,6 +22,7 @@ KeyboardShowParam;
 - (BOOL)textFieldShouldReturn:(UITextField*)textField;
 - (void)textInputDone:(id)sender;
 - (void)textInputCancel:(id)sender;
+- (void)textInputLostFocus;
 - (void)keyboardDidShow:(NSNotification*)notification;
 - (void)keyboardWillHide:(NSNotification*)notification;
 
@@ -44,12 +46,12 @@ KeyboardShowParam;
 - (NSString*)getText;
 - (void)setText:(NSString*)newText;
 
-@property (readonly, nonatomic, getter = queryArea)               CGRect      area;
-@property (readonly, nonatomic)                                 BOOL        active;
-@property (readonly, nonatomic)                                 BOOL        done;
-@property (readonly, nonatomic)                                 BOOL        canceled;
-@property (retain, nonatomic, getter = getText, setter = setText:)  NSString*   text;
+@property (readonly, nonatomic, getter = queryArea)               CGRect          area;
+@property (readonly, nonatomic)                                 BOOL            active;
+@property (readonly, nonatomic)                                 KeyboardStatus  status;
+@property (retain, nonatomic, getter = getText, setter = setText:)  NSString*       text;
+@property (assign, nonatomic)   int characterLimit;
 @property (readonly, nonatomic)                                 BOOL        canGetSelection;
-@property (readonly, nonatomic, getter = querySelection)  NSRange   selection;
+@property (nonatomic, getter = querySelection, setter = assignSelection:)  NSRange   selection;
 
 @end

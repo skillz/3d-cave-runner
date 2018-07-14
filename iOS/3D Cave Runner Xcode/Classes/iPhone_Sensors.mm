@@ -17,9 +17,11 @@
 typedef void (^ControllerPausedHandler)(GCController *controller);
 static NSArray* QueryControllerCollection();
 
+#if PLATFORM_TVOS
 static bool gTVRemoteTouchesEnabled = true;
 static bool gTVRemoteAllowRotationInitialValue = false;
 static bool gTVRemoteReportsAbsoluteDpadValuesInitialValue = false;
+#endif
 
 static bool gCompensateSensors = true;
 bool gEnableGyroscope = false;
@@ -190,14 +192,11 @@ extern "C" void UnityCoreMotionStart()
 
     if (initMotionManager && sMotionManager.accelerometerAvailable)
     {
-        int frequency = UnityGetAccelerometerFrequency();
+        const int frequency = UnityGetAccelerometerFrequency();
         if (frequency > 0)
         {
-            [sMotionManager startAccelerometerUpdatesToQueue: sMotionQueue withHandler:^(CMAccelerometerData* data, NSError* error) {
-                Vector3f res = UnityReorientVector3(data.acceleration.x, data.acceleration.y, data.acceleration.z);
-                UnityDidAccelerate(res.x, res.y, res.z, data.timestamp);
-            }];
-            [sMotionManager setAccelerometerUpdateInterval: 1.0f / frequency];
+            sMotionManager.accelerometerUpdateInterval = 1.0f / frequency;
+            [sMotionManager startAccelerometerUpdates];
         }
     }
 #endif
@@ -212,6 +211,22 @@ extern "C" void UnityCoreMotionStop()
     {
         [sMotionManager stopGyroUpdates];
         [sMotionManager stopDeviceMotionUpdates];
+        [sMotionManager stopAccelerometerUpdates];
+    }
+#endif
+}
+
+extern "C" void UnityUpdateAccelerometerData()
+{
+#if !PLATFORM_TVOS
+    if (sMotionManager)
+    {
+        CMAccelerometerData* data = sMotionManager.accelerometerData;
+        if (data != nil)
+        {
+            Vector3f res = UnityReorientVector3(data.acceleration.x, data.acceleration.y, data.acceleration.z);
+            UnityDidAccelerate(res.x, res.y, res.z, data.timestamp);
+        }
     }
 #endif
 }
@@ -369,13 +384,13 @@ extern "C" void UnityInitJoysticks()
         if (bundle)
         {
             [bundle load];
-            Class retClass = [bundle classNamed: @"GCController"];
-            if (retClass && [retClass respondsToSelector: @selector(controllers)])
-                gGameControllerClass = retClass;
+            gGameControllerClass = [bundle classNamed: @"GCController"];
 
             //Apply settings that could have been set by user scripts before controller initialization
+        #if PLATFORM_TVOS
             UnitySetAppleTVRemoteAllowRotation(gTVRemoteAllowRotationInitialValue);
             UnitySetAppleTVRemoteReportAbsoluteDpadValues(gTVRemoteReportsAbsoluteDpadValuesInitialValue);
+        #endif
         }
 
         for (int i = 0; i < BTN_COUNT; i++)
@@ -534,16 +549,36 @@ static void SimulateAttitudeViaGravityVector(const Vector3f& gravity, Quaternion
 // by one. 1st axis is referred to by index 0, 16th by 15, etc.
 static void ReportJoystickMotion(int idx, GCMotion* motion)
 {
-#if PLATFORM_TVOS
     Vector3f rotationRate = VecMake(0.0f, 0.0f, 0.0f);
     Quaternion4f attitude = QuatMake(0.0f, 0.0f, 0.0f, 1.0f);
-#else
-    Vector3f rotationRate = {(float)motion.rotationRate.x, (float)motion.rotationRate.y, (float)motion.rotationRate.z};
-    Quaternion4f attitude = {(float)motion.attitude.x, (float)motion.attitude.y, (float)motion.attitude.z, (float)motion.attitude.w};
+
+    bool gotRotationData = false;
+    if ([motion respondsToSelector: @selector(hasAttitudeAndRotationRate)])
+    {
+#if UNITY_HAS_IOSSDK_11_0 || UNITY_HAS_TVOSSDK_11_0
+        if (motion.hasAttitudeAndRotationRate)
+        {
+            rotationRate = {(float)motion.rotationRate.x, (float)motion.rotationRate.y, (float)motion.rotationRate.z};
+            attitude = {(float)motion.attitude.x, (float)motion.attitude.y, (float)motion.attitude.z, (float)motion.attitude.w};
+            gotRotationData = true;
+        }
 #endif
+    }
+    else
+    {
+#if PLATFORM_IOS
+        // on iOS we assume that rotationRate and attitude is correct, unless
+        // hasAttitudeAndRotationRate tells us otherwise.
+        // on tvOS, rotationRate and attitude are unavailable if hasAttitudeAndRotationRate is unavailable.
+        rotationRate = {(float)motion.rotationRate.x, (float)motion.rotationRate.y, (float)motion.rotationRate.z};
+        attitude = {(float)motion.attitude.x, (float)motion.attitude.y, (float)motion.attitude.z, (float)motion.attitude.w};
+        gotRotationData = true;
+#endif
+    }
 
 #if SIMULATE_ATTITUDE_FROM_GRAVITY
-    SimulateAttitudeViaGravityVector(VecMake((float)motion.gravity.x, (float)motion.gravity.y, (float)motion.gravity.z), attitude, rotationRate);
+    if (!gotRotationData)
+        SimulateAttitudeViaGravityVector(VecMake((float)motion.gravity.x, (float)motion.gravity.y, (float)motion.gravity.z), attitude, rotationRate);
 #endif
 
     // From docs:
@@ -553,11 +588,8 @@ static void ReportJoystickMotion(int idx, GCMotion* motion)
     // attitude quaternion (x,y,z,w): 25, 26, 27, 28
     ReportJoystickXYZAxes(idx, 15, 16, 17, motion.gravity);
     ReportJoystickXYZAxes(idx, 18, 19, 20, motion.userAcceleration);
-
-#if !PLATFORM_TVOS
-    ReportJoystickXYZAxes(idx, 21, 22, 23, motion.rotationRate);
-    ReportJoystickXYZWAxes(idx, 24, 25, 26, 27, motion.attitude);
-#endif
+    ReportJoystickXYZAxes(idx, 21, 22, 23, rotationRate);
+    ReportJoystickXYZWAxes(idx, 24, 25, 26, 27, attitude);
 
 #if PLATFORM_TVOS
     if (sGCMotionForwardingEnabled && !sGCMotionForwardedForCurrentFrame)
@@ -943,6 +975,7 @@ bool LocationService::IsHeadingAvailable()
 @end
 
 #if PLATFORM_TVOS
+
 GCMicroGamepad* QueryMicroController()
 {
     NSArray* list = QueryControllerCollection();
@@ -954,8 +987,6 @@ GCMicroGamepad* QueryMicroController()
 
     return nil;
 }
-
-#endif
 
 extern "C" int UnityGetAppleTVRemoteTouchesEnabled()
 {
@@ -969,60 +1000,43 @@ extern "C" void UnitySetAppleTVRemoteTouchesEnabled(int val)
 
 extern "C" int UnityGetAppleTVRemoteAllowExitToMenu()
 {
-#if PLATFORM_TVOS
     return ((GCEventViewController*)UnityGetGLViewController()).controllerUserInteractionEnabled;
-#else
-    return false;
-#endif
 }
 
 extern "C" void UnitySetAppleTVRemoteAllowExitToMenu(int val)
 {
-#if PLATFORM_TVOS
     ((GCEventViewController*)UnityGetGLViewController()).controllerUserInteractionEnabled = val;
-#endif
 }
 
 extern "C" int UnityGetAppleTVRemoteAllowRotation()
 {
-#if PLATFORM_TVOS
     GCMicroGamepad* controller = QueryMicroController();
     if (controller != nil)
         return controller.allowsRotation;
     else
         return false;
-#else
-    return false;
-#endif
 }
 
-extern "C" void     UnitySetAppleTVRemoteAllowRotation(int val)
+extern "C" void UnitySetAppleTVRemoteAllowRotation(int val)
 {
-#if PLATFORM_TVOS
     GCMicroGamepad* controller = QueryMicroController();
     if (controller != nil)
         controller.allowsRotation = val;
     else
         gTVRemoteAllowRotationInitialValue = val;
-#endif
 }
 
-extern "C" int      UnityGetAppleTVRemoteReportAbsoluteDpadValues()
+extern "C" int UnityGetAppleTVRemoteReportAbsoluteDpadValues()
 {
-#if PLATFORM_TVOS
     GCMicroGamepad* controller = QueryMicroController();
     if (controller != nil)
         return controller.reportsAbsoluteDpadValues;
     else
         return false;
-#else
-    return false;
-#endif
 }
 
-extern "C" void     UnitySetAppleTVRemoteReportAbsoluteDpadValues(int val)
+extern "C" void UnitySetAppleTVRemoteReportAbsoluteDpadValues(int val)
 {
-#if PLATFORM_TVOS
     NSArray* list = QueryControllerCollection();
     for (GCController* controller in list)
     {
@@ -1031,8 +1045,9 @@ extern "C" void     UnitySetAppleTVRemoteReportAbsoluteDpadValues(int val)
         else
             gTVRemoteReportsAbsoluteDpadValuesInitialValue = val;
     }
-#endif
 }
+
+#endif
 
 #if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
 static void FakeRemoteStateSetButton(UIPressType type, bool state)

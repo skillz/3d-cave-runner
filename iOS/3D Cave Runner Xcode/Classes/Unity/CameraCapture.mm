@@ -42,10 +42,8 @@
         AVFrameRateRange* range = [self pickFrameRateRange: fps];
         if (range)
         {
-            if ([device respondsToSelector: @selector(activeVideoMinFrameDuration)])
-                device.activeVideoMinFrameDuration = range.minFrameDuration;
-            if ([device respondsToSelector: @selector(activeVideoMaxFrameDuration)])
-                device.activeVideoMaxFrameDuration = range.maxFrameDuration;
+            device.activeVideoMinFrameDuration = range.minFrameDuration;
+            device.activeVideoMaxFrameDuration = range.maxFrameDuration;
         }
         else
         {
@@ -135,34 +133,32 @@
 {
     AVFrameRateRange* ret = nil;
 
-    if ([self.captureDevice respondsToSelector: @selector(activeFormat)])
+    float minDiff = INFINITY;
+
+    // In some corner cases (seeing this on iPod iOS 6.1.5) activeFormat is null.
+    if (!self.captureDevice.activeFormat)
+        return nil;
+
+    for (AVFrameRateRange* rate in self.captureDevice.activeFormat.videoSupportedFrameRateRanges)
     {
-        float minDiff = INFINITY;
+        float bestMatch = rate.minFrameRate;
+        if (fps > rate.maxFrameRate)
+            bestMatch = rate.maxFrameRate;
+        else if (fps > rate.minFrameRate)
+            bestMatch = fps;
 
-        // In some corner cases (seeing this on iPod iOS 6.1.5) activeFormat is null.
-        if (!self.captureDevice.activeFormat)
-            return nil;
-
-        for (AVFrameRateRange* rate in self.captureDevice.activeFormat.videoSupportedFrameRateRanges)
+        float diff = ::fabs(fps - bestMatch);
+        if (diff < minDiff)
         {
-            float bestMatch = rate.minFrameRate;
-            if (fps > rate.maxFrameRate)
-                bestMatch = rate.maxFrameRate;
-            else if (fps > rate.minFrameRate)
-                bestMatch = fps;
-
-            float diff = ::fabs(fps - bestMatch);
-            if (diff < minDiff)
-            {
-                minDiff = diff;
-                ret = rate;
-            }
+            minDiff = diff;
+            ret = rate;
         }
-
-        NSAssert(ret != nil, @"Cannot pick frame rate range");
-        if (ret == nil)
-            ret = self.captureDevice.activeFormat.videoSupportedFrameRateRanges[0];
     }
+
+    NSAssert(ret != nil, @"Cannot pick frame rate range");
+    if (ret == nil)
+        ret = self.captureDevice.activeFormat.videoSupportedFrameRateRanges[0];
+
     return ret;
 }
 

@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -31,7 +31,7 @@ namespace Unicode
     class LIBIL2CPP_CODEGEN_API Normalization
     {
     public:
-        static void load_normalization_resource(Il2CppIntPtr* argProps, Il2CppIntPtr* argMappedChars, Il2CppIntPtr* argCharMapIndex, Il2CppIntPtr* argHelperIndex, Il2CppIntPtr* argMapIdxToComposite, Il2CppIntPtr* argCombiningClass);
+        static void load_normalization_resource(intptr_t* argProps, intptr_t* argMappedChars, intptr_t* argCharMapIndex, intptr_t* argHelperIndex, intptr_t* argMapIdxToComposite, intptr_t* argCombiningClass);
     };
 } /* namespace Unicode */
 } /* namespace Globalization */

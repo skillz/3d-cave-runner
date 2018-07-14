@@ -38,9 +38,8 @@ int UnityReplayKitIsMicrophoneEnabled()
 
 int UnityReplayKitSetMicrophoneEnabled(bool yes)
 {
-    BOOL value = yes ? YES : NO;
-    [UnityReplayKit sharedInstance].microphoneEnabled = value;
-    return [UnityReplayKit sharedInstance].microphoneEnabled == value;
+    printf_console("Apple removed possibility to change microphoneEnabled during recording.\n");
+    return 0;
 }
 
 const char* UnityReplayKitLastError()
@@ -133,6 +132,11 @@ const char* UnityReplayKitGetBroadcastURL()
     return nullptr;
 }
 
+void UnityReplayKitCreateOverlayWindow()
+{
+    [[UnityReplayKit sharedInstance] createOverlayWindow];
+}
+
 extern "C" float UnityScreenScaleFactor(UIScreen* screen);
 
 #else
@@ -154,6 +158,7 @@ int UnityReplayKitIsMicrophoneEnabled() { return 0; }
 int UnityReplayKitSetMicrophoneEnabled(bool) { return 0; }
 int UnityReplayKitShowCameraPreviewAt(float x, float y) { return 0; }
 void UnityReplayKitHideCameraPreview() {}
+void UnityReplayKitCreateOverlayWindow() {}
 
 void UnityReplayKitTriggerBroadcastStatusCallback(void*, bool, const char*);
 int UnityReplayKitBroadcastingAPIAvailable() { return 0; }

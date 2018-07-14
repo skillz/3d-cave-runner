@@ -7,7 +7,7 @@
 #include <algorithm>
 
 #include "il2cpp-config.h"
-#include "class-internals.h"
+#include "il2cpp-class-internals.h"
 
 #ifdef major
 # undef major
@@ -212,6 +212,7 @@ namespace vm
         static bool IsGenericInstance(const Il2CppType *type);
         static Il2CppReflectionType* GetDeclaringType(const Il2CppType* type);
         static Il2CppArray* GetGenericArgumentsInternal(Il2CppReflectionType* type, bool runtimeArray);
+        static bool IsEqualToType(const Il2CppType *type, const Il2CppType *otherType);
 
     public:
         // internal

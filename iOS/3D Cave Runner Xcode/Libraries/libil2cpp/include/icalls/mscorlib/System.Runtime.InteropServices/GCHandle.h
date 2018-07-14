@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 
@@ -23,7 +23,7 @@ namespace InteropServices
     public:
         static bool CheckCurrentDomain(int32_t handle);
         static void FreeHandle(int32_t handle);
-        static Il2CppIntPtr GetAddrOfPinnedObject(int32_t handle);
+        static intptr_t GetAddrOfPinnedObject(int32_t handle);
         static Il2CppObject * GetTarget(int32_t handle);
         static int32_t GetTargetHandle(Il2CppObject * obj, int32_t handle, int32_t type);
     };

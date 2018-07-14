@@ -208,11 +208,11 @@ function Update()
 		//High speed effect
 		if ( Speed > 22 )
 		{
-			SpeedEffect.GetComponent.<ParticleEmitter>().emit = true; //turn on the high speed effect
+			//SpeedEffect.GetComponent.<ParticleEmitter>().emit = true; //turn on the high speed effect
 		}
 		else
 		{
-			SpeedEffect.GetComponent.<ParticleEmitter>().emit = false; //turn off the high speed effect
+			//SpeedEffect.GetComponent.<ParticleEmitter>().emit = false; //turn off the high speed effect
 		}
 
 		//Lava, walk, run, jump, and fall animations

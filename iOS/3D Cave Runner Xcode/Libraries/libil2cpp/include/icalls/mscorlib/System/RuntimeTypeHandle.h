@@ -14,6 +14,7 @@ namespace System
     {
     public:
         static bool HasInstantiation(Il2CppReflectionRuntimeType* type);
+        static bool HasReferences(Il2CppReflectionRuntimeType* type);
         static bool IsArray(Il2CppReflectionRuntimeType* type);
         static bool IsByRef(Il2CppReflectionRuntimeType* type);
         static bool IsComObject(Il2CppReflectionRuntimeType* type);
@@ -31,7 +32,7 @@ namespace System
         static Il2CppReflectionRuntimeType* GetBaseType(Il2CppReflectionRuntimeType* type);
         static Il2CppReflectionRuntimeType* GetElementType(Il2CppReflectionRuntimeType* type);
         static Il2CppReflectionType* GetGenericTypeDefinition_impl(Il2CppReflectionRuntimeType* type);
-        static Il2CppIntPtr GetGenericParameterInfo(Il2CppReflectionRuntimeType* type);
+        static intptr_t GetGenericParameterInfo(Il2CppReflectionRuntimeType* type);
     };
 } // namespace System
 } // namespace mscorlib

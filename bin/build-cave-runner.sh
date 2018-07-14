@@ -29,7 +29,7 @@ mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave
 cd "${WORKSPACE}"
 
 # Link Sidious stored location for Unity lib.
-sudo ln -sf "/opt/sdk-integrations/Unity_2017.1.1/libiPhone-lib.a"  "${WORKSPACE}/iOS/3D Cave Runner Xcode/Libraries/libiPhone-lib.a"
+sudo ln -sf "/opt/sdk-integrations/Unity_2018.1.3/libiPhone-lib.a"  "${WORKSPACE}/iOS/3D Cave Runner Xcode/Libraries/libiPhone-lib.a"
 
 # Clean old artifacts
 rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive.zip"

@@ -25,18 +25,22 @@
 // if you simply want different root view, tweak view hierarchy in createAutorotatingUnityViewController
 - (UnityView*)createUnityView;
 
-// for view controllers we have 2 cases:
-// properly auto-rotating one VS the one with fixed orientation
-// having special ViewController is a must to play nicely with ios8+ releases
-// you are free to tweak your ViewController and return same object, though
-// _unityView will be inited at the point of calling any of these methods
+// for view controllers we discern between platforms that do support orientation (e.g. iOS) and the ones that dont (e.g. tvOS)
+// both have concept of "default" view controller: for iOS it will be auto-rotating one (with possible constraints) and "simple" controller otherwise
+// in case of supporting orientation we will discern case of fixed-orientation view controller (that seems to be the only way to handle it robustly)
+// _unityView will be inited at the point of calling any of "create view controller" methods
 // please note that these are actual "create" methods: there is no need to tweak hierarchy right away
 
-#if PLATFORM_TVOS
-- (UIViewController*)createUnityViewControllerForTVOS;
-#else
-- (UIViewController*)createAutorotatingUnityViewController;
+- (UIViewController*)createUnityViewControllerDefault;
+#if UNITY_SUPPORT_ROTATION
 - (UIViewController*)createUnityViewControllerForOrientation:(UIInterfaceOrientation)orient;
+#endif
+
+#if UNITY_SUPPORT_ROTATION
+// if you override these you need to call super
+// if your root controller is not subclassed from UnityViewControllerBase, call these when rotation is happening
+- (void)interfaceWillChangeOrientationTo:(UIInterfaceOrientation)toInterfaceOrientation;
+- (void)interfaceDidChangeOrientationFrom:(UIInterfaceOrientation)fromInterfaceOrientation;
 #endif
 
 // handling of changing ViewControllers:
@@ -52,20 +56,11 @@
 - (void)willTransitionToViewController:(UIViewController*)toController fromViewController:(UIViewController*)fromController;
 
 
-#if !PLATFORM_TVOS
-// if you override these you need to call super
-
-// if your root controller is not subclassed from UnityViewControllerBase, call these when rotation is happening
-- (void)interfaceWillChangeOrientationTo:(UIInterfaceOrientation)toInterfaceOrientation;
-- (void)interfaceDidChangeOrientationFrom:(UIInterfaceOrientation)fromInterfaceOrientation;
-#endif
-
 // override this if you want to have custom snapshot view.
 // by default it will capture the frame drawn inside applicationWillResignActive specifically to let app respond to OnApplicationPause
 // will be called on every applicationWillResignActive; returned view will be released in applicationDidBecomeActive
 // NB: case of returning nil will be handled gracefully
 - (UIView*)createSnapshotView;
-
 
 // you should not override these methods
 
@@ -79,21 +74,6 @@
 
 // will create or return from cache correct view controller for requested orientation
 - (UIViewController*)createRootViewController;
-#if !PLATFORM_TVOS
-// will create or return from cache correct view controller for given orientation
-- (UIViewController*)createRootViewControllerForOrientation:(UIInterfaceOrientation)orientation;
-
-// forcibly orient interface
-- (void)orientInterface:(UIInterfaceOrientation)orient;
-
-// use this one in case of simple view hierarchy (e.g. when unity view is root)
-// this will fail if unity content orientation do not match actual ViewController orientation (e.g. portrait view inside landscape VC)
-// this one is called when you change Screen.orientation in script
-- (void)orientUnity:(UIInterfaceOrientation)orient;
-#endif
-
-// check unity requested orientation and applies it
-- (void)checkOrientationRequest;
 
 // old deprecated methods: no longer used
 // the caveat is: there are some issues in clang related to method deprecation
@@ -104,5 +84,24 @@
 //- (void)createViewHierarchyImpl DEPRECATED_MSG_ATTRIBUTE("Will not be called. Override willStartWithViewController");
 //- (void)createViewHierarchy DEPRECATED_MSG_ATTRIBUTE("Is not implemented. Use createUI");
 
-
 @end
+
+#if UNITY_SUPPORT_ROTATION
+@interface UnityAppController (OrientationSupport)
+// will create or return from cache correct view controller for given orientation
+- (UIViewController*)createRootViewControllerForOrientation:(UIInterfaceOrientation)orientation;
+
+// forcibly orient interface
+- (void)orientInterface:(UIInterfaceOrientation)orient;
+
+// check unity requested orientation and applies it
+- (void)checkOrientationRequest;
+
+- (void)orientUnity:(UIInterfaceOrientation)orient __deprecated_msg("use orientInterface instead.");
+
+// force iOS to switch to newly enabled orientation or away from disabled
+// orientation. [UIViewController attemptRotationToDeviceOrientation] is
+// insufficient for this purpose
+- (void)forceAutorotatingControllerToRefreshEnabledOrientationsIfNeeded;
+@end
+#endif

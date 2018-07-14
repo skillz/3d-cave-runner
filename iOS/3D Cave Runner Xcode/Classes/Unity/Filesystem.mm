@@ -68,7 +68,7 @@ extern "C" const char* const* UnityFontFallbacks()
             "Heiti SC",             // Simplified Chinese characters (on 9.0 OS substitutes this with "PingFang SC")
             "Apple SD Gothic Neo",  // Korean characters
 
-            ".Sukhumvit Set UI",    // Thai characters since 8.2 until 9.0
+            ".Sukhumvit Set UI",    // Thai characters since 8.2 until 9.x
             "AppleGothic",
             "Noto Sans Yi",         // Yi characters on 9.0 (not available on tvOS)
             "Helvetica",
@@ -79,6 +79,10 @@ extern "C" const char* const* UnityFontFallbacks()
             "Kohinoor Telugu",      // Telugu since 9.0
             "Lao Sangam MN",        // Lao
             "Geeza Pro",            // Arabic
+            "Kailasa",              // Tibetan since iOS 10.0
+            ".PhoneFallback",       // Armenian, Braille, Georgian, Thai, various symbols since iOS 10.0
+            // Note that iOS itself prefers Thonburi font for the Thai characters, but our font subsystem
+            // can't display combining characters for some reason
             ".LastResort",
             NULL
         };

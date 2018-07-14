@@ -6,7 +6,11 @@
 ScreenOrientation       ConvertToUnityScreenOrientation(UIInterfaceOrientation hwOrient);
 UIInterfaceOrientation  ConvertToIosScreenOrientation(ScreenOrientation orient);
 #endif
-ScreenOrientation UIViewControllerOrientation(UIViewController* controller);
+
+#if !PLATFORM_TVOS
+UIInterfaceOrientation  UIViewControllerInterfaceOrientation(UIViewController* controller);
+#endif
+ScreenOrientation       UIViewControllerOrientation(UIViewController* controller);
 
 CGAffineTransform       TransformForOrientation(ScreenOrientation curOrient);
 CGAffineTransform       TransformBetweenOrientations(ScreenOrientation fromOrient, ScreenOrientation toOrient);

@@ -8,129 +8,16 @@
 #include <stdint.h>
 
 /* first setup platform defines*/
-#if defined(SN_TARGET_PSP2)
-    #define IL2CPP_TARGET_PSP2 1
-    #define _UNICODE 1
-    #define UNICODE 1
-    #include "il2cpp-config-psp2.h"
-#elif defined(SN_TARGET_ORBIS)
-    #define IL2CPP_TARGET_PS4 1
-    #define _UNICODE 1
-    #define UNICODE 1
-#elif defined(_MSC_VER)
-    #define IL2CPP_TARGET_WINDOWS 1
-    #if defined(_XBOX_ONE)
-        #define IL2CPP_TARGET_XBOXONE 1
-    #elif defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_APP)
-        #define IL2CPP_TARGET_WINRT 1
-    #else
-        #define IL2CPP_TARGET_WINDOWS_DESKTOP 1
-    #endif
-    #define _UNICODE 1
-    #define UNICODE 1
-    #define STRICT 1
-#elif defined(__APPLE__)
-    #define IL2CPP_TARGET_DARWIN 1
-    #include "TargetConditionals.h"
-    #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR || TARGET_TVOS_SIMULATOR
-        #define IL2CPP_TARGET_IOS 1
-    #endif
-#elif defined(__ANDROID__)
-    #define IL2CPP_TARGET_ANDROID 1
-#elif defined(EMSCRIPTEN)
-    #define IL2CPP_TARGET_JAVASCRIPT 1
-#elif defined(TIZEN)
-    #define IL2CPP_TARGET_TIZEN 1
-#elif defined(__linux__)
-    #define IL2CPP_TARGET_LINUX 1
-#elif defined(NN_PLATFORM_CTR)
-    #define IL2CPP_TARGET_N3DS 1
-#elif defined(NN_BUILD_TARGET_PLATFORM_NX)
-    #define IL2CPP_TARGET_SWITCH 1
-#else
-    #error please define your target platform
-#endif
+#include "os/c-api/il2cpp-config-platforms.h"
+#include "os/c-api/il2cpp-config-api-platforms.h"
 
-#ifndef IL2CPP_TARGET_WINDOWS
-#define IL2CPP_TARGET_WINDOWS 0
-#endif
-
-#ifndef IL2CPP_TARGET_WINDOWS_DESKTOP
-#define IL2CPP_TARGET_WINDOWS_DESKTOP 0
-#endif
-
-#ifndef IL2CPP_TARGET_WINRT
-#define IL2CPP_TARGET_WINRT 0
-#endif
-
-#ifndef IL2CPP_TARGET_XBOXONE
-#define IL2CPP_TARGET_XBOXONE 0
-#endif
-
-#ifndef IL2CPP_TARGET_DARWIN
-#define IL2CPP_TARGET_DARWIN 0
-#endif
-
-#ifndef IL2CPP_TARGET_IOS
-#define IL2CPP_TARGET_IOS 0
-#endif
-
-#ifndef IL2CPP_TARGET_ANDROID
-#define IL2CPP_TARGET_ANDROID 0
-#endif
-
-#ifndef IL2CPP_TARGET_JAVASCRIPT
-#define IL2CPP_TARGET_JAVASCRIPT 0
-#endif
-
-#ifndef IL2CPP_TARGET_TIZEN
-#define IL2CPP_TARGET_TIZEN 0
-#endif
-
-#ifndef IL2CPP_TARGET_LINUX
-#define IL2CPP_TARGET_LINUX 0
-#endif
-
-#ifndef IL2CPP_TARGET_N3DS
-#define IL2CPP_TARGET_N3DS 0
-#endif
-
-#ifndef IL2CPP_TARGET_PS4
-#define IL2CPP_TARGET_PS4 0
-#endif
-
-#ifndef IL2CPP_TARGET_PSP2
-#define IL2CPP_TARGET_PSP2 0
-#endif
-
-#ifndef IL2CPP_TARGET_SWITCH
-#define IL2CPP_TARGET_SWITCH 0
-#endif
-
-#define IL2CPP_TARGET_POSIX (IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_JAVASCRIPT || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PSP2 || IL2CPP_TARGET_TIZEN)
+/* il2cpp-config-api.h need this define */
 #define IL2CPP_COMPILER_MSVC (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE)
+
+#include "il2cpp-config-api.h"
 
 #ifndef IL2CPP_EXCEPTION_DISABLED
 #define IL2CPP_EXCEPTION_DISABLED 0
-#endif
-
-// If the platform loads il2cpp as a dynamic library but does not have dlsym (or equivalent) then
-// define IL2CPP_API_DYNAMIC_NO_DLSYM = 1 to add support for api function registration and symbol
-// lookup APIs, see il2cpp-api.cpp
-#ifndef IL2CPP_API_DYNAMIC_NO_DLSYM
-#define IL2CPP_API_DYNAMIC_NO_DLSYM 0
-#endif
-
-#ifdef _MSC_VER
-# include <malloc.h>
-# define IL2CPP_EXPORT __declspec(dllexport)
-# define IL2CPP_IMPORT __declspec(dllimport)
-#elif IL2CPP_TARGET_PSP2 || IL2CPP_TARGET_PS4
-# define IL2CPP_EXPORT __declspec(dllexport)
-# define IL2CPP_IMPORT __declspec(dllimport)
-#else
-# define IL2CPP_EXPORT __attribute__ ((visibility ("default")))
-# define IL2CPP_IMPORT
 #endif
 
 #ifdef LIBIL2CPP_EXPORT_CODEGEN_API
@@ -139,15 +26,6 @@
 # define LIBIL2CPP_CODEGEN_API IL2CPP_IMPORT
 #else
 # define LIBIL2CPP_CODEGEN_API
-#endif
-
-#if IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_WINRT
-#include <crtdbg.h>
-#define IL2CPP_ASSERT(expr) \
-    _ASSERTE(expr)
-#else
-#define IL2CPP_ASSERT(expr) \
-    assert(expr)
 #endif
 
 #if defined(__ARMCC_VERSION)
@@ -166,55 +44,21 @@
 #endif
 
 #if defined(_MSC_VER)
-    #if defined(_M_X64)
-        #define IL2CPP_SIZEOF_VOID_P 8
-    #elif defined(_M_IX86) || defined(_M_ARM)
-        #define IL2CPP_SIZEOF_VOID_P 4
-    #else
-        #error invalid windows architecture
-    #endif
-#elif defined(__GNUC__) || defined(__SNC__)
-    #if defined(__x86_64__)
-        #define IL2CPP_SIZEOF_VOID_P 8
-    #elif defined(__i386__)
-        #define IL2CPP_SIZEOF_VOID_P 4
-    #elif defined(EMSCRIPTEN)
-        #define IL2CPP_SIZEOF_VOID_P 4
-    #elif defined(__arm__)
-        #define IL2CPP_SIZEOF_VOID_P 4
-    #elif defined(__arm64__)
-        #define IL2CPP_SIZEOF_VOID_P 8
-    #else
-        #error invalid windows architecture
-    #endif
-#else
-    #error please define your target architecture size
-#endif
-
-#if defined(_MSC_VER)
 #define IL2CPP_CXX_ABI_MSVC 1
 #else
 #define IL2CPP_CXX_ABI_MSVC 0
 #endif
 
 #if IL2CPP_COMPILER_MSVC
+#ifndef STDCALL
 #define STDCALL __stdcall
+#endif
+#ifndef CDECL
 #define CDECL __cdecl
+#endif
 #else
 #define STDCALL
 #define CDECL
-#endif
-
-#if IL2CPP_COMPILER_MSVC || defined(__ARMCC_VERSION)
-#define NORETURN __declspec(noreturn)
-#else
-#define NORETURN
-#endif
-
-#if IL2CPP_TARGET_IOS || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_DARWIN
-#define REAL_NORETURN __attribute__ ((noreturn))
-#else
-#define REAL_NORETURN NORETURN
 #endif
 
 #if IL2CPP_COMPILER_MSVC || defined(__ARMCC_VERSION)
@@ -253,10 +97,6 @@
 
 #define IL2CPP_PAGE_SIZE 4096
 
-/* Trigger assert if 'ptr' is not aligned to 'alignment'. */
-#define ASSERT_ALIGNMENT(ptr, alignment) \
-    IL2CPP_ASSERT((((ptrdiff_t) ptr) & (alignment - 1)) == 0 && "Unaligned pointer!")
-
 // 64-bit types are aligned to 8 bytes on 64-bit platforms and always on Windows
 #define IL2CPP_ENABLE_INTERLOCKED_64_REQUIRED_ALIGNMENT ((IL2CPP_SIZEOF_VOID_P == 8) || (IL2CPP_TARGET_WINDOWS))
 
@@ -268,19 +108,6 @@
 #ifndef IL2CPP_DEVELOPMENT
 #define IL2CPP_DEVELOPMENT 0
 #endif
-
-/* Threading */
-#define IL2CPP_SUPPORT_THREADS !IL2CPP_TARGET_JAVASCRIPT
-
-#define IL2CPP_USE_STD_THREAD 0
-
-#define IL2CPP_THREADS_STD IL2CPP_USE_STD_THREAD
-#define IL2CPP_THREADS_PTHREAD (!IL2CPP_THREADS_STD && IL2CPP_TARGET_POSIX)
-#define IL2CPP_THREADS_WIN32 (!IL2CPP_THREADS_STD && IL2CPP_TARGET_WINDOWS)
-#define IL2CPP_THREADS_N3DS (!IL2CPP_THREADS_STD && IL2CPP_TARGET_N3DS)
-#define IL2CPP_THREADS_PS4 (!IL2CPP_THREADS_STD && IL2CPP_TARGET_PS4)
-#define IL2CPP_THREADS_PSP2 (!IL2CPP_THREADS_STD && IL2CPP_TARGET_PSP2)
-#define IL2CPP_THREADS_SWITCH (!IL2CPP_THREADS_STD && IL2CPP_TARGET_SWITCH)
 
 #define IL2CPP_THREADS_ALL_ACCESS (!IL2CPP_THREADS_STD && IL2CPP_TARGET_XBOXONE)
 
@@ -300,7 +127,7 @@
 #define IL2CPP_ENABLE_STACKTRACES 1
 /* Platforms which use OS specific implementation to extract stracktrace */
 #if !defined(IL2CPP_ENABLE_NATIVE_STACKTRACES)
-#define IL2CPP_ENABLE_NATIVE_STACKTRACES (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_IOS || IL2CPP_TARGET_TIZEN || IL2CPP_TARGET_ANDROID)
+#define IL2CPP_ENABLE_NATIVE_STACKTRACES (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_LINUX || IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_IOS || IL2CPP_TARGET_ANDROID)
 #endif
 
 /* Platforms which use stacktrace sentries */
@@ -315,11 +142,6 @@
 #endif
 
 #define IL2CPP_CAN_USE_MULTIPLE_SYMBOL_MAPS IL2CPP_TARGET_IOS
-
-/* Profiler */
-#ifndef IL2CPP_ENABLE_PROFILER
-#define IL2CPP_ENABLE_PROFILER 1
-#endif
 
 /* GC defines*/
 #define IL2CPP_GC_BOEHM 1
@@ -336,7 +158,11 @@
     #define IL2CPP_ZERO_LEN_ARRAY 0
 #endif
 
-#define IL2CPP_HAS_CXX_CONSTEXPR (__has_feature (cxx_constexpr))
+#if defined(_MSC_VER)
+    #define IL2CPP_HAS_CXX_CONSTEXPR (_MSC_VER >= 1900)
+#else
+    #define IL2CPP_HAS_CXX_CONSTEXPR (__has_feature (cxx_constexpr))
+#endif
 
 /* clang specific __has_builtin check */
 #ifndef __has_builtin
@@ -352,6 +178,7 @@
 #endif
 
 typedef uint32_t Il2CppMethodSlot;
+const uint32_t kInvalidIl2CppMethodSlot = 65535;
 
 /* Debug macros */
 #define STRINGIZE(L)          #L
@@ -372,32 +199,32 @@ typedef uint32_t Il2CppMethodSlot;
 
 #if !defined(EMSCRIPTEN)
 
-#define NOT_IMPLEMENTED_ICALL(func) \
+#define IL2CPP_NOT_IMPLEMENTED_ICALL(func) \
     PRAGMA_MESSAGE(ICALLMESSAGE(#func)) \
     IL2CPP_ASSERT(0 && #func)
-#define NOT_IMPLEMENTED_ICALL_NO_ASSERT(func, reason) \
+#define IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(func, reason) \
     PRAGMA_MESSAGE(ICALLMESSAGE(#func))
 
-#define NOT_IMPLEMENTED(func) \
+#define IL2CPP_NOT_IMPLEMENTED(func) \
     PRAGMA_MESSAGE(RUNTIMEMESSAGE(#func)) \
     IL2CPP_ASSERT(0 && #func)
-#define NOT_IMPLEMENTED_NO_ASSERT(func, reason) \
+#define IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(func, reason) \
     PRAGMA_MESSAGE(RUNTIMEMESSAGE(#func))
 
 #else
 
 // emscripten's assert will throw an exception in js.
 // For now, we don't want that, so just printf and move on.
-    #define NOT_IMPLEMENTED_ICALL(func) \
+    #define IL2CPP_NOT_IMPLEMENTED_ICALL(func) \
     PRAGMA_MESSAGE(message(ICALLMESSAGE(#func))) \
     printf("Not implemented icall: %s\n", #func);
-#define NOT_IMPLEMENTED_ICALL_NO_ASSERT(func, reason) \
+#define IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(func, reason) \
     PRAGMA_MESSAGE(message(ICALLMESSAGE(#func)))
 
-#define NOT_IMPLEMENTED(func) \
+#define IL2CPP_NOT_IMPLEMENTED(func) \
     PRAGMA_MESSAGE(message(RUNTIMEMESSAGE(#func))) \
     printf("Not implemented: %s\n", #func);
-#define NOT_IMPLEMENTED_NO_ASSERT(func, reason) \
+#define IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(func, reason) \
     PRAGMA_MESSAGE(message(RUNTIMEMESSAGE(#func)))
 
 #endif
@@ -424,14 +251,6 @@ typedef uint32_t Il2CppMethodSlot;
     #define IL2CPP_DIR_SEPARATOR '/'    /* forward slash */
 #endif
 
-#ifndef IL2CPP_DEBUGGER_ENABLED
-    #define IL2CPP_DEBUGGER_ENABLED 0
-#endif
-
-#ifndef IL2CPP_DEBUGGER_LOG
-    #define IL2CPP_DEBUGGER_LOG 0
-#endif
-
 #ifndef IL2CPP_DISABLE_FULL_MESSAGES
     #define IL2CPP_DISABLE_FULL_MESSAGES    1
 #endif
@@ -442,7 +261,14 @@ typedef uint32_t Il2CppMethodSlot;
     #define IL2CPP_USE_GENERIC_SOCKET_IMPL  (!IL2CPP_TARGET_POSIX || IL2CPP_TARGET_JAVASCRIPT) &&  (!IL2CPP_TARGET_SWITCH)
 #endif
 
+/* set by platforms that require special handling of SIGPIPE signalling during socket sends */
+#ifndef IL2CPP_USE_SEND_NOSIGNAL
+    #define IL2CPP_USE_SEND_NOSIGNAL 0
+#endif
+
+#ifndef IL2CPP_USE_GENERIC_ENVIRONMENT
 #define IL2CPP_USE_GENERIC_ENVIRONMENT  (!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_POSIX)
+#endif
 
 #define IL2CPP_USE_GENERIC_COM  (!IL2CPP_TARGET_WINDOWS)
 #define IL2CPP_USE_GENERIC_COM_SAFEARRAYS   (!IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE)
@@ -452,20 +278,34 @@ typedef uint32_t Il2CppMethodSlot;
 #define IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE (IL2CPP_TARGET_XBOXONE || (!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_POSIX))
 #endif
 
+#ifndef IL2CPP_USE_GENERIC_FILE
+#define IL2CPP_USE_GENERIC_FILE (!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_DARWIN)
+#endif
+
 #define IL2CPP_SIZEOF_STRUCT_WITH_NO_INSTANCE_FIELDS 1
 #define IL2CPP_VALIDATE_FIELD_LAYOUT 0
 
-#if IL2CPP_COMPILER_MSVC    // Use stub "return false" implementation where it's not implemented
-#define IL2CPP_ISDEBUGGERPRESENT_IMPLEMENTED 1
-#else
-#define IL2CPP_ISDEBUGGERPRESENT_IMPLEMENTED 0
-#endif
-
-
 #ifndef IL2CPP_USE_POSIX_COND_TIMEDWAIT_REL
-#define IL2CPP_USE_POSIX_COND_TIMEDWAIT_REL ( IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_PSP2 )
+#define IL2CPP_USE_POSIX_COND_TIMEDWAIT_REL ( IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_PSP2 || ( IL2CPP_TARGET_ANDROID && !defined(__aarch64__) ) )
 #endif
 
+#if IL2CPP_MONO_DEBUGGER
+#define DECLARE_SEQ_POINT_STORAGE(name) Il2CppSequencePointStorage name
+#define STORE_SEQ_POINT(storage, seqPointId) (storage).Store(il2cpp_codegen_get_sequence_point(seqPointId))
+#define CHECK_SEQ_POINT(storage, seqPointId, method, methodIndex) il2cpp_codegen_check_sequence_point((storage), il2cpp_codegen_get_sequence_point(seqPointId), method, methodIndex)
+#define CHECK_METHOD_EXIT_SEQ_POINT(name, storage, seqPointId, method, methodIndex) MethodExitSequencePointChecker name(storage, seqPointId, method, methodIndex)
+#define DECLARE_METHOD_EXEC_CTX(itemsVariable, ctxVariable, ...) void* itemsVariable[] = { __VA_ARGS__ }; Il2CppSequencePointExecutionContext ctxVariable(itemsVariable)
+#define DECLARE_METHOD_EXEC_NULL_CTX(ctxVariable) Il2CppSequencePointExecutionContext ctxVariable(NULL)
+#else
+#define DECLARE_SEQ_POINT_STORAGE(name)
+#define STORE_SEQ_POINT(storage, seqPointVar)
+#define CHECK_SEQ_POINT(storage, seqPointVar, method, methodIndex)
+#define CHECK_METHOD_EXIT_SEQ_POINT(name, storage, seqPointId, method, methodIndex)
+#define DECLARE_METHOD_EXEC_CTX(itemsVariable, ctxVariable, ...)
+#define DECLARE_METHOD_EXEC_NULL_CTX(ctxVariable)
+#endif
+
+#ifdef __cplusplus
 template<bool value>
 struct Il2CppStaticAssertHelper;
 
@@ -474,8 +314,10 @@ struct Il2CppStaticAssertHelper<true>
 {
 };
 
+
 #define Assert(x) do { (void)(x); IL2CPP_ASSERT(x); } while (false)
 #define Il2CppStaticAssert(...) do { Il2CppStaticAssertHelper<(__VA_ARGS__)>(); } while (false)
+#endif
 
 const int32_t kIl2CppInt32Min = INT32_MIN;
 const int32_t kIl2CppInt32Max = INT32_MAX;
@@ -485,17 +327,17 @@ const int64_t kIl2CppInt64Max = INT64_MAX;
 const uint64_t kIl2CppUInt64Max = UINT64_MAX;
 
 #if IL2CPP_SIZEOF_VOID_P == 8
-const intptr_t kIl2CppIntPtrMin = kIl2CppInt64Min;
-const intptr_t kIl2CppIntPtrMax = kIl2CppInt64Max;
-const uintptr_t kIl2CppUIntPtrMax = kIl2CppUInt64Max;
+const intptr_t kIl2CppIntPtrMin = INT64_MIN;
+const intptr_t kIl2CppIntPtrMax = INT64_MAX;
+const uintptr_t kIl2CppUIntPtrMax = UINT64_MAX;
 #else
-const intptr_t kIl2CppIntPtrMin = kIl2CppInt32Min;
-const intptr_t kIl2CppIntPtrMax = kIl2CppInt32Max;
-const uintptr_t kIl2CppUIntPtrMax = kIl2CppUInt32Max;
+const intptr_t kIl2CppIntPtrMin = INT32_MIN;
+const intptr_t kIl2CppIntPtrMax = INT32_MAX;
+const uintptr_t kIl2CppUIntPtrMax = UINT32_MAX;
 #endif
 
 const int ipv6AddressSize = 16;
-#define IL2CPP_SUPPORT_IPV6 !IL2CPP_TARGET_PS4
+#define IL2CPP_SUPPORT_IPV6 !IL2CPP_TARGET_PS4 && !IL2CPP_TARGET_SWITCH
 
 // Android: "There is no support for locales in the C library" https://code.google.com/p/android/issues/detail?id=57313
 // PS4/PS2: strtol_d doesn't exist
@@ -532,8 +374,6 @@ typedef int32_t il2cpp_hresult_t;
 
 #define IL2CPP_HR_SUCCEEDED(hr) (((il2cpp_hresult_t)(hr)) >= 0)
 #define IL2CPP_HR_FAILED(hr) (((il2cpp_hresult_t)(hr)) < 0)
-
-#include "il2cpp-api-types.h"
 
 #define IL2CPP_LITTLE_ENDIAN 1
 #define IL2CPP_BIG_ENDIAN 2
@@ -580,4 +420,22 @@ const Il2CppChar kIl2CppNewLine[] = { '\n', '\0' };
 #define IL2CPP_ATTRIBUTE_WEAK
 #else
 #define IL2CPP_ATTRIBUTE_WEAK __attribute__((weak))
+#endif
+
+#if IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_WINRT || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PSP2
+#define IL2CPP_USE_GENERIC_CPU_INFO 1
+#else
+#define IL2CPP_USE_GENERIC_CPU_INFO 0
+#endif
+
+#define IL2CPP_CAN_CHECK_EXECUTABLE IL2CPP_TARGET_WINDOWS || (IL2CPP_TARGET_POSIX && !IL2CPP_TARGET_PS4)
+
+#if IL2CPP_MONO_DEBUGGER
+#define IL2CPP_DEBUG_BREAK() il2cpp::utils::Debugger::UserBreak()
+#else
+#ifdef _MSC_VER
+#define IL2CPP_DEBUG_BREAK() __debugbreak()
+#else
+#define IL2CPP_DEBUG_BREAK()
+#endif
 #endif

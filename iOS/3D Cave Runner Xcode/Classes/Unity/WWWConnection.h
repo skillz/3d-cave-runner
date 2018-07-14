@@ -14,7 +14,7 @@
 @property (readonly, retain, nonatomic) NSString*           user;
 @property (readonly, retain, nonatomic) NSString*           password;
 @property (readonly, retain, nonatomic) NSData*             data;
-@property (readonly, retain, nonatomic) NSURLConnection*    connection;
+@property (readonly, retain, atomic)    NSURLConnection*    connection;
 
 @property (readonly, nonatomic)         void*               udata;
 @property (nonatomic)                   BOOL                shouldAbort;

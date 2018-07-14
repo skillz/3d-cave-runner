@@ -115,6 +115,7 @@ function SubmitScore()
 		HasSubmittedScore = true;
 		var metrics = new Dictionary.<String,String>();
 		metrics["score"] = TotalScore.ToString("F0");
+		UnityEngine.Application.LoadLevel("start");
 		SkillzCrossPlatform.ReportFinalScore(metrics["score"]);
 	}
 }

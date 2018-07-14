@@ -37,6 +37,7 @@
 - (void)stopBroadcasting;
 - (BOOL)showCameraPreviewAt:(CGPoint)position;
 - (void)hideCameraPreview;
+- (void)createOverlayWindow;
 @end
 
 

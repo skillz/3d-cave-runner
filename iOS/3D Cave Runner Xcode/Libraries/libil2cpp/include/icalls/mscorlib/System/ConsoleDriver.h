@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -31,7 +31,7 @@ namespace System
         static bool SetBreak(bool wantBreak);
         static bool SetEcho(bool wantEcho);
         static bool TtySetup(Il2CppString* keypadXmit, Il2CppString* teardown, Il2CppArray** control_characters, int32_t** size);
-        static bool Isatty(Il2CppIntPtr handle);
+        static bool Isatty(intptr_t handle);
     };
 } /* namespace System */
 } /* namespace mscorlib */

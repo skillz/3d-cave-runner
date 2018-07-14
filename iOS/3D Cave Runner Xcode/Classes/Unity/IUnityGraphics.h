@@ -4,7 +4,7 @@
 typedef enum UnityGfxRenderer
 {
     //kUnityGfxRendererOpenGL            =  0, // Legacy OpenGL, removed
-    kUnityGfxRendererD3D9              =  1, // Direct3D 9
+    //kUnityGfxRendererD3D9              =  1, // Direct3D 9, removed
     kUnityGfxRendererD3D11             =  2, // Direct3D 11
     kUnityGfxRendererGCM               =  3, // PlayStation 3
     kUnityGfxRendererNull              =  4, // "null" device (used in batch mode)
@@ -16,7 +16,9 @@ typedef enum UnityGfxRenderer
     kUnityGfxRendererMetal             = 16, // iOS Metal
     kUnityGfxRendererOpenGLCore        = 17, // OpenGL core
     kUnityGfxRendererD3D12             = 18, // Direct3D 12
-    kUnityGfxRendererVulkan                = 21, // Vulkan
+    kUnityGfxRendererVulkan            = 21, // Vulkan
+    kUnityGfxRendererNvn               = 22, // Nintendo Switch NVN API
+    kUnityGfxRendererXboxOneD3D12      = 23  // MS XboxOne Direct3D 12
 } UnityGfxRenderer;
 
 typedef enum UnityGfxDeviceEventType

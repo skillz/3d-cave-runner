@@ -4,7 +4,6 @@
 #include "il2cpp-mono-support.h"
 #include "mono-api.h"
 
-
 struct ProfilerMethodSentry
 {
     ProfilerMethodSentry(const RuntimeMethod* method)
@@ -12,12 +11,12 @@ struct ProfilerMethodSentry
         : m_method(method)
 #endif
     {
-        NOT_IMPLEMENTED("Unity profiler hooks are not implemented yet for the libmonoruntime backend.");
+        IL2CPP_NOT_IMPLEMENTED("Unity profiler hooks are not implemented yet for the libmonoruntime backend.");
     }
 
     ~ProfilerMethodSentry()
     {
-        NOT_IMPLEMENTED("Unity profiler hooks are not implemented yet for the libmonoruntime backend.");
+        IL2CPP_NOT_IMPLEMENTED("Unity profiler hooks are not implemented yet for the libmonoruntime backend.");
     }
 
 private:
@@ -32,21 +31,14 @@ struct StackTraceSentry
 
         frame_info.method = method;
         frame_info.actual_method = method;
-        frame_info.type = MONO_FRAME_TYPE_MANAGED;
+        frame_info.type = FRAME_TYPE_MANAGED;
         frame_info.managed = 1;
         frame_info.il_offset = 0;
         frame_info.native_offset = 0;
-        frame_info.ji = (void*)-1;
+        frame_info.ji = (MonoJitInfo*)(void*)-1;
 
         mono::vm::StackTrace::PushFrame(frame_info);
     }
-
-#if IL2CPP_DEBUGGER_ENABLED
-    StackTraceSentry(const RuntimeMethod* method, void* this_ptr, void **params, int32_t params_count, void **locals, int32_t locals_count) : m_method(method)
-    {
-    }
-
-#endif
 
     ~StackTraceSentry()
     {
@@ -57,6 +49,8 @@ private:
     const RuntimeMethod* m_method;
 };
 
+#define IL2CPP_FAKE_BOX_SENTRY (MonoThreadsSync*)UINTPTR_MAX
+
 template<typename T>
 struct Il2CppFakeBox : RuntimeObject
 {
@@ -64,26 +58,29 @@ struct Il2CppFakeBox : RuntimeObject
 
     Il2CppFakeBox(RuntimeClass* boxedType, T* value)
     {
-        vtable = mono_class_vtable(mono_domain_get(), boxedType);
-        synchronisation = NULL;
+        vtable = il2cpp_mono_class_vtable(g_MonoDomain, boxedType);
+        synchronisation = IL2CPP_FAKE_BOX_SENTRY;
         m_Value = *value;
     }
 };
+
+inline bool il2cpp_codegen_is_fake_boxed_object(RuntimeObject* object)
+{
+    return object->synchronisation == IL2CPP_FAKE_BOX_SENTRY;
+}
 
 // TODO: This file should contain all the functions and type declarations needed for the generated code.
 // Hopefully, we stop including everything in the generated code and know exactly what dependencies we have.
 // Note that all parameter and return types should match the generated types not the runtime types.
 
-#include "GeneratedCodeGen.h"
-
 // type registration
 
-inline Il2CppCodeGenString* il2cpp_codegen_string_new_utf16(const il2cpp::utils::StringView<Il2CppChar>& str)
+inline String_t* il2cpp_codegen_string_new_utf16(const il2cpp::utils::StringView<Il2CppChar>& str)
 {
-    return (Il2CppCodeGenString*)mono_string_new_utf16(mono_domain_get(), (uint16_t*)str.Str(), (int32_t)str.Length());
+    return (String_t*)mono_string_new_utf16(g_MonoDomain, (const mono_unichar2*)str.Str(), (int32_t)str.Length());
 }
 
-inline NORETURN void il2cpp_codegen_raise_exception(Il2CppCodeGenException *ex)
+inline NORETURN void il2cpp_codegen_raise_exception(Exception_t *ex, Il2CppSequencePoint *seqPoint = NULL, MethodInfo* lastManagedFrame = NULL)
 {
     mono_raise_exception((RuntimeException*)ex);
     il2cpp_codegen_no_return();
@@ -99,49 +96,49 @@ inline void il2cpp_codegen_raise_execution_engine_exception(const RuntimeMethod*
     mono_raise_exception(mono_get_exception_execution_engine(mono_unity_method_get_name(method)));
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_argument_exception(const char* param, const char* msg)
+inline Exception_t* il2cpp_codegen_get_argument_exception(const char* param, const char* msg)
 {
-    return (Il2CppCodeGenException*)mono_get_exception_argument(param, msg);
+    return (Exception_t*)mono_get_exception_argument(param, msg);
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_argument_null_exception(const char* param)
+inline Exception_t* il2cpp_codegen_get_argument_null_exception(const char* param)
 {
-    return (Il2CppCodeGenException*)mono_get_exception_argument_null(param);
+    return (Exception_t*)mono_get_exception_argument_null(param);
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_overflow_exception()
+inline Exception_t* il2cpp_codegen_get_overflow_exception()
 {
-    return (Il2CppCodeGenException*)mono_get_exception_overflow();
+    return (Exception_t*)mono_get_exception_overflow();
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_not_supported_exception(const char* msg)
+inline Exception_t* il2cpp_codegen_get_not_supported_exception(const char* msg)
 {
-    return (Il2CppCodeGenException*)mono_get_exception_not_supported(msg);
+    return (Exception_t*)mono_get_exception_not_supported(msg);
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_array_type_mismatch_exception()
+inline Exception_t* il2cpp_codegen_get_array_type_mismatch_exception()
 {
-    return (Il2CppCodeGenException*)mono_get_exception_array_type_mismatch();
+    return (Exception_t*)mono_get_exception_array_type_mismatch();
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_invalid_operation_exception(const char* msg)
+inline Exception_t* il2cpp_codegen_get_invalid_operation_exception(const char* msg)
 {
-    return (Il2CppCodeGenException*)mono_get_exception_invalid_operation(msg);
+    return (Exception_t*)mono_get_exception_invalid_operation(msg);
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_marshal_directive_exception(const char* msg)
+inline Exception_t* il2cpp_codegen_get_marshal_directive_exception(const char* msg)
 {
-    return (Il2CppCodeGenException*)mono_unity_exception_get_marshal_directive(msg);
+    return (Exception_t*)mono_unity_exception_get_marshal_directive(msg);
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_missing_method_exception(const char* msg)
+inline Exception_t* il2cpp_codegen_get_missing_method_exception(const char* msg)
 {
-    return (Il2CppCodeGenException*)mono_get_exception_missing_method(msg, "ctor");
+    return (Exception_t*)mono_get_exception_missing_method(msg, "ctor");
 }
 
-inline Il2CppCodeGenException* il2cpp_codegen_get_maximum_nested_generics_exception()
+inline Exception_t* il2cpp_codegen_get_maximum_nested_generics_exception()
 {
-    return (Il2CppCodeGenException*)mono_get_exception_not_supported(MAXIMUM_NESTED_GENERICS_EXCEPTION_MESSAGE);
+    return (Exception_t*)mono_get_exception_not_supported(MAXIMUM_NESTED_GENERICS_EXCEPTION_MESSAGE);
 }
 
 inline RuntimeClass* il2cpp_codegen_object_class(RuntimeObject* obj)
@@ -218,7 +215,7 @@ inline RuntimeObject* CastclassClass(RuntimeObject *obj, RuntimeClass* targetTyp
 
 inline RuntimeObject* Box(RuntimeClass* type, void* data)
 {
-    return mono_value_box(mono_domain_get(), type, data);
+    return mono_value_box(g_MonoDomain, type, data);
 }
 
 // OpCode.UnBox
@@ -264,6 +261,36 @@ inline uint32_t il2cpp_codegen_sizeof(RuntimeClass* klass)
     return mono_class_instance_size(klass) - sizeof(RuntimeObject);
 }
 
+inline bool il2cpp_codegen_method_is_virtual(RuntimeMethod* method)
+{
+    return method->slot != -1;
+}
+
+inline bool il2cpp_codegen_object_is_of_sealed_type(RuntimeObject* obj)
+{
+    return obj != NULL && mono_class_is_sealed(mono_object_get_class(obj));
+}
+
+inline bool il2cpp_codegen_method_is_generic_instance(RuntimeMethod* method)
+{
+    return unity_mono_method_is_generic(method);
+}
+
+inline bool il2cpp_codegen_method_is_interface_method(RuntimeMethod* method)
+{
+    return MONO_CLASS_IS_INTERFACE(mono_method_get_class(method));
+}
+
+inline uint16_t il2cpp_codegen_method_get_slot(RuntimeMethod* method)
+{
+    return method->slot;
+}
+
+inline RuntimeClass* il2cpp_codegen_method_get_declaring_type(RuntimeMethod* method)
+{
+    return mono_method_get_class(method);
+}
+
 FORCE_INLINE const VirtualInvokeData il2cpp_codegen_get_virtual_invoke_data(RuntimeMethod* method, void* obj)
 {
     VirtualInvokeData invokeData;
@@ -303,57 +330,7 @@ FORCE_INLINE void il2cpp_codegen_get_generic_interface_invoke_data(const Runtime
     il2cpp_codegen_get_generic_interface_invoke_data(const_cast<RuntimeMethod*>(method), obj, invokeData);
 }
 
-#include "GeneratedVirtualInvokers.h"
-#include "GeneratedInterfaceInvokers.h"
-#include "GeneratedGenericVirtualInvokers.h"
-#include "GeneratedGenericInterfaceInvokers.h"
-
 // OpCode.Ldtoken
-
-inline Il2CppCodeGenRuntimeTypeHandle LoadTypeToken(const RuntimeType* ptr)
-{
-    Il2CppCodeGenIntPtr intptr;
-    intptr.set_m_value_0(const_cast<RuntimeType*>(ptr));
-
-    Il2CppCodeGenRuntimeTypeHandle handle;
-    handle.set_value_0(intptr);
-
-    return handle;
-}
-
-inline Il2CppCodeGenRuntimeFieldHandle LoadFieldToken(void* ptr)
-{
-    Il2CppCodeGenIntPtr intptr;
-    intptr.set_m_value_0(ptr);
-
-    Il2CppCodeGenRuntimeFieldHandle handle;
-    handle.set_value_0(intptr);
-
-    return handle;
-}
-
-inline Il2CppCodeGenRuntimeArgumentHandle LoadArgList()
-{
-    Il2CppCodeGenIntPtr intptr;
-    intptr.set_m_value_0(NULL);
-
-    Il2CppCodeGenRuntimeArgumentHandle handle;
-    handle.set_args_0(intptr);
-
-    assert(0 && false && "__arglist usage not supported.");
-    return handle;
-}
-
-inline Il2CppCodeGenRuntimeMethodHandle LoadMethodToken(const RuntimeMethod* ptr)
-{
-    Il2CppCodeGenIntPtr intptr;
-    intptr.set_m_value_0((void*)ptr);
-
-    Il2CppCodeGenRuntimeMethodHandle handle;
-    handle.set_value_0(intptr);
-
-    return handle;
-}
 
 inline RuntimeClass* il2cpp_codegen_class_from_type(RuntimeType* type)
 {
@@ -394,7 +371,7 @@ inline RuntimeArray* SZArrayNew(RuntimeClass* arrayType, uint32_t length)
     mono_class_init(arrayType);
 
     MonoError error;
-    RuntimeArray *retVal = mono_array_new_specific_checked(mono_class_vtable(mono_domain_get(), arrayType), length, &error);
+    RuntimeArray *retVal = mono_array_new_specific_checked(il2cpp_mono_class_vtable(g_MonoDomain, arrayType), length, &error);
     RuntimeException *exc = mono_error_convert_to_exception(&error);
     if (exc)
         mono_raise_exception(exc);
@@ -404,11 +381,8 @@ inline RuntimeArray* SZArrayNew(RuntimeClass* arrayType, uint32_t length)
 
 inline RuntimeArray* GenArrayNew(RuntimeClass* arrayType, il2cpp_array_size_t* dimensions)
 {
-    // We need to convert to the platform-sized integer type Mono uses. This doesn't look nice, maybe we should change this.
-    std::vector<uintptr_t> monoDimensions = il2cpp_to_mono_array_dimensions(dimensions, mono_class_get_rank(arrayType));
-
     MonoError error;
-    RuntimeArray *retVal = mono_array_new_full_checked(mono_domain_get(), arrayType, &monoDimensions[0], NULL, &error);
+    RuntimeArray *retVal = mono_array_new_full_checked(g_MonoDomain, arrayType, dimensions, NULL, &error);
     RuntimeException *exc = mono_error_convert_to_exception(&error);
     if (exc)
         mono_raise_exception(exc);
@@ -431,7 +405,7 @@ inline bool il2cpp_codegen_class_is_assignable_from(RuntimeClass *klass, Runtime
 
 inline RuntimeObject* il2cpp_codegen_object_new(RuntimeClass *klass)
 {
-    return mono_object_new(mono_domain_get(), klass);
+    return mono_object_new(g_MonoDomain, klass);
 }
 
 inline Il2CppMethodPointer il2cpp_codegen_resolve_icall(const RuntimeMethod* icallMethod)
@@ -460,88 +434,88 @@ inline T* il2cpp_codegen_marshal_allocate_array(size_t length)
     return (T*)mono_marshal_alloc((il2cpp_array_size_t)(sizeof(T) * length), &unused);
 }
 
-inline char* il2cpp_codegen_marshal_string(Il2CppCodeGenString* il2CppString)
+inline char* il2cpp_codegen_marshal_string(String_t* string)
 {
-    return mono::vm::PlatformInvoke::MarshalCSharpStringToCppString((Il2CppString*)il2CppString);
+    return mono::vm::PlatformInvoke::MarshalCSharpStringToCppString((RuntimeString*)string);
 }
 
-inline void il2cpp_codegen_marshal_string_fixed(Il2CppCodeGenString* il2CppString, char* buffer, int numberOfCharacters)
+inline void il2cpp_codegen_marshal_string_fixed(String_t* string, char* buffer, int numberOfCharacters)
 {
-    return mono::vm::PlatformInvoke::MarshalCSharpStringToCppStringFixed((Il2CppString*)il2CppString, buffer, numberOfCharacters);
+    return mono::vm::PlatformInvoke::MarshalCSharpStringToCppStringFixed((RuntimeString*)string, buffer, numberOfCharacters);
 }
 
-inline Il2CppChar* il2cpp_codegen_marshal_wstring(Il2CppCodeGenString* il2CppString)
+inline Il2CppChar* il2cpp_codegen_marshal_wstring(String_t* string)
 {
-    return mono::vm::PlatformInvoke::MarshalCSharpStringToCppWString((Il2CppString*)il2CppString);
+    return (Il2CppChar*)mono::vm::PlatformInvoke::MarshalCSharpStringToCppWString((RuntimeString*)string);
 }
 
-inline void il2cpp_codegen_marshal_wstring_fixed(Il2CppCodeGenString* il2CppString, Il2CppChar* buffer, int numberOfCharacters)
+inline void il2cpp_codegen_marshal_wstring_fixed(String_t* string, Il2CppChar* buffer, int numberOfCharacters)
 {
-    return mono::vm::PlatformInvoke::MarshalCSharpStringToCppWStringFixed((Il2CppString*)il2CppString, buffer, numberOfCharacters);
+    return mono::vm::PlatformInvoke::MarshalCSharpStringToCppWStringFixed((RuntimeString*)string, (mono_unichar2*)buffer, numberOfCharacters);
 }
 
-inline Il2CppChar* il2cpp_codegen_marshal_bstring(Il2CppCodeGenString* il2CppString)
+inline Il2CppChar* il2cpp_codegen_marshal_bstring(String_t* string)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
-inline Il2CppCodeGenString* il2cpp_codegen_marshal_string_result(const char* value)
+inline String_t* il2cpp_codegen_marshal_string_result(const char* value)
 {
-    return (Il2CppCodeGenString*)mono::vm::PlatformInvoke::MarshalCppStringToCSharpStringResult(value);
+    return (String_t*)mono::vm::PlatformInvoke::MarshalCppStringToCSharpStringResult(value);
 }
 
-inline Il2CppCodeGenString* il2cpp_codegen_marshal_wstring_result(const Il2CppChar* value)
+inline String_t* il2cpp_codegen_marshal_wstring_result(const Il2CppChar* value)
 {
-    return (Il2CppCodeGenString*)mono::vm::PlatformInvoke::MarshalCppWStringToCSharpStringResult(value);
+    return (String_t*)mono::vm::PlatformInvoke::MarshalCppWStringToCSharpStringResult((const mono_unichar2*)value);
 }
 
-inline Il2CppCodeGenString* il2cpp_codegen_marshal_bstring_result(const Il2CppChar* value)
+inline String_t* il2cpp_codegen_marshal_bstring_result(const Il2CppChar* value)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline void il2cpp_codegen_marshal_free_bstring(Il2CppChar* value)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
-inline char* il2cpp_codegen_marshal_string_builder(Il2CppCodeGenStringBuilder* stringBuilder)
+inline char* il2cpp_codegen_marshal_string_builder(StringBuilder_t* stringBuilder)
 {
-    return mono::vm::PlatformInvoke::MarshalStringBuilder((Il2CppStringBuilder*)stringBuilder);
+    return mono::vm::PlatformInvoke::MarshalStringBuilder((RuntimeStringBuilder*)stringBuilder);
 }
 
-inline Il2CppChar* il2cpp_codegen_marshal_wstring_builder(Il2CppCodeGenStringBuilder* stringBuilder)
+inline Il2CppChar* il2cpp_codegen_marshal_wstring_builder(StringBuilder_t* stringBuilder)
 {
-    return mono::vm::PlatformInvoke::MarshalWStringBuilder((Il2CppStringBuilder*)stringBuilder);
+    return (Il2CppChar*)mono::vm::PlatformInvoke::MarshalWStringBuilder((RuntimeStringBuilder*)stringBuilder);
 }
 
-inline void il2cpp_codegen_marshal_string_builder_result(Il2CppCodeGenStringBuilder* stringBuilder, char* buffer)
+inline void il2cpp_codegen_marshal_string_builder_result(StringBuilder_t* stringBuilder, char* buffer)
 {
-    mono::vm::PlatformInvoke::MarshalStringBuilderResult((Il2CppStringBuilder*)stringBuilder, buffer);
+    mono::vm::PlatformInvoke::MarshalStringBuilderResult((RuntimeStringBuilder*)stringBuilder, buffer);
 }
 
-inline void il2cpp_codegen_marshal_wstring_builder_result(Il2CppCodeGenStringBuilder* stringBuilder, Il2CppChar* buffer)
+inline void il2cpp_codegen_marshal_wstring_builder_result(StringBuilder_t* stringBuilder, Il2CppChar* buffer)
 {
-    mono::vm::PlatformInvoke::MarshalWStringBuilderResult((Il2CppStringBuilder*)stringBuilder, buffer);
+    mono::vm::PlatformInvoke::MarshalWStringBuilderResult((RuntimeStringBuilder*)stringBuilder, (mono_unichar2*)buffer);
 }
 
-inline Il2CppHString il2cpp_codegen_create_hstring(Il2CppCodeGenString* str)
+inline Il2CppHString il2cpp_codegen_create_hstring(String_t* str)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
-inline Il2CppCodeGenString* il2cpp_codegen_marshal_hstring_result(Il2CppHString hstring)
+inline String_t* il2cpp_codegen_marshal_hstring_result(Il2CppHString hstring)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline void il2cpp_codegen_marshal_free_hstring(Il2CppHString hstring)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 inline void il2cpp_codegen_marshal_free(void* ptr)
@@ -549,9 +523,9 @@ inline void il2cpp_codegen_marshal_free(void* ptr)
     mono_marshal_free(ptr);
 }
 
-inline Il2CppMethodPointer il2cpp_codegen_marshal_delegate(Il2CppCodeGenMulticastDelegate* d)
+inline Il2CppMethodPointer il2cpp_codegen_marshal_delegate(MulticastDelegate_t* d)
 {
-    return (Il2CppMethodPointer)mono::vm::PlatformInvoke::MarshalDelegate((Il2CppDelegate*)d).m_value;
+    return (Il2CppMethodPointer)mono::vm::PlatformInvoke::MarshalDelegate((RuntimeDelegate*)d);
 }
 
 template<typename T>
@@ -594,14 +568,13 @@ private:
 };
 
 #if _DEBUG
-inline void il2cpp_codegen_check_marshalling_allocations()
+struct ScopedMarshallingAllocationCheck
 {
-}
+};
 
-inline void il2cpp_codegen_clear_all_tracked_marshalling_allocations()
+struct ScopedMarshalingAllocationClearer
 {
-}
-
+};
 #endif
 
 inline void NullCheck(void* this_ptr)
@@ -610,7 +583,6 @@ inline void NullCheck(void* this_ptr)
         return;
 
     mono_raise_exception(mono_get_exception_null_reference());
-    il2cpp_codegen_no_return();
 }
 
 inline void DivideByZeroCheck(int64_t denominator)
@@ -619,12 +591,11 @@ inline void DivideByZeroCheck(int64_t denominator)
         return;
 
     mono_raise_exception(mono_get_exception_divide_by_zero());
-    il2cpp_codegen_no_return();
 }
 
-inline void Initobj(RuntimeClass* type, void* data)
+inline void il2cpp_codegen_initobj(void* value, size_t size)
 {
-    mono_unity_object_init(data, type);
+    memset(value, 0, size);
 }
 
 inline bool MethodIsStatic(const RuntimeMethod* method)
@@ -694,67 +665,67 @@ inline bool il2cpp_codegen_type_implements_virtual_method(RuntimeClass* type, Ru
     return mono_unity_method_get_class(slot) == type;
 }
 
-inline Il2CppCodeGenMethodBase* il2cpp_codegen_get_method_object(const RuntimeMethod* method)
+inline MethodBase_t* il2cpp_codegen_get_method_object(const RuntimeMethod* method)
 {
     if (unity_mono_method_is_inflated(const_cast<RuntimeMethod*>(method)))
         method = mono_unity_method_get_generic_definition(const_cast<RuntimeMethod*>(method));
 
-    return (Il2CppCodeGenMethodBase*)mono_unity_method_get_object(const_cast<RuntimeMethod*>(method));
+    return (MethodBase_t*)mono_unity_method_get_object(const_cast<RuntimeMethod*>(method));
 }
 
-inline Il2CppCodeGenType* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, Il2CppCodeGenString* typeName, const char* assemblyName)
+inline Type_t* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, String_t* typeName, const char* assemblyName)
 {
-    typedef Il2CppCodeGenType* (*getTypeFuncType)(RuntimeObject*, Il2CppCodeGenString*, const RuntimeMethod*);
+    typedef Type_t* (*getTypeFuncType)(RuntimeObject*, String_t*, const RuntimeMethod*);
     MonoString* assemblyQualifiedTypeName = mono_unity_string_append_assembly_name_if_necessary((MonoString*)typeName, assemblyName);
 
     // Try to find the type using a hint about about calling assembly. If it is not found, fall back to calling GetType without the hint.
-    Il2CppCodeGenType* type = ((getTypeFuncType)getTypeFunction)(NULL, (Il2CppCodeGenString*)assemblyQualifiedTypeName, NULL);
+    Type_t* type = ((getTypeFuncType)getTypeFunction)(NULL, (String_t*)assemblyQualifiedTypeName, NULL);
     if (type == NULL)
         return ((getTypeFuncType)getTypeFunction)(NULL, typeName, NULL);
     return type;
 }
 
-inline Il2CppCodeGenType* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, Il2CppCodeGenString* typeName, bool throwOnError, const char* assemblyName)
+inline Type_t* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, String_t* typeName, bool throwOnError, const char* assemblyName)
 {
-    typedef Il2CppCodeGenType* (*getTypeFuncType)(RuntimeObject*, Il2CppCodeGenString*, bool, const RuntimeMethod*);
+    typedef Type_t* (*getTypeFuncType)(RuntimeObject*, String_t*, bool, const RuntimeMethod*);
     MonoString* assemblyQualifiedTypeName = mono_unity_string_append_assembly_name_if_necessary((MonoString*)typeName, assemblyName);
 
     // Try to find the type using a hint about about calling assembly. If it is not found, fall back to calling GetType without the hint.
-    Il2CppCodeGenType* type = ((getTypeFuncType)getTypeFunction)(NULL, (Il2CppCodeGenString*)assemblyQualifiedTypeName, throwOnError, NULL);
+    Type_t* type = ((getTypeFuncType)getTypeFunction)(NULL, (String_t*)assemblyQualifiedTypeName, throwOnError, NULL);
     if (type == NULL)
         return ((getTypeFuncType)getTypeFunction)(NULL, typeName, throwOnError, NULL);
     return type;
 }
 
-inline Il2CppCodeGenType* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, Il2CppCodeGenString* typeName, bool throwOnError, bool ignoreCase, const char* assemblyName)
+inline Type_t* il2cpp_codegen_get_type(Il2CppMethodPointer getTypeFunction, String_t* typeName, bool throwOnError, bool ignoreCase, const char* assemblyName)
 {
-    typedef Il2CppCodeGenType* (*getTypeFuncType)(RuntimeObject*, Il2CppCodeGenString*, bool, bool, const RuntimeMethod*);
+    typedef Type_t* (*getTypeFuncType)(RuntimeObject*, String_t*, bool, bool, const RuntimeMethod*);
     MonoString* assemblyQualifiedTypeName = mono_unity_string_append_assembly_name_if_necessary((MonoString*)typeName, assemblyName);
 
     // Try to find the type using a hint about about calling assembly. If it is not found, fall back to calling GetType without the hint.
-    Il2CppCodeGenType* type = ((getTypeFuncType)getTypeFunction)(NULL, (Il2CppCodeGenString*)assemblyQualifiedTypeName, throwOnError, ignoreCase, NULL);
+    Type_t* type = ((getTypeFuncType)getTypeFunction)(NULL, (String_t*)assemblyQualifiedTypeName, throwOnError, ignoreCase, NULL);
     if (type == NULL)
         return ((getTypeFuncType)getTypeFunction)(NULL, typeName, throwOnError, ignoreCase, NULL);
     return type;
 }
 
-inline Il2CppCodeGenAssembly* il2cpp_codegen_get_executing_assembly(const RuntimeMethod* method)
+inline Assembly_t* il2cpp_codegen_get_executing_assembly(const RuntimeMethod* method)
 {
-    return (Il2CppCodeGenAssembly*)mono_assembly_get_object(mono_domain_get(), mono_unity_class_get_assembly(mono_unity_method_get_class(method)));
+    return (Assembly_t*)mono_assembly_get_object(g_MonoDomain, mono_unity_class_get_assembly(mono_unity_method_get_class(method)));
 }
 
 // Atomic
 
 inline void* il2cpp_codegen_atomic_compare_exchange_pointer(void* volatile* dest, void* exchange, void* comparand)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 template<typename T>
 inline T* il2cpp_codegen_atomic_compare_exchange_pointer(T* volatile* dest, T* newValue, T* oldValue)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
@@ -762,127 +733,129 @@ inline T* il2cpp_codegen_atomic_compare_exchange_pointer(T* volatile* dest, T* n
 
 inline void il2cpp_codegen_com_marshal_variant(RuntimeObject* obj, Il2CppVariant* variant)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 inline RuntimeObject* il2cpp_codegen_com_marshal_variant_result(Il2CppVariant* variant)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline void il2cpp_codegen_com_destroy_variant(Il2CppVariant* variant)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 inline Il2CppSafeArray* il2cpp_codegen_com_marshal_safe_array(Il2CppChar type, RuntimeArray* managedArray)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline RuntimeArray* il2cpp_codegen_com_marshal_safe_array_result(Il2CppChar variantType, RuntimeClass* type, Il2CppSafeArray* safeArray)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline Il2CppSafeArray* il2cpp_codegen_com_marshal_safe_array_bstring(RuntimeArray* managedArray)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline RuntimeArray* il2cpp_codegen_com_marshal_safe_array_bstring_result(RuntimeClass* type, Il2CppSafeArray* safeArray)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline void il2cpp_codegen_com_destroy_safe_array(Il2CppSafeArray* safeArray)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 inline void il2cpp_codegen_com_create_instance(const Il2CppGuid& clsid, Il2CppIUnknown** identity)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 inline void il2cpp_codegen_com_register_rcw(Il2CppComObject* rcw)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 template<typename T>
 inline T* il2cpp_codegen_com_get_or_create_rcw_from_iunknown(Il2CppIUnknown* unknown, RuntimeClass* fallbackClass)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 template<typename T>
 inline T* il2cpp_codegen_com_get_or_create_rcw_from_iinspectable(Il2CppIInspectable* unknown, RuntimeClass* fallbackClass)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 template<typename T>
 inline T* il2cpp_codegen_com_get_or_create_rcw_for_sealed_class(Il2CppIUnknown* unknown, RuntimeClass* objectClass)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline void il2cpp_codegen_il2cpp_com_object_cleanup(Il2CppComObject* rcw)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 template<typename InterfaceType>
 inline InterfaceType* il2cpp_codegen_com_get_or_create_ccw(RuntimeObject* obj)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
-inline Il2CppCodeGenIntPtr il2cpp_codegen_com_get_iunknown_for_object(RuntimeObject* obj)
+inline intptr_t il2cpp_codegen_com_get_iunknown_for_object(RuntimeObject* obj)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
-    return Il2CppCodeGenIntPtr();
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    return 0;
 }
 
 inline void il2cpp_codegen_com_raise_exception(il2cpp_hresult_t hr)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 inline void il2cpp_codegen_com_raise_exception_if_failed(il2cpp_hresult_t hr, bool defaultToCOMException)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
 }
 
 inline RuntimeException* il2cpp_codegen_com_get_exception(il2cpp_hresult_t hr, bool defaultToCOMException)
 {
-    NOT_IMPLEMENTED("Not implemented yet.");
+    IL2CPP_NOT_IMPLEMENTED("Not implemented yet.");
+    return NULL;
 }
 
 inline RuntimeException* il2cpp_codegen_com_get_exception_for_invalid_iproperty_cast(RuntimeObject* value, const char* a, const char* b)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    return NULL;
 }
 
 inline Il2CppIActivationFactory* il2cpp_codegen_windows_runtime_get_activation_factory(const il2cpp::utils::StringView<Il2CppNativeChar>& runtimeClassName)
 {
-    NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("COM is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 // delegate
 
-inline Il2CppAsyncResult* il2cpp_codegen_delegate_begin_invoke(Il2CppDelegate* delegate, void** params, Il2CppDelegate* asyncCallback, RuntimeObject* state)
+inline Il2CppAsyncResult* il2cpp_codegen_delegate_begin_invoke(RuntimeDelegate* delegate, void** params, RuntimeDelegate* asyncCallback, RuntimeObject* state)
 {
     return il2cpp_mono_delegate_begin_invoke(delegate, params, asyncCallback, state);
 }
@@ -894,14 +867,14 @@ inline RuntimeObject* il2cpp_codegen_delegate_end_invoke(Il2CppAsyncResult* asyn
 
 inline const Il2CppGenericInst* il2cpp_codegen_get_generic_class_inst(RuntimeClass* genericClass)
 {
-    NOT_IMPLEMENTED("Windows runtime is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("Windows runtime is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
 inline RuntimeClass* il2cpp_codegen_inflate_generic_class(RuntimeClass* genericClassDefinition, const Il2CppGenericInst* genericInst)
 {
     //return il2cpp::vm::Class::GetInflatedGenericInstanceClass(genericClassDefinition, genericInst);
-    NOT_IMPLEMENTED("Windows runtime is not yet supported with the libmonoruntime backend.");
+    IL2CPP_NOT_IMPLEMENTED("Windows runtime is not yet supported with the libmonoruntime backend.");
     return NULL;
 }
 
@@ -930,19 +903,14 @@ inline RuntimeMethod* il2cpp_codegen_mono_method(RuntimeAssembly* assembly, uint
     return mono_get_method(mono_assembly_get_image(assembly), methodToken, NULL);
 }
 
-inline void il2cpp_codegen_mono_set_static_field(RuntimeClass* klass, RuntimeField* field, void* value)
-{
-    mono_field_static_set_value(mono_class_vtable(mono_domain_get(), klass), field, value);
-}
-
-inline void il2cpp_codegen_mono_get_static_field(RuntimeClass* klass, RuntimeField* field, void* value)
-{
-    mono_field_static_get_value(mono_class_vtable(mono_domain_get(), klass), field, value);
-}
-
 inline void* il2cpp_codegen_mono_get_static_field_address(RuntimeClass* klass, RuntimeField* field)
 {
-    return mono_unity_get_field_address(NULL, mono_class_vtable(mono_domain_get(), klass), field);
+    return il2cpp_mono_get_static_field_address(klass, field);
+}
+
+inline void* il2cpp_codegen_mono_get_thread_static_field_address(RuntimeClass* klass, RuntimeField* field)
+{
+    return il2cpp_mono_get_thread_static_field_address(klass, field);
 }
 
 inline RuntimeField* il2cpp_codegen_mono_class_get_field(RuntimeClass* klass, uint32_t fieldToken)
@@ -960,6 +928,11 @@ inline Il2CppMethodPointer il2cpp_codegen_get_method_pointer(const RuntimeMethod
 inline RuntimeType* il2cpp_codegen_method_return_type(const RuntimeMethod* method)
 {
     return mono_signature_get_return_type(mono_method_signature(const_cast<RuntimeMethod*>(method)));
+}
+
+inline int il2cpp_codegen_method_parameter_count(const RuntimeMethod* method)
+{
+    return mono_signature_get_param_count(mono_method_signature(const_cast<RuntimeMethod*>(method)));
 }
 
 template<class T>
@@ -995,4 +968,19 @@ inline bool il2cpp_codegen_is_import_or_windows_runtime(const RuntimeObject *obj
 inline std::string il2cpp_codegen_format_exception(const RuntimeException* ex)
 {
     return il2cpp_mono_format_exception(ex);
+}
+
+inline intptr_t il2cpp_codegen_get_com_interface_for_object(RuntimeObject* object, Type_t* type)
+{
+    assert(0 && "Not implemented yet.");
+    return 0;
+}
+
+inline void il2cpp_codegen_add_sequence_point(size_t id, const Il2CppMethodExecutionContextInfo* const executionContextInfos, uint32_t executionContextInfoCount, const MonoMethod* method,
+    const char* const sourceFile, uint8_t h1, uint8_t h2, uint8_t h3, uint8_t h4, uint8_t h5, uint8_t h6, uint8_t h7, uint8_t h8, uint8_t h9, uint8_t h10, uint8_t h11, uint8_t h12, uint8_t h13, uint8_t h14,
+    uint8_t h15, uint8_t h16, uint32_t lineStart, uint32_t lineEnd, uint32_t columnStart, uint32_t columnEnd, int32_t ilOffset, SequencePointKind kind, bool isActive, uint8_t tryDepth, const RuntimeClass *catchType)
+{
+#if IL2CPP_MONO_DEBUGGER
+    il2cpp::utils::Debugger::AddSequencePoint(id, Il2CppSequencePoint(executionContextInfos, executionContextInfoCount, method, sourceFile, Hash16(h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16), lineStart, lineEnd, columnStart, columnEnd, ilOffset, kind, isActive, id, tryDepth, catchType));
+#endif
 }

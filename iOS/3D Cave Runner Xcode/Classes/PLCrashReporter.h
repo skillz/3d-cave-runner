@@ -51,21 +51,22 @@ typedef void (*UnityPLCrashReporterPostCrashSignalCallback)(siginfo_t *info, uco
  *
  * @sa @ref async_safety
  */
-typedef struct UnityPLCrashReporterCallbacks {
+typedef struct UnityPLCrashReporterCallbacks
+{
     /** The version number of this structure. If not one of the defined version numbers for this type, the behavior
      * is undefined. The current version of this structure is 0. */
-	uint16_t version;
+    uint16_t version;
 
-	/** An arbitrary user-supplied context value. This value may be NULL. */
-	void *context;
+    /** An arbitrary user-supplied context value. This value may be NULL. */
+    void *context;
 
     /** The callback used to report caught signal information. In version 0 of this structure, all crashes will be
      * reported via this function. */
-	UnityPLCrashReporterPostCrashSignalCallback handleSignal;
+    UnityPLCrashReporterPostCrashSignalCallback handleSignal;
 } UnityPLCrashReporterCallbacks;
 
 @interface UnityPLCrashReporter : NSObject {
-@private
+    @private
     /** YES if the crash reporter has been enabled */
     BOOL _enabled;
 
@@ -79,22 +80,22 @@ typedef struct UnityPLCrashReporterCallbacks {
     NSString *_crashReportDirectory;
 }
 
-+ (UnityPLCrashReporter *) sharedReporter;
++ (UnityPLCrashReporter *)sharedReporter;
 
-- (BOOL) hasPendingCrashReport;
+- (BOOL)hasPendingCrashReport;
 
-- (NSData *) loadPendingCrashReportData;
-- (NSData *) loadPendingCrashReportDataAndReturnError: (NSError **) outError;
+- (NSData *)loadPendingCrashReportData;
+- (NSData *)loadPendingCrashReportDataAndReturnError:(NSError **)outError;
 
-- (NSData *) generateLiveReport;
-- (NSData *) generateLiveReportAndReturnError: (NSError **) outError;
+- (NSData *)generateLiveReport;
+- (NSData *)generateLiveReportAndReturnError:(NSError **)outError;
 
-- (BOOL) purgePendingCrashReport;
-- (BOOL) purgePendingCrashReportAndReturnError: (NSError **) outError;
+- (BOOL)purgePendingCrashReport;
+- (BOOL)purgePendingCrashReportAndReturnError:(NSError **)outError;
 
-- (BOOL) enableCrashReporter;
-- (BOOL) enableCrashReporterAndReturnError: (NSError **) outError;
+- (BOOL)enableCrashReporter;
+- (BOOL)enableCrashReporterAndReturnError:(NSError **)outError;
 
-- (void) setCrashCallbacks: (UnityPLCrashReporterCallbacks *) callbacks;
+- (void)setCrashCallbacks:(UnityPLCrashReporterCallbacks *)callbacks;
 
 @end

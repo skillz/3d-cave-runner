@@ -1,7 +1,7 @@
 #pragma once
 
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 namespace il2cpp
 {
@@ -17,11 +17,11 @@ namespace Reflection
     {
     public:
         static Il2CppReflectionMethod* GetCurrentMethod();
-        static void* /* System.Reflection.MethodBody */ GetMethodBodyInternal(Il2CppIntPtr handle);
-        static Il2CppReflectionMethod* GetMethodFromHandleInternalType(Il2CppIntPtr method, Il2CppIntPtr type);
+        static void* /* System.Reflection.MethodBody */ GetMethodBodyInternal(intptr_t handle);
+        static Il2CppReflectionMethod* GetMethodFromHandleInternalType(intptr_t method, intptr_t type);
 
 #if NET_4_0
-        static Il2CppReflectionMethod* GetMethodFromHandleInternalType_native(Il2CppIntPtr method_handle, Il2CppIntPtr type_handle, bool genericCheck);
+        static Il2CppReflectionMethod* GetMethodFromHandleInternalType_native(intptr_t method_handle, intptr_t type_handle, bool genericCheck);
 #endif
     };
 } /* namespace Reflection */

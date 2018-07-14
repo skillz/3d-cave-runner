@@ -5,7 +5,7 @@
 #include <string>
 #include "il2cpp-config.h"
 #include "il2cpp-metadata.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 #include "metadata/GenericMethod.h"
 #include "vm/Exception.h"
 #include "vm/Class.h"
@@ -55,6 +55,9 @@ namespace vm
 
         static const char *GetBundledMachineConfig();
         static void RegisterBundledMachineConfig(const char *config_xml);
+
+        static int32_t GetExitCode();
+        static void SetExitCode(int32_t value);
 
     private:
         static void CallUnhandledExceptionDelegate(Il2CppDomain* domain, Il2CppDelegate* delegate, Il2CppException* exc);

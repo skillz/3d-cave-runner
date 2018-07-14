@@ -1,6 +1,6 @@
 #pragma once
 
-#include "il2cpp-config.h"
+#include <stddef.h>
 
 typedef void* (*allocate_func)(size_t size);
 
@@ -23,6 +23,7 @@ class Allocator
 public:
     static void* Allocate(size_t size);
     static char* CopyToAllocatedStringBuffer(const std::string& input);
+    static char* CopyToAllocatedStringBuffer(const char* input);
 };
 
 #endif

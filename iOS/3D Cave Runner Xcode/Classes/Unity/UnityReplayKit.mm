@@ -12,12 +12,11 @@ static UnityReplayKit* _replayKit = nil;
 
 @protocol UnityReplayKit_RPScreenRecorder<NSObject>
 
-- (void)setMicrophoneEnabled:(BOOL)value;
 - (BOOL)isMicrophoneEnabled;
 - (void)setCameraEnabled:(BOOL)value;
 - (BOOL)isCameraEnabled;
 
-@property (nonatomic, setter = setMicrophoneEnabled:, getter = isMicrophoneEnabled) BOOL microphoneEnabled;
+@property (nonatomic, getter = isMicrophoneEnabled) BOOL microphoneEnabled;
 @property (nonatomic, setter = setCameraEnabled:, getter = isCameraEnabled) BOOL cameraEnabled;
 @property (nonatomic, readonly) UIView* cameraPreviewView;
 
@@ -101,13 +100,21 @@ static UnityReplayKit* _replayKit = nil;
     UIWindow* overlayWindow;
 }
 
+- (void)shouldCreateOverlayWindow
+{
+    UnityShouldCreateReplayKitOverlay();
+}
+
 - (void)createOverlayWindow
 {
-    UIWindow* wnd = self->overlayWindow = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
-    wnd.hidden = wnd.userInteractionEnabled = NO;
-    wnd.backgroundColor = nil;
+    if (self->overlayWindow == nil)
+    {
+        UIWindow* wnd = self->overlayWindow = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+        wnd.hidden = wnd.userInteractionEnabled = NO;
+        wnd.backgroundColor = nil;
 
-    wnd.rootViewController = [[UnityReplayKitViewController alloc] init];
+        wnd.rootViewController = [[UnityReplayKitViewController alloc] init];
+    }
 }
 
 + (UnityReplayKit*)sharedInstance
@@ -148,7 +155,7 @@ static UnityReplayKit* _replayKit = nil;
         }
         else
         {
-            [self createOverlayWindow];
+            [self shouldCreateOverlayWindow];
         }
     }];
 
@@ -349,7 +356,7 @@ static UnityReplayKit* _replayKit = nil;
             return;
         }
 
-        [self createOverlayWindow];
+        [self shouldCreateOverlayWindow];
         UnityPause(1);
         vc.delegate = self;
         broadcastStartStatusCallback = callback;
@@ -435,22 +442,6 @@ static UnityReplayKit* _replayKit = nil;
     }
 
     return screenRecorder.microphoneEnabled;
-}
-
-- (void)setMicrophoneEnabled:(BOOL)microphoneEnabled
-{
-    if (![self apiAvailable])
-    {
-        return;
-    }
-
-    id<UnityReplayKit_RPScreenRecorder> screenRecorder = (id)[RPScreenRecorder sharedRecorder];
-    if (![screenRecorder respondsToSelector: @selector(setMicrophoneEnabled:)])
-    {
-        return;
-    }
-
-    screenRecorder.microphoneEnabled = microphoneEnabled;
 }
 
 - (BOOL)showCameraPreviewAt:(CGPoint)position

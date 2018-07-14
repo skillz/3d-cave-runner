@@ -13,6 +13,8 @@ typedef struct
     int renderW;
     int renderH;
     int srgb;
+    int wideColor;
+    int metalFramebufferOnly;
 
     // unity setup
     int disableDepthAndStencil;

@@ -8,18 +8,19 @@
 //const char* WWWDelegateClassName      = "UnityWWWConnectionSelfSignedCertDelegate";
 const char* WWWDelegateClassName        = "UnityWWWConnectionDelegate";
 const char* WWWRequestProviderClassName = "UnityWWWRequestDefaultProvider";
+const CFIndex streamSize = 1024;
 static NSOperationQueue *webOperationQueue;
-static NSOperationQueue *fileOperationQueue;
 
 @interface UnityWWWConnectionDelegate ()
 @property (readwrite, nonatomic) void*                         udata;
 @property (readwrite, retain, nonatomic) NSURL*                url;
 @property (readwrite, retain, nonatomic) NSString*             user;
 @property (readwrite, retain, nonatomic) NSString*             password;
-@property (readwrite, retain, nonatomic) NSMutableURLRequest*  request;
-@property (readwrite, retain, nonatomic) NSURLConnection*      connection;
-@property (strong, nonatomic)            NSCondition*          condition;
+@property (readwrite, retain, atomic)    NSMutableURLRequest*  request;
+@property (readwrite, retain, atomic)    NSURLConnection*      connection;
 @property (nonatomic)                    BOOL                  manuallyHandleRedirect;
+@property (nonatomic)                    BOOL                  wantCertificateCallback;
+@property (readwrite, retain, nonatomic) NSOutputStream*       outputStream;
 @end
 
 
@@ -40,11 +41,14 @@ static NSOperationQueue *fileOperationQueue;
     NSString*           _password;
 
     // response
-    NSString*           _responseHeader;
     NSInteger           _status;
     size_t              _estimatedLength;
     size_t              _dataRecievd;
     int                 _retryCount;
+    NSOutputStream*     _outputStream;
+
+    BOOL                _connectionStarted;
+    BOOL                _connectionCancelled;
 }
 
 @synthesize url         = _url;
@@ -54,6 +58,7 @@ static NSOperationQueue *fileOperationQueue;
 @synthesize connection  = _connection;
 
 @synthesize udata       = _udata;
+@synthesize outputStream = _outputStream;
 
 - (NSURL*)extractUserPassFromUrl:(NSURL*)url
 {
@@ -106,40 +111,30 @@ static NSOperationQueue *fileOperationQueue;
     return [target allocRequestForHTTPMethod: method url: url headers: headers];
 }
 
-static void SignalConnection(UnityWWWConnectionDelegate* delegate)
+- (void)startConnection
 {
-    // Signal the condition variable in case it is waiting
-    NSCondition *condition = delegate.condition;
-
-    delegate.request = nil;
-    delegate.condition = nil;
-
-    [condition lock];
-    // if more than one thread is waiting, we want to make sure we signal them all
-    [condition broadcast];
-    [condition unlock];
+    if (!_connectionCancelled)
+        [self.connection start];
+    _connectionStarted = YES;
 }
 
-static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
+- (void)cancelConnection
 {
-    NSCondition *condition = delegate.condition;
-    [condition lock];
-    [condition wait];
-    [condition unlock];
+    if (_connectionStarted)
+        [self.connection cancel];
+    _connectionCancelled = YES;
 }
 
 - (void)abort
 {
-    SignalConnection(self);
-    [self.connection cancel];
+    [self cancelConnection];
 }
 
 - (void)cleanup
 {
-    [_connection cancel];
-    self.condition = nil;
-    _connection = nil;
-    _request = nil;
+    [self cancelConnection];
+    self.connection = nil;
+    self.request = nil;
 }
 
 // NSURLConnection Delegate Methods
@@ -168,8 +163,7 @@ static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
         {
             [self handleResponse: response];
         }
-        SignalConnection(self);
-        [connection cancel];
+        [self cancelConnection];
         return nil;
     }
     return request;
@@ -182,43 +176,22 @@ static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
 
 - (void)handleResponse:(NSURLResponse*)response
 {
-    // on ios pre-5.0 NSHTTPURLResponse was not created for "file://"" connections, so play safe here
-    // TODO: remove that once we have 5.0 as requirement
-    self->_status = 200;
-    if ([response isMemberOfClass: [NSHTTPURLResponse class]])
-    {
-        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-        NSDictionary* respHeader = [httpResponse allHeaderFields];
-        NSEnumerator* headerEnum = [respHeader keyEnumerator];
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    NSDictionary* respHeader = [httpResponse allHeaderFields];
+    NSEnumerator* headerEnum = [respHeader keyEnumerator];
 
-        self->_status = [httpResponse statusCode];
+    self->_status = [httpResponse statusCode];
+    UnityReportWWWStatus(self.udata, (int)self->_status);
 
-        NSMutableString* headerString = [NSMutableString stringWithCapacity: 1024];
-        [headerString appendFormat: @"Status: HTTP/1.1 %d %@\n", (int)self->_status,
-         [NSHTTPURLResponse localizedStringForStatusCode: self->_status]];
+    for (id headerKey = [headerEnum nextObject]; headerKey; headerKey = [headerEnum nextObject])
+        UnityReportWWWResponseHeader(self.udata, [headerKey UTF8String], [[respHeader objectForKey: headerKey] UTF8String]);
 
-        for (id headerKey = [headerEnum nextObject]; headerKey; headerKey = [headerEnum nextObject])
-            [headerString appendFormat: @"%@: %@\n", (NSString*)headerKey, (NSString*)[respHeader objectForKey: headerKey]];
+    long long contentLength = [response expectedContentLength];
 
-        self->_responseHeader   = headerString;
-
-        long long contentLength = [response expectedContentLength];
-
-        // ignore any data that we might have recieved during a redirect
-        self->_estimatedLength  =  contentLength > 0 && (self->_status / 100 != 3) ? contentLength : 0;
-        self->_dataRecievd = 0;
-
-        // status 2xx are all success
-        // in case of error status we do not cancel right away to actually get server response:
-        //   sometimes it might contain info useful for developers (custom webapp)
-        // instead we just keep on getting data while it is here and simply remember that there was error
-        // status 3xx are all redirects, we should not report them as errors as well
-        if (self->_status / 100 > 3)
-        {
-            UnityReportWWWStatusError(self.udata, (int)self->_status, [[NSHTTPURLResponse localizedStringForStatusCode: self->_status] UTF8String]);
-        }
-    }
-    UnityReportWWWReceivedResponse(self.udata, (int)self->_status, (unsigned int)(unsigned long)self->_estimatedLength, [self->_responseHeader UTF8String]);
+    // ignore any data that we might have recieved during a redirect
+    self->_estimatedLength  =  contentLength > 0 && (self->_status / 100 != 3) ? contentLength : 0;
+    self->_dataRecievd = 0;
+    UnityReportWWWReceivedResponse(self.udata, (unsigned int)self->_estimatedLength);
 }
 
 - (void)connection:(NSURLConnection*)connection didReceiveData:(NSData*)data
@@ -228,20 +201,34 @@ static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
 
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
 {
-    UnityReportWWWNetworkError(self.udata, (int)[error code], [[error localizedDescription] UTF8String]);
+    UnityReportWWWNetworkError(self.udata, (int)[error code]);
     UnityReportWWWFinishedLoadingData(self.udata);
-    SignalConnection(self);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection*)connection
 {
     UnityReportWWWFinishedLoadingData(self.udata);
-    SignalConnection(self);
 }
 
 - (void)connection:(NSURLConnection*)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
     UnityReportWWWSentData(self.udata, (unsigned int)totalBytesWritten, (unsigned int)totalBytesExpectedToWrite);
+    if (_outputStream != nil)
+    {
+        unsigned dataSize = streamSize;
+        unsigned transmitted = 0;
+        const UInt8* bytes = (const UInt8*)UnityWWWGetUploadData(_udata, &dataSize);
+        if (dataSize > 0)
+        {
+            transmitted = [_outputStream write: bytes maxLength: dataSize];
+            UnityWWWConsumeUploadData(_udata, transmitted);
+        }
+        if (dataSize < streamSize && transmitted >= dataSize)
+        {
+            [_outputStream close];
+            _outputStream = nil;
+        }
+    }
 }
 
 - (BOOL)connection:(NSURLConnection*)connection handleAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge
@@ -253,7 +240,49 @@ static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
 {
     if ([[challenge protectionSpace] authenticationMethod] == NSURLAuthenticationMethodServerTrust)
     {
-        [challenge.sender performDefaultHandlingForAuthenticationChallenge: challenge];
+        if (!self.wantCertificateCallback)
+        {
+            [challenge.sender performDefaultHandlingForAuthenticationChallenge: challenge];
+            return;
+        }
+
+#if !defined(DISABLE_WEBREQUEST_CERTIFICATE_CALLBACK)
+        SecTrustResultType systemResult;
+        SecTrustRef serverTrust = [[challenge protectionSpace] serverTrust];
+        if (serverTrust == nil || errSecSuccess != SecTrustEvaluate(serverTrust, &systemResult))
+        {
+            systemResult = kSecTrustResultOtherError;
+        }
+
+        switch (systemResult)
+        {
+            case kSecTrustResultUnspecified:
+            case kSecTrustResultProceed:
+            case kSecTrustResultRecoverableTrustFailure:
+                break;
+            default:
+                [challenge.sender performDefaultHandlingForAuthenticationChallenge: challenge];
+                return;
+        }
+
+        SecCertificateRef serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0);
+        if (serverCertificate != nil)
+        {
+            CFDataRef serverCertificateData = SecCertificateCopyData(serverCertificate);
+            const UInt8* const data = CFDataGetBytePtr(serverCertificateData);
+            const CFIndex size = CFDataGetLength(serverCertificateData);
+            bool trust = UnityReportWWWValidateCertificate(self.udata, data, size);
+            CFRelease(serverCertificateData);
+            if (trust)
+            {
+                NSURLCredential *credential = [NSURLCredential credentialForTrust: challenge.protectionSpace.serverTrust];
+                [challenge.sender useCredential: credential forAuthenticationChallenge: challenge];
+                return;
+            }
+        }
+#endif
+        [challenge.sender cancelAuthenticationChallenge: challenge];
+        return;
     }
     else
     {
@@ -316,16 +345,39 @@ static void WaitOnCondition(UnityWWWConnectionDelegate* delegate)
 // unity interface
 //
 
-extern "C" void UnitySendWWWConnection(void* connection, const void* data, unsigned length, bool blockImmediately, unsigned long timeoutSec)
+extern "C" void UnitySendWWWConnection(void* connection, const void* data, unsigned length, bool blockImmediately, unsigned long timeoutSec, bool wantCertificateCallback)
 {
     UnityWWWConnectionDelegate* delegate = (__bridge UnityWWWConnectionDelegate*)connection;
 
     NSMutableURLRequest* request = delegate.request;
 
-    if (data != nil && length > 0)
+    if (length > 0)
     {
-        [request setHTTPBody: [NSData dataWithBytes: data length: length]];
-        [request setValue: [NSString stringWithFormat: @"%d", length] forHTTPHeaderField: @"Content-Length"];
+        if (data != nil)
+        {
+            [request setHTTPBody: [NSData dataWithBytes: data length: length]];
+            [request setValue: [NSString stringWithFormat: @"%d", length] forHTTPHeaderField: @"Content-Length"];
+        }
+        else
+        {
+            unsigned dataSize = streamSize;
+            const void* bytes = UnityWWWGetUploadData(delegate.udata, &dataSize);
+            if (dataSize > 0)
+            {
+                CFReadStreamRef readStream;
+                CFWriteStreamRef writeStream;
+                CFStreamCreateBoundPair(kCFAllocatorDefault, &readStream, &writeStream, streamSize);
+                [request setHTTPBodyStream: (__bridge NSInputStream*)readStream];
+                [request setValue: @"chunked" forHTTPHeaderField: @"Transfer-Encoding"];
+                CFWriteStreamOpen(writeStream);
+                unsigned transmitted = CFWriteStreamWrite(writeStream, (UInt8*)bytes, dataSize);
+                UnityWWWConsumeUploadData(delegate.udata, transmitted);
+                if (dataSize < streamSize && transmitted >= dataSize)
+                    CFWriteStreamClose(writeStream);
+                else
+                    delegate.outputStream = (__bridge NSOutputStream*)writeStream;
+            }
+        }
     }
 
     [request setTimeoutInterval: timeoutSec];
@@ -335,27 +387,17 @@ extern "C" void UnitySendWWWConnection(void* connection, const void* data, unsig
         webOperationQueue = [[NSOperationQueue alloc] init];
         webOperationQueue.maxConcurrentOperationCount = [NSProcessInfo processInfo].activeProcessorCount * 5;
         webOperationQueue.name = @"com.unity3d.WebOperationQueue";
-
-        fileOperationQueue = [[NSOperationQueue alloc] init];
-        fileOperationQueue.maxConcurrentOperationCount = [NSProcessInfo processInfo].activeProcessorCount;
-        fileOperationQueue.name = @"com.unity3d.FileOperationQueue";
     });
 
-    NSOperationQueue *queueToUse = webOperationQueue;
-    if ([request.URL isFileURL])
+    if (wantCertificateCallback)
     {
-        queueToUse = fileOperationQueue;
+        delegate.wantCertificateCallback = YES;
     }
 
     delegate.connection = [[NSURLConnection alloc] initWithRequest: request delegate: delegate startImmediately: NO];
-    [delegate.connection setDelegateQueue: queueToUse];
-    [delegate.connection start];
-
-    if (blockImmediately)
-    {
-        delegate.manuallyHandleRedirect = YES;
-        WaitOnCondition(delegate);
-    }
+    delegate.manuallyHandleRedirect = YES;
+    [delegate.connection setDelegateQueue: webOperationQueue];
+    [delegate startConnection];
 }
 
 extern "C" void* UnityStartWWWConnectionCustom(void* udata, const char* methodString, const void* headerDict, const char* url)
@@ -364,9 +406,6 @@ extern "C" void* UnityStartWWWConnectionCustom(void* udata, const char* methodSt
 
     delegate.request = [UnityWWWConnectionDelegate newRequestForHTTPMethod: [NSString stringWithUTF8String: methodString] url: delegate.url headers: (__bridge NSDictionary*)headerDict];
 
-    // Initialize the condition variable
-    delegate.condition = [[NSCondition alloc] init];
-
     return (__bridge_retained void*)delegate;
 }
 
@@ -374,12 +413,6 @@ extern "C" bool UnityBlockWWWConnectionIsDone(void* connection)
 {
     UnityWWWConnectionDelegate* delegate = (__bridge UnityWWWConnectionDelegate*)connection;
     return (delegate.request == nil);
-}
-
-extern "C" void UnityBlockWWWConnectionUntilDone(void* connection)
-{
-    UnityWWWConnectionDelegate* delegate = (__bridge UnityWWWConnectionDelegate*)connection;
-    WaitOnCondition(delegate);
 }
 
 extern "C" void UnityDestroyWWWConnection(void* connection)
@@ -393,7 +426,5 @@ extern "C" void UnityDestroyWWWConnection(void* connection)
 extern "C" void UnityShouldCancelWWW(const void* connection)
 {
     UnityWWWConnectionDelegate* delegate = (__bridge UnityWWWConnectionDelegate*)connection;
-    [delegate.connection cancel];
-
-    SignalConnection(delegate);
+    [delegate cancelConnection];
 }
