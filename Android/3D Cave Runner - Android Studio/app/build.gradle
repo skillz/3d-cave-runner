@@ -42,8 +42,8 @@ android {
     buildToolsVersion "26.0.3"
     defaultConfig {
         applicationId "com.skillzgames.caverun"
-        minSdkVersion 19
-        targetSdkVersion 22
+        minSdkVersion 21
+        targetSdkVersion 27
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
