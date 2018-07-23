@@ -15,9 +15,9 @@ buildscript {
     dependencies {
         // The Fabric Gradle plugin uses an open ended version to react
         // quickly to Android tooling updates
-        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.7.0'
-        classpath 'io.fabric.tools:gradle:1.22.0'
-        classpath 'com.google.gms:google-services:3.1.0'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.2'
+        classpath 'io.fabric.tools:gradle:1.22.1'
+        classpath 'com.google.gms:google-services:3.2.0'
 
     }
 }
@@ -38,7 +38,7 @@ android {
             // make sure to update the .jks file pointing to your machine
         }
     }
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion "26.0.3"
     defaultConfig {
         applicationId "com.skillzgames.caverun"
@@ -99,6 +99,10 @@ android {
             jniLibs.srcDir "src/main/jniLibs"
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 
@@ -106,11 +110,11 @@ dependencies {
     compile files('libs/unity-classes.jar')
     //Skillz SDK
 
-    compile 'com.skillz.sdk:skillz-sdk-android:20.1.6-SNAPSHOT'
+    compile 'com.skillz.sdk:skillz-sdk-android:21.0.0-SNAPSHOT'
     compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
         transitive = true
     }
-    compile 'com.google.android.gms:play-services-gcm:11.0.4'
+    compile 'com.google.android.gms:play-services-gcm:15.0.1'
 }
 
 repositories {
