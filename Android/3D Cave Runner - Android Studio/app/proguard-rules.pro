@@ -32,6 +32,11 @@
 -keep public class com.skillz.util.Timber {
     *;
 }
+# For enumeration classes, see http://proguard.sourceforge.net/manual/examples.html#enumerations
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
 -keep public class com.skillz.push.PushMessage
 
 
