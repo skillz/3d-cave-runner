@@ -1,29 +1,43 @@
-def versionMajor = 4
-def versionMinor = 4
-def versionPatch = 7
+def versionajor = 5
+def versionMinor = 0
+def versionPatch = 0
 def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.getenv('BUILD_NUMBER')) : 1
 
 buildscript {
     repositories {
         google()
         jcenter()
-        mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
     }
 
-
     dependencies {
-        // The Fabric Gradle plugin uses an open ended version to react
-        // quickly to Android tooling updates
-        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.2'
         classpath 'io.fabric.tools:gradle:1.22.1'
         classpath 'com.google.gms:google-services:3.2.0'
-
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.skillz.sdk:skillz-sdk-android:21.0.0-SNAPSHOT'
+    api ('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
+        transitive=true
+    }
+    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
+}
 
 android {
     dexOptions {
@@ -39,37 +53,36 @@ android {
         }
     }
     compileSdkVersion 27
-    buildToolsVersion "26.0.3"
+
     defaultConfig {
-        applicationId "com.skillzgames.caverun"
         minSdkVersion 19
         targetSdkVersion 27
+        multiDexEnabled true
+        missingDimensionStrategy "liveBuild", "live"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        multiDexEnabled true
-        versionCode versionMajor * 10000000 + versionMinor * 100000 + versionPatch * 1000 + versionBuild
-        versionName "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
-    }
-    buildTypes {
-        release {
-            debuggable=false
-            minifyEnabled true
-            shrinkResources false
+        buildTypes {
+            debug {
+                debuggable true
+                jniDebuggable true
+                minSdkVersion 22
 
-            signingConfig signingConfigs.config
-            proguardFiles 'proguard-rules.pro'
-            ext.betaDistributionGroupAliases = 'sdk,qa-2,ts,product'
-        }
-        debug {
-            minifyEnabled false
-            debuggable true
+            }
+            release {
+                minifyEnabled false
+                signingConfig signingConfigs.config
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+
+            }
         }
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
     lintOptions {
-        checkReleaseBuilds true
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
         abortOnError false
     }
     flavorDimensions 'currency'
@@ -99,6 +112,7 @@ android {
             jniLibs.srcDir "src/main/jniLibs"
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -115,22 +129,6 @@ dependencies {
         transitive = true
     }
     compile 'com.google.android.gms:play-services-gcm:15.0.1'
-}
-
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-    maven {
-        url 'http://nexus.skillz.com/content/groups/public/'
-    }
-    maven {
-        url 'https://maven.fabric.io/public'
-    }
-    maven {
-        url 'https://maven.google.com'
-    }
-    jcenter()
 }
 
 apply plugin: 'com.google.gms.google-services'

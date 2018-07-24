@@ -33,6 +33,10 @@
             android:name="skillz_server_url"
             android:value="https://qa.skillz.com" />
 
+        <meta-data
+            android:name="skillz_server_url"
+            android:value="https://qa.skillz.com" />
+
         <meta-data android:name="skillz_orientation" android:value="portrait" />
     <meta-data android:name="skillz_game_activity" android:value="com.skillzgames.caverun.SkillzUnityPlayerActivity"/>
     <meta-data android:name="skillz_allow_exit" android:value="true" />
