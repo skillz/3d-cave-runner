@@ -80,7 +80,7 @@ android {
                 minifyEnabled false
                 signingConfig signingConfigs.config
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
-
+                ext.betaDistributionGroupAliases = 'sdk,qa-2,ts,product'
             }
         }
     }
