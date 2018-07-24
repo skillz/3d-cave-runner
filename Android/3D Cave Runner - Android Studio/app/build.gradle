@@ -67,6 +67,8 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        versionCode versionMajor * 10000000 + versionMinor * 100000 + versionPatch * 1000 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
         buildTypes {
             debug {
                 debuggable true
