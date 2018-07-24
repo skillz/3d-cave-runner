@@ -43,3 +43,4 @@ node_modules
 *.xcscmblueprint
 *.xccheckout
 **/Reveal.framework/
+Android/AndroidStudioProject/.gradle
