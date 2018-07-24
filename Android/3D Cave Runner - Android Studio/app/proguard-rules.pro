@@ -47,6 +47,9 @@
 
 -keep class com.scottyab.rootbeer.** { *; }
 
+-keep public class com.dylanvann.fastimage.*            { *; }
+-keep public class com.dylanvann.fastimage.**           { *; }
+
 -keep class org.apache.commons.logging.**               { *; }
 -keep class com.amazonaws.services.sqs.QueueUrlHandler  { *; }
 -keep class com.amazonaws.javax.xml.transform.sax.*     { public *; }
