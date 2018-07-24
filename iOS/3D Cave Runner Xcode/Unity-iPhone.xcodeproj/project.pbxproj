@@ -1602,7 +1602,7 @@
 				CODE_SIGN_ENTITLEMENTS = 3dCaveRunEnterprise.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = DF8VM75V3Q;
+				DEVELOPMENT_TEAM = ST3D4JRYHA;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1656,8 +1656,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skillz.enterprise.3Dcaverunner;
 				PRODUCT_NAME = 3dCaveRun;
-				PROVISIONING_PROFILE = "65cc6ec8-768d-4148-a0c0-041380436671";
-				PROVISIONING_PROFILE_SPECIFIER = "3D Cave Runner Full - AdHoc";
+				PROVISIONING_PROFILE = "478eb62c-4592-41fb-9ba4-866061736260";
+				PROVISIONING_PROFILE_SPECIFIER = "3D Cave Runner - in house";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
