@@ -45,6 +45,8 @@
 -keep class com.skillz.api.UserApi$AcceptRematch { *; }
 -keep class com.skillz.api.UserApi$DummyRequest { *; }
 
+-keep class com.scottyab.rootbeer.** { *; }
+
 -keep class org.apache.commons.logging.**               { *; }
 -keep class com.amazonaws.services.sqs.QueueUrlHandler  { *; }
 -keep class com.amazonaws.javax.xml.transform.sax.*     { public *; }
