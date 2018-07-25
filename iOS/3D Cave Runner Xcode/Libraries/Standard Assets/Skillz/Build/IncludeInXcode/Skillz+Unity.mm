@@ -340,15 +340,15 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
     NSString *environmentString = @"SkillzProduction";
     [[Skillz skillzInstance] performSelector:@selector(setStaging)];
 #else
-    [[Skillz skillzInstance] performSelector:@selector(setDevTS) withObject:nil];
-    NSString *gameIdString = @"3382";
+    //[[Skillz skillzInstance] performSelector:@selector(setDevTS) withObject:nil];
+    NSString *gameIdString = @"1410";
     NSString *environmentString = @"SkillzProduction";
 #endif
     
     /*************
      * Temporarily point to Staging
      *************/
-//    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
+    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
     
     SkillzEnvironment skillzEnvironment;
     
