@@ -1,0 +1,171 @@
+{
+  "project_info": {
+    "project_number": "585510961627",
+    "firebase_url": "https://titanium-deck-643.firebaseio.com",
+    "project_id": "titanium-deck-643",
+    "storage_bucket": "titanium-deck-643.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585510961627:android:c8dfbcd75a6acca2",
+        "android_client_info": {
+          "package_name": "com.skillz.android.shellgame.pinky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585510961627-df7m0cio4qbcbmktb87d25bp6jdkjv06.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "585510961627-lkdc3d7lsq5mdtkju6re4qqglhqgnu0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG2QNXolHKcGsXZFvWb_TXDz0uiED4fRI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585510961627:android:b906f2de642e7290",
+        "android_client_info": {
+          "package_name": "com.skillz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585510961627-h45o1q25266a8m97n8pb31ed1c44070g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.skillz",
+            "certificate_hash": "f9ec6c0ac97497ebbbd9835fae48469cc67b3d60"
+          }
+        },
+        {
+          "client_id": "585510961627-df7m0cio4qbcbmktb87d25bp6jdkjv06.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "585510961627-lkdc3d7lsq5mdtkju6re4qqglhqgnu0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG2QNXolHKcGsXZFvWb_TXDz0uiED4fRI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585510961627-df7m0cio4qbcbmktb87d25bp6jdkjv06.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "585510961627-u4kp9h2utfbqlsftvrgtiu4nnn3nooh0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.skillz.sdk"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585510961627:android:5506b145239c9029",
+        "android_client_info": {
+          "package_name": "com.skillzgames.caverun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585510961627-df7m0cio4qbcbmktb87d25bp6jdkjv06.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "585510961627-lkdc3d7lsq5mdtkju6re4qqglhqgnu0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG2QNXolHKcGsXZFvWb_TXDz0uiED4fRI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585510961627:android:e2cc09865380111b",
+        "android_client_info": {
+          "package_name": "com.skillzgames.caverun.vconly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585510961627-df7m0cio4qbcbmktb87d25bp6jdkjv06.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "585510961627-lkdc3d7lsq5mdtkju6re4qqglhqgnu0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG2QNXolHKcGsXZFvWb_TXDz0uiED4fRI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
