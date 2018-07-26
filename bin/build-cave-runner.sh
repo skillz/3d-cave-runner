@@ -20,7 +20,7 @@ mv "${WORKSPACE}/themes/custom_theme-cr-vc.json" "${WORKSPACE}/Android/3D Cave R
 
 # Move theme for Full, and compile
 mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
-./gradlew :app:assembleMainRelease :app:crashlyticsUploadDistributionMainRelease
+./gradlew :app:assembleFullRelease :app:crashlyticsUploadDistributionFullRelease
 
 #####
 # Build VC and Full for iOS Crashlytics, and .xcarchives

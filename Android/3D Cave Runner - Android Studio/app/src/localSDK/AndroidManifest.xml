@@ -9,7 +9,7 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
   <application android:theme="@style/UnityThemeSelector"
-               android:icon="@mipmap/ic_launcher_vc"
+               android:icon="@mipmap/ic_launcher_full"
                android:label="@string/app_name"
                android:banner="@drawable/app_banner"
                tools:replace="android:icon, android:label">
@@ -33,11 +33,16 @@
     <meta-data
       tools:replace="android:value"
       android:name="skillz_game_id"
-      android:value="3616" />
+      android:value="3382" />
     <meta-data
+      tools:replace="android:value"
       android:name="skillz_production"
-      android:value="true" />
-
+      android:value="false" />
+    <meta-data
+      tools:replace="android:value"
+      android:name="skillz_server_url"
+      android:value="https://qa.skillz.com" />
+      
     <meta-data android:name="skillz_orientation" android:value="portrait" />
     <meta-data android:name="skillz_allow_exit" android:value="true" />
     <meta-data android:name="skillz_is_unity" android:value="true" />
