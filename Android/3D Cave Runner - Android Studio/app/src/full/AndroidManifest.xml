@@ -30,7 +30,7 @@
 
         <meta-data
             android:name="skillz_game_id"
-            android:value="1410" />
+            android:value="81" />
         <meta-data
             android:name="skillz_production"
             android:value="true" />
