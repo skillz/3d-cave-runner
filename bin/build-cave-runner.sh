@@ -10,6 +10,13 @@ printf "apiSecret=bc1e89c576f18f877c98d2ca8a922096ef5415a8b5023e922eb6b2c474a455
 
 # Link Sidious location for Android SDK
 sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
+sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
+
+# Link Sidious location for Skillz SDK Project:
+# THIS IS TERRIBLE AND WILL BREAK FOR ZINC.
+rm -rf sdk
+sudo ln -s ../../../../SDK-Framework/SDK-Framework-Mercury/sdk-android/sdk sdk
+
 # Compile Apps
 # Clean dependencies so latest Skillz SDK is fetched
 ./gradlew --refresh-dependencies
