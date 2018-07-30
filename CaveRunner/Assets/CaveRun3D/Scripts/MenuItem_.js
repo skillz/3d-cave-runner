@@ -1,6 +1,6 @@
 //This script is used for a button to be displayed through the Menu script. In it you can set one of three types of scripts
 //you can load a level, or load a component by instantiating the prefab this button it attached to
-import UnityEngine.SceneManagement;
+import UnityEngine.SceneManagement; 
 var MenuItemName:String = "A Button"; //The text that appears on the button
 
 var LoadLevel:boolean = false; //Does it load a level?
@@ -31,7 +31,7 @@ function RunMenuItem()
     }
   } else if (StartSkillz) {
     Debug.Log('Launch Skillz');
-	SkillzCrossPlatform.LaunchSkillz();
+	SkillzCrossPlatform.LaunchSkillz(SkillzGameController());
 	
   }
 }
