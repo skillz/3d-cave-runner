@@ -13,9 +13,9 @@
 /* Class = "UIButton"; normalTitle = "Automatic based on my activity"; ObjectID = "uLd-oN-mGa"; */
 "uLd-oN-mGa.normalTitle" = "Basado automáticamente en mi actividad";
 
-/* Class = "UIButton"; normalTitle = "Notify me when I receive a direct message"; ObjectID = "82I-27-cWz"; */
-"82I-27-cWz.normalTitle" = "Notificarme cuando reciba un mensaje directo";
+/* Class = "UIButton"; normalTitle = "Send me notifications for chat"; ObjectID = "82I-27-cWz"; */
+"82I-27-cWz.normalTitle" = "Enviarme notificaciones para chatear";
 
-/* Class = "UIButton"; normalTitle = "Do not send me direct message notifications"; ObjectID = "YTi-pq-Uue"; */
-"YTi-pq-Uue.normalTitle" = "No enviarme notificaciones de mensajes directos";
+/* Class = "UIButton"; normalTitle = "Do not send me notifications for chat"; ObjectID = "YTi-pq-Uue"; */
+"YTi-pq-Uue.normalTitle" = "No enviarme notificaciones para chatear";
 

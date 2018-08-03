@@ -10,6 +10,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AndroidJNI_CallStaticBooleanMethod();
 		Register_UnityEngine_AndroidJNI_CallStaticBooleanMethod();
 
+		//System.Boolean UnityEngine.AndroidJNI::GetBooleanField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetBooleanField();
+		Register_UnityEngine_AndroidJNI_GetBooleanField();
+
 		//System.Boolean UnityEngine.AndroidJNI::GetStaticBooleanField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticBooleanField();
 		Register_UnityEngine_AndroidJNI_GetStaticBooleanField();
@@ -25,6 +29,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Byte UnityEngine.AndroidJNI::CallStaticByteMethod(System.IntPtr,System.IntPtr,UnityEngine.jvalue[])
 		void Register_UnityEngine_AndroidJNI_CallStaticByteMethod();
 		Register_UnityEngine_AndroidJNI_CallStaticByteMethod();
+
+		//System.Byte UnityEngine.AndroidJNI::GetByteField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetByteField();
+		Register_UnityEngine_AndroidJNI_GetByteField();
 
 		//System.Byte UnityEngine.AndroidJNI::GetStaticByteField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticByteField();
@@ -42,6 +50,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AndroidJNI_CallStaticCharMethod();
 		Register_UnityEngine_AndroidJNI_CallStaticCharMethod();
 
+		//System.Char UnityEngine.AndroidJNI::GetCharField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetCharField();
+		Register_UnityEngine_AndroidJNI_GetCharField();
+
 		//System.Char UnityEngine.AndroidJNI::GetStaticCharField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticCharField();
 		Register_UnityEngine_AndroidJNI_GetStaticCharField();
@@ -58,6 +70,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AndroidJNI_CallStaticDoubleMethod();
 		Register_UnityEngine_AndroidJNI_CallStaticDoubleMethod();
 
+		//System.Double UnityEngine.AndroidJNI::GetDoubleField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetDoubleField();
+		Register_UnityEngine_AndroidJNI_GetDoubleField();
+
 		//System.Double UnityEngine.AndroidJNI::GetStaticDoubleField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticDoubleField();
 		Register_UnityEngine_AndroidJNI_GetStaticDoubleField();
@@ -73,6 +89,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Int16 UnityEngine.AndroidJNI::CallStaticShortMethod(System.IntPtr,System.IntPtr,UnityEngine.jvalue[])
 		void Register_UnityEngine_AndroidJNI_CallStaticShortMethod();
 		Register_UnityEngine_AndroidJNI_CallStaticShortMethod();
+
+		//System.Int16 UnityEngine.AndroidJNI::GetShortField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetShortField();
+		Register_UnityEngine_AndroidJNI_GetShortField();
 
 		//System.Int16 UnityEngine.AndroidJNI::GetStaticShortField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticShortField();
@@ -94,6 +114,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AndroidJNI_GetArrayLength();
 		Register_UnityEngine_AndroidJNI_GetArrayLength();
 
+		//System.Int32 UnityEngine.AndroidJNI::GetIntField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetIntField();
+		Register_UnityEngine_AndroidJNI_GetIntField();
+
 		//System.Int32 UnityEngine.AndroidJNI::GetStaticIntField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticIntField();
 		Register_UnityEngine_AndroidJNI_GetStaticIntField();
@@ -110,6 +134,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AndroidJNI_CallStaticLongMethod();
 		Register_UnityEngine_AndroidJNI_CallStaticLongMethod();
 
+		//System.Int64 UnityEngine.AndroidJNI::GetLongField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetLongField();
+		Register_UnityEngine_AndroidJNI_GetLongField();
+
 		//System.Int64 UnityEngine.AndroidJNI::GetStaticLongField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticLongField();
 		Register_UnityEngine_AndroidJNI_GetStaticLongField();
@@ -125,6 +153,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Single UnityEngine.AndroidJNI::CallStaticFloatMethod(System.IntPtr,System.IntPtr,UnityEngine.jvalue[])
 		void Register_UnityEngine_AndroidJNI_CallStaticFloatMethod();
 		Register_UnityEngine_AndroidJNI_CallStaticFloatMethod();
+
+		//System.Single UnityEngine.AndroidJNI::GetFloatField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetFloatField();
+		Register_UnityEngine_AndroidJNI_GetFloatField();
 
 		//System.Single UnityEngine.AndroidJNI::GetStaticFloatField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticFloatField();
@@ -145,6 +177,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.String UnityEngine.AndroidJNI::GetStaticStringField(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStaticStringField();
 		Register_UnityEngine_AndroidJNI_GetStaticStringField();
+
+		//System.String UnityEngine.AndroidJNI::GetStringField(System.IntPtr,System.IntPtr)
+		void Register_UnityEngine_AndroidJNI_GetStringField();
+		Register_UnityEngine_AndroidJNI_GetStringField();
 
 		//System.String UnityEngine.AndroidJNI::GetStringUTFChars(System.IntPtr)
 		void Register_UnityEngine_AndroidJNI_GetStringUTFChars();
@@ -205,6 +241,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.AndroidJNI::INTERNAL_CALL_GetObjectClass(System.IntPtr,System.IntPtr&)
 		void Register_UnityEngine_AndroidJNI_INTERNAL_CALL_GetObjectClass();
 		Register_UnityEngine_AndroidJNI_INTERNAL_CALL_GetObjectClass();
+
+		//System.Void UnityEngine.AndroidJNI::INTERNAL_CALL_GetObjectField(System.IntPtr,System.IntPtr,System.IntPtr&)
+		void Register_UnityEngine_AndroidJNI_INTERNAL_CALL_GetObjectField();
+		Register_UnityEngine_AndroidJNI_INTERNAL_CALL_GetObjectField();
 
 		//System.Void UnityEngine.AndroidJNI::INTERNAL_CALL_GetStaticFieldID(System.IntPtr,System.String,System.String,System.IntPtr&)
 		void Register_UnityEngine_AndroidJNI_INTERNAL_CALL_GetStaticFieldID();

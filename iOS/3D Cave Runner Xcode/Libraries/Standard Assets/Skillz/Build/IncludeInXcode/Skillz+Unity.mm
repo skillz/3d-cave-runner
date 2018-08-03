@@ -14,10 +14,28 @@
 
 @class SkillzSDKDelegate;
 
-@interface UnitySkillzSDKDelegate : NSObject<SkillzTurnBasedDelegate, SkillzDelegate>
+
+@interface UnitySkillzSDKDelegate : NSObject<SkillzTurnBasedDelegate, SkillzDelegate, SkillzSyncDelegate>
 
 @property SkillzOrientation orientation;
-@property (nonatomic) NSString* matchRules;
+@property (nonatomic) NSString *matchRules;
+@property (nonatomic) NSString *matchInfo;
+@property (nonatomic) BOOL turnReviewsDisabled;
+
+/*
+ The following are stored C# function pointers for SkillzSyncPlayDelegate methods
+ */
+
+@property (nonatomic) void (* onCurrentPlayerHasReconnectedFunc)();
+@property (nonatomic) void (* onCurrentPlayerHasLostConnectionFunc)();
+@property (nonatomic) void (* onCurrentPlayerHasLeftMatchFunc)();
+
+@property (nonatomic) void (* onOpponentHasReconnectedFunc)(uint64_t);
+@property (nonatomic) void (* onOpponentHasLostConnectionFunc)(uint64_t);
+@property (nonatomic) void (* onOpponentHasLeftMatchFunc)(uint64_t);
+
+@property (nonatomic) void (* didReceiveDataFunc)(const unsigned char *, uint64_t);
+@property (nonatomic) void (* onMatchCompletedFunc)();
 
 @end
 
@@ -91,6 +109,8 @@ static void ResumeApp()
 
 - (void)applicationDidBecomeActive:(UIApplication*)application
 {
+    UnityPause(false);
+
     if ([[Skillz skillzInstance] tournamentIsInProgress]) {
         [self.target applicationDidBecomeActive:application];
     }
@@ -98,6 +118,8 @@ static void ResumeApp()
 
 - (void)applicationWillResignActive:(UIApplication*)application
 {
+    UnityPause(true);
+    
     if ([[Skillz skillzInstance] tournamentIsInProgress]) {
         [self.target applicationWillResignActive:application];
     }
@@ -107,36 +129,40 @@ static void ResumeApp()
 
 static SKZAppDelegate* sSKZAppDelegate;
 
-
 @implementation UnitySkillzSDKDelegate
 
 NSString *unitySkillzDelegateName = @"SkillzDelegate";
+BOOL isReportingScore = false;
 
 - (void)tournamentWillBegin:(NSDictionary *)gameParameters
               withMatchInfo:(SKZMatchInfo *)matchInfo
 {
-    ResumeApp();
-    
-    // Send message to Unity object to call C# method
-    // SkillzDelegate.skillzTournamentWillBegin, implemented by publisher
+  dispatch_async(dispatch_get_main_queue(), ^{
+      ResumeApp();
+      isReportingScore = false;
+      // Send message to Unity object to call C# method
+      // SkillzDelegate.skillzTournamentWillBegin, implemented by publisher
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wundeclared-selector"
-    NSString *json = [matchInfo performSelector:@selector(JSONStringRepresentation:)
-                                     withObject:gameParameters];
+      NSString *json = [matchInfo performSelector:@selector(JSONStringRepresentation:)
+                                       withObject:gameParameters];
 #pragma GCC diagnostic pop
-    
-    [self updateCurrentMatchParams:gameParameters];
-    
-    // There are two sendMessageToUnityObject calls here, one of them will silently fail and should not cause a crash.
-    // This sends a message to call the Unity iOS only skillzTournamentWillBegin method
-    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                       callingMethod:@"skillzTournamentWillBegin"
-                    withParamMessage:json];
-    
-    // This sends a message to call the Cross Platform OnMatchWillBegin method
-    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                       callingMethod:@"OnMatchWillBegin"
-                    withParamMessage:json];
+
+      [self updateCurrentMatchParams:gameParameters];
+
+      // There are two sendMessageToUnityObject calls here, one of them will silently fail and should not cause a crash.
+      // This sends a message to call the Unity iOS only skillzTournamentWillBegin method
+      [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                         callingMethod:@"skillzTournamentWillBegin"
+                      withParamMessage:json];
+
+      // This sends a message to call the Cross Platform OnMatchWillBegin method
+      [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                         callingMethod:@"OnMatchWillBegin"
+                      withParamMessage:json];
+      self.matchInfo = json;
+
+  });
 }
 
 - (void)skillzWillExit
@@ -150,8 +176,8 @@ NSString *unitySkillzDelegateName = @"SkillzDelegate";
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"skillzWillExit"
                     withParamMessage:@""];
-    
-    // This sends a message to call the Cross Platform OnSkillzWillExit method
+ 
+     // This sends a message to call the Cross Platform OnSkillzWillExit method
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"OnSkillzWillExit"
                     withParamMessage:@""];
@@ -178,6 +204,69 @@ NSString *unitySkillzDelegateName = @"SkillzDelegate";
                     withParamMessage:@""];
 }
 
+#pragma mark
+#pragma mark Sync Delegate
+#pragma mark
+
+- (void)onOpponentHasReconnected:(SKZSyncPlayerId)playerId
+{
+    uint64_t playerIdLong = (uint64_t)playerId;
+    if (self.onOpponentHasReconnectedFunc) {
+        self.onOpponentHasReconnectedFunc(playerIdLong);
+    }
+}
+
+- (void)onOpponentHasLostConnection:(SKZSyncPlayerId)playerId
+{
+    uint64_t playerIdLong = (uint64_t)playerId;
+    if (self.onOpponentHasLostConnectionFunc) {
+        self.onOpponentHasLostConnectionFunc(playerIdLong);
+    }
+}
+
+- (void)onOpponentHasLeftMatch:(SKZSyncPlayerId)playerId
+{
+    uint64_t playerIdLong = (uint64_t)playerId;
+    if (self.onOpponentHasLeftMatchFunc) {
+        self.onOpponentHasLeftMatchFunc(playerIdLong);
+    }
+}
+
+- (void)onCurrentPlayerHasReconnected
+{
+    if (self.onCurrentPlayerHasReconnectedFunc) {
+        self.onCurrentPlayerHasReconnectedFunc();
+    }
+}
+
+- (void)onCurrentPlayerHasLostConnection
+{
+    if (self.onCurrentPlayerHasLostConnectionFunc) {
+        self.onCurrentPlayerHasLostConnectionFunc();
+    }
+}
+
+- (void)onCurrentPlayerHasLeftMatch
+{
+    if (self.onCurrentPlayerHasLeftMatchFunc) {
+        self.onCurrentPlayerHasLeftMatchFunc();
+    }
+}
+
+- (void)onDidReceiveData:(NSData * _Nonnull)value
+{
+    uint64_t lengthShort = (uint64_t)value.length;
+    if (self.didReceiveDataFunc) {
+        self.didReceiveDataFunc((const unsigned char *)value.bytes, lengthShort);
+    }
+}
+
+- (void)onMatchCompleted
+{
+    if (self.onMatchCompletedFunc) {
+        self.onMatchCompletedFunc();
+    }
+}
 
 #pragma mark Turn Based Methods
 
@@ -200,6 +289,12 @@ NSString *unitySkillzDelegateName = @"SkillzDelegate";
                        callingMethod:@"skillzTurnBasedTournamentWillBegin"
                     withParamMessage:json];
 }
+
+- (BOOL)gameCanReviewTurn
+{
+    return !self.turnReviewsDisabled;
+}
+
 
 - (void)turnBasedGameReviewWillBegin:(NSDictionary *)gameParameters
             withGameStateInformation:(SKZTurnBasedMatchInfo *)currentGameStateInfo
@@ -297,6 +392,60 @@ SKZTurnBasedMatchOutcome getMatchOutcomeEnum(NSString * outcomeString);
     }
     
     return matchOutcome;
+}
+
+#pragma mark Sync Play Delegate
+
+- (void)onCurrentPlayerHasReconnected
+{
+    if (((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasReconnectedFunc) {
+        ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasReconnectedFunc();
+    }
+}
+
+- (void)onCurrentPlayerHasLostConnection
+{
+    if (((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasLostConnectionFunc) {
+        ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasLostConnectionFunc();
+    }
+}
+
+- (void)onCurrentPlayerHasLeftMatch
+{
+    if (((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasLeftMatchFunc) {
+        ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasLeftMatchFunc();
+    }
+}
+
+- (void)onOpponentHasReconnected:(SKZSyncPlayerId)playerId
+{
+    uint64_t playerIdShort = (uint64_t)playerId;
+    if (((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasReconnectedFunc) {
+        ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasReconnectedFunc(playerIdShort);
+    }
+}
+
+- (void)onOpponentHasLostConnection:(SKZSyncPlayerId)playerId
+{
+    uint64_t playerIdShort = (uint64_t)playerId;
+    if (((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasLostConnectionFunc) {
+        ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasLostConnectionFunc(playerIdShort);
+    }
+}
+
+- (void)onOpponentHasLeftMatch:(SKZSyncPlayerId)playerId
+{
+    uint64_t playerIdShort = (uint64_t)playerId;
+    if (((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasLeftMatchFunc) {
+        ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasLeftMatchFunc(playerIdShort);
+    }
+}
+
+- (void)onMatchCompleted
+{
+    if (((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onMatchCompletedFunc) {
+        ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onMatchCompletedFunc();
+    }
 }
 
 @end
@@ -418,62 +567,72 @@ extern "C" void _showSDKVersionInfo()
 //Launches basic Skillz implementation for single match play.
 extern "C" void _launchSkillz()
 {
-    PauseApp();
-    [[Skillz skillzInstance] launchSkillz];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      PauseApp();
+      [[Skillz skillzInstance] launchSkillz];
+  });
 }
 
 // C-style wrapper for displayTournamentResultsWithScore so that it can be accessed by Unity in C#
 extern "C" void _displayTournamentResultsWithScore(int score)
 {
-    PauseApp();
-    
-    [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
-                                                withCompletion:^{
-                                                    // Send message to Unity object to call C# method
-                                                    // SkillzDelegate.skillzWithTournamentCompletion, implemented by publisher
-                                                    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                                                                       callingMethod:@"skillzWithTournamentCompletion"
-                                                                    withParamMessage:@""];
-                                                }];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      if (!isReportingScore) {
+          isReportingScore = true;
+          PauseApp();
+
+          [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
+                                                      withCompletion:^{
+                                                          isReportingScore = false;
+                                                      }];
+      }
+  });
 }
 
 // C-style wrapper for displayTournamentResultsWithFloatScore so that it can be accessed by Unity in C#
 extern "C" void _displayTournamentResultsWithFloatScore(float score)
 {
-    PauseApp();
-    
-    [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
-                                                withCompletion:^{
-                                                    // Send message to Unity object to call C# method
-                                                    // SkillzDelegate.skillzWithTournamentCompletion, implemented by publisher
-                                                    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                                                                       callingMethod:@"skillzWithTournamentCompletion"
-                                                                    withParamMessage:@""];
-                                                }];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      if (!isReportingScore) {
+          isReportingScore = true;
+          PauseApp();
+
+          [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
+                                                      withCompletion:^{
+                                                          isReportingScore = false;
+                                                      }];
+      }
+  });
 }
 
 extern "C" void _displayTournamentResultsWithStringScore(const char *score)
 {
-    PauseApp();
-    
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *playerScore = [f numberFromString:@(score)];
-    
-    [[Skillz skillzInstance] displayTournamentResultsWithScore:playerScore
-                                                withCompletion:^{
-                                                    // Send message to Unity object to call C# method
-                                                    // SkillzDelegate.skillzWithTournamentCompletion, implemented by publisher
-                                                    [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                                                                       callingMethod:@"skillzWithTournamentCompletion"
-                                                                    withParamMessage:@""];
-                                                }];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      if (!isReportingScore) {
+          isReportingScore = true;
+          PauseApp();
+
+          NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+          f.numberStyle = NSNumberFormatterDecimalStyle;
+          NSNumber *playerScore = [f numberFromString:@(score)];
+
+          [[Skillz skillzInstance] displayTournamentResultsWithScore:playerScore
+                                                      withCompletion:^{
+                                                          isReportingScore = false;
+                                                      }];
+      }
+  });
 }
 
 // C-style wrapper for updatePlayersCurrentScore: so that is can be accessed by Unity in C#
 extern "C" void _updatePlayersCurrentScore(float score)
 {
     [[Skillz skillzInstance] updatePlayersCurrentScore:@(score)];
+}
+
+extern "C" void _setAsyncTurnReviewDisabled()
+{
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).turnReviewsDisabled = YES;
 }
 
 extern "C" void _updatePlayersCurrentStringScore(const char *score)
@@ -492,31 +651,37 @@ extern "C" void _updatePlayersCurrentIntScore(int score)
 // C-style wrapper for notifyPlayerAbortWithCompletion so that it can be accessed by Unity in C#
 extern "C" void _notifyPlayerAbortWithCompletion()
 {
-    PauseApp();
-    
-    [[Skillz skillzInstance] notifyPlayerAbortWithCompletion:^() {
-        // Send message to Unity object to call C# method
-        // SkillzDelegate.skillzWithPlayerAbort, implemented by publisher
-        [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                           callingMethod:@"skillzWithPlayerAbort"
-                        withParamMessage:@""];
-    }];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      if (!isReportingScore) {
+          isReportingScore = true;
+          PauseApp();
+          [[Skillz skillzInstance] notifyPlayerAbortWithCompletion:^() {
+              // Send message to Unity object to call C# method
+              // SkillzDelegate.skillzWithPlayerAbort, implemented by publisher
+              isReportingScore = false;
+              [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                                 callingMethod:@"skillzWithPlayerAbort"
+                              withParamMessage:@""];
+          }];
+
+      }
+  });
 }
 
 // C-style wrapper for completeTurnWithGameData so that it can be accessed by Unity in C#
 extern "C" void _completeTurnWithGameData(const char *gameData, const char *score, float playerCurrentTotalScore, float opponentCurrentTotalScore, const char * roundOutcome, const char * matchOutcome)
 {
     PauseApp();
-    
+
     NSString * roundOutcomeString = [[NSString alloc] initWithUTF8String:roundOutcome];
     NSString * matchOutcomeString = [[NSString alloc] initWithUTF8String:matchOutcome];
-    
+
     SKZTurnBasedRoundOutcome turnBasedRoundOutcome;
     SKZTurnBasedMatchOutcome turnBasedMatchOutcome;
-    
+
     turnBasedRoundOutcome = [Skillz getRoundOutcomeEnum:roundOutcomeString];
     turnBasedMatchOutcome = [Skillz getMatchOutcomeEnum:matchOutcomeString];
-    
+
     NSNumber *playerCurrentTotal;
     if (isnan(playerCurrentTotalScore))
     {
@@ -579,7 +744,80 @@ extern "C" float _getRandomFloat() {
 // C-style wrapper for getMatchRules so that it can be accessed by Unity in C#
 extern "C" const char *_getMatchRules() {
     return [((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).matchRules UTF8String];
-    
+}
+
+extern "C" const char *_getMatchInfo() {
+    return [((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).matchInfo UTF8String];
+}
+
+#pragma mark
+#pragma mark Sync API
+#pragma mark
+
+#pragma mark Sync Delegate Setup
+
+extern "C" void _assignOnCurrentPlayerHasReconnectedFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasReconnectedFunc = reinterpret_cast<void(*)()>(function);
+}
+
+extern "C" void _assignOnCurrentPlayerHasLostConnectionFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasLostConnectionFunc = reinterpret_cast<void(*)()>(function);
+}
+
+extern "C" void _assignOnCurrentPlayerHasLeftMatchFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onCurrentPlayerHasLeftMatchFunc = reinterpret_cast<void(*)()>(function);
+}
+
+extern "C" void _assignOnOpponentHasReconnectedFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasReconnectedFunc = reinterpret_cast<void(*)(uint64_t)>(function);
+}
+
+extern "C" void _assignOnOpponentHasLostConnectionFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasLostConnectionFunc = reinterpret_cast<void(*)(uint64_t)>(function);
+}
+
+extern "C" void _assignOnOpponentHasLeftMatchFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onOpponentHasLeftMatchFunc = reinterpret_cast<void(*)(uint64_t)>(function);
+}
+
+extern "C" void _assignOnDidReceiveDataFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).didReceiveDataFunc = reinterpret_cast<void(*)(const unsigned char *, uint64_t)>(function);
+}
+
+extern "C" void _assignOnMatchCompletedFunc(void *function) {
+    ((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).onMatchCompletedFunc = reinterpret_cast<void(*)()>(function);
+}
+
+#pragma mark Sync Play Methods
+
+extern "C" void _sendData(const char * data, uint64_t length) {
+    [[Skillz skillzInstance] sendData:[NSData dataWithBytes:data length:length]];
+}
+
+extern "C" bool _isMatchCompleted() {
+    return [[Skillz skillzInstance] isMatchCompleted];
+}
+
+extern "C" int _connectedPlayerCount() {
+    return (int)[[Skillz skillzInstance] getConnectedPlayerCount];
+}
+
+extern "C" uint64_t _currentPlayerId()
+{
+    return (uint64_t)[[Skillz skillzInstance] getCurrentPlayerId];
+}
+
+extern "C" uint64_t _currentOpponentPlayerId()
+{
+    return (uint64_t)[[Skillz skillzInstance] getCurrentOpponentPlayerId];
+}
+
+extern "C" uint64_t _getServerTime() {
+    return [[Skillz skillzInstance] getServerTime];
+}
+
+extern "C" int _reconnectTimeLeftForPlayer(uint64_t playerId) {
+    return (int)[[Skillz skillzInstance] getTimeLeftForReconnection:(SKZSyncPlayerId)playerId];
 }
 
 //################################################################################
@@ -587,3 +825,4 @@ extern "C" const char *_getMatchRules() {
 //##### End of C wrappers
 //#####
 //################################################################################
+

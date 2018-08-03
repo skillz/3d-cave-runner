@@ -11,7 +11,7 @@ Summary:
     Generic Abstract Classes = 4
     Attributes = 189
   Total Field Removals = 802
-  Total Method Removals = 11037
+  Total Method Removals = 11004
 ---------------------------------------------------
 ---------------------------------------------------
 Assembly: Boo.Lang
@@ -937,7 +937,7 @@ Summary:
     Generic Abstract Classes = 1
     Attributes = 84
   Total Field Removals = 527
-  Total Method Removals = 4875
+  Total Method Removals = 4864
   References Removed = 0
 ---------------------------------------------------
     <PrivateImplementationDetails>
@@ -2186,7 +2186,6 @@ Summary:
         ToUInt32(System.DateTime)
         ToUInt32(System.Object)
         ToUInt32(System.String)
-        ToUInt32(System.String,System.Int32)
         ToUInt32(System.UInt32)
         ToUInt64(System.DateTime)
         ToUInt64(System.String)
@@ -5211,14 +5210,11 @@ Summary:
         AddRef(System.IntPtr)
         AddRefInternal(System.IntPtr)
         AllocCoTaskMem(System.Int32)
-        AllocHGlobal(System.Int32)
-        AllocHGlobal(System.IntPtr)
         BindToMoniker(System.String)
         ChangeWrapperHandleStrength(System.Object,System.Boolean)
         ClearAnsi(System.IntPtr)
         ClearBSTR(System.IntPtr)
         ClearUnicode(System.IntPtr)
-        Copy(System.Byte[],System.Int32,System.IntPtr,System.Int32)
         Copy(System.Char[],System.Int32,System.IntPtr,System.Int32)
         Copy(System.Double[],System.Int32,System.IntPtr,System.Int32)
         Copy(System.Int16[],System.Int32,System.IntPtr,System.Int32)
@@ -5232,14 +5228,12 @@ Summary:
         Copy(System.IntPtr,System.Single[],System.Int32,System.Int32)
         Copy(System.IntPtr[],System.Int32,System.IntPtr,System.Int32)
         Copy(System.Single[],System.Int32,System.IntPtr,System.Int32)
-        copy_to_unmanaged(System.Array,System.Int32,System.IntPtr,System.Int32)
         CreateAggregatedObject(System.IntPtr,System.Object)
         CreateWrapperOfType(System.Object,System.Type)
         DestroyStructure(System.IntPtr,System.Type)
         FinalReleaseComObject(System.Object)
         FreeBSTR(System.IntPtr)
         FreeCoTaskMem(System.IntPtr)
-        FreeHGlobal(System.IntPtr)
         GenerateGuidForType(System.Type)
         GenerateProgIdForType(System.Type)
         GetActiveObject(System.String)
@@ -5257,8 +5251,6 @@ Summary:
         GetExceptionForHR(System.Int32)
         GetExceptionForHR(System.Int32,System.IntPtr)
         GetExceptionPointers()
-        GetFunctionPointerForDelegate(System.Delegate)
-        GetFunctionPointerForDelegateInternal(System.Delegate)
         GetHINSTANCE(System.Reflection.Module)
         GetHRForException(System.Exception)
         GetHRForLastWin32Error()
@@ -5336,8 +5328,6 @@ Summary:
         SecureStringToGlobalAllocAnsi(System.Security.SecureString)
         SecureStringToGlobalAllocUnicode(System.Security.SecureString)
         SetComObjectData(System.Object,System.Object,System.Object)
-        SizeOf(System.Object)
-        SizeOf(System.Type)
         StringToBSTR(System.String)
         StringToCoTaskMemAnsi(System.String)
         StringToCoTaskMemAuto(System.String)
@@ -7726,7 +7716,6 @@ Summary:
     System.UInt64
         MaxValue
         MinValue
-        GetTypeCode()
         Parse(System.String)
         Parse(System.String,System.Globalization.NumberStyles)
         TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.UInt64&)
@@ -9832,7 +9821,7 @@ Summary:
     Generic Abstract Classes = 0
     Attributes = 57
   Total Field Removals = 51
-  Total Method Removals = 4425
+  Total Method Removals = 4403
   References Removed = 0
 ---------------------------------------------------
     <PrivateImplementationDetails>
@@ -9907,12 +9896,10 @@ Summary:
     UnityEngine.AnchoredJoint2D
     UnityEngine.AndroidJavaObject
         _Call(System.String,System.Object[])
-        _Get<FieldType>(System.String)
         _Set<FieldType>(System.String,FieldType)
         _SetStatic<FieldType>(System.String,FieldType)
         Call(System.String,System.Object[])
         DebugPrint(System.String,System.String,System.String,System.Object[])
-        Get<FieldType>(System.String)
         Set<FieldType>(System.String,FieldType)
         SetStatic<FieldType>(System.String,FieldType)
     UnityEngine.AndroidJavaProxy
@@ -9934,28 +9921,17 @@ Summary:
         FatalError(System.String)
         FromObjectArray(System.IntPtr)
         GetBooleanArrayElement(System.IntPtr,System.Int32)
-        GetBooleanField(System.IntPtr,System.IntPtr)
         GetByteArrayElement(System.IntPtr,System.Int32)
-        GetByteField(System.IntPtr,System.IntPtr)
         GetCharArrayElement(System.IntPtr,System.Int32)
-        GetCharField(System.IntPtr,System.IntPtr)
         GetDoubleArrayElement(System.IntPtr,System.Int32)
-        GetDoubleField(System.IntPtr,System.IntPtr)
         GetFloatArrayElement(System.IntPtr,System.Int32)
-        GetFloatField(System.IntPtr,System.IntPtr)
         GetIntArrayElement(System.IntPtr,System.Int32)
-        GetIntField(System.IntPtr,System.IntPtr)
         GetLongArrayElement(System.IntPtr,System.Int32)
-        GetLongField(System.IntPtr,System.IntPtr)
-        GetObjectField(System.IntPtr,System.IntPtr)
         GetShortArrayElement(System.IntPtr,System.Int32)
-        GetShortField(System.IntPtr,System.IntPtr)
-        GetStringField(System.IntPtr,System.IntPtr)
         GetStringUTFLength(System.IntPtr)
         GetSuperclass(System.IntPtr)
         GetVersion()
         INTERNAL_CALL_AllocObject(System.IntPtr,System.IntPtr&)
-        INTERNAL_CALL_GetObjectField(System.IntPtr,System.IntPtr,System.IntPtr&)
         INTERNAL_CALL_GetSuperclass(System.IntPtr,System.IntPtr&)
         INTERNAL_CALL_NewBooleanArray(System.Int32,System.IntPtr&)
         INTERNAL_CALL_NewByteArray(System.Int32,System.IntPtr&)
@@ -10033,17 +10009,7 @@ Summary:
         .ctor()
         CallVoidMethod(System.IntPtr,System.IntPtr,UnityEngine.jvalue[])
         FromObjectArray(System.IntPtr)
-        GetBooleanField(System.IntPtr,System.IntPtr)
-        GetByteField(System.IntPtr,System.IntPtr)
-        GetCharField(System.IntPtr,System.IntPtr)
-        GetDoubleField(System.IntPtr,System.IntPtr)
-        GetFloatField(System.IntPtr,System.IntPtr)
-        GetIntField(System.IntPtr,System.IntPtr)
-        GetLongField(System.IntPtr,System.IntPtr)
         GetObjectArrayElement(System.IntPtr,System.Int32)
-        GetObjectField(System.IntPtr,System.IntPtr)
-        GetShortField(System.IntPtr,System.IntPtr)
-        GetStringField(System.IntPtr,System.IntPtr)
         SetBooleanField(System.IntPtr,System.IntPtr,System.Boolean)
         SetByteField(System.IntPtr,System.IntPtr,System.Byte)
         SetCharField(System.IntPtr,System.IntPtr,System.Char)
@@ -10577,6 +10543,7 @@ Summary:
         Internal_ExternalCall(System.String)
         InvokeOnAdvertisingIdentifierCallback(System.String,System.Boolean)
         LoadLevel(System.Int32)
+        LoadLevel(System.String)
         LoadLevelAdditive(System.Int32)
         LoadLevelAdditive(System.String)
         LoadLevelAdditiveAsync(System.Int32)

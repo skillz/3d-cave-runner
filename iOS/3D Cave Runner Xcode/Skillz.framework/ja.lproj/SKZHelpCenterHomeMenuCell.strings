@@ -13,9 +13,9 @@
 /* Class = "UIButton"; normalTitle = "Automatic based on my activity"; ObjectID = "uLd-oN-mGa"; */
 "uLd-oN-mGa.normalTitle" = "私の活動に基づいて自動で";
 
-/* Class = "UIButton"; normalTitle = "Notify me when I receive a direct message"; ObjectID = "82I-27-cWz"; */
-"82I-27-cWz.normalTitle" = "ダイレクトメッセージを受信したら通知する";
+/* Class = "UIButton"; normalTitle = "Send me notifications for chat"; ObjectID = "82I-27-cWz"; */
+"82I-27-cWz.normalTitle" = "チャットの通知を私に送ってください";
 
-/* Class = "UIButton"; normalTitle = "Do not send me direct message notifications"; ObjectID = "YTi-pq-Uue"; */
-"YTi-pq-Uue.normalTitle" = "ダイレクトメッセージに関する通知を送らないでください";
+/* Class = "UIButton"; normalTitle = "Do not send me notifications for chat"; ObjectID = "YTi-pq-Uue"; */
+"YTi-pq-Uue.normalTitle" = "チャットの通知を私に送らないでください";
 

@@ -27,6 +27,8 @@ typedef uint64_t SKZSyncPlayerId;
  *  This method will be called when the opponent player has successfully reconnected within the timeout.
  *  This will allow you to resume the game.
  *
+ *  Note: This method will be called from a background thread.
+ *
  *  @param playerId     Id of player who has reconnected
  */
 - (void)onOpponentHasReconnected:(SKZSyncPlayerId)playerId;
@@ -34,6 +36,8 @@ typedef uint64_t SKZSyncPlayerId;
 /**
  *  This method will be called when the opponent player's connection has failed and Skillz is attempting to reconnect
  *  This will allow you to pause the game while waiting for the player to reconnect.
+ *
+ *  Note: This method will be called from a background thread.
  *
  *  @param playerId     Id of player who is attempting to reconnect
  */
@@ -45,19 +49,25 @@ typedef uint64_t SKZSyncPlayerId;
  *
  *  Note: If you receive this message without a corresponding "onOpponentHasLostConnection:" call, you should assume the player has manually aborted.
  *
- *  @param playerId     Id of player who has permanently left the match
+ *  Note: This method will be called from a background thread.
+ *
+ *  @param playerId     Id of player who has permanently left the match 
  */
 - (void)onOpponentHasLeftMatch:(SKZSyncPlayerId)playerId;
 
 /**
  *  This method will be called when the current player has successfully reconnected within the timeout.
  *  This will allow you to resume the game.
+ *
+ *  Note: This method will be called from a background thread.
  */
 - (void)onCurrentPlayerHasReconnected;
 
 /**
  *  This method will be called when the current player's connection has failed and Skillz is attempting to reconnect
  *  This will allow you to pause the game while waiting for the player to reconnect.
+ *
+ *  Note: This method will be called from a background thread.
  */
 - (void)onCurrentPlayerHasLostConnection;
 
@@ -65,6 +75,8 @@ typedef uint64_t SKZSyncPlayerId;
  *  This method will be called when the current player leaves the match (due to connection failure or abort) and is unable to rejoin. At this point, Skillz handles the player as if they have aborted.
  *
  *  Note: You should follow up by calling "notifyPlayerAbortWithCompletion:" at your convenience.
+ *
+ *  Note: This method will be called from a background thread.
  */
 - (void)onCurrentPlayerHasLeftMatch;
 
@@ -77,6 +89,8 @@ typedef uint64_t SKZSyncPlayerId;
 /**
  *  When another instance of your client connected to the same match passes a message using the below `sendData:`, this method will be called on all other clients.
  *
+ *  Note: This method will be called from a background thread.
+ *
  *  @param data      The message sent by your client
  */
 - (void)onDidReceiveData:(NSData * _Nonnull)data;
@@ -85,6 +99,8 @@ typedef uint64_t SKZSyncPlayerId;
 
 /**
  *  This method will be triggered on all clients when one client has explicitly reported a score or aborted.
+ *
+ *  Note: This method will be called from a background thread.
  */
 - (void)onMatchCompleted;
 
@@ -111,7 +127,7 @@ typedef uint64_t SKZSyncPlayerId;
 
 /**
  *  Call this method in order to send a message to all clients connected to this match.
- *  This will trigger `didReceiveData:` on all clients connected to the current match.
+ *  This will trigger `onDidReceiveData:` on all clients connected to the current match.
  *
  *  Note: NSData passed to this function are limited to a certain size based on the game, and this function will assert if over that size. (2048 bytes currently)
  *  Please reach out to integrations@skillz.com for more information.
@@ -149,6 +165,16 @@ typedef uint64_t SKZSyncPlayerId;
  *  @return Integer identifying the current user in the match.
  */
 - (SKZSyncPlayerId)getCurrentPlayerId;
+
+/**
+ *  This will return the current user's opponent player ID for an in progress match.
+ *  You can use this to easily fetch the current SKZSyncPlayer, or for use in variable passing.
+ *
+ *
+ *  @return Integer identifying the current user in the match.
+ */
+- (SKZSyncPlayerId)getCurrentOpponentPlayerId;
+
 
 /**
  *  Will return the current server time so that you may synchronize via that rather than local device time.
