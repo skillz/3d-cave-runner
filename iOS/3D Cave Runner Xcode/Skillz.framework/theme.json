@@ -257,6 +257,10 @@
       "#e26954",
       "#e26954"
     ],
+    "prizeViewTicketzGradient":[
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
     "textCashGradient":[
       "#79b23f",
       "#79b23f"
@@ -332,6 +336,7 @@
     "practiceCurrencyFullIconLargeURI":"ic_z_white_large_SKZ@2x.png"
   },
   "images":{
+    "prizeViewTicketzImage": null,
     "backgroundImage":null,
     "prizeViewZImage":null,
     "prizeViewCashImage":null,
