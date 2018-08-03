@@ -2,6 +2,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+
 #if !DOXYGEN_SHOULD_SKIP_THIS
 namespace SkillzSDK
 {
@@ -131,6 +133,35 @@ namespace SkillzSDK
       uint result;
       bool success = uint.TryParse(str, out result);
       return success ? result : (uint?) null;
+    }
+  }
+
+  /// <summary>
+  /// Skillz helper methods. Internal only, do not rely on for game code
+  /// </summary>
+  struct UnmanagedArray : IDisposable
+  {
+    public UnmanagedArray (byte[] data)
+    {
+      dataLength = (UInt64)data.Length;
+      dataIntPtr = Marshal.AllocHGlobal (Marshal.SizeOf (data [0]) * data.Length);
+      Marshal.Copy (data, 0, dataIntPtr, data.Length);
+    }
+
+    public IntPtr IntPtr {
+      get { return dataIntPtr; }
+    }
+
+    public UInt64 Length {
+      get { return dataLength; }
+    }
+
+    private IntPtr dataIntPtr;
+    private UInt64 dataLength;
+
+    void IDisposable.Dispose ()
+    {
+      Marshal.FreeHGlobal (dataIntPtr);
     }
   }
 }
