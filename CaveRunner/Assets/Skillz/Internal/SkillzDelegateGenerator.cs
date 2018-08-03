@@ -25,28 +25,6 @@ namespace SkillzEditor
 			//Generate Manifest before Generating The Delegate
 			ManifestGenerator.GenerateManifest();
 
-			//Find the child classes that inherit from our delegates.
-			Type baseDel = typeof(SkillzDelegateBase),
-				 turnBasedDel = typeof(SkillzDelegateTurnBased);
-			Type[] baseChildren = GetChildClasses(baseDel),
-				   turnBasedChildren = GetChildClasses(turnBasedDel);
-
-			//Make sure there is only at most 1 of each delegate type.
-			if (baseChildren.Length > 1)
-			{
-				PrintChildClassesError(baseDel,  baseChildren);
-				return;
-			}
-			if (turnBasedChildren.Length > 1)
-			{
-				PrintChildClassesError(turnBasedDel,  turnBasedChildren);
-				return;
-			}
-
-			//Make sure the developer implemented all necessary delegates.
-			bool usesThisSystem = (baseChildren.Length == 1),
-				 usesTurnBased = (turnBasedChildren.Length == 1);
-
 			//Create the object and add scripts to it.
 			GameObject delegateObj = new GameObject("SkillzDelegate");
 			SkillzDelegate skillzDelegate = delegateObj.AddComponent<SkillzDelegate>();
@@ -62,6 +40,7 @@ namespace SkillzEditor
 		{
 			return Assembly.GetExecutingAssembly().GetTypes().Where(t => t.IsClass && t != baseClass && baseClass.IsAssignableFrom(t)).ToArray();
 		}
+
 		private static void PrintChildClassesError(Type baseClass, Type[] childClasses)
 		{
 			string listOfChildren = "{";

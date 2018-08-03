@@ -10,6 +10,8 @@
 		00000000008063A1000160D3 /* libiPhone-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A1C72A0E8063A1000160D3 /* libiPhone-lib.a */; };
 		03F528631B447098000F4FB8 /* Il2CppOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03F528621B447098000F4FB8 /* Il2CppOptions.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		3141E61F2114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141E61E2114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp */; };
+		3141E6202114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141E61E2114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp */; };
 		3E204300A9BFC6EE7F03BB45 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165D4CB597B2E54FF5B0D613 /* LaunchScreen-iPad.xib */; };
 		3F124EF8A7EDC6AEBDD6F08D /* LaunchScreen-iPhonePortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7D430485510A2CF4D0BFBF /* LaunchScreen-iPhonePortrait.png */; };
 		5623C57617FDCB0800090B9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -317,6 +319,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* 3dCaveRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3dCaveRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3E4DF2AE97900FF8AA6ED0 /* LaunchScreen-iPhoneLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchScreen-iPhoneLandscape.png"; sourceTree = SOURCE_ROOT; };
+		3141E61E2114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Il2CppReversePInvokeWrapperTable.cpp; sourceTree = "<group>"; };
 		31F86E542106BC5E0048AF66 /* 3dCaveRunEnterprise.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = 3dCaveRunEnterprise.entitlements; sourceTree = "<group>"; };
 		420A41D0AC6C680BBB18213F /* libil2cpp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libil2cpp.a; path = Libraries/libil2cpp.a; sourceTree = SOURCE_ROOT; };
 		4C7D430485510A2CF4D0BFBF /* LaunchScreen-iPhonePortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchScreen-iPhonePortrait.png"; sourceTree = SOURCE_ROOT; };
@@ -786,6 +789,7 @@
 				6B7DDCA01F7D760A00298B3D /* Il2CppMetadataRegistration.cpp */,
 				6B7DDCA11F7D760A00298B3D /* Il2CppMetadataUsage.cpp */,
 				6B7DDCA21F7D760A00298B3D /* Il2CppMethodPointerTable.cpp */,
+				3141E61E2114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp */,
 				6B7DDCA31F7D760A00298B3D /* Il2CppTypeDefinitions.cpp */,
 				6B7DDCA41F7D760A00298B3D /* UnityClassRegistration.cpp */,
 				6B7DDCA51F7D760A00298B3D /* UnityICallRegistration.cpp */,
@@ -1165,6 +1169,7 @@
 				6B7DDD7E1F7D760A00298B3D /* LifeCycleListener.mm in Sources */,
 				6B7DDD241F7D760A00298B3D /* Bulk_mscorlib_7.cpp in Sources */,
 				6B7DDD6C1F7D760A00298B3D /* Il2CppInvokerTable.cpp in Sources */,
+				3141E61F2114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp in Sources */,
 				6B7DDCFA1F7D760A00298B3D /* iPhone_Sensors.mm in Sources */,
 				6B7DDD1C1F7D760A00298B3D /* Bulk_mscorlib_3.cpp in Sources */,
 				6B7DDD521F7D760A00298B3D /* Il2CppCompilerCalculateTypeValues_5Table.cpp in Sources */,
@@ -1284,6 +1289,7 @@
 				6B7DDD7F1F7D760A00298B3D /* LifeCycleListener.mm in Sources */,
 				6B7DDD251F7D760A00298B3D /* Bulk_mscorlib_7.cpp in Sources */,
 				6B7DDD6D1F7D760A00298B3D /* Il2CppInvokerTable.cpp in Sources */,
+				3141E6202114C75700D1934E /* Il2CppReversePInvokeWrapperTable.cpp in Sources */,
 				6B7DDCFB1F7D760A00298B3D /* iPhone_Sensors.mm in Sources */,
 				6B7DDD1D1F7D760A00298B3D /* Bulk_mscorlib_3.cpp in Sources */,
 				6B7DDD531F7D760A00298B3D /* Il2CppCompilerCalculateTypeValues_5Table.cpp in Sources */,

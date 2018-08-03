@@ -31,7 +31,7 @@ function RunMenuItem()
     }
   } else if (StartSkillz) {
     Debug.Log('Launch Skillz');
-	SkillzCrossPlatform.LaunchSkillz();
+	SkillzCrossPlatform.LaunchSkillz(SkillzGameController());
 	
   }
 }

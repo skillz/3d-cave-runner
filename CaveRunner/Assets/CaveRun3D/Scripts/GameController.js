@@ -99,6 +99,7 @@ function Update ()
 //This function runs at the end of the game right after you fall off the platform. It's called from inside the player script when he falls
 function EndLevel()
 {
+  showScoreOnScreen = false;
   Debug.Log('End Level - Game Controller');
   PlayerPrefs.SetFloat("TotalDistance", TotalDistance); //Put the value of TotalDistance in a playerPref record which will keep this value even after going to a different level or even quitting the game
   //Debug.Log("GameController:EndLevel TotalDistance:" + TotalDistance.ToString());
@@ -124,21 +125,22 @@ function OnGUI()
     GUI.skin = GUIskin; //The skin gui we'll use
 
     var fontStyle = new GUIStyle( GUI.skin.label );
- 	fontStyle.alignment = TextAnchor.UpperRight;
+ 	fontStyle.alignment = TextAnchor.UpperLeft;
 
     GUI.skin = GUIskin; //Smaller font for gems
+    GUI.Box (Rect(0, Screen.height / scale.y - 110, 210, 85), "");
 
-    GUI.Label (Rect(0, 48, Screen.width / scale.x - 52, 0), TotalGems.ToString() + " Gems", fontStyle); //Place the gems count on the top right of the screen
-    GUI.DrawTexture (Rect(Screen.width / scale.x - 44, 44, 32, 32), Gems); //Place the gem image beside the gems count on the top right of the screen
+    GUI.Label (Rect(32, Screen.height / scale.y - 90, Screen.width / scale.x - 52, 0), TotalGems.ToString() + " Gems", fontStyle); //Place the gems count on the bottom left of the screen
+    GUI.DrawTexture (Rect(10, Screen.height / scale.y - 87, 16, 16), Gems); //Place the gem image in front of the gems count on the bottom left of the screen
 
     GUI.skin = GUIskinLarge; //Large font for Score
 
     fontStyle = new GUIStyle( GUI.skin.label );
- 	fontStyle.alignment = TextAnchor.UpperRight;
+ 	fontStyle.alignment = TextAnchor.UpperLeft;
 
     var TotalScore:float = TotalDistance * 10 + TotalGems * 100;
-    GUI.Label (Rect(0, 14, Screen.width / scale.x - 14, 0), TotalScore.ToString("F0") + " Score", fontStyle); //Place the distance count on the top right of the screen
-
+    GUI.Label (Rect(10, Screen.height / scale.y - 64, Screen.width / scale.x - 14, 0), TotalScore.ToString("F0") + " Score", fontStyle); //Place the distance count on the bottom left of the screen
+   
     GUI.skin = GUIskin; //Smaller font for gems
     //Animate the level up text by passing it from the right side of the screen to the left side
     if ( LevelUp == false && LevelUpPosX > -originalWidth )

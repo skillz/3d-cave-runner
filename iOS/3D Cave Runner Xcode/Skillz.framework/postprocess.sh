@@ -1,7 +1,7 @@
 /usr/bin/perl -x "$0"
 exit
 
-#!perl start here 
+#!perl start here
 use strict;
 
 $ENV{PATH} = $ENV{PATH} . ':/usr/libexec';
@@ -30,6 +30,13 @@ my $locationInUse = `PlistBuddy -c \'Print NSLocationWhenInUseUsageDescription\'
 if (!length($locationInUse)) {
    `PlistBuddy -c \'Add :NSLocationWhenInUseUsageDescription string \"Due to legal requirements we require your location in games that can be played for cash.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 }
+
+my $locationAlways = `PlistBuddy -c \'Print NSLocationAlwaysUsageDescription\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
+
+if (!length($locationAlways)) {
+`PlistBuddy -c \'Add :NSLocationAlwaysUsageDescription string \"Due to legal requirements we require your location in games that can be played for cash.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
+}
+
 
 # Add Plist value to properly inform user of camera roll usage for iOS 11
 
@@ -95,11 +102,14 @@ if (!length($bundleTypes)) {
 } else {
     print "CFBundleURLTypes exists, check if we should add Skillz. \n";
 	# Only add our custom scheme if it does not yet exist
-	my $customScheme = `grep --quiet "$customURLScheme" "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
+	my $customScheme = `grep "$customURLScheme" "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 
 	if (!length($customScheme)) {
         print "Skillz URL scheme not yet set \n";
-		my $temporaryPlistPath = `dirname "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH/urlScheme.plist"`;
+		my $temporaryPlistDirectory = `dirname "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}"`;
+        $temporaryPlistDirectory =~ s/\R//g;
+        my $tempPlistName = "/urlScheme.plist";
+        my $temporaryPlistPath = $temporaryPlistDirectory . $tempPlistName;
 
 		unlink "$temporaryPlistPath";
 
@@ -120,7 +130,7 @@ if (!length($bundleTypes)) {
         print $fh $fileContents;
         close $fh;
 
-        `PlistBuddy -c \'Merge $temporaryPlistPath :CFBundleURLTypes:\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
+        `PlistBuddy -c \'Merge "$temporaryPlistPath" :CFBundleURLTypes:\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 
         unlink "$temporaryPlistPath";
     } else {
@@ -158,13 +168,7 @@ if ( $ENV{'DEPLOYMENT_LOCATION'} eq "YES") {
     if (index($fileResult, "i386") != -1) {
         print "Exporting for release, remove unused archs. \n";
         my $tempfile = `mktemp -t skillz`;
-        my $removearmv7s = "";
-        
-        if ($ENV{'ARCHS'} !~ /armv7s/) {
-        	$removearmv7s = '-remove armv7s';
-        	print "Arch armv7s not found in app, removing from Skillz.framework\n";
-        }
-        `/usr/bin/lipo -output "$tempfile" -remove i386 -remove x86_64 $removearmv7s "$dylib"`;
+        `/usr/bin/lipo -output "$tempfile" -remove i386 -remove x86_64 "$dylib"`;
         `unlink "$dylib"`;
         `mv "$tempfile" "$dylib"`;
         print "Arch i386 found, removed \n";
