@@ -139,7 +139,7 @@ function OnGUI()
  	fontStyle.alignment = TextAnchor.UpperLeft;
 
     var TotalScore:float = TotalDistance * 10 + TotalGems * 100;
-    GUI.Label (Rect(10, Screen.height / scale.y - 64, Screen.width / scale.x - 14, 0), /*TotalScore.ToString("F0") + */"5555555 Score", fontStyle); //Place the distance count on the bottom left of the screen
+    GUI.Label (Rect(10, Screen.height / scale.y - 64, Screen.width / scale.x - 14, 0), TotalScore.ToString("F0") + " Score", fontStyle); //Place the distance count on the bottom left of the screen
    
     GUI.skin = GUIskin; //Smaller font for gems
     //Animate the level up text by passing it from the right side of the screen to the left side
