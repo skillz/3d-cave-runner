@@ -37,6 +37,7 @@ android {
     configurations {
         full
         vconly
+        localSDK
     }
 
     dexOptions {
@@ -98,6 +99,10 @@ android {
             resValue "string", "app_name", "Cave Runner"
             applicationIdSuffix ".vconly"
         }
+        localSDK {
+            dimension 'currency'
+            resValue "string", "app_name", "Cave Runner"
+        }
     }
     sourceSets {
         vconly {
@@ -108,6 +113,12 @@ android {
         }
         full {
             manifest.srcFile "src/full/AndroidManifest.xml"
+            assets.srcDir "src/main/assets"
+            res.srcDir "src/main/res"
+            jniLibs.srcDir "src/main/jniLibs"
+        }
+        localSDK {
+            manifest.srcFile "src/localSDK/AndroidManifest.xml"
             assets.srcDir "src/main/assets"
             res.srcDir "src/main/res"
             jniLibs.srcDir "src/main/jniLibs"
@@ -124,6 +135,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     fullImplementation 'com.skillz.sdk:skillz-sdk-android:21.0.0-SNAPSHOT'
     vconlyImplementation 'com.skillz.sdk:skillz-sdk-android:21.0.0-SNAPSHOT'
+    localSDKImplementation project(':sdk')
 
     api ('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
         transitive=true
