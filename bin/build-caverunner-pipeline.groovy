@@ -41,9 +41,6 @@ pipeline {
           }
         }
         stage ('Build Android') {
-          environment {
-            SKILLZ_SDK_CONFIGURATION = 'jenkinsBuild'
-          }
           steps {
             script {
               sh '''
