@@ -1,0 +1,1 @@
+../../../../../sdk-android/sdk/CMakeLists.txt
