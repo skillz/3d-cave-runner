@@ -45,3 +45,4 @@ node_modules
 *.xccheckout
 **/Reveal.framework/
 Android/AndroidStudioProject/.gradle
+Android/3D Cave Runner - Android Studio/sdk/.externalNativeBuild

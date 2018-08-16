@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/3D Cave Runner - Android Studio.iml" filepath="$PROJECT_DIR$/3D Cave Runner - Android Studio.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../sdk-android/sdk/sdk.iml" filepath="$PROJECT_DIR$/../../../../sdk-android/sdk/sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sdk/sdk.iml" filepath="$PROJECT_DIR$/sdk/sdk.iml" />
     </modules>
   </component>
 </project>
