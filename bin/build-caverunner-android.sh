@@ -14,12 +14,10 @@ rm -rf sdk
 sudo ln -s ../../../../SDK-Framework/SDK-Framework-Mercury/sdk-android/sdk sdk
 
 # Compile Apps
-# Clean dependencies so latest Skillz SDK is fetched
-./gradlew --refresh-dependencies
 
 # Move theme for VC, and compile
 mv "${WORKSPACE}/themes/custom_theme-cr-vc.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
-./gradlew clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
+./gradlew --refresh-dependencies clean :app:assembleVconlyRelease :app:crashlyticsUploadDistributionVconlyRelease
 
 # Move theme for Full, and compile
 mv "${WORKSPACE}/themes/custom_theme-cr-full.json" "${WORKSPACE}/Android/3D Cave Runner - Android Studio/app/src/main/assets/custom_theme.json"
