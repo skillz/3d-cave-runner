@@ -35,7 +35,7 @@ pipeline {
           steps {
             script {
               sh '''
-                echo "Would start iOS build here"
+                sh ./bin/build-caverunner-ios.sh
               '''
             }
           }
@@ -44,7 +44,7 @@ pipeline {
           steps {
             script {
               sh '''
-                sh ./bin/build-caverunner-android.sh
+                echo "Would start building android here"
               '''
             }
           }
