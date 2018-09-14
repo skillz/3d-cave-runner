@@ -23,12 +23,12 @@
 /**
  *  The score you've submitted for this round for the current player, will be displayed within the Skillz UI.
  */
-@property (nonatomic, strong) NSString *playerScore;
+@property (nonatomic, strong, nonnull) NSString *playerScore;
 
 /**
  *  The score you've submitted for this round for the current player's opponent, will be displayed within the Skillz UI.
  */
-@property (nonatomic, strong) NSString *opponentScore;
+@property (nonatomic, strong, nullable) NSString *opponentScore;
 
 /**
  *  This is the outcome you've specified for this round, this will be used to display results within the Skillz UI.

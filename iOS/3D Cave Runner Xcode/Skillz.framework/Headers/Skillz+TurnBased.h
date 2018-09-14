@@ -91,10 +91,10 @@ typedef NS_ENUM(NSUInteger, SKZTurnBasedMatchOutcome) {
  *  @param matchOutcome              Passed to determine the state of the match. Match outcomes determine the outcome of the match as whole, be it Win, Lose, or Tie. Pass "kSKZMatchOutcomeMatchNoOutcome" to continue play and pass control to opponent. See SKZTurnBasedRoundOutcome for more information.
  *  @param completion                Called after Skillz UI has been displayed, use to clean up any outstanding objects in your game hierarchy.
  */
-- (void)completeTurnWithGameData:(NSString *)gameData
-                     playerScore:(NSString *)score
-         playerCurrentTotalScore:(NSNumber*)playerCurrentTotalScore
-       opponentCurrentTotalScore:(NSNumber*)opponentCurrentTotalScore
+- (void)completeTurnWithGameData:(NSString * _Nullable)gameData
+                     playerScore:(NSString * _Nullable)score
+         playerCurrentTotalScore:(NSNumber * _Nullable)playerCurrentTotalScore
+       opponentCurrentTotalScore:(NSNumber * _Nullable)opponentCurrentTotalScore
                     roundOutcome:(SKZTurnBasedRoundOutcome)turnOutcome
                     matchOutcome:(SKZTurnBasedMatchOutcome)matchOutcome
                   withCompletion:(void (^)(void))completion;

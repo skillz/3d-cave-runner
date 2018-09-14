@@ -8,6 +8,7 @@ $ENV{PATH} = $ENV{PATH} . ':/usr/libexec';
 
 my $BUILT_PRODUCTS_DIR = $ENV{'BUILT_PRODUCTS_DIR'};
 my $INFOPLIST_PATH = $ENV{'INFOPLIST_PATH'};
+my $CODE_SIGN_ENTITLEMENTS = $ENV{'CODE_SIGN_ENTITLEMENTS'};
 
 # escape some troublesome path characters
 $BUILT_PRODUCTS_DIR =~ s!'!\'!g;
@@ -49,13 +50,7 @@ if (!length($photoLibraryUsage)) {
 my $contactsInUse = `PlistBuddy -c \'Print NSContactsUsageDescription\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 
 if (!length($contactsInUse)) {
-`PlistBuddy -c \'Add :NSContactsUsageDescription string \"Find friends to chat with from your phone contacts. Skillz will never contact anyone without your permission.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
-}
-
-my $bluetoothInUse = `PlistBuddy -c \'Print NSBluetoothPeripheralUsageDescription\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
-
-if (!length($bluetoothInUse)) {
-`PlistBuddy -c \'Add :NSBluetoothPeripheralUsageDescription string \"Skillz uses Bluetooth to determine eligibility to play in local tournaments.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
+    `PlistBuddy -c \'Add :NSContactsUsageDescription string \"Your contacts will be uploaded to the Skillz servers so you can easily find friends to chat and play.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 }
 
 my $photosInUse = `PlistBuddy -c \'Print NSPhotoLibraryUsageDescription\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
@@ -68,12 +63,6 @@ my $cameraInInUse = `PlistBuddy -c \'Print NSCameraUsageDescription\' "$BUILT_PR
 
 if (!length($photosInUse)) {
 `PlistBuddy -c \'Add :NSCameraUsageDescription string \"Skillz can access your camera to customize your profile picture.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
-}
-
-my $calendarInUse = `PlistBuddy -c \'Print NSCalendarsUsageDescription\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
-
-if (!length($calendarInUse)) {
-`PlistBuddy -c \'Add :NSCalendarsUsageDescription string \"Skillz uses access to your calendar to personalize your ads.\"\' "$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH"`;
 }
 
 # Add Plist value to respect view controller status bar appearance
@@ -153,6 +142,16 @@ if (!length($localizations)) {
     `PlistBuddy -c \'Add :CFBundleLocalizations:6 string pt\' "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}"`;
     `PlistBuddy -c \'Add :CFBundleLocalizations:7 string ru\' "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}"`;
     `PlistBuddy -c \'Add :CFBundleLocalizations:8 string zh-Hans\' "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}"`;
+}
+
+my $entitlements = `PlistBuddy -c \'Print :com.apple.developer.associated-domains\' "${CODE_SIGN_ENTITLEMENTS}"`;
+
+if (!length($entitlements)) {
+	 `PlistBuddy -c \"Add :com.apple.developer.associated-domains array\" $CODE_SIGN_ENTITLEMENTS`;
+
+	`PlistBuddy -c \"Add :com.apple.developer.associated-domains:0 string \'applinks:dl.skillz.com\'\" "${CODE_SIGN_ENTITLEMENTS}"`;
+ 
+	`PlistBuddy -c \"Add :com.apple.developer.associated-domains:0 string \'webcredentials:skillz.com\'\" "${CODE_SIGN_ENTITLEMENTS}"`;
 }
 
 my $codeSignIdentity =  $ENV{'EXPANDED_CODE_SIGN_IDENTITY'};

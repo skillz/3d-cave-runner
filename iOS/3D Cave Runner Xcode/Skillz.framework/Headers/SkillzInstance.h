@@ -222,7 +222,7 @@ NS_AVAILABLE_IOS(8_0)
  *
  * @return The singleton instance of the Skillz SDK object
  */
-+ (Skillz *)skillzInstance;
++ (Skillz * _Nonnull)skillzInstance;
 
 /**
  * Returns a Dictionary of Game Parameters that you set in each tournament in Developer Portal.
@@ -231,7 +231,7 @@ NS_AVAILABLE_IOS(8_0)
  *
  * You can use these game parameters to provide a different user experience for each tournament that you have. 
  */
-+ (NSDictionary *)getMatchRules;
++ (NSDictionary * _Nonnull)getMatchRules;
 
 /**
  * Returns a random integer supplied by the Skillz SDK to ensure fairness across competition games.
@@ -287,8 +287,8 @@ NS_AVAILABLE_IOS(8_0)
  * @param allowExit        Whether to allow the user to exit the Skillz experience
  *
  */
-- (void)initWithGameId:(NSString *)gameId
-           forDelegate:(id <SkillzBaseDelegate>)delegate
+- (void)initWithGameId:(NSString * _Nonnull)gameId
+           forDelegate:(id <SkillzBaseDelegate> _Nonnull)delegate
          withEnvironment:(SkillzEnvironment)environment
              allowExit:(BOOL)allowExit;
 
@@ -307,7 +307,7 @@ NS_AVAILABLE_IOS(8_0)
  *
  *  @return A SKZMatchInfo containing information identifying the match and players within the match.
  */
-- (SKZMatchInfo *)getMatchInfo;
+- (SKZMatchInfo * _Nonnull)getMatchInfo;
 
 /**
  * This method must be called each time the current player's score changes during a Skillz match.
@@ -321,7 +321,7 @@ NS_AVAILABLE_IOS(8_0)
  *
  * @param currentScoreForPlayer Current score value for the player
  */
-- (void)updatePlayersCurrentScore:(NSNumber *)currentScoreForPlayer;
+- (void)updatePlayersCurrentScore:(NSNumber * _Nonnull)currentScoreForPlayer;
 
 /**
  * Call this function to report the player's score to Skillz. Ends the current tournament, and returns the user to the Skillz
@@ -333,7 +333,7 @@ NS_AVAILABLE_IOS(8_0)
  *
  * Note: If your game is resource intensive, you should attempt to release as much memory as possible prior to calling this method.
  */
-- (void)displayTournamentResultsWithScore:(NSNumber *)score
+- (void)displayTournamentResultsWithScore:(NSNumber * _Nonnull)score
                            withCompletion:(void (^)(void))completion;
 
 /**
@@ -368,7 +368,7 @@ NS_AVAILABLE_IOS(8_0)
  *
  * @return The SDK Version
  */
-+ (NSString *)SDKShortVersion;
++ (NSString * _Nonnull)SDKShortVersion;
 
 /**
  * Display the long version of SDK Info in a UIAlertView
@@ -396,13 +396,13 @@ NS_AVAILABLE_IOS(8_0)
  * @return SKZPlayer object that represent the current player. If there is no
  * player currently logged in, will return nil.
  */
-+ (SKZPlayer *)player;
++ (SKZPlayer * _Nullable)player;
 
 
 /**
  *  DEPRECATED: Use the player method instead.
  */
-+ (NSString *)currentUserDisplayName __attribute__ ((deprecated));
++ (NSString * _Nullable)currentUserDisplayName __attribute__ ((deprecated));
 
 /**
  *  Deprecated, use
@@ -411,8 +411,8 @@ NS_AVAILABLE_IOS(8_0)
  *  @param delegate    Delegate responsible for handling Skillz protocol call backs
  *  @param environment Environment to point the SDK to (Production or Sandbox)
  */
-- (void)initWithGameId:(NSString *)gameId
-           forDelegate:(id <SkillzBaseDelegate>)delegate
+- (void)initWithGameId:(NSString * _Nonnull)gameId
+           forDelegate:(id <SkillzBaseDelegate> _Nonnull)delegate
        withEnvironment:(SkillzEnvironment)environment __attribute__ ((deprecated));
 
 @end

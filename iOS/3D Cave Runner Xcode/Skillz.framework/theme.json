@@ -221,6 +221,10 @@
       "#387aa4",
       "#387aa4"
     ],
+    "prizeViewTicketzGradient":[
+      "#f6604d",
+      "#e05745"
+    ],
     "bracketPrizeViewLiveEventGradient":[
       "#6ac141",
       "#35a1a2"
@@ -256,10 +260,6 @@
     "textTicketzGradient":[
       "#e26954",
       "#e26954"
-    ],
-    "prizeViewTicketzGradient":[
-      "#FFFFFF",
-      "#FFFFFF"
     ],
     "textCashGradient":[
       "#79b23f",
@@ -336,11 +336,11 @@
     "practiceCurrencyFullIconLargeURI":"ic_z_white_large_SKZ@2x.png"
   },
   "images":{
-    "prizeViewTicketzImage": null,
     "backgroundImage":null,
     "prizeViewZImage":null,
     "prizeViewCashImage":null,
     "prizeViewLiveEventImage":null,
+    "prizeViewTicketzImage": null,
     "bracketPrizeViewZImage":null,
     "bracketPrizeViewCashImage":null,
     "bracketPrizeViewLiveEventImage":null

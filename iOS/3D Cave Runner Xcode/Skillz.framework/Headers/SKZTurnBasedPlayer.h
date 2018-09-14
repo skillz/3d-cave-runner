@@ -38,6 +38,6 @@ __attribute__ ((visibility("default")))
 /**
  * Current total score for the player
  */
-@property NSString *currentTotalScore;
+@property (nullable, assign) NSString *currentTotalScore;
 
 @end
