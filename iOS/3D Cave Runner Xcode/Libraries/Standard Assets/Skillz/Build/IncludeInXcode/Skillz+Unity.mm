@@ -495,7 +495,7 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
     /*************
      * Temporarily point to Staging
      *************/
-    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
+//    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
     
     SkillzEnvironment skillzEnvironment;
     
