@@ -44,7 +44,7 @@ pipeline {
           steps {
             script {
               sh '''
-                echo "Would start building android here"
+                sh ./bin/build-caverunner-android.sh
               '''
             }
           }
