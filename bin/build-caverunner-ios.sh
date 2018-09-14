@@ -5,6 +5,9 @@ cd "${WORKSPACE}"
 sudo ln -sf "/opt/sdk-integrations/Unity_2017.1.1/libiPhone-lib.a"  "${WORKSPACE}/iOS/3D Cave Runner Xcode/Libraries/libiPhone-lib.a"
 
 # Clean old artifacts
+rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive"
+rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive"
+rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunnerEnterpise.xcarchive"
 rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive.zip"
 rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunner.xcarchive.zip"
 rm -rf "iOS/3D Cave Runner Xcode/3DCaveRunnerEnterpise.xcarchive.zip"
