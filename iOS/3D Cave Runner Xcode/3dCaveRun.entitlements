@@ -7,6 +7,7 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>webcredentials:skillz.com</string>
+		<string>applinks:dl.skillz.com</string>
 	</array>
 	<key>com.apple.developer.in-app-payments</key>
 	<array>
