@@ -9,7 +9,7 @@ pipeline {
     JENKINS_BUILD = 'true'
   }
   parameters {
-    string(name: 'CR_BRANCH', defaultValue: "*/master-v21.0", description: 'Cave Runner Branch and/or tag to use to compile. (Git tag but must be formatted as "refs/tags/{tagName}")')
+    string(name: 'CR_BRANCH', defaultValue: "master-v21.0", description: 'Cave Runner Branch and/or tag to use to compile. (Git tag but must be formatted as "refs/tags/{tagName}")')
     string(name: 'sdk_build_number', defaultValue: '', description: 'Build number for SDK-Framework to use for artifacts.')
   }
   stages {
