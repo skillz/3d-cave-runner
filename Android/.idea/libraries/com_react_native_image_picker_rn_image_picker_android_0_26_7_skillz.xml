@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.react-native-image-picker:rn-image-picker-android-0.26.7-skillz">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/abc5574d72aa348742b1f4b7299b43a965ea4f9f/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/abc5574d72aa348742b1f4b7299b43a965ea4f9f/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

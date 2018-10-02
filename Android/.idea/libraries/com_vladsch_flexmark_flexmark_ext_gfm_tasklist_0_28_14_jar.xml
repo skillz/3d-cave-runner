@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.vladsch.flexmark:flexmark-ext-gfm-tasklist:0.28.14@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-gfm-tasklist/0.28.14/72deed421b5268b1ca2dca697523f664ed13b099/flexmark-ext-gfm-tasklist-0.28.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-gfm-tasklist/0.28.14/ea9698e69ad0c30926e4a5288ebf1c2ceb26adba/flexmark-ext-gfm-tasklist-0.28.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

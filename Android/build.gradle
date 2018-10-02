@@ -1,18 +1,68 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.google.gms:google-services:3.1.0'
-    }
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		classpath 'com.android.tools.build:gradle:2.3.3'
+	}
 }
 
 allprojects {
-    repositories {
-        maven { url "https://maven.google.com" }
-        jcenter()
-    }
+   repositories {
+      flatDir {
+        dirs 'libs'
+      }
+   }
+}
+
+
+apply plugin: 'com.android.application'
+
+dependencies {
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+	compile 'com.skillz.sdk:skillz-sdk-android:20.1.4'
+}
+
+android {
+	compileSdkVersion 26
+	buildToolsVersion '26.0.1'
+
+	defaultConfig {
+		minSdkVersion 19
+		targetSdkVersion 22
+		multiDexEnabled true
+
+		ndk {
+			abiFilters "armeabi-v7a", "x86"
+		}
+	}
+
+	dexOptions {
+		javaMaxHeapSize "4g"
+	}
+
+	lintOptions {
+		abortOnError false
+	}
+
+	buildTypes {
+		debug {
+			jniDebuggable true
+		}
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+
+		}
+	}
+
+  repositories {
+		maven {
+			url 'https://maven.google.com'
+		}
+	  	maven {
+			url 'http://nexus.skillz.com/content/groups/public/'
+	  	}
+  }
 }

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="com.skillz.sdk:skillz-sdk-android-20.1.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/jars/libs/mopub-sdk-native-video.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/jars/libs/mopub-sdk-rewardedvideo.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/jars/libs/mopub-sdk-native-static.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/jars/libs/mopub-sdk-base.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/jars/libs/mopub-sdk-interstitial.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/ae5c4bd17c74929d4a45275f0a36531d9a296d21/output/jars/libs/mopub-sdk-banner.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
