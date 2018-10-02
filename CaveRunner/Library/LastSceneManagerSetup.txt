@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/CaveRun3D/Scenes/start.unity
+  isLoaded: 1
+  isActive: 1

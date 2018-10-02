@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour {
 	
@@ -16,7 +17,7 @@ public class GameSceneManager : MonoBehaviour {
 			
 			if (timer <= 0) {
 				startTimer = false;	
-				Application.LoadLevel(GetPrevScene());
+				SceneManager.LoadScene(GetPrevScene());
 			}
 		}
 	}
