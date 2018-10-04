@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.kochava.base:tracker-3.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/e584d0e8a7818902bb766e2f847f612295a70b94/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/e584d0e8a7818902bb766e2f847f612295a70b94/output/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.kochava.base/tracker/3.1.1/2b0f02371aa9be4644ebbf65186ab6b4956b498f/tracker-3.1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

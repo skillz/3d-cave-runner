@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.vladsch.flexmark:flexmark-ext-autolink:0.28.14@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-autolink/0.28.14/bbc5c00da8caab3bb1915d6dda5ab9a8bfdef60b/flexmark-ext-autolink-0.28.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vladsch.flexmark/flexmark-ext-autolink/0.28.14/bcc06adcf137e0f0b804ec9bcbbde38d3d7bec1e/flexmark-ext-autolink-0.28.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -41,8 +41,8 @@ function Update ()
 	transform.Rotate(Vector3.up * 180, Space.World);
 	
 	//Play the bat flying animation
-	animation.Play("Fly");
+	GetComponent.<Animation>().Play("Fly");
 	
 	//Set the aniamtion speed to fit with the movement speed
-	animation["Fly"].speed = (OrbitSpeed/100);
+	GetComponent.<Animation>()["Fly"].speed = (OrbitSpeed/100);
 }

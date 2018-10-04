@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.github.tiagohm.MarkdownView:library-0.17.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/354929f8926137ff6bf3796aee449827b267a45d/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/354929f8926137ff6bf3796aee449827b267a45d/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
