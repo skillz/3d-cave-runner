@@ -230,6 +230,7 @@ extern "C" void UnityRequestQuit()
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    NSLog(@"changing iOS fingerprint");
     ::printf("-> applicationDidFinishLaunching()\n");
     [Fabric with:@[[Crashlytics class]]];
     
