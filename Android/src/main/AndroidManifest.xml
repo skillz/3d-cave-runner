@@ -16,6 +16,9 @@
     <meta-data android:name="unity.build-id" android:value="0dbcb4a2-60e9-4ae5-9126-5fa8d4db0dba" />
     <meta-data android:name="unity.splash-mode" android:value="2" />
     <meta-data android:name="unity.splash-enable" android:value="True" />
+    <meta-data android:name="skillz_game_id" android:value="1000929" />
+    <meta-data android:name="skillz_production" android:value="false" />
+    <meta-data android:name="skillz_server_url" android:value="https://qa.skillz.com" />
   </application>
   <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="22" />
   <uses-feature android:glEsVersion="0x00020000" />

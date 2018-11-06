@@ -347,8 +347,10 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
                                                                      userInfo:nil];
         [badEnvironmentException raise];
     }
+    
+    [[Skillz skillzInstance] performSelector:@selector(setDevTS) withObject:nil];
 
-    [[Skillz skillzInstance] initWithGameId:gameIdString
+    [[Skillz skillzInstance] initWithGameId:@"1000929"
                                 forDelegate:[[UnitySkillzSDKDelegate alloc] init]
                             withEnvironment:skillzEnvironment
                                   allowExit:YES];
