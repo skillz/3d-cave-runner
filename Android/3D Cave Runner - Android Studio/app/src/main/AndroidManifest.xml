@@ -23,7 +23,7 @@
             <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
             <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
             <meta-data android:name="skillz_game_id" android:value="4600" />
-            <meta-data android:name="skillz_production" android:value="false" />
+            <meta-data android:name="skillz_production" android:value="true" />
             <meta-data android:name="skillz_server_url" android:value="https://qa.skillz.com"/>
         </activity>
 
