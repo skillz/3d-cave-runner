@@ -87,7 +87,7 @@ static void ResumeApp()
 
 - (void)installDelegate
 {
-    NSLog(@"changing iOS fingerprint");
+    NSLog(@"changing iOS fingerprint 2");
     if ([UIApplication sharedApplication].delegate != self) {
         self.target = [UIApplication sharedApplication].delegate;
         [UIApplication sharedApplication].delegate = self;

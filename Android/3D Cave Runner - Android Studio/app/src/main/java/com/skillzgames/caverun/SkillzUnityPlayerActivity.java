@@ -14,8 +14,8 @@ public class SkillzUnityPlayerActivity extends UnityGameActivity
 	// Setup activity layout
 	@Override protected void onCreate (Bundle savedInstanceState)
 	{
-		System.out.println("updating fingerprint");
-		Log.i("Skillz", "force update of fingerprint");
+		System.out.println("updating fingerprint 2");
+		Log.i("Skillz", "force update of fingerprint 2");
 		mCrashlytics = new Crashlytics();
 		Fabric.with(this, mCrashlytics);
 		super.onCreate(savedInstanceState);
