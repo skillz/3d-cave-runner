@@ -22,15 +22,15 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
             <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
             <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
-            <meta-data android:name="skillz_game_id" android:value="4600" />
-            <meta-data android:name="skillz_production" android:value="true" />
-            <meta-data android:name="skillz_server_url" android:value="https://qa.skillz.com"/>
         </activity>
 
         <meta-data android:name="skillz_orientation" android:value="portrait" />
     <meta-data android:name="skillz_game_activity" android:value="com.skillzgames.caverun.SkillzUnityPlayerActivity"/>
     <meta-data android:name="skillz_allow_exit" android:value="true" />
     <meta-data android:name="skillz_is_unity" android:value="true" />
+    <meta-data android:name="skillz_game_id" android:value="4600" />
+    <meta-data android:name="skillz_production" android:value="true" />
+    <meta-data android:name="skillz_server_url" android:value="https://qa.skillz.com"/>
     <meta-data
         android:name="io.fabric.ApiKey"
         android:value="267045208f4b1d9fdcbf019068b81096fe16475a"

@@ -28,12 +28,9 @@
             <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
         </activity>
 
-        <meta-data
-            android:name="skillz_game_id"
-            android:value="1410" />
-        <meta-data
-            android:name="skillz_production"
-            android:value="true" />
+    <meta-data android:name="skillz_game_id" android:value="4600" />
+    <meta-data android:name="skillz_production" android:value="true" />
+    <meta-data android:name="skillz_server_url" android:value="https://qa.skillz.com"/>
 
         <meta-data android:name="skillz_orientation" android:value="portrait" />
     <meta-data android:name="skillz_game_activity" android:value="com.skillzgames.caverun.SkillzUnityPlayerActivity"/>
