@@ -89,7 +89,7 @@ bool    _supportsMSAA           = false;
 
 - (id)init
 {
-    NSLog(@"changing iOS fingerprint 2");
+    NSLog(@"changing iOS fingerprint");
     if ((self = [super init]))
     {
         // due to clang issues with generating warning for overriding deprecated methods
