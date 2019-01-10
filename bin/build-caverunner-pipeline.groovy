@@ -24,7 +24,7 @@ pipeline {
     stage ('Copy Skillz Framework Artifacts') {
       steps {
         script {
-          copyArtifacts filter: '**/Skillz.framework.zip,**/Skillz.framework.dSYM.zip,**/Skillz_DEBUG.framework.zip,**/Skillz_DEBUG.framework.dSYM.zip', fingerprintArtifacts: true, flatten: true, projectName: '../SDK-Framework/SDK-Framework-Mercury', selector: specific('${sdk_build_number}')
+          copyArtifacts filter: '**/Skillz.framework.zip,**/Skillz.framework.dSYM.zip,**/Skillz_DEBUG.framework.zip,**/Skillz_DEBUG.framework.dSYM.zip', fingerprintArtifacts: true, flatten: true, projectName: '../SDK-Framework/SDK-Framework-Zinc', selector: specific('${sdk_build_number}')
         }
       }
     }
