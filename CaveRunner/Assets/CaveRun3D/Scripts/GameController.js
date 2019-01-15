@@ -13,7 +13,8 @@ private var pCreator : PlatformCreator;
 
 var GUIskin:GUISkin; //The skin gui we'll use
 var GUIskinLarge:GUISkin;
-var Gems:Texture2D; //a 2D image that is palced beside the gems score count
+var Gems:Texture2D; //a 2D image that is placed beside the gems score count
+var PauseImage:Texture2D;
 
 var CurrentLevel:int = 1; //The current level we are at
 var DistanceToLevelUp:int = 100; //How much more distance do we have to pass to get to the next level. This value is added up to the previous value in each level, meaning that to pass level 1 you need
@@ -41,6 +42,8 @@ var TotalDistance:float = 0; //The total distance passed by the player
 private var LastLevelDistance:float = 0; //The total distance passed at the start of the current level. For example the value of LastLevelDistance when getting to level 2 is 100, and on level 3 is 300
 var TotalGems:float = 0; //total gems collected so far
 
+var Paused:boolean = false;
+
 function Start()
 {
   Debug.Log('Start Game Controller');
@@ -56,7 +59,16 @@ function Update ()
  		// Ignore back button
  	}
 
+ 	if (Paused) {
+ 		Time.timeScale = 0;
+ 		return;
+ 	} else {
+ 		Time.timeScale = 1.0f;
+ 	}
+ 		
+
   //If we haven't already leveled up and we passed the target distance for the next level, LEVEL UP!
+
   if (Time.timeScale>0)
   if ( LevelUp == false &&  TotalDistance >= DistanceToLevelUp * CurrentLevel + LastLevelDistance )
   {
@@ -142,6 +154,15 @@ function OnGUI()
     GUI.Label (Rect(10, Screen.height / scale.y - 64, Screen.width / scale.x - 14, 0), TotalScore.ToString("F0") + " Score", fontStyle); //Place the distance count on the bottom left of the screen
    
     GUI.skin = GUIskin; //Smaller font for gems
+
+    var pauseButtonWidth = 50;
+    var pauseButtonHeight = 60;
+
+    if ( GUI.Button (new Rect(Screen.width/scale.x - pauseButtonWidth - 30, Screen.height/scale.y - pauseButtonHeight - 30, pauseButtonWidth, pauseButtonHeight), PauseImage))
+    {
+    	Paused = !Paused;
+    }
+
     //Animate the level up text by passing it from the right side of the screen to the left side
     if ( LevelUp == false && LevelUpPosX > -originalWidth )
     {
