@@ -6,7 +6,6 @@ public class PauseMenu : MonoBehaviour {
 
 	private int borderDistance;
 	public Texture2D texture;
-	private RectOffset bdr;
 	private GUIStyle style;
 	public Font font;
 
@@ -23,7 +22,7 @@ public class PauseMenu : MonoBehaviour {
 	void OnGUI() {
 		GUI.Box (
 			new Rect(borderDistance, borderDistance, Screen.width - borderDistance * 2 , Screen.height - borderDistance * 4),
-			new GUIContent("\n\nAudio Settings"),
+			new GUIContent("\n\nAudio Settings"), // new lines for padding text down
 			style
 		);
 
