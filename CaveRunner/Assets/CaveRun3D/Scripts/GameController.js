@@ -10,6 +10,7 @@ private var Player:GameObject; //Used to hold the player object, if it's in the 
 private var PlatformCreator:GameObject; //Used to hold the Platform Creator object, if it's in the scene
 private var pControls:PlayerControls;
 private var pCreator : PlatformCreator;
+private var pauseMenu:GameObject;
 
 var GUIskin:GUISkin; //The skin gui we'll use
 var GUIskinLarge:GUISkin;
@@ -51,6 +52,8 @@ function Start()
   PlatformCreator = GameObject.FindWithTag("PlatformCreator"); //Find the Platform Creator in the scene and put it in a variable, for later use
   pControls       = Player.GetComponent("PlayerControls") as PlayerControls;
   pCreator        = PlatformCreator.GetComponent("PlatformCreator");
+  pauseMenu       = GameObject.Instantiate(Resources.Load("PauseMenu")) as GameObject;
+  pauseMenu.SetActive(false);
 }
 
 function Update ()
@@ -59,13 +62,7 @@ function Update ()
  		// Ignore back button
  	}
 
- 	if (Paused) {
- 		Time.timeScale = 0;
- 		return;
- 	} else {
- 		Time.timeScale = 1.0f;
- 	}
- 		
+ 	UpdatePaused();
 
   //If we haven't already leveled up and we passed the target distance for the next level, LEVEL UP!
 
@@ -120,6 +117,17 @@ function EndLevel()
 
   var prefab = GameObject.Instantiate(Resources.Load("ScoreScreen")) as GameObject;
   prefab.transform.SetParent(this.transform, false);
+}
+
+function UpdatePaused()
+{
+	if (Paused) {
+		Time.timeScale = 0;
+		pauseMenu.SetActive(true);
+	} else {
+		Time.timeScale = 1.0f;
+		pauseMenu.SetActive(false);
+	}
 }
 
 public var showScoreOnScreen : boolean = true;
