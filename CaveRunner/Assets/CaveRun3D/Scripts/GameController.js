@@ -52,7 +52,7 @@ function Start()
   PlatformCreator = GameObject.FindWithTag("PlatformCreator"); //Find the Platform Creator in the scene and put it in a variable, for later use
   pControls       = Player.GetComponent("PlayerControls") as PlayerControls;
   pCreator        = PlatformCreator.GetComponent("PlatformCreator");
-  pauseMenu		  = GameObject.Instantiate(Resources.Load("PauseMenu")) as GameObject;
+  pauseMenu       = GameObject.Instantiate(Resources.Load("PauseMenu")) as GameObject;
   pauseMenu.SetActive(false);
 }
 
