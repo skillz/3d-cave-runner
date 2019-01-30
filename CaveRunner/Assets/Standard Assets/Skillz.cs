@@ -34,400 +34,437 @@ using SkillzSDK;
 public static class Skillz
 {
 
-    private static SkillzSyncDelegate _syncMessageHandler;
-    private static SkillzSDK.Match _matchInfo;
+	private static SkillzSyncDelegate _syncMessageHandler;
+	private static SkillzSDK.Match _matchInfo;
 
-    #region Standard API
-    public static void Launch()
-    {
-        GetSkillz().CallStatic("launch", GetCurrentActivity());
-    }
+	#region Standard API
+	public static void Launch()
+	{
+		GetSkillz().CallStatic("launch", GetCurrentActivity());
+	}
 
-    public static bool IsMatchInProgress()
-    {
-        bool isSkillzGame = GetSkillz().CallStatic<bool>("isMatchInProgress");
-        return isSkillzGame;
-    }
+	public static bool IsMatchInProgress()
+	{
+		bool isSkillzGame = GetSkillz().CallStatic<bool>("isMatchInProgress");
+		return isSkillzGame;
+	}
 
-    public static Hashtable GetMatchRules()
-    {
-        Hashtable matchRules = new Hashtable();
+	public static Hashtable GetMatchRules()
+	{
+		Hashtable matchRules = new Hashtable();
 
-        AndroidJavaObject matchRulesJO = GetSkillz().CallStatic<AndroidJavaObject>("getMatchRules");
-        AndroidJavaObject matchRulesEntrySet = matchRulesJO.Call<AndroidJavaObject>("entrySet");
-        AndroidJavaObject matchRulesIterator = matchRulesEntrySet.Call<AndroidJavaObject>("iterator");
+		AndroidJavaObject matchRulesJO = GetSkillz().CallStatic<AndroidJavaObject>("getMatchRules");
+		AndroidJavaObject matchRulesEntrySet = matchRulesJO.Call<AndroidJavaObject>("entrySet");
+		AndroidJavaObject matchRulesIterator = matchRulesEntrySet.Call<AndroidJavaObject>("iterator");
 
-        while (matchRulesIterator.Call<bool>("hasNext"))
-        {
-            AndroidJavaObject next = matchRulesIterator.Call<AndroidJavaObject>("next");
-            matchRules.Add(next.Call<String>("getKey"),next.Call<String>("getValue"));
-        }
+		while (matchRulesIterator.Call<bool>("hasNext"))
+		{
+			AndroidJavaObject next = matchRulesIterator.Call<AndroidJavaObject>("next");
+			matchRules.Add(next.Call<String>("getKey"),next.Call<String>("getValue"));
+		}
 
-        return matchRules;
-    }
+		return matchRules;
+	}
 
-    public static SkillzSDK.Match GetMatchInfo()
-    {
-        if (_matchInfo == null)
-        {
-            string matchInfoJsonString = GetSkillz().CallStatic<string>("getMatchInfoJsonString", GetCurrentActivity());
-            Dictionary<string, object> matchInfoDict = DeserializeJSONToDictionary(matchInfoJsonString);
-            _matchInfo = new SkillzSDK.Match(matchInfoDict);
-        }
-  
-        return _matchInfo;
-    }
+	public static SkillzSDK.Match GetMatchInfo()
+	{
+		if (_matchInfo == null)
+		{
+			string matchInfoJsonString = GetSkillz().CallStatic<string>("getMatchInfoJsonString", GetCurrentActivity());
+			Dictionary<string, object> matchInfoDict = DeserializeJSONToDictionary(matchInfoJsonString);
+			_matchInfo = new SkillzSDK.Match(matchInfoDict);
+		}
 
-    public static void AbortMatch()
-    {
-        GetSkillz().CallStatic("abortMatch",GetCurrentActivity());
-        _matchInfo = null;
-    }
+		return _matchInfo;
+	}
 
-    public static void UpdatePlayersCurrentScore(String score)
-    {
-        var bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
-        GetSkillz().CallStatic("updatePlayersCurrentScore", GetCurrentActivity(), bigDecScore);
-    }
+	public static void AbortMatch()
+	{
+		GetSkillz().CallStatic("abortMatch",GetCurrentActivity());
+		_matchInfo = null;
+	}
 
-    public static void UpdatePlayersCurrentScore(int score)
-    {
-        var bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
-        GetSkillz().CallStatic("updatePlayersCurrentScore", GetCurrentActivity(), bigDecScore);
-    }
+	public static void UpdatePlayersCurrentScore(String score)
+	{
+		var bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
+		GetSkillz().CallStatic("updatePlayersCurrentScore", GetCurrentActivity(), bigDecScore);
+	}
 
-    public static void UpdatePlayersCurrentScore(float score)
-    {
-        var bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score.ToString());
-        GetSkillz().CallStatic("updatePlayersCurrentScore", GetCurrentActivity(), bigDecScore);
-    }
+	public static void UpdatePlayersCurrentScore(int score)
+	{
+		var bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
+		GetSkillz().CallStatic("updatePlayersCurrentScore", GetCurrentActivity(), bigDecScore);
+	}
 
-    public static void ReportScore(String score)
-    {
-        AndroidJavaObject bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
-        GetSkillz().CallStatic("reportScore", GetCurrentActivity(), bigDecScore);
-        _matchInfo = null;
-    }
+	public static void UpdatePlayersCurrentScore(float score)
+	{
+		var bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score.ToString());
+		GetSkillz().CallStatic("updatePlayersCurrentScore", GetCurrentActivity(), bigDecScore);
+	}
 
-    public static void ReportScore(int score)
-    {
-        AndroidJavaObject bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
-        GetSkillz().CallStatic("reportScore", GetCurrentActivity(), bigDecScore);
-        _matchInfo = null;
-    }
+	public static void ReportScore(String score)
+	{
+		AndroidJavaObject bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
+		GetSkillz().CallStatic("reportScore", GetCurrentActivity(), bigDecScore);
+		_matchInfo = null;
+	}
 
-    public static void ReportScore(float score)
-    {
-        AndroidJavaObject bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score.ToString());
-        GetSkillz().CallStatic("reportScore", GetCurrentActivity(), bigDecScore);
-        _matchInfo = null;
-    }
+	public static void ReportScore(int score)
+	{
+		AndroidJavaObject bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score);
+		GetSkillz().CallStatic("reportScore", GetCurrentActivity(), bigDecScore);
+		_matchInfo = null;
+	}
 
-    public static void AddMetadataForMatchInProgress(string metadataJson, bool isMatchInProgress)
-    {
-        GetSkillz().CallStatic("addMetadataForUnityMatchInProgress", metadataJson, isMatchInProgress);
-    }
+	public static void ReportScore(float score)
+	{
+		AndroidJavaObject bigDecScore = new AndroidJavaObject("java.math.BigDecimal", score.ToString());
+		GetSkillz().CallStatic("reportScore", GetCurrentActivity(), bigDecScore);
+		_matchInfo = null;
+	}
 
-    public static string SDKVersionShort()
-    {
-        string SDKVersion = GetSkillz().CallStatic<string>("SDKVersionShort");
-        return SDKVersion;
-    }
+	public static void AddMetadataForMatchInProgress(string metadataJson, bool isMatchInProgress)
+	{
+		GetSkillz().CallStatic("addMetadataForUnityMatchInProgress", metadataJson, isMatchInProgress);
+	}
 
-    public static string CurrentUserDisplayName()
-    {
-        string UserName = GetSkillz().CallStatic<string>("currentUserDisplayName", GetCurrentActivity());
-        return UserName;
-    }
+	public static string SDKVersionShort()
+	{
+		string SDKVersion = GetSkillz().CallStatic<string>("SDKVersionShort");
+		return SDKVersion;
+	}
 
-    #endregion //Standard Android API
+	public static string CurrentUserDisplayName()
+	{
+		string UserName = GetSkillz().CallStatic<string>("currentUserDisplayName", GetCurrentActivity());
+		return UserName;
+	}
 
-    #region Sync API
+	#endregion //Standard Android API
 
-    public static void SendData(byte[] data) 
-    {
-        IntPtr javaClass = AndroidJNI.FindClass("com/skillz/SkillzSync");
-        IntPtr javaMethod = AndroidJNI.GetStaticMethodID(javaClass, "sendData", "([B)V");
-        object[] args = new object[1];
-        args[0] = data;
-        jvalue[] jArgs = AndroidJNIHelper.CreateJNIArgArray(args);
-        AndroidJNI.CallStaticVoidMethod (javaClass, javaMethod, jArgs);
-    }
+	#region Audio API
 
-    public static bool IsMatchCompleted()
-    {
-        bool isMatchCompleted = GetSkillzSync().CallStatic<bool>("isMatchCompleted");
-        return isMatchCompleted;
-    }
+	public static void setSkillzBackgroundMusic(String musicFile)
+	{
+		Debug.Log("SkillzAudio setSkillzBackgroundMusic musicFile: " + musicFile);
+		GetSkillzAudio().CallStatic("setSkillzBackgroundMusic", musicFile);
+	}
 
-    public static int GetConnectedPlayerCount()
-    {
-        int connectedPlayerCount = GetSkillzSync().CallStatic<int>("getConnectedPlayerCount");
-        return connectedPlayerCount;
-    }
+	public static float getSkillzMusicVolume()
+	{
+		float skillzMusicVolume = GetSkillzAudio().CallStatic<float>("getSkillzMusicVolume");
+		return skillzMusicVolume;
+	}
 
-    public static UInt64 GetCurrentPlayerId() 
-    {
-        UInt64 currentPlayerId = (UInt64)GetSkillzSync().CallStatic<long>("getCurrentPlayerId");
-        return currentPlayerId;
-    }
+	public static void setSkillzMusicVolume(float volume)
+	{
+		GetSkillzAudio().CallStatic("setSkillzMusicVolume", volume);
+	}
 
-    public static UInt64 GetCurrentOpponentPlayerId() 
-    {
-	UInt64 currentPlayerId = (UInt64)GetSkillzSync().CallStatic<long>("getOpponentPlayerId");
-	return currentPlayerId;
-    }
+	public static float getSFXVolume()
+	{
+		float sfxVolume = GetSkillzAudio().CallStatic<float>("getSFXVolume");
+		return sfxVolume;
+	}
 
-    public static double GetServerTime()
-    {
-        double serverTime = GetSkillzSync().CallStatic<double>("getServerTime");
-        return serverTime;
-    }
+	public static void setSFXVolume(float volume)
+	{
+		GetSkillzAudio().CallStatic("setSFXVolume", volume);
+	}
 
-    public static long GetTimeLeftForReconnection(UInt64 playerId)
-    {
-        IntPtr javaClass = AndroidJNI.FindClass("com/skillz/SkillzSync");
-        IntPtr javaMethod = AndroidJNI.GetStaticMethodID(javaClass, "getTimeLeftForReconnection", "(J)J");
-        object[] args = new object[1];
-        args[0] = (long)playerId;
-        jvalue[] jArgs = AndroidJNIHelper.CreateJNIArgArray(args);
-        long timeLeftForReconnection = AndroidJNI.CallStaticLongMethod(javaClass, javaMethod, jArgs);
-        return timeLeftForReconnection;
-    }
+	#endregion // Audio API
 
-    public static void InitializeSyncDelegate(SkillzSyncDelegate messageHandler)
-    {
-        SkillzSyncProxy skillzSyncProxy = new SkillzSyncProxy();
-        registerSyncDelegate(skillzSyncProxy);
-        _syncMessageHandler = messageHandler;
-    }
+	#region Sync API
 
-    #endregion //Sync API
+	public static void SendData(byte[] data)
+	{
+		IntPtr javaClass = AndroidJNI.FindClass("com/skillz/SkillzSync");
+		IntPtr javaMethod = AndroidJNI.GetStaticMethodID(javaClass, "sendData", "([B)V");
+		object[] args = new object[1];
+		args[0] = data;
+		jvalue[] jArgs = AndroidJNIHelper.CreateJNIArgArray(args);
+		AndroidJNI.CallStaticVoidMethod (javaClass, javaMethod, jArgs);
+	}
 
-    #region Sync Delegate
+	public static bool IsMatchCompleted()
+	{
+		bool isMatchCompleted = GetSkillzSync().CallStatic<bool>("isMatchCompleted");
+		return isMatchCompleted;
+	}
 
-    private static void registerSyncDelegate(SkillzSyncProxy skillzSyncDelegate)
-    {
-        GetSkillzSync().CallStatic("registerSyncDelegate", skillzSyncDelegate, GetCurrentActivity());
-    }
+	public static int GetConnectedPlayerCount()
+	{
+		int connectedPlayerCount = GetSkillzSync().CallStatic<int>("getConnectedPlayerCount");
+		return connectedPlayerCount;
+	}
 
-    private class SkillzSyncProxy : AndroidJavaProxy
-    {
+	public static UInt64 GetCurrentPlayerId()
+	{
+		UInt64 currentPlayerId = (UInt64)GetSkillzSync().CallStatic<long>("getCurrentPlayerId");
+		return currentPlayerId;
+	}
 
-        public SkillzSyncProxy() : base("com.skillz.SkillzSync$UnitySyncDelegate") { }
+	public static UInt64 GetCurrentOpponentPlayerId()
+	{
+		UInt64 currentPlayerId = (UInt64)GetSkillzSync().CallStatic<long>("getOpponentPlayerId");
+		return currentPlayerId;
+	}
 
-        public void onMatchCompleted() {
-            _syncMessageHandler.OnMatchCompleted();
-         }
+	public static double GetServerTime()
+	{
+		double serverTime = GetSkillzSync().CallStatic<double>("getServerTime");
+		return serverTime;
+	}
 
-        public void onDidReceiveData(AndroidJavaObject dataReceived) {
-            AndroidJavaObject dataFromAndroid = dataReceived.Get<AndroidJavaObject>("ReceivedData");
-            byte[] byteData = AndroidJNIHelper.ConvertFromJNIArray<byte[]>(dataFromAndroid.GetRawObject());
-            _syncMessageHandler.OnDidReceiveData(byteData);
-        }
+	public static long GetTimeLeftForReconnection(UInt64 playerId)
+	{
+		IntPtr javaClass = AndroidJNI.FindClass("com/skillz/SkillzSync");
+		IntPtr javaMethod = AndroidJNI.GetStaticMethodID(javaClass, "getTimeLeftForReconnection", "(J)J");
+		object[] args = new object[1];
+		args[0] = (long)playerId;
+		jvalue[] jArgs = AndroidJNIHelper.CreateJNIArgArray(args);
+		long timeLeftForReconnection = AndroidJNI.CallStaticLongMethod(javaClass, javaMethod, jArgs);
+		return timeLeftForReconnection;
+	}
 
-        public void onOpponentHasLostConnection(long playerId) {
-            UInt64 opponentPlayerId = Convert.ToUInt64(playerId);
-            _syncMessageHandler.OnOpponentHasLostConnection(opponentPlayerId);
-        }
+	public static void InitializeSyncDelegate(SkillzSyncDelegate messageHandler)
+	{
+		SkillzSyncProxy skillzSyncProxy = new SkillzSyncProxy();
+		registerSyncDelegate(skillzSyncProxy);
+		_syncMessageHandler = messageHandler;
+	}
 
-        public void onOpponentHasReconnected(long playerId) {
-            UInt64 opponentPlayerId = Convert.ToUInt64(playerId);
-            _syncMessageHandler.OnOpponentHasReconnected(opponentPlayerId);
-        }
+	#endregion //Sync API
 
-        public void onOpponentHasLeftMatch(long playerId) {
-            UInt64 opponentPlayerId = Convert.ToUInt64(playerId);
-            _syncMessageHandler.OnOpponentHasLeftMatch(opponentPlayerId);
-        }
+	#region Sync Delegate
 
-        public void onCurrentPlayerHasLostConnection() {
-            _syncMessageHandler.OnCurrentPlayerHasLostConnection();
-        }
+	private static void registerSyncDelegate(SkillzSyncProxy skillzSyncDelegate)
+	{
+		GetSkillzSync().CallStatic("registerSyncDelegate", skillzSyncDelegate, GetCurrentActivity());
+	}
 
-        public void onCurrentPlayerHasReconnected() {
-            _syncMessageHandler.OnCurrentPlayerHasReconnected();
-        }
+	private class SkillzSyncProxy : AndroidJavaProxy
+	{
 
-        public void onCurrentPlayerHasLeftMatch() {
-            _syncMessageHandler.OnCurrentPlayerHasLeftMatch();
-        }
+		public SkillzSyncProxy() : base("com.skillz.SkillzSync$UnitySyncDelegate") { }
 
-    }
-    #endregion
+		public void onMatchCompleted() {
+			_syncMessageHandler.OnMatchCompleted();
+		}
 
-    #region Player API
+		public void onDidReceiveData(AndroidJavaObject dataReceived) {
+			AndroidJavaObject dataFromAndroid = dataReceived.Get<AndroidJavaObject>("ReceivedData");
+			byte[] byteData = AndroidJNIHelper.ConvertFromJNIArray<byte[]>(dataFromAndroid.GetRawObject());
+			_syncMessageHandler.OnDidReceiveData(byteData);
+		}
 
-    public static SkillzSDK.Player GetPlayer() {
-        var playerNative = GetSkillz().CallStatic<AndroidJavaObject>("getPlayerDetails", GetCurrentActivity());
+		public void onOpponentHasLostConnection(long playerId) {
+			UInt64 opponentPlayerId = Convert.ToUInt64(playerId);
+			_syncMessageHandler.OnOpponentHasLostConnection(opponentPlayerId);
+		}
 
-        Dictionary<string, object> map = new Dictionary<string, object> ();
-        map.Add("userName", playerNative.Call<string>("getUserName"));
-        map.Add("userId", Convert.ToUInt32(playerNative.Call<string>("getUserId"), 10));
-        map.Add("avatarUrl", playerNative.Call<string>("getAvatarUrl"));
-        map.Add("flagUrl", playerNative.Call<string>("getFlagUrl"));
-        map.Add("playerMatchId", playerNative.Call<string>("getPlayerMatchId"));
-        map.Add("isCurrentPlayer", playerNative.Call<bool>("isCurrentPlayer").ToString());
+		public void onOpponentHasReconnected(long playerId) {
+			UInt64 opponentPlayerId = Convert.ToUInt64(playerId);
+			_syncMessageHandler.OnOpponentHasReconnected(opponentPlayerId);
+		}
 
-        SkillzSDK.Player playerObj = new SkillzSDK.Player(map);
+		public void onOpponentHasLeftMatch(long playerId) {
+			UInt64 opponentPlayerId = Convert.ToUInt64(playerId);
+			_syncMessageHandler.OnOpponentHasLeftMatch(opponentPlayerId);
+		}
 
-        return playerObj;
-    }
+		public void onCurrentPlayerHasLostConnection() {
+			_syncMessageHandler.OnCurrentPlayerHasLostConnection();
+		}
 
-    #endregion //Player API
+		public void onCurrentPlayerHasReconnected() {
+			_syncMessageHandler.OnCurrentPlayerHasReconnected();
+		}
 
-    #region Random API
+		public void onCurrentPlayerHasLeftMatch() {
+			_syncMessageHandler.OnCurrentPlayerHasLeftMatch();
+		}
 
-    public static class Random
-    {
+	}
+	#endregion
 
-        /**
+	#region Player API
+
+	public static SkillzSDK.Player GetPlayer() {
+		var playerNative = GetSkillz().CallStatic<AndroidJavaObject>("getPlayerDetails", GetCurrentActivity());
+
+		Dictionary<string, object> map = new Dictionary<string, object> ();
+		map.Add("userName", playerNative.Call<string>("getUserName"));
+		map.Add("userId", Convert.ToUInt32(playerNative.Call<string>("getUserId"), 10));
+		map.Add("avatarUrl", playerNative.Call<string>("getAvatarUrl"));
+		map.Add("flagUrl", playerNative.Call<string>("getFlagUrl"));
+		map.Add("playerMatchId", playerNative.Call<string>("getPlayerMatchId"));
+		map.Add("isCurrentPlayer", playerNative.Call<bool>("isCurrentPlayer").ToString());
+
+		SkillzSDK.Player playerObj = new SkillzSDK.Player(map);
+
+		return playerObj;
+	}
+
+	#endregion //Player API
+
+	#region Random API
+
+	public static class Random
+	{
+
+		/**
         * Value from Skillz random (if a Skillz game), or Unity random (if not a Skillz game)
         **/
-        public static float Value()
-        {
+		public static float Value()
+		{
 
-            float randomValue = 0;
-            if(IsMatchInProgress())
-            {
-                var skillzRandom = GetSkillz().CallStatic<AndroidJavaObject>("getRandom");
-                randomValue = skillzRandom.Call<float>("nextFloat");
-            }
-            else
-            {
-                randomValue = UnityEngine.Random.value;
-            }
+			float randomValue = 0;
+			if(IsMatchInProgress())
+			{
+				var skillzRandom = GetSkillz().CallStatic<AndroidJavaObject>("getRandom");
+				randomValue = skillzRandom.Call<float>("nextFloat");
+			}
+			else
+			{
+				randomValue = UnityEngine.Random.value;
+			}
 
-            return randomValue;
-        }
+			return randomValue;
+		}
 
-        /**
+		/**
         * Find a point inside the unit sphere using Value()
         **/
-        public static Vector3 InsideUnitSphere()
-        {
-            float r = Value();
-            float phi = Value() * Mathf.PI;
-            float theta = Value() * Mathf.PI * 2;
+		public static Vector3 InsideUnitSphere()
+		{
+			float r = Value();
+			float phi = Value() * Mathf.PI;
+			float theta = Value() * Mathf.PI * 2;
 
-            float x = r * Mathf.Cos(theta) * Mathf.Sin(phi);
-            float y = r * Mathf.Sin(theta) * Mathf.Sin(phi);
-            float z = r * Mathf.Cos(phi);
+			float x = r * Mathf.Cos(theta) * Mathf.Sin(phi);
+			float y = r * Mathf.Sin(theta) * Mathf.Sin(phi);
+			float z = r * Mathf.Cos(phi);
 
-            return new Vector3(x, y ,z);
-        }
+			return new Vector3(x, y ,z);
+		}
 
-        /**
+		/**
         * Find a point inside the unit circle using Value()
         **/
-        public static Vector2 InsideUnitCircle()
-        {
-            float radius = 1.0f;
-            float rand = Value() * 2 * Mathf.PI;
-            Vector2 val = new Vector2();
+		public static Vector2 InsideUnitCircle()
+		{
+			float radius = 1.0f;
+			float rand = Value() * 2 * Mathf.PI;
+			Vector2 val = new Vector2();
 
-            val.x = radius * Mathf.Cos(rand);
-            val.y = radius * Mathf.Sin(rand);
+			val.x = radius * Mathf.Cos(rand);
+			val.y = radius * Mathf.Sin(rand);
 
-            return val;
-        }
+			return val;
+		}
 
-        /**
+		/**
         * Hybrid rejection / trig method to generate points on a sphere using Value()
         **/
-        public static Vector3 OnUnitSphere()
-        {
-            Vector3 val = new Vector3();
-            float s;
+		public static Vector3 OnUnitSphere()
+		{
+			Vector3 val = new Vector3();
+			float s;
 
-            do
-            {
-                val.x = 2 * (float) Value() - 1;
-                val.y = 2 * (float) Value() - 1;
-                s = Mathf.Pow(val.x, 2) + Mathf.Pow(val.y, 2);
-            }
-            while (s > 1);
+			do
+			{
+				val.x = 2 * (float) Value() - 1;
+				val.y = 2 * (float) Value() - 1;
+				s = Mathf.Pow(val.x, 2) + Mathf.Pow(val.y, 2);
+			}
+			while (s > 1);
 
-            float r = 2 * Mathf.Sqrt(1 - s);
+			float r = 2 * Mathf.Sqrt(1 - s);
 
-            val.x *= r;
-            val.y *= r;
-            val.z = 2 * s - 1;
+			val.x *= r;
+			val.y *= r;
+			val.z = 2 * s - 1;
 
-            return val;
-        }
+			return val;
+		}
 
-        /**
+		/**
         * Quaternion random using Value()
         **/
-        public static Quaternion RotationUniform()
-        {
-            float u1 = Value();
-            float u2 = Value();
-            float u3 = Value();
+		public static Quaternion RotationUniform()
+		{
+			float u1 = Value();
+			float u2 = Value();
+			float u3 = Value();
 
-            float u1sqrt = Mathf.Sqrt(u1);
-            float u1m1sqrt = Mathf.Sqrt(1 - u1);
-            float x = u1m1sqrt * Mathf.Sin(2 * Mathf.PI * u2);
-            float y = u1m1sqrt * Mathf.Cos(2 * Mathf.PI * u2);
-            float z = u1sqrt * Mathf.Sin(2 * Mathf.PI * u3);
-            float w = u1sqrt * Mathf.Cos(2 * Mathf.PI * u3);
+			float u1sqrt = Mathf.Sqrt(u1);
+			float u1m1sqrt = Mathf.Sqrt(1 - u1);
+			float x = u1m1sqrt * Mathf.Sin(2 * Mathf.PI * u2);
+			float y = u1m1sqrt * Mathf.Cos(2 * Mathf.PI * u2);
+			float z = u1sqrt * Mathf.Sin(2 * Mathf.PI * u3);
+			float w = u1sqrt * Mathf.Cos(2 * Mathf.PI * u3);
 
-            return new Quaternion(x, y, z, w);
-        }
+			return new Quaternion(x, y, z, w);
+		}
 
-        /**
+		/**
         * Quaternion random using Value()
         **/
-        public static Quaternion Rotation()
-        {
-            return RotationUniform();
-        }
+		public static Quaternion Rotation()
+		{
+			return RotationUniform();
+		}
 
-        /**
+		/**
         * Ranged random float using Value()
         **/
-        public static float Range(float min, float max)
-        {
-            float rand = Value();
-            return min + (rand * (max-min));
-        }
+		public static float Range(float min, float max)
+		{
+			float rand = Value();
+			return min + (rand * (max-min));
+		}
 
-        /**
+		/**
         * Ranged random int using Value()
         **/
-        public static int Range(int min, int max)
-        {
-            float rand = Value();
-            return min + (int) (rand * (max-min));
-        }
-    }
+		public static int Range(int min, int max)
+		{
+			float rand = Value();
+			return min + (int) (rand * (max-min));
+		}
+	}
 
-    #endregion //Random API
+	#endregion //Random API
 
-    #region Internal Support Functions
+	#region Internal Support Functions
 
-    private static AndroidJavaClass GetSkillz()
-    {
-        return new AndroidJavaClass("com.skillz.Skillz");
-    }
+	private static AndroidJavaClass GetSkillz()
+	{
+		return new AndroidJavaClass("com.skillz.Skillz");
+	}
 
-    private static AndroidJavaClass GetSkillzSync()
-    {
-        return new AndroidJavaClass("com.skillz.SkillzSync");
-    }
+	private static AndroidJavaClass GetSkillzSync()
+	{
+		return new AndroidJavaClass("com.skillz.SkillzSync");
+	}
 
-    private static AndroidJavaObject GetCurrentActivity()
-    {
-        AndroidJavaClass activityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-        AndroidJavaObject activity = activityClass.GetStatic<AndroidJavaObject>("currentActivity");
-        return activity;
-    }
+	private static AndroidJavaClass GetSkillzAudio()
+	{
+		return new AndroidJavaClass("com.skillz.util.music.SkillzAudio");
+	}
 
-    private static Dictionary<string, object> DeserializeJSONToDictionary(string jsonString)
-    {
-        return SkillzSDK.MiniJSON.Json.Deserialize(jsonString) as Dictionary<string,object>;
-    }
+	private static AndroidJavaObject GetCurrentActivity()
+	{
+		AndroidJavaClass activityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+		AndroidJavaObject activity = activityClass.GetStatic<AndroidJavaObject>("currentActivity");
+		return activity;
+	}
 
-    #endregion //Internal Support Functions
+	private static Dictionary<string, object> DeserializeJSONToDictionary(string jsonString)
+	{
+		return SkillzSDK.MiniJSON.Json.Deserialize(jsonString) as Dictionary<string,object>;
+	}
+
+	#endregion //Internal Support Functions
 }

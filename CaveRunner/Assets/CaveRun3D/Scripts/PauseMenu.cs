@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -32,7 +33,6 @@ public class PauseMenu : MonoBehaviour {
 
 	private float musicSliderValue;
 	private float SFXSliderValue;
-
 
 	// Use this for initialization
 	void Start () {
@@ -147,16 +147,15 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	void InitSliderValues() {
-		/* TODO: implement */
-		musicSliderValue = 0.5f;
-		SFXSliderValue = 0.5f;
+		musicSliderValue = SkillzCrossPlatform.getSkillzMusicVolume();
+		SFXSliderValue = SkillzCrossPlatform.getSFXVolume();
 	}
 
 	void UpdateMusicVol(float newMusicVol) {
-		/* TODO: implement */
+		SkillzCrossPlatform.setSkillzMusicVolume(newMusicVol);
 	}
 
 	void UpdateSFXVol(float newSFXVol) {
-		/* TODO: implement*/
+		SkillzCrossPlatform.setSFXVolume(newSFXVol);
 	}
 }
