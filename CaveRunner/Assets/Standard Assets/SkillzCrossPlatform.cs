@@ -272,8 +272,7 @@ public static class SkillzCrossPlatform
 		/* absolute path ends in "Assets", relative path starts with "Assets"... remove duplicate */
 		Debug.Log ("audioClip: " + audioClip);
 		string absolutePathToAssets = Application.dataPath;
-		string relativePathFromAssets = AssetDatabase.GetAssetOrScenePath(audioClip);
-		relativePathFromAssets = relativePathFromAssets.Substring(6);
+		string relativePathFromAssets = AssetDatabase.GetAssetOrScenePath(audioClip).Substring(6);
 		string filePath = absolutePathToAssets + relativePathFromAssets;
 		Debug.Log("SkillzAudio setSkillzBackgroundMusic: " + filePath);
 
