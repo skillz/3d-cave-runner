@@ -492,6 +492,8 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
     NSString *environmentString = @"SkillzProduction";
 #endif
     
+    NSLog(@"Skillz init starting");
+    
     /*************
      * Temporarily point to Staging
      *************/
