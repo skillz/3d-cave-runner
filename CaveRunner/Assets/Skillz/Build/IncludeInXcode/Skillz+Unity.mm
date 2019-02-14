@@ -45,6 +45,15 @@ static void PauseApp()
     UnityPause(true);
 }
 
+static void PauseAppWithDelay()
+{
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        PauseApp();
+    });
+}
+
 static void ResumeApp()
 {
     UnityPause(false);
@@ -566,7 +575,7 @@ extern "C" void _displayTournamentResultsWithScore(int score)
   dispatch_async(dispatch_get_main_queue(), ^{
       if (!isReportingScore) {
           isReportingScore = true;
-          PauseApp();
+          PauseAppWithDelay();
 
           [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
                                                       withCompletion:^{
@@ -582,7 +591,7 @@ extern "C" void _displayTournamentResultsWithFloatScore(float score)
   dispatch_async(dispatch_get_main_queue(), ^{
       if (!isReportingScore) {
           isReportingScore = true;
-          PauseApp();
+          PauseAppWithDelay();
 
           [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
                                                       withCompletion:^{
@@ -597,7 +606,7 @@ extern "C" void _displayTournamentResultsWithStringScore(const char *score)
   dispatch_async(dispatch_get_main_queue(), ^{
       if (!isReportingScore) {
           isReportingScore = true;
-          PauseApp();
+          PauseAppWithDelay();
 
           NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
           f.numberStyle = NSNumberFormatterDecimalStyle;
@@ -641,7 +650,7 @@ extern "C" void _notifyPlayerAbortWithCompletion()
   dispatch_async(dispatch_get_main_queue(), ^{
       if (!isReportingScore) {
           isReportingScore = true;
-          PauseApp();
+          PauseAppWithDelay();
           [[Skillz skillzInstance] notifyPlayerAbortWithCompletion:^() {
               // Send message to Unity object to call C# method
               // SkillzDelegate.skillzWithPlayerAbort, implemented by publisher
@@ -735,6 +744,36 @@ extern "C" const char *_getMatchRules() {
 
 extern "C" const char *_getMatchInfo() {
     return [((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).matchInfo UTF8String];
+}
+#pragma mark
+#pragma mark Audio Integration
+#pragma mark
+
+extern "C" void _setSkillzBackgroundMusic(const char *fileName)
+{
+  NSString* fileNameString = [NSString stringWithUTF8String:fileName];
+  NSLog(@"SkillzAudio Skillz+Unity.mm _setSkillzBackgroundMusic with file name: %@",fileNameString);
+  [[Skillz skillzInstance] setBackgroundMusicFile:fileNameString];
+}
+
+extern "C" void _setSkillzMusicVolume(float volume)
+{
+  [[Skillz skillzInstance] updateSkillzMusicVolume:volume];
+}
+
+extern "C" void _setSFXVolume(float volume)
+{
+  [[Skillz skillzInstance] setSFXVolume:volume];
+}
+
+extern "C" float _getSFXVolume()
+{
+  return (float)[[Skillz skillzInstance] getSFXVolume];
+}
+
+extern "C" float _getSkillzMusicVolume()
+{
+  return (float)[[Skillz skillzInstance] getBackgroundMusicVolume];
 }
 
 #pragma mark

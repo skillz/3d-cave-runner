@@ -119,7 +119,7 @@ private static extern void _updatePlayersCurrentIntScore(int score);
 public static extern float _getRandomFloat();
 
 [DllImport ("__Internal")]
-private static extern void _setSkillzBackgroundMusic(string musicFile);
+private static extern void _setSkillzBackgroundMusic(string filePath);
 
 [DllImport ("__Internal")]
 private static extern void _setSFXVolume(float volume);
@@ -185,7 +185,7 @@ private static extern int _reconnectTimeLeftForPlayer(UInt64 playerId); //This "
 		private static void _updatePlayersCurrentStringScore(string score) { }
 		private static void _updatePlayersCurrentIntScore(int score) { }
 		public static float _getRandomFloat() { return 0; }
-		private static void _setSkillzBackgroundMusic(string musicFile) { }
+		private static void _setSkillzBackgroundMusic(string filePath) { }
 		public static float _getSFXVolume() { return 0; }
 		public static float _getSkillzMusicVolume() { return 0; }
 		private static void _setSFXVolume(float volume) { }
@@ -221,29 +221,29 @@ private static extern int _reconnectTimeLeftForPlayer(UInt64 playerId); //This "
 #endif
 		delegate void IntPtrIntFP(IntPtr value, UInt64 length); //This "UInt64" may need to be an "int"
 #if UNITY_IOS
-[DllImport ("__Internal")]
-private static extern void _assignOnCurrentPlayerHasReconnectedFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnCurrentPlayerHasReconnectedFunc(IntPtr funcPtr);
 
-[DllImport ("__Internal")]
-private static extern void _assignOnCurrentPlayerHasLostConnectionFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnCurrentPlayerHasLostConnectionFunc(IntPtr funcPtr);
 
-[DllImport ("__Internal")]
-private static extern void _assignOnCurrentPlayerHasLeftMatchFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnCurrentPlayerHasLeftMatchFunc(IntPtr funcPtr);
 
-[DllImport ("__Internal")]
-private static extern void _assignOnOpponentHasReconnectedFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnOpponentHasReconnectedFunc(IntPtr funcPtr);
 
-[DllImport ("__Internal")]
-private static extern void _assignOnOpponentHasLostConnectionFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnOpponentHasLostConnectionFunc(IntPtr funcPtr);
 
-[DllImport ("__Internal")]
-private static extern void _assignOnOpponentHasLeftMatchFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnOpponentHasLeftMatchFunc(IntPtr funcPtr);
 
-[DllImport ("__Internal")]
-private static extern void _assignOnDidReceiveDataFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnDidReceiveDataFunc(IntPtr funcPtr);
 
-[DllImport ("__Internal")]
-private static extern void _assignOnMatchCompletedFunc(IntPtr funcPtr);
+  [DllImport ("__Internal")]
+  private static extern void _assignOnMatchCompletedFunc(IntPtr funcPtr);
 #else
 		private static void _assignOnCurrentPlayerHasReconnectedFunc(IntPtr funcPtr) { }
 		private static void _assignOnCurrentPlayerHasLostConnectionFunc(IntPtr funcPtr) { }
@@ -281,18 +281,18 @@ private static extern void _assignOnMatchCompletedFunc(IntPtr funcPtr);
 /// </summary>
 [Obsolete("Use 'Api.Player.DisplayName' instead")]
 public static string CurrentUserDisplayName {
-get {
-return GetPlayer().DisplayName;
-}
+  get {
+    return GetPlayer().DisplayName;
+  }
 }
 
 /// <summary>
 /// Gets information for the current player.
 /// </summary>
 public static Player GetPlayer() {
-string playerJson = Marshal.PtrToStringAnsi(_player());
-Dictionary<string, object> playerDict = DeserializeJSONToDictionary(playerJson);
-return new Player(playerDict);
+  string playerJson = Marshal.PtrToStringAnsi(_player());
+  Dictionary<string, object> playerDict = DeserializeJSONToDictionary(playerJson);
+  return new Player(playerDict);
 }
 #endif
 		/// <summary>
@@ -715,10 +715,10 @@ return new Player(playerDict);
 
 		#region Audio API
 
-		public static void setSkillzBackgroundMusic(string musicFile)
+		public static void setSkillzBackgroundMusic(string fileName)
 		{
-			Debug.Log("SkillzAudio Api.cs setSkillzBackgroundMusic");
-			_setSkillzBackgroundMusic(musicFile);
+			Debug.Log("SkillzAudio Api.cs setSkillzBackgroundMusic with file name: " + fileName);
+			_setSkillzBackgroundMusic(fileName);
 		}
 
 		public static float getSkillzMusicVolume()

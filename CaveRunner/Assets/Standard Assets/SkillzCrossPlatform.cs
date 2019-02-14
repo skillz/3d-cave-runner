@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
 using System.Collections;
 using System.Text;
@@ -266,20 +265,15 @@ public static class SkillzCrossPlatform
 	/// This will be continuously playing throughout a user's time in our SDK.
 	/// </summary>
 	///
-	/// <param name="audioClip">The audio clip to be played.</param>
-	public static void setSkillzBackgroundMusic(AudioClip audioClip)
+	/// <param name="fileName">The name of the music file inside of the StreamingAssets folder, e.g. "game_music.mp3" .</param>
+	public static void setSkillzBackgroundMusic(string fileName)
 	{
-		/* absolute path ends in "Assets", relative path starts with "Assets"... remove duplicate */
-		Debug.Log ("audioClip: " + audioClip);
-		string absolutePathToAssets = Application.dataPath;
-		string relativePathFromAssets = AssetDatabase.GetAssetOrScenePath(audioClip).Substring(6);
-		string filePath = absolutePathToAssets + relativePathFromAssets;
-		Debug.Log("SkillzAudio setSkillzBackgroundMusic: " + filePath);
+		Debug.Log ("SkillzAudio SkillzCrossPlatform.cs setSkillzBackgroundMusic with file name: " + fileName);
 
 		#if UNITY_ANDROID
-		Skillz.setSkillzBackgroundMusic (filePath);
+		  Skillz.setSkillzBackgroundMusic (fileName);
 		#elif UNITY_IOS
-		SkillzSDK.Api.setSkillzBackgroundMusic (filePath);
+		  SkillzSDK.Api.setSkillzBackgroundMusic (fileName);
 		#endif
 	}
 

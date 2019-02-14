@@ -144,10 +144,10 @@ public static class Skillz
 
 	#region Audio API
 
-	public static void setSkillzBackgroundMusic(String musicFile)
+	public static void setSkillzBackgroundMusic(String fileName)
 	{
-		Debug.Log("SkillzAudio setSkillzBackgroundMusic musicFile: " + musicFile);
-		GetSkillzAudio().CallStatic("setSkillzBackgroundMusic", musicFile);
+		Debug.Log("SkillzAudio Skillz.cs setSkillzBackgroundMusic with file name: " + fileName);
+		GetSkillzAudio().CallStatic("setSkillzBackgroundMusic", fileName);
 	}
 
 	public static float getSkillzMusicVolume()
