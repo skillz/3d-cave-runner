@@ -95,13 +95,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/debug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/assets" type="java-test-resource" />
@@ -109,6 +102,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/aidl" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
@@ -142,7 +142,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-main-apk-res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifest-checker" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
@@ -162,10 +161,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:okhttp3-integration:1.5.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/app/libs/unity-classes.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-core-16.0.5" level="project" />
     <orderEntry type="library" name="Gradle: com.crashlytics.sdk.android:crashlytics-core-2.6.3" level="project" />
-    <orderEntry type="library" name="Gradle: com.skillz.sdk:skillz-sdk-android-22.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-ins:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.react-native-image-picker:rn-image-picker-android-0.26.9-skillz" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-measurement-connector-impl-17.0.3" level="project" />
@@ -188,6 +185,7 @@
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.22@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-urlconnection:3.6.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-strikethrough:0.28.32@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/app/libs/unity-classes.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-util:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.constraint:constraint-layout-solver:1.1.3@jar" level="project" />
@@ -205,6 +203,7 @@
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.3.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.dagger:dagger:2.14.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.skillz.sdk:skillz-sdk-android-22.0.2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:animated-gif-1.3.0" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-core:2.2.22@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
@@ -224,6 +223,7 @@
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-tasklist:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.tiagohm.MarkdownView:library-0.19.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.1.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.cordova:framework-7.1.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks-16.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:drawee-1.3.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.dagger:dagger-android-support-2.14.1" level="project" />

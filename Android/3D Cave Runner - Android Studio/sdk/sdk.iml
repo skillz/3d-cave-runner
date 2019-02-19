@@ -181,12 +181,12 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-v4-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:okhttp3-integration:1.5.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-core-16.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-base.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:shadows-core:3.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-module-junit4-rule:1.6.5@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-ins:0.28.32@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:robolectric-annotations:3.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.react-native-image-picker:rn-image-picker-android-0.26.9-skillz" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-interstitial.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-measurement-connector-impl-17.0.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-classloading-xstream:1.6.5@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-27.1.1" level="project" />
@@ -198,6 +198,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-core:1.6.5@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.easytesting:fest-util:1.2.5@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-s3:2.2.22@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-native-video.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-tables:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-fragment-27.1.1" level="project" />
@@ -205,6 +206,7 @@
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-formatter:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-places-placereport-16.0.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:runtime-1.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/react-native-haptic-feedback-release.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:design-27.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:monitor-1.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:multidex-instrumentation-1.0.2" level="project" />
@@ -212,6 +214,7 @@
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-dash-2.7.3" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.22@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-urlconnection:3.6.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-banner.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-gfm-strikethrough:0.28.32@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.javassist:javassist:3.20.0-GA@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark:0.28.32@jar" level="project" />
@@ -222,7 +225,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: net.sf.kxml:kxml2:2.3.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:transition-27.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/react-native-view-overflow.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-measurement-connector-17.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:fbcore-1.3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-module-junit4:1.6.5@jar" level="project" />
@@ -232,7 +234,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm-util:5.0.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-compat-27.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-contrib-3.0.2" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-rewardedvideo.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.anjlab.android.iab.v3:library:1.0.36@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel-1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.ibm.icu:icu4j:53.1@jar" level="project" />
@@ -245,16 +246,15 @@
     <orderEntry type="library" name="Gradle: org.glassfish:javax.annotation:10.0-b28@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.dagger:dagger:2.14.1@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit:junit-dep:4.10@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-banner.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:animated-gif-1.3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-api-mockito:1.6.5@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/react-native-haptic-feedback-release.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-core:2.2.22@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-base-1.3.0" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-autolink:0.28.32@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-gcm-16.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-rewardedvideo.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fbui.textlayoutbuilder:staticlayout-proxy:1.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:robolectric-resources:3.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.objenesis:objenesis:2.2@jar" level="project" />
@@ -293,14 +293,12 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:multidex-1.0.3" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-27.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-native-video.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:1.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.apache.ant:ant:1.8.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base-16.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.bouncycastle:bcprov-jdk16:1.46@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.soloader:soloader-0.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fbui.textlayoutbuilder:textlayoutbuilder-1.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-base.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.powermock:powermock-api-mockito-common:1.6.5@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm:5.0.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:animated-base-support-1.3.0" level="project" />
@@ -319,7 +317,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:runner-1.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.scottyab:rootbeer-lib-0.0.6" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:27.1.1@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-native-static.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.retrofit:retrofit:1.9.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm-tree:5.0.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-27.1.1" level="project" />
@@ -328,15 +325,16 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:robolectric-utils:3.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.slf4j:slf4j-api:1.7.13@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.apache.maven:maven-ant-tasks:2.1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-interstitial.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.13.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-ddb:2.2.22@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.objenesis:objenesis:2.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-api-16.0.3" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/gherlihy/Projects/sdk-ota-master/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/unity-classes.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:glide:3.8.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:fresco-1.3.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-stats-16.0.1" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-2.7.3" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/react-native-view-overflow.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm-commons:5.0.1@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:testing-support-lib-0.1" level="project" />
@@ -348,6 +346,7 @@
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-attributes:0.28.32@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.dagger:dagger-android-2.14.1" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/unity-classes.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.kochava.base:tracker-3.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-idling-resource-3.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.vladsch.flexmark:flexmark-ext-abbreviation:0.28.32@jar" level="project" />
@@ -357,6 +356,7 @@
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-core-1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.robolectric:robolectric:3.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/Leo/code/sdk-ota/sdk-integrations/3d-cave-runner/Android/3D Cave Runner - Android Studio/sdk/libs/mopub-sdk-native-static.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-smoothstreaming-2.7.3" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.1.0@jar" level="project" />
