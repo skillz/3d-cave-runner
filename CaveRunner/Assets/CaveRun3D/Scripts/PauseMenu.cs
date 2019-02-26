@@ -116,7 +116,7 @@ public class PauseMenu : MonoBehaviour {
 		sliderStylethumb.normal.background = thumbTexture; // texture for slider adjuster; currently "CR3D-UI-Button"
 
 		// padding allows slider adjuster to appear...????
-        // from what I can tell, padding allows the slider to "expand"
+        	// from what I can tell, padding allows the slider to "expand"
 		sliderStylethumb.padding.top = 5;
 		sliderStylethumb.padding.left = 20;
 		sliderStylethumb.padding.bottom = 5;
@@ -152,12 +152,12 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	void UpdateMusicVol(float newMusicVol) {
-        Debug.Log("SkillzAudio PauseMenu.cs updating the music volume to " + newMusicVol);
+        	Debug.Log("SkillzAudio PauseMenu.cs updating the music volume to " + newMusicVol);
 		SkillzCrossPlatform.setSkillzMusicVolume(newMusicVol);
 	}
 
 	void UpdateSFXVol(float newSFXVol) {
-        Debug.Log("SkillzAudio PauseMenu.cs updating the sfx volume to " + newSFXVol);
-        SkillzCrossPlatform.setSFXVolume(newSFXVol);
+        	Debug.Log("SkillzAudio PauseMenu.cs updating the sfx volume to " + newSFXVol);
+        	SkillzCrossPlatform.setSFXVolume(newSFXVol);
 	}
 }
