@@ -768,12 +768,14 @@ extern "C" void _setSFXVolume(float volume)
 
 extern "C" float _getSFXVolume()
 {
-  return (float)[[Skillz skillzInstance] getSFXVolume];
+  float sfxVolume = (float)[[Skillz skillzInstance] getSFXVolume];
+  return sfxVolume;
 }
 
 extern "C" float _getSkillzMusicVolume()
 {
-  return (float)[[Skillz skillzInstance] getBackgroundMusicVolume];
+  float skillzMusicVolume = (float)[[Skillz skillzInstance] getBackgroundMusicVolume];
+  return skillzMusicVolume;
 }
 
 #pragma mark

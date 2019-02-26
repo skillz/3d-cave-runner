@@ -11,8 +11,6 @@ private var LoadedComponent:GameObject; //a copy of the created component
 
 var StartSkillz:boolean = false; //start Skillz
 
-var music:AudioClip;
-
 function RunMenuItem()
 {
   if ( LoadLevel == true && LevelName != "" )
@@ -34,6 +32,6 @@ function RunMenuItem()
   } else if (StartSkillz) {
       Debug.Log('Launch Skillz');
       SkillzCrossPlatform.LaunchSkillz(SkillzGameController());
-      SkillzCrossPlatform.setSkillzBackgroundMusic(music);
+      SkillzCrossPlatform.setSkillzBackgroundMusic("beethoven_symphony_6_1.mp3");
   }
 }

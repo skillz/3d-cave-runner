@@ -153,22 +153,26 @@ public static class Skillz
 	public static float getSkillzMusicVolume()
 	{
 		float skillzMusicVolume = GetSkillzAudio().CallStatic<float>("getSkillzMusicVolume");
+        Debug.Log("SkillzAudio Skillz.cs getSkillzMusicVolume with volume " + skillzMusicVolume);
 		return skillzMusicVolume;
 	}
 
 	public static void setSkillzMusicVolume(float volume)
 	{
+        Debug.Log("SkillzAudio Skillz.cs setSkillzMusicVolume with volume " + volume);
 		GetSkillzAudio().CallStatic("setSkillzMusicVolume", volume);
 	}
 
 	public static float getSFXVolume()
 	{
-		float sfxVolume = GetSkillzAudio().CallStatic<float>("getSFXVolume");
-		return sfxVolume;
+        float sfxVolume = GetSkillzAudio().CallStatic<float>("getSFXVolume");
+        Debug.Log("SkillzAudio Skillz.cs getSFXVolume with volume " + sfxVolume);
+        return sfxVolume;
 	}
 
 	public static void setSFXVolume(float volume)
 	{
+        Debug.Log("SkillzAudio Skillz.cs setSFXVolume with volume " + volume);
 		GetSkillzAudio().CallStatic("setSFXVolume", volume);
 	}
 
