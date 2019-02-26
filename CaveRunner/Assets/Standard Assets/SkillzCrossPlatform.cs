@@ -288,11 +288,11 @@ public static class SkillzCrossPlatform
 
 		#if UNITY_ANDROID
 		skillzMusicVolume = Skillz.getSkillzMusicVolume();
-        #elif UNITY_IOS
+        	#elif UNITY_IOS
 		skillzMusicVolume = SkillzSDK.Api.getSkillzMusicVolume();
-        #endif
+        	#endif
 
-        Debug.Log("SkillzAudio SkillzCrossPlatform.cs getSkillzMusicVolume with volume " + skillzMusicVolume);
+        	Debug.Log("SkillzAudio SkillzCrossPlatform.cs getSkillzMusicVolume with volume " + skillzMusicVolume);
 
 		return skillzMusicVolume;
 	}
@@ -306,7 +306,7 @@ public static class SkillzCrossPlatform
 	/// <param name="volume">The volume of the background music.</param>
 	public static void setSkillzMusicVolume(float volume)
 	{
-        Debug.Log("SkillzAudio SkillzCrossPlatform.cs setSkillzMusicVolume with volume " + volume);
+        	Debug.Log("SkillzAudio SkillzCrossPlatform.cs setSkillzMusicVolume with volume " + volume);
 
 		#if UNITY_ANDROID
 		Skillz.setSkillzMusicVolume(volume);
@@ -329,7 +329,7 @@ public static class SkillzCrossPlatform
 		sfxVolume = SkillzSDK.Api.getSFXVolume();
 		#endif
 
-        Debug.Log("SkillzAudio SkillzCrossPlatform.cs getSFXVolume with volume " + sfxVolume);
+        	Debug.Log("SkillzAudio SkillzCrossPlatform.cs getSFXVolume with volume " + sfxVolume);
 
 		return sfxVolume;
 	}
@@ -343,7 +343,7 @@ public static class SkillzCrossPlatform
 	/// <param name="volume">The volume of the SFX sound.</param>
 	public static void setSFXVolume(float volume)
 	{
-        Debug.Log("SkillzAudio SkillzCrossPlatform.cs setSFXVolume with volume " + volume);
+        	Debug.Log("SkillzAudio SkillzCrossPlatform.cs setSFXVolume with volume " + volume);
 
 		#if UNITY_ANDROID
 		Skillz.setSFXVolume(volume);
