@@ -32,6 +32,5 @@ function RunMenuItem()
   } else if (StartSkillz) {
       Debug.Log('Launch Skillz');
       SkillzCrossPlatform.LaunchSkillz(SkillzGameController());
-      SkillzCrossPlatform.setSkillzBackgroundMusic("beethoven_symphony_6_1.mp3");
   }
 }
