@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -17,13 +16,13 @@ public class PauseMenu : MonoBehaviour {
 	public Font font;
 	public Font smallFont;
 
-	private int borderDistance;
+	private float borderDistance;
 
-	private int menuXStart;
-	private int menuYStart;
+	private float menuXStart;
+	private float menuYStart;
 	private float menuWidth;
 	private float menuHeight;
-	private int menuItemHeight;
+	private float menuItemHeight;
 
 	private float sliderWidthPercent;
 	private float sliderXStart;
@@ -36,7 +35,7 @@ public class PauseMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		borderDistance = 50;
+		borderDistance = Screen.width * .09f;
 		InitStyle();
 		InitUIDimensions();
 		InitSliderValues();
@@ -117,10 +116,11 @@ public class PauseMenu : MonoBehaviour {
 		sliderStylethumb.normal.background = thumbTexture; // texture for slider adjuster; currently "CR3D-UI-Button"
 
 		// padding allows slider adjuster to appear...????
+        // from what I can tell, padding allows the slider to "expand"
 		sliderStylethumb.padding.top = 5;
-		sliderStylethumb.padding.left = 5;
+		sliderStylethumb.padding.left = 20;
 		sliderStylethumb.padding.bottom = 5;
-		sliderStylethumb.padding.right = 5;
+		sliderStylethumb.padding.right = 20;
 
 		titleStyle = new GUIStyle();
 		titleStyle.normal.textColor = new Color(1, 0.384f, 0, 0.702f); // make font color match the rest of the scheme
@@ -135,10 +135,10 @@ public class PauseMenu : MonoBehaviour {
 		menuXStart = borderDistance;
 		menuYStart = borderDistance;
 		menuWidth = Screen.width - borderDistance * 2;
-		menuHeight = Screen.height - borderDistance * 4;
+		menuHeight = menuWidth;
 
 		sliderWidthPercent = .75f;
-		menuItemHeight = 25;
+		menuItemHeight = borderDistance * .5f;
 
 		/* below logic is to make slider take up x percentage of the menu's width, while keeping it centered */
 		sliderXStart = menuXStart + (menuWidth * (1 - sliderWidthPercent) / 2);
@@ -152,10 +152,12 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	void UpdateMusicVol(float newMusicVol) {
+        Debug.Log("SkillzAudio PauseMenu.cs updating the music volume to " + newMusicVol);
 		SkillzCrossPlatform.setSkillzMusicVolume(newMusicVol);
 	}
 
 	void UpdateSFXVol(float newSFXVol) {
-		SkillzCrossPlatform.setSFXVolume(newSFXVol);
+        Debug.Log("SkillzAudio PauseMenu.cs updating the sfx volume to " + newSFXVol);
+        SkillzCrossPlatform.setSFXVolume(newSFXVol);
 	}
 }

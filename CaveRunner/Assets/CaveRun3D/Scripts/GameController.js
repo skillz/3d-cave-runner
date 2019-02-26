@@ -163,8 +163,8 @@ function OnGUI()
    
     GUI.skin = GUIskin; //Smaller font for gems
 
-    var pauseButtonWidth = 50;
-    var pauseButtonHeight = 60;
+    var pauseButtonWidth = 60;
+    var pauseButtonHeight = 50;
 
     if ( GUI.Button (new Rect(Screen.width/scale.x - pauseButtonWidth - 30, Screen.height/scale.y - pauseButtonHeight - 30, pauseButtonWidth, pauseButtonHeight), PauseImage))
     {

@@ -724,23 +724,27 @@ public static Player GetPlayer() {
 		public static float getSkillzMusicVolume()
 		{
 			float skillzMusicVolume = _getSkillzMusicVolume();
+            Debug.Log("SkillzAudio Api.cs getSkillzMusicVolume with volume " + skillzMusicVolume);
 			return skillzMusicVolume;
 		}
 
 		public static void setSkillzMusicVolume(float volume)
 		{
-			_setSkillzMusicVolume(volume);
+            Debug.Log("SkillzAudio Api.cs setSkillzMusicVolume with volume " + volume);
+            _setSkillzMusicVolume(volume);
 		}
 
 		public static float getSFXVolume()
 		{
 			float sfxVolume = _getSFXVolume();
-			return sfxVolume;
+            Debug.Log("SkillzAudio Api.cs getSFXVolume with volume " + sfxVolume);
+            return sfxVolume;
 		}
 
 		public static void setSFXVolume(float volume)
 		{
-			_setSFXVolume(volume);
+            Debug.Log("SkillzAudio Api.cs setSFXVolume with volume " + volume);
+            _setSFXVolume(volume);
 		}
 
 		#endregion // Audio API
