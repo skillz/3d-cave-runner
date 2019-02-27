@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppObject;
 struct Il2CppDelegate;
@@ -31,8 +31,8 @@ namespace Principal
     class LIBIL2CPP_CODEGEN_API WindowsPrincipal
     {
     public:
-        static bool IsMemberOfGroupName(Il2CppIntPtr user, Il2CppString* group);
-        static bool IsMemberOfGroupId(Il2CppIntPtr user, Il2CppIntPtr group);
+        static bool IsMemberOfGroupName(intptr_t user, Il2CppString* group);
+        static bool IsMemberOfGroupId(intptr_t user, intptr_t group);
     };
 } /* namespace Principal */
 } /* namespace Security */

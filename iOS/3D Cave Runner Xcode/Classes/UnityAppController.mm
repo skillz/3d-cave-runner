@@ -12,8 +12,7 @@
 #import <OpenGLES/EAGLDrawable.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+
 #include <mach/mach_time.h>
 
 // MSAA_DEFAULT_SAMPLE_COUNT was moved to iPhone_GlesSupport.h
@@ -31,23 +30,28 @@
 #include "Unity/DisplayManager.h"
 #include "Unity/EAGLContextHelper.h"
 #include "Unity/GlesHelper.h"
+#include "Unity/ObjCRuntime.h"
 #include "PluginBase/AppDelegateListener.h"
 
-// Set this to 1 to force single threaded rendering
-#define UNITY_FORCE_DIRECT_RENDERING 0
+#include <assert.h>
+#include <stdbool.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/sysctl.h>
 
-bool    _ios42orNewer           = false;
-bool    _ios43orNewer           = false;
-bool    _ios50orNewer           = false;
-bool    _ios60orNewer           = false;
-bool    _ios70orNewer           = false;
-bool    _ios80orNewer           = false;
-bool    _ios81orNewer           = false;
-bool    _ios82orNewer           = false;
-bool    _ios83orNewer           = false;
-bool    _ios90orNewer           = false;
-bool    _ios91orNewer           = false;
-bool    _ios100orNewer          = false;
+//
+UnityAppController* _UnityAppController = nil;
+
+// Standard Gesture Recognizers enabled on all iOS apps absorb touches close to the top and bottom of the screen.
+// This sometimes causes an ~1 second delay before the touch is handled when clicking very close to the edge.
+// You should enable this if you want to avoid that delay. Enabling it should not have any effect on default iOS gestures.
+#define DISABLE_TOUCH_DELAYS 1
+
+// we keep old bools around to support "old" code that might have used them
+bool _ios42orNewer = false, _ios43orNewer = false, _ios50orNewer = false, _ios60orNewer = false, _ios70orNewer = false;
+bool _ios80orNewer = false, _ios81orNewer = false, _ios82orNewer = false, _ios83orNewer = false, _ios90orNewer = false, _ios91orNewer = false;
+bool _ios100orNewer = false, _ios101orNewer = false, _ios102orNewer = false, _ios103orNewer = false;
+bool _ios110orNewer = false, _ios111orNewer = false, _ios112orNewer = false;
 
 // was unity rendering already inited: we should not touch rendering while this is false
 bool    _renderingInited        = false;
@@ -71,11 +75,15 @@ static bool _startUnityScheduled    = false;
 
 bool    _supportsMSAA           = false;
 
+#if UNITY_SUPPORT_ROTATION
+// Required to enable specific orientation for some presentation controllers: see supportedInterfaceOrientationsForWindow below for details
+NSInteger _forceInterfaceOrientationMask = 0;
+#endif
 
 @implementation UnityAppController
 
 @synthesize unityView               = _unityView;
-@synthesize unityDisplayLink        = _unityDisplayLink;
+@synthesize unityDisplayLink        = _displayLink;
 
 @synthesize rootView                = _rootView;
 @synthesize rootViewController      = _rootController;
@@ -83,13 +91,13 @@ bool    _supportsMSAA           = false;
 @synthesize renderDelegate          = _renderDelegate;
 @synthesize quitHandler             = _quitHandler;
 
-#if !PLATFORM_TVOS
+#if UNITY_SUPPORT_ROTATION
 @synthesize interfaceOrientation    = _curOrientation;
 #endif
 
 - (id)init
 {
-    if ((self = [super init]))
+    if ((self = _UnityAppController = [super init]))
     {
         // due to clang issues with generating warning for overriding deprecated methods
         // we will simply assert if deprecated methods are present
@@ -119,7 +127,7 @@ bool    _supportsMSAA           = false;
 {
     NSAssert(_unityAppReady == NO, @"[UnityAppController startUnity:] called after Unity has been initialized");
 
-    UnityInitApplicationGraphics(UNITY_FORCE_DIRECT_RENDERING);
+    UnityInitApplicationGraphics();
 
     // we make sure that first level gets correct display list and orientation
     [[DisplayManager Instance] updateDisplayListInUnity];
@@ -147,17 +155,26 @@ extern "C" void UnityRequestQuit()
         exit(0);
 }
 
-#if !PLATFORM_TVOS
+#if UNITY_SUPPORT_ROTATION
+
 - (NSUInteger)application:(UIApplication*)application supportedInterfaceOrientationsForWindow:(UIWindow*)window
 {
-    // UIInterfaceOrientationMaskAll
-    // it is the safest way of doing it:
-    // - GameCenter and some other services might have portrait-only variant
-    //     and will throw exception if portrait is not supported here
-    // - When you change allowed orientations if you end up forbidding current one
-    //     exception will be thrown
-    // Anyway this is intersected with values provided from UIViewController, so we are good
-    return (1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationPortraitUpsideDown);
+    // No rootViewController is set because we are switching from one view controller to another, all orientations should be enabled
+    if ([window rootViewController] == nil)
+        return UIInterfaceOrientationMaskAll;
+
+    // Some presentation controllers (e.g. UIImagePickerController) require portrait orientation and will throw exception if it is not supported.
+    // At the same time enabling all orientations by returning UIInterfaceOrientationMaskAll might cause unwanted orientation change
+    // (e.g. when using UIActivityViewController to "share to" another application, iOS will use supportedInterfaceOrientations to possibly reorient).
+    // So to avoid exception we are returning combination of constraints for root view controller and orientation requested by iOS.
+    // _forceInterfaceOrientationMask is updated in willChangeStatusBarOrientation, which is called if some presentation controller insists on orientation change.
+    return [[window rootViewController] supportedInterfaceOrientations] | _forceInterfaceOrientationMask;
+}
+
+- (void)application:(UIApplication*)application willChangeStatusBarOrientation:(UIInterfaceOrientation)newStatusBarOrientation duration:(NSTimeInterval)duration
+{
+    // Setting orientation mask which is requiested by iOS: see supportedInterfaceOrientationsForWindow above for details
+    _forceInterfaceOrientationMask = 1 << newStatusBarOrientation;
 }
 
 #endif
@@ -201,6 +218,8 @@ extern "C" void UnityRequestQuit()
 {
     AppController_SendNotificationWithArg(kUnityDidFailToRegisterForRemoteNotificationsWithError, error);
     UnitySendRemoteNotificationError(error);
+    // alas people do not check remote notification error through api (which is clunky, i agree) so log here to have at least some visibility
+    ::printf("\nFailed to register for remote notifications:\n%s\n\n", [[error localizedDescription] UTF8String]);
 }
 
 #endif
@@ -231,8 +250,7 @@ extern "C" void UnityRequestQuit()
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     ::printf("-> applicationDidFinishLaunching()\n");
-    [Fabric with:@[[Crashlytics class]]];
-    
+
     // send notfications
 #if !PLATFORM_TVOS
     if (UILocalNotification* notification = [launchOptions objectForKey: UIApplicationLaunchOptionsLocalNotificationKey])
@@ -260,6 +278,13 @@ extern "C" void UnityRequestQuit()
     // if you wont use keyboard you may comment it out at save some memory
     [KeyboardDelegate Initialize];
 
+#if !PLATFORM_TVOS && DISABLE_TOUCH_DELAYS
+    for (UIGestureRecognizer *g in _window.gestureRecognizers)
+    {
+        g.delaysTouchesBegan = false;
+    }
+#endif
+
     return YES;
 }
 
@@ -276,7 +301,7 @@ extern "C" void UnityRequestQuit()
     if (_unityAppReady)
     {
         // if we were showing video before going to background - the view size may be changed while we are in background
-        [GetAppController().unityView recreateGLESSurfaceIfNeeded];
+        [GetAppController().unityView recreateRenderingSurfaceIfNeeded];
     }
 }
 
@@ -292,6 +317,11 @@ extern "C" void UnityRequestQuit()
         {
             UnityWillResume();
             UnityPause(0);
+        }
+        if (_wasPausedExternal)
+        {
+            if (UnityIsFullScreenPlaying())
+                TryResumeFullScreenVideo();
         }
         UnitySetPlayerFocus(1);
     }
@@ -416,6 +446,42 @@ bool LogToNSLogHandler(LogType logType, const char* log, va_list list)
     return true;
 }
 
+static void AddNewAPIImplIfNeeded();
+
+// From https://stackoverflow.com/questions/4744826/detecting-if-ios-app-is-run-in-debugger
+static bool isDebuggerAttachedToConsole(void)
+// Returns true if the current process is being debugged (either
+// running under the debugger or has a debugger attached post facto).
+{
+    int                 junk;
+    int                 mib[4];
+    struct kinfo_proc   info;
+    size_t              size;
+
+    // Initialize the flags so that, if sysctl fails for some bizarre
+    // reason, we get a predictable result.
+
+    info.kp_proc.p_flag = 0;
+
+    // Initialize mib, which tells sysctl the info we want, in this case
+    // we're looking for information about a specific process ID.
+
+    mib[0] = CTL_KERN;
+    mib[1] = KERN_PROC;
+    mib[2] = KERN_PROC_PID;
+    mib[3] = getpid();
+
+    // Call sysctl.
+
+    size = sizeof(info);
+    junk = sysctl(mib, sizeof(mib) / sizeof(*mib), &info, &size, NULL, 0);
+    assert(junk == 0);
+
+    // We're being debugged if the P_TRACED flag is set.
+
+    return ((info.kp_proc.p_flag & P_TRACED) != 0);
+}
+
 void UnityInitTrampoline()
 {
 #if ENABLE_CRASH_REPORT_SUBMISSION
@@ -423,24 +489,59 @@ void UnityInitTrampoline()
 #endif
     InitCrashHandling();
 
+    _ios42orNewer = _ios43orNewer = _ios50orNewer = _ios60orNewer = _ios70orNewer = true;
+
     NSString* version = [[UIDevice currentDevice] systemVersion];
+#define CHECK_VER(s) [version compare: s options: NSNumericSearch] != NSOrderedAscending
+    _ios80orNewer  = CHECK_VER(@"8.0"),  _ios81orNewer  = CHECK_VER(@"8.1"),  _ios82orNewer  = CHECK_VER(@"8.2"),  _ios83orNewer  = CHECK_VER(@"8.3");
+    _ios90orNewer  = CHECK_VER(@"9.0"),  _ios91orNewer  = CHECK_VER(@"9.1");
+    _ios100orNewer = CHECK_VER(@"10.0"), _ios101orNewer = CHECK_VER(@"10.1"), _ios102orNewer = CHECK_VER(@"10.2"), _ios103orNewer = CHECK_VER(@"10.3");
+    _ios110orNewer = CHECK_VER(@"11.0"), _ios111orNewer = CHECK_VER(@"11.1"), _ios112orNewer = CHECK_VER(@"11.2");
+#undef CHECK_VER
 
-    // keep native plugin developers happy and keep old bools around
-    _ios42orNewer = true;
-    _ios43orNewer = true;
-    _ios50orNewer = true;
-    _ios60orNewer = true;
-    _ios70orNewer = [version compare: @"7.0" options: NSNumericSearch] != NSOrderedAscending;
-    _ios80orNewer = [version compare: @"8.0" options: NSNumericSearch] != NSOrderedAscending;
-    _ios81orNewer = [version compare: @"8.1" options: NSNumericSearch] != NSOrderedAscending;
-    _ios82orNewer = [version compare: @"8.2" options: NSNumericSearch] != NSOrderedAscending;
-    _ios83orNewer = [version compare: @"8.3" options: NSNumericSearch] != NSOrderedAscending;
-    _ios90orNewer = [version compare: @"9.0" options: NSNumericSearch] != NSOrderedAscending;
-    _ios91orNewer = [version compare: @"9.1" options: NSNumericSearch] != NSOrderedAscending;
-    _ios100orNewer = [version compare: @"10.0" options: NSNumericSearch] != NSOrderedAscending;
+    AddNewAPIImplIfNeeded();
 
-    // Try writing to console and if it fails switch to NSLog logging
-    ::fprintf(stdout, "\n");
-    if (::ftell(stdout) < 0)
+#if !TARGET_IPHONE_SIMULATOR
+    // Use NSLog logging if a debugger is not attached, otherwise we write to stdout.
+    if (!isDebuggerAttachedToConsole())
         UnitySetLogEntryHandler(LogToNSLogHandler);
+#endif
+}
+
+// sometimes apple adds new api with obvious fallback on older ios.
+// in that case we simply add these functions ourselves to simplify code
+static void AddNewAPIImplIfNeeded()
+{
+    if (![[CADisplayLink class] instancesRespondToSelector: @selector(setPreferredFramesPerSecond:)])
+    {
+        IMP CADisplayLink_setPreferredFramesPerSecond_IMP = imp_implementationWithBlock(^void(id _self, NSInteger fps) {
+            typedef void (*SetFrameIntervalFunc)(id, SEL, NSInteger);
+            UNITY_OBJC_CALL_ON_SELF(_self, @selector(setFrameInterval:), SetFrameIntervalFunc, (int)(60.0f / fps));
+        });
+        class_replaceMethod([CADisplayLink class], @selector(setPreferredFramesPerSecond:), CADisplayLink_setPreferredFramesPerSecond_IMP, CADisplayLink_setPreferredFramesPerSecond_Enc);
+    }
+
+    if (![[UIScreen class] instancesRespondToSelector: @selector(nativeScale)])
+    {
+        IMP UIScreen_NativeScale_IMP = imp_implementationWithBlock(^CGFloat(id _self) {
+            return ((UIScreen*)_self).scale;
+        });
+        class_replaceMethod([UIScreen class], @selector(nativeScale), UIScreen_NativeScale_IMP, UIScreen_nativeScale_Enc);
+    }
+
+    if (![[UIScreen class] instancesRespondToSelector: @selector(maximumFramesPerSecond)])
+    {
+        IMP UIScreen_MaximumFramesPerSecond_IMP = imp_implementationWithBlock(^NSInteger(id _self) {
+            return 60;
+        });
+        class_replaceMethod([UIScreen class], @selector(maximumFramesPerSecond), UIScreen_MaximumFramesPerSecond_IMP, UIScreen_maximumFramesPerSecond_Enc);
+    }
+
+    if (![[UIView class] instancesRespondToSelector: @selector(safeAreaInsets)])
+    {
+        IMP UIView_SafeAreaInsets_IMP = imp_implementationWithBlock(^UIEdgeInsets(id _self) {
+            return UIEdgeInsetsZero;
+        });
+        class_replaceMethod([UIView class], @selector(safeAreaInsets), UIView_SafeAreaInsets_IMP, UIView_safeAreaInsets_Enc);
+    }
 }

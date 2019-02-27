@@ -1,5 +1,6 @@
 #include "Keyboard.h"
 #include "DisplayManager.h"
+#include "UnityAppController.h"
 #include "UnityForwardDecls.h"
 #include <string>
 
@@ -13,6 +14,7 @@ static KeyboardDelegate*    _keyboard = nil;
 static bool                 _shouldHideInput = false;
 static bool                 _shouldHideInputChanged = false;
 static const unsigned       kToolBarHeight = 40;
+static const unsigned       kSystemButtonsSpace = 2 * 60 + 3 * 18; // empirical value, there is no way to know the exact widths of the system bar buttons
 
 @implementation KeyboardDelegate
 {
@@ -26,6 +28,8 @@ static const unsigned       kToolBarHeight = 40;
 
     UIToolbar*      viewToolbar;
     NSArray*        viewToolbarItems;
+
+    NSLayoutConstraint* widthConstraint;
 #endif
 
     UITextField*    textField;
@@ -50,8 +54,7 @@ static const unsigned       kToolBarHeight = 40;
     BOOL            _multiline;
     BOOL            _inputHidden;
     BOOL            _active;
-    BOOL            _done;
-    BOOL            _canceled;
+    KeyboardStatus          _status;
 
     // not pretty but seems like easiest way to keep "we are rotating" status
     BOOL            _rotating;
@@ -59,26 +62,34 @@ static const unsigned       kToolBarHeight = 40;
 
 @synthesize area;
 @synthesize active      = _active;
-@synthesize done        = _done;
-@synthesize canceled    = _canceled;
+@synthesize status      = _status;
 @synthesize text;
 @synthesize selection;
 
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textFieldObj
 {
-    [self hide];
+    [self textInputDone: nil];
     return YES;
 }
 
 - (void)textInputDone:(id)sender
 {
+    if (_status == Visible)
+        _status = Done;
     [self hide];
 }
 
 - (void)textInputCancel:(id)sender
 {
-    _canceled = true;
+    _status = Canceled;
+    [self hide];
+}
+
+- (void)textInputLostFocus
+{
+    if (_status == Visible)
+        _status = LostFocus;
     [self hide];
 }
 
@@ -98,6 +109,7 @@ static const unsigned       kToolBarHeight = 40;
 
     CGRect srcRect  = [[notification.userInfo objectForKey: UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGRect rect     = [UnityGetGLView() convertRect: srcRect fromView: nil];
+    rect.origin.y = [UnityGetGLView() frame].size.height - rect.size.height; // iPhone X sometimes reports wrong y value for keyboard
 
     [self positionInput: rect x: rect.origin.x y: rect.origin.y];
     _active = YES;
@@ -118,7 +130,10 @@ static const unsigned       kToolBarHeight = 40;
     if (rect.origin.y >= [UnityGetGLView() bounds].size.height)
         [self systemHideKeyboard];
     else
+    {
+        rect.origin.y = [UnityGetGLView() frame].size.height - rect.size.height; // iPhone X sometimes reports wrong y value for keyboard
         [self positionInput: rect x: rect.origin.x y: rect.origin.y];
+    }
 }
 
 #endif
@@ -185,6 +200,11 @@ struct CreateToolbarResult
         textField.borderStyle = UITextBorderStyleRoundedRect;
         textField.font = [UIFont systemFontOfSize: 20.0];
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+
+#if PLATFORM_IOS
+        widthConstraint = [NSLayoutConstraint constraintWithItem: textField attribute: NSLayoutAttributeWidth relatedBy: NSLayoutRelationEqual toItem: nil attribute: NSLayoutAttributeNotAnAttribute multiplier: 1.0 constant: textField.frame.size.width];
+        [textField addConstraint: widthConstraint];
+#endif
 
         #define CREATE_TOOLBAR(t, i, v)                                 \
         do {                                                            \
@@ -272,8 +292,7 @@ struct CreateToolbarResult
 
     [self shouldHideInput: _shouldHideInput];
 
-    _done       = NO;
-    _canceled   = NO;
+    _status     = Visible;
     _active     = YES;
 }
 
@@ -318,7 +337,6 @@ struct CreateToolbarResult
 - (void)hide
 {
     [self hideUI];
-    _done = YES;
 }
 
 - (void)updateInputHidden
@@ -338,20 +356,31 @@ struct CreateToolbarResult
 #if PLATFORM_IOS
 - (void)positionInput:(CGRect)kbRect x:(float)x y:(float)y
 {
+    float safeAreaInsetLeft = [UnityGetGLView() safeAreaInsets].left;
+    float safeAreaInsetRight = [UnityGetGLView() safeAreaInsets].right;
+
     if (_multiline)
     {
         // use smaller area for iphones and bigger one for ipads
         int height = UnityDeviceDPI() > 300 ? 75 : 100;
 
-        editView.frame  = CGRectMake(0, y - height, kbRect.size.width, height);
+        editView.frame  = CGRectMake(safeAreaInsetLeft, y - height, kbRect.size.width - safeAreaInsetLeft - safeAreaInsetRight, height);
     }
     else
     {
         editView.frame  = CGRectMake(0, y - kToolBarHeight, kbRect.size.width, kToolBarHeight);
+
+        // old constraint must be removed, changing value while constraint is active causes conflict when changing inputView.frame
+        [inputView removeConstraint: widthConstraint];
+
         inputView.frame = CGRectMake(inputView.frame.origin.x,
                 inputView.frame.origin.y,
-                kbRect.size.width - 3 * 18 - 2 * 50,
+                kbRect.size.width - safeAreaInsetLeft - safeAreaInsetRight - kSystemButtonsSpace,
                 inputView.frame.size.height);
+
+        // required to avoid auto-resizing on iOS 11 in case if input text is too long
+        widthConstraint.constant = inputView.frame.size.width;
+        [inputView addConstraint: widthConstraint];
     }
 
     _area = CGRectMake(x, y, kbRect.size.width, kbRect.size.height);
@@ -401,7 +430,7 @@ struct CreateToolbarResult
 
 - (NSString*)getText
 {
-    if (_canceled)
+    if (_status == Canceled)
         return initialText;
     else
     {
@@ -549,7 +578,7 @@ extern "C" void UnityKeyboard_Hide()
     if (!_keyboard)
         return;
 
-    [[KeyboardDelegate Instance] hide];
+    [[KeyboardDelegate Instance] textInputLostFocus];
 }
 
 extern "C" void UnityKeyboard_SetText(const char* text)
@@ -569,12 +598,18 @@ extern "C" int UnityKeyboard_IsActive()
 
 extern "C" int UnityKeyboard_IsDone()
 {
-    return (_keyboard && _keyboard.done) ? 1 : 0;
+    // Preserving old behaviour where done was always set to true when the keyboard was not visible.
+    return (_keyboard && _keyboard.status != Visible) ? 1 : 0;
 }
 
 extern "C" int UnityKeyboard_WasCanceled()
 {
-    return (_keyboard && _keyboard.canceled) ? 1 : 0;
+    return (_keyboard && _keyboard.status == Canceled) ? 1 : 0;
+}
+
+extern "C" int UnityKeyboard_Status()
+{
+    return _keyboard ? _keyboard.status : Canceled;
 }
 
 extern "C" void UnityKeyboard_SetInputHidden(int hidden)

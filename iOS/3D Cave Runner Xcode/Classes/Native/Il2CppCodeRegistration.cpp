@@ -13,8 +13,9 @@
 #include <limits>
 #include <assert.h>
 
-#include "class-internals.h"
+#include "il2cpp-class-internals.h"
 #include "codegen/il2cpp-codegen.h"
+
 
 
 
@@ -33,19 +34,19 @@ extern const Il2CppMethodPointer g_UnresolvedVirtualMethodPointers[];
 extern Il2CppInteropData g_Il2CppInteropData[];
 extern const Il2CppCodeRegistration g_CodeRegistration = 
 {
-	10016,
+	9299,
 	g_MethodPointers,
 	8,
 	g_ReversePInvokeWrapperPointers,
-	2514,
+	2379,
 	g_Il2CppGenericMethodPointers,
-	1470,
+	1339,
 	g_Il2CppInvokerPointers,
-	2345,
+	2105,
 	g_AttributeGenerators,
-	159,
+	185,
 	g_UnresolvedVirtualMethodPointers,
-	91,
+	97,
 	g_Il2CppInteropData,
 };
 extern const Il2CppMetadataRegistration g_MetadataRegistration;

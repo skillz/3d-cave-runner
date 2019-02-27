@@ -12,10 +12,30 @@
 #include "CVTextureCache.h"
 #endif
 
-#include <objc/runtime.h>
+#include "ObjCRuntime.h"
 extern Class MTLTextureDescriptorClass;
-static bool hasMTLTextureDescriptorUsage = false;
 
+extern "C" void UnityAddNewMetalAPIImplIfNeeded(id<MTLDevice> device)
+{
+    if (![device respondsToSelector: @selector(supportsTextureSampleCount:)])
+    {
+        IMP MTLDevice_supportsTextureSampleCount_IMP = imp_implementationWithBlock(^BOOL(id _self, NSUInteger sampleCount) {
+            return sampleCount == 1 || sampleCount == 4;
+        });
+        class_replaceMethod(object_getClass(device), @selector(supportsTextureSampleCount:), MTLDevice_supportsTextureSampleCount_IMP, MTLDevice_supportsTextureSampleCount_Enc);
+    }
+
+    // usage is dynamic property so there will be no selectors, that is why we check for property itself
+    // if property is missed it is fine to add fake selectors
+    if (class_getProperty(MTLTextureDescriptorClass, "usage") == 0)
+    {
+        IMP MTLTextureDescriptor_SetUsage_IMP = imp_implementationWithBlock(^void(id _self, MTLTextureUsage usage) {});
+        class_replaceMethod(MTLTextureDescriptorClass, @selector(setUsage:), MTLTextureDescriptor_SetUsage_IMP, MTLTextureDescriptor_setUsage_Enc);
+
+        IMP MTLTextureDescriptor_GetUsage_IMP = imp_implementationWithBlock(^MTLTextureUsage(id _self) { return MTLTextureUsageUnknown; });
+        class_replaceMethod(MTLTextureDescriptorClass, @selector(usage), MTLTextureDescriptor_GetUsage_IMP, MTLTextureDescriptor_usage_Enc);
+    }
+}
 
 extern "C" void InitRenderingMTL()
 {
@@ -23,53 +43,86 @@ extern "C" void InitRenderingMTL()
     extern bool _supportsMSAA;
     _supportsMSAA = true;
 #endif
-
-#if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
-    hasMTLTextureDescriptorUsage = class_getProperty(MTLTextureDescriptorClass, "usage") != 0;
-#endif
 }
 
-static bool SupportsTextureSampleCountMTL(MTLDeviceRef device, NSUInteger sampleCount)
+static MTLPixelFormat GetColorFormatForSurface(const UnityDisplaySurfaceMTL* surface)
 {
-    if ([device respondsToSelector: @selector(supportsTextureSampleCount:)])
-    {
-#if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
-        return [device supportsTextureSampleCount: sampleCount];
+    MTLPixelFormat colorFormat = surface->srgb ? MTLPixelFormatBGRA8Unorm_sRGB : MTLPixelFormatBGRA8Unorm;
+#if PLATFORM_IOS && UNITY_HAS_IOSSDK_10_0
+    if (surface->wideColor)
+        colorFormat = surface->srgb ? MTLPixelFormatBGR10_XR_sRGB : MTLPixelFormatBGR10_XR;
+#elif PLATFORM_OSX && __MAC_10_12
+    if (surface->wideColor)
+        colorFormat = MTLPixelFormatRGBA16Float;
 #endif
-    }
-
-    // We hit this path only on iOS8. 4x MSAA is known to be supported on all devices.
-    return (sampleCount == 1 || sampleCount == 4);
+    return colorFormat;
 }
 
 extern "C" void CreateSystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
 {
     DestroySystemRenderingSurfaceMTL(surface);
 
-    MTLPixelFormat colorFormat = surface->srgb ? MTLPixelFormatBGRA8Unorm_sRGB : MTLPixelFormatBGRA8Unorm;
-
+    MTLPixelFormat colorFormat = GetColorFormatForSurface(surface);
     surface->layer.presentsWithTransaction = NO;
     surface->layer.drawsAsynchronously = YES;
 
+#if PLATFORM_OSX
+    MetalUpdateDisplaySync();
+#endif
+
     CGFloat backgroundColorValues[] = {0, 0, 0, 1};
+#if PLATFORM_IOS || PLATFORM_OSX
+    CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateWithName(kCGColorSpaceSRGB);
+#else
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
+#endif
+#if (PLATFORM_IOS && UNITY_HAS_IOSSDK_10_0) || (PLATFORM_OSX && __MAC_10_12)
+    if (surface->wideColor)
+        colorSpaceRef = CGColorSpaceCreateWithName(surface->srgb ? kCGColorSpaceExtendedLinearSRGB : kCGColorSpaceExtendedSRGB);
+#endif
+
     CGColorRef backgroundColorRef = CGColorCreate(colorSpaceRef, backgroundColorValues);
     surface->layer.backgroundColor = backgroundColorRef; // retained automatically
+#if PLATFORM_OSX && __MAC_10_12
+    surface->layer.colorspace = colorSpaceRef;
+#endif
     CGColorRelease(backgroundColorRef);
     CGColorSpaceRelease(colorSpaceRef);
 
     surface->layer.device = surface->device;
     surface->layer.pixelFormat = colorFormat;
-    surface->layer.framebufferOnly = NO;
+    surface->layer.framebufferOnly = (surface->framebufferOnly != 0);
     surface->colorFormat = colorFormat;
 
-    MTLTextureDescriptor* txDesc = [MTLTextureDescriptorClass texture2DDescriptorWithPixelFormat: colorFormat width: surface->targetW height: surface->targetH mipmapped: NO];
-    surface->drawableProxyRT = [surface->device newTextureWithDescriptor: txDesc];
+    MTLTextureDescriptor* txDesc = [MTLTextureDescriptorClass texture2DDescriptorWithPixelFormat: colorFormat width: surface->systemW height: surface->systemH mipmapped: NO];
+#if PLATFORM_OSX
+    txDesc.resourceOptions = MTLResourceCPUCacheModeDefaultCache | MTLResourceStorageModeManaged;
+#endif
+    txDesc.usage = MTLTextureUsageRenderTarget | MTLTextureUsageShaderRead;
+
+    @synchronized(surface->layer)
+    {
+        OSAtomicCompareAndSwap32Barrier(surface->bufferChanged, 0, &surface->bufferChanged);
+
+        for (int i = 0; i < kUnityNumOffscreenSurfaces; i++)
+        {
+            OSAtomicCompareAndSwap32Barrier(surface->bufferCompleted[i], -1, &surface->bufferCompleted[i]);
+            // Allocating a proxy texture is cheap until it's being rendered to and the GPU driver does allocation
+            surface->drawableProxyRT[i] = [surface->device newTextureWithDescriptor: txDesc];
+        }
+
+#if PLATFORM_OSX
+        OSAtomicCompareAndSwap32Barrier(surface->writeCount, surface->writeCount + (kUnityNumOffscreenSurfaces - 1), &surface->writeCount);
+        OSAtomicCompareAndSwap32Barrier(surface->readCount, surface->writeCount - 1, &surface->readCount);
+#endif
+    }
 }
 
 extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
 {
     DestroyRenderingSurfaceMTL(surface);
+
+    MTLPixelFormat colorFormat = GetColorFormatForSurface(surface);
 
     const int w = surface->targetW, h = surface->targetH;
 
@@ -92,17 +145,13 @@ extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
             txDesc.width = w;
             txDesc.height = h;
             txDesc.depth = 1;
-            txDesc.pixelFormat = surface->srgb ? MTLPixelFormatBGRA8Unorm_sRGB : MTLPixelFormatBGRA8Unorm;
+            txDesc.pixelFormat = colorFormat;
             txDesc.arrayLength = 1;
             txDesc.mipmapLevelCount = 1;
 #if PLATFORM_OSX
             txDesc.resourceOptions = MTLResourceCPUCacheModeDefaultCache | MTLResourceStorageModeManaged;
 #endif
-#if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
-            if (hasMTLTextureDescriptorUsage)
-                txDesc.usage = MTLTextureUsageRenderTarget | MTLTextureUsageShaderRead | MTLTextureUsageShaderWrite;
-#endif
-
+            txDesc.usage = MTLTextureUsageRenderTarget | MTLTextureUsageShaderRead;
             surface->targetColorRT = [surface->device newTextureWithDescriptor: txDesc];
         }
         surface->targetColorRT.label = @"targetColorRT";
@@ -115,21 +164,26 @@ extern "C" void CreateRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
         txDesc.width = w;
         txDesc.height = h;
         txDesc.depth = 1;
-        txDesc.pixelFormat = surface->srgb ? MTLPixelFormatBGRA8Unorm_sRGB : MTLPixelFormatBGRA8Unorm;
+        txDesc.pixelFormat = colorFormat;
         txDesc.arrayLength = 1;
         txDesc.mipmapLevelCount = 1;
         txDesc.sampleCount = surface->msaaSamples;
 #if PLATFORM_OSX
         txDesc.resourceOptions = MTLResourceCPUCacheModeDefaultCache | MTLResourceStorageModePrivate;
 #endif
-#if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
-        if (hasMTLTextureDescriptorUsage)
-            txDesc.usage = MTLTextureUsageRenderTarget;
-#endif
-        if (!SupportsTextureSampleCountMTL(surface->device, txDesc.sampleCount))
+        txDesc.usage = MTLTextureUsageRenderTarget | MTLTextureUsageShaderRead;
+        if (![surface->device supportsTextureSampleCount: txDesc.sampleCount])
             txDesc.sampleCount = 4;
         surface->targetAAColorRT = [surface->device newTextureWithDescriptor: txDesc];
         surface->targetAAColorRT.label = @"targetAAColorRT";
+
+        if (!surface->targetColorRT)
+        {
+            MTLTextureDescriptor* txDescResolve = [txDesc copyWithZone: nil];
+            txDescResolve.textureType = MTLTextureType2D;
+            txDescResolve.sampleCount = 1;
+            surface->targetColorRT = [surface->device newTextureWithDescriptor: txDescResolve];
+        }
     }
 }
 
@@ -161,15 +215,13 @@ extern "C" void CreateSharedDepthbufferMTL(UnityDisplaySurfaceMTL* surface)
 #if PLATFORM_OSX
     depthTexDesc.resourceOptions = MTLResourceCPUCacheModeDefaultCache | MTLResourceStorageModePrivate;
 #endif
-#if __IPHONE_9_0 || __TVOS_9_0 || __MAC_10_11
-    if (hasMTLTextureDescriptorUsage)
-        depthTexDesc.usage = MTLTextureUsageRenderTarget;
-#endif
+
+    depthTexDesc.usage = MTLTextureUsageRenderTarget;
     if (surface->msaaSamples > 1)
     {
         depthTexDesc.textureType = MTLTextureType2DMultisample;
         depthTexDesc.sampleCount = surface->msaaSamples;
-        if (!SupportsTextureSampleCountMTL(surface->device, depthTexDesc.sampleCount))
+        if (![surface->device supportsTextureSampleCount: depthTexDesc.sampleCount])
             depthTexDesc.sampleCount = 4;
     }
     surface->depthRB = [surface->device newTextureWithDescriptor: depthTexDesc];
@@ -178,11 +230,12 @@ extern "C" void CreateSharedDepthbufferMTL(UnityDisplaySurfaceMTL* surface)
     surface->stencilRB = surface->depthRB;
 #else
     MTLTextureDescriptor* stencilTexDesc = [MTLTextureDescriptorClass texture2DDescriptorWithPixelFormat: MTLPixelFormatStencil8 width: surface->targetW height: surface->targetH mipmapped: NO];
+    stencilTexDesc.usage = MTLTextureUsageRenderTarget;
     if (surface->msaaSamples > 1)
     {
         stencilTexDesc.textureType = MTLTextureType2DMultisample;
         stencilTexDesc.sampleCount = surface->msaaSamples;
-        if (!SupportsTextureSampleCountMTL(surface->device, stencilTexDesc.sampleCount))
+        if (![surface->device supportsTextureSampleCount: stencilTexDesc.sampleCount])
             stencilTexDesc.sampleCount = 4;
     }
     surface->stencilRB = [surface->device newTextureWithDescriptor: stencilTexDesc];
@@ -200,25 +253,27 @@ extern "C" void CreateUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface)
     UnityRenderBufferDesc sys_desc = { surface->systemW, surface->systemH, 1, 1, 1 };
     UnityRenderBufferDesc tgt_desc = { surface->targetW, surface->targetH, 1, (unsigned int)surface->msaaSamples, 1 };
 
-    // drawable (final color texture) we will be updating on every frame
-    // in case of rendering to native + AA, we will also update native target every frame
-
+    surface->systemColorRB  = surface->drawableProxyRT[surface->writeCount % kUnityNumOffscreenSurfaces];
     if (surface->targetAAColorRT)
         surface->unityColorBuffer   = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetAAColorRT, surface->targetColorRT, &tgt_desc, nil);
     else if (surface->targetColorRT)
         surface->unityColorBuffer   = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->targetColorRT, nil, &tgt_desc, nil);
     else
-        surface->unityColorBuffer   = UnityCreateDummySurface(surface->unityColorBuffer, true, &sys_desc);
+        surface->unityColorBuffer   = UnityCreateExternalColorSurfaceMTL(surface->unityColorBuffer, surface->systemColorRB, nil, &tgt_desc, surface);
 
     surface->unityDepthBuffer       = UnityCreateExternalDepthSurfaceMTL(surface->unityDepthBuffer, surface->depthRB, surface->stencilRB, &tgt_desc);
 
-    surface->systemColorBuffer = UnityCreateDummySurface(surface->systemColorBuffer, true, &sys_desc);
+    surface->systemColorBuffer = UnityCreateExternalColorSurfaceMTL(surface->systemColorBuffer, surface->systemColorRB, nil, &sys_desc, surface);
     surface->systemDepthBuffer = UnityCreateDummySurface(surface->systemDepthBuffer, false, &sys_desc);
 }
 
 extern "C" void DestroySystemRenderingSurfaceMTL(UnityDisplaySurfaceMTL* surface)
 {
-    surface->systemColorRB = nil;
+    // before we needed to nil surface->systemColorRB (to release drawable we get from the view)
+    // but after we switched to proxy rt this is no longer needed
+    // even more it is harmful when running rendering on another thread (as is default now)
+    // as on render thread we do StartFrameRenderingMTL/AcquireDrawableMTL/EndFrameRenderingMTL
+    // and DestroySystemRenderingSurfaceMTL comes on main thread so we might end up with race condition for no reason
 }
 
 extern "C" void DestroyUnityRenderBuffersMTL(UnityDisplaySurfaceMTL* surface)
@@ -252,7 +307,8 @@ extern "C" MTLTextureRef AcquireDrawableMTL(UnityDisplaySurfaceMTL* surface)
     if (!surface)
         return nil;
 
-    surface->drawable = [surface->layer nextDrawable];
+    if (!surface->drawable)
+        surface->drawable = [surface->layer nextDrawable];
 
     // on A7 SoC nextDrawable may be nil before locking the screen
     if (!surface->drawable)
@@ -266,7 +322,17 @@ extern "C" void StartFrameRenderingMTL(UnityDisplaySurfaceMTL* surface)
 {
     // we will acquire drawable lazily in AcquireDrawableMTL
     surface->drawable = nil;
-    surface->systemColorRB  = surface->drawableProxyRT;
+
+#if PLATFORM_OSX
+    // For non-Mac platforms, writeCount remains static
+    bool bufferChanged = (bool)surface->bufferChanged;
+    OSAtomicCompareAndSwap32Barrier(surface->bufferChanged, 0, &surface->bufferChanged);
+
+    if (bufferChanged && surface->writeCount <= surface->readCount)
+        OSAtomicAdd32Barrier(1, &surface->writeCount);
+    OSAtomicCompareAndSwap32Barrier(surface->bufferCompleted[surface->writeCount % kUnityNumOffscreenSurfaces], 0, &surface->bufferCompleted[surface->writeCount % kUnityNumOffscreenSurfaces]);
+#endif
+    surface->systemColorRB  = surface->drawableProxyRT[surface->writeCount % kUnityNumOffscreenSurfaces];
 
     // screen disconnect notification comes asynchronously
     // even better when preparing render we might still have [UIScreen screens].count == 2, but drawable would be nil already

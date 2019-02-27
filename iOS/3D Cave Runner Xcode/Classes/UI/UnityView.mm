@@ -2,20 +2,18 @@
 #include "UnityAppController.h"
 #include "UnityAppController+Rendering.h"
 #include "OrientationSupport.h"
-#include "Unity/GlesHelper.h"
 #include "Unity/DisplayManager.h"
 #include "Unity/UnityMetalSupport.h"
+#include "Unity/ObjCRuntime.h"
 
 extern bool _renderingInited;
 extern bool _unityAppReady;
 extern bool _skipPresent;
+extern bool _supportsMSAA;
 
 @implementation UnityView
 {
-    CGSize              _surfaceSize;
-    ScreenOrientation   _curOrientation;
-
-    BOOL                _recreateView;
+    CGSize _surfaceSize;
 }
 
 @synthesize contentOrientation  = _curOrientation;
@@ -24,12 +22,13 @@ extern bool _skipPresent;
 {
     _surfaceSize = size;
 
-    CGSize renderSize = CGSizeMake(size.width * self.contentScaleFactor, size.height * self.contentScaleFactor);
-    _curOrientation = (ScreenOrientation)UnityReportResizeView(renderSize.width, renderSize.height, self.contentOrientation);
+    CGSize systemRenderSize = CGSizeMake(size.width * self.contentScaleFactor, size.height * self.contentScaleFactor);
+    _curOrientation = (ScreenOrientation)UnityReportResizeView(systemRenderSize.width, systemRenderSize.height, _curOrientation);
+    ReportSafeAreaChangeForView(self);
 
 #if UNITY_CAN_USE_METAL
     if (UnitySelectedRenderingAPI() == apiMetal)
-        ((CAMetalLayer*)self.layer).drawableSize = renderSize;
+        ((CAMetalLayer*)self.layer).drawableSize = systemRenderSize;
 #endif
 }
 
@@ -80,7 +79,7 @@ extern bool _skipPresent;
 - (void)layoutSubviews
 {
     if (_surfaceSize.width != self.bounds.size.width || _surfaceSize.height != self.bounds.size.height)
-        _recreateView = YES;
+        _shouldRecreateView = YES;
     [self onUpdateSurfaceSize: self.bounds.size];
 
     for (UIView* subView in self.subviews)
@@ -92,56 +91,33 @@ extern bool _skipPresent;
     [super layoutSubviews];
 }
 
-#if !PLATFORM_TVOS
-- (void)willRotateToOrientation:(UIInterfaceOrientation)toOrientation fromOrientation:(UIInterfaceOrientation)fromOrientation;
+- (void)safeAreaInsetsDidChange
 {
-    // to support the case of interface and unity content orientation being different
-    // we will cheat a bit:
-    // we will calculate transform between interface orientations and apply it to unity view orientation
-    // you can still tweak unity view as you see fit in AppController, but this is what you want in 99% of cases
-
-    ScreenOrientation to    = ConvertToUnityScreenOrientation(toOrientation);
-    ScreenOrientation from  = ConvertToUnityScreenOrientation(fromOrientation);
-
-    if (fromOrientation == UIInterfaceOrientationUnknown)
-        _curOrientation = to;
-    else
-        _curOrientation = OrientationAfterTransform(_curOrientation, TransformBetweenOrientations(from, to));
+    ReportSafeAreaChangeForView(self);
 }
 
-- (void)didRotate
-{
-    if (_recreateView)
-    {
-        // we are not inside repaint so we need to draw second time ourselves
-        [self recreateGLESSurface];
-        if (_unityAppReady && !UnityIsPaused())
-            UnityRepaint();
-    }
-}
-
-#endif
-
-- (void)recreateGLESSurfaceIfNeeded
+- (void)recreateRenderingSurfaceIfNeeded
 {
     unsigned requestedW, requestedH;    UnityGetRenderingResolution(&requestedW, &requestedH);
     int requestedMSAA = UnityGetDesiredMSAASampleCount(MSAA_DEFAULT_SAMPLE_COUNT);
     int requestedSRGB = UnityGetSRGBRequested();
+    int requestedWideColor = UnityGetWideColorRequested();
 
     UnityDisplaySurfaceBase* surf = GetMainDisplaySurface();
 
-    if (_recreateView == YES
+    if (_shouldRecreateView == YES
         ||  surf->targetW != requestedW || surf->targetH != requestedH
         ||  surf->disableDepthAndStencil != UnityDisableDepthAndStencilBuffers()
         ||  (_supportsMSAA && surf->msaaSamples != requestedMSAA)
         ||  surf->srgb != requestedSRGB
+        ||  surf->wideColor != requestedWideColor
         )
     {
-        [self recreateGLESSurface];
+        [self recreateRenderingSurface];
     }
 }
 
-- (void)recreateGLESSurface
+- (void)recreateRenderingSurface
 {
     if (_renderingInited)
     {
@@ -153,6 +129,8 @@ extern bool _skipPresent;
             UnityGetDesiredMSAASampleCount(MSAA_DEFAULT_SAMPLE_COUNT),
             (int)requestedW, (int)requestedH,
             UnityGetSRGBRequested(),
+            UnityGetWideColorRequested(),
+            UnityMetalFramebufferOnly(),
             UnityDisableDepthAndStencilBuffers(), 0
         };
 
@@ -176,72 +154,15 @@ extern bool _skipPresent;
         }
     }
 
-    _recreateView = NO;
+    _shouldRecreateView = NO;
 }
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
-{
-#if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-    ReportSimulatedRemoteTouchesBegan(self, touches);
-#endif
-#if PLATFORM_TVOS
-    if (UnityGetAppleTVRemoteTouchesEnabled())
-#endif
-    UnitySendTouchesBegin(touches, event);
-}
-
-- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
-{
-#if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-    ReportSimulatedRemoteTouchesEnded(self, touches);
-#endif
-#if PLATFORM_TVOS
-    if (UnityGetAppleTVRemoteTouchesEnabled())
-#endif
-    UnitySendTouchesEnded(touches, event);
-}
-
-- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event
-{
-#if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-    ReportSimulatedRemoteTouchesEnded(self, touches);
-#endif
-#if PLATFORM_TVOS
-    if (UnityGetAppleTVRemoteTouchesEnabled())
-#endif
-    UnitySendTouchesCancelled(touches, event);
-}
-
-- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
-{
-#if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-    ReportSimulatedRemoteTouchesMoved(self, touches);
-#endif
-#if PLATFORM_TVOS
-    if (UnityGetAppleTVRemoteTouchesEnabled())
-#endif
-    UnitySendTouchesMoved(touches, event);
-}
-
-#if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-- (void)pressesBegan:(NSSet<UIPress*>*)presses withEvent:(UIEvent*)event
-{
-    for (UIPress *press in presses)
-        ReportSimulatedRemoteButtonPress(press.type);
-}
-
-- (void)pressesEnded:(NSSet<UIPress*>*)presses withEvent:(UIEvent*)event
-{
-    for (UIPress *press in presses)
-        ReportSimulatedRemoteButtonRelease(press.type);
-}
-
-#endif
 
 @end
 
-
-#include "objc/runtime.h"
+@implementation UnityView (Deprecated)
+- (void)recreateGLESSurfaceIfNeeded { [self recreateRenderingSurfaceIfNeeded]; }
+- (void)recreateGLESSurface         { [self recreateRenderingSurface]; }
+@end
 
 static Class UnityRenderingView_LayerClassGLES(id self_, SEL _cmd)
 {
@@ -267,12 +188,38 @@ static Class UnityRenderingView_LayerClassMTL(id self_, SEL _cmd)
     else if (api == apiMetal)
         layerClassImpl = (IMP)UnityRenderingView_LayerClassMTL;
 
-    Method layerClassMethod = class_getClassMethod([UnityRenderingView class], @selector(layerClass));
-
-    if (layerClassMethod)
-        method_setImplementation(layerClassMethod, layerClassImpl);
-    else
-        class_addMethod([UnityRenderingView class], @selector(layerClass), layerClassImpl, "#8@0:4");
+    class_replaceMethod(object_getClass([UnityRenderingView class]), @selector(layerClass), layerClassImpl, UIView_LayerClass_Enc);
 }
 
 @end
+
+void ReportSafeAreaChangeForView(UIView* view)
+{
+    CGRect safeArea = ComputeSafeArea(view);
+    UnityReportSafeAreaChange(safeArea.origin.x, safeArea.origin.y,
+        safeArea.size.width, safeArea.size.height);
+}
+
+CGRect ComputeSafeArea(UIView* view)
+{
+    CGSize screenSize = view.bounds.size;
+    CGRect screenRect = CGRectMake(0, 0, screenSize.width, screenSize.height);
+
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 0, 0);
+#if UNITY_HAS_IOSSDK_11_0 || UNITY_HAS_TVOSSDK_11_0
+    if (@available(iOS 11.0, tvOS 11.0, *))
+        insets = [view safeAreaInsets];
+#endif
+
+    screenRect.origin.x += insets.left;
+    screenRect.origin.y += insets.bottom; // Unity uses bottom left as the origin
+    screenRect.size.width -= insets.left + insets.right;
+    screenRect.size.height -= insets.top + insets.bottom;
+
+    float scale = view.contentScaleFactor;
+    screenRect.origin.x *= scale;
+    screenRect.origin.y *= scale;
+    screenRect.size.width *= scale;
+    screenRect.size.height *= scale;
+    return screenRect;
+}

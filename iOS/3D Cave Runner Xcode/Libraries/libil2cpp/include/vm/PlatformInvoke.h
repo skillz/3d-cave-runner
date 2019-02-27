@@ -1,9 +1,9 @@
 #pragma once
 
 #include "il2cpp-config.h"
-#include "blob.h"
-#include "metadata.h"
-#include "object-internals.h"
+#include "il2cpp-blob.h"
+#include "il2cpp-runtime-metadata.h"
+#include "il2cpp-object-internals.h"
 #include "vm/Array.h"
 #include "vm/Class.h"
 #include "vm/MarshalAlloc.h"
@@ -55,7 +55,7 @@ namespace vm
         static void MarshalStringBuilderResult(Il2CppStringBuilder* stringBuilder, char* buffer);
         static void MarshalWStringBuilderResult(Il2CppStringBuilder* stringBuilder, Il2CppChar* buffer);
 
-        static Il2CppIntPtr MarshalDelegate(Il2CppDelegate* d);
+        static intptr_t MarshalDelegate(Il2CppDelegate* d);
         static Il2CppDelegate* MarshalFunctionPointerToDelegate(void* functionPtr, Il2CppClass* delegateType);
 
         template<typename T>

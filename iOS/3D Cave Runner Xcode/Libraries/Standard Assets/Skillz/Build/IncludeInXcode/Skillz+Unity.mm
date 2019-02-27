@@ -45,6 +45,15 @@ static void PauseApp()
     UnityPause(true);
 }
 
+static void PauseAppWithDelay()
+{
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        PauseApp();
+    });
+}
+
 static void ResumeApp()
 {
     UnityPause(false);
@@ -110,7 +119,7 @@ static void ResumeApp()
 - (void)applicationDidBecomeActive:(UIApplication*)application
 {
     UnityPause(false);
-
+    
     if ([[Skillz skillzInstance] tournamentIsInProgress]) {
         [self.target applicationDidBecomeActive:application];
     }
@@ -137,32 +146,32 @@ BOOL isReportingScore = false;
 - (void)tournamentWillBegin:(NSDictionary *)gameParameters
               withMatchInfo:(SKZMatchInfo *)matchInfo
 {
-  dispatch_async(dispatch_get_main_queue(), ^{
-      ResumeApp();
-      isReportingScore = false;
-      // Send message to Unity object to call C# method
-      // SkillzDelegate.skillzTournamentWillBegin, implemented by publisher
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ResumeApp();
+        isReportingScore = false;
+        // Send message to Unity object to call C# method
+        // SkillzDelegate.skillzTournamentWillBegin, implemented by publisher
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wundeclared-selector"
-      NSString *json = [matchInfo performSelector:@selector(JSONStringRepresentation:)
-                                       withObject:gameParameters];
+        NSString *json = [matchInfo performSelector:@selector(JSONStringRepresentation:)
+                                         withObject:gameParameters];
 #pragma GCC diagnostic pop
-
-      [self updateCurrentMatchParams:gameParameters];
-
-      // There are two sendMessageToUnityObject calls here, one of them will silently fail and should not cause a crash.
-      // This sends a message to call the Unity iOS only skillzTournamentWillBegin method
-      [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                         callingMethod:@"skillzTournamentWillBegin"
-                      withParamMessage:json];
-
-      // This sends a message to call the Cross Platform OnMatchWillBegin method
-      [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                         callingMethod:@"OnMatchWillBegin"
-                      withParamMessage:json];
-      self.matchInfo = json;
-
-  });
+        
+        [self updateCurrentMatchParams:gameParameters];
+        
+        // There are two sendMessageToUnityObject calls here, one of them will silently fail and should not cause a crash.
+        // This sends a message to call the Unity iOS only skillzTournamentWillBegin method
+        [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                           callingMethod:@"skillzTournamentWillBegin"
+                        withParamMessage:json];
+        
+        // This sends a message to call the Cross Platform OnMatchWillBegin method
+        [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                           callingMethod:@"OnMatchWillBegin"
+                        withParamMessage:json];
+        self.matchInfo = json;
+        
+    });
 }
 
 - (void)skillzWillExit
@@ -176,8 +185,8 @@ BOOL isReportingScore = false;
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"skillzWillExit"
                     withParamMessage:@""];
- 
-     // This sends a message to call the Cross Platform OnSkillzWillExit method
+    
+    // This sends a message to call the Cross Platform OnSkillzWillExit method
     [Skillz sendMessageToUnityObject:unitySkillzDelegateName
                        callingMethod:@"OnSkillzWillExit"
                     withParamMessage:@""];
@@ -484,19 +493,8 @@ extern "C" int _getRandomNumberWithMinAndMax(int min, int max)
 // C-style wrapper for skillzInitForGameId:AndEnvironment: so that it can be accessed by Unity in C#
 extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const char *environment)
 {
-#if VCONLY
-    NSString *gameIdString = @"3616";
-    NSString *environmentString = @"SkillzProduction";
-#else
-    NSString *gameIdString = @"1410";
-    NSString *environmentString = @"SkillzProduction";
-#endif
-    
-    /*************
-     * Temporarily point to Staging
-     *************/
-    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
-    
+    NSString *gameIdString = [[NSString alloc] initWithUTF8String:gameId];
+    NSString *environmentString = [[NSString alloc] initWithUTF8String:environment];
     SkillzEnvironment skillzEnvironment;
     
     // Initialize the game in either sandbox or production based on the input
@@ -565,61 +563,61 @@ extern "C" void _showSDKVersionInfo()
 //Launches basic Skillz implementation for single match play.
 extern "C" void _launchSkillz()
 {
-  dispatch_async(dispatch_get_main_queue(), ^{
-      PauseApp();
-      [[Skillz skillzInstance] launchSkillz];
-  });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        PauseApp();
+        [[Skillz skillzInstance] launchSkillz];
+    });
 }
 
 // C-style wrapper for displayTournamentResultsWithScore so that it can be accessed by Unity in C#
 extern "C" void _displayTournamentResultsWithScore(int score)
 {
-  dispatch_async(dispatch_get_main_queue(), ^{
-      if (!isReportingScore) {
-          isReportingScore = true;
-          PauseApp();
-
-          [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
-                                                      withCompletion:^{
-                                                          isReportingScore = false;
-                                                      }];
-      }
-  });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!isReportingScore) {
+            isReportingScore = true;
+            PauseAppWithDelay();
+            
+            [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
+                                                        withCompletion:^{
+                                                            isReportingScore = false;
+                                                        }];
+        }
+    });
 }
 
 // C-style wrapper for displayTournamentResultsWithFloatScore so that it can be accessed by Unity in C#
 extern "C" void _displayTournamentResultsWithFloatScore(float score)
 {
-  dispatch_async(dispatch_get_main_queue(), ^{
-      if (!isReportingScore) {
-          isReportingScore = true;
-          PauseApp();
-
-          [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
-                                                      withCompletion:^{
-                                                          isReportingScore = false;
-                                                      }];
-      }
-  });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!isReportingScore) {
+            isReportingScore = true;
+            PauseAppWithDelay();
+            
+            [[Skillz skillzInstance] displayTournamentResultsWithScore:@(score)
+                                                        withCompletion:^{
+                                                            isReportingScore = false;
+                                                        }];
+        }
+    });
 }
 
 extern "C" void _displayTournamentResultsWithStringScore(const char *score)
 {
-  dispatch_async(dispatch_get_main_queue(), ^{
-      if (!isReportingScore) {
-          isReportingScore = true;
-          PauseApp();
-
-          NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-          f.numberStyle = NSNumberFormatterDecimalStyle;
-          NSNumber *playerScore = [f numberFromString:@(score)];
-
-          [[Skillz skillzInstance] displayTournamentResultsWithScore:playerScore
-                                                      withCompletion:^{
-                                                          isReportingScore = false;
-                                                      }];
-      }
-  });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!isReportingScore) {
+            isReportingScore = true;
+            PauseAppWithDelay();
+            
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            f.numberStyle = NSNumberFormatterDecimalStyle;
+            NSNumber *playerScore = [f numberFromString:@(score)];
+            
+            [[Skillz skillzInstance] displayTournamentResultsWithScore:playerScore
+                                                        withCompletion:^{
+                                                            isReportingScore = false;
+                                                        }];
+        }
+    });
 }
 
 // C-style wrapper for updatePlayersCurrentScore: so that is can be accessed by Unity in C#
@@ -649,37 +647,37 @@ extern "C" void _updatePlayersCurrentIntScore(int score)
 // C-style wrapper for notifyPlayerAbortWithCompletion so that it can be accessed by Unity in C#
 extern "C" void _notifyPlayerAbortWithCompletion()
 {
-  dispatch_async(dispatch_get_main_queue(), ^{
-      if (!isReportingScore) {
-          isReportingScore = true;
-          PauseApp();
-          [[Skillz skillzInstance] notifyPlayerAbortWithCompletion:^() {
-              // Send message to Unity object to call C# method
-              // SkillzDelegate.skillzWithPlayerAbort, implemented by publisher
-              isReportingScore = false;
-              [Skillz sendMessageToUnityObject:unitySkillzDelegateName
-                                 callingMethod:@"skillzWithPlayerAbort"
-                              withParamMessage:@""];
-          }];
-
-      }
-  });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!isReportingScore) {
+            isReportingScore = true;
+            PauseAppWithDelay();
+            [[Skillz skillzInstance] notifyPlayerAbortWithCompletion:^() {
+                // Send message to Unity object to call C# method
+                // SkillzDelegate.skillzWithPlayerAbort, implemented by publisher
+                isReportingScore = false;
+                [Skillz sendMessageToUnityObject:unitySkillzDelegateName
+                                   callingMethod:@"skillzWithPlayerAbort"
+                                withParamMessage:@""];
+            }];
+            
+        }
+    });
 }
 
 // C-style wrapper for completeTurnWithGameData so that it can be accessed by Unity in C#
 extern "C" void _completeTurnWithGameData(const char *gameData, const char *score, float playerCurrentTotalScore, float opponentCurrentTotalScore, const char * roundOutcome, const char * matchOutcome)
 {
     PauseApp();
-
+    
     NSString * roundOutcomeString = [[NSString alloc] initWithUTF8String:roundOutcome];
     NSString * matchOutcomeString = [[NSString alloc] initWithUTF8String:matchOutcome];
-
+    
     SKZTurnBasedRoundOutcome turnBasedRoundOutcome;
     SKZTurnBasedMatchOutcome turnBasedMatchOutcome;
-
+    
     turnBasedRoundOutcome = [Skillz getRoundOutcomeEnum:roundOutcomeString];
     turnBasedMatchOutcome = [Skillz getMatchOutcomeEnum:matchOutcomeString];
-
+    
     NSNumber *playerCurrentTotal;
     if (isnan(playerCurrentTotalScore))
     {
@@ -746,6 +744,36 @@ extern "C" const char *_getMatchRules() {
 
 extern "C" const char *_getMatchInfo() {
     return [((UnitySkillzSDKDelegate*)[Skillz skillzInstance].skillzDelegate).matchInfo UTF8String];
+}
+#pragma mark
+#pragma mark Audio Integration
+#pragma mark
+
+extern "C" void _setSkillzBackgroundMusic(const char *fileName)
+{
+    NSString* fileNameString = [NSString stringWithUTF8String:fileName];
+    NSLog(@"SkillzAudio Skillz+Unity.mm _setSkillzBackgroundMusic with file name: %@",fileNameString);
+    [[Skillz skillzInstance] setBackgroundMusicFile:fileNameString];
+}
+
+extern "C" void _setSkillzMusicVolume(float volume)
+{
+    [[Skillz skillzInstance] updateSkillzMusicVolume:volume];
+}
+
+extern "C" void _setSFXVolume(float volume)
+{
+    [[Skillz skillzInstance] setSFXVolume:volume];
+}
+
+extern "C" float _getSFXVolume()
+{
+    return (float)[[Skillz skillzInstance] getSFXVolume];
+}
+
+extern "C" float _getSkillzMusicVolume()
+{
+    return (float)[[Skillz skillzInstance] getBackgroundMusicVolume];
 }
 
 #pragma mark
@@ -823,4 +851,3 @@ extern "C" int _reconnectTimeLeftForPlayer(uint64_t playerId) {
 //##### End of C wrappers
 //#####
 //################################################################################
-

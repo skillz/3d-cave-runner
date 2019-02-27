@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppReflectionType;
 struct mscorlib_System___ComObject;
@@ -20,7 +20,7 @@ namespace System
     public:
         static mscorlib_System___ComObject * CreateRCW(Il2CppReflectionType * t);
         static void ReleaseInterfaces(mscorlib_System___ComObject * thisPtr);
-        static Il2CppIntPtr GetInterfaceInternal(mscorlib_System___ComObject * thisPtr, Il2CppReflectionType * t, bool throwException);
+        static intptr_t GetInterfaceInternal(mscorlib_System___ComObject * thisPtr, Il2CppReflectionType * t, bool throwException);
     };
 } /* namespace System */
 } /* namespace mscorlib */

@@ -1,6 +1,6 @@
 #pragma once
 #if NET_4_0
-#include "object-internals.h"
+#include "il2cpp-object-internals.h"
 
 struct Il2CppInternalThread;
 
@@ -17,7 +17,7 @@ namespace Threading
     class LIBIL2CPP_CODEGEN_API InternalThread
     {
     public:
-        static void Thread_free_internal(Il2CppInternalThread* _this, Il2CppIntPtr handle);
+        static void Thread_free_internal(Il2CppInternalThread* _this);
     };
 } // namespace Threading
 } // namespace System

@@ -1,7 +1,5 @@
 #pragma once
 
-#define UNITY_TVOS_SIMULATOR_FAKE_REMOTE (PLATFORM_TVOS && TARGET_TVOS_SIMULATOR)
-
 enum LocationServiceStatus
 {
     kLocationServiceStopped,

@@ -119,9 +119,17 @@ typedef enum
     deviceiPhone7       = 31,
     deviceiPhone7Plus   = 32,
     deviceiPodTouch6Gen = 33,
-    deviceiPad5Gen = 34,
+    deviceiPad5Gen      = 34,
     deviceiPadPro2Gen = 35,
     deviceiPadPro10Inch2Gen = 36,
+    deviceiPhone8       = 37,
+    deviceiPhone8Plus   = 38,
+    deviceiPhoneX       = 39,
+    deviceiPhoneXS      = 40,
+    deviceiPhoneXSMax   = 41,
+    deviceiPhoneXR      = 42,
+    deviceiPadPro11Inch = 43,
+    deviceiPadPro3Gen   = 44,
 
     deviceiPhoneUnknown     = 10001,
     deviceiPadUnknown       = 10002,
@@ -176,6 +184,17 @@ typedef enum
 }
 ViewTouchProcessing;
 
+// be aware that this enum is shared with unity implementation so you should absolutely not change it
+typedef enum
+    KeyboardStatus
+{
+    Visible     = 0,
+    Done        = 1,
+    Canceled    = 2,
+    LostFocus   = 3,
+}
+KeyboardStatus;
+
 #ifdef __cplusplus
 extern bool _ios42orNewer;
 extern bool _ios43orNewer;
@@ -188,4 +207,10 @@ extern bool _ios82orNewer;
 extern bool _ios90orNewer;
 extern bool _ios91orNewer;
 extern bool _ios100orNewer;
+extern bool _ios101orNewer;
+extern bool _ios102orNewer;
+extern bool _ios103orNewer;
+extern bool _ios110orNewer;
+extern bool _ios111orNewer;
+extern bool _ios112orNewer;
 #endif
