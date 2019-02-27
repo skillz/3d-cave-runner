@@ -28,13 +28,12 @@ static int SelectRenderingAPIImpl();
 
 static bool _enableRunLoopAcceptInput = false;
 
-
 @implementation UnityAppController (Rendering)
 
 - (void)createDisplayLink
 {
     _displayLink = [CADisplayLink displayLinkWithTarget: self selector: @selector(repaintDisplayLink)];
-    [self callbackFramerateChange: UnityGetTargetFPS()];
+    [self callbackFramerateChange: -1];
     [_displayLink addToRunLoop: [NSRunLoop currentRunLoop] forMode: NSRunLoopCommonModes];
 }
 
@@ -85,8 +84,10 @@ static bool _enableRunLoopAcceptInput = false;
 
 - (void)repaint
 {
+#if UNITY_SUPPORT_ROTATION
     [self checkOrientationRequest];
-    [_unityView recreateGLESSurfaceIfNeeded];
+#endif
+    [_unityView recreateRenderingSurfaceIfNeeded];
     UnityDeliverUIEvents();
 
     if (!UnityIsPaused())
@@ -100,7 +101,7 @@ static bool _enableRunLoopAcceptInput = false;
 
     [self shouldAttachRenderDelegate];
     [_renderDelegate mainDisplayInited: _mainDisplay.surface];
-    [_unityView recreateGLESSurface];
+    [_unityView recreateRenderingSurface];
 
     _mainDisplay.surface->allowScreenshot = 1;
 }
@@ -116,15 +117,14 @@ static bool _enableRunLoopAcceptInput = false;
 
 - (void)callbackFramerateChange:(int)targetFPS
 {
+    int maxFPS = (int)[UIScreen mainScreen].maximumFramesPerSecond;
     if (targetFPS <= 0)
-        targetFPS = 60;
+        targetFPS = UnityGetTargetFPS();
+    if (targetFPS > maxFPS)
+        targetFPS = maxFPS;
 
-    int animationFrameInterval = (60.0f / targetFPS);
-    if (animationFrameInterval < 1)
-        animationFrameInterval = 1;
-    _enableRunLoopAcceptInput = (animationFrameInterval == 1 && UnityDeviceCPUCount() > 1);
-
-    [_displayLink setFrameInterval: animationFrameInterval];
+    _enableRunLoopAcceptInput = (targetFPS == maxFPS && UnityDeviceCPUCount() > 1);
+    _displayLink.preferredFramesPerSecond = targetFPS;
 }
 
 - (void)selectRenderingAPI
@@ -219,8 +219,6 @@ static int SelectRenderingAPIImpl()
         // GLES3
         if (api == apiOpenGLES3)
         {
-            if (!_ios70orNewer)
-                continue;
             if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES3))
                 continue;
             return api;
@@ -242,6 +240,7 @@ extern "C" NSBundle*            UnityGetMetalBundle()       {
 }
 extern "C" MTLDeviceRef         UnityGetMetalDevice()       { return _MetalDevice; }
 extern "C" MTLCommandQueueRef   UnityGetMetalCommandQueue() { return ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->commandQueue; }
+extern "C" MTLCommandQueueRef   UnityGetMetalDrawableCommandQueue() { return ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->drawableCommandQueue; }
 
 extern "C" EAGLContext*         UnityGetDataContextEAGL()   {
     return _GlesContext;

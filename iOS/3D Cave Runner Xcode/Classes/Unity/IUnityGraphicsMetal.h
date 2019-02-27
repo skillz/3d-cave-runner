@@ -13,11 +13,12 @@
 @protocol MTLCommandBuffer;
 @protocol MTLCommandEncoder;
 @protocol MTLTexture;
+@class MTLRenderPassDescriptor;
 
-// Should only be used on the rendering thread unless noted otherwise.
-UNITY_DECLARE_INTERFACE(IUnityGraphicsMetal)
+
+UNITY_DECLARE_INTERFACE(IUnityGraphicsMetalV1)
 {
-    NSBundle*               (UNITY_INTERFACE_API * MetalBundle)();
+    NSBundle* (UNITY_INTERFACE_API * MetalBundle)();
     id<MTLDevice>(UNITY_INTERFACE_API * MetalDevice)();
 
     id<MTLCommandBuffer>(UNITY_INTERFACE_API * CurrentCommandBuffer)();
@@ -29,6 +30,9 @@ UNITY_DECLARE_INTERFACE(IUnityGraphicsMetal)
     // In that case you should end unity's encoder before creating your own and end yours before returning control to unity
     void(UNITY_INTERFACE_API * EndCurrentCommandEncoder)();
 
+    // returns MTLRenderPassDescriptor used to create current MTLCommandEncoder
+    MTLRenderPassDescriptor* (UNITY_INTERFACE_API * CurrentRenderPassDescriptor)();
+
     // converting trampoline UnityRenderBufferHandle into native RenderBuffer
     UnityRenderBuffer(UNITY_INTERFACE_API * RenderBufferFromHandle)(void* bufferHandle);
 
@@ -36,6 +40,27 @@ UNITY_DECLARE_INTERFACE(IUnityGraphicsMetal)
     // NB: you pass here *native* RenderBuffer, acquired by calling (C#) RenderBuffer.GetNativeRenderBufferPtr
     // AAResolvedTextureFromRenderBuffer will return nil in case of non-AA RenderBuffer or if called for depth RenderBuffer
     // StencilTextureFromRenderBuffer will return nil in case of no-stencil RenderBuffer or if called for color RenderBuffer
+    id<MTLTexture>(UNITY_INTERFACE_API * TextureFromRenderBuffer)(UnityRenderBuffer buffer);
+    id<MTLTexture>(UNITY_INTERFACE_API * AAResolvedTextureFromRenderBuffer)(UnityRenderBuffer buffer);
+    id<MTLTexture>(UNITY_INTERFACE_API * StencilTextureFromRenderBuffer)(UnityRenderBuffer buffer);
+};
+UNITY_REGISTER_INTERFACE_GUID(0x29F8F3D03833465EULL, 0x92138551C15D823DULL, IUnityGraphicsMetalV1)
+
+
+// deprecated: please use versioned interface above
+
+UNITY_DECLARE_INTERFACE(IUnityGraphicsMetal)
+{
+    NSBundle* (UNITY_INTERFACE_API * MetalBundle)();
+    id<MTLDevice>(UNITY_INTERFACE_API * MetalDevice)();
+
+    id<MTLCommandBuffer>(UNITY_INTERFACE_API * CurrentCommandBuffer)();
+    id<MTLCommandEncoder>(UNITY_INTERFACE_API * CurrentCommandEncoder)();
+    void(UNITY_INTERFACE_API * EndCurrentCommandEncoder)();
+    MTLRenderPassDescriptor* (UNITY_INTERFACE_API * CurrentRenderPassDescriptor)();
+
+    UnityRenderBuffer(UNITY_INTERFACE_API * RenderBufferFromHandle)(void* bufferHandle);
+
     id<MTLTexture>(UNITY_INTERFACE_API * TextureFromRenderBuffer)(UnityRenderBuffer buffer);
     id<MTLTexture>(UNITY_INTERFACE_API * AAResolvedTextureFromRenderBuffer)(UnityRenderBuffer buffer);
     id<MTLTexture>(UNITY_INTERFACE_API * StencilTextureFromRenderBuffer)(UnityRenderBuffer buffer);

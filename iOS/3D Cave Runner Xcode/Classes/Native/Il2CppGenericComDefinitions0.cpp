@@ -7,8 +7,9 @@
 #endif
 
 
-#include "class-internals.h"
+#include "il2cpp-class-internals.h"
 #include "codegen/il2cpp-codegen.h"
+
 
 
 

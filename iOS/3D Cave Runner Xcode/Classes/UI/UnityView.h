@@ -1,17 +1,13 @@
 #pragma once
 
-#include "Unity/GlesHelper.h"
-#include "iPhone_Sensors.h"
-
-// unity common base for UIView ready to be rendered into
-#ifdef __OBJC__
 @interface UnityRenderingView : UIView {}
 + (void)InitializeForAPI:(UnityRenderingAPI)api;
 @end
-#endif
 
 @interface UnityView : UnityRenderingView
 {
+    @private ScreenOrientation _curOrientation;
+    @private BOOL _shouldRecreateView;
 }
 
 // we take scale factor into account because gl backbuffer size depends on it
@@ -23,28 +19,27 @@
 // that allows to handle simple overlay child view layout without doing view controller magic
 - (void)layoutSubviews;
 
-#if !PLATFORM_TVOS
-// will simply update content orientation (it might be tweaked in layoutSubviews, due to disagreement between unity and view controller)
-- (void)willRotateToOrientation:(UIInterfaceOrientation)toOrientation fromOrientation:(UIInterfaceOrientation)fromOrientation;
-#endif
-
-// will recreate gles backing if needed and repaint once to make sure we dont have black frame creeping in
-- (void)didRotate;
-
-- (void)recreateGLESSurfaceIfNeeded;
-- (void)recreateGLESSurface;
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;
-- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event;
-- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event;
-- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event;
-
-#if UNITY_TVOS_SIMULATOR_FAKE_REMOTE
-- (void)pressesBegan:(NSSet<UIPress*>*)presses withEvent:(UIEvent*)event;
-- (void)pressesEnded:(NSSet<UIPress*>*)presses withEvent:(UIEvent*)event;
-#endif
+- (void)recreateRenderingSurfaceIfNeeded;
+- (void)recreateRenderingSurface;
 
 // will match script-side Screen.orientation
 @property (nonatomic, readonly) ScreenOrientation contentOrientation;
 
 @end
+
+@interface UnityView (Deprecated)
+- (void)recreateGLESSurfaceIfNeeded __deprecated_msg("use recreateRenderingSurfaceIfNeeded instead.");
+- (void)recreateGLESSurface __deprecated_msg("use recreateRenderingSurface instead.");
+@end
+
+#if PLATFORM_IOS
+    #include "UnityView+iOS.h"
+#elif PLATFORM_TVOS
+    #include "UnityView+tvOS.h"
+#endif
+
+void ReportSafeAreaChangeForView(UIView* view);
+
+// Computes safe area for a view in Unity coordinate system (origin of the view
+// is bottom-left, as compared to standard top-left)
+CGRect ComputeSafeArea(UIView* view);

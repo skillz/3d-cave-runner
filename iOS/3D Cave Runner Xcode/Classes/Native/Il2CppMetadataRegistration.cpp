@@ -13,8 +13,9 @@
 #include <limits>
 #include <assert.h>
 
-#include "class-internals.h"
+#include "il2cpp-class-internals.h"
 #include "codegen/il2cpp-codegen.h"
+
 
 
 
@@ -34,20 +35,20 @@ extern const Il2CppTypeDefinitionSizes* g_Il2CppTypeDefinitionSizesTable[];
 extern void** const g_MetadataUsages[];
 extern const Il2CppMetadataRegistration g_MetadataRegistration = 
 {
-	1513,
+	1514,
 	s_Il2CppGenericTypes,
-	450,
+	425,
 	g_Il2CppGenericInstTable,
-	2671,
+	2552,
 	s_Il2CppGenericMethodFunctions,
-	6511,
+	6556,
 	g_Il2CppTypeTable,
-	2950,
+	2802,
 	g_Il2CppMethodSpecTable,
-	1620,
+	1653,
 	g_FieldOffsetTable,
-	1620,
+	1653,
 	g_Il2CppTypeDefinitionSizesTable,
-	5813,
+	5661,
 	g_MetadataUsages,
 };

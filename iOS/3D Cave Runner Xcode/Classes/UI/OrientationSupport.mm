@@ -63,6 +63,32 @@ ScreenOrientation ConvertToUnityScreenOrientation(UIInterfaceOrientation orient)
     }
 }
 
+// Replacement for UIViewController.interfaceOrientation which is obsolete since iOS 8.0
+UIInterfaceOrientation UIViewControllerInterfaceOrientation(UIViewController* c)
+{
+    // [UIScreen coordinateSpace] is only available on iOS 8+
+    // [UIViewController interfaceOrientation] is obsolete in iOS 8+
+    if (!_ios80orNewer)
+        return c.interfaceOrientation;
+
+    CGPoint fixedPoint = [c.view.window.screen.coordinateSpace convertPoint: CGPointMake(0.0, 0.0) toCoordinateSpace: c.view.window.screen.fixedCoordinateSpace];
+
+    if (fabs(fixedPoint.x) < FLT_EPSILON)
+    {
+        if (fabs(fixedPoint.y) < FLT_EPSILON)
+            return UIInterfaceOrientationPortrait;
+        else
+            return UIInterfaceOrientationLandscapeLeft;
+    }
+    else
+    {
+        if (fabs(fixedPoint.y) < FLT_EPSILON)
+            return UIInterfaceOrientationLandscapeRight;
+        else
+            return UIInterfaceOrientationPortraitUpsideDown;
+    }
+}
+
 #endif
 
 ScreenOrientation UIViewControllerOrientation(UIViewController* controller)
@@ -70,7 +96,7 @@ ScreenOrientation UIViewControllerOrientation(UIViewController* controller)
 #if PLATFORM_TVOS
     return UNITY_TVOS_ORIENTATION;
 #else
-    return ConvertToUnityScreenOrientation(controller.interfaceOrientation);
+    return ConvertToUnityScreenOrientation(UIViewControllerInterfaceOrientation(controller));
 #endif
 }
 

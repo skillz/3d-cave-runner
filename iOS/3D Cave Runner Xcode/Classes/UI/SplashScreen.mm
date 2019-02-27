@@ -2,6 +2,7 @@
 #include "UnityViewControllerBase.h"
 #include "OrientationSupport.h"
 #include "Unity/ObjCRuntime.h"
+#include "UI/UnityView.h"
 #include <cstring>
 
 extern "C" const char* UnityGetLaunchScreenXib();
@@ -45,84 +46,76 @@ static const char* GetOrientationSuffix(ScreenOrientation orient)
     bool rotateToPortrait  = _canRotateToPortrait || _canRotateToPortraitUpsideDown;
     bool rotateToLandscape = _canRotateToLandscapeLeft || _canRotateToLandscapeRight;
 
-    if (_isOrientable)
-    {
-        if (orientPortrait && rotateToPortrait)
-            return "-Portrait";
-        else if (orientLandscape && rotateToLandscape)
-            return "-Landscape";
-        else if (rotateToPortrait)
-            return "-Portrait";
-        else
-            return "-Landscape";
-    }
-    return "";
+    if (orientPortrait && rotateToPortrait)
+        return "-Portrait";
+    else if (orientLandscape && rotateToLandscape)
+        return "-Landscape";
+    else if (rotateToPortrait)
+        return "-Portrait";
+    else
+        return "-Landscape";
 }
 
-// Returns a launch image filename for launch images from asset catalogs
-static NSString* GetLaunchImageName(UIUserInterfaceIdiom idiom, const CGSize& screenSize)
-{
-    NSString* name = @"LaunchImage";
-
-    // Here we work around an iOS bug that results in incorrect images
-    // being fetched from launch image asset catalogs.
-    if (idiom == UIUserInterfaceIdiomPad)                         // any iPad
-        name = @"LaunchImage~iPad";
-    else if (idiom == UIUserInterfaceIdiomPhone)
-    {
-        if (screenSize.height == 568 || screenSize.width == 568) // iPhone 5
-            name = @"LaunchImage~568h";
-        else if (screenSize.height == 667 || screenSize.width == 667) // iPhone 6
-            name = @"LaunchImage~667h";
-        else if (screenSize.height == 736 || screenSize.width == 736) // iPhone 6+
-            name = @"LaunchImage~736h";
-    }
-    return name;
-}
-
-// Returns a launch image filename for launch images stored on file system,
-// not on asset catalog
-static NSString* GetLaunchImageFileName(UIUserInterfaceIdiom idiom, const CGSize& screenSize,
+// Returns a launch image name for launch images stored on file system or asset catalog
+static NSArray<NSString*>* GetLaunchImageNames(UIUserInterfaceIdiom idiom, const CGSize& screenSize,
     ScreenOrientation orient)
 {
-    NSString* name = nil;
+    NSMutableArray<NSString*>* ret = [[NSMutableArray<NSString *> alloc] init];
+
     if (idiom == UIUserInterfaceIdiomPad)
     {
         // iPads
         const char* iOSSuffix = _ios70orNewer ? "-700" : "";
         const char* orientSuffix = GetOrientationSuffix(orient);
         const char* scaleSuffix = GetScaleSuffix([UIScreen mainScreen].scale, 2.0);
-        name = [NSString stringWithFormat: @"LaunchImage%s%s%s~ipad",
-                iOSSuffix, orientSuffix, scaleSuffix];
+        [ret addObject: [NSString stringWithFormat: @"LaunchImage%s%s%s~ipad",
+                         iOSSuffix, orientSuffix, scaleSuffix]];
     }
     else
     {
         // iPhones
         float scale = [UIScreen mainScreen].scale;
-        const char* scaleSuffix = GetScaleSuffix(scale, 3.0);
-        const char* iOSSuffix = _ios70orNewer ? "-700" : "";
-        const char* orientSuffix = GetOrientationSuffix(orient);
-        const char* resolutionSuffix = "";
 
-        if (screenSize.height == 568 || screenSize.width == 568) // iPhone5
-            resolutionSuffix = "-568h";
-        else if (screenSize.height == 667 || screenSize.width == 667) // iPhone6
-        {
-            resolutionSuffix = "-667h";
-            iOSSuffix = "-800";
+        // Note that on pre-iOS 11 using modifiers such as LaunchImage~568h works. Since
+        // iOS launch image support is quite hard to get right and has _many_ gotchas, we
+        // just use the old code path on these devices.
 
-            if (scale > 2.0) // iPhone6+ in display zoom mode
-                scaleSuffix = "@2x";
-        }
-        else if (screenSize.height == 736 || screenSize.width == 736) // iPhone6+
+        if (screenSize.height == 568 || screenSize.width == 568) // iPhone 5
         {
-            resolutionSuffix = "-736h";
-            iOSSuffix = "-800";
+            const char* iOS7Suffix = _ios70orNewer ? "-700" : "";
+
+            [ret addObject: [NSString stringWithFormat: @"LaunchImage%s-568h@2x", iOS7Suffix]];
+            [ret addObject: @"LaunchImage~568h"];
         }
-        name = [NSString stringWithFormat: @"LaunchImage%s%s%s%s",
-                iOSSuffix, orientSuffix, resolutionSuffix, scaleSuffix];
+        else if (screenSize.height == 667 || screenSize.width == 667) // iPhone 6
+        {
+            // note that scale may be 3.0 if display zoom is enabled
+            if (scale < 2.0) // not expected, but handle just in case. Image name is valid
+                [ret addObject: @"LaunchImage-800-667h"];
+            [ret addObject: @"LaunchImage-800-667h@2x"];
+            [ret addObject: @"LaunchImage~667h"];
+        }
+        else if (screenSize.height == 736 || screenSize.width == 736) // iPhone 6+
+        {
+            const char* orientSuffix = GetOrientationSuffix(orient);
+            if (scale < 3.0) // not expected, but handle just in case. Image name is valid
+                [ret addObject: [NSString stringWithFormat: @"LaunchImage-800%s-736h", orientSuffix]];
+            [ret addObject: [NSString stringWithFormat: @"LaunchImage-800%s-736h@3x", orientSuffix]];
+            [ret addObject: @"LaunchImage~736h"];
+        }
+        else if (screenSize.height == 812 || screenSize.width == 812) // iPhone X
+        {
+            const char* orientSuffix = GetOrientationSuffix(orient);
+            if (scale < 3.0) // not expected, but handle just in case. Image name is valid
+                [ret addObject: [NSString stringWithFormat: @"LaunchImage-1100%s-2436h", orientSuffix]];
+            [ret addObject: [NSString stringWithFormat: @"LaunchImage-1100%s-2436h@3x", orientSuffix]];
+        }
+
+        if (scale > 1.0)
+            [ret addObject: @"LaunchImage@2x"];
     }
-    return name;
+    [ret addObject: @"LaunchImage"];
+    return ret;
 }
 
 @implementation SplashScreen
@@ -151,6 +144,8 @@ static NSString* GetLaunchImageFileName(UIUserInterfaceIdiom idiom, const CGSize
     LaunchImage-800-667h@2x.png
     LaunchImage-800-Landscape-736h@3x.png
     LaunchImage-800-Portrait-736h@3x.png
+    LaunchImage-1100-Landscape-2436h@3x.png
+    LaunchImage-1100-Portrait-2436h@3x.png
     LaunchImage-Landscape@2x~ipad.png
     LaunchImage-Landscape~ipad.png
     LaunchImage-Portrait@2x~ipad.png
@@ -160,6 +155,11 @@ static NSString* GetLaunchImageFileName(UIUserInterfaceIdiom idiom, const CGSize
 {
     CGFloat scale = UnityScreenScaleFactor([UIScreen mainScreen]);
     UnityReportResizeView(self.bounds.size.width * scale, self.bounds.size.height * scale, orient);
+
+    // Storyboards should have a view controller to automatically configure orientation
+    bool hasStoryboard = [[NSBundle mainBundle] pathForResource: @"LaunchScreen" ofType: @"storyboardc"] != nullptr;
+    if (hasStoryboard)
+        return;
 
     UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
 
@@ -187,23 +187,41 @@ static NSString* GetLaunchImageFileName(UIUserInterfaceIdiom idiom, const CGSize
     UIImage* image = nil;
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
 
-    // Try asset catalog on iOS 7.0+. Note, that we can't be sure that asset
-    // catalog is used, because the deployment target might have been lower and
-    // thus old launch images are used.
-    if (_ios70orNewer)
+    // For launch images we implement fallback order with multiple images. First we try images via
+    // [UIImage imageNamed] method and if this fails, we try to load from filesystem directly.
+    // Note that file system resource names and image names accepted by UIImage are the same.
+    // Multiple fallbacks are implemented because different iOS versions behave differently and have
+    // many gotchas that are hard to get right. So we use the images that are present on app bundles
+    // made with latest version of Xcode as the first priority and then fall back to any image that we
+    // have used at some time in the past.
+    NSArray<NSString*>* imageNames = GetLaunchImageNames(idiom, screenSize, orient);
+
+    for (NSString* imageName in imageNames)
     {
-        NSString* imageName = GetLaunchImageName(idiom, screenSize);
         image = [UIImage imageNamed: imageName];
+        if (image)
+            break;
     }
 
     if (image == nil)
     {
         // Old launch image from file
-        NSString* imageName = GetLaunchImageFileName(idiom, screenSize, orient);
-        NSString* imagePath = [[NSBundle mainBundle] pathForResource: imageName ofType: @"png"];
+        for (NSString* imageName in imageNames)
+        {
+            image = [UIImage imageNamed: imageName];
+            if (image)
+                break;
 
-        image = [UIImage imageWithContentsOfFile: imagePath];
+            NSString* imagePath = [[NSBundle mainBundle] pathForResource: imageName ofType: @"png"];
+            image = [UIImage imageWithContentsOfFile: imagePath];
+            if (image)
+                break;
+        }
     }
+
+    // should not ever happen, but just in case
+    if (image == nil)
+        return;
 
     if (self->m_ImageView == nil)
     {
@@ -304,8 +322,8 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 
     CGSize size = [[UIScreen mainScreen] bounds].size;
 
-    // iPads and iPhone 6+ have orientable splash screen
-    _isOrientable = isIpad || (size.height == 736 || size.width == 736);
+    // iPads and iPhone 6+ and iOS11 have orientable splash screen
+    _isOrientable = isIpad || (size.height == 736 || size.width == 736) || _ios110orNewer;
 
     // Launch screens are used only on iOS8+ iPhones
     const char* xib = UnityGetLaunchScreenXib();
@@ -349,10 +367,11 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
             _nonOrientableDefaultOrientation = landscapeRight;
     }
 
+    window.rootViewController = self;
+
     self.view = _splash;
 
     [window addSubview: _splash];
-    window.rootViewController = self;
     [window bringSubviewToFront: _splash];
 
     ScreenOrientation orient = UIViewControllerOrientation(self);
@@ -360,6 +379,10 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 
     if (!_isOrientable)
         orient = _nonOrientableDefaultOrientation;
+
+    // Fix iPhone 5,6 launch images (only in portrait) from being stretched
+    if (isIphone && _isOrientable && !_usesLaunchscreen && ((size.height == 568 || size.width == 568) || (size.height == 667 || size.width == 667)))
+        orient = portrait;
 
     OrientView([SplashScreenController Instance], _splash, orient);
 }
@@ -394,8 +417,22 @@ static void ViewWillTransitionToSize_DefaultImpl(id self_, SEL _cmd, CGSize size
 
 void ShowSplashScreen(UIWindow* window)
 {
-    _controller = [[SplashScreenController alloc] init];
-    [_controller create: window];
+    bool hasStoryboard = [[NSBundle mainBundle] pathForResource: @"LaunchScreen" ofType: @"storyboardc"] != nullptr;
+
+    if (hasStoryboard)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName: @"LaunchScreen" bundle: [NSBundle mainBundle]];
+
+        _controller = [storyboard instantiateInitialViewController];
+        window.rootViewController = _controller;
+    }
+    else
+    {
+        _controller = [[SplashScreenController alloc] init];
+        [_controller create: window];
+    }
+
+    [window makeKeyAndVisible];
 }
 
 void HideSplashScreen()

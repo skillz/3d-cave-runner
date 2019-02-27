@@ -426,7 +426,7 @@ static bool _AudioRouteWasChanged = false;
         ];
     }
 
-    if (_player.currentItem == _playerItem)
+    if (_player.currentItem != _playerItem)
         [_player replaceCurrentItemWithPlayerItem: _playerItem];
     else
         [_player seekToTime: kCMTimeZero];

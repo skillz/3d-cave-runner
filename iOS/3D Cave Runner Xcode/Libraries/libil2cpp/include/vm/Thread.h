@@ -98,7 +98,7 @@ namespace vm
         static ThreadState GetState(Il2CppThread *thread);
         static void ClrState(Il2CppThread* thread, ThreadState clr);
 
-        static void MemoryBarrier();
+        static void FullMemoryBarrier();
 
         static int32_t GetNewManagedId();
 
@@ -122,23 +122,6 @@ namespace vm
 
     private:
         static Il2CppThread* s_MainThread;
-    };
-
-    class ThreadAttacher : il2cpp::utils::NonCopyable
-    {
-    public:
-        ThreadAttacher(Il2CppDomain *domain)
-        {
-            m_Thread = Thread::Attach(domain);
-        }
-
-        ~ThreadAttacher()
-        {
-            Thread::Detach(m_Thread);
-        }
-
-    private:
-        Il2CppThread* m_Thread;
     };
 
     class ThreadStateSetter : il2cpp::utils::NonCopyable

@@ -1,6 +1,6 @@
 #pragma once
 
-// we allow to build with sdk 7.0 (and run on ios6) so we need to take an extra care about Metal support
+// we allow to build with sdk 9.0 (and run on ios7) so we need to take an extra care about Metal support
 // it is expected to substitute Metal.h so only objc
 
 #ifdef __cplusplus
