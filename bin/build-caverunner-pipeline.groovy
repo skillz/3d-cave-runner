@@ -24,7 +24,10 @@ pipeline {
     stage ('Copy Skillz Framework Artifacts') {
       steps {
         script {
-          copyArtifacts filter: '**/Skillz.framework.zip,**/Skillz.framework.dSYM.zip,**/Skillz_DEBUG.framework.zip,**/Skillz_DEBUG.framework.dSYM.zip', fingerprintArtifacts: true, flatten: true, projectName: '../SDK-Framework/SDK-Framework-Mercury', selector: specific('${sdk_build_number}')
+          sh '''
+            echo "Copy frameworks"
+          '''
+          // copyArtifacts filter: '**/Skillz.framework.zip,**/Skillz.framework.dSYM.zip,**/Skillz_DEBUG.framework.zip,**/Skillz_DEBUG.framework.dSYM.zip', fingerprintArtifacts: true, flatten: true, projectName: '../SDK-Framework/SDK-Framework-Mercury', selector: specific('${sdk_build_number}')
         }
       }
     }
@@ -35,8 +38,12 @@ pipeline {
           steps {
             script {
               sh '''
-                sh ./bin/build-caverunner-ios.sh
+                echo "Build iOS"
               '''
+
+              // sh '''
+              //   sh ./bin/build-caverunner-ios.sh
+              // '''
             }
           }
         }
@@ -53,7 +60,8 @@ pipeline {
     }
     stage ('Archive Artifacts') {
       steps {
-        archiveArtifacts '**/**.apk, Android/3D Cave Runner - Android Studio/app/build/outputs/dexcount/, **/**.xcarchive.zip, **/**.ipa, *.zip'
+        archiveArtifacts '**/**.apk, Android/3D Cave Runner - Android Studio/app/build/outputs/dexcount/'
+        // archiveArtifacts '**/**.xcarchive.zip, **/**.ipa, *.zip'
       }
     }
   }
