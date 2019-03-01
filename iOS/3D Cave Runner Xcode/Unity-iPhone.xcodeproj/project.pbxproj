@@ -86,7 +86,7 @@
 		960391221D6CE46E003BF157 /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960391211D6CE46E003BF157 /* MediaToolbox.framework */; };
 		AA5D99871AFAD3C800B27605 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5D99861AFAD3C800B27605 /* CoreText.framework */; };
 		AB5646CBAADA861C26B20232 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2048289866770E07F4779D /* Metal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		B331798D2225F12400A5E35D /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B331798C2225F12400A5E35D /* Data */; };
+		B331798D2225F12400A5E35D /* (null) in Resources */ = {isa = PBXBuildFile; };
 		B33179D92225FEF800A5E35D /* UnityReplayKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33179B42225FEF800A5E35D /* UnityReplayKit.mm */; };
 		B33179DA2225FEF800A5E35D /* OnDemandResources.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33179B82225FEF800A5E35D /* OnDemandResources.mm */; };
 		B33179DB2225FEF800A5E35D /* AVCapture.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33179B92225FEF800A5E35D /* AVCapture.mm */; };
@@ -182,14 +182,12 @@
 		B3317A812225FF4C00A5E35D /* Il2CppCompilerCalculateTypeValues_12Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3317A362225FF4C00A5E35D /* Il2CppCompilerCalculateTypeValues_12Table.cpp */; };
 		B3317C7C2226008B00A5E35D /* Il2CppOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3317A832226008A00A5E35D /* Il2CppOptions.cpp */; };
 		B3317C7D2226008B00A5E35D /* RegisterFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3317A842226008A00A5E35D /* RegisterFeatures.cpp */; };
-		B3317C7E2226008B00A5E35D /* Skillz+Unity.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3317A892226008A00A5E35D /* Skillz+Unity.mm */; };
+		B3317C7E2226008B00A5E35D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B3317C7F2226008B00A5E35D /* libiPhone-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3317A8A2226008B00A5E35D /* libiPhone-lib.a */; };
 		B3317C802226008B00A5E35D /* libil2cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3317A8C2226008B00A5E35D /* libil2cpp.a */; };
 		B3317C812226008B00A5E35D /* RegisterMonoModules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3317A8D2226008B00A5E35D /* RegisterMonoModules.cpp */; };
 		B3317C822226008B00A5E35D /* libil2cpp.icalls in Resources */ = {isa = PBXBuildFile; fileRef = B3317A9D2226008B00A5E35D /* libil2cpp.icalls */; };
 		B3317C832226008B00A5E35D /* libil2cpp.def in Resources */ = {isa = PBXBuildFile; fileRef = B3317BBE2226008B00A5E35D /* libil2cpp.def */; };
-		B3317CB52226038900A5E35D /* Skillz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3317CAA2226035300A5E35D /* Skillz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B3317CB62226039C00A5E35D /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3317CAA2226035300A5E35D /* Skillz.framework */; };
 		B3487D9622261CDE00ADE824 /* OrientationSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D7F22261CDD00ADE824 /* OrientationSupport.mm */; };
 		B3487D9722261CDE00ADE824 /* Keyboard.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D8422261CDD00ADE824 /* Keyboard.mm */; };
 		B3487D9822261CDE00ADE824 /* UnityView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D8522261CDD00ADE824 /* UnityView.mm */; };
@@ -202,55 +200,11 @@
 		B3487D9F22261CDE00ADE824 /* UnityAppController+ViewHandling.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D9022261CDD00ADE824 /* UnityAppController+ViewHandling.mm */; };
 		B3487DA022261CDE00ADE824 /* UnityViewControllerBase+tvOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D9222261CDD00ADE824 /* UnityViewControllerBase+tvOS.mm */; };
 		B3487DA122261CDE00ADE824 /* UnityView+iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D9522261CDD00ADE824 /* UnityView+iOS.mm */; };
+		B378DA582229C99B00C0EDE8 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B378DA512229C99B00C0EDE8 /* Data */; };
 		B5AF4ECCAEB05F0C7CC8FD56 /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DA487EA73B2C86D4890FBB /* Skillz.framework */; };
 		F46D40AD8ECEF940A1BE9389 /* LaunchScreen-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564F49BFB92D74043C2023BC /* LaunchScreen-iPad.png */; };
 		FDB649BC9EFD7594A4A4DE0C /* LaunchScreen-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB094AFDA4821CB624E60AAA /* LaunchScreen-iPhone.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B3317CA92226035300A5E35D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DF9908091B84CF36007E1CE7;
-			remoteInfo = Skillz;
-		};
-		B3317CAB2226035300A5E35D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DF23020018AD868100CB466F;
-			remoteInfo = "QnD-P";
-		};
-		B3317CAD2226035300A5E35D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DF36421B18AEAB58000F28CE;
-			remoteInfo = "QnD-L";
-		};
-		B3317CAF2226035300A5E35D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DF2BFFB11CEA36C100822D02;
-			remoteInfo = "FastNClean-Portrait";
-		};
-		B3317CB12226035300A5E35D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6B1A5CC31A13CEDE00F23F2F;
-			remoteInfo = "QuickNDirty-Portrait-Tests";
-		};
-		B3317CB32226035300A5E35D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D91010111C2385620021882F;
-			remoteInfo = "QuickNDirty-Portrait-Test-Host";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6B1677521F79B99B008783F5 /* Embed Frameworks */ = {
@@ -270,7 +224,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B3317CB52226038900A5E35D /* Skillz.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +282,6 @@
 		6B7DDCF51F7D760A00298B3D /* UnityAppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityAppController.mm; sourceTree = "<group>"; };
 		6B7DDCF61F7D760A00298B3D /* UnityTrampolineConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityTrampolineConfigure.h; sourceTree = "<group>"; };
 		6B7DDCF71F7D760A00298B3D /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
-		6B7DDE091F7D761D00298B3D /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		7F36C10E13C5C673007FBDD9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7F36C10F13C5C673007FBDD9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7F36C11013C5C673007FBDD9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -881,7 +833,6 @@
 		B3317C792226008B00A5E35D /* icallincludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icallincludes.h; sourceTree = "<group>"; };
 		B3317C7A2226008B00A5E35D /* char-conversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "char-conversions.h"; sourceTree = "<group>"; };
 		B3317C7B2226008B00A5E35D /* RegisterFeatures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterFeatures.h; sourceTree = "<group>"; };
-		B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "SkillzSDK-iOS.xcodeproj"; path = "../../../../sdk-ios/SkillzSDK-iOS/SkillzSDK-iOS.xcodeproj"; sourceTree = "<group>"; };
 		B3487D7F22261CDD00ADE824 /* OrientationSupport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OrientationSupport.mm; sourceTree = "<group>"; };
 		B3487D8022261CDD00ADE824 /* UnityAppController+ViewHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UnityAppController+ViewHandling.h"; sourceTree = "<group>"; };
 		B3487D8122261CDD00ADE824 /* SplashScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreen.h; sourceTree = "<group>"; };
@@ -905,8 +856,8 @@
 		B3487D9322261CDD00ADE824 /* UnityViewControllerBase+tvOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UnityViewControllerBase+tvOS.h"; sourceTree = "<group>"; };
 		B3487D9422261CDD00ADE824 /* UnityViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityViewControllerBase.h; sourceTree = "<group>"; };
 		B3487D9522261CDD00ADE824 /* UnityView+iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UnityView+iOS.mm"; sourceTree = "<group>"; };
+		B378DA512229C99B00C0EDE8 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		EB094AFDA4821CB624E60AAA /* LaunchScreen-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "LaunchScreen-iPhone.xib"; sourceTree = SOURCE_ROOT; };
-		EF5E408E822299A7BDE037AD /* Skillz+Unity.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = "Skillz+Unity.mm"; path = "Libraries/Standard Assets/Skillz/Build/IncludeInXcode/Skillz+Unity.mm"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -936,7 +887,6 @@
 				56BCBA390FCF049A0030C3B2 /* SystemConfiguration.framework in Frameworks */,
 				830B5C110E5ED4C100C7819F /* UIKit.framework in Frameworks */,
 				83B2574F0E63025400468741 /* libiconv.2.dylib in Frameworks */,
-				B3317CB62226039C00A5E35D /* Skillz.framework in Frameworks */,
 				AB5646CBAADA861C26B20232 /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -996,7 +946,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				B331798C2225F12400A5E35D /* Data */,
+				B378DA512229C99B00C0EDE8 /* Data */,
 				6B1677481F79B93D008783F5 /* 3dCaveRun.entitlements */,
 				31F86E542106BC5E0048AF66 /* 3dCaveRunEnterprise.entitlements */,
 				56C56C9717D6015100616839 /* Images.xcassets */,
@@ -1021,7 +971,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */,
 				6B1677E01F79D00C008783F5 /* Crashlytics.framework */,
 				6B1677E11F79D00C008783F5 /* Fabric.framework */,
 				960391211D6CE46E003BF157 /* MediaToolbox.framework */,
@@ -1295,7 +1244,6 @@
 		B3317A882226008A00A5E35D /* IncludeInXcode */ = {
 			isa = PBXGroup;
 			children = (
-				B3317A892226008A00A5E35D /* Skillz+Unity.mm */,
 			);
 			path = IncludeInXcode;
 			sourceTree = "<group>";
@@ -2317,19 +2265,6 @@
 			path = metadata;
 			sourceTree = "<group>";
 		};
-		B3317C852226035200A5E35D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B3317CAA2226035300A5E35D /* Skillz.framework */,
-				B3317CAC2226035300A5E35D /* QnD-P.app */,
-				B3317CAE2226035300A5E35D /* QnD-L.app */,
-				B3317CB02226035300A5E35D /* FastNClean-Portrait.app */,
-				B3317CB22226035300A5E35D /* QuickNDirty-Portrait-Tests.xctest */,
-				B3317CB42226035300A5E35D /* QuickNDirty-Portrait-Test-Host.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B3487D7E22261CDD00ADE824 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -2469,12 +2404,6 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B3317C852226035200A5E35D /* Products */;
-					ProjectRef = B3317C842226035200A5E35D /* SkillzSDK-iOS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* 3DCaveRunner */,
@@ -2484,51 +2413,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		B3317CAA2226035300A5E35D /* Skillz.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Skillz.framework;
-			remoteRef = B3317CA92226035300A5E35D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B3317CAC2226035300A5E35D /* QnD-P.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "QnD-P.app";
-			remoteRef = B3317CAB2226035300A5E35D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B3317CAE2226035300A5E35D /* QnD-L.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "QnD-L.app";
-			remoteRef = B3317CAD2226035300A5E35D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B3317CB02226035300A5E35D /* FastNClean-Portrait.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "FastNClean-Portrait.app";
-			remoteRef = B3317CAF2226035300A5E35D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B3317CB22226035300A5E35D /* QuickNDirty-Portrait-Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "QuickNDirty-Portrait-Tests.xctest";
-			remoteRef = B3317CB12226035300A5E35D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B3317CB42226035300A5E35D /* QuickNDirty-Portrait-Test-Host.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "QuickNDirty-Portrait-Test-Host.app";
-			remoteRef = B3317CB32226035300A5E35D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -2536,11 +2420,12 @@
 			files = (
 				56C56C9817D6015200616839 /* Images.xcassets in Resources */,
 				FDB649BC9EFD7594A4A4DE0C /* LaunchScreen-iPhone.xib in Resources */,
+				B378DA582229C99B00C0EDE8 /* Data in Resources */,
 				3F124EF8A7EDC6AEBDD6F08D /* LaunchScreen-iPhonePortrait.png in Resources */,
 				61484C33A78138E565EB478C /* LaunchScreen-iPhoneLandscape.png in Resources */,
 				3E204300A9BFC6EE7F03BB45 /* LaunchScreen-iPad.xib in Resources */,
 				F46D40AD8ECEF940A1BE9389 /* LaunchScreen-iPad.png in Resources */,
-				B331798D2225F12400A5E35D /* Data in Resources */,
+				B331798D2225F12400A5E35D /* (null) in Resources */,
 				B3317C822226008B00A5E35D /* libil2cpp.icalls in Resources */,
 				B3317C832226008B00A5E35D /* libil2cpp.def in Resources */,
 			);
@@ -2735,7 +2620,7 @@
 				B33179E92225FEF800A5E35D /* GlesHelper.mm in Sources */,
 				6B7DDDBA1F7D760A00298B3D /* UnityAppController+Rendering.mm in Sources */,
 				B3317A542225FF4C00A5E35D /* Bulk_Assembly-UnityScript_0.cpp in Sources */,
-				B3317C7E2226008B00A5E35D /* Skillz+Unity.mm in Sources */,
+				B3317C7E2226008B00A5E35D /* (null) in Sources */,
 				B3317A5C2225FF4C00A5E35D /* Il2CppMetadataUsage.cpp in Sources */,
 				B33179DA2225FEF800A5E35D /* OnDemandResources.mm in Sources */,
 				B3317A722225FF4C00A5E35D /* Il2CppTypeDefinitions.cpp in Sources */,
