@@ -201,6 +201,8 @@
 		B3487DA022261CDE00ADE824 /* UnityViewControllerBase+tvOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D9222261CDD00ADE824 /* UnityViewControllerBase+tvOS.mm */; };
 		B3487DA122261CDE00ADE824 /* UnityView+iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3487D9522261CDD00ADE824 /* UnityView+iOS.mm */; };
 		B378DA582229C99B00C0EDE8 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B378DA512229C99B00C0EDE8 /* Data */; };
+		B378DA5B2229CB5F00C0EDE8 /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B378DA5A2229CB5F00C0EDE8 /* Skillz.framework */; };
+		B378DA5C2229CC0100C0EDE8 /* Skillz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B378DA5A2229CB5F00C0EDE8 /* Skillz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5AF4ECCAEB05F0C7CC8FD56 /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DA487EA73B2C86D4890FBB /* Skillz.framework */; };
 		F46D40AD8ECEF940A1BE9389 /* LaunchScreen-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564F49BFB92D74043C2023BC /* LaunchScreen-iPad.png */; };
 		FDB649BC9EFD7594A4A4DE0C /* LaunchScreen-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB094AFDA4821CB624E60AAA /* LaunchScreen-iPhone.xib */; };
@@ -224,6 +226,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B378DA5C2229CC0100C0EDE8 /* Skillz.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,6 +860,7 @@
 		B3487D9422261CDD00ADE824 /* UnityViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityViewControllerBase.h; sourceTree = "<group>"; };
 		B3487D9522261CDD00ADE824 /* UnityView+iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UnityView+iOS.mm"; sourceTree = "<group>"; };
 		B378DA512229C99B00C0EDE8 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		B378DA5A2229CB5F00C0EDE8 /* Skillz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Skillz.framework; sourceTree = "<group>"; };
 		EB094AFDA4821CB624E60AAA /* LaunchScreen-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "LaunchScreen-iPhone.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -886,6 +890,7 @@
 				83B2570B0E62FF8A00468741 /* QuartzCore.framework in Frameworks */,
 				56BCBA390FCF049A0030C3B2 /* SystemConfiguration.framework in Frameworks */,
 				830B5C110E5ED4C100C7819F /* UIKit.framework in Frameworks */,
+				B378DA5B2229CB5F00C0EDE8 /* Skillz.framework in Frameworks */,
 				83B2574F0E63025400468741 /* libiconv.2.dylib in Frameworks */,
 				AB5646CBAADA861C26B20232 /* Metal.framework in Frameworks */,
 			);
@@ -971,6 +976,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B378DA5A2229CB5F00C0EDE8 /* Skillz.framework */,
 				6B1677E01F79D00C008783F5 /* Crashlytics.framework */,
 				6B1677E11F79D00C008783F5 /* Fabric.framework */,
 				960391211D6CE46E003BF157 /* MediaToolbox.framework */,

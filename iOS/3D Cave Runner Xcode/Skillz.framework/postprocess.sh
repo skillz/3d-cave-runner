@@ -144,6 +144,13 @@ if (!length($localizations)) {
     `PlistBuddy -c \'Add :CFBundleLocalizations:8 string zh-Hans\' "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}"`;
 }
 
+my $skillzDict =  `PlistBuddy -c \'Print :skillzSDK:environment\'  "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}"`;
+
+if ($skillzDict =~ /Production/i && $ENV{'CONFIGURATION'} =~ /Debug/i) {
+  print "Debug Configuration is used for  Production build";
+  exit 1;
+}
+
 my $entitlements = `PlistBuddy -c \'Print :com.apple.developer.associated-domains\' "${CODE_SIGN_ENTITLEMENTS}"`;
 
 if (!length($entitlements)) {

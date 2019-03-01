@@ -84,7 +84,7 @@ typedef uint64_t SKZSyncPlayerId;
 
 
 /** @name Message Passing */
-#pragma Synchronous Message Passing
+#pragma mark Synchronous Message Passing
 
 /**
  *  When another instance of your client connected to the same match passes a message using the below `sendData:`, this method will be called on all other clients.
