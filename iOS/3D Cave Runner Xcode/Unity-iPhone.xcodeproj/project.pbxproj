@@ -72,6 +72,9 @@
 		960391221D6CE46E003BF157 /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960391211D6CE46E003BF157 /* MediaToolbox.framework */; };
 		AA5D99871AFAD3C800B27605 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5D99861AFAD3C800B27605 /* CoreText.framework */; };
 		AB5646CBAADA861C26B20232 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2048289866770E07F4779D /* Metal.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B3045D1D222E0B2C0009878F /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3045D1B222E0B2C0009878F /* Skillz.framework */; };
+		B3045D1E222E0B450009878F /* Skillz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3045D1B222E0B2C0009878F /* Skillz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3045D1F222E0B570009878F /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3045D1B222E0B2C0009878F /* Skillz.framework */; };
 		B3317C7C2226008B00A5E35D /* Il2CppOptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3317A832226008A00A5E35D /* Il2CppOptions.cpp */; };
 		B3317C7D2226008B00A5E35D /* RegisterFeatures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3317A842226008A00A5E35D /* RegisterFeatures.cpp */; };
 		B3317C7F2226008B00A5E35D /* libiPhone-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3317A8A2226008B00A5E35D /* libiPhone-lib.a */; };
@@ -302,8 +305,6 @@
 		B33D11BA2229E4BF0061D11E /* UnityAppController+UnityInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33D11B52229E4BE0061D11E /* UnityAppController+UnityInterface.mm */; };
 		B33D11BB2229E4BF0061D11E /* UnityAppController+Rendering.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33D11B62229E4BE0061D11E /* UnityAppController+Rendering.mm */; };
 		B33D11BC2229E4BF0061D11E /* UnityAppController+Rendering.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33D11B62229E4BE0061D11E /* UnityAppController+Rendering.mm */; };
-		B33D11BD2229E4FF0061D11E /* Skillz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B378DA602229D4F500C0EDE8 /* Skillz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B33D11BE2229E50E0061D11E /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B378DA602229D4F500C0EDE8 /* Skillz.framework */; };
 		B33D11BF2229E51D0061D11E /* libiPhone-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3317A8A2226008B00A5E35D /* libiPhone-lib.a */; };
 		B33D11C02229E5410061D11E /* libil2cpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3317A8C2226008B00A5E35D /* libil2cpp.a */; };
 		B33D11C12229E5890061D11E /* libil2cpp.icalls in Resources */ = {isa = PBXBuildFile; fileRef = B3317A9D2226008B00A5E35D /* libil2cpp.icalls */; };
@@ -314,8 +315,6 @@
 		B33D11C72229F22C0061D11E /* Skillz+Unity.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33D11C62229F22B0061D11E /* Skillz+Unity.mm */; };
 		B33D11C82229F22C0061D11E /* Skillz+Unity.mm in Sources */ = {isa = PBXBuildFile; fileRef = B33D11C62229F22B0061D11E /* Skillz+Unity.mm */; };
 		B378DA582229C99B00C0EDE8 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = B378DA512229C99B00C0EDE8 /* Data */; };
-		B378DA622229D50200C0EDE8 /* Skillz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B378DA602229D4F500C0EDE8 /* Skillz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B378DA632229D50A00C0EDE8 /* Skillz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B378DA602229D4F500C0EDE8 /* Skillz.framework */; };
 		F46D40AD8ECEF940A1BE9389 /* LaunchScreen-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 564F49BFB92D74043C2023BC /* LaunchScreen-iPad.png */; };
 		FDB649BC9EFD7594A4A4DE0C /* LaunchScreen-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB094AFDA4821CB624E60AAA /* LaunchScreen-iPhone.xib */; };
 /* End PBXBuildFile section */
@@ -327,7 +326,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B33D11BD2229E4FF0061D11E /* Skillz.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +336,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B378DA622229D50200C0EDE8 /* Skillz.framework in Embed Frameworks */,
+				B3045D1E222E0B450009878F /* Skillz.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +390,7 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		960391211D6CE46E003BF157 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
 		AA5D99861AFAD3C800B27605 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B3045D1B222E0B2C0009878F /* Skillz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Skillz.framework; path = ../../../../../../Desktop/Skillz.framework; sourceTree = "<group>"; };
 		B3317A832226008A00A5E35D /* Il2CppOptions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Il2CppOptions.cpp; sourceTree = "<group>"; };
 		B3317A842226008A00A5E35D /* RegisterFeatures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegisterFeatures.cpp; sourceTree = "<group>"; };
 		B3317A8A2226008B00A5E35D /* libiPhone-lib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libiPhone-lib.a"; sourceTree = "<group>"; };
@@ -972,7 +971,6 @@
 		B33D11B62229E4BE0061D11E /* UnityAppController+Rendering.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UnityAppController+Rendering.mm"; sourceTree = "<group>"; };
 		B33D11C62229F22B0061D11E /* Skillz+Unity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "Skillz+Unity.mm"; sourceTree = "<group>"; };
 		B378DA512229C99B00C0EDE8 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
-		B378DA602229D4F500C0EDE8 /* Skillz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Skillz.framework; sourceTree = "<group>"; };
 		EB094AFDA4821CB624E60AAA /* LaunchScreen-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "LaunchScreen-iPhone.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -981,6 +979,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3045D1F222E0B570009878F /* Skillz.framework in Frameworks */,
 				960391221D6CE46E003BF157 /* MediaToolbox.framework in Frameworks */,
 				AA5D99871AFAD3C800B27605 /* CoreText.framework in Frameworks */,
 				8358D1B80ED1CC3700E3A684 /* AudioToolbox.framework in Frameworks */,
@@ -1004,7 +1003,6 @@
 				830B5C110E5ED4C100C7819F /* UIKit.framework in Frameworks */,
 				83B2574F0E63025400468741 /* libiconv.2.dylib in Frameworks */,
 				AB5646CBAADA861C26B20232 /* Metal.framework in Frameworks */,
-				B378DA632229D50A00C0EDE8 /* Skillz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1042,9 +1040,9 @@
 				6B1677CD1F79B99B008783F5 /* QuartzCore.framework in Frameworks */,
 				6B1677CE1F79B99B008783F5 /* SystemConfiguration.framework in Frameworks */,
 				6B1677CF1F79B99B008783F5 /* UIKit.framework in Frameworks */,
+				B3045D1D222E0B2C0009878F /* Skillz.framework in Frameworks */,
 				6B1677D01F79B99B008783F5 /* libiconv.2.dylib in Frameworks */,
 				6B1677D21F79B99B008783F5 /* Metal.framework in Frameworks */,
-				B33D11BE2229E50E0061D11E /* Skillz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,7 +1132,7 @@
 		5D174A3D85D6D77255C85D65 /* Embed Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B378DA602229D4F500C0EDE8 /* Skillz.framework */,
+				B3045D1B222E0B2C0009878F /* Skillz.framework */,
 			);
 			name = "Embed Frameworks";
 			sourceTree = "<group>";
