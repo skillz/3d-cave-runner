@@ -511,8 +511,6 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
         [badEnvironmentException raise];
     }
     
-    [[Skillz skillzInstance] performSelector:@selector(setStaging) withObject:nil];
-    
     [[Skillz skillzInstance] initWithGameId:gameIdString
                                 forDelegate:[[UnitySkillzSDKDelegate alloc] init]
                             withEnvironment:skillzEnvironment
