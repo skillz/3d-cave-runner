@@ -251,7 +251,7 @@ NS_AVAILABLE_IOS(8_0)
 *
  * Players in the same tournament will receive the same sequence of random numbers.
  */
-+ (CGFloat)getRandomFloat;
++ (float)getRandomFloat;
 
 /**
  * Returns a random unsigned integer supplied by the Skillz SDK to ensure fairness across competition games.
@@ -277,9 +277,28 @@ NS_AVAILABLE_IOS(8_0)
 /**
  * Initialize Skillz
  *
- * This needs to be called within application:didFinishLaunchingWithOptions in your App Delegate.
- * Will not launch the Skillz experience, this function only establishes the connection between your game and the SkillzEnvironment
- * of choice.
+ * This nmehtod eeds to be called within application:didFinishLaunchingWithOptions in your App Delegate.
+ * Calling this method does not launch the Skillz experience, it only configures the Skillz SDK for your game
+
+    Be sure that your app's Info.plist contains a "skillzSDK" dictionary with the correct configuration.
+ 
+    Info.plist
+ 
+    Info.plist Key      Type           Dictionary Key                 Type
+    "skillzSDK"         Dictionary
+                                      "environment"                   String  ("sandbox" | "production")
+                                      "gameId"                        Number
+                                      "allowExit"                     Boolean
+                                      "orientation"  [optional]       String ("portrait | "landscape")
+ 
+ * @param delegate         This delegate must implement all required methods of the SkillzBaseDelegate protocol
+ *
+ */
+- (void)initWithDelegate:(id <SkillzBaseDelegate> _Nonnull)delegate;
+
+/**
+ * This method needs to be called within application:didFinishLaunchingWithOptions in your App Delegate.
+ * Calling this method does not launch the Skillz experience, it only configures the Skillz SDK for your game
  *
  * @param gameId           Your game ID as given to you on the Skillz developer portal
  * @param delegate         This delegate must implement all required methods of the SkillzBaseDelegate protocol
@@ -324,6 +343,22 @@ NS_AVAILABLE_IOS(8_0)
 - (void)updatePlayersCurrentScore:(NSNumber * _Nonnull)currentScoreForPlayer;
 
 /**
+ * This method must be called each time the current player's score changes during a Skillz match.
+ *
+ * For example, in many games this method is called when the player scores points, when the player is penalized, and whenever a
+ * time bonus is applied. It is OK for this method to
+ * be called very often.
+ *
+ * If a continuous in-game score is displayed to the player, this method is generally called as often as that score display is
+ * updated - usually by placing the updatePlayersCurrentScore call in the same place within the game loop.
+ *
+ * @param currentScoreForPlayer Current score value for the player
+ * @param matchId               Numeric value representing the current match's Id
+ */
+- (void)updatePlayersCurrentScore:(NSNumber * _Nonnull)currentScoreForPlayer
+                      withMatchId:(NSNumber * _Nonnull)matchId;
+
+/**
  * Call this function to report the player's score to Skillz. Ends the current tournament, and returns the user to the Skillz
  * experience.
  *
@@ -337,6 +372,21 @@ NS_AVAILABLE_IOS(8_0)
                            withCompletion:(void (^)(void))completion;
 
 /**
+ * Call this function to report the player's score to Skillz. Ends the current tournament, and returns the user to the Skillz
+ * experience.
+ *
+ * @param score            Numeric value representing the player's final score
+ * @param matchId          Numeric value representing the current match's Id
+ * @param completion       Completion will be called on wrap up so that the developer can finish any ongoing processes, such as
+ *                         saving game data or removing the game from the view hierarchy.
+ *
+ * Note: If your game is resource intensive, you should attempt to release as much memory as possible prior to calling this method.
+ */
+- (void)displayTournamentResultsWithScore:(NSNumber * _Nonnull)score
+                              withMatchId:(NSNumber * _Nonnull)matchId
+                           withCompletion:(void (^)(void))completion;
+
+/**
  * Call this function when a player aborts a Skillz match in progress. Forfeits the match and brings the user back into the Skillz
  * experience.
  *
@@ -346,6 +396,18 @@ NS_AVAILABLE_IOS(8_0)
  * Note: If your game is resource intensive, you should attempt to release as much memory as possible prior to calling this method.
  */
 - (void)notifyPlayerAbortWithCompletion:(void (^)(void))completion;
+
+/**
+ * Call this function when a player aborts a Skillz match in progress. Forfeits the match and brings the user back into the Skillz
+ * experience.
+ * @param matchId         Numeric value representing the current match's Id
+ * @param completion      Completion will be called on wrap up so that the developer can finish any ongoing processes, such as
+ *                        saving game data or removing the game from the view hierarchy.
+ *
+ * Note: If your game is resource intensive, you should attempt to release as much memory as possible prior to calling this method.
+ */
+- (void)notifyPlayerAbortWithMatchId:(NSNumber * _Nonnull)matchId
+                      WithCompletion:(void (^)(void))completion;
 
 /**
  * If your game plays its own background music that you'd like to play in the Skillz UI, set hasBackgroundMusic to YES to prevent 
