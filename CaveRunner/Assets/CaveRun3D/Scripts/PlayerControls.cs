@@ -11,24 +11,24 @@ public sealed class PlayerControls : MonoBehaviour
     private PlatformCreator pCreator;
 
     public float Speed = 0.2f; //The player's current speed
-    float MaxSpeed = 0.4f; //The players maximum speed
-    float Acceleration = 0.004f; //How quickly the player can get to maximum speed
-    Transform SpeedEffect; //The Speed effect that is displayed when running very fast
+    public float MaxSpeed = 0.4f; //The players maximum speed
+    public float Acceleration = 0.004f; //How quickly the player can get to maximum speed
+    public Transform SpeedEffect; //The Speed effect that is displayed when running very fast
 
-    float JumpPower = 10; //The player's jump power
+    public float JumpPower = 10; //The player's jump power
 
-    float TurningSpeed = 0.5f; //The player's turning speed, how quickly he moves left and right
-    float TurnDamping = 0; //A slowdown value for the turning speed. At 1, it doesn't affect his speed, lower than that will make him rotate slowly
+    public float TurningSpeed = 0.5f; //The player's turning speed, how quickly he moves left and right
+    public float TurnDamping = 0; //A slowdown value for the turning speed. At 1, it doesn't affect his speed, lower than that will make him rotate slowly
 
-    string HitAnimation = "Lava"; //The player's hit animation, which plays when the palyer hits an obstacle
-    float HitAnimationTime = 0; //How long the player's hit aniamtion should be player
+    public string HitAnimation = "Lava"; //The player's hit animation, which plays when the palyer hits an obstacle
+    public float HitAnimationTime = 0; //How long the player's hit aniamtion should be player
 
-    float MovementLimits = 12; //movement limits for the palyer which prevent him from going to far left or right
+    public float MovementLimits = 12; //movement limits for the palyer which prevent him from going to far left or right
 
-    Transform PuffEffect; //The effect created when the player lands on a platform
+    public Transform PuffEffect; //The effect created when the player lands on a platform
     Object PuffEffectCopy; //A copy of the PuffEffect
 
-    Transform TrailEffect; //The effect created when the player flies up from hitting lava
+    public Transform TrailEffect; //The effect created when the player flies up from hitting lava
     Object TrailEffectCopy; //A copy of the TrailEffect
 
     private Vector3 InitPos; //The player's initial position
@@ -39,18 +39,18 @@ public sealed class PlayerControls : MonoBehaviour
 
     public int JumpState = 4; //0-on the floor, 1-jump, 2-fall after jump, 3-double jump, 4-fall after double jump
 
-    Transform CustomCursor; //Put your custom cusor here. This is the orange glowing circle that shows where the player is going
+    public Transform CustomCursor; //Put your custom cusor here. This is the orange glowing circle that shows where the player is going
 
     //SOUNDS
-    AudioClip JumpSound;
-    AudioClip FallSound;
-    AudioClip StepSound;
-    AudioClip CrashSound;
+    public AudioClip JumpSound;
+    public AudioClip FallSound;
+    public AudioClip StepSound;
+    public AudioClip CrashSound;
 
     float CameraFollowSpeed = 0.2f; //How quickly the camera follows the player's position
 
-    float JumpChange = 1; //How much the jump power is affected. 1 means jumping is normal. less than 1 means jumps are much weaker
-    float JumpChangeTime = 0; //How long to keep the jump change, in seconds
+    public float JumpChange = 1; //How much the jump power is affected. 1 means jumping is normal. less than 1 means jumps are much weaker
+    public float JumpChangeTime = 0; //How long to keep the jump change, in seconds
 
     private Quaternion calibrationQuaternion;
     private Vector3 currentAcc;
@@ -240,13 +240,20 @@ public sealed class PlayerControls : MonoBehaviour
             }
 
             //High speed effect
+            var particles = SpeedEffect.GetComponent<ParticleSystem>();
             if (Speed > 22)
             {
-                SpeedEffect.GetComponent<ParticleEmitter>().emit = true; //turn on the high speed effect
+                if (particles.isStopped)
+                {
+                    particles.Play();
+                }
             }
             else
             {
-                SpeedEffect.GetComponent<ParticleEmitter> ().emit = false; //turn off the high speed effect
+                if (particles.isPlaying)
+                {
+                    particles.Stop();
+                }
             }
 
             //Lava, walk, run, jump, and fall animations
@@ -339,7 +346,7 @@ public sealed class PlayerControls : MonoBehaviour
             );
 
             //Rotate in the direction of movement
-            transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w)
+            transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
         }
     }
 

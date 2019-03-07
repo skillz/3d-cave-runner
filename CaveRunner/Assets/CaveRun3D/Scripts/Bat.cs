@@ -5,8 +5,8 @@ public sealed class Bat : MonoBehaviour
     //This script is used to make bats fly around in a circle. It sets a rotation speed and orbit and makes
     //the object rotate around that point while looking in the diection of movement.
 
-    Vector2 OrbitDistanceRange = new Vector2(0.8f, 1.6f); //Set the orbit range, how far from the center point this object should be
-    Vector2 OrbitSpeedRange = new Vector2(100, 200); //The the speed range, how fast this object rotates around its center point
+    public Vector2 OrbitDistanceRange = new Vector2(0.8f, 1.6f); //Set the orbit range, how far from the center point this object should be
+    public Vector2 OrbitSpeedRange = new Vector2(100, 200); //The the speed range, how fast this object rotates around its center point
 
     private float OrbitSpeed = 0; //Current orbit speed, chosen randomly from a value within the range set in OrbitSpeedRange
     private int FlightDirection = 1; //The flight direction of the object, either 1 or -1

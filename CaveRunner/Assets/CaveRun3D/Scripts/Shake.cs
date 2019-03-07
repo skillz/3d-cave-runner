@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public sealed class Shake : MonoBehaviour
 {
@@ -10,10 +9,10 @@ public sealed class Shake : MonoBehaviour
     private Vector3 InitPos; //Original position of the object
     public int ShakeFactor = 0; //How long and how shaky the object gets
 
-    Transform DebrisEffect; //The falling debris effect played while the object shakes ( particleEmitter only )
-    AudioClip RumbleSound; //The sound played while the object shakes
-    bool KeepInitialPosition = false; //If this is set to true, the object will always retun to its original position after finishing the shake effect
-    int ShakeDecay = 2; //How quickly the shaking stops
+    public Transform DebrisEffect; //The falling debris effect played while the object shakes ( particleEmitter only )
+    public AudioClip RumbleSound; //The sound played while the object shakes
+    public bool KeepInitialPosition = false; //If this is set to true, the object will always retun to its original position after finishing the shake effect
+    public int ShakeDecay = 2; //How quickly the shaking stops
 
     private bool shaking = false; //Is the object shaking now?
 

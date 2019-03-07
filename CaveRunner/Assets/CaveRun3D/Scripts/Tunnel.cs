@@ -6,8 +6,8 @@ public sealed class Tunnel : MonoBehaviour
     //I use it to make a tunnel effect. Note that the speed of the tunnel can be either constant and set directly by us
     //in the inspector, or it can be controlled by the speed of the player, if he exists in teh scene
 
-    float InitialSpeed = 1; //Initial constant speed
-    int TunnelLength = 30; //How long is the tunnel, this is used to know when to reset the tunnel back to its initial position
+    public float InitialSpeed = 1; //Initial constant speed
+    public int TunnelLength = 30; //How long is the tunnel, this is used to know when to reset the tunnel back to its initial position
 
     private GameObject Player; //THe player object, it's always tagger Player
     private PlayerControls pControls;

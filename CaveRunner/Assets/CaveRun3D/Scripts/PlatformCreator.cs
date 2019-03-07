@@ -7,36 +7,36 @@ public sealed class PlatformCreator : MonoBehaviour
 
     private GameObject Player; //Used to hold the player object, if it's in the scene
 
-    int NumberOfPlatforms = 1; //The number of platforms to be created initially, these will be created just once, and then they will recreate themselves in the horizon when they pass the palyer's position
+    public int NumberOfPlatforms = 1; //The number of platforms to be created initially, these will be created just once, and then they will recreate themselves in the horizon when they pass the palyer's position
     private int PlatformIndex; //Index number used to go through all the platforms
 
-    Transform NewPlatform; //A new empty platform which will hold all the edge and middle sections, as well as the gems and obstacles
-    Transform NewPlatformCopy; //A copy of the new platform
+    public Transform NewPlatform; //A new empty platform which will hold all the edge and middle sections, as well as the gems and obstacles
+    public Transform NewPlatformCopy; //A copy of the new platform
 
-    int SectionLength = 3;
+    public int SectionLength = 3;
 
     public Transform[] SectionEdge; //An array holding all the edge sections that comprise a platform
     public Transform[] SectionMiddle; //An array holding all teh middle sections that comprise a platform
     private int SectionIndex; //Index number used to setup the middle sections in a platform
     private GameObject SectionCopy; //A copy of a section
 
-    Vector2 PlatformWidthRange = new Vector2(1.5f, 2); //The minimum and maximum width ( scale.x ) of a platform
+    public Vector2 PlatformWidthRange = new Vector2(1.5f, 2); //The minimum and maximum width ( scale.x ) of a platform
     private float PlatformWidth; //The current width of a platform
 
-    Vector2 PlatformLengthRange = new Vector2(20, 30); //The minimum and maximum length ( number of sections ) of a platform
-    int PlatformLength = 0; //The current length of a platform
+    public Vector2 PlatformLengthRange = new Vector2(20, 30); //The minimum and maximum length ( number of sections ) of a platform
+    public int PlatformLength = 0; //The current length of a platform
     private int PlatformOldLength; //The previous length of a platform, used to check wether this is the first platform we create and also to sum up the total length of all the platforms created
 
     public Vector2 PlatformHeightRange = new Vector2(-2, 1); //The minimum and maximum height ( position.y ) of a platform
     private int PlatformHeight; //The current height of a platform
 
-    Vector2 PlatformGapRange = new Vector2(5, 10); //The minimum and maximum gap height between two platforms
+    public Vector2 PlatformGapRange = new Vector2(5, 10); //The minimum and maximum gap height between two platforms
     private int PlatformGap; //The current gap between two platforms
 
-    Vector2 PlatformRotateRange = new Vector2(-4, 4); //The minimum and maximum rotation ( Up axis ) of the platform
+    public Vector2 PlatformRotateRange = new Vector2(-4, 4); //The minimum and maximum rotation ( Up axis ) of the platform
     private int PlatformRotate; //The current rotation of the platform
 
-    Vector2 PlatformShiftRange = new Vector2(0, 0);  //The minimum and maximum shift ( position.x ) of the platform
+    public Vector2 PlatformShiftRange = new Vector2(0, 0);  //The minimum and maximum shift ( position.x ) of the platform
     private float PlatformShift = 0; //The current shift of the platform
 
     public Transform[] Gem; //An array that holds all the gems objects
@@ -52,9 +52,9 @@ public sealed class PlatformCreator : MonoBehaviour
     private int TotalPlatformLength = 0; //The total length of all platforms created at the beginning of the game, including gaps
 
     private int GemTrail = 0; //The length of a gem trail. Trails are a set of gems created one after the other in the same staright line
-    Vector2 GemTrailRange = new Vector2(3, 5); //The range of gems in a single trail
+    public Vector2 GemTrailRange = new Vector2(3, 5); //The range of gems in a single trail
 
-    Collector collector;
+    public Collector collector;
 
     private void Start()
     {
@@ -73,7 +73,7 @@ public sealed class PlatformCreator : MonoBehaviour
         }
     }
 
-    private void CreatePlatform(int Offset)
+    public void CreatePlatform(int Offset)
     {
         //CREATE A NEW PLATFORM
         //Create a new empty platform, so we can put all the platform sections inside it

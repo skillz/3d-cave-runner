@@ -6,19 +6,19 @@ public sealed class FallingObjects : MonoBehaviour
     //It's basically a simple particle emitter that throws gameobjects instead of 2D particles. Could be useful for many things
     //It use it mostly to make gems fall down at the end of the game, when the score screen is displayed
 
-    Transform[] Objects; //Holds all the objects that will be created
-    private Transform ObjectCopy; //A copy of the currently created object
+    public GameObject[] Objects; //Holds all the objects that will be created
+    private GameObject ObjectCopy; //A copy of the currently created object
 
-    Vector3 FallSpeed = new Vector3(0, 0, 0); //The falling speed of the object
+    public Vector3 FallSpeed = new Vector3(0, 0, 0); //The falling speed of the object
 
-    Vector2 CreationRate = new Vector2(0, 0); //Used to set a minial and maximal creation rate for new objects. (How long to wait until creating a new object)
+    public Vector2 CreationRate = new Vector2(0, 0); //Used to set a minial and maximal creation rate for new objects. (How long to wait until creating a new object)
     private float CurrentCreationRate = 0; //Holds the current creation rate
     private float CreationTime = 0; //Use to calculate the time passed since the last created object
 
-    Vector2 DestroyAfter = new Vector2(1, 1); //A minimum maximum range of time for destroying a created object (how long to wait before destroying a created object)
+    public Vector2 DestroyAfter = new Vector2(1, 1); //A minimum maximum range of time for destroying a created object (how long to wait before destroying a created object)
     private float CurrentDestroyAfter = 0; //Holds the current destruction rate
 
-    Vector3 CreationArea = new Vector3(10, 10, 10); //The creation are of the gems, it's a cube area, and it can be set from the inspector with the help of a gizmo to show you where the cube exactly is
+    public Vector3 CreationArea = new Vector3(10, 10, 10); //The creation are of the gems, it's a cube area, and it can be set from the inspector with the help of a gizmo to show you where the cube exactly is
 
     private void Update()
     {
