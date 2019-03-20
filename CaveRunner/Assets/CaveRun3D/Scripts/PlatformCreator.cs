@@ -10,8 +10,8 @@ public sealed class PlatformCreator : MonoBehaviour
     public int NumberOfPlatforms = 1; //The number of platforms to be created initially, these will be created just once, and then they will recreate themselves in the horizon when they pass the palyer's position
     private int PlatformIndex; //Index number used to go through all the platforms
 
-    public Transform NewPlatform; //A new empty platform which will hold all the edge and middle sections, as well as the gems and obstacles
-    public Transform NewPlatformCopy; //A copy of the new platform
+    public GameObject NewPlatform; //A new empty platform which will hold all the edge and middle sections, as well as the gems and obstacles
+    public GameObject NewPlatformCopy; //A copy of the new platform
 
     public int SectionLength = 3;
 
@@ -149,7 +149,7 @@ public sealed class PlatformCreator : MonoBehaviour
         {
             PlatformGap = (int)SkillzCrossPlatform.Random.Range(PlatformGapRange.x, PlatformGapRange.y); //Choose a random value within the minimum and maximum of PlatformGapRange
 
-            NewPlatformCopy.Translate(Vector3.forward * PlatformGap, Space.World); //Move the platform forward by the value of PlatformGap
+            NewPlatformCopy.transform.Translate(Vector3.forward * PlatformGap, Space.World); //Move the platform forward by the value of PlatformGap
 
             //Thsi function creates obstacles and gems within horizontal limits
             CreateGemOrObstacle(PlatformWidth * -5, PlatformWidth * 5);
@@ -157,22 +157,22 @@ public sealed class PlatformCreator : MonoBehaviour
             //Shift the platform some distance either left or right
             PlatformShift = SkillzCrossPlatform.Random.Range(PlatformShiftRange.x, PlatformShiftRange.y); //Choose a random value within the minimum and maximum of PlatformShiftRange
 
-            NewPlatformCopy.Translate(Vector3.right * PlatformShift, Space.World); //Move the platform either left or right by the value of PlatformShift
+            NewPlatformCopy.transform.Translate(Vector3.right * PlatformShift, Space.World); //Move the platform either left or right by the value of PlatformShift
         }
 
         //Set platform Height
         PlatformHeight = (int)SkillzCrossPlatform.Random.Range(PlatformHeightRange.x, PlatformHeightRange.y); //Choose a random value within the minimum and maximum of PlatformHeightRange
 
 
-        NewPlatformCopy.Translate(Vector3.up * PlatformHeight, Space.World); //Move the platform either up or down by the value of PlatformHeight
+        NewPlatformCopy.transform.Translate(Vector3.up * PlatformHeight, Space.World); //Move the platform either up or down by the value of PlatformHeight
 
         //rotate the platform
         PlatformRotate = (int)SkillzCrossPlatform.Random.Range(PlatformRotateRange.x, PlatformRotateRange.y); //Choose a random value within the minimum and maximum of PlatformRotateRange
 
 
-        NewPlatformCopy.Rotate(Vector3.up * PlatformRotate, Space.World); //Rotate the platform either left or right by the value of PlatformRotate
+        NewPlatformCopy.transform.Rotate(Vector3.up * PlatformRotate, Space.World); //Rotate the platform either left or right by the value of PlatformRotate
 
-        NewPlatformCopy.Translate(Vector3.forward * Offset, Space.World); //Move the platform forward based on teh value of Offset. This is the value we set when we run the function, and its used to make the initial platforms created place correctly one after the other
+        NewPlatformCopy.transform.Translate(Vector3.forward * Offset, Space.World); //Move the platform forward based on teh value of Offset. This is the value we set when we run the function, and its used to make the initial platforms created place correctly one after the other
     }
 
     //This function creates either an obstacle or a gem

@@ -11,8 +11,10 @@ public sealed class Collector : MonoBehaviour
     public PlatformCreator kPC;
     public GameObject Shadow;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("Init'ing Collector");
+
         int i;
         gems = new List<Stack<Transform>>();
         for (i = 0; i < gemKinds; i++)
@@ -29,7 +31,10 @@ public sealed class Collector : MonoBehaviour
         {
             sections.Add(new Stack<Transform>());
         }
+    }
 
+    private void Start()
+    {
         kPC = GameObject.FindWithTag("PlatformCreator").GetComponent<PlatformCreator>();
         Shadow = GameObject.Find("Shadow");
     }
