@@ -330,10 +330,10 @@ public sealed class PlayerControls : MonoBehaviour
             PlayerPos.x = TargetPoint.x; //Set the desired horizontal player position to be the same as TargetPoint
             PlayerPos.z = InitPos.z; //Keep the player at his initial forward position
 
-            if (CustomCursor) //If we have a custom cursor defined
+            if (CustomCursor != null) //If we have a custom cursor defined
             {
                 CustomCursor.LookAt(transform.position); //make the cursor look at the player
-
+                  
                 CustomCursor.position = TargetPoint; //move the cursor to the position of intersection with the plane
                 CustomCursor.position = new Vector3(CustomCursor.position.x, transform.position.y, CustomCursor.position.z); //keep the cursor at the vertical position of the player
             }
