@@ -21,8 +21,10 @@ public sealed class Tunnel : MonoBehaviour
         InitPos = transform.position; //Set the current position of the tunnel to be its initial position
 
         Player = GameObject.FindWithTag("Player"); //Put the player object in a variable for easier use later
-        if (Player)
-            pControls = Player.transform.GetComponent<PlayerControls>();
+        if (Player != null)
+        { 
+            pControls = Player.transform.GetComponent<PlayerControls>(); 
+        }
     }
 
     private void Update()
@@ -30,8 +32,14 @@ public sealed class Tunnel : MonoBehaviour
         if (Time.timeScale > 0)
         {
             //If the player exists in the scene, set the tunnel's speed based on its speed, otherwise keep it constant
-            if (Player) TunnelSpeed = pControls.Speed;
-            else TunnelSpeed = InitialSpeed;
+            if (Player != null)
+            {
+                TunnelSpeed = pControls.Speed;
+            }
+            else
+            {
+                TunnelSpeed = InitialSpeed;
+            }
 
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - TunnelSpeed * Time.deltaTime);
             //transform.Translate(Vector3.forward * -TunnelSpeed, Space.Self); //move the tunnel forward based on speed
