@@ -37,9 +37,7 @@ public sealed class MenuItem_ : MonoBehaviour
         }
         else if (StartSkillz)
         {
-            Debug.Log("Launch Skillz");
-            // TODO: WTH?
-            // SkillzCrossPlatform.LaunchSkillz(SkillzGameController());
+             SkillzCrossPlatform.LaunchSkillz(new SkillzGameController());
         }
     }
 }
