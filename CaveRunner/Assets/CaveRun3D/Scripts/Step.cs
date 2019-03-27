@@ -6,20 +6,20 @@ public sealed class Step : MonoBehaviour
     //And shakes the camera. It's used both in the footsteps of the player to make foot step sounds and dust come out, and also
     //In the Title animation texts to make them throw debris and shake the camera when colliding.
 
-    AudioClip StepSound; //The sound to be played when the object collides with another
+    public AudioClip StepSound; //The sound to be played when the object collides with another
 
-    Transform TrailEffect; //The effect to be created at the point of collision with another object
+    public Transform TrailEffect; //The effect to be created at the point of collision with another object
     private Transform TrailEffectCopy; //A copy of the effect to be created at the point of collision with another object
 
-    bool OneShot = false; //If true, the step code happens only once, at the first collision
+    public bool OneShot = false; //If true, the step code happens only once, at the first collision
     private bool OneShotState = false; //Check if OneShot is true or false
 
-    bool AbsolutePosition = false; //Set an absolute position for the TrailEffect instead of craeting it at the collision point
-    Vector3 EffectPosition = new Vector3(0, 0, 0); //The absolute position of the TrailEffect
+    public bool AbsolutePosition = false; //Set an absolute position for the TrailEffect instead of craeting it at the collision point
+    public Vector3 EffectPosition = new Vector3(0, 0, 0); //The absolute position of the TrailEffect
 
     private bool StepState = false; //checks if we made a new step
 
-    int CameraShake = 0; //How much to shae the camera
+    public int CameraShake = 0; //How much to shae the camera
 
     private void OnTriggerEnter(Collider other)
     {

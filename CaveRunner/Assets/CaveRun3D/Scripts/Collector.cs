@@ -1,19 +1,20 @@
-﻿using UnityEngine;
-using System.Collections;
+using UnityEngine;
 using System.Collections.Generic;
 
 public sealed class Collector : MonoBehaviour
 {
     List<Stack<Transform>> gems;
-    int gemKinds = 4;
-    List<Stack<Transform>> obstacles;
-    int obstacleKinds = 8;
+    public int gemKinds = 4;
+    List<Stack<Transform>>  obstacles;
+    public int obstacleKinds = 8;
     List<Stack<Transform>> sections;
-    PlatformCreator kPC;
-    GameObject Shadow;
+    public PlatformCreator kPC;
+    public GameObject Shadow;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("Init'ing Collector");
+
         int i;
         gems = new List<Stack<Transform>>();
         for (i = 0; i < gemKinds; i++)
@@ -30,7 +31,10 @@ public sealed class Collector : MonoBehaviour
         {
             sections.Add(new Stack<Transform>());
         }
+    }
 
+    private void Start()
+    {
         kPC = GameObject.FindWithTag("PlatformCreator").GetComponent<PlatformCreator>();
         Shadow = GameObject.Find("Shadow");
     }
@@ -43,7 +47,7 @@ public sealed class Collector : MonoBehaviour
         }
     }
 
-    private GameObject GetSection(int sectionKind)
+    public GameObject GetSection(int sectionKind)
     {
         GameObject section = null;
 
@@ -93,7 +97,7 @@ public sealed class Collector : MonoBehaviour
         }
     }
 
-    private GameObject GetObstacle(int obstacleKind)
+    public GameObject GetObstacle(int obstacleKind)
     {
         //Debug.Log("GetObstacle:" + obstacleKind);
         if (obstacles != null)
@@ -118,7 +122,7 @@ public sealed class Collector : MonoBehaviour
         }
     }
 
-    private void DisposeChildren(GameObject kObject)
+    public void DisposeChildren(GameObject kObject)
     {
         //kObject.SetActiveRecursively(false); //commented out so that no "invisible" bats exist.
         foreach (Transform child in kObject.transform)
@@ -129,7 +133,7 @@ public sealed class Collector : MonoBehaviour
         Dispose(kObject);
     }
 
-    private void Dispose(GameObject kObject)
+    public void Dispose(GameObject kObject)
     {
         char a = kObject.tag[0];
         char b = kObject.tag[1];

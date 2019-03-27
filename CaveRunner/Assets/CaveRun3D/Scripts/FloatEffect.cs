@@ -5,8 +5,8 @@ public sealed class FloatEffect : MonoBehaviour
     //This script gives a floating effect to any object it's attached to. You can set how fast and how high
     //the object floats from the component inspector
 
-    float height = 0.2f;    //How high the object floats
-    float speed = 5f;       //How fast the object floats
+    public float height = 0.2f;    //How high the object floats
+    public float speed = 5f;       //How fast the object floats
 
     private float originalPosition; //holds the original position of the object
     private float Phase; //Holds the phase of the floating animation cycle. When giving it a random number we make different objects in the scene float a little differently.

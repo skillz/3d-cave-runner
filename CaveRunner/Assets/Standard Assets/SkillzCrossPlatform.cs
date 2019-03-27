@@ -284,7 +284,7 @@ public static class SkillzCrossPlatform
 	/// </summary>
 	public static float getSkillzMusicVolume()
 	{
-        float skillzMusicVolume;
+        float skillzMusicVolume = 0f;
 
 		#if UNITY_ANDROID
 		skillzMusicVolume = Skillz.getSkillzMusicVolume();
@@ -321,7 +321,7 @@ public static class SkillzCrossPlatform
 	/// </summary>
 	public static float getSFXVolume()
 	{
-        float sfxVolume;
+        float sfxVolume = 0;
 
 		#if UNITY_ANDROID
 		sfxVolume = Skillz.getSFXVolume();

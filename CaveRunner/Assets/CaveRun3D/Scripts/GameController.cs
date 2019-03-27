@@ -13,28 +13,28 @@ public sealed class GameController : MonoBehaviour
     private PlatformCreator pCreator;
     private GameObject pauseMenu;
 
-    GUISkin GUIskin; //The skin gui we'll use
-    GUISkin GUIskinLarge;
-    Texture2D Gems; //a 2D image that is placed beside the gems score count
+    public GUISkin GUIskin; //The skin gui we'll use
+    public GUISkin GUIskinLarge;
+    public Texture2D Gems; //a 2D image that is placed beside the gems score count
     public Texture2D PauseImage;
 
-    int CurrentLevel = 1; //The current level we are at
-    int DistanceToLevelUp = 100; //How much more distance do we have to pass to get to the next level. This value is added up to the previous value in each level, meaning that to pass level 1 you need
+    public int CurrentLevel = 1; //The current level we are at
+    public int DistanceToLevelUp = 100; //How much more distance do we have to pass to get to the next level. This value is added up to the previous value in each level, meaning that to pass level 1 you need
                                  //to get to 100m, and to pass level 2 you have to get to 300 ( Distance To Level Up multiplied by the Current Level plus the distance passed so far ), to pass level 3 you need to get to 600 ( 100 * 3 + 300 ), and so on
 
-    string[] LevelUpText; //An array holding several texts that will be randomly displayed when you pass a level
+    public string[] LevelUpText; //An array holding several texts that will be randomly displayed when you pass a level
     private string CurrentLevelUpText; //The current level up text
     private bool LevelUp = false; //Are we leveling up? Used to know when to animate the level up text passing across the screen
 
     public int LevelUpRumble = 200; //How much to shake the screen when you level up
 
-    float MaxSpeedChange = 0.1f; //How much to change the value of MaxSpeed, which is in the PlayerControls script
-    float PlatformWidthChange = 0.05f; //How much to change the value of PlatformWidthRange, which is in the PlatformCreator script
-    float PlatformLengthChange = 0.05f; //How much to change the value of PlatformLengthRange, which is in the PlatformCreator script
-    float PlatformHeightChange = 0.05f; //How much to change the value of PlatformHeightRange, which is in the PlatformCreator script
-    float PlatformGapChange = 0.05f; //How much to change the value of PlatformGapRange, which is in the PlatformCreator script
-    float PlatformRotateChange = 0.05f; //How much to change the value of PlatformRotateRange, which is in the PlatformCreator script
-    float PlatformShiftChange = 0.05f; //How much to change the value of PlatformShiftRange, which is in the PlatformCreator script
+    public float MaxSpeedChange = 0.1f; //How much to change the value of MaxSpeed, which is in the PlayerControls script
+    public float PlatformWidthChange = 0.05f; //How much to change the value of PlatformWidthRange, which is in the PlatformCreator script
+    public float PlatformLengthChange = 0.05f; //How much to change the value of PlatformLengthRange, which is in the PlatformCreator script
+    public float PlatformHeightChange = 0.05f; //How much to change the value of PlatformHeightRange, which is in the PlatformCreator script
+    public float PlatformGapChange = 0.05f; //How much to change the value of PlatformGapRange, which is in the PlatformCreator script
+    public float PlatformRotateChange = 0.05f; //How much to change the value of PlatformRotateRange, which is in the PlatformCreator script
+    public float PlatformShiftChange = 0.05f; //How much to change the value of PlatformShiftRange, which is in the PlatformCreator script
     public float ObstacleRateChange = 0.05f; //How much to change the value of ObstacleRate, which is in the PlatformCreator script
     public float GemRateChange = 0.05f; //How much to change the value of GemRate, which is in the PlatformCreator script
 

@@ -13,7 +13,7 @@ public sealed class FramesPerSecond : MonoBehaviour
     // correct overall FPS even if the interval renders something like
     // 5.5f frames.
 
-    float updateInterval = 0.5f;
+    public float updateInterval = 0.5f;
 
     private float accum = 0.0f; // FPS accumulated over the interval
     private int frames = 0; // Frames drawn over the interval

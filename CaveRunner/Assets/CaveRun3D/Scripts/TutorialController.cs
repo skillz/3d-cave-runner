@@ -90,8 +90,8 @@ public sealed class TutorialController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
-        platformCreator = GameObject.FindWithTag("PlatformCreator").GetComponent<PlatformCreator>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerControls> ();
+        platformCreator = GameObject.FindWithTag("PlatformCreator").GetComponent<PlatformCreator> ();
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         collector = GameObject.FindWithTag("Collector");
         tunnel = GameObject.FindGameObjectsWithTag("Tunnel");
@@ -119,7 +119,7 @@ public sealed class TutorialController : MonoBehaviour
         scale.y = Screen.height / originalHeight; // calculate vert scale
         scale.z = 1;
         var svMat = GUI.matrix; // save current matrix
-                                // substitute matrix - only scale is altered from standard
+                                           // substitute matrix - only scale is altered from standard
         GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, scale);
 
         GUI.skin = GUIskin; //The skin gui we'll use

@@ -6,21 +6,21 @@ public sealed class Shooter : MonoBehaviour
     //I chose to exclude it from the game wither because it didn't work correctly or I didn't find a useful use for it.
     //I might include it in the game in a later update. You can still try to make use of it if you want
 
-    GameObject Player;
+    public GameObject Player;
 
-    Transform ShotObject;
+    public Transform ShotObject;
     private Transform ShotObjectCopy;
 
-    Transform HitEffect;
+    public Transform HitEffect;
 
-    float ShotSpeed = 0.2f;
+    public float ShotSpeed = 0.2f;
 
-    float ShotRate = 1;
+    public float ShotRate = 1;
     private float ShotTime = 0;
 
-    Vector3 ShotOffset = new Vector3(0, 0, 0);
+    public Vector3 ShotOffset = new Vector3(0, 0, 0);
 
-    float DestroyAfter = 10;
+    public float DestroyAfter = 10;
 
     private void Start()
     {

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public sealed class ScoreScreen : MonoBehaviour
 {
     //This script is used to dispaly the score screen at the end of the game, where two values ( distance and gems collected ) are added to teh total score
-    GUISkin GUIskin; //The skin gui we'll use
+    public GUISkin GUIskin; //The skin gui we'll use
 
     private float originalWidth = 600.0f;  // define here the original resolution
     private float originalHeight = 1024.0f; // you used to create the GUI contents
@@ -16,8 +16,8 @@ public sealed class ScoreScreen : MonoBehaviour
     private int ButtonHeight = 110;
     private int ButtonWidth = 420;
 
-    int GemValue = 100; //The value of a single gem in points
-    int DistanceValue = 10; //The value of a single meter of distance in points
+    public int GemValue = 100; //The value of a single gem in points
+    public int DistanceValue = 10; //The value of a single meter of distance in points
 
     private float TotalDistance = 0; //The total distance passed
     private float TotalDistanceCurrent = 0; //The current total score, used to animate the score rising from 0 to TotalScore
@@ -28,7 +28,7 @@ public sealed class ScoreScreen : MonoBehaviour
     private float TotalScore = 0; //The total score calculated from both distance and gems collected
     private float TotalScoreCurrent = 0; //The current total score, used to animate the score rising from 0 to TotalScore
 
-    bool HasSubmittedScore = false;
+    public bool HasSubmittedScore = false;
 
 
     private void Start()

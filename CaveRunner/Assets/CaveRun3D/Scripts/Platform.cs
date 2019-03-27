@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
 
 public sealed class Platform : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public sealed class Platform : MonoBehaviour
             if (transform.position.z < PlatformCreator.transform.position.z - (kPlatformCreator.PlatformLength + 2) * SectionLength && CreatedPlatform == false)
             {
                 //The platform is created at the end of the last section of the last platform, plus a gap
-                kPlatformCreator.CreatePlatform(kPlatformCreator.NewPlatformCopy.position.z + (kPlatformCreator.PlatformLength + 2) * SectionLength);
+                kPlatformCreator.CreatePlatform((int)Math.Round(kPlatformCreator.NewPlatformCopy.transform.position.z + (kPlatformCreator.PlatformLength + 2) * SectionLength));
 
                 CreatedPlatform = true;
             }

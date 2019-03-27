@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public sealed class PlayerControls : MonoBehaviour
 {
@@ -11,25 +12,25 @@ public sealed class PlayerControls : MonoBehaviour
     private PlatformCreator pCreator;
 
     public float Speed = 0.2f; //The player's current speed
-    float MaxSpeed = 0.4f; //The players maximum speed
-    float Acceleration = 0.004f; //How quickly the player can get to maximum speed
-    Transform SpeedEffect; //The Speed effect that is displayed when running very fast
+    public float MaxSpeed = 0.4f; //The players maximum speed
+    public float Acceleration = 0.004f; //How quickly the player can get to maximum speed
+    public Transform SpeedEffect; //The Speed effect that is displayed when running very fast
 
-    float JumpPower = 10; //The player's jump power
+    public float JumpPower = 10; //The player's jump power
 
-    float TurningSpeed = 0.5f; //The player's turning speed, how quickly he moves left and right
-    float TurnDamping = 0; //A slowdown value for the turning speed. At 1, it doesn't affect his speed, lower than that will make him rotate slowly
+    public float TurningSpeed = 0.5f; //The player's turning speed, how quickly he moves left and right
+    public float TurnDamping = 0; //A slowdown value for the turning speed. At 1, it doesn't affect his speed, lower than that will make him rotate slowly
 
-    string HitAnimation = "Lava"; //The player's hit animation, which plays when the palyer hits an obstacle
-    float HitAnimationTime = 0; //How long the player's hit aniamtion should be player
+    public string HitAnimation = "Lava"; //The player's hit animation, which plays when the palyer hits an obstacle
+    public float HitAnimationTime = 0; //How long the player's hit aniamtion should be player
 
-    float MovementLimits = 12; //movement limits for the palyer which prevent him from going to far left or right
+    public float MovementLimits = 12; //movement limits for the palyer which prevent him from going to far left or right
 
-    Transform PuffEffect; //The effect created when the player lands on a platform
-    Object PuffEffectCopy; //A copy of the PuffEffect
+    public Transform PuffEffect; //The effect created when the player lands on a platform
+    UnityEngine.Object PuffEffectCopy; //A copy of the PuffEffect
 
-    Transform TrailEffect; //The effect created when the player flies up from hitting lava
-    Object TrailEffectCopy; //A copy of the TrailEffect
+    public Transform TrailEffect; //The effect created when the player flies up from hitting lava
+    UnityEngine.Object TrailEffectCopy; //A copy of the TrailEffect
 
     private Vector3 InitPos; //The player's initial position
     private Vector3 PlayerPos = Vector3.zero; //The player's current position
@@ -39,18 +40,18 @@ public sealed class PlayerControls : MonoBehaviour
 
     public int JumpState = 4; //0-on the floor, 1-jump, 2-fall after jump, 3-double jump, 4-fall after double jump
 
-    Transform CustomCursor; //Put your custom cusor here. This is the orange glowing circle that shows where the player is going
+    public Transform CustomCursor; //Put your custom cusor here. This is the orange glowing circle that shows where the player is going
 
     //SOUNDS
-    AudioClip JumpSound;
-    AudioClip FallSound;
-    AudioClip StepSound;
-    AudioClip CrashSound;
+    public AudioClip JumpSound;
+    public AudioClip FallSound;
+    public AudioClip StepSound;
+    public AudioClip CrashSound;
 
     float CameraFollowSpeed = 0.2f; //How quickly the camera follows the player's position
 
-    float JumpChange = 1; //How much the jump power is affected. 1 means jumping is normal. less than 1 means jumps are much weaker
-    float JumpChangeTime = 0; //How long to keep the jump change, in seconds
+    public float JumpChange = 1; //How much the jump power is affected. 1 means jumping is normal. less than 1 means jumps are much weaker
+    public float JumpChangeTime = 0; //How long to keep the jump change, in seconds
 
     private Quaternion calibrationQuaternion;
     private Vector3 currentAcc;
@@ -143,7 +144,7 @@ public sealed class PlayerControls : MonoBehaviour
                 {
                     JumpChangeTime -= Time.deltaTime; //reduce the change time
                 }
-                else if (JumpChange != 1) //Otherwise, reset the jump change back to 1, which means it doesn't affect jump power anymore
+                else if (Math.Abs(JumpChange - 1) > float.Epsilon) //Otherwise, reset the jump change back to 1, which means it doesn't affect jump power anymore
                 {
                     JumpChange = 1;
                 }
@@ -184,7 +185,7 @@ public sealed class PlayerControls : MonoBehaviour
                         GetComponent<Rigidbody>().velocity.z
                     );
 
-                    GetComponent<AudioSource>().PlayOneShot(JumpSound); //Play a jump sound
+                    GetComponent<AudioSource> ().PlayOneShot(JumpSound); //Play a jump sound
                 }
                 else if (Input.GetButtonUp("Jump") && GetComponent<Rigidbody>().velocity.y > -1 && JumpState == 3) //If we release the jump button while double jumping, reduce the up velocity to third of its power, making the player fall quickly
                 {
@@ -225,7 +226,7 @@ public sealed class PlayerControls : MonoBehaviour
                     Speed = 0; //set the speed to 0
                     (Camera.main.GetComponent<Shake>()).ShakeFactor = 200; //shake the camera
 
-                    GetComponent<AudioSource>().PlayOneShot(CrashSound); //play a crash sound
+                    GetComponent<AudioSource> ().PlayOneShot(CrashSound); //play a crash sound
                     isDead = true;
                     //gController.showScoreOnScreen = true;
                     EndGameRun();
@@ -240,19 +241,26 @@ public sealed class PlayerControls : MonoBehaviour
             }
 
             //High speed effect
+            var particles = SpeedEffect.GetComponent<ParticleSystem>();
             if (Speed > 22)
             {
-                SpeedEffect.GetComponent<ParticleEmitter>().emit = true; //turn on the high speed effect
+                if (particles.isStopped)
+                {
+                    particles.Play();
+                }
             }
             else
             {
-                SpeedEffect.GetComponent<ParticleEmitter>().emit = false; //turn off the high speed effect
+                if (particles.isPlaying)
+                {
+                    particles.Stop();
+                }
             }
 
             //Lava, walk, run, jump, and fall animations
             if (HitAnimation != "" && HitAnimationTime > 0) //If we have a hit animation set, play it
             {
-                GetComponent<Animation>().CrossFade(HitAnimation); //play the hti animation
+                GetComponent< Animation > ().CrossFade(HitAnimation); //play the hti animation
 
                 HitAnimationTime -= Time.deltaTime; //reduce from the hit animation time
 
@@ -267,23 +275,23 @@ public sealed class PlayerControls : MonoBehaviour
                 {
                     if (Speed > 22) //if speed is above 0.5f, play the fast run animation
                     {
-                        GetComponent<Animation>().CrossFade("Run");
+                        GetComponent<Animation> ().CrossFade("Run");
                         //animation["Run"].speed = Speed * 3; //set animation speed be based on the player's actual speed
                     }
                     else //otherwise, play the normal run animation
                     {
-                        GetComponent<Animation>().CrossFade("Walk");
+                        GetComponent<Animation> ().CrossFade("Walk");
                         //animation["Walk"].speed = Speed * 4; //set animation speed be based on the player's actual speed
                     }
                 }
                 else if (JumpState == 1 || JumpState == 3)
                 {
-                    GetComponent<Animation>().CrossFade("Jump");
+                    GetComponent<Animation> ().CrossFade("Jump");
                     //animation["Jump"].speed = Speed * 4; //set animation speed be based on the player's actual speed
                 }
                 else if (JumpState == 2 || JumpState == 4)
                 {
-                    GetComponent<Animation>().CrossFade("Fall");
+                    GetComponent<Animation> ().CrossFade("Fall");
                     //animation["Fall"].speed = Speed * 4; //set animation speed be based on the player's actual speed
                 }
             }
@@ -323,10 +331,10 @@ public sealed class PlayerControls : MonoBehaviour
             PlayerPos.x = TargetPoint.x; //Set the desired horizontal player position to be the same as TargetPoint
             PlayerPos.z = InitPos.z; //Keep the player at his initial forward position
 
-            if (CustomCursor) //If we have a custom cursor defined
+            if (CustomCursor != null) //If we have a custom cursor defined
             {
                 CustomCursor.LookAt(transform.position); //make the cursor look at the player
-
+                  
                 CustomCursor.position = TargetPoint; //move the cursor to the position of intersection with the plane
                 CustomCursor.position = new Vector3(CustomCursor.position.x, transform.position.y, CustomCursor.position.z); //keep the cursor at the vertical position of the player
             }
@@ -339,11 +347,11 @@ public sealed class PlayerControls : MonoBehaviour
             );
 
             //Rotate in the direction of movement
-            transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w)
+            transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+   private void OnCollisionEnter(Collision collision)
     {
         //If the player falls on a platform, while either jumping or double jumping, se him back to running state
         if (JumpState == 2 || JumpState == 4)
@@ -360,7 +368,7 @@ public sealed class PlayerControls : MonoBehaviour
     }
 
     public Vector3 getPlayerPos()
-    {
+    { 
         return PlayerPos;
     }
 

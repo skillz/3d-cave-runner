@@ -3,7 +3,7 @@
 public sealed class Instructions : MonoBehaviour
 {
     //This script just displays a box with some instructions in it, set from the inspector
-    GUISkin GUIskin; //The skin gui we'll use
+    public GUISkin GUIskin; //The skin gui we'll use
 
     private float originalWidth = 600.0f;  // define here the original resolution
     private float originalHeight = 1024.0f; // you used to create the GUI contents

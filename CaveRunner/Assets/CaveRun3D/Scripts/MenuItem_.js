@@ -30,7 +30,8 @@ function RunMenuItem()
       LoadedComponent = trans.gameObject;
     }
   } else if (StartSkillz) {
-      Debug.Log('Launch Skillz');
-      SkillzCrossPlatform.LaunchSkillz(SkillzGameController());
+    Debug.Log('Launch Skillz');
+	SkillzCrossPlatform.LaunchSkillz(SkillzGameController());
+	
   }
 }

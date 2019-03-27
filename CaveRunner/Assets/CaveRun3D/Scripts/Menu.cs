@@ -8,7 +8,7 @@ public sealed class Menu : MonoBehaviour
     private static readonly float OriginalHeight = 1024.0f; // you used to create the GUI contents
     private Vector3 scale;
 
-    GUISkin GUIskin; //The skin gui we'll use
+    public GUISkin GUIskin; //The skin gui we'll use
 
     private static readonly int ButtonHeight = 90;
     private static readonly int ButtonWidth = 420;
@@ -16,18 +16,18 @@ public sealed class Menu : MonoBehaviour
 
     private static readonly int ButtonMargin = (int)((OriginalWidth - 2 * ButtonWidth) / 4);
 
-    float MenuDelay = 2; //How much to wait before moving the menu into the scene
+    public float MenuDelay = 2; //How much to wait before moving the menu into the scene
     private float MenuDelayCount = 0; //The counter for MenuDelay
 
-    Transform[] MenuItems; //All the buttons, these are prefabs with MenuItem script in them. Take a look inside MENU folder to see them
+    public Transform[] MenuItems; //All the buttons, these are prefabs with MenuItem script in them. Take a look inside MENU folder to see them
     private int MenuIndex = 0; //The current index of the menu items array
 
-    void Start()
+    private void Start()
     {
         ButtonHeightOffset = -ButtonMargin; //Move the buttons a little up, by the value of the margin
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         scale.x = Screen.width / OriginalWidth; // calculate hor scale
         scale.y = Screen.height / OriginalHeight; // calculate vert scale
