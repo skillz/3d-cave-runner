@@ -95,11 +95,6 @@ public sealed class ScoreScreen : MonoBehaviour
             TotalDistanceCurrent = TotalDistance;
         }
 
-        if (TotalDistanceCurrent == TotalDistance && TotalGemsCurrent == TotalGems)
-        {
-            SubmitScore();
-        }
-
         TotalScoreCurrent = TotalDistanceCurrent * DistanceValue + TotalGemsCurrent * GemValue;
 
         //Display 3 boxes, the first showing total distance passed and multiplied by the value of each meter, the second showing total gems collected and multiplied by the value of a gem, and finally a bigger box showing the
@@ -113,8 +108,8 @@ public sealed class ScoreScreen : MonoBehaviour
         //Debug.Log("button Rect: " + buttonRect.ToString());
         if (GUI.Button(buttonRect, "Submit Score"))
         {
-            SubmitScore(); //Run the menu item function which is inside a MenuItem script component attached to a prefab
-        }
+            StartCoroutine("SubmitScore"); //Run the menu item function which is inside a MenuItem script component attached to a prefab
+        } 
     }
 
     private IEnumerator SubmitScore()
@@ -126,6 +121,7 @@ public sealed class ScoreScreen : MonoBehaviour
             HasSubmittedScore = true;
             var metrics = new Dictionary<string, string>();
             metrics["score"] = TotalScore.ToString("F0");
+            Debug.Log("SUBMIT FINAL SCORE");
             SkillzCrossPlatform.ReportFinalScore(metrics["score"]);
         }
     }
