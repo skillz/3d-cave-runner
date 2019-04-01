@@ -73,6 +73,10 @@ typedef enum UnityFramebufferTarget
 void    UnityBindFramebuffer(UnityFramebufferTarget target, int fbo);
 void    UnityRegisterFBO(UnityRenderBufferHandle color, UnityRenderBufferHandle depth, unsigned fbo);
 
+// when texture (managed in trampoline) is used in unity (e.g. with external render surfaces)
+// we need to poke unity when we delete it (so it could clear caches etc)
+void    UnityOnDeleteGLTexture(int tex);
+
 // controling player internals
 
 // TODO: needs some cleanup
@@ -110,6 +114,7 @@ int     UnityIsOrientationEnabled(unsigned /*ScreenOrientation*/ orientation);
 
 int     UnityHasOrientationRequest();
 int     UnityShouldAutorotate();
+int     UnityShouldChangeAllowedOrientations();
 int     UnityRequestedScreenOrientation(); // returns ScreenOrientation
 void    UnityOrientationRequestWasCommitted();
 
@@ -135,6 +140,7 @@ int     UnityGetDeferSystemGesturesLeftEdge();
 int     UnityGetDeferSystemGesturesRightEdge();
 int     UnityGetHideHomeButton();
 int     UnityMetalFramebufferOnly();
+int     UnityMetalMemorylessDepth();
 
 
 // push notifications
@@ -148,8 +154,7 @@ void    UnitySendRemoteNotificationError(NSError* error);
 // native events
 
 void    UnityInvalidateDisplayDataCache(void* screen);
-void    UnityUpdateDisplayList(void** screens, int screenCount);
-
+void    UnityUpdateDisplayListCache(void** screens, int screenCount);
 
 // profiler
 
@@ -180,6 +185,7 @@ void    UnityReportWWWReceivedResponse(void* udata, unsigned expectedDataLength)
 void    UnityReportWWWReceivedData(void* udata, const void* buffer, unsigned totalRead, unsigned expectedTotal);
 void    UnityReportWWWFinishedLoadingData(void* udata);
 void    UnityReportWWWSentData(void* udata, unsigned totalWritten, unsigned expectedTotal);
+int     UnityReportWWWValidateCertificate(void* udata, const void* certificateData, unsigned certificateSize);
 const void*   UnityWWWGetUploadData(void* udata, unsigned* bufferSize);
 void    UnityWWWConsumeUploadData(void* udata, unsigned consumedSize);
 
@@ -250,6 +256,7 @@ extern "C" {
 void            UnityInitJoysticks();
 void            UnityCoreMotionStart();
 void            UnityCoreMotionStop();
+void            UnityUpdateAccelerometerData();
 int             UnityIsGyroEnabled(int idx);
 int             UnityIsGyroAvailable();
 void            UnityUpdateGyroData();
@@ -278,31 +285,31 @@ EAGLContext*        UnityGetDataContextEAGL();
 UnityRenderBufferHandle UnityBackbufferColor();
 UnityRenderBufferHandle UnityBackbufferDepth();
 
-int             UnityGetWideColorSupported();
+int             UnityIsWideColorSupported();
 
 // UI/ActivityIndicator.mm
 void            UnityStartActivityIndicator();
 void            UnityStopActivityIndicator();
 
 // UI/Keyboard.mm
-void            UnityKeyboard_Create(unsigned keyboardType, int autocorrection, int multiline, int secure, int alert, const char* text, const char* placeholder);
+void            UnityKeyboard_Create(unsigned keyboardType, int autocorrection, int multiline, int secure, int alert, const char* text, const char* placeholder, int characterLimit);
 void            UnityKeyboard_Show();
 void            UnityKeyboard_Hide();
 void            UnityKeyboard_GetRect(float* x, float* y, float* w, float* h);
 void            UnityKeyboard_SetText(const char* text);
 NSString*       UnityKeyboard_GetText();
 int             UnityKeyboard_IsActive();
-int             UnityKeyboard_IsDone();
-int             UnityKeyboard_WasCanceled();
 int             UnityKeyboard_Status();
 void            UnityKeyboard_SetInputHidden(int hidden);
 int             UnityKeyboard_IsInputHidden();
+void            UnityKeyboard_SetCharacterLimit(unsigned characterLimit);
 
 int             UnityKeyboard_CanGetSelection();
 void            UnityKeyboard_GetSelection(int* location, int* range);
+int             UnityKeyboard_CanSetSelection();
+void            UnityKeyboard_SetSelection(int location, int range);
 
 // UI/UnityViewControllerBase.mm
-void            UnityNotifyAutoOrientationChange();
 void            UnityNotifyHideHomeButtonChange();
 void            UnityNotifyDeferSystemGesturesChange();
 
@@ -312,8 +319,8 @@ int             UnityGetAVCapturePermission(int captureTypes);
 void            UnityRequestAVCapturePermission(int captureTypes);
 
 // Unity/CameraCapture.mm
-void            UnityEnumVideoCaptureDevices(void* udata, void(*callback)(void* udata, const char* name, int frontFacing));
-void*           UnityInitCameraCapture(int device, int w, int h, int fps, void* udata);
+void            UnityEnumVideoCaptureDevices(void* udata, void(*callback)(void* udata, const char* name, int frontFacing, int autoFocusPointSupported, int kind, const int* resolutions, int resCount));
+void*           UnityInitCameraCapture(int device, int w, int h, int fps, int isDepth, void* udata);
 void            UnityStartCameraCapture(void* capture);
 void            UnityPauseCameraCapture(void* capture);
 void            UnityStopCameraCapture(void* capture);
@@ -321,6 +328,7 @@ void            UnityCameraCaptureExtents(void* capture, int* w, int* h);
 void            UnityCameraCaptureReadToMemory(void* capture, void* dst, int w, int h);
 int             UnityCameraCaptureVideoRotationDeg(void* capture);
 int             UnityCameraCaptureVerticallyMirrored(void* capture);
+int             UnityCameraCaptureSetAutoFocusPoint(void* capture, float x, float y);
 
 
 // Unity/DeviceSettings.mm
@@ -372,6 +380,9 @@ int         UnityGetAppleTVRemoteReportAbsoluteDpadValues();
 void        UnitySetAppleTVRemoteReportAbsoluteDpadValues(int val);
 int         UnityGetAppleTVRemoteTouchesEnabled();
 void        UnitySetAppleTVRemoteTouchesEnabled(int val);
+
+// Unity/UnityReplayKit.mm
+void         UnityShouldCreateReplayKitOverlay();
 
 #ifdef __cplusplus
 } // extern "C"

@@ -151,5 +151,8 @@ il2cpp_type_get_object
 il2cpp_type_get_type
 il2cpp_type_get_class_or_element_class
 il2cpp_type_get_name
+il2cpp_type_equals
+
+il2cpp_unity_install_unitytls_interface
 
 ____visualizerHelpersPreventLinkerStripping @65535 NONAME DATA

@@ -9,13 +9,20 @@ namespace il2cpp
 {
 namespace gc
 {
-    class GarbageCollector
+    class LIBIL2CPP_CODEGEN_API GarbageCollector
     {
     public:
         static void Collect(int maxGeneration);
         static int32_t CollectALittle();
         static int32_t GetCollectionCount(int32_t generation);
         static int64_t GetUsedHeapSize();
+#if IL2CPP_ENABLE_WRITE_BARRIERS
+        static void SetWriteBarrier(void **ptr);
+        static void SetWriteBarrier(void **ptr, size_t numBytes);
+#else
+        static inline void SetWriteBarrier(void **ptr) {}
+        static inline void SetWriteBarrier(void **ptr, size_t numBytes) {}
+#endif
 
     public:
         // internal
@@ -41,6 +48,7 @@ namespace gc
         static void Initialize();
         static void Enable();
         static void Disable();
+        static bool IsDisabled();
 
         static FinalizerCallback RegisterFinalizerWithCallback(Il2CppObject* obj, FinalizerCallback callback);
 
@@ -73,6 +81,9 @@ namespace gc
 
         typedef void* (*GCCallWithAllocLockCallback)(void* user_data);
         static void* CallWithAllocLockHeld(GCCallWithAllocLockCallback callback, void* user_data);
+
+        static void RegisterRoot(char *start, size_t size);
+        static void UnregisterRoot(char* start);
 
 #if NET_4_0
         static void SetSkipThread(bool skip);

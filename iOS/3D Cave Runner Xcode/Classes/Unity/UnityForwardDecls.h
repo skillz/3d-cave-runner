@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h>
+#include "UnitySharedDecls.h"
 
 #ifdef __OBJC__
 @class UIScreen;
@@ -134,28 +135,14 @@ typedef enum
     deviceiPhoneUnknown     = 10001,
     deviceiPadUnknown       = 10002,
     deviceiPodTouchUnknown  = 10003,
+
+    deviceAppleTV1Gen  = 1001,
+    deviceAppleTV2Gen  = 1002
 }
 DeviceGeneration;
 
-
 // be aware that this enum is shared with unity implementation so you should absolutely not change it
-typedef enum
-    ScreenOrientation
-{
-    orientationUnknown,
-    portrait,
-    portraitUpsideDown,
-    landscapeLeft,
-    landscapeRight,
-
-    orientationCount,
-}
-ScreenOrientation;
-
-
-// be aware that this enum is shared with unity implementation so you should absolutely not change it
-typedef enum
-    AppInBackgroundBehavior
+typedef enum AppInBackgroundBehavior
 {
     appbgCustom     = -1,
     appbgSuspend    = 0,
@@ -168,8 +155,7 @@ AppInBackgroundBehavior;
 // N.B. touch.position will always be adjusted to current resolution
 //      i.e. if you touch right border of view, touch.position.x will be Screen.width, not view.width
 //      to get coords in view space (os-coords), use touch.rawPosition
-typedef enum
-    ViewTouchProcessing
+typedef enum ViewTouchProcessing
 {
     // the touches originated from view will be ignored by unity
     touchesIgnored = 0,
@@ -185,8 +171,7 @@ typedef enum
 ViewTouchProcessing;
 
 // be aware that this enum is shared with unity implementation so you should absolutely not change it
-typedef enum
-    KeyboardStatus
+typedef enum KeyboardStatus
 {
     Visible     = 0,
     Done        = 1,
@@ -195,22 +180,19 @@ typedef enum
 }
 KeyboardStatus;
 
+// misc
 #ifdef __cplusplus
-extern bool _ios42orNewer;
-extern bool _ios43orNewer;
-extern bool _ios50orNewer;
-extern bool _ios60orNewer;
-extern bool _ios70orNewer;
-extern bool _ios80orNewer;
-extern bool _ios81orNewer;
-extern bool _ios82orNewer;
-extern bool _ios90orNewer;
-extern bool _ios91orNewer;
-extern bool _ios100orNewer;
-extern bool _ios101orNewer;
-extern bool _ios102orNewer;
-extern bool _ios103orNewer;
-extern bool _ios110orNewer;
-extern bool _ios111orNewer;
-extern bool _ios112orNewer;
+extern "C" {
+    bool UnityiOS81orNewer();
+    bool UnityiOS82orNewer();
+    bool UnityiOS90orNewer();
+    bool UnityiOS91orNewer();
+    bool UnityiOS100orNewer();
+    bool UnityiOS101orNewer();
+    bool UnityiOS102orNewer();
+    bool UnityiOS103orNewer();
+    bool UnityiOS110orNewer();
+    bool UnityiOS111orNewer();
+    bool UnityiOS112orNewer();
+}
 #endif

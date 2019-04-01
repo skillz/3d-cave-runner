@@ -1,27 +1,11 @@
 #pragma once
 
+#include "UnityRendering.h"
 #include "GlesHelper.h"
+#include <UIKit/UIKit.h>
 
 @class EAGLContext;
 @class UnityView;
-
-typedef struct
-    RenderingSurfaceParams
-{
-    // rendering setup
-    int msaaSampleCount;
-    int renderW;
-    int renderH;
-    int srgb;
-    int wideColor;
-    int metalFramebufferOnly;
-
-    // unity setup
-    int disableDepthAndStencil;
-    int useCVTextureCache;
-}
-RenderingSurfaceParams;
-
 
 @interface DisplayConnection : NSObject
 - (id)init:(UIScreen*)targetScreen;
@@ -51,13 +35,14 @@ RenderingSurfaceParams;
 @interface DisplayManager : NSObject
 - (id)objectForKeyedSubscript:(id)key;
 - (BOOL)displayAvailable:(UIScreen*)targetScreen;
-- (void)updateDisplayListInUnity;
+- (void)updateDisplayListCacheInUnity;
 
 - (void)startFrameRendering;
 - (void)present;
 - (void)endFrameRendering;
 
 - (void)enumerateDisplaysWithBlock:(void (^)(DisplayConnection* conn))block;
+- (void)enumerateNonMainDisplaysWithBlock:(void (^)(DisplayConnection* conn))block;
 
 + (void)Initialize;
 + (DisplayManager*)Instance;

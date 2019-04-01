@@ -13,34 +13,19 @@
 #include "il2cpp-class-internals.h"
 #include "il2cpp-tabledefs.h"
 
+#include "gc/GarbageCollector.h"
 #include "vm/PlatformInvoke.h"
 #include "vm/StackTrace.h"
 #include "vm/PlatformInvoke.h"
 #include "vm/StackTrace.h"
+#include "vm-utils/Debugger.h"
 #include "utils/StringUtils.h"
 #include "utils/StringView.h"
 #include "utils/Exception.h"
 #include "utils/Output.h"
 #include "utils/Runtime.h"
 
-#ifdef _MSC_VER
-#define IL2CPP_DEBUG_BREAK() __debugbreak()
-#else
-#define IL2CPP_DEBUG_BREAK()
-#endif
-
-// This function exists to help with generation of callstacks for exceptions
-// on iOS and MacOS x64 with clang 6.0 (newer versions of clang don't have this
-// problem on x64). There we call the backtrace function, which does not play nicely
-// with NORETURN, since the compiler eliminates the method prologue code setting up
-// the address of the return frame (which makes sense). So on iOS we need to make
-// the NORETURN define do nothing, then we use this dummy method which has the
-// attribute for clang on iOS defined to prevent clang compiler errors for
-// method that end by throwing a managed exception.
-REAL_NORETURN IL2CPP_NO_INLINE static void il2cpp_codegen_no_return()
-{
-    IL2CPP_UNREACHABLE;
-}
+REAL_NORETURN IL2CPP_NO_INLINE void il2cpp_codegen_no_return();
 
 #if IL2CPP_COMPILER_MSVC
 #define DEFAULT_CALL STDCALL
@@ -166,18 +151,25 @@ inline int64_t il2cpp_codegen_abs(int64_t value)
         goto Target;
 
 
-
-#define IL2CPP_RAISE_MANAGED_EXCEPTION(message, lastManagedFrame) \
+#if IL2CPP_MONO_DEBUGGER
+#define IL2CPP_RAISE_MANAGED_EXCEPTION(message, seqPoint, lastManagedFrame) \
     do {\
-        il2cpp_codegen_raise_exception((Exception_t*)message, (MethodInfo*)lastManagedFrame);\
+        il2cpp_codegen_raise_exception((Exception_t*)message, seqPoint, (MethodInfo*)lastManagedFrame);\
         il2cpp_codegen_no_return();\
     } while (0)
+#else
+#define IL2CPP_RAISE_MANAGED_EXCEPTION(message, seqPoint, lastManagedFrame) \
+    do {\
+        il2cpp_codegen_raise_exception((Exception_t*)message, NULL, (MethodInfo*)lastManagedFrame);\
+        il2cpp_codegen_no_return();\
+    } while (0)
+#endif
 
 
 template<typename T>
 inline void Il2CppCodeGenWriteBarrier(T** targetAddress, T* object)
 {
-    // TODO
+    il2cpp::gc::GarbageCollector::SetWriteBarrier((void**)targetAddress);
 }
 
 void il2cpp_codegen_memory_barrier();
@@ -188,6 +180,14 @@ inline T VolatileRead(T* location)
     T result = *location;
     il2cpp_codegen_memory_barrier();
     return result;
+}
+
+template<typename T>
+inline void VolatileWrite(T** location, T* value)
+{
+    il2cpp_codegen_memory_barrier();
+    *location = value;
+    Il2CppCodeGenWriteBarrier(location, value);
 }
 
 template<typename T>
@@ -264,6 +264,73 @@ inline typename pick_bigger<T, U>::type il2cpp_codegen_subtract(T left, U right)
     return left - right;
 }
 
+inline void il2cpp_codegen_memcpy(void* dest, const void* src, size_t count)
+{
+    memcpy(dest, src, count);
+}
+
+inline void il2cpp_codegen_memset(void* ptr, int value, size_t num)
+{
+    memset(ptr, value, num);
+}
+
+#if IL2CPP_MONO_DEBUGGER
+extern volatile uint32_t g_Il2CppDebuggerCheckPointEnabled;
+#endif
+
+inline void il2cpp_codegen_register_debugger_data(const Il2CppDebuggerMetadataRegistration *data)
+{
+#if IL2CPP_MONO_DEBUGGER
+    il2cpp::utils::Debugger::RegisterSequencePointCheck(&g_Il2CppDebuggerCheckPointEnabled);
+    il2cpp::utils::Debugger::RegisterMetadata(data);
+#endif
+}
+
+inline void il2cpp_codegen_check_sequence_point(Il2CppSequencePointExecutionContext* executionContext, size_t seqPointId)
+{
+#if IL2CPP_MONO_DEBUGGER
+    if (g_Il2CppDebuggerCheckPointEnabled)
+        il2cpp::utils::Debugger::CheckSequencePoint(executionContext, seqPointId);
+#endif
+}
+
+inline void il2cpp_codegen_check_pause_point()
+{
+#if IL2CPP_MONO_DEBUGGER
+    if (g_Il2CppDebuggerCheckPointEnabled)
+        il2cpp::utils::Debugger::CheckPausePoint();
+#endif
+}
+
+inline Il2CppSequencePoint* il2cpp_codegen_get_sequence_point(size_t id)
+{
+#if IL2CPP_MONO_DEBUGGER
+    return il2cpp::utils::Debugger::GetSequencePoint(id);
+#else
+    return NULL;
+#endif
+}
+
+class MethodExitSequencePointChecker
+{
+private:
+    size_t m_pSeqPoint;
+    Il2CppSequencePointExecutionContext* m_seqPointStorage;
+
+public:
+    MethodExitSequencePointChecker(Il2CppSequencePointExecutionContext* seqPointStorage, size_t seqPointId) :
+        m_seqPointStorage(seqPointStorage), m_pSeqPoint(seqPointId)
+    {
+    }
+
+    ~MethodExitSequencePointChecker()
+    {
+#if IL2CPP_MONO_DEBUGGER
+        il2cpp_codegen_check_sequence_point(m_seqPointStorage, m_pSeqPoint);
+#endif
+    }
+};
+
 #ifdef _MSC_VER
 #define IL2CPP_DISABLE_OPTIMIZATIONS __pragma(optimize("", off))
 #define IL2CPP_ENABLE_OPTIMIZATIONS __pragma(optimize("", on))
@@ -271,3 +338,22 @@ inline typename pick_bigger<T, U>::type il2cpp_codegen_subtract(T left, U right)
 #define IL2CPP_DISABLE_OPTIMIZATIONS __attribute__ ((optnone))
 #define IL2CPP_ENABLE_OPTIMIZATIONS
 #endif
+
+// NativeArray macros
+#define IL2CPP_NATIVEARRAY_GET_ITEM(TElementType, TTField, TIndex) \
+    *(reinterpret_cast<TElementType*>(TTField) + TIndex)
+
+#define IL2CPP_NATIVEARRAY_SET_ITEM(TElementType, TTField, TIndex, TValue) \
+   *(reinterpret_cast<TElementType*>(TTField) + TIndex) = TValue;
+
+#define IL2CPP_NATIVEARRAY_GET_LENGTH(TLengthField) \
+   (TLengthField)
+
+// Array Unsafe
+#define IL2CPP_ARRAY_UNSAFE_LOAD(TArray, TIndex) \
+    (TArray)->GetAtUnchecked(static_cast<il2cpp_array_size_t>(TIndex))
+
+inline bool il2cpp_codegen_object_reference_equals(const RuntimeObject *obj1, const RuntimeObject *obj2)
+{
+    return obj1 == obj2;
+}

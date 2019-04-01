@@ -56,7 +56,7 @@ static DisplayManager* _DisplayManager = nil;
         targetScreen.currentMode = targetScreen.preferredMode;
 #endif
 
-        // UIScreenOverscanCompensationNone == UIScreenOverscanCompensationInsetApplicationFrame so it will work woth pre-ios9 just fine
+        // UIScreenOverscanCompensationNone == UIScreenOverscanCompensationInsetApplicationFrame so it will work with pre-ios9 just fine
         targetScreen.overscanCompensation = UIScreenOverscanCompensationNone;
 
         self->_screenSize = targetScreen.currentMode.size;
@@ -97,7 +97,7 @@ static DisplayManager* _DisplayManager = nil;
         if (showRightAway)
         {
             [window addSubview: view];
-            [window makeKeyAndVisible];
+            window.hidden = NO;
         }
     }
 }
@@ -144,22 +144,23 @@ static DisplayManager* _DisplayManager = nil;
 
     bool systemSizeChanged  = _surface->systemW != _screenSize.width || _surface->systemH != _screenSize.height;
     bool msaaChanged        = _supportsMSAA && (_surface->msaaSamples != params.msaaSampleCount);
-    bool depthfmtChanged    = _surface->disableDepthAndStencil != params.disableDepthAndStencil;
+    bool depthFmtChanged    = _surface->disableDepthAndStencil != params.disableDepthAndStencil;
     bool cvCacheChanged     = _surface->useCVTextureCache != params.useCVTextureCache;
+    bool memorylessChanged  = _surface->memorylessDepth != params.metalMemorylessDepth;
 
     bool renderSizeChanged  = false;
     if ((params.renderW > 0 && _surface->targetW != params.renderW)         // changed resolution
         ||  (params.renderH > 0 && _surface->targetH != params.renderH)     // changed resolution
         ||  (params.renderW <= 0 && _surface->targetW != _surface->systemW) // no longer need intermediate fb
         ||  (params.renderH <= 0 && _surface->targetH != _surface->systemH) // no longer need intermediate fb
-        )
+    )
     {
         renderSizeChanged = true;
     }
 
     bool recreateSystemSurface      = systemSizeChanged;
     bool recreateRenderingSurface   = systemSizeChanged || renderSizeChanged || msaaChanged || cvCacheChanged;
-    bool recreateDepthbuffer        = systemSizeChanged || renderSizeChanged || msaaChanged || depthfmtChanged;
+    bool recreateDepthbuffer        = systemSizeChanged || renderSizeChanged || msaaChanged || depthFmtChanged || memorylessChanged;
 
     _surface->disableDepthAndStencil = params.disableDepthAndStencil;
 
@@ -173,6 +174,7 @@ static DisplayManager* _DisplayManager = nil;
     _surface->srgb = params.srgb;
     _surface->wideColor = params.wideColor;
     _surface->useCVTextureCache = params.useCVTextureCache;
+    _surface->memorylessDepth = params.metalMemorylessDepth;
 
     if (UnitySelectedRenderingAPI() == apiMetal)
     {
@@ -188,7 +190,7 @@ static DisplayManager* _DisplayManager = nil;
         CreateRenderingSurface(_surface);
     if (recreateDepthbuffer)
         CreateSharedDepthbuffer(_surface);
-    if (recreateSystemSurface || recreateRenderingSurface)
+    if (recreateSystemSurface || recreateRenderingSurface || recreateDepthbuffer)
         CreateUnityRenderBuffers(_surface);
 
     UnityInvalidateDisplayDataCache((__bridge void*)_screen);
@@ -231,11 +233,15 @@ static DisplayManager* _DisplayManager = nil;
     {
         RenderingSurfaceParams params =
         {
-            _surface->msaaSamples, (int)_requestedRenderingSize.width, (int)_requestedRenderingSize.height,
-            _surface->srgb,
-            _surface->wideColor,
-            false,
-            _surface->disableDepthAndStencil, self.surface->cvTextureCache != 0
+            .msaaSampleCount        = _surface->msaaSamples,
+            .renderW                = (int)_requestedRenderingSize.width,
+            .renderH                = (int)_requestedRenderingSize.height,
+            .srgb                   = _surface->srgb,
+            .wideColor              = _surface->wideColor,
+            .metalFramebufferOnly   = 0,
+            .metalMemorylessDepth   = 0,
+            .disableDepthAndStencil = _surface->disableDepthAndStencil,
+            .useCVTextureCache      = self.surface->cvTextureCache != 0,
         };
         [self recreateSurface: params];
 
@@ -290,7 +296,7 @@ static DisplayManager* _DisplayManager = nil;
                               valueOptions: NSPointerFunctionsStrongMemory | NSPointerFunctionsObjectPointerPersonality
             ];
 
-        for (UIScreen* screen in[UIScreen screens])
+        for (UIScreen* screen in [UIScreen screens])
             [self registerScreen: screen];
 
         _mainDisplay = self[[UIScreen mainScreen]];
@@ -314,7 +320,7 @@ static DisplayManager* _DisplayManager = nil;
     return [_displayConnection objectForKey: (UIScreen*)key];
 }
 
-- (void)updateDisplayListInUnity
+- (void)updateDisplayListCacheInUnity;
 {
     // [UIScreen screens] might be out of sync to what is indicated to the
     // application via UIScreenDidConnectNotification and UIScreenDidDisconnectNotification
@@ -335,7 +341,7 @@ static DisplayManager* _DisplayManager = nil;
         screens[screenCount++] = (__bridge void*)screen;
     }
 
-    UnityUpdateDisplayList(screens, screenCount);
+    UnityUpdateDisplayListCache(screens, screenCount);
 }
 
 - (void)enumerateDisplaysWithBlock:(void (^)(DisplayConnection* conn))block
@@ -346,6 +352,16 @@ static DisplayManager* _DisplayManager = nil;
         // in that case we dont want to touch Display
         DisplayConnection* conn = [_displayConnection objectForKey: screen];
         if (conn.surface != nil)
+            block(conn);
+    }
+}
+
+- (void)enumerateNonMainDisplaysWithBlock:(void (^)(DisplayConnection* conn))block
+{
+    for (UIScreen* screen in _displayConnection)
+    {
+        DisplayConnection* conn = [_displayConnection objectForKey: screen];
+        if (conn != _mainDisplay && conn.surface != nil)
             block(conn);
     }
 }
@@ -374,7 +390,7 @@ static DisplayManager* _DisplayManager = nil;
 - (void)screenDidConnect:(NSNotification*)notification
 {
     [self registerScreen: (UIScreen*)[notification object]];
-    [self updateDisplayListInUnity];
+    [self updateDisplayListCacheInUnity];
 }
 
 - (void)screenDidDisconnect:(NSNotification*)notification
@@ -387,7 +403,7 @@ static DisplayManager* _DisplayManager = nil;
 
     [_displayConnection removeObjectForKey: screen];
     conn = nil;
-    [self updateDisplayListInUnity];
+    [self updateDisplayListCacheInUnity];
 }
 
 + (void)Initialize
@@ -432,7 +448,19 @@ static void EnsureDisplayIsInited(DisplayConnection* conn)
 
     if (needRecreate)
     {
-        RenderingSurfaceParams params = {0, -1, -1, 0, 0, 0, UnityDisableDepthAndStencilBuffers(), false};
+        RenderingSurfaceParams params =
+        {
+            .msaaSampleCount        = UnityGetDesiredMSAASampleCount(MSAA_DEFAULT_SAMPLE_COUNT),
+            .renderW                = -1,   // native resolution at first (can be changed later)
+            .renderH                = -1,   // native resolution at first (can be changed later)
+            .srgb                   = UnityGetSRGBRequested(),
+            .wideColor              = 0,    // i am not sure how to handle wide color here (and if it is even supported for airplay)
+            .metalFramebufferOnly   = UnityMetalFramebufferOnly(),
+            .metalMemorylessDepth   = UnityMetalMemorylessDepth(),
+            .disableDepthAndStencil = UnityDisableDepthAndStencilBuffers(),
+            .useCVTextureCache      = 0,
+        };
+
         [conn recreateSurface: params];
         {
             DisplayConnection* main = [DisplayManager Instance].mainDisplay;
@@ -538,6 +566,7 @@ extern "C" EAGLContext* UnityGetMainScreenContextGLES()
 {
     return GetMainDisplay().surfaceGLES->context;
 }
+
 extern "C" EAGLContext* UnityGetContextEAGL()
 {
     return GetMainDisplay().surfaceGLES->context;
