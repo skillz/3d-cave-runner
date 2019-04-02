@@ -11,7 +11,7 @@ sudo ln -sf /Users/opsadmin/Library/Android/sdk /usr/local/android-sdk-linux
 # Link Sidious location for Skillz SDK Project:
 # THIS IS TERRIBLE AND WILL BREAK FOR ZINC.
 rm -rf sdk
-sudo ln -s ../../../../SDK-Framework/SDK-Framework-Mercury/sdk-android/sdk sdk
+sudo ln -s ../../../../SDK-Framework/SDK-Framework-Zinc/sdk-android/sdk sdk
 
 # Compile Apps
 
