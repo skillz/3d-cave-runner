@@ -25,17 +25,18 @@ extern bool _unityAppReady;
         _curOrientation = to;
     else
         _curOrientation = OrientationAfterTransform(_curOrientation, TransformBetweenOrientations(from, to));
+
+    _viewIsRotating = YES;
 }
 
 - (void)didRotate
 {
     if (_shouldRecreateView)
     {
-        // we are not inside repaint so we need to draw second time ourselves
         [self recreateRenderingSurface];
-        if (_unityAppReady && !UnityIsPaused())
-            UnityRepaint();
     }
+
+    _viewIsRotating = NO;
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event      { UnitySendTouchesBegin(touches, event); }

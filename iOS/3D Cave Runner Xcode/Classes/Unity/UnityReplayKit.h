@@ -1,5 +1,4 @@
-#ifndef UnityReplayKit_h
-#define UnityReplayKit_h
+#pragma once
 
 #if UNITY_REPLAY_KIT_AVAILABLE
 
@@ -37,9 +36,8 @@
 - (void)stopBroadcasting;
 - (BOOL)showCameraPreviewAt:(CGPoint)position;
 - (void)hideCameraPreview;
+- (void)createOverlayWindow;
 @end
 
 
 #endif  // UNITY_REPLAY_KIT_AVAILABLE
-
-#endif  // UnityReplayKit_h

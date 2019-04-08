@@ -2,7 +2,7 @@
 cd "${WORKSPACE}"
 
 # Link Sidious stored location for Unity lib.
-sudo ln -sf "/opt/sdk-integrations/Unity_2017.4.18f1/libiPhone-lib.a"  "${WORKSPACE}/iOS/3D Cave Runner Xcode/Libraries/libiPhone-lib.a"
+sudo ln -sf "/opt/sdk-integrations/Unity_2018.3.7f1/libiPhone-lib.a"  "${WORKSPACE}/iOS/3D Cave Runner Xcode/Libraries/libiPhone-lib.a"
 
 # Clean old artifacts
 rm -rf "iOS/3D Cave Runner Xcode/Cave Runner.xcarchive"

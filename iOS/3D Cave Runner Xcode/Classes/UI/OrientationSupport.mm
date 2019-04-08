@@ -66,11 +66,6 @@ ScreenOrientation ConvertToUnityScreenOrientation(UIInterfaceOrientation orient)
 // Replacement for UIViewController.interfaceOrientation which is obsolete since iOS 8.0
 UIInterfaceOrientation UIViewControllerInterfaceOrientation(UIViewController* c)
 {
-    // [UIScreen coordinateSpace] is only available on iOS 8+
-    // [UIViewController interfaceOrientation] is obsolete in iOS 8+
-    if (!_ios80orNewer)
-        return c.interfaceOrientation;
-
     CGPoint fixedPoint = [c.view.window.screen.coordinateSpace convertPoint: CGPointMake(0.0, 0.0) toCoordinateSpace: c.view.window.screen.fixedCoordinateSpace];
 
     if (fabs(fixedPoint.x) < FLT_EPSILON)
@@ -151,10 +146,7 @@ void OrientView(UIViewController* host, UIView* view, ScreenOrientation to)
 {
     ScreenOrientation fromController = UIViewControllerOrientation(host);
 
-    // before ios8 view transform is relative to portrait, while on ios8 it is relative to window/controller
-    const bool newRotationLogic = _ios80orNewer;
-
-    CGAffineTransform transform = newRotationLogic ? TransformBetweenOrientations(fromController, to) : TransformForOrientation(to);
+    CGAffineTransform transform = TransformBetweenOrientations(fromController, to);
 
     // this is for unity-inited orientation. In that case we need to manually adjust bounds if changing portrait/landscape
     // the easiest way would be to manually rotate current bounds (to acknowledge the fact that we do NOT rotate controller itself)

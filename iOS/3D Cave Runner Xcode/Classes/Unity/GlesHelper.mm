@@ -229,7 +229,7 @@ extern "C" void DestroyRenderingSurfaceGLES(UnityDisplaySurfaceGLES* surface)
 
     if (surface->targetColorRT && !surface->cvTextureCache)
     {
-        glDeleteTextures(1, &surface->targetColorRT);
+        glDeleteTextures(1, &surface->targetColorRT); UnityOnDeleteGLTexture(surface->targetColorRT);
         surface->targetColorRT = 0;
     }
 

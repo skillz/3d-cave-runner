@@ -64,7 +64,6 @@ extern "C" const char* UnityVendorIdentifier()
     return _VendorID;
 }
 
-
 // UIDevice properties
 
 #define QUERY_UIDEVICE_PROPERTY(FUNC, PROP)                                         \
@@ -96,6 +95,19 @@ extern "C" const char* UnityDeviceModel()
         char* model = (char*)::malloc(size + 1);
         ::sysctlbyname("hw.machine", model, &size, NULL, 0);
         model[size] = 0;
+
+#if TARGET_OS_SIMULATOR
+        if (!strncmp(model, "i386", 4) || !strncmp(model, "x86_64", 6))
+        {
+            NSString* simModel = [[NSProcessInfo processInfo] environment][@"SIMULATOR_MODEL_IDENTIFIER"];
+            if ([simModel length] > 0)
+            {
+                _DeviceModel = AllocCString(simModel);
+                ::free(model);
+                return _DeviceModel;
+            }
+        }
+#endif
 
         _DeviceModel = AllocCString([NSString stringWithUTF8String: model]);
         ::free(model);
@@ -134,6 +146,140 @@ extern "C" const char* UnitySystemLanguage()
     return _SystemLanguage;
 }
 
+extern "C" int ParseDeviceGeneration(const char* model)
+{
+#if PLATFORM_IOS
+    if (!strcmp(model, "iPhone2,1"))
+        return deviceiPhone3GS;
+    else if (!strncmp(model, "iPhone3,", 8))
+        return deviceiPhone4;
+    else if (!strncmp(model, "iPhone4,", 8))
+        return deviceiPhone4S;
+    else if (!strncmp(model, "iPhone5,", 8))
+    {
+        int rev = atoi(model + 8);
+        if (rev >= 3)
+            return deviceiPhone5C;               // iPhone5,3
+        else
+            return deviceiPhone5;
+    }
+    else if (!strncmp(model, "iPhone6,", 8))
+        return deviceiPhone5S;
+    else if (!strncmp(model, "iPhone7,2", 9))
+        return deviceiPhone6;
+    else if (!strncmp(model, "iPhone7,1", 9))
+        return deviceiPhone6Plus;
+    else if (!strncmp(model, "iPhone8,1", 9))
+        return deviceiPhone6S;
+    else if (!strncmp(model, "iPhone8,2", 9))
+        return deviceiPhone6SPlus;
+    else if (!strncmp(model, "iPhone8,4", 9))
+        return deviceiPhoneSE1Gen;
+    else if (!strncmp(model, "iPhone9,1", 9) || !strncmp(model, "iPhone9,3", 9))
+        return deviceiPhone7;
+    else if (!strncmp(model, "iPhone9,2", 9) || !strncmp(model, "iPhone9,4", 9))
+        return deviceiPhone7Plus;
+    else if (!strncmp(model, "iPhone10,1", 10) || !strncmp(model, "iPhone10,4", 10))
+        return deviceiPhone8;
+    else if (!strncmp(model, "iPhone10,2", 10) || !strncmp(model, "iPhone10,5", 10))
+        return deviceiPhone8Plus;
+    else if (!strncmp(model, "iPhone10,3", 10) || !strncmp(model, "iPhone10,6", 10))
+        return deviceiPhoneX;
+    else if (!strncmp(model, "iPhone11,8", 10))
+        return deviceiPhoneXR;
+    else if (!strncmp(model, "iPhone11,2", 10))
+        return deviceiPhoneXS;
+    else if (!strncmp(model, "iPhone11,4", 10) || !strncmp(model, "iPhone11,6", 10))
+        return deviceiPhoneXSMax;
+    else if (!strcmp(model, "iPod4,1"))
+        return deviceiPodTouch4Gen;
+    else if (!strncmp(model, "iPod5,", 6))
+        return deviceiPodTouch5Gen;
+    else if (!strncmp(model, "iPod7,", 6))
+        return deviceiPodTouch6Gen;
+    else if (!strncmp(model, "iPad2,", 6))
+    {
+        int rev = atoi(model + 6);
+        if (rev >= 5)
+            return deviceiPadMini1Gen;                 // iPad2,5
+        else
+            return deviceiPad2Gen;
+    }
+    else if (!strncmp(model, "iPad3,", 6))
+    {
+        int rev = atoi(model + 6);
+        if (rev >= 4)
+            return deviceiPad4Gen;                 // iPad3,4
+        else
+            return deviceiPad3Gen;
+    }
+    else if (!strncmp(model, "iPad4,", 6))
+    {
+        int rev = atoi(model + 6);
+        if (rev >= 7)
+            return deviceiPadMini3Gen;
+        else if (rev >= 4)
+            return deviceiPadMini2Gen;     // iPad4,4
+        else
+            return deviceiPadAir1;
+    }
+    else if (!strncmp(model, "iPad5,", 6))
+    {
+        int rev = atoi(model + 6);
+        if (rev == 1 || rev == 2)
+            return deviceiPadMini4Gen;
+        else if (rev >= 3)
+            return deviceiPadAir2;
+    }
+    else if (!strncmp(model, "iPad6,", 6))
+    {
+        int rev = atoi(model + 6);
+        if (rev == 7 || rev == 8)
+            return deviceiPadPro1Gen;
+        else if (rev == 3 || rev == 4)
+            return deviceiPadPro10Inch1Gen;
+        else if (rev == 11 || rev == 12)
+            return deviceiPad5Gen;
+    }
+    else if (!strncmp(model, "iPad7,", 6))
+    {
+        int rev = atoi(model + 6);
+        if (rev == 1 || rev == 2)
+            return deviceiPadPro2Gen;
+        else if (rev == 3 || rev == 4)
+            return deviceiPadPro10Inch2Gen;
+    }
+    else if (!strncmp(model, "iPad8,", 6))
+    {
+        int rev = atoi(model + 6);
+        if (rev >= 1 && rev <= 4)
+            return deviceiPadPro11Inch;
+        else if (rev >= 5)
+            return deviceiPadPro3Gen;
+    }
+    // completely unknown hw - just determine form-factor
+    else
+    {
+        if (!strncmp(model, "iPhone", 6))
+            return deviceiPhoneUnknown;
+        else if (!strncmp(model, "iPad", 4))
+            return deviceiPadUnknown;
+        else if (!strncmp(model, "iPod", 4))
+            return deviceiPodTouchUnknown;
+        else
+            return deviceUnknown;
+    }
+
+#elif PLATFORM_TVOS
+    if (!strncmp(model, "AppleTV5,", 9))
+        return deviceAppleTV1Gen;
+    else if (!strncmp(model, "AppleTV6,", 9))
+        return deviceAppleTV2Gen;
+    else
+        return deviceUnknown;
+#endif
+}
+
 extern "C" int UnityDeviceGeneration()
 {
     static int _DeviceGeneration = deviceUnknown;
@@ -141,152 +287,43 @@ extern "C" int UnityDeviceGeneration()
     if (_DeviceGeneration == deviceUnknown)
     {
         const char* model = UnityDeviceModel();
-
-        if (!strcmp(model, "iPhone2,1"))
-            _DeviceGeneration = deviceiPhone3GS;
-        else if (!strncmp(model, "iPhone3,", 8))
-            _DeviceGeneration = deviceiPhone4;
-        else if (!strncmp(model, "iPhone4,", 8))
-            _DeviceGeneration = deviceiPhone4S;
-        else if (!strncmp(model, "iPhone5,", 8))
-        {
-            int rev = atoi(model + 8);
-            if (rev >= 3)
-                _DeviceGeneration = deviceiPhone5C;           // iPhone5,3
-            else
-                _DeviceGeneration = deviceiPhone5;
-        }
-        else if (!strncmp(model, "iPhone6,", 8))
-            _DeviceGeneration = deviceiPhone5S;
-        else if (!strncmp(model, "iPhone7,2", 9))
-            _DeviceGeneration = deviceiPhone6;
-        else if (!strncmp(model, "iPhone7,1", 9))
-            _DeviceGeneration = deviceiPhone6Plus;
-        else if (!strncmp(model, "iPhone8,1", 9))
-            _DeviceGeneration = deviceiPhone6S;
-        else if (!strncmp(model, "iPhone8,2", 9))
-            _DeviceGeneration = deviceiPhone6SPlus;
-        else if (!strncmp(model, "iPhone8,4", 9))
-            _DeviceGeneration = deviceiPhoneSE1Gen;
-        else if (!strncmp(model, "iPhone9,1", 9) || !strncmp(model, "iPhone9,3", 9))
-            _DeviceGeneration = deviceiPhone7;
-        else if (!strncmp(model, "iPhone9,2", 9) || !strncmp(model, "iPhone9,4", 9))
-            _DeviceGeneration = deviceiPhone7Plus;
-        else if (!strncmp(model, "iPhone10,1", 10) || !strncmp(model, "iPhone10,4", 10))
-            _DeviceGeneration = deviceiPhone8;
-        else if (!strncmp(model, "iPhone10,2", 10) || !strncmp(model, "iPhone10,5", 10))
-            _DeviceGeneration = deviceiPhone8Plus;
-        else if (!strncmp(model, "iPhone10,3", 10) || !strncmp(model, "iPhone10,6", 10))
-            _DeviceGeneration = deviceiPhoneX;
-        else if (!strncmp(model, "iPhone11,8", 10))
-            _DeviceGeneration = deviceiPhoneXR;
-        else if (!strncmp(model, "iPhone11,2", 10))
-            _DeviceGeneration = deviceiPhoneXS;
-        else if (!strncmp(model, "iPhone11,4", 10) || !strncmp(model, "iPhone11,6", 10))
-            _DeviceGeneration = deviceiPhoneXSMax;
-        else if (!strcmp(model, "iPod4,1"))
-            _DeviceGeneration = deviceiPodTouch4Gen;
-        else if (!strncmp(model, "iPod5,", 6))
-            _DeviceGeneration = deviceiPodTouch5Gen;
-        else if (!strncmp(model, "iPod7,", 6))
-            _DeviceGeneration = deviceiPodTouch6Gen;
-        else if (!strncmp(model, "iPad2,", 6))
-        {
-            int rev = atoi(model + 6);
-            if (rev >= 5)
-                _DeviceGeneration = deviceiPadMini1Gen;             // iPad2,5
-            else
-                _DeviceGeneration = deviceiPad2Gen;
-        }
-        else if (!strncmp(model, "iPad3,", 6))
-        {
-            int rev = atoi(model + 6);
-            if (rev >= 4)
-                _DeviceGeneration = deviceiPad4Gen;             // iPad3,4
-            else
-                _DeviceGeneration = deviceiPad3Gen;
-        }
-        else if (!strncmp(model, "iPad4,", 6))
-        {
-            int rev = atoi(model + 6);
-            if (rev >= 7)
-                _DeviceGeneration = deviceiPadMini3Gen;
-            else if (rev >= 4)
-                _DeviceGeneration = deviceiPadMini2Gen; // iPad4,4
-            else
-                _DeviceGeneration = deviceiPadAir1;
-        }
-        else if (!strncmp(model, "iPad5,", 6))
-        {
-            int rev = atoi(model + 6);
-            if (rev == 1 || rev == 2)
-                _DeviceGeneration = deviceiPadMini4Gen;
-            else if (rev >= 3)
-                _DeviceGeneration = deviceiPadAir2;
-        }
-        else if (!strncmp(model, "iPad6,", 6))
-        {
-            int rev = atoi(model + 6);
-            if (rev == 7 || rev == 8)
-                _DeviceGeneration = deviceiPadPro1Gen;
-            else if (rev == 3 || rev == 4)
-                _DeviceGeneration = deviceiPadPro10Inch1Gen;
-            else if (rev == 11 || rev == 12)
-                _DeviceGeneration = deviceiPad5Gen;
-        }
-        else if (!strncmp(model, "iPad7,", 6))
-        {
-            int rev = atoi(model + 6);
-            if (rev == 1 || rev == 2)
-                _DeviceGeneration = deviceiPadPro2Gen;
-            else if (rev == 3 || rev == 4)
-                _DeviceGeneration = deviceiPadPro10Inch2Gen;
-        }
-        else if (!strncmp(model, "iPad8,", 6))
-        {
-            int rev = atoi(model + 6);
-            if (rev >= 1 && rev <= 4)
-                _DeviceGeneration = deviceiPadPro11Inch;
-            else if (rev >= 5)
-                _DeviceGeneration = deviceiPadPro3Gen;
-        }
-
-
-        // completely unknown hw - just determine form-factor
-        if (_DeviceGeneration == deviceUnknown)
-        {
-            if (!strncmp(model, "iPhone", 6))
-                _DeviceGeneration = deviceiPhoneUnknown;
-            else if (!strncmp(model, "iPad", 4))
-                _DeviceGeneration = deviceiPadUnknown;
-            else if (!strncmp(model, "iPod", 4))
-                _DeviceGeneration = deviceiPodTouchUnknown;
-            else
-                _DeviceGeneration = deviceUnknown;
-        }
+        _DeviceGeneration = ParseDeviceGeneration(model);
     }
     return _DeviceGeneration;
+}
+
+extern "C" int UnityDeviceSupportedOrientations()
+{
+    int device = UnityDeviceGeneration();
+    int orientations = 0;
+
+    orientations |= (1 << portrait);
+    orientations |= (1 << landscapeLeft);
+    orientations |= (1 << landscapeRight);
+
+    if (device != deviceiPhoneX)
+    {
+        orientations |= (1 << portraitUpsideDown);
+    }
+
+    return orientations;
 }
 
 extern "C" int UnityDeviceIsStylusTouchSupported()
 {
     int deviceGen = UnityDeviceGeneration();
     return (deviceGen == deviceiPadPro1Gen ||
-            deviceGen == deviceiPadPro10Inch1Gen ||
-            deviceGen == deviceiPadPro2Gen ||
-            deviceGen == deviceiPadPro10Inch2Gen) ? 1 : 0;
+        deviceGen == deviceiPadPro10Inch1Gen ||
+        deviceGen == deviceiPadPro2Gen ||
+        deviceGen == deviceiPadPro10Inch2Gen) ? 1 : 0;
 }
 
-extern "C" int UnityDeviceIsWideColorSupported()
+extern "C" int UnityDeviceCanShowWideColor()
 {
     UIScreen* mainScreen = [UIScreen mainScreen];
-    if (![mainScreen respondsToSelector: @selector(traitCollection)])
-        return false;
-
     UITraitCollection* traits = mainScreen.traitCollection;
     if (![traits respondsToSelector: @selector(displayGamut)])
         return false;
-
 #if UNITY_HAS_IOSSDK_10_0 || UNITY_HAS_TVOSSDK_10_0
     return traits.displayGamut == UIDisplayGamutP3;
 #else
@@ -326,7 +363,6 @@ extern "C" float UnityDeviceDPI()
             case deviceiPhoneXS:
             case deviceiPhoneXSMax:
                 _DeviceDPI = 458.0f; break;
-
             // iPad
             case deviceiPad2Gen:
                 _DeviceDPI = 132.0f; break;

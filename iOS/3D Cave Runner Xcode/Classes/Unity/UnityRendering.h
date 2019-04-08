@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 #ifdef __OBJC__
 @class CAEAGLLayer;
 @class EAGLContext;
@@ -39,15 +41,13 @@ struct RenderSurfaceBase;
 typedef struct RenderSurfaceBase* UnityRenderBufferHandle;
 
 // be aware that this struct is shared with unity implementation so you should absolutely not change it
-typedef struct
-    UnityRenderBufferDesc
+typedef struct UnityRenderBufferDesc
 {
     unsigned    width, height, depth;
     unsigned    samples;
 
     int         backbuffer;
-}
-UnityRenderBufferDesc;
+} UnityRenderBufferDesc;
 
 // trick to make structure inheritance work transparently between c/cpp
 // for c we use "anonymous struct"
@@ -74,8 +74,7 @@ UnityRenderBufferDesc;
 #endif
 
 // unity common rendering (display) surface
-typedef struct
-    UnityDisplaySurfaceBase
+typedef struct UnityDisplaySurfaceBase
 {
     UnityRenderBufferHandle unityColorBuffer;
     UnityRenderBufferHandle unityDepthBuffer;
@@ -96,10 +95,10 @@ typedef struct
     int                 wideColor;              // [bool]
     int                 disableDepthAndStencil; // [bool]
     int                 allowScreenshot;        // [bool] currently we allow screenshots (from script) only on main display
+    int                 memorylessDepth;        // [bool]
 
     int                 api;                    // [UnityRenderingAPI]
-}
-UnityDisplaySurfaceBase;
+} UnityDisplaySurfaceBase;
 
 
 // START_STRUCT confuse clang c compiler (though it is idiomatic c code that works)
@@ -143,6 +142,7 @@ OBJC_OBJECT_PTR MTLDeviceRef        device;
 
 OBJC_OBJECT_PTR MTLCommandQueueRef  commandQueue;
 OBJC_OBJECT_PTR MTLCommandQueueRef  drawableCommandQueue;
+OBJC_OBJECT_PTR MTLCommandBufferRef presentCB;
 
 OBJC_OBJECT_PTR CAMetalDrawableRef  drawable;
 
@@ -152,7 +152,7 @@ OBJC_OBJECT_PTR MTLTextureRef       drawableProxyRT[kUnityNumOffscreenSurfaces];
 volatile int32_t                    readCount;
 volatile int32_t                    writeCount;
 volatile int32_t                    bufferChanged;
-volatile int32_t                    bufferCompleted[3];
+volatile int32_t                    bufferCompleted[kUnityNumOffscreenSurfaces];
 
 OBJC_OBJECT_PTR MTLTextureRef       systemColorRB;
 OBJC_OBJECT_PTR MTLTextureRef       targetColorRT;
@@ -170,14 +170,30 @@ END_STRUCT(UnityDisplaySurfaceMTL)
 #pragma clang diagnostic pop
 
 // be aware that this enum is shared with unity implementation so you should absolutely not change it
-typedef enum
-    UnityRenderingAPI
+typedef enum UnityRenderingAPI
 {
     apiOpenGLES2    = 2,
     apiOpenGLES3    = 3,
     apiMetal        = 4,
+} UnityRenderingAPI;
+
+typedef struct
+    RenderingSurfaceParams
+{
+    // rendering setup
+    int msaaSampleCount;
+    int renderW;
+    int renderH;
+    int srgb;
+    int wideColor;
+    int metalFramebufferOnly;
+    int metalMemorylessDepth;
+
+    // unity setup
+    int disableDepthAndStencil;
+    int useCVTextureCache;
 }
-UnityRenderingAPI;
+RenderingSurfaceParams;
 
 #ifdef __cplusplus
 extern "C" {
@@ -233,6 +249,10 @@ void PresentMTL(UnityDisplaySurfaceMTL* surface);
 
 // Acquires CAMetalDrawable resource for the surface and returns the drawable texture
 MTLTextureRef AcquireDrawableMTL(UnityDisplaySurfaceMTL* surface);
+
+// starting with ios11 apple insists on having just one presentDrawable per command buffer
+// hence we keep normal processing for main screen, but when airplay is used we will create extra command buffers
+void PreparePresentNonMainScreenMTL(UnityDisplaySurfaceMTL* surface);
 
 #ifdef __cplusplus
 } // extern "C"

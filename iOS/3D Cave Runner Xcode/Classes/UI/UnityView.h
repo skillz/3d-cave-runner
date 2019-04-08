@@ -1,6 +1,8 @@
 #pragma once
 
-@interface UnityRenderingView : UIView {}
+@interface UnityRenderingView : UIView
+{
+}
 + (void)InitializeForAPI:(UnityRenderingAPI)api;
 @end
 
@@ -8,6 +10,7 @@
 {
     @private ScreenOrientation _curOrientation;
     @private BOOL _shouldRecreateView;
+    @private BOOL _viewIsRotating;
 }
 
 // we take scale factor into account because gl backbuffer size depends on it

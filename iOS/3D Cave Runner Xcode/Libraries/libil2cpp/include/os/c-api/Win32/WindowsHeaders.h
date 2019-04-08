@@ -9,6 +9,7 @@
 #include <Objidl.h>
 
 #if IL2CPP_TARGET_WINDOWS_DESKTOP || IL2CPP_TARGET_WINRT
+#include <wincrypt.h>
 #include <Iphlpapi.h>
 #endif
 

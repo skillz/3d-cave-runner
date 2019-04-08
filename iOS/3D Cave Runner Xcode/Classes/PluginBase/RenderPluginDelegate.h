@@ -19,13 +19,13 @@ struct RenderingSurfaceParams;  // Unity/DisplayManager.h
 
 @optional
 
-// this will be called before recreating main display surface (from [UnityView recreateGLESSurface])
+// this will be called before recreating main display surface (from [UnityView recreateRenderingSurface])
 // you can tweak params here.
 // use it for enabling CVTextureCache support and the likes
 - (void)onBeforeMainDisplaySurfaceRecreate:(struct RenderingSurfaceParams*)params;
 
-// this will be called right after recreating main display surface (from [UnityView recreateGLESSurface])
-// as [UnityView recreateGLESSurface] is the only place where unity itself will trigger surface recreate
+// this will be called right after recreating main display surface (from [UnityView recreateRenderingSurface])
+// as [UnityView recreateRenderingSurface] is the only place where unity itself will trigger surface recreate
 // you can use this method to update your rendering depending on changes
 - (void)onAfterMainDisplaySurfaceRecreate;
 

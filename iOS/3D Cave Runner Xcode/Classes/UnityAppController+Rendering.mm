@@ -55,13 +55,8 @@ static bool _enableRunLoopAcceptInput = false;
     bool ignoreInput = [[UIApplication sharedApplication] isIgnoringInteractionEvents];
     if (!ignoreInput && _enableRunLoopAcceptInput)
     {
-        // Additional acceptInput call crashes on iOS8- unless using invalid NSRunLoopCommonModes, while on iOS10 that mode
-        // produces warnings and does not improve touch event delivery, so we need to differentiate by iOS version.
-        // Note: Starting with iOS 10 there's a typedef NSRunLoopMode used instead of NSString
-        static NSString* inputMode = (_ios90orNewer ? NSDefaultRunLoopMode : NSRunLoopCommonModes);
-        static NSDate* past = [NSDate date];
-
-        [[NSRunLoop currentRunLoop] acceptInputForMode: inputMode beforeDate: past];
+        static NSDate* past = [NSDate dateWithTimeIntervalSince1970: 0]; // the oldest date we can get
+        [[NSRunLoop currentRunLoop] acceptInputForMode: NSDefaultRunLoopMode beforeDate: past];
     }
 #endif
 }
@@ -111,7 +106,21 @@ static bool _enableRunLoopAcceptInput = false;
     if (_skipPresent || _didResignActive)
         return;
 
-    [[DisplayManager Instance] present];
+    // metal needs special processing, because in case of airplay we need extra command buffers to present non-main screen drawables
+    if (UnitySelectedRenderingAPI() == apiMetal)
+    {
+    #if UNITY_CAN_USE_METAL
+        [[DisplayManager Instance].mainDisplay present];
+        [[DisplayManager Instance] enumerateNonMainDisplaysWithBlock:^(DisplayConnection* conn) {
+            PreparePresentNonMainScreenMTL((UnityDisplaySurfaceMTL*)conn.surface);
+        }];
+    #endif
+    }
+    else
+    {
+        [[DisplayManager Instance] present];
+    }
+
     Profiler_FramePresent(frameStats);
 }
 
@@ -192,12 +201,6 @@ typedef bool(*CheckSupportedFunc)(int);
 
 static int SelectRenderingAPIImpl()
 {
-#if UNITY_CAN_USE_METAL
-    const bool  canSupportMetal = _ios80orNewer;
-#else
-    const bool  canSupportMetal = false;
-#endif
-
     // Get list of graphics APIs to try from player settings
     const int kMaxAPIs = 3;
     int apis[kMaxAPIs];
@@ -210,11 +213,13 @@ static int SelectRenderingAPIImpl()
         // Metal
         if (api == apiMetal)
         {
-            if (!canSupportMetal)
-                continue;
+#if UNITY_CAN_USE_METAL
             if (!IsMetalSupported(0))
                 continue;
             return api;
+#else
+            continue;
+#endif
         }
         // GLES3
         if (api == apiOpenGLES3)
@@ -235,16 +240,20 @@ static int SelectRenderingAPIImpl()
     return 0;
 }
 
-extern "C" NSBundle*            UnityGetMetalBundle()       {
+extern "C" NSBundle*            UnityGetMetalBundle()
+{
     return _MetalBundle;
 }
+
 extern "C" MTLDeviceRef         UnityGetMetalDevice()       { return _MetalDevice; }
 extern "C" MTLCommandQueueRef   UnityGetMetalCommandQueue() { return ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->commandQueue; }
 extern "C" MTLCommandQueueRef   UnityGetMetalDrawableCommandQueue() { return ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->drawableCommandQueue; }
 
-extern "C" EAGLContext*         UnityGetDataContextEAGL()   {
+extern "C" EAGLContext*         UnityGetDataContextEAGL()
+{
     return _GlesContext;
 }
+
 extern "C" int                  UnitySelectedRenderingAPI() { return _renderingAPI; }
 
 extern "C" UnityRenderBufferHandle  UnityBackbufferColor()      { return GetMainDisplaySurface()->unityColorBuffer; }
