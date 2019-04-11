@@ -493,6 +493,11 @@ extern "C" int _getRandomNumberWithMinAndMax(int min, int max)
 // C-style wrapper for skillzInitForGameId:AndEnvironment: so that it can be accessed by Unity in C#
 extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const char *environment)
 {
+    /*************
+    * Temporarily point to Staging
+    *************/
+    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
+
     NSString *gameIdString = [[NSString alloc] initWithUTF8String:gameId];
     NSString *environmentString = [[NSString alloc] initWithUTF8String:environment];
     SkillzEnvironment skillzEnvironment;
