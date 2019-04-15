@@ -126,11 +126,21 @@ public sealed class GameController : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseMenu.SetActive (true);
+
+            if (pControls != null)
+            {
+                pControls.enabled = false;
+            }
         }
         else
         {
             Time.timeScale = 1.0f;
             pauseMenu.SetActive (false);
+
+            if (pControls != null)
+            {
+                pControls.enabled = true;
+            }
         }
     }
 
