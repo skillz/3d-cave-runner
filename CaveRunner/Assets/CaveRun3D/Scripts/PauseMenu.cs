@@ -152,12 +152,13 @@ public class PauseMenu : MonoBehaviour {
     }
 
     void UpdateMusicVol(float newMusicVol) {
-            Debug.Log("SkillzAudio PauseMenu.cs updating the music volume to " + newMusicVol);
+        Debug.Log("SkillzAudio PauseMenu.cs updating the music volume to " + newMusicVol);
         SkillzCrossPlatform.setSkillzMusicVolume(newMusicVol);
     }
 
     void UpdateSFXVol(float newSFXVol) {
-            Debug.Log("SkillzAudio PauseMenu.cs updating the sfx volume to " + newSFXVol);
-            SkillzCrossPlatform.setSFXVolume(newSFXVol);
+        Debug.Log("SkillzAudio PauseMenu.cs updating the sfx volume to " + newSFXVol);
+        SkillzCrossPlatform.setSFXVolume(newSFXVol);
+        AudioListener.volume = newSFXVol;
     }
 }
