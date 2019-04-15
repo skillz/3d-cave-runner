@@ -100,9 +100,9 @@ public sealed class ScoreScreen : MonoBehaviour
         //Display 3 boxes, the first showing total distance passed and multiplied by the value of each meter, the second showing total gems collected and multiplied by the value of a gem, and finally a bigger box showing the
         //total score.
         int offset = 70;
-        GUI.Box(new Rect((originalWidth - smallBoxWidth * 0.85f) / 2, originalHeight - 900 + offset, smallBoxWidth * 0.85f, smallBoxHeight * 0.85f), "Total Distance:n" + TotalDistanceCurrent.ToString("F1") + "M" + " X " + DistanceValue.ToString());
-        GUI.Box(new Rect((originalWidth - smallBoxWidth * 0.85f) / 2, originalHeight - 675 + offset, smallBoxWidth * 0.85f, smallBoxHeight * 0.85f), "Total Gems: n" + TotalGemsCurrent.ToString() + " X " + GemValue.ToString());
-        GUI.Box(new Rect((originalWidth - smallBoxWidth * 0.85f) / 2, originalHeight - 455 + offset, smallBoxWidth * 0.85f, smallBoxHeight * 0.85f), "Total Score n" + TotalScoreCurrent.ToString("F0"));
+        GUI.Box(new Rect((originalWidth - smallBoxWidth * 0.85f) / 2, originalHeight - 900 + offset, smallBoxWidth * 0.85f, smallBoxHeight * 0.85f), "Total Distance:\n" + TotalDistanceCurrent.ToString("F1") + "M" + " X " + DistanceValue.ToString());
+        GUI.Box(new Rect((originalWidth - smallBoxWidth * 0.85f) / 2, originalHeight - 675 + offset, smallBoxWidth * 0.85f, smallBoxHeight * 0.85f), "Total Gems: \n" + TotalGemsCurrent.ToString() + " X " + GemValue.ToString());
+        GUI.Box(new Rect((originalWidth - smallBoxWidth * 0.85f) / 2, originalHeight - 455 + offset, smallBoxWidth * 0.85f, smallBoxHeight * 0.85f), "Total Score \n" + TotalScoreCurrent.ToString("F0"));
 
         var buttonRect = new Rect((originalWidth / 2) - (ButtonWidth / 2), originalHeight - ButtonHeight - 25, ButtonWidth, ButtonHeight);
         //Debug.Log("button Rect: " + buttonRect.ToString());
