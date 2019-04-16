@@ -43,6 +43,8 @@ struct InterfaceActionInvoker0
 
 // AndroidBackButton
 struct AndroidBackButton_t2752689DE5F2251E6AD74164C810B00EE34C4D34;
+// AudioVolumeInitializer
+struct AudioVolumeInitializer_tB39B2204CDAE0AA275A4CE7F0CA6E6E1BFDD8480;
 // Bat
 struct Bat_tDBD311C9127F0A93F01246F10200064D9A00DD0A;
 // Collector
@@ -266,6 +268,7 @@ extern String_t* _stringLiteral131260CBFBB0C821F8EAE5E7C3C296C7AA4D50B9;
 extern String_t* _stringLiteral14D930BE6A50F765513D8B97916D491A98466FEF;
 extern String_t* _stringLiteral1EBA140FDD9C6860A1730C408E3064AA417CA2A3;
 extern String_t* _stringLiteral254FD996B7DA6F0F69E26DFD160B02FCB453FDBD;
+extern String_t* _stringLiteral2575188B627515E1D3BAC5302DAEF46C199D4F78;
 extern String_t* _stringLiteral2A7BC94A06F3221293677515044B0A9DD3960F4E;
 extern String_t* _stringLiteral2B020927D3C6EB407223A1BAA3D6CE3597A3F88D;
 extern String_t* _stringLiteral2CA4486C123CCDF110A43DA587B28D8D71CBF446;
@@ -273,17 +276,15 @@ extern String_t* _stringLiteral2D45363429BE4D1ABEE2209521DAE90841C5D311;
 extern String_t* _stringLiteral2DB98336167807D4EC882A0D47C0D0941194815D;
 extern String_t* _stringLiteral302A54D0C2A14F1707496EE0F7210BB35651437F;
 extern String_t* _stringLiteral34449A4E67F43905E697C9AF3E58D555EB2EEE16;
+extern String_t* _stringLiteral41722B11B47D3E1FB8EE7580604EE57271BF624A;
 extern String_t* _stringLiteral4303F207F7C3EDDC58981B8A2A27E700CC88103C;
 extern String_t* _stringLiteral43382AB496D1A5C416ABC98BBC4E088BB224F3C1;
 extern String_t* _stringLiteral46770A768F44B1EF50A836B5A0A30F5524D28CD5;
 extern String_t* _stringLiteral4E4CC544C2FA30A39BE5045C98289DD16E6E53B1;
 extern String_t* _stringLiteral5095EC0654EEC8CF450480FAFC5B4C51E62F5A38;
-extern String_t* _stringLiteral58F66883F7644EF165EDA6CD5213921C29CD03A9;
 extern String_t* _stringLiteral5C1AE82C29543AC887703776BF3DA2C7DCCE683D;
 extern String_t* _stringLiteral626B8DB276DFD07E94401E8140DE27371007E9DE;
-extern String_t* _stringLiteral63B39EE2B3FE66CD06067A4F090E06627F0C8389;
 extern String_t* _stringLiteral6477FA501011797B604698D9D009B0241C7D102D;
-extern String_t* _stringLiteral698FD15207B831E69F1036B16DC2A3D4D413AB25;
 extern String_t* _stringLiteral75EBCB361C656225206BB0191DF63CB1D38CBBAB;
 extern String_t* _stringLiteral7CC691E1AC2C9CB77DB303CAA5720649D82187DF;
 extern String_t* _stringLiteral7EE3688BD7432683505631FBA5FB287640DA9406;
@@ -318,6 +319,7 @@ extern String_t* _stringLiteralD7D23E94B5F2E0A71EA3F19B85BDD32D1C49D32D;
 extern String_t* _stringLiteralDB939A93B42816B85AEAE1A7A4AF2FEC1B5DD17C;
 extern String_t* _stringLiteralE0C705D18E3FAE4506D7273BDA6435690CDBDE08;
 extern String_t* _stringLiteralE3199D24849EB82131394EA88AC9C22DB0DBF732;
+extern String_t* _stringLiteralE430057022E96F5054A91A6F4F119E235824EB3A;
 extern String_t* _stringLiteralE53407CFE1A5156B9F0D1EED3BAB5EF3AE75CFD8;
 extern String_t* _stringLiteralE9F9DA86CDEF70DEC153EFC6E653C5C5FEF4D49A;
 extern String_t* _stringLiteralED58A3025F5D8F43C511641ED97AE47D63355D9F;
@@ -380,6 +382,7 @@ extern const uint32_t FramesPerSecond_Update_mAC35D9926CB4860BA1605677ED4D21BA2F
 extern const uint32_t GameController_EndLevel_mB93ED9EF6627C42B1A34C01E7E632403CDF9CDD6_MetadataUsageId;
 extern const uint32_t GameController_OnGUI_m31BA765D27E368B19D7B5E9532A1C215C2416CE4_MetadataUsageId;
 extern const uint32_t GameController_Start_mAA45CBDCD61B1A09B070982E46089251BE984A0E_MetadataUsageId;
+extern const uint32_t GameController_UpdatePaused_mFADAA04C82EA9720D77DF675A8398B9C73601711_MetadataUsageId;
 extern const uint32_t GameController_Update_mFF296EC836A073AC443CF95D0464564960DFBFD2_MetadataUsageId;
 extern const uint32_t Gem_Start_mD15FFB197985755736C7D8B9002C000869B2061D_MetadataUsageId;
 extern const uint32_t Gem_Update_mD3CC4724A3EB8EFCF7D20C2870826A402451AE10_MetadataUsageId;
@@ -4210,6 +4213,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // ANDROIDBACKBUTTON_T2752689DE5F2251E6AD74164C810B00EE34C4D34_H
+#ifndef AUDIOVOLUMEINITIALIZER_TB39B2204CDAE0AA275A4CE7F0CA6E6E1BFDD8480_H
+#define AUDIOVOLUMEINITIALIZER_TB39B2204CDAE0AA275A4CE7F0CA6E6E1BFDD8480_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// AudioVolumeInitializer
+struct  AudioVolumeInitializer_tB39B2204CDAE0AA275A4CE7F0CA6E6E1BFDD8480  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // AUDIOVOLUMEINITIALIZER_TB39B2204CDAE0AA275A4CE7F0CA6E6E1BFDD8480_H
 #ifndef BAT_TDBD311C9127F0A93F01246F10200064D9A00DD0A_H
 #define BAT_TDBD311C9127F0A93F01246F10200064D9A00DD0A_H
 #ifdef __clang__
@@ -8282,6 +8305,10 @@ extern "C" IL2CPP_METHOD_ATTR void Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018
 extern "C" IL2CPP_METHOD_ATTR void SceneManager_LoadScene_mFC850AC783E5EA05D6154976385DFECC251CDFB9 (String_t* p0, const RuntimeMethod* method);
 // System.Void UnityEngine.Application::Quit()
 extern "C" IL2CPP_METHOD_ATTR void Application_Quit_mA005EB22CB989AC3794334754F15E1C0D2FF1C95 (const RuntimeMethod* method);
+// System.Single SkillzCrossPlatform::getSFXVolume()
+extern "C" IL2CPP_METHOD_ATTR float SkillzCrossPlatform_getSFXVolume_m7B8C394C6C853F186CA054EE972301AD4620A2D4 (const RuntimeMethod* method);
+// System.Void UnityEngine.AudioListener::set_volume(System.Single)
+extern "C" IL2CPP_METHOD_ATTR void AudioListener_set_volume_mFD5EDF90B857A5A28A95A1B2367B9B3BA7E90E52 (float p0, const RuntimeMethod* method);
 // System.Void UnityEngine.Vector2::.ctor(System.Single,System.Single)
 extern "C" IL2CPP_METHOD_ATTR void Vector2__ctor_mEE8FB117AB1F8DB746FB8B3EB4C0DA3BF2A230D0 (Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * __this, float p0, float p1, const RuntimeMethod* method);
 // UnityEngine.Transform UnityEngine.Component::get_transform()
@@ -8626,8 +8653,6 @@ extern "C" IL2CPP_METHOD_ATTR void GUIStyleState_set_textColor_m2B235845A292C22A
 extern "C" IL2CPP_METHOD_ATTR void GUIStyle_set_font_m348ACE92DE82C381C7AFE216029DB8D87F47E0A0 (GUIStyle_t671F175A201A19166385EE3392292A5F50070572 * __this, Font_t1EDE54AF557272BE314EB4B40EFA50CEB353CA26 * p0, const RuntimeMethod* method);
 // System.Single SkillzCrossPlatform::getSkillzMusicVolume()
 extern "C" IL2CPP_METHOD_ATTR float SkillzCrossPlatform_getSkillzMusicVolume_m505CB8EAD2279957F1289DDA54523C57859C2989 (const RuntimeMethod* method);
-// System.Single SkillzCrossPlatform::getSFXVolume()
-extern "C" IL2CPP_METHOD_ATTR float SkillzCrossPlatform_getSFXVolume_m7B8C394C6C853F186CA054EE972301AD4620A2D4 (const RuntimeMethod* method);
 // System.String System.String::Concat(System.Object,System.Object)
 extern "C" IL2CPP_METHOD_ATTR String_t* String_Concat_m284DDEFEC7A010140004A73DE74DF4BB93685BEC (RuntimeObject * p0, RuntimeObject * p1, const RuntimeMethod* method);
 // System.Void SkillzCrossPlatform::setSkillzMusicVolume(System.Single)
@@ -8940,6 +8965,31 @@ IL_0046:
 
 IL_0058:
 	{
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void AudioVolumeInitializer::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void AudioVolumeInitializer__ctor_mEBE1BAA28FCB738B39A056F243E59651DFD4AD42 (AudioVolumeInitializer_tB39B2204CDAE0AA275A4CE7F0CA6E6E1BFDD8480 * __this, const RuntimeMethod* method)
+{
+	{
+		MonoBehaviour__ctor_mEAEC84B222C60319D593E456D769B3311DFCEF97(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void AudioVolumeInitializer::Awake()
+extern "C" IL2CPP_METHOD_ATTR void AudioVolumeInitializer_Awake_m5ABF667AB3FB4CF66AFBC5ACEC6B7686B113A8DB (AudioVolumeInitializer_tB39B2204CDAE0AA275A4CE7F0CA6E6E1BFDD8480 * __this, const RuntimeMethod* method)
+{
+	{
+		float L_0 = SkillzCrossPlatform_getSFXVolume_m7B8C394C6C853F186CA054EE972301AD4620A2D4(/*hidden argument*/NULL);
+		AudioListener_set_volume_mFD5EDF90B857A5A28A95A1B2367B9B3BA7E90E52(L_0, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -10526,11 +10576,17 @@ extern "C" IL2CPP_METHOD_ATTR void GameController_EndLevel_mB93ED9EF6627C42B1A34
 // System.Void GameController::UpdatePaused()
 extern "C" IL2CPP_METHOD_ATTR void GameController_UpdatePaused_mFADAA04C82EA9720D77DF675A8398B9C73601711 (GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 * __this, const RuntimeMethod* method)
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (GameController_UpdatePaused_mFADAA04C82EA9720D77DF675A8398B9C73601711_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		bool L_0 = __this->get_Paused_35();
 		if (!L_0)
 		{
-			goto IL_0026;
+			goto IL_0043;
 		}
 	}
 	{
@@ -10538,18 +10594,46 @@ extern "C" IL2CPP_METHOD_ATTR void GameController_UpdatePaused_mFADAA04C82EA9720
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_1 = __this->get_pauseMenu_11();
 		NullCheck(L_1);
 		GameObject_SetActive_m25A39F6D9FB68C51F13313F9804E85ACC937BC04(L_1, (bool)1, /*hidden argument*/NULL);
-		goto IL_003c;
+		PlayerControls_tBC9683E9E805D937D178818876D7D23635CB2596 * L_2 = __this->get_pControls_9();
+		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
+		bool L_3 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_2, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
+		if (!L_3)
+		{
+			goto IL_003e;
+		}
+	}
+	{
+		PlayerControls_tBC9683E9E805D937D178818876D7D23635CB2596 * L_4 = __this->get_pControls_9();
+		NullCheck(L_4);
+		Behaviour_set_enabled_m9755D3B17D7022D23D1E4C618BD9A6B66A5ADC6B(L_4, (bool)0, /*hidden argument*/NULL);
 	}
 
-IL_0026:
+IL_003e:
+	{
+		goto IL_0076;
+	}
+
+IL_0043:
 	{
 		Time_set_timeScale_mAB89C3BB5DEE81934159C23F103397A77AC3F4AF((1.0f), /*hidden argument*/NULL);
-		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_2 = __this->get_pauseMenu_11();
-		NullCheck(L_2);
-		GameObject_SetActive_m25A39F6D9FB68C51F13313F9804E85ACC937BC04(L_2, (bool)0, /*hidden argument*/NULL);
+		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_5 = __this->get_pauseMenu_11();
+		NullCheck(L_5);
+		GameObject_SetActive_m25A39F6D9FB68C51F13313F9804E85ACC937BC04(L_5, (bool)0, /*hidden argument*/NULL);
+		PlayerControls_tBC9683E9E805D937D178818876D7D23635CB2596 * L_6 = __this->get_pControls_9();
+		IL2CPP_RUNTIME_CLASS_INIT(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_il2cpp_TypeInfo_var);
+		bool L_7 = Object_op_Inequality_m31EF58E217E8F4BDD3E409DEF79E1AEE95874FC1(L_6, (Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0 *)NULL, /*hidden argument*/NULL);
+		if (!L_7)
+		{
+			goto IL_0076;
+		}
+	}
+	{
+		PlayerControls_tBC9683E9E805D937D178818876D7D23635CB2596 * L_8 = __this->get_pControls_9();
+		NullCheck(L_8);
+		Behaviour_set_enabled_m9755D3B17D7022D23D1E4C618BD9A6B66A5ADC6B(L_8, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_003c:
+IL_0076:
 	{
 		return;
 	}
@@ -12130,6 +12214,8 @@ extern "C" IL2CPP_METHOD_ATTR void PauseMenu_UpdateSFXVol_mC45CE4D0CD75708227DE5
 		Debug_Log_m4B7C70BAFD477C6BDB59C88A0934F0B018D03708(L_3, /*hidden argument*/NULL);
 		float L_4 = ___newSFXVol0;
 		SkillzCrossPlatform_setSFXVolume_mC032887CF612A1784BE800BAEBE2E52A64B5F4F2(L_4, /*hidden argument*/NULL);
+		float L_5 = ___newSFXVol0;
+		AudioListener_set_volume_mFD5EDF90B857A5A28A95A1B2367B9B3BA7E90E52(L_5, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -14691,7 +14777,7 @@ IL_011e:
 		int32_t* L_45 = __this->get_address_of_DistanceValue_13();
 		String_t* L_46 = Int32_ToString_mE7DFEEF8FFE4DA97DA211C49948D8E752E6B61C8((int32_t*)L_45, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_47 = String_Concat_m44831B34C60D9781791B3E5AD4DCDE4DB698267B(_stringLiteral63B39EE2B3FE66CD06067A4F090E06627F0C8389, L_44, _stringLiteralA9396ECB0DABEADEE9247113D7C3A7C395F999B0, L_46, /*hidden argument*/NULL);
+		String_t* L_47 = String_Concat_m44831B34C60D9781791B3E5AD4DCDE4DB698267B(_stringLiteralE430057022E96F5054A91A6F4F119E235824EB3A, L_44, _stringLiteralA9396ECB0DABEADEE9247113D7C3A7C395F999B0, L_46, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(GUI_t3E5CBC6B113E392EBBE1453DEF2B7CD020F345AA_il2cpp_TypeInfo_var);
 		GUI_Box_m8A788187BB0412D6B23AFEED65FCFF70AC197C3A(L_42, L_47, /*hidden argument*/NULL);
 		float L_48 = __this->get_originalWidth_5();
@@ -14707,7 +14793,7 @@ IL_011e:
 		String_t* L_56 = Int32_ToString_mE7DFEEF8FFE4DA97DA211C49948D8E752E6B61C8((int32_t*)L_55, /*hidden argument*/NULL);
 		int32_t* L_57 = __this->get_address_of_GemValue_12();
 		String_t* L_58 = Int32_ToString_mE7DFEEF8FFE4DA97DA211C49948D8E752E6B61C8((int32_t*)L_57, /*hidden argument*/NULL);
-		String_t* L_59 = String_Concat_m44831B34C60D9781791B3E5AD4DCDE4DB698267B(_stringLiteral698FD15207B831E69F1036B16DC2A3D4D413AB25, L_56, _stringLiteralF1BA2E99DA815268F4B728941A90790C783518E3, L_58, /*hidden argument*/NULL);
+		String_t* L_59 = String_Concat_m44831B34C60D9781791B3E5AD4DCDE4DB698267B(_stringLiteral2575188B627515E1D3BAC5302DAEF46C199D4F78, L_56, _stringLiteralF1BA2E99DA815268F4B728941A90790C783518E3, L_58, /*hidden argument*/NULL);
 		GUI_Box_m8A788187BB0412D6B23AFEED65FCFF70AC197C3A(L_54, L_59, /*hidden argument*/NULL);
 		float L_60 = __this->get_originalWidth_5();
 		int32_t L_61 = __this->get_smallBoxWidth_9();
@@ -14720,7 +14806,7 @@ IL_011e:
 		Rect__ctor_m50B92C75005C9C5A0D05E6E0EBB43AFAF7C66280((&L_66), ((float)((float)((float)il2cpp_codegen_subtract((float)L_60, (float)((float)il2cpp_codegen_multiply((float)(((float)((float)L_61))), (float)(0.85f)))))/(float)(2.0f))), ((float)il2cpp_codegen_add((float)((float)il2cpp_codegen_subtract((float)L_62, (float)(455.0f))), (float)(((float)((float)L_63))))), ((float)il2cpp_codegen_multiply((float)(((float)((float)L_64))), (float)(0.85f))), ((float)il2cpp_codegen_multiply((float)(((float)((float)L_65))), (float)(0.85f))), /*hidden argument*/NULL);
 		float* L_67 = __this->get_address_of_TotalScoreCurrent_19();
 		String_t* L_68 = Single_ToString_m3FCC13FF588B43D7571B35566A64E9EE845EABF9((float*)L_67, _stringLiteral2A7BC94A06F3221293677515044B0A9DD3960F4E, /*hidden argument*/NULL);
-		String_t* L_69 = String_Concat_m3826EAA4F567A88037F77DAA4CA280E199698DC8(_stringLiteral58F66883F7644EF165EDA6CD5213921C29CD03A9, L_68, /*hidden argument*/NULL);
+		String_t* L_69 = String_Concat_m3826EAA4F567A88037F77DAA4CA280E199698DC8(_stringLiteral41722B11B47D3E1FB8EE7580604EE57271BF624A, L_68, /*hidden argument*/NULL);
 		GUI_Box_m8A788187BB0412D6B23AFEED65FCFF70AC197C3A(L_66, L_69, /*hidden argument*/NULL);
 		float L_70 = __this->get_originalWidth_5();
 		int32_t L_71 = __this->get_ButtonWidth_11();
