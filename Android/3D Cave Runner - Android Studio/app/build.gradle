@@ -1,6 +1,6 @@
 def versionMajor = 5
 def versionMinor = 0
-def versionPatch = 37
+def versionPatch = 47
 def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.getenv('BUILD_NUMBER')) : 1
 
 buildscript {
