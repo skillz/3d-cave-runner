@@ -1,6 +1,6 @@
 def versionMajor = 5
 def versionMinor = 0
-def versionPatch = 46
+def versionPatch = 49
 def versionBuild = System.getenv('BUILD_NUMBER') ? Integer.parseInt(System.getenv('BUILD_NUMBER')) : 1
 
 buildscript {
@@ -133,8 +133,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    fullImplementation 'com.skillz.sdk:skillz-sdk-android:22.0.8-SNAPSHOT'
-    vconlyImplementation 'com.skillz.sdk:skillz-sdk-android:22.0.8-SNAPSHOT'
+    fullImplementation 'com.skillz.sdk:skillz-sdk-android:22.0.9-SNAPSHOT'
+    vconlyImplementation 'com.skillz.sdk:skillz-sdk-android:22.0.9-SNAPSHOT'
     localSDKImplementation project(':sdk')
 
     api ('com.crashlytics.sdk.android:crashlytics:2.9.4@aar'){
