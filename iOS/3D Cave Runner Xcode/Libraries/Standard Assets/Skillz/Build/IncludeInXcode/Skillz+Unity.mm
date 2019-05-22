@@ -495,8 +495,6 @@ extern "C" void _skillzInitForGameIdAndEnvironment(const char *gameId, const cha
 {
     NSString *gameIdString = [[NSString alloc] initWithUTF8String:gameId];
     NSString *environmentString = [[NSString alloc] initWithUTF8String:environment];
-    [[Skillz skillzInstance] performSelector:@selector(setStaging)];
-
     SkillzEnvironment skillzEnvironment;
     
     // Initialize the game in either sandbox or production based on the input
