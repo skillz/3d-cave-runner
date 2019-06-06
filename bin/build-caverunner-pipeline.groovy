@@ -9,7 +9,7 @@ pipeline {
     JENKINS_BUILD = 'true'
   }
   parameters {
-    string(name: 'CR_BRANCH', defaultValue: "master-v22.0", description: 'Cave Runner Branch and/or tag to use to compile. (Git tag but must be formatted as "refs/tags/{tagName}")')
+    string(name: 'CR_BRANCH', defaultValue: "master-v23.0", description: 'Cave Runner Branch and/or tag to use to compile. (Git tag but must be formatted as "refs/tags/{tagName}")')
     string(name: 'sdk_build_number', defaultValue: '', description: 'Build number for SDK-Framework to use for artifacts.')
   }
   stages {
@@ -24,7 +24,7 @@ pipeline {
     stage ('Copy Skillz Framework Artifacts') {
       steps {
         script {
-          copyArtifacts filter: '**/Skillz.framework.zip,**/Skillz.framework.dSYM.zip,**/Skillz_DEBUG.framework.zip,**/Skillz_DEBUG.framework.dSYM.zip', fingerprintArtifacts: true, flatten: true, projectName: '../SDK-Framework/SDK-Framework-Zinc', selector: specific('${sdk_build_number}')
+          copyArtifacts filter: '**/Skillz.framework.zip,**/Skillz.framework.dSYM.zip,**/Skillz_DEBUG.framework.zip,**/Skillz_DEBUG.framework.dSYM.zip', fingerprintArtifacts: true, flatten: true, projectName: '../SDK-Framework/SDK-Framework-Titanium', selector: specific('${sdk_build_number}')
         }
       }
     }
