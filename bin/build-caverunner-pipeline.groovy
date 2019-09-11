@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'atrius' }
+  agent { label 'sidious' }
   options {
     timestamps()
     buildDiscarder(logRotator(artifactDaysToKeepStr: '10', artifactNumToKeepStr: '20', daysToKeepStr: '20', numToKeepStr: '20'))
